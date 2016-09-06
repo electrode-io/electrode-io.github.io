@@ -1,6 +1,6 @@
 ---
-title:  "What is Electrode?"
-permalink: docs/what_is_electrode.html
+title:  "Why Use Electrode?"
+permalink: docs/why_use_electrode.html
 toplevel: "Overview"
 ---
 
