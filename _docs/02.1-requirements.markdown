@@ -1,0 +1,7 @@
+---
+title:  "Requirements"
+permalink: docs/requirements.html
+toplevel: "Getting Started: Quick Guide"
+---
+
+<p class="body-text">First, let's quickly check your development environment. You will need to have at least <a href="https://nodejs.org/en/" class="doc-links">NodeJS</a> v4.2 installed in your machine.</p>

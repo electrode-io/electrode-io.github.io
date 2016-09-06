@@ -1,0 +1,7 @@
+---
+title:  "Confippet"
+permalink: docs/confippet.html
+toplevel: "Stand Alone Modules"
+---
+
+test2

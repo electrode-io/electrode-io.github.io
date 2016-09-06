@@ -1,0 +1,105 @@
+---
+title:  "Quick Guide"
+permalink: docs/quick_guide.html
+toplevel: "Getting Started: Quick Guide"
+---
+
+<h5>Quick Guide</h5>
+
+<p class="body-text">Next, install <a href="http://yeoman.io/" class="doc-links">Yeoman</a> and the Electrode <a href="https://github.com/electrode-io/generator-electrode" class="doc-links">generator-electrode.</a></p>
+<div class="snippet">
+  <pre><code>
+    npm install -g yo
+    npm install -g generator-electrode
+  </code></pre>
+</div>
+
+<p class="body-text">Then <a href="https://github.com/electrode-io/generator-electrode" class="doc-links">generate</a> your new project.</p>
+<div class="snippet">
+  <pre><code>
+    yo electrode
+  </code></pre>
+</div>
+
+<p class="body-text">Fill out the phenomenal Electrode App generator</p>
+
+<p class="body-text">Run one simple command. Presto!</p>
+<div class="snippet">
+  <pre><code>
+    gulp dev
+  </code></pre>
+</div>
+
+<p class="body-text">Open <a href="localhost:3000" class="doc-links" target="_blank">localhost:3000</a> in your browser. Hello Brave New World!</p>
+<div class="snippet">
+  <pre><code>
+    localhost: 3000
+  </code></pre>
+</div>
+
+<h5>Explore</h5>
+
+<p class="body-text">With the generator-electrode, we've created a dynamic and performant full stack Electrode app in under five minutes, using some of our favorites technologies, like
+  <a href="https://facebook.github.io/react/index.html" target="_blank">React</a>. Let's explore and personalize this web application. Open the generator-electrode project in your text editor of choice. Navigate to the home.jsx page.</p>
+
+<div class="snippet">
+  <pre><code>
+    import React from "react";
+
+    export class Home extends React.Component {
+      render() {
+        return (
+          <'div><'h1>Hello <'a href="https://github.com/electrode-io">Electrode</'a></'h1><''/div>
+        );
+      }
+    }
+  </code></pre>
+</div>
+
+<p class="body-text">Let's modify the component to personalize our new web application by adding a mission statement of our new app's purpose and what we hope to build in our next step, <a href="#" class="doc-links">Getting Started: Intermdiate</a>.</p>
+<p class="body-text">Here at WalmartLabs we love to <a href="http://www.walmartlabs.com/2016/08/weve-moved-follow-walmartlabs-on-medium/" target="_blank">build</a>. Let's make a library for our present stack and technologies we are excited about! Copy the code below:</p>
+
+<div class="snippet">
+  <pre><code>
+    import React from "react";
+
+    export class Home extends React.Component {
+      render() {
+        return (
+          <'div><'h1>Hello <'a href="#">Ultimate Tech Guide</'a></'h1><''/div>
+        );
+      }
+    }
+  </code></pre>
+</div>
+
+<p class="body-text">Let's finish the UI by adding styles. Navigate to the base.styl and the code below:</p>
+
+<div class="snippet">
+  <pre><code>
+    border-radius()
+      -webkit-border-radius: arguments
+      -moz-border-radius: arguments
+      border-radius: arguments
+
+    body
+      font: 12px Helvetica, Arial, sans-serif
+
+    a.button
+      border-radius(5px)
+  </code></pre>
+</div>
+</div>
+
+<p class="body-text">Run our new favorite command to see your tech list.</p>
+<div class="snippet">
+<pre><code>
+  gulp dev
+</code></pre>
+</div>
+<p class="body-text">Open <a href="localhost:3000" class="doc-links" target="_blank">localhost:3000</a> in your browser. We will continue to build in step two, <a href="#" class="doc-links">Getting Started: Intermdiate</a>.</p>
+
+<div class="snippet">
+<pre><code>
+</code></pre>
+</div>

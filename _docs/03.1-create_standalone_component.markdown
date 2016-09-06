@@ -1,0 +1,40 @@
+---
+title:  "Create a Standalone Component"
+permalink: docs/create_standalone_component.html
+toplevel: "Getting Started: Intermediate"
+---
+
+<blockquote>
+  Electrode: Universal React and Node Applications simplified, performant, and reusable.
+</blockquote>
+
+<p>Vice disrupt actually tote bag asymmetrical tousled paleo truffaut. Distillery 3 wolf moon listicle, ramps williamsburg banh mi cray next level mumblecore paleo kale chips before they sold out church-key. Migas bitters kogi chartreuse organic, roof party shoreditch viral heirloom pitchfork skateboard forage lumbersexual green juice cornhole. Mixtape man braid hashtag williamsburg blue bottle scenester. Semiotics actually health goth, hella cardigan poutine chambray farm-to-table vinyl tofu tattooed whatever. Health goth biodiesel letterpress 3 wolf moon. Occupy portland raw denim, cornhole pitchfork chambray chillwave chartreuse organic offal scenester.</p>
+<div class="snippet">
+  <pre><code>
+    // server/app.js
+    const reduxRouterEngine = require("electrode-redux-router-engine");
+    const Promise = require("bluebird");
+
+    const routes = require("../client/routes");
+    const boostrapApp = require("../client/actions").bootstrapApp;
+    const configureStore = require("../client/store").configureStore;
+
+    module.exports = (req) => {
+      if (!req.server.app.routesEngine) {
+        // reduxRouterEngine takes routes and a callback to initialize a store asynchronously.
+        req.server.app.routesEngine = reduxRouterEngine(routes,  () => {
+          const store = configureStore();
+
+          return Promise.all([
+            store.dispatch(boostrapApp())
+            // dispatch any other asynchronous actions here
+          ]).then( () => {
+            return store;
+          });
+        });
+      }
+
+      return req.server.app.routesEngine(req);
+    };
+  </code></pre>
+</div>

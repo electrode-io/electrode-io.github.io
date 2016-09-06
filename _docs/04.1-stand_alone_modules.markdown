@@ -1,0 +1,7 @@
+---
+title:  "Stand Alone Modules"
+permalink: docs/stand_alone_modules.html
+toplevel: "Getting Started: Advanced"
+---
+
+test2

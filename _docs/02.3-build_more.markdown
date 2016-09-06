@@ -1,0 +1,7 @@
+---
+title:  "Build More"
+permalink: docs/build_more.html
+toplevel: "Getting Started: Quick Guide"
+---
+
+test2
