@@ -1,7 +1,0 @@
----
-title:  "More Deployments"
-permalink: docs/more_deployments.html
-toplevel: "Getting Started: Intermediate"
----
-
-test2

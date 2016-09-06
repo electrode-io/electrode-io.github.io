@@ -1,7 +1,0 @@
----
-title:  "Server Config"
-permalink: docs/server_config.html
-toplevel: "Getting Started: Intermediate"
----
-
-test2

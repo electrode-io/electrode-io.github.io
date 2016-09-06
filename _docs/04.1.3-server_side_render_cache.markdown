@@ -1,7 +1,0 @@
----
-title:  "Server Side Render Caching"
-permalink: docs/server_side_render_cache.html
-toplevel: "Stand Alone Modules"
----
-
-test2

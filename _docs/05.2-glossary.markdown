@@ -1,7 +1,0 @@
----
-title:  "Glossary"
-permalink: docs/glossary.html
-toplevel: "Resources"
----
-
-test2

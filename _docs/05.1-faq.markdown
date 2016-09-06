@@ -1,7 +1,0 @@
----
-title:  "FAQs"
-permalink: docs/faq.html
-toplevel: "Resources"
----
-
-test2
