@@ -3,5 +3,67 @@ title:  "Build More"
 permalink: docs/build_more.html
 toplevel: "Getting Started: Quick Guide"
 ---
+<p class="body-text">Here at WalmartLabs we love to <a href="http://www.walmartlabs.com/2016/08/weve-moved-follow-walmartlabs-on-medium/" target="_blank">build</a>. Navigate to <'your-awesome-app'>/client/components/home.jsx:</p>
 
-test2
+<div class="snippet">
+  <pre><code>
+
+    import React from "react";
+
+    export class Home extends React.Component {
+      render() {
+        return (
+          <'div><'h1>Hello <'a href="https://github.com/electrode-io">Electrode</'a></'h1><''/div>
+        );
+      }
+    }
+
+  </code></pre>
+</div>
+
+<P> We will need a place to keep all of the resources we learned in the <a href="#" class="doc-links">Getting Started: Quick Guide</a> organized. Let's make a library for our present stack and technologies we are excited about! Copy the code below and paste it into <'your-awesome-app'>/client/components/home.jsx:</p>
+
+<div class="snippet">
+  <pre><code>
+
+    import React from "react";
+
+    export class Home extends React.Component {
+      render() {
+        return (
+          <'div><'h1>Hello <'a href="#">Ultimate Tech Guide</'a></'h1><''/div>
+        );
+      }
+    }
+
+  </code></pre>
+</div>
+
+<p class="body-text">Let's finish the UI by adding styles. Navigate to <your-awesome-app>/client/styles/base.styl and the code below:</p>
+
+<div class="snippet">
+  <pre><code>
+    border-radius()
+      -webkit-border-radius: arguments
+      -moz-border-radius: arguments
+      border-radius: arguments
+
+    body
+      font: 12px Helvetica, Arial, sans-serif
+
+    a.button
+      border-radius(5px)
+  </code></pre>
+</div>
+
+<p class="body-text">Run our new favorite command to see your tech list.</p>
+
+<div class="snippet">
+  <pre><code>
+    gulp dev
+  </code></pre>
+</div>
+
+<h5>Deploy</h5>
+
+<p>Vice disrupt actually tote bag asymmetrical tousled paleo truffaut. Distillery 3 wolf moon listicle, ramps williamsburg banh mi cray next level mumblecore paleo kale chips before they sold out church-key. Migas bitters kogi chartreuse organic, roof party shoreditch viral heirloom pitchfork skateboard forage lumbersexual green juice cornhole. Mixtape man braid hashtag williamsburg blue bottle scenester. Semiotics actually health goth, hella cardigan poutine chambray farm-to-table vinyl tofu tattooed whatever. Health goth biodiesel letterpress 3 wolf moon. Occupy portland raw denim, cornhole pitchfork chambray chillwave chartreuse organic offal scenester.</p>
