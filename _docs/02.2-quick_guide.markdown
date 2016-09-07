@@ -31,11 +31,6 @@ toplevel: "Getting Started: Quick Guide"
 </div>
 
 <p class="body-text">Open <a href="localhost:3000" class="doc-links">localhost:3000</a> in your browser. Hello Electrode!</p>
-<div class="snippet">
-  <pre><code>
-    add localhost:3000 to your browser
-  </code></pre>
-</div>
 
 <h5>Explore</h5>
 
@@ -207,4 +202,4 @@ Next, navigate to <'your-awesome-app'>/client/styles/base.styl:</p>
 
 <p>This <a href="https://github.com/jchip/isomorphic-loader" class="doc-links">Webpack loader</a> and tools to make NodeJS require understands files such as images when you are doing server side rendering. It contains three pieces: a Webpack loader, Webpack plugin and a library for your NodeJS app.</p>
 
-<p>With the generator-electrode, we've created a dynamic and performant full stack Electrode app in under five minutes, using some of our favorites technologies, like React. Let's explore and personalize this web application in our next section, <a href="#" class="doc-links">Getting Started: Modify</a>.</p>
+<p>With the generator-electrode, we've created a dynamic and performant full stack Electrode app in under five minutes, using some of our favorites technologies, like <a href="https://facebook.github.io/react/index.html" target="_blank">React</a> and <a href="http://hapijs.com/" target="_blank">Hapi</a>. Let's explore and personalize this web application in our next section, <a href="#" class="doc-links">Getting Started: Build More</a>.</p>
