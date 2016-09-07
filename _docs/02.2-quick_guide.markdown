@@ -134,7 +134,7 @@ Next, navigate to <'your-awesome-app'>/client/styles/base.styl:</p>
 
 <p>Confippet is a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a <a href="https://github.com/electrode-io/electrode-confippet" class="doc-links">preset config</a> out of the box.</p>
 
-<p>To keep your environment specific configurations manageable, we use electrode-confippet. Once you have your config files setup according to the configuration files setup, you can simply pass the config object to electrode server.</p>
+<p>We use this to keep your environment specific configurations manageable. Once you have your config files setup according to the configuration files setup, you can simply pass the config object to electrode server.</p>
 
 <div class="snippet">
   <pre><code>
@@ -163,7 +163,7 @@ Next, navigate to <'your-awesome-app'>/client/styles/base.styl:</p>
 <p>The Electrode team has created another powerful module here to optimize performance for your out-the-box Universal app:</p>
 <p><a href="https://github.com/electrode-io/electrode-confippet" class="doc-links">Electrode-Router-Resolver-Engine</a> which takes React routes and requests and returns HTML to be rendered by electrode-react-webapp. We have found this to be the best tool for dealing with <a href="https://github.com/electrode-io/redux-router-engine" class="doc-links">redux asynchronous actions</a>.</p>
 
-<p>Before we move on, we should inspect an unassuming, but critcal file <'your-awesome-app'>/server/plugins/webapp/index.html:</p>
+<p>Before we move on, we should inspect a critical file, <'your-awesome-app'>/server/plugins/webapp/index.html. This is where the server side "magic" happens. By magic, of course we mean the benefits of using the generate-electrode + server side rendering.</p>
 
 <div class="snippet">
   <pre><code>
@@ -176,11 +176,12 @@ Next, navigate to <'your-awesome-app'>/client/styles/base.styl:</p>
           {{'PREFETCH_BUNDLES'}}
         <'/head'>
         <'body'>
-          <'div class="js-content">{{SSR_CONTENT}}<''/div'>
+          <'div class="js-content">{{'SSR_CONTENT'}}<''/div'>
           <'script'>if (window.webappStart) webappStart();<''/script'>
         <'/body'>
       <'/html'>
     </code></pre>
 </div>
 
-<p></p>
+<p>All of your content will be served into an HTML string and placed in this unassuming <'div class="js-content">{{'SSR_CONTENT'}}<''/div'>. This includes <a href="" class="doc-links">React</a> components and Redux. We use our innovative Electrode module, our <a href="https://github.com/electrode-io/redux-router-engine" class="doc-links"> Redux-React-Engine</a> for this. It's worth repeating: ReduxRouterEngine takes React routes and requests and returns HTML to be rendered by electrode-react-webapp.</p>
+<p>You are now using <a href="#" class="doc-links">Electrode-Server</a>, a NodeJS module that allows you to start up a Hapi server with a single function call, but gives you a lot of flexibility through configurations. This is the baseline functionality of a Hapi web server that you can extend via configuration.</p>
