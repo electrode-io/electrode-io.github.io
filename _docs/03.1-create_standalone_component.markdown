@@ -4,7 +4,7 @@ permalink: docs/create_standalone_component.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-<p>First things first. Let's make our thing... a Thing. By taking some of the very basics we explored in our <a href="#">Quick Start</a>, we want to build a dynamic resource list that is styled, tested, published and capable of being deployed with other deployment software like Azure, Docker and Kubernetes.</p>
+<p>First things first. Let's make our thing... a Thing! By taking some of the very basics we explored in our <a href="#">Quick Start</a>, we want to build a dynamic resource list that is styled, tested, published and capable of being deployed with other deployment software like Azure, Docker and Kubernetes.</p>
 
 <p>Again, we are leveraging <a href="http://yeoman.io/">Yeoman</a> to quick start the creation of our first stand alone component. We will globally install the Electrode <a href="https://github.com/electrode-io/generator-electrode-component" class="doc-links">generator-electrode-component:</a></p>
 
@@ -43,7 +43,7 @@ toplevel: "Getting Started: Intermediate"
       Other Javascript files contained in modules that we will use in this application, including Electrode modules that create your out-the-box Univeresal app.
 
     src
-      Where all our component's source code lives, in their respective files.
+      Where all our component's source code lives, in their respective files. Non-universal apps might normally call this the “client” folder, but since our app code will run both on the client and server, via server side rendering, we call this folder "src".
 
     test
     Test driven development is the WalmartLabs way and critical for successful growth and scaling. All testing code lives in this folder and we will focus on unit testing with Mocha + Enzyme soon.
