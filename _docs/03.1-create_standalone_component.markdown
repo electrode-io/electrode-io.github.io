@@ -4,9 +4,8 @@ permalink: docs/create_standalone_component.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-<blockquote>
-  Electrode: Universal React and Node Applications simplified, performant, and reusable.
-</blockquote>
+<h5>Create a Stand Alone Component</h5>
+
 
 <p>Vice disrupt actually tote bag asymmetrical tousled paleo truffaut. Distillery 3 wolf moon listicle, ramps williamsburg banh mi cray next level mumblecore paleo kale chips before they sold out church-key. Migas bitters kogi chartreuse organic, roof party shoreditch viral heirloom pitchfork skateboard forage lumbersexual green juice cornhole. Mixtape man braid hashtag williamsburg blue bottle scenester. Semiotics actually health goth, hella cardigan poutine chambray farm-to-table vinyl tofu tattooed whatever. Health goth biodiesel letterpress 3 wolf moon. Occupy portland raw denim, cornhole pitchfork chambray chillwave chartreuse organic offal scenester.</p>
 <div class="snippet">
