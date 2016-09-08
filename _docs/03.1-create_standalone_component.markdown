@@ -4,7 +4,7 @@ permalink: docs/create_standalone_component.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-<p>First things first. Let's make our thing... a Thing! By taking some of the very basics we explored in our <a href="#">Quick Start</a>, we want to build a dynamic resource list that is styled, tested, published and capable of being deployed with other deployment software like Azure, Docker and Kubernetes.</p>
+<p>First things first. Let's make our thing... a Thing! In this Getting Started: Intermediate guide, we’ll take some of the basics we explored in our <a href="#">Quick Start</a> and go further. We will make our resource list a dynamic list that is styled, tested, published and capable of being deployed with other deployment software like Azure, Docker and Kubernetes.</p>
 
 <p>Again, we are leveraging <a href="http://yeoman.io/">Yeoman</a> to quick start the creation of our first stand alone component. We will globally install the Electrode <a href="https://github.com/electrode-io/generator-electrode-component" class="doc-links">generator-electrode-component:</a></p>
 
