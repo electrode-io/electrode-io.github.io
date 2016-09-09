@@ -214,4 +214,4 @@ toplevel: "Getting Started: Quick Guide"
   </code></pre>
 </div>
 
-<p>And... you did it! We will build even more in our <a href="#" class="doc-link">Getting Started: Intermediate</a> and cover complex topics like routing, server plugins and other deployment software.</p>
+<p>And... you did it! We will build even more in our <a href="#" class="doc-link">Getting Started: Intermediate</a> and cover complex topics like routing, server plugins and other powerful deployment software.</p>
