@@ -1,0 +1,48 @@
+<div class="nav-docs">
+  {% for section in site.data.nav_docs %}
+    <div class="nav-docs-section">
+      <h3>{{ section.title }}</h3>
+      {% if section.id %}
+        <ul>
+          {% include nav_links.html page_id=section.id %}
+        </ul>
+      {% else %}
+        {% for subsection in section.items %}
+          <h5>{{ subsection.title }}</h5>
+          <ul>
+            {% include nav_links.html page_id=subsection.id %}
+          </ul>
+        {% endfor%}
+      {% endif%}
+    </div>
+  {% endfor %}
+
+
+  <!-- Tips Nav -->
+  {% for section in site.data.nav_tips %}
+    <div class="nav-docs-section">
+      <h3>{{ section.title }}</h3>
+      <ul>
+        {% for item in section.items %}
+          <li>
+            <a href="{{ site.baseurl }}/tips/{{ item.id }}.html"{% if page.id == item.id %} class="active"{% endif %}>{{ item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+
+  <!-- Contributing Nav -->
+  {% for section in site.data.nav_contributing %}
+    <div class="nav-docs-section">
+      <h3>{{ section.title }}</h3>
+      <ul>
+        {% for item in section.items %}
+          <li>
+            <a href="{{ site.baseurl }}/contributing/{{ item.id }}.html"{% if page.id == item.id %} class="active"{% endif %}>{{ item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</div>

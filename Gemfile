@@ -22,3 +22,27 @@ gem "minima"
 # group :jekyll_plugins do
 #   gem "jekyll-github-metadata", "~> 1.0"
 # end
+
+gem 'rake'
+
+# Jekyll extensions
+gem 'jekyll-redirect-from'
+gem 'jekyll-paginate'
+
+# JSON
+gem 'json'
+
+# For `rake watch`
+gem 'rb-fsevent'
+
+# For markdown header cleanup
+gem 'sanitize', '~>2.0'
+
+# Markdown
+gem 'redcarpet'
+
+# Syntax highlighting
+gem 'pygments.rb'
+
+# Avoid having to poll for changes on Windows
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
