@@ -1,0 +1,32 @@
+{% assign page_tokens = page.id | replace_first: '/docs/', '' | split: '-' %}
+{% assign page_ids = page_tokens.first | split: '.' %}
+
+{% assign before = true %}
+{% assign prev = "" %}
+{% assign next = "" %}
+
+{% for doc in site.docs %}
+  {% assign filename = doc.id | replace_first: '/docs/', ''  %}
+  {% assign tokens = filename | split: '-' %}
+  {% assign ids = tokens.first | split: '.' %}
+  {% if ids.first == page_ids.first %}
+
+    {% if page_tokens.first == tokens.first %}
+      {% assign before = false %}
+    {% elsif before == true %}
+      {% assign prev = doc.permalink %}
+    {% elsif next == "" %}
+      {% assign next = doc.permalink %}
+    {% endif %}
+
+  {% endif %}
+{% endfor %}
+
+<div class="docs-prevnext">
+  {% if prev != "" %}
+    <a class="docs-prev" href="{{ site.baseurl }}/{{ prev }}">&larr; Prev</a>
+  {% endif %}
+  {% if next != "" %}
+    <a class="docs-next" href="{{ site.baseurl }}/{{ next }}">Next &rarr;</a>
+  {% endif %}
+</div>

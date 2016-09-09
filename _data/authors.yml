@@ -1,0 +1,42 @@
+# Map of short name to more information. `name` will be used but if you don't
+# want to use your real name, just use whatever. If url is included, your name
+# will be a link to the provided url.
+team:
+  name: The Electrode team
+  url: https://github.com/electrode-io
+benigeri:
+  name: Paul Benigeri
+  url: https://github.com/benigeri
+AlexG92:
+  name: Alex G
+  url: https://github.com/AlexG92
+ananavati:
+  name: Arpan Nanavati
+  url: https://github.com/ananavati
+caoyangs:
+  name: Caoyang Shi
+  url: https://github.com/caoyangs
+jchip:
+  name: Joel Chen
+  url: https://github.com/jchip
+jspears:
+  name: Justin Spears
+  url: https://github.com/jspears
+mdeverkonda:
+  name: Madhav Deverkonda
+  url: https://github.com/mdeverkonda
+NicholasDunham:
+  name: Nicholas Dunham
+  url: https://github.com/NicholasDunham
+raydecastro:
+  name: Ray de Castro
+  url: https://github.com/raydecastro
+tiffine-koch:
+  name: Tiffine Koch
+  url: https://github.com/tiffine-koch
+walkie74:
+  name: Shavon Walker
+  url: https://github.com/walkie74
+melophonic:
+  name: Christopher McMahon
+  url: https://github.com/melophonic
