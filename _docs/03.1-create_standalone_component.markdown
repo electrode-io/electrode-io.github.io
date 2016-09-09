@@ -4,36 +4,62 @@ permalink: docs/create_standalone_component.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-<h5>Create a Stand Alone Component</h5>
+<p>First things first. Let's make our thing... a Thing! In this Getting Started: Intermediate guide, we’ll take some of the basics we explored in our <a href="#">Quick Start</a> and go further. We will make our resource list a dynamic list that is styled, tested, published and capable of being deployed with other deployment software like Azure, Docker and Kubernetes.</p>
 
+<p>Again, we are leveraging <a href="http://yeoman.io/">Yeoman</a> to quick start the creation of our first stand alone component. We will globally install the Electrode <a href="https://github.com/electrode-io/generator-electrode-component" class="doc-links">generator-electrode-component:</a></p>
 
-<p>Vice disrupt actually tote bag asymmetrical tousled paleo truffaut. Distillery 3 wolf moon listicle, ramps williamsburg banh mi cray next level mumblecore paleo kale chips before they sold out church-key. Migas bitters kogi chartreuse organic, roof party shoreditch viral heirloom pitchfork skateboard forage lumbersexual green juice cornhole. Mixtape man braid hashtag williamsburg blue bottle scenester. Semiotics actually health goth, hella cardigan poutine chambray farm-to-table vinyl tofu tattooed whatever. Health goth biodiesel letterpress 3 wolf moon. Occupy portland raw denim, cornhole pitchfork chambray chillwave chartreuse organic offal scenester.</p>
 <div class="snippet">
   <pre><code>
-    // server/app.js
-    const reduxRouterEngine = require("electrode-redux-router-engine");
-    const Promise = require("bluebird");
-
-    const routes = require("../client/routes");
-    const boostrapApp = require("../client/actions").bootstrapApp;
-    const configureStore = require("../client/store").configureStore;
-
-    module.exports = (req) => {
-      if (!req.server.app.routesEngine) {
-        // reduxRouterEngine takes routes and a callback to initialize a store asynchronously.
-        req.server.app.routesEngine = reduxRouterEngine(routes,  () => {
-          const store = configureStore();
-
-          return Promise.all([
-            store.dispatch(boostrapApp())
-            // dispatch any other asynchronous actions here
-          ]).then( () => {
-            return store;
-          });
-        });
-      }
-
-      return req.server.app.routesEngine(req);
-    };
+    npm install -g generator-electrode-component
   </code></pre>
 </div>
+
+<p class="body-text">Then <a href="https://github.com/electrode-io/generator-electrode-component" class="doc-links">generate</a> your new component:</p>
+
+<div class="snippet">
+  <pre><code>
+    yo electrode-component
+  </code></pre>
+</div>
+
+<p class="body-text">Fill out the Electrode generator-electrode-component with your information.</p>
+
+<p class="body-text">Run one simple command. This one will load the component in a demo showcase. We have the power of seeing the demo work in an abstracted environment:</p>
+
+<div class="snippet">
+  <pre><code>
+    gulp demo
+  </code></pre>
+</div>
+
+<p class="body-text">Open the application up with your favorite text editor. We will start with a fast high level view of the most important files in your component: </p>
+
+<div class="snippet">
+  <pre><code>
+    demo
+      A live demo of your component. You can play with it's integration in real time. This folder contains the .example files which you can customize to demonstrate the default state of your components when mounted in the playground.
+
+    node_modules
+      Other Javascript files contained in modules that we will use in this application, including Electrode modules that create your out-the-box Univeresal app.
+
+    src
+      Where all our component's source code lives, in their respective files. Non-universal apps might normally call this the “client” folder, but since our app code will run both on the client and server, via server side rendering, we call this folder "src".
+
+    test
+    Test driven development is the WalmartLabs way and critical for successful growth and scaling. All testing code lives in this folder and we will focus on unit testing with Mocha + Enzyme soon.
+      |_client
+        |_components
+          |_helpers
+        |_.eslintrc
+          A configuration file that sets our custom linting rules and basic syntax validation. In this case it is extended from the electrode-archetype-react-component.
+
+    components.json
+      This JSON file is automatically generated to described and bootstrap your component so that the playground/explore can mount it in your component library.
+
+    gulpfile.js
+      Gulp is a javascript build tool that lets us automate tasks and the gulpfile.js is where define those tasks. We like it's simple syntax and the increase in productivity from using an intuitive task runner.
+
+  </code></pre>
+</div>
+
+<p class="body-text">We are going to quickly and carefully add the code below to scaffold out our Resource List and focus on the capabilites of yo generater-electrode-component. Navigate to <'your-awesome-component'>/client/components/home.jsx:</p>
