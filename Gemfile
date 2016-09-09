@@ -46,3 +46,5 @@ gem 'pygments.rb'
 
 # Avoid having to poll for changes on Windows
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+
+gem 'bourbon'

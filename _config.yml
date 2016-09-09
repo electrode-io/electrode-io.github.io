@@ -74,6 +74,7 @@ sass:
 gems:
 - jekyll-redirect-from
 - jekyll-paginate
+- bourbon
 react_version: 15.3.1
 react_hashes:
   dev: gS+zau+tpUQYisQ0pOWmfNOfcczNoZQjeQ6+5jOgVqV1WBYqkIbdqpay3VuCHQjt
