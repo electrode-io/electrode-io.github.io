@@ -163,6 +163,7 @@ YourAwesomeComponent.defaultProps = {
 <p class="body-text">Create a file titled:
 `<'your-awesome-component'>/src/components/render-friend.jsx`. Copy, paste and save the code below into this file:</p>
 
+{% raw  %}
 ```
     import React from 'react';
 
@@ -181,7 +182,7 @@ YourAwesomeComponent.defaultProps = {
       const classes = !!partyTime ? 'friend party' : 'friend';
 
       return (
-        <div className={classes} style={{backgroundImage: `url(${imageMap[friend]})`/\}\}/>
+          <div className={classes} style={{backgroundImage: `url(${imageMap[friend]})`}} %}>
           {!!partyTime && <PartyOn />}
         </div>
       )
@@ -196,6 +197,7 @@ YourAwesomeComponent.defaultProps = {
 
     export default RenderFriend;
 ```
+{% endraw %}
 
 
 <p class="body-text">Create a file titled:
