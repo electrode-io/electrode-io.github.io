@@ -75,16 +75,6 @@ gems:
 - jekyll-redirect-from
 - jekyll-paginate
 - bourbon
-react_version: 15.3.1
-react_hashes:
-  dev: gS+zau+tpUQYisQ0pOWmfNOfcczNoZQjeQ6+5jOgVqV1WBYqkIbdqpay3VuCHQjt
-  prod: GjSRThJn3fjCmKim4Jou04Ax7vvKfk76xSCKUo7/V70VNIlidvZd3ZnT9rtJk0KM
-  addons_dev: 37FL10I5CNyIhpG9UrOeUrUKONP5CUt3PYHxWz9Eo4kYWS7weaFzDRP7BxRfhB75
-  addons_prod: hSlojvw2moZ49rKg6U9wW83sJi7QnWC6nB53jlsGy5hmltJC6ET/cRRKzMifYEg5
-  dom_dev: yMyOXveaWIIfHWhBZNUrKSPQCw+BWRGucJIdsQeltkvBNDrWXKo+jKVKyx6hH/5r
-  dom_prod: 3AR/0xGUlR37VpbeHbKQhvizC4T8sNTU8t5GS9JC/4odeRePZuPYl5Pyv/zTeSd8
-  dom_server_dev: sPg6+OzdWmnH1aArppe66vtLc7tZ2gxh5KxXoZFHAxZoquTi4J71PHASGmv7meE1
-  dom_server_prod: L4CScwloTXP7xdPmmp3KRAKqASCN8hQpjM6DsrAyCl4K8RXi8Ig+9i0X6k8AyfM9
 
 collections:
   docs:
