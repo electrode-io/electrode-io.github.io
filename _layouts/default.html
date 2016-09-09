@@ -1,22 +1,108 @@
-{% include header.html %}
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{{ page.title }} | Electrode</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:title" content="{{ page.title }} | Electrode">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://electrode-io.github.io/{{ page.url }}">
+  <meta property="og:image" content="https://electrode-io.github.io/img/logo_og.png">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="fb:app_id" content="623268441017527">
 
-<div class="row">
-  <div class="col-md-4">
-    <h1 class="page-heading">Navigation</h1>
-    <ul class="post-list">
-      {% for doc in site.docs %}
-        <li>
-          <h2>
-            <a class="post-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title | escape }}</a>
-          </h2>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-  <div class="col-md-8">
-    <h1> {{ page.title }} </h1>
+  <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}{{ site.baseurl }}/feed.xml">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/codemirror.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/react.css">
+
+  <script src="//use.typekit.net/vqa1hcx.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <!--[if lte IE 8]>
+  <script src="{{ site.baseurl }}/js/html5shiv.min.js"></script>
+  <script src="{{ site.baseurl }}/js/es5-shim.min.js"></script>
+  <script src="{{ site.baseurl }}/js/es5-sham.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+  <script src="{{ site.baseurl }}/js/codemirror.js"></script>
+  <script src="{{ site.baseurl }}/js/javascript.js"></script>
+  <script src="{{ site.baseurl }}/js/xml.js"></script>
+  <script src="{{ site.baseurl }}/js/jsx.js"></script>
+  <script src="{{ site.baseurl }}/js/react.js"></script>
+  <script src="{{ site.baseurl }}/js/react-dom.js"></script>
+  <script src="{{ site.baseurl }}/js/babel-browser.min.js"></script>
+  <!--
+  <script src="{{ site.baseurl }}/js/live_editor.js"></script>
+  -->
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="nav-main">
+      <div class="wrap">
+        <a class="nav-home" href="{{ site.baseurl }}/index.html">
+          <img class="nav-logo" src="{{ site.baseurl }}/img/logo.svg" width="38" height="38">
+          Electrode
+        </a>
+        <ul class="nav-site nav-site-internal">
+          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>Docs</a></li>
+          <!--<li><a href="{{ site.baseurl }}/support.html"{% if page.id == 'support' %} class="active"{% endif %}>Support</a></li>-->
+          <!--<li><a href="{{ site.baseurl }}/downloads.html"{% if page.id == 'downloads' %} class="active"{% endif %}>Download</a></li>-->
+          <li><a href="{{ site.baseurl }}/blog/"{% if page.sectionid == 'blog' %} class="active"{% endif %}>Blog</a></li>
+          <li>
+            <!--
+            TODO: use static search?
+            <input id="algolia-doc-search" type="text" placeholder="Search docs..." />
+            -->
+          </li>
+        </ul>
+
+        <ul class="nav-site nav-site-external">
+          <li><a href="https://github.com/electrode-io">GitHub</a></li>
+          <li><a href="http://walmartlabs.com">WalmartLabs</a></li>
+        </ul>
+      </div>
+    </div>
+
+    {% if page.id == 'home' %}
+    <div class="hero">
+      <div class="wrap">
+        <div class="text"><strong>Electrode</strong></div>
+        <div class="minitext">
+          {{ site.description }}
+        </div>
+
+        <div class="buttons-unit">
+          <a href="{{ site.baseurl }}/docs/getting-started.html" class="button">Get Started</a>
+          <!--<a href="{{ site.baseurl }}/downloads.html" class="button">Download Electrode v{{site.react_version}}</a>-->
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
     {{ content }}
-  </div>
-</div>
 
-{% include footer.html %}
+    <footer class="wrap">
+      <div class="left">
+        <a href="{{ site.baseurl }}/acknowledgements.html">Acknowledgements</a>
+      </div>
+      <div class="right">
+        &copy; 2013&ndash;{{ site.time | date: '%Y' }} WalmartLabs<br>
+        TODO: license.
+      </div>
+    </footer>
+  </div>
+  <div id="fb-root"></div>
+
+  <!--
+    TODO: analytics js, etc.
+  -->
+</body>
+</html>
