@@ -4,4 +4,8 @@ permalink: docs/requirements.html
 toplevel: "Getting Started: Quick Guide"
 ---
 
-<p class="body-text">First, let's quickly check your development environment. You will need to have at least <a href="https://nodejs.org/en/" class="doc-links">NodeJS</a> v4.2 installed in your machine.</p>
+<p class="body-text">First, let's quickly check your development environment. You will need to have at least <a href="https://nodejs.org/en/" class="doc-links">NodeJS</a> v4.2 installed in your machine. You will also need to have the text editor of your choice downloaded with command line tools installed.</p>
+
+<p>To generate and deploy your awesome Electrode app in under five minutes, you will need to already have existing <a href="https://signup.heroku.com/dc">Heroku</a> and <a href="https://github.com/">Github</a> accounts with the respective CLI tools installed in your machine and login capability.</p>
+
+<p>Ready? Let's <a href="#">build</a>.</p>
