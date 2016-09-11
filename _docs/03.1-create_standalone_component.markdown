@@ -8,39 +8,26 @@ toplevel: "Getting Started: Intermediate"
 
 <p>Again, we are leveraging <a href="http://yeoman.io/">Yeoman</a> to quick start the creation of our first stand alone component. We will globally install the Electrode <a href="https://github.com/electrode-io/generator-electrode-component" class="doc-links">generator-electrode-component:</a></p>
 
-<div class="snippet">
-  <pre><code>
-    npm install -g generator-electrode-component
-  </code></pre>
-</div>
+```bash
+$ npm install -g generator-electrode-component
+```
 
 <p class="body-text">Then <a href="https://github.com/electrode-io/generator-electrode-component" class="doc-links">generate</a> your new component:</p>
 
-<div class="snippet">
-  <pre><code>
-    yo electrode-component
-  </code></pre>
-</div>
+```bash
+$ yo electrode-component
+```
 
 <p class="body-text">Fill out the Electrode generator-electrode-component with your information.</p>
 
-<p class="body-text">Run one simple command. This one will load the component in a demo showcase. We have the power of seeing the demo work in an abstracted environment:</p>
-
-<div class="snippet">
-  <pre><code>
-    gulp demo
-  </code></pre>
-</div>
-
 <p class="body-text">Open the application up with your favorite text editor. We will start with a fast high level view of the most important files in your component: </p>
 
-<div class="snippet">
-  <pre><code>
+```
     demo
       A live demo of your component. You can play with it's integration in real time. This folder contains the .example files which you can customize to demonstrate the default state of your components when mounted in the playground.
 
     node_modules
-      Other Javascript files contained in modules that we will use in this application, including Electrode modules that create your out-the-box Univeresal app.
+      Other Javascript files contained in modules that we will use in this application, including Electrode modules that create your out-the-box Universal app.
 
     src
       Where all our component's source code lives, in their respective files. Non-universal apps might normally call this the “client” folder, but since our app code will run both on the client and server, via server side rendering, we call this folder "src".
@@ -57,9 +44,256 @@ toplevel: "Getting Started: Intermediate"
       This JSON file is automatically generated to described and bootstrap your component so that the playground/explore can mount it in your component library.
 
     gulpfile.js
-      Gulp is a javascript build tool that lets us automate tasks and the gulpfile.js is where define those tasks. We like it's simple syntax and the increase in productivity from using an intuitive task runner.
+      Gulp is a javascript build tool that lets us automate tasks and the gulpfile.js is where we define those tasks. We like it's simple syntax and the increased productivity from using an intuitive task runner.
 
-  </code></pre>
-</div>
+```
 
-<p class="body-text">We are going to quickly and carefully add the code below to scaffold out our Resource List and focus on the capabilites of yo generater-electrode-component. Navigate to <'your-awesome-component'>/client/components/home.jsx:</p>
+<p class="body-text">We are going to quickly and carefully add the code below to scaffold out our Resource List and focus on the capabilities of yo generator-electrode-component. Navigate to `<'your-awesome-component'>/demo/examples/your-awesome-component.example`. Between your component tag, copy, paste and save the code below into this file:</p>
+
+`<YourAwesomeComponent` insert code below here `/>`.
+
+```
+ourFriends={[
+  'electrode',
+  //un-comment the lines below to invite our friends!
+  //'React',
+  //'Redux',
+  //'Webpack',
+  //'hapi'
+  ]}
+```
+
+<p class="body-text">Navigate to
+`<'your-awesome-component'>/demo/examples` folder. Create a file titled:
+`<'your-awesome-component'>/demo/examples/render-friend.example`. Copy, paste and save the code below into this file:</p>
+
+```
+<RenderFriend />
+```
+
+<p class="body-text">Next, let's add a short snippet to <'your-awesome-component'>/demo/examples/demo.jsx. Copy, paste and save the code below into this file, under `title: "YourAwesomeComponent" object`:</p>
+
+```javascript
+{
+  title: "renderFriend",
+  examples: [
+    {
+      type: "playground",
+      code: require("raw!./examples/render-friend.example"),
+      noRender: true
+    }
+  ]
+}
+
+```
+<p class="body-text">Don't forget to add a comma after `TestComponent`! It should now look like this:</p>
+
+```javascript
+const components = [
+  {
+    title: "TestComponent",
+    examples: [
+      {
+        type: "playground",
+        code: require("raw!./examples/test-component.example"),
+        noRender: true
+      }
+    ]
+  },
+  {
+    title: "renderFriend",
+    examples: [
+      {
+        type: "playground",
+        code: require("raw!./examples/render-friend.example"),
+        noRender: true
+      }
+    ]
+  }
+];
+
+```
+<p class="body-text">The fun part! We will be building out `your-awesome-component.jsx` and adding a two sub-components (or dumb components). Trust me, it will be worth it!</p>
+
+In your `<'your-awesome-component'>/src/components/your-awesome-component.jsx`, delete what it inside and copy, paste and save the code below into this file. Change all references from the literal 'your awesome component' to your actual component name:</p>
+
+```javascript
+import React, { Component, PropTypes } from "react";
+
+import styles from "../styles/your-awesome-component.css";
+import RenderFriend from "./render-friend";
+
+export default class YourAwesomeComponent extends React.Component {
+
+  renderFriends(friends) {
+    const partyTime = friends.length === 5;
+    return friends.map((friend, i, arr) => <RenderFriend friend={friend} partyTime={partyTime}/>);
+  }
+
+  render() {
+    const { ourFriends } = this.props;
+
+    return (
+      <div>
+        <div><p>One is not a party! Un-comment our friends in the playground above to invite them to party!</p></div>
+        <div className="funroom">
+          { this.renderFriends(ourFriends) }
+        </div>
+      </div>
+    );
+  }
+}
+
+YourAwesomeComponent.displayName = "YourAwesomeComponent";
+YourAwesomeComponent.PropTypes = {
+  ourBestFriends: PropTypes.array
+};
+YourAwesomeComponent.defaultProps = {
+  ourBestFriends: []
+};
+
+```
+
+<p class="body-text">Create a file titled:
+`<'your-awesome-component'>/src/components/render-friend.jsx`. Copy, paste and save the code below into this file:</p>
+
+{% raw  %}
+```javascript
+    import React from 'react';
+
+    import PartyOn from "./party-on";
+
+    const imageMap = {
+      'React': 'http://daynin.github.io/clojurescript-presentation/img/react-logo.png',
+      'Redux': 'https://raw.githubusercontent.com/reactjs/redux/master/logo/logo.png',
+      'Webpack': 'http://freevector.co/wp-content/uploads/2014/04/webpack.png',
+      'hapi': 'http://hapijs.com/public/img/logo.svg',
+      'electrode': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emoji_u26a1.svg/2000px-Emoji_u26a1.svg.png'
+    }
+
+    const RenderFriend = ({friend, partyTime}) => {
+
+      const classes = !!partyTime ? 'friend party' : 'friend';
+
+      return (
+          <div className={classes} style={{backgroundImage: `url(${imageMap[friend]})`}} %}>
+          {!!partyTime && <PartyOn />}
+        </div>
+      )
+    };
+
+    RenderFriend.propTypes = {
+      friend: React.PropTypes.string
+    };
+    RenderFriend.defaultProps = {
+      friend: 'electrode'
+    };
+
+    export default RenderFriend;
+```
+{% endraw %}
+
+
+<p class="body-text">Create a file titled:
+`<'your-awesome-component'>/src/components/party-on.jsx`. Copy, paste and save the code below into this file:</p>
+
+```javascript
+import React from 'react';
+
+const images = [
+  { attire: 'kazoo', url: "https://shareicon.net/data/128x128/2016/07/27/802813_birthday_512x512.png" },
+  { attire: 'hat', url: "http://icons.iconarchive.com/icons/sonya/swarm/256/Party-Hat-icon.png" }
+];
+
+const PartyOn = () => (
+    <div>
+      {images.map((image) => <img src={image.url} alt={image.attire} className={image.attire+' party'}/>)}
+    </div>
+  )
+
+export default PartyOn;
+
+```
+
+<p>In your `<'your-awesome-component'>/src/style/your-awesome-component.css`, delete what it inside and copy, paste and save the code below into this file:</p>
+
+```css
+@keyframes tada {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  10%, 20% {
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%, 50%, 70%, 90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%, 60%, 80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.friend {
+  width: 6rem;
+  height: 6rem;
+  margin: 3rem;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #efefef;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  animation-delay: .25s;
+  animation-name: tada;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.party {
+  animation-iteration-count: infinite;
+}
+
+.hat {
+  position: absolute;
+  top: -67px;
+  width: 105px;
+  left: -48px;
+  transform: rotate(-41deg);
+  animation-delay: .5s;
+}
+
+.kazoo {
+  position: absolute;
+  top: -2px;
+  width: 65px;
+  left: 77px;
+  transform: rotate(-15deg);
+  animation-delay: 1s;
+}
+
+.blur {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+```
+
+<p>Last edit! In your `<'your-awesome-component'>index.js`, add the line below:</p>
+
+```javascript
+export { default as RenderFriend } from "./components/render-friend";
+```
+
+<p>Now run it and explore the live demo!</p>
+
+```bash
+$ gulp demo
+```
+
+<p>Walmartlabs believes that testing is critical to writing great, high performant code. This includes unit testing at both the component and application level. For your component, we are using <a href="https://mochajs.org/">Mocha</a>, a Javascript testing framework that is perfect for running async tests, with <a href="http://airbnb.io/enzyme/docs/guides/mocha.html">Enzyme</a>, airbnb's awesome testing utility for React.</p>
+
+```bash
+$ gulp check
+```
