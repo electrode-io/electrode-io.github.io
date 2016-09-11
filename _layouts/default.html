@@ -18,7 +18,6 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
   <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
-  <!--link rel="stylesheet" href="{{ site.baseurl }}/css/codemirror.css"-->
   <link rel="stylesheet" href="{{ site.baseurl }}/css/electrode.css">
 
   <script src="//use.typekit.net/vqa1hcx.js"></script>
@@ -29,17 +28,7 @@
   <script src="{{ site.baseurl }}/js/es5-shim.min.js"></script>
   <script src="{{ site.baseurl }}/js/es5-sham.min.js"></script>
   <![endif]-->
-  <!--
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
-  <script src="{{ site.baseurl }}/js/codemirror.js"></script>
-  <script src="{{ site.baseurl }}/js/javascript.js"></script>
-  <script src="{{ site.baseurl }}/js/xml.js"></script>
-  <script src="{{ site.baseurl }}/js/jsx.js"></script>
-  <script src="{{ site.baseurl }}/js/react.js"></script>
-  <script src="{{ site.baseurl }}/js/react-dom.js"></script>
-  <script src="{{ site.baseurl }}/js/babel-browser.min.js"></script>
-  <script src="{{ site.baseurl }}/js/live_editor.js"></script>
-  -->
+
 </head>
 <body>
 
@@ -54,14 +43,7 @@
         <ul class="nav-site nav-site-internal">
           <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>Docs</a></li>
           <!--<li><a href="{{ site.baseurl }}/support.html"{% if page.id == 'support' %} class="active"{% endif %}>Support</a></li>-->
-          <!--<li><a href="{{ site.baseurl }}/downloads.html"{% if page.id == 'downloads' %} class="active"{% endif %}>Download</a></li>-->
           <li><a href="{{ site.baseurl }}/blog/"{% if page.sectionid == 'blog' %} class="active"{% endif %}>Blog</a></li>
-          <li>
-            <!--
-            TODO: use static search?
-            <input id="algolia-doc-search" type="text" placeholder="Search docs..." />
-            -->
-          </li>
         </ul>
 
         <ul class="nav-site nav-site-external">
@@ -81,7 +63,6 @@
 
         <div class="buttons-unit">
           <a href="{{ site.baseurl }}/docs/getting-started.html" class="button">Get Started</a>
-          <!--<a href="{{ site.baseurl }}/downloads.html" class="button">Download Electrode v{{site.react_version}}</a>-->
         </div>
       </div>
     </div>
