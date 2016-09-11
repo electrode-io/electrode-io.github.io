@@ -6,7 +6,7 @@ toplevel: "Stand Alone Modules"
 
 A React component wrapper for optionally skipping SSR.
 
-{% include module_usage.md moduleId="skip-server-render" %}
+{% include module_usage.md moduleId="above-the-fold-render" %}
 
 By default, the `SkipServerRender` component does nothing and simply returns the child component.
 You can tell the component to skip server rendering either by passing a prop `skip={true}` or
