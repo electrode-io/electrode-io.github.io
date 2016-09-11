@@ -23,7 +23,7 @@ gem "minima"
 #   gem "jekyll-github-metadata", "~> 1.0"
 # end
 
-gem 'rake'
+gem 'jgd'
 
 # Jekyll extensions
 gem 'jekyll-redirect-from'
