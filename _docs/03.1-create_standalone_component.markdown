@@ -8,26 +8,21 @@ toplevel: "Getting Started: Intermediate"
 
 <p>Again, we are leveraging <a href="http://yeoman.io/">Yeoman</a> to quick start the creation of our first stand alone component. We will globally install the Electrode <a href="https://github.com/electrode-io/generator-electrode-component" class="doc-links">generator-electrode-component:</a></p>
 
-<div class="snippet">
-  <pre><code>
-    npm install -g generator-electrode-component
-  </code></pre>
-</div>
+```bash
+$ npm install -g generator-electrode-component
+```
 
 <p class="body-text">Then <a href="https://github.com/electrode-io/generator-electrode-component" class="doc-links">generate</a> your new component:</p>
 
-<div class="snippet">
-  <pre><code>
-    yo electrode-component
-  </code></pre>
-</div>
+```bash
+$ yo electrode-component
+```
 
 <p class="body-text">Fill out the Electrode generator-electrode-component with your information.</p>
 
 <p class="body-text">Open the application up with your favorite text editor. We will start with a fast high level view of the most important files in your component: </p>
 
-<div class="snippet">
-  <pre><code>
+```
     demo
       A live demo of your component. You can play with it's integration in real time. This folder contains the .example files which you can customize to demonstrate the default state of your components when mounted in the playground.
 
@@ -51,8 +46,7 @@ toplevel: "Getting Started: Intermediate"
     gulpfile.js
       Gulp is a javascript build tool that lets us automate tasks and the gulpfile.js is where we define those tasks. We like it's simple syntax and the increased productivity from using an intuitive task runner.
 
-  </code></pre>
-</div>
+```
 
 <p class="body-text">We are going to quickly and carefully add the code below to scaffold out our Resource List and focus on the capabilites of yo generater-electrode-component. Navigate to `<'your-awesome-component'>/demo/examples/your-awesome-component.example`. Between your component tag, copy, paste and save the code below into this file:</p>
 
@@ -79,7 +73,7 @@ ourFriends={[
 
 <p class="body-text">Next, let's add a short snippet to <'your-awesome-component'>/demo/examples/demo.jsx. Copy, paste and save the code below into this file, under `title: "YourAwesomeComponent" object`:</p>
 
-```
+```javascript
 {
   title: "renderFriend",
   examples: [
@@ -94,7 +88,7 @@ ourFriends={[
 ```
 <p class="body-text">Don't forget to add a comma after `TestComponent`! It should now look like this:</p>
 
-```
+```javascript
 const components = [
   {
     title: "TestComponent",
@@ -123,7 +117,7 @@ const components = [
 
 In your `<'your-awesome-component'>/src/components/your-awesome-component.jsx`, delete what it inside and copy, paste and save the code below into this file. Change all references from the literal 'your awesome component' to your actual component name:</p>
 
-```
+```javascript
 import React, { Component, PropTypes } from "react";
 
 import styles from "../styles/your-awesome-component.css";
@@ -164,7 +158,7 @@ YourAwesomeComponent.defaultProps = {
 `<'your-awesome-component'>/src/components/render-friend.jsx`. Copy, paste and save the code below into this file:</p>
 
 {% raw  %}
-```
+```javascript
     import React from 'react';
 
     import PartyOn from "./party-on";
@@ -203,7 +197,7 @@ YourAwesomeComponent.defaultProps = {
 <p class="body-text">Create a file titled:
 `<'your-awesome-component'>/src/components/party-on.jsx`. Copy, paste and save the code below into this file:</p>
 
-```
+```javascript
 import React from 'react';
 
 const images = [
@@ -223,7 +217,7 @@ export default PartyOn;
 
 <p>In your `<'your-awesome-component'>/src/style/your-awesome-component.css`, delete what it inside and copy, paste and save the code below into this file:</p>
 
-```
+```css
 @keyframes tada {
   from {
     transform: scale3d(1, 1, 1);
@@ -288,20 +282,18 @@ export default PartyOn;
 
 <p>Last edit! In your `<'your-awesome-component'>index.js`, add the line below:</p>
 
-```
+```javascript
 export { default as RenderFriend } from "./components/render-friend";
 ```
 
 <p>Now run it and explore the live demo!</p>
 
-```
-gulp demo
+```bash
+$ gulp demo
 ```
 
 <p>Walmartlabs believes that testing is critical to writing great, high performant code. This includes unit testing at both the component and application level. For your component, we are using <a href="https://mochajs.org/">Mocha</a>, a Javascript testing framework that is perfect for running async tests, with <a href="http://airbnb.io/enzyme/docs/guides/mocha.html">Enzyme</a>, airbnb's awesome testing utility for React.</p>
 
-<div class="snippet">
-  <pre><code>
-    gulp check
-  </code></pre>
-</div>
+```bash
+$ gulp check
+```
