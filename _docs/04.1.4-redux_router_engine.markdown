@@ -4,4 +4,87 @@ permalink: docs/redux_router_engine.html
 toplevel: "Stand Alone Modules"
 ---
 
-test2
+An electrode routing and rendering engine for `react-router` + `redux` which follows the standard [Redux server rendering and bootstrapping pattern](http://redux.js.org/docs/recipes/ServerRendering.html).
+
+{% include module_usage.md moduleId="redux-router-engine" %}
+
+In order to wire up an electrode/Redux app for server-side rendering, you need to configure the [`electrode-react-webapp`](https://github.com/electrode-io/electrode-react-webapp) Hapi plugin.
+
+#### Example `config/default.json` configuration
+```
+...
+"electrode-react-webapp": {
+  "paths": {
+    "/{args*}": {
+      "view": "index",
+      "content": {
+        "module": "./server/app"
+      }
+    }
+  }
+}
+...
+```
+
+We've configured `electrode-react-webapp` to use `./server/app` to render all routes (`"/{args*}"`) on the server side. To wire up the routes for rendering with `reduxRouterEngine`, we need to set `req.server.app.routesEngine` to `reduxRouterEngine`.
+
+```javascript
+// server/app.js
+const reduxRouterEngine = require("electrode-redux-router-engine");
+const Promise = require("bluebird");
+
+const routes = require("../client/routes");
+const boostrapApp = require("../client/actions").bootstrapApp;
+const configureStore = require("../client/store").configureStore;
+
+module.exports = (req) => {
+  if (!req.server.app.routesEngine) {
+    // reduxRouterEngine takes routes and a callback to initialize a store asynchronously.
+    req.server.app.routesEngine = reduxRouterEngine(routes,  () => {
+      const store = configureStore();
+
+      return Promise.all([
+        store.dispatch(boostrapApp())
+        // dispatch any other asynchronous actions here
+      ]).then( () => {
+        return store;
+      });
+    });
+  }
+
+  return req.server.app.routesEngine(req);
+};
+```
+
+### `reduxRouterEngine(routes, fn)`
+
+ReduxRouterEngine takes React routes and requests and returns HTML to be rendered by electrode-react-webapp.
+
+#### `routes`
+
+React element containing application routes.
+
+```javascript
+<Route path="/test" component={Page}>
+ <IndexRoute component={Home}/>
+ <Redirect from="source" to="target" />
+</Route>
+```
+
+#### `fn`
+
+A callback which returns a promise which resolves to a store.
+
+```javascript
+{
+  const store = configureStore();
+
+  return Promise.all([
+    store.dispatch(boostrapApp())
+    // dispatch any other asynchronous actions here
+  ]).then( () => {
+    return store;
+  });
+}
+```
+This is the pattern for using [redux asynchronous actions](http://redux.js.org/docs/advanced/AsyncActions.html).
