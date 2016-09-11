@@ -3,3 +3,5 @@ title:  "Build a Server Plugin"
 permalink: docs/build_server_plugin.html
 toplevel: "Getting Started: Intermediate"
 ---
+
+test2
