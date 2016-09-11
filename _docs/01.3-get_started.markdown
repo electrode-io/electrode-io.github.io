@@ -4,4 +4,4 @@ permalink: docs/get_started.html
 toplevel: "Overview"
 ---
 
-Use our [Getting Started: Quick Guide](quick_guide.html) to start building now.
+Use our [Getting Started: Quick Guide](requirements.html) to start building now.
