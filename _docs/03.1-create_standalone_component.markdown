@@ -48,7 +48,7 @@ $ yo electrode-component
 
 ```
 
-<p class="body-text">We are going to quickly and carefully add the code below to scaffold out our Resource List and focus on the capabilites of yo generater-electrode-component. Navigate to `<'your-awesome-component'>/demo/examples/your-awesome-component.example`. Between your component tag, copy, paste and save the code below into this file:</p>
+<p class="body-text">We are going to quickly and carefully add the code below to scaffold out our Resource List and focus on the capabilities of yo generator-electrode-component. Navigate to `<'your-awesome-component'>/demo/examples/your-awesome-component.example`. Between your component tag, copy, paste and save the code below into this file:</p>
 
 `<YourAwesomeComponent` insert code below here `/>`.
 
