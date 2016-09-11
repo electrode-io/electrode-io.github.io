@@ -2,5 +2,5 @@
 # want to use your real name, just use whatever. If url is included, your name
 # will be a link to the provided url.
 team:
-  name: The Electrode team
-  url: https://github.com/electrode-io
+  name: The Electrode Team
+  url: https://github.com/orgs/electrode-io/people
