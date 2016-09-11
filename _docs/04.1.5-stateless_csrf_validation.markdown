@@ -6,11 +6,11 @@ toplevel: "Stand Alone Modules"
 
 The [electrode-csrf-jwt](https://raw.githubusercontent.com/melophonic/electrode-csrf-jwt/) plugin that enables stateless CSRF protection using [JWT](https://github.com/auth0/node-jsonwebtoken) in Electrode, Express, or Hapi applications.
 
-## Why do we need this module?
+### Why do we need this module?
 
 CSRF protection is an important security feature, but in systems which don't have backend session persistence, doing CSRF token validation is tricky. Stateless CSRF support addresses this need.
 
-## How do we validate requests?
+### How do we validate requests?
 
 ***Double JWT CSRF tokens***
 
@@ -29,16 +29,9 @@ On server side, both tokens are received, decoded, and validated to make sure th
 
 Disadvantage: relies on client making all request through AJAX.
 
-## Install
+{% include module_usage.md moduleId="electrode-csrf-jwt" express=true hapi=true %}
 
-```bash
-$ npm install electrode-csrf-jwt
-```
-> You can use the `--save` option to update `package.json`
-
-## Usage
-
-### Options
+#### Options
 
 `options`:
 
@@ -57,6 +50,8 @@ Others are optional and follow the [same usage as jsonwebtoken](https://github.c
 * `noTimestamp`
 * `headers`
 
+## Platforms
+
 This module can be used with either [Electrode](#electrode), [Express](#express), or [Hapi](#hapi).
 
 ### Electrode
@@ -70,18 +65,6 @@ This module can be used with either [Electrode](#electrode), [Express](#express)
       "options": {
         "secret": "shhhhh",
         "expiresIn": 60
-      }
-    },
-    "webapp": {
-      "module": "./server/plugins/webapp",
-      "options": {
-        "paths": {
-          "/{args*}": {
-            "content": {
-              "module": "./server/views/index-view"
-            }
-          }
-        }
       }
     }
   }
