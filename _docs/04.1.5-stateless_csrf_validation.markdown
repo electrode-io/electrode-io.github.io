@@ -61,6 +61,8 @@ This module can be used with either [Electrode](#electrode), [Express](#express)
 
 ### Electrode
 
+> [Click here](https://github.com/electrode-io/electrode-boilerplate-universal-react-node) to see a working example Electrode application with this module
+
 #### Example `config/default.json` configuration
 
 ```json
@@ -90,6 +92,8 @@ This module can be used with either [Electrode](#electrode), [Express](#express)
 
 ### Express
 
+> [Click here](https://github.com/electrode-io/express-example-with-standalone-electrode-modules) to see a working example Express application with this module
+
 #### Example `app.js` configuration
 
 ```js
@@ -107,6 +111,8 @@ app.use(csrfMiddleware(options));
 ```
 
 ### Hapi
+
+> [Click here](https://github.com/electrode-io/https://github.com/electrode-io/hapijs-example-with-standalone-electrode-modules) to see a working example Hapi application with this module
 
 #### Example `server/index.js` configuration
 
