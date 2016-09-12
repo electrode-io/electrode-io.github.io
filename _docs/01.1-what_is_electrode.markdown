@@ -15,3 +15,38 @@ As part of the Electrode Platform, we have a number of modules that each do one 
 
 #### Tools: Power Up Your Existing Applications</p>
 The Electrode Platform also has tools that can be consumed by existing applications (though they come integrated with the Electrode code). There are currently two powerful tools: one which enables [discovery of reusable components](#TODO) and another to help understand the [performance of JS bundles](#TODO).
+
+###Features
+We use the best technologies available:
+
+*  [React](https://facebook.github.io/react/index.html) is an awesome JavaScript library for building user interfaces, created by Facebook.
+
+*  [Redux](http://redux.js.org/docs/basics/UsageWithReact.html) a predictable state container for JavaScript apps. #game-changer
+
+
+
+*  [Electrode-Server](https://github.com/electrode-io/electrode-server) A configurable web server using Hapi.js on top of Node.js.
+
+*  [Webpack](https://webpack.github.io/docs/motivation.html) a powerful module bundler.
+
+*  [Babel](https://babeljs.io/) transpiles ES6 + 7.
+
+*  [ESLint](http://eslint.org/) a pluggable linting utility for Javascript.
+
+*  [Mocha](https://mochajs.org/) a feature-rich Javascript testing framework.
+
+*  [Enzyme](https://github.com/airbnb/enzyme) a Javascript testing utility for React, created by airbnb.
+
+*  [TravisCI](https://travis-ci.org/) a continuous integration service to build and test software projects.
+
+*  [CSS Modules](https://github.com/css-modules/css-modules) a CSS file in which all class names and animation names are scoped locally by default. Fixes the problem of the global scope in CSS. #winning
+
+*  [Electrode Confippet](https://github.com/electrode-io/electrode-confippet) Confippet is a versatile, flexible utility for managing configurations of Node.js applications.
+
+*  [React-Router](https://github.com/reactjs/react-router) an awesome routing library for React.
+
+* [Electrode-Redux-Resolver-Engine](https://github.com/electrode-io/redux-router-engine) An Electrode routing and rendering engine for react-router and redux.
+
+*  [History](https://www.npmjs.com/package/history) a Javascript library for managing session history.
+
+*  [Bluebird](http://bluebirdjs.com/docs/why-promises.html) a great Javascript promise library.
