@@ -40,21 +40,66 @@ $ touch Dockerfile && touch .dockerignore && docker.yml
 In your Dockerfile add:
 
 ```bash
+# Dockerfile
+
 FROM node:4.5
-RUN npm i -g npm@3
-EXPOSE 3000
+
+# Replace shell with bash so we can source files
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
+# Run updates and install deps
+RUN apt-get update
+
+RUN apt-get install -y -q --no-install-recommends \
+    apt-transport-https \
+    build-essential \
+    curl \
+    git \
+    nginx \
+    sudo \
+    wget \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get -y autoclean
+
+ENV NVM_DIR /usr/local/nvm
+ENV NODE_VERSION 4.3.0
+
+# Install nvm with node and npm
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash \
+    && source $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION \
+    && nvm alias default $NODE_VERSION \
+    && nvm use default
+
+# Set up our PATH correctly so we don't have to long-reference npm, node, &c.
+ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
+ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+
+# Set the work directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
+
+# Add our package.json
+RUN npm i -g npm@3
+
+ADD package.json ./
+
+# Copy application files
 COPY package.json /usr/src/app
 COPY server /usr/src/app/server
 COPY client /usr/src/app/client
 COPY config /usr/src/app/config
 COPY gulpfile.js /usr/src/app
 COPY .babelrc /usr/src/app
+
+#
 RUN npm install
 RUN /usr/src/app/node_modules/.bin/gulp build
-CMD node server
 
+#Expose the port
+EXPOSE 3000
+
+CMD [node server]
 ```
 
 In your .dockerignore file add:
