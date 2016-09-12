@@ -21,18 +21,16 @@ toplevel: "Getting Started: Quick Guide"
 
   <p>Building with React lets developers create a modular and reusable component architecture. We can reuse the business logic in existing models and controllers because it only provides the View layer. The components you write are self-contained, which aids developers in reasoning what a component does directly by reading the source. Finally, it is ideally suited to Universal JavaScript (previously called Isomorphic JavaScript), the practice of sharing code between Server and Client.</p>
 
-Next, navigate to <'your-awesome-app'>/client/styles/base.styl:</p>
+Next, navigate to <'your-awesome-app'>/client/styles/base.css:</p>
 
 {% raw  %}
 ```
 client
-  |_base.styl
+  |_base.css
 ```
 {% endraw %}
 
-<p class="body-text">We handle styling using <a href="http://stylus-lang.com/" class="doc-links">Stylus</a>, which is a CSS preprocessor designed for the node.js world. Styles are defined in .styl files, which can be imported in to other Stylus files, and in to components.</p>
-
-<p>This approach allows us to utilize the power of a CSS preprocessor and gain its benefits (reduced code duplication, variables for easy maintenance, modularization) and also allows us to write small .styl files specific to a component or feature, rather than producing a huge stylesheet file (or files) that become a chore to maintain, especially at the scale of a place like WalmartLabs.</p>
+We will use [CSS Modules](https://github.com/css-modules/css-modules): a CSS file in which all class names and animation names are scoped locally by default. At WalmartLabs this helps us tackle big scale style issues by fixing the issue of the global scope in CSS.
 
 <p>Let's peer inside of our client/app.jsx to get a better understanding of the relationship between the client and the server: <'your-awesome-app'>/client/app.jsx:</p>
 
@@ -62,7 +60,7 @@ client
 
 ```javascript
   import { createHistory } from "history";
-  import "./styles/base.styl";
+  import "./styles/base.css";
 ```
 
   <p><a href="https://github.com/mjackson/history" class="doc-links">History</a> is a JavaScript library that lets you easily manage session history anywhere JavaScript runs and abstracts away the differences in various environments.</p>

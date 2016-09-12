@@ -33,7 +33,7 @@ export class Home extends React.Component {
         <div className="resource"><a href="http://redux.js.org/docs/basics/UsageWithReact.html">Redux</a></div>
         <div className="resource"><a href="http://hapijs.com/">Hapi</a></div>
         <div className="resource"><a href="https://nodejs.org/en/">Node</a></div>
-        <div className="resource"><a href="http://stylus-lang.com/">Stylus</a></div>
+        <div className="resource"><a href="https://github.com/css-modules/css-modules">CSS Modules</a></div>
         <div className="resource"><a href="https://github.com/electrode-io/electrode-confippet">Electrode-Confippet</a></div>
         <div className="resource"><a href="https://github.com/electrode-io/electrode/server">Electrode-Server</a></div>
         <div className="resource"><a href="https://github.com/electrode-io/redux-router-engine">Redux-Router-Engine</a></div>
@@ -43,22 +43,26 @@ export class Home extends React.Component {
 }
 ```
 
-Let's finish the UI by adding styles. Navigate to <your-awesome-app>/client/styles/base.styl and add the code below. A reminder: [Stylus](http://stylus-lang.com/) is white-space-sensitive.
+Let's finish the UI by adding styles. Navigate to <your-awesome-app>/client/styles/base.css and add the code below:
 
 ```css
-a
-  font-size: 14px
-  color: red
+a {
+  font-size: 14px;
+  color: red;
+}
 
-  &hover
-    blue
+a:hover {
+  color: blue;
+}
 
-.resource
-  margin-bottom: 10px
+.resource {
+  margin-bottom: 10px;
+}
 
-.title
-  border-bottom: 2px solid blue
-  text-align: center
+.title {
+  border-bottom: 2px solid blue;
+  text-align: center;
+}
 ```
 
 Run our new favorite command to see your tech list: `gulp dev`
