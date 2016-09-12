@@ -37,22 +37,10 @@ To show all the containers on the system, run the command below:
 docker ps -a
 ```
 
-Launch Boot2Docker and create your images folder by using the command below:
-
-```bash
-$ docker@boot2docker:~$ mkdir images
-```
-
-Set the Docker_Host environment variable
-
-```bash
-$ export DOCKER_HOST=tcp://192.168.59.103:2375
-```
-
 Create a Dockerfile, a set of instructions to let Docker know how we would like to build our container:
 
 ```bash
-$ touch Dockerfile && touch .dockerignore && touch docker.yml
+$ touch Dockerfile && touch .dockerignore
 ```
 
 In your Dockerfile add:
@@ -141,4 +129,4 @@ Type the push command below to push your image to your new repo:
 $ docker push your-username/docker-awesome-container
 ```
 
-You have successfully pushed your new image to the Docker Cloud repository! From here, you can use the [User Guide](https://docs.docker.com/engine/userguide/intro/) to run your own containers and build Docker images. 
+You have successfully pushed your new image to the Docker Cloud repository! From here, you can use the [User Guide](https://docs.docker.com/engine/userguide/intro/) to run your own containers and build Docker images.
