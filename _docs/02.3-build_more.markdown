@@ -108,7 +108,7 @@ We need to specify the [version of node](https://devcenter.heroku.com/articles/n
 
 It should now look like this:
 
-```json
+```
 {
   "name": "your-awesome-app",
   "version": "0.0.0",

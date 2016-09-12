@@ -1,12 +1,12 @@
 ---
-title:  "Explore"
+title:  "Explore More"
 permalink: docs/explore.html
 toplevel: "Getting Started: Quick Guide"
 ---
 
-<h5>Explore</h5>
+###Explore More
 
-<p class="body-text">What does generate-electrode give you? Let's begin by navigating to <'your-awesome-app'>/client/components/home.jsx: </p>
+What does generate-electrode give you? Let's begin by navigating to `<your-awesome-app>/client/components/home.jsx`:
 
 {% raw  %}
 ```
@@ -100,7 +100,7 @@ config
 ```
 {% endraw %}
 
-<p>Let's checkout your <'your-awesome-app'>/server</p>
+Let's checkout your `<your-awesome-app>/server`:
 
 {% raw  %}
 ```
@@ -137,7 +137,7 @@ server
 ```
 {% endraw %}
 
-<p>All of your content will be served into an HTML string and placed in this unassuming piece of code: </p>
+All of your content will be served into an HTML string and placed in this unassuming piece of code:
 
 {% raw  %}
 ```
@@ -148,7 +148,7 @@ server
 <p>This includes <a href="" class="doc-links">React</a> components and Redux. To achieve this, the Electrode team has created another powerful module here to optimize performance for your out-the-box Universal app:</p>
 <p><a href="https://github.com/electrode-io/redux-router-engine" class="doc-links">Electrode-Router-Resolver-Engine</a> which takes React routes and requests and returns HTML to be rendered by electrode-react-webapp. We have found this to be the best tool for dealing with <a href="https://github.com/electrode-io/redux-router-engine" class="doc-links">redux asynchronous actions</a>.</p>
 
-<p>Next, we should discuss the <'your-awesome-app'>/.babelrc:</p>
+Next, we should discuss the `<your-awesome-app>/.babelrc`:
 
 ```
 .babelrc
@@ -156,11 +156,11 @@ server
 
 <p>This is where we extend our electrode-archetype-react-app babel <a href="https://babeljs.io/docs/usage/babelrc/" class="doc-links">configuration</a> to allow us to use the <a href="https://babeljs.io/docs/plugins/preset-es2015/" class="doc-links">presets</a> (ES6, React) and any plugins or projects that need additional Babel settings.</p>
 
-<p>Following, we have the <'your-awesome-app'>/isomorphic-loader-config.json:</p>
+Following, we have the `<your-awesome-app>/isomorphic-loader-config.json`:
 
 ```
 .isomorphic-loader-config.json
 ```
 <p>This <a href="https://github.com/jchip/isomorphic-loader" class="doc-links">Webpack loader</a> and tools to make NodeJS require understands files such as images when you are doing server side rendering. It contains three pieces: a Webpack loader, Webpack plugin and a library for your NodeJS app.</p>
 
-<p>With the generator-electrode, we've created a dynamic and performant full stack Electrode app in under five minutes, using some of our favorites technologies, like <a href="https://facebook.github.io/react/index.html" target="_blank">React</a> and <a href="http://hapijs.com/" target="_blank">Hapi</a>. Let's explore and personalize this web application in our next section, <a href="#" class="doc-links">Getting Started: Build More</a>.</p>
+<p>With the generator-electrode, we've created a dynamic and performant full stack Electrode app in under five minutes, using some of our favorites technologies, like [React] (https://facebook.github.io/react/index.html) and [Hapi] (http://hapijs.com/). Let's explore and personalize this web application in our next section, [Getting Started: Build More] (_docs/02.3-build_more.markdown).

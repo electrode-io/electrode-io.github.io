@@ -4,7 +4,7 @@ permalink: docs/add_routes.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-###Add Routes + Build out our UI
+###Add Routes + Build out your UI
 
 Now that we have our Open Source friends, their latest ten collaborators and a working demo from before, we can continue to quickly build out our components to both handle user interaction on our application and send requests to the Github Api for more friends to our party. Let's also add some style elements using [CSS modules](https://github.com/css-modules/css-modules) to create a dynamic application.
 
