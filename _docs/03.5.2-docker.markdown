@@ -25,14 +25,42 @@ $ docker --version
 	docker-machine version 0.8.0, build b85aac1
 ```
 
+Launch Boot2Docker and create your images folder by using the command below:
+
+```bash
+$ docker@boot2docker:~$ mkdir images
+```
+
 Create a Dockerfile, a set of instructions to let Docker know how we would like to build our container:
 
 ```bash
-$ touch Dockerfile && touch .dockerignore
+$ touch Dockerfile && touch .dockerignore && docker.yml
 ```
 
 In your Dockerfile add:
 
+```bash
+FROM node:4.5
+RUN npm i -g npm@3
+EXPOSE 3000
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+COPY package.json /usr/src/app
+COPY server /usr/src/app/server
+COPY client /usr/src/app/client
+COPY config /usr/src/app/config
+COPY gulpfile.js /usr/src/app
+COPY .babelrc /usr/src/app
+RUN npm install
+RUN /usr/src/app/node_modules/.bin/gulp build
+CMD node server
+
 ```
 
+In your .dockerignore file add:
+
+```bash
+.git
+.gitignore
+node_modules
 ```
