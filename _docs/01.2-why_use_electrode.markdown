@@ -4,14 +4,6 @@ permalink: docs/why_use_electrode.html
 toplevel: "Overview"
 ---
 
-<p class="why-electrode-text">
-  Use our <a href="#">Getting Started: Quick Guide</a> to start building now.
-    <a href="#" class="btn-floating btn-large getting-started doc-link">Start</a>
-</p>
+##### Learn More
 
-
-<h5>Learn More</h5>
-
-<p class="why-electrode-text">
-  Learn about what inspires us and read more about the tools we are building at <a href="https://medium.com/tag/electrode" target="_blank">our Medium blog</a>.
-</p>
+Learn about what inspires us and read more about the tools we are building at [our Medium blog](https://medium.com/tag/electrode).

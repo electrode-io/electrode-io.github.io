@@ -13,30 +13,72 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Electrode
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://example.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+---
+name: Electrode
+description: Universal React and Node Applications simplified, performant, and reusable.
+url: https://electrode-io.github.io
+baseurl: ""
+permalink: "/blog/:year/:month/:day/:title.html"
+paginate_path: "/blog/page:num/"
+paginate: 5
+timezone: America/Los_Angeles
+highlighter: pygments
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    sectionid: blog
+- scope:
+    path: blog
+    type: pages
+  values:
+    sectionid: blog
+- scope:
+    path: docs
+    type: pages
+  values:
+    layout: docs
+    sectionid: docs
+- scope:
+    path: tips
+    type: pages
+  values:
+    sectionid: docs
+- scope:
+    path: contributing
+    type: pages
+  values:
+    sectionid: docs
+- scope:
+    path: ""
+    type: docs
+  values:
+    layout: docs
+    sectionid: docs
+exclude:
+- Gemfile
+- Gemfile.lock
+- README.md
+- Rakefile
+- vendor/bundle
+markdown: redcarpet
+redcarpet:
+  extensions:
+  - fenced_code_blocks
+  - footnotes
+sass:
+  style: :compressed
+  sass_dir: _css
+gems:
+- jekyll-redirect-from
+- jekyll-paginate
+- bourbon
 
 collections:
   docs:
     output: true
 
-defaults:
-- scope:
-    path: ""
-    type: docs
-  values:
-    layout: default
-sass:
-  style: :compressed
-
-# Build settings
-markdown: kramdown
-
+# display future blog posts
+future: true
