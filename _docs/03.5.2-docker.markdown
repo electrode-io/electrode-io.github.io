@@ -25,6 +25,18 @@ $ docker --version
 	docker-machine version 0.8.0, build b85aac1
 ```
 
+Verify your installation by running the Docker version of "Hello World"
+
+```bash
+docker run hello-world
+```
+
+To show all the containers on the system, run the command below:
+
+```bash
+docker ps -a
+```
+
 Launch Boot2Docker and create your images folder by using the command below:
 
 ```bash
@@ -40,7 +52,7 @@ $ export DOCKER_HOST=tcp://192.168.59.103:2375
 Create a Dockerfile, a set of instructions to let Docker know how we would like to build our container:
 
 ```bash
-$ touch Dockerfile && touch .dockerignore && docker.yml
+$ touch Dockerfile && touch .dockerignore && touch docker.yml
 ```
 
 In your Dockerfile add:
@@ -50,36 +62,8 @@ In your Dockerfile add:
 
 FROM node:4.5
 
-# Replace shell with bash so we can source files
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-
 # Run updates and install deps
 RUN apt-get update
-
-RUN apt-get install -y -q --no-install-recommends \
-    apt-transport-https \
-    build-essential \
-    curl \
-    git \
-    nginx \
-    sudo \
-    wget \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get -y autoclean
-
-ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 4.3.0
-
-# Install nvm with node and npm
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash \
-    && source $NVM_DIR/nvm.sh \
-    && nvm install $NODE_VERSION \
-    && nvm alias default $NODE_VERSION \
-    && nvm use default
-
-# Set up our PATH correctly so we don't have to long-reference npm, node, &c.
-ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
-ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 # Set the work directory
 RUN mkdir -p /usr/src/app
@@ -100,7 +84,6 @@ COPY .babelrc /usr/src/app
 
 #
 RUN npm install
-RUN /usr/src/app/node_modules/.bin/gulp build
 
 #Expose the port
 EXPOSE 3000
@@ -115,3 +98,47 @@ In your .dockerignore file add:
 .gitignore
 node_modules
 ```
+
+Verify that the Dockerfile is in your current directory by entering the command below:
+
+```bash
+cat Dockerfile
+```
+
+You will see your Dockerfile print in the terminal. Now let's build a new image, by entering the following command:
+
+```bash
+docker build -t docker-awesome-container .
+```
+
+Run the command below to see a lit of the images you currently have:
+
+```bash
+docker images
+```
+
+You will see `node` listed. Find the corresponding `IMAGE ID` for your `node` image. We will now build a command to properly tag the image. It will be using your `image id` + `account name/repo-name:latest`
+
+```bash
+docker tag your-image-id-# your-account-name/docker-awesome-container:latest
+```
+
+Let's see it! Run the `images` command below to see a lit of the images you currently have:
+
+```bash
+docker images
+```
+
+Log into Docker Hub from the command line. The format is below. Enter you password when prompted:
+
+```bash
+docker login --username=yourhubusername --email=youremail@company.com
+```
+
+Type the push command below to push your image to your new repo:
+
+```bash
+$ docker push your-username/docker-awesome-container
+```
+
+You have successfully pushed your new image to the Docker Cloud repository! From here, you can use the [User Guide](https://docs.docker.com/engine/userguide/intro/) to run your own containers and build Docker images. 
