@@ -1,0 +1,7 @@
+---
+title:  "Kubernetes"
+permalink: docs/kubernetes.html
+toplevel: "Getting Started: Intermediate"
+---
+
+###Deploy with Google's Kubernetes

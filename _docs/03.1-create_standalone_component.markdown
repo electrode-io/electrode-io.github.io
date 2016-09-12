@@ -4,23 +4,23 @@ permalink: docs/create_standalone_component.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-<p>First things first. Let's make our thing... a Thing! In this Getting Started: Intermediate guide, we’ll take some of the basics we explored in our <a href="#">Quick Start</a> and go further. We will make our resource list a dynamic list that is styled, tested, published and capable of being deployed with other deployment software like Azure, Docker and Kubernetes.</p>
+First things first. Let's make our thing... a Thing! In this Getting Started: Intermediate guide, we’ll take some of the basics we explored in our <a href="#">Quick Start</a> and go further. We will make our resource list a dynamic list that is styled, tested, published and capable of being deployed with other deployment software like Azure, Docker and Kubernetes.
 
-<p>Again, we are leveraging <a href="http://yeoman.io/">Yeoman</a> to quick start the creation of our first stand alone component. We will globally install the Electrode <a href="https://github.com/electrode-io/generator-electrode-component" class="doc-links">generator-electrode-component:</a></p>
+Again, we are leveraging <a href="http://yeoman.io/">Yeoman</a> to quick start the creation of our first stand alone component. We will globally install the Electrode <a href="https://github.com/electrode-io/generator-electrode-component" class="doc-links">generator-electrode-component:</a>
 
 ```bash
 $ npm install -g generator-electrode-component
 ```
 
-<p class="body-text">Then <a href="https://github.com/electrode-io/generator-electrode-component" class="doc-links">generate</a> your new component:</p>
+Then <a href="https://github.com/electrode-io/generator-electrode-component" class="doc-links">generate</a> your new component:
 
 ```bash
 $ yo electrode-component
 ```
 
-<p class="body-text">Fill out the Electrode generator-electrode-component with your information.</p>
+Fill out the Electrode generator-electrode-component with your information.
 
-<p class="body-text">Open the application up with your favorite text editor. We will start with a fast high level view of the most important files in your component: </p>
+Open the application up with your favorite text editor. We will start with a fast high level view of the most important files in your component:
 
 ```
     demo
@@ -48,7 +48,7 @@ $ yo electrode-component
 
 ```
 
-<p class="body-text">We are going to quickly and carefully add the code below to scaffold out our Resource List and focus on the capabilities of yo generator-electrode-component. Navigate to `<'your-awesome-component'>/demo/examples/your-awesome-component.example`. Between your component tag, copy, paste and save the code below into this file:</p>
+We are going to quickly and carefully add the code below to scaffold out our Resource List and focus on the capabilities of yo generator-electrode-component. Navigate to `<'your-awesome-component'>/demo/examples/your-awesome-component.example`. Between your component tag, copy, paste and save the code below into this file:
 
 `<YourAwesomeComponent` insert code below here `/>`.
 
@@ -63,15 +63,15 @@ ourFriends={[
   ]}
 ```
 
-<p class="body-text">Navigate to
+Navigate to
 `<'your-awesome-component'>/demo/examples` folder. Create a file titled:
-`<'your-awesome-component'>/demo/examples/render-friend.example`. Copy, paste and save the code below into this file:</p>
+`<'your-awesome-component'>/demo/examples/render-friend.example`. Copy, paste and save the code below into this file:
 
 ```
 <RenderFriend />
 ```
 
-<p class="body-text">Next, let's add a short snippet to <'your-awesome-component'>/demo/examples/demo.jsx. Copy, paste and save the code below into this file, under `title: "YourAwesomeComponent" object`:</p>
+Next, let's add a short snippet to <'your-awesome-component'>/demo/examples/demo.jsx. Copy, paste and save the code below into this file, under `title: "YourAwesomeComponent" object`:
 
 ```javascript
 {
@@ -86,7 +86,7 @@ ourFriends={[
 }
 
 ```
-<p class="body-text">Don't forget to add a comma after `TestComponent`! It should now look like this:</p>
+Don't forget to add a comma after `TestComponent`! It should now look like this:
 
 ```javascript
 const components = [
@@ -113,9 +113,9 @@ const components = [
 ];
 
 ```
-<p class="body-text">The fun part! We will be building out `your-awesome-component.jsx` and adding a two sub-components (or dumb components). Trust me, it will be worth it!</p>
+The fun part! We will be building out `your-awesome-component.jsx` and adding a two sub-components (or dumb components). Trust me, it will be worth it!
 
-In your `<'your-awesome-component'>/src/components/your-awesome-component.jsx`, delete what it inside and copy, paste and save the code below into this file. Change all references from the literal 'your awesome component' to your actual component name:</p>
+In your `<'your-awesome-component'>/src/components/your-awesome-component.jsx`, delete what it inside and copy, paste and save the code below into this file. Change all references from the literal 'your awesome component' to your actual component name:
 
 ```javascript
 import React, { Component, PropTypes } from "react";
@@ -135,7 +135,7 @@ export default class YourAwesomeComponent extends React.Component {
 
     return (
       <div>
-        <div><p>One is not a party! Un-comment our friends in the playground above to invite them to party!</p></div>
+        <div>One is not a party! Un-comment our friends in the playground above to invite them to party!</div>
         <div className="funroom">
           { this.renderFriends(ourFriends) }
         </div>
@@ -154,8 +154,8 @@ YourAwesomeComponent.defaultProps = {
 
 ```
 
-<p class="body-text">Create a file titled:
-`<'your-awesome-component'>/src/components/render-friend.jsx`. Copy, paste and save the code below into this file:</p>
+Create a file titled:
+`<'your-awesome-component'>/src/components/render-friend.jsx`. Copy, paste and save the code below into this file:
 
 {% raw  %}
 ```javascript
@@ -194,8 +194,8 @@ YourAwesomeComponent.defaultProps = {
 {% endraw %}
 
 
-<p class="body-text">Create a file titled:
-`<'your-awesome-component'>/src/components/party-on.jsx`. Copy, paste and save the code below into this file:</p>
+Create a file titled:
+`<'your-awesome-component'>/src/components/party-on.jsx`. Copy, paste and save the code below into this file:
 
 ```javascript
 import React from 'react';
@@ -215,7 +215,7 @@ export default PartyOn;
 
 ```
 
-<p>In your `<'your-awesome-component'>/src/style/your-awesome-component.css`, delete what it inside and copy, paste and save the code below into this file:</p>
+In your `<'your-awesome-component'>/src/style/your-awesome-component.css`, delete what it inside and copy, paste and save the code below into this file:
 
 ```css
 @keyframes tada {
@@ -280,19 +280,19 @@ export default PartyOn;
 }
 ```
 
-<p>Last edit! In your `<'your-awesome-component'>index.js`, add the line below:</p>
+Last edit! In your `<'your-awesome-component'>index.js`, add the line below:
 
 ```javascript
 export { default as RenderFriend } from "./components/render-friend";
 ```
 
-<p>Now run it and explore the live demo!</p>
+Now run it and explore the live demo!
 
-```
-gulp build && gulp demo
+```bash
+$ gulp build && gulp demo
 ```
 
-<p>Walmartlabs believes that testing is critical to writing great, high performant code. This includes unit testing at both the component and application level. For your component, we are using <a href="https://mochajs.org/">Mocha</a>, a Javascript testing framework that is perfect for running async tests, with <a href="http://airbnb.io/enzyme/docs/guides/mocha.html">Enzyme</a>, airbnb's awesome testing utility for React.</p>
+Walmartlabs believes that testing is critical to writing great, high performant code. This includes unit testing at both the component and application level. For your component, we are using <a href="https://mochajs.org/">Mocha</a>, a Javascript testing framework that is perfect for running async tests, with <a href="http://airbnb.io/enzyme/docs/guides/mocha.html">Enzyme</a>, airbnb's awesome testing utility for React.
 
 ```bash
 $ gulp check
