@@ -31,6 +31,12 @@ Launch Boot2Docker and create your images folder by using the command below:
 $ docker@boot2docker:~$ mkdir images
 ```
 
+Set the Docker_Host environment variable
+
+```bash
+$ export DOCKER_HOST=tcp://192.168.59.103:2375
+```
+
 Create a Dockerfile, a set of instructions to let Docker know how we would like to build our container:
 
 ```bash

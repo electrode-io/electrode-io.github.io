@@ -8,7 +8,7 @@ toplevel: "Getting Started: Quick Guide"
 
 Next, install [Yeoman](http://yeoman.io/) and the Electrode [generator-electrode](https://github.com/electrode-io/generator-electrode"):
 
-```bash    
+```bash
 $ npm install -g yo
 $ npm install -g generator-electrode
 ```

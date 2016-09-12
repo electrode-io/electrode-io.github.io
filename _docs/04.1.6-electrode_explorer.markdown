@@ -1,0 +1,5 @@
+---
+title:  "Electrode Explorer"
+permalink: docs/electrode_explorer.html
+toplevel: "Stand Alone Modules"
+---
