@@ -81,4 +81,4 @@ Run one simple command. Presto!
 $ gulp dev
 ```
 
-Open [http://localhost:3000] in your browser. Hello Electrode!
+Open [localhost:3000] (http://localhost:3000) in your browser. Hello Electrode!
