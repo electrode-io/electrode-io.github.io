@@ -1,0 +1,5 @@
+---
+title:  "Powerful Electrode Tools"
+permalink: docs/electrode_tools.html
+toplevel: "Getting Started: Quick Guide"
+---

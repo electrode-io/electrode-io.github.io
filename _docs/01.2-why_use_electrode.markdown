@@ -6,4 +6,4 @@ toplevel: "Overview"
 
 ##### Learn More
 
-Learn about what inspires us and read more about the tools we are building at [our Medium blog](https://medium.com/tag/electrode).
+Learn about what inspires us and read more about the tools we are building.

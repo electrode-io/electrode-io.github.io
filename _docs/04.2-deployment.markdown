@@ -1,7 +1,0 @@
----
-title:  "Deployment"
-permalink: docs/deployment.html
-toplevel: "Getting Started: Advanced"
----
-
-test2
