@@ -6,19 +6,19 @@ toplevel: "Getting Started: Intermediate"
 
 ###Be Hapi and Build a server plugin
 
-At WalmartLabs, we use [Hapi] (http://hapijs.com/) because of it's flexible and robust plugin system. It allows us to modularize our application into isolated pieces of business logic and reusable utilities.
+At WalmartLabs, we use [Hapi](http://hapijs.com/) because of it's flexible and robust plugin system. It allows us to modularize our application into isolated pieces of business logic and reusable utilities.
 
 Let's make a deal! Actually, scratch that, let's make a plugin! Plugins are way to extend our server's functionality. Building upon our open source theme, let's make a plugin that retrieves the Github contributors of our "party friends."
 
-We are going to use the [GitHub Api] (https://developer.github.com/v3/) to grab the latest 10 contributors of our Open Source friends and display them in Your Awesome App.
+We are going to use the [GitHub Api](https://developer.github.com/v3/) to grab the latest 10 contributors of our Open Source friends and display them in Your Awesome App.
 
-The GitHub [site] (https://developer.github.com/v3/) has great documentation and awesome libraries to help jumpstart our plugin. Let's begin there by installing a Node.js wrapper called [Node-github] (https://github.com/mikedeboer/node-github):
+The GitHub [site](https://developer.github.com/v3/) has great documentation and awesome libraries to help jumpstart our plugin. Let's begin there by installing a Node.js wrapper called [Node-github](https://github.com/mikedeboer/node-github):
 
 ```bash
   npm install github
 ```
 
-At their core, plugins are a simple `register` object, that has the signature `function(server, options, next)`. Read more about building plugins from scratch in the [Hapi documentation] (http://hapijs.com/tutorials/plugins). For now, navigate to the <your-awesome-app>/server/plugins folder. Make a folder called `GitHub`. Cd into your new `GitHub` folder and:
+At their core, plugins are a simple `register` object, that has the signature `function(server, options, next)`. Read more about building plugins from scratch in the [Hapi documentation](http://hapijs.com/tutorials/plugins). For now, navigate to the <your-awesome-app>/server/plugins folder. Make a folder called `GitHub`. Cd into your new `GitHub` folder and:
 
 ```bash
   touch github.js && index.js
@@ -74,4 +74,4 @@ Navigate to github.js. This is where we will make an external API call to Github
   module.exports = myGitHubFriendPlugin;
 ```
 
-A great tool for testing your server requests (it's user interface for view response objects and errors is incredible) is [Postman]("https://www.getpostman.com/"). For now, you will have to trust as we build out Your Awesome App. Navigate to [Intermediate: Add Routes]('add_routes.html'), to add routing to the app and also extend our UI to display our contributor array.
+A great tool for testing your server requests (it's user interface for view response objects and errors is incredible) is [Postman]("https://www.getpostman.com/"). For now, you will have to trust as we build out Your Awesome App. Navigate to [Intermediate: Add Routes](add_routes.html), to add routing to the app and also extend our UI to display our contributor array.
