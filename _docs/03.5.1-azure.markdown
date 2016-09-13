@@ -6,10 +6,8 @@ toplevel: "Getting Started: Intermediate"
 
 ###Deploy with Microsoft Azure
 
-[Azure](https://azure.microsoft.com/en-us/documentation/articles/app-service-web-nodejs-get-started/) is a robust collection of integrated cloud services from Microsoft. Their goal is to offer users a flexible and efficient cloud platform that you can run anywhere. Before we walk through the instructions on how to deploy Your Awesome App on Azure, please have the following ready:
-
-A [Microsoft Azure Account] (https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/)
-[Azure CLI tool belt] (https://azure.microsoft.com/en-us/documentation/articles/xplat-cli-install/)
+[Azure](https://azure.microsoft.com/en-us/documentation/articles/app-service-web-nodejs-get-started/) is a robust collection of integrated cloud services from Microsoft. Their goal is to offer users a flexible and efficient cloud platform that you can run anywhere. Before we walk through the instructions on how to deploy Your Awesome App on Azure, please have both a [Microsoft Azure Account] (https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/) and
+[Azure CLI tool belt] (https://azure.microsoft.com/en-us/documentation/articles/xplat-cli-install/) installed.
 
 Log in to Azure from the command line:
 
@@ -17,57 +15,58 @@ Log in to Azure from the command line:
 $ azure login
 ```
 
-You will be redirected to a browser to continue logging. Create the App Service app resource with a unique app name in Azure in the root directory of Your Awesome App:
+You will be redirected to a browser to continue logging. Sign in using the browser and you will receive a success message in your terminal, letting you know what `info: login command OK`.
+
+Create the App Service app resource with a unique app name with this simple [Azure tutorial] (https://azure.microsoft.com/en-us/documentation/articles/app-service-web-get-started/), created by Microsoft:
+
+Sign in to the Azure portal with your Azure account. From the left menu, click `New > Web + Mobile > Web App`.
+
+In the app creation blade, use the following settings for your new app:
+
+*  App name: Your-Awesome-App
+*  Resource group: Select `Create new` and give the resource group a name.
+*  App Service plan/Location: Click it to configure, then click `Create New` to set the name, location, and pricing tier of the App Service plan. (Feel free to use the Free pricing tier).
+*  Click `Create` at the bottom. You can click the `Notification` icon at the top to see the progress.
+*  When deployment is finished, you should see this notification message. Click the message to open your deployment's blade.
+* In the `Deployment succeeded` blade, click the `Resource` link to open your new web app's blade.
+
+Getting Ready to Deploy:
+
+*  In the web app blade, scroll down to `Deployment options` or search for it, then click it.
+*  Click `Choose Source > Local Git Repository > OK`.
+*  Back in the web app blade, click `Deployment credentials`.
+*  Set your deployment credentials and click Save.
+*  Back in the web app blade, scroll down to `Properties` or search for it, then click it. Next to `Git URL`, click the `Copy` button.
+
+Now, let's deploy some code to Azure using Git:
+
+In your command-line, make a new directory, with a different name and clone Your-Awesome-App like this:
 
 ```bash
-$ azure sire create --git {your unique app name}
+git clone <your-awesome-app>
 ```
 
-Follow the prompt and select an Azure region to deploy to. Open you `<your-awesome-app>/config/production.json`. Change the production port to `process.env.port`. This will allow Your Awesome App to respond to web request on the default port that iisnode listens to. It should look like the code below:
-
-```json
-{
-  "plugins": {
-    "inert": {
-    "enable": false
-  },
-    "electrodeStaticPaths": {
-      "enable": false
-    }
-  },
-  "server": {
-    "connections": {
-      "compression": true
-    },
-    "debug": {
-      "log": false,
-      "request": false
-      }
-    },
-  "connections": {
-    "default": {
-      "port": process.env.port,
-    }
-  }
-}
-```
-
-Create a `iisnode.yml` file to the root of `<Your-Awesome-App>/iisnode.yml`. Add the code below:
+Switch back to the original Your-Awesome-App repo. Configure the Git remote for your Azure app its Git URL, which you copied from the Portal a few steps ago.
 
 ```bash
-loggingEnabled: true
-logDirectory: iisnode
+git remote add azure <new-cloned-repo-of-your-awesome-app>
 ```
 
-Next, let's deply to Azure by following the commands below:
+Deploy your code to your Azure app:
+
+```bash
+git push azure master
+```
+
+To make updates use the folling steps:
 
 ```bash
 $ git add .
-$ git commit -m "Deploying to Azure"
+$ git commit -m "Updates Azure App Service"
 $ git push azure master
 ```
 
-Launch you live Azure app from the command line:
+Launch your live Azure app from the command line:
 
 ```bash
 $ azure site browse

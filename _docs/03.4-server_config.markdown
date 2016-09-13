@@ -4,4 +4,48 @@ permalink: docs/server_config.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-test2
+###Server Config + Confippet
+
+Out the box we are given [Confippet] (https://github.com/electrode-io/electrode-confippet), a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a preset config out of the box:
+
+```
+config
+  |_default.json
+  |_development.json
+  |_production.json
+```
+
+We will need to extend our default.json to include our myGitHubFace plugin, github.js. We can also use this opportunity to update our update our settings, including a way to show server log errors.
+
+Navigate to `<your-awesome-app>/config/development.json`. Delete the existing code; copy, paste and save the code below:
+
+```
+{
+  "plugins": {
+    "webapp": {
+      "module": "./server/plugins/webapp",
+      "options": {
+        "paths": {
+          "/{args*}": {
+            "content": {
+              "module": "./server/views/index-view"
+            }
+          }
+        }
+      }
+    }
+  },
+  "webapp": {
+    "module": "./server/plugins/github",
+    "options": {
+      "paths": {
+        "/{args*}": {
+          "content": {
+            "module": "./server/views/index-view"
+          }
+        }
+      }
+    }
+  }
+}
+```
