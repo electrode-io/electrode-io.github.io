@@ -117,7 +117,7 @@ Don't forget to add a comma after `TestComponent`! It should now look like this:
   ];
 ```
 
-The fun part! We will be building out `your-awesome-component.jsx` and adding a two sub-components (or dumb components). Trust me, it will be worth it!
+Now, the fun part! We will be building out `your-awesome-component.jsx` and adding a two sub-components (or dumb components). Trust me, it will be worth it.
 
 In your `<your-awesome-component>/src/components/your-awesome-component.jsx`, delete what it inside and copy, paste and save the code below into this file. Change all references from the literal `your awesome component` to your actual component name:
 
