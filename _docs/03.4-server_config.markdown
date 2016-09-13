@@ -34,18 +34,5 @@ Navigate to `<your-awesome-app>/config/development.json`. Delete the existing co
           }
         }
       }
-    },
-    "webapp": {
-      "module": "./server/plugins/github",
-      "options": {
-        "paths": {
-          "/{args*}": {
-            "content": {
-              "module": "./server/views/index-view"
-            }
-          }
-        }
-      }
     }
-  }
 ```

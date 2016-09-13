@@ -3,5 +3,3 @@ title:  "More Deployments"
 permalink: docs/more_deployments.html
 toplevel: "Getting Started: Intermediate"
 ---
-
-Deploying our application is an efficient, painless way is very critical for success. ]
