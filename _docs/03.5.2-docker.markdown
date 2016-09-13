@@ -1,0 +1,132 @@
+---
+title:  "Docker"
+permalink: docs/docker.html
+toplevel: "Getting Started: Intermediate"
+---
+
+###Deploy with Docker
+
+Docker is a new container based technology that is designed to make applications easier to create, deploy and run. It is an increasing popular way to accelerate development and share content. To get started, sign up for a [Docker] (https://cloud.docker.com), download [Docker for your machine](https://www.docker.com/products/docker) and read over the corresponding system requirements. Docker requires a Linux Machine; if you are using a Mac you will need to follow the instructions based on your computer version to "[virtualize the Docker Engine environment] (https://docs.docker.com/engine/installation/mac/#/docker-for-mac) and Linux kernel-specific features for the Docker daemon" using a virtual machine.
+
+After you install and run Docker on your machine, you will be asked to authorize `Docker.app`. Double-click `Docker.app` to start Docker. The Docker Whale icon in the top status bar will let you know that Docker is running.
+
+On the first installation you will get a `success` message. Click the Whale icon to go to `Preferences`. Select `About Docker` to verify you have the latest version.
+
+Let's check the versions of `Docker Engine`, `Compose` and `Machine` by running the commands below:
+
+```bash
+$ docker --version
+	Docker version 1.12.0, build 8eab29e
+
+	$ docker-compose --version
+	docker-compose version 1.8.0, build f3628c7
+
+	$ docker-machine --version
+	docker-machine version 0.8.0, build b85aac1
+```
+
+Verify your installation by running the Docker version of "Hello World"
+
+```bash
+docker run hello-world
+```
+
+To show all the containers on the system, run the command below:
+
+```bash
+docker ps -a
+```
+
+Create a Dockerfile, a set of instructions to let Docker know how we would like to build our container:
+
+```bash
+$ touch Dockerfile && touch .dockerignore
+```
+
+In your Dockerfile add:
+
+```bash
+# Dockerfile
+
+FROM node:4.5
+
+# Run updates and install deps
+RUN apt-get update
+
+# Set the work directory
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+# Add our package.json
+RUN npm i -g npm@3
+
+ADD package.json ./
+
+# Copy application files
+COPY package.json /usr/src/app
+COPY server /usr/src/app/server
+COPY client /usr/src/app/client
+COPY config /usr/src/app/config
+COPY gulpfile.js /usr/src/app
+COPY .babelrc /usr/src/app
+
+#
+RUN npm install
+
+#Expose the port
+EXPOSE 3000
+
+CMD [node server]
+```
+
+In your .dockerignore file add:
+
+```bash
+.git
+.gitignore
+node_modules
+```
+
+Verify that the Dockerfile is in your current directory by entering the command below:
+
+```bash
+cat Dockerfile
+```
+
+You will see your Dockerfile print in the terminal. Now let's build a new image, by entering the following command:
+
+```bash
+docker build -t docker-awesome-container .
+```
+
+Run the command below to see a lit of the images you currently have:
+
+```bash
+docker images
+```
+
+You will see `node` listed. Find the corresponding `IMAGE ID` for your `node` image. We will now build a command to properly tag the image. It will be using your `image id` + `account name/repo-name:latest`
+
+```bash
+docker tag your-image-id-# your-account-name/docker-awesome-container:latest
+```
+
+Let's see it! Run the `images` command below to see a lit of the images you currently have:
+
+```bash
+docker images
+```
+
+Log into Docker Hub from the command line. The format is below. Enter you password when prompted:
+
+```bash
+docker login --username=yourhubusername --email=youremail@company.com
+```
+
+Type the push command below to push your image to your new repo:
+
+```bash
+$ docker push your-username/docker-awesome-container
+```
+
+You have successfully pushed your new image to the Docker Cloud repository! From here, you can use the [User Guide](https://docs.docker.com/engine/userguide/intro/) to run your own containers and build Docker images.

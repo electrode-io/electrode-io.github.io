@@ -4,4 +4,73 @@ permalink: docs/azure.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-test2
+###Deploy with Microsoft Azure
+
+[Azure](https://azure.microsoft.com/en-us/documentation/articles/app-service-web-nodejs-get-started/) is a robust collection of integrated cloud services from Microsoft. Their goal is to offer users a flexible and efficient cloud platform that you can run anywhere. Before we walk through the instructions on how to deploy Your Awesome App on Azure, please have the following ready:
+
+A [Microsoft Azure Account] (https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/)
+[Azure CLI tool belt] (https://azure.microsoft.com/en-us/documentation/articles/xplat-cli-install/)
+
+Log in to Azure from the command line:
+
+```bash
+$ azure login
+```
+
+You will be redirected to a browser to continue logging. Create the App Service app resource with a unique app name in Azure in the root directory of Your Awesome App:
+
+```bash
+$ azure sire create --git {your unique app name}
+```
+
+Follow the prompt and select an Azure region to deploy to. Open you `<your-awesome-app>/config/production.json`. Change the production port to `process.env.port`. This will allow Your Awesome App to respond to web request on the default port that iisnode listens to. It should look like the code below:
+
+```json
+{
+  "plugins": {
+    "inert": {
+    "enable": false
+  },
+    "electrodeStaticPaths": {
+      "enable": false
+    }
+  },
+  "server": {
+    "connections": {
+      "compression": true
+    },
+    "debug": {
+      "log": false,
+      "request": false
+      }
+    },
+  "connections": {
+    "default": {
+      "port": process.env.port,
+    }
+  }
+}
+```
+
+Create a `iisnode.yml` file to the root of `<Your-Awesome-App>/iisnode.yml`. Add the code below:
+
+```bash
+loggingEnabled: true
+logDirectory: iisnode
+```
+
+Next, let's deply to Azure by following the commands below:
+
+```bash
+$ git add .
+$ git commit -m "Deploying to Azure"
+$ git push azure master
+```
+
+Launch you live Azure app from the command line:
+
+```bash
+$ azure site browse
+```
+
+Feel free to explore the [Azure] (https://azure.microsoft.com/en-us/documentation/articles/app-service-web-overview/) site and learn more about best practices such as specifiying your [Node version] (https://azure.microsoft.com/en-us/documentation/articles/nodejs-specify-node-version-azure-apps/), using [Node modules] (https://azure.microsoft.com/en-us/documentation/articles/nodejs-use-node-modules-azure-apps/) with Azure Apps and how to [debug a Node app] (https://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-debug/) in Azure App service.
