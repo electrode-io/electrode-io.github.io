@@ -12,7 +12,7 @@ toplevel: "Getting Started: Intermediate"
 Log in to Azure from the command line:
 
 ```bash
-$ azure login
+  $ azure login
 ```
 
 You will be redirected to a browser to continue logging. Sign in using the browser and you will receive a success message in your terminal, letting you know what `info: login command OK`.
@@ -43,33 +43,33 @@ Now, let's deploy some code to Azure using Git:
 In your command-line, make a new directory, with a different name and clone this sample app, `https://github.com/Azure-Samples/app-service-web-html-get-started` , like this:
 
 ```bash
-git clone https://github.com/Azure-Samples/app-service-web-html-get-started
+  git clone https://github.com/Azure-Samples/app-service-web-html-get-started
 ```
 
 Cd into this sample app
 
 ```bash
-$ cd app-service-web-html-get-started
+  $ cd app-service-web-html-get-started
 ```
 
 Configure the Git remote for your Azure app its Git URL, which you copied from the Portal a few steps ago.
 
 ```bash
-$ git remote add azure <copied-git-url-from-your-portal>
+  $ git remote add azure <copied-git-url-from-your-portal>
 ```
 
 Deploy your code to your Azure app:
 
 ```bash
-$ git push azure master
+  $ git push azure master
 ```
 
 To make updates use the following steps:
 
 ```bash
-$ git add .
-$ git commit -m "Updates Azure App Service"
-$ git push azure master
+  $ git add .
+  $ git commit -m "Updates Azure App Service"
+  $ git push azure master
 ```
 In your browser, navigate to http://<appname>.azurewebsites.net to see it in action.
 

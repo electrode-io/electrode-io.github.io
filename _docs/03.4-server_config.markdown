@@ -9,10 +9,10 @@ toplevel: "Getting Started: Intermediate"
 Out the box we are given [Confippet] (https://github.com/electrode-io/electrode-confippet), a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a preset config out of the box:
 
 ```
-config
-  |_default.json
-  |_development.json
-  |_production.json
+  config
+    |_default.json
+    |_development.json
+    |_production.json
 ```
 
 We will need to extend our default.json to include our myGitHubFace plugin, github.js. We can also use this opportunity to update our update our settings, including a way to show server log errors.
@@ -20,10 +20,23 @@ We will need to extend our default.json to include our myGitHubFace plugin, gith
 Navigate to `<your-awesome-app>/config/development.json`. Delete the existing code; copy, paste and save the code below:
 
 ```
-{
-  "plugins": {
+  {
+    "plugins": {
+      "webapp": {
+        "module": "./server/plugins/webapp",
+        "options": {
+          "paths": {
+            "/{args*}": {
+              "content": {
+                "module": "./server/views/index-view"
+              }
+            }
+          }
+        }
+      }
+    },
     "webapp": {
-      "module": "./server/plugins/webapp",
+      "module": "./server/plugins/github",
       "options": {
         "paths": {
           "/{args*}": {
@@ -34,18 +47,5 @@ Navigate to `<your-awesome-app>/config/development.json`. Delete the existing co
         }
       }
     }
-  },
-  "webapp": {
-    "module": "./server/plugins/github",
-    "options": {
-      "paths": {
-        "/{args*}": {
-          "content": {
-            "module": "./server/views/index-view"
-          }
-        }
-      }
-    }
   }
-}
 ```

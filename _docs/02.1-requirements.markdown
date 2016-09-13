@@ -8,4 +8,4 @@ First, let's quickly check your development environment. You will need to have a
 
 To generate and deploy your awesome Electrode app in under five minutes, you will need to already have existing [Heroku](https://signup.heroku.com/dc) and [Github](https://github.com/) accounts with the respective CLI tools installed in your machine and login capability.
 
-Ready? Let's [build](uild_more.html).
+Ready? Let's [build](build_more.html).
