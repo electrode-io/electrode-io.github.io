@@ -16,12 +16,11 @@ What does generate-electrode give you? Let's begin by navigating to `<your-aweso
 ```
 {% endraw %}
 
-<p class="body-text">
-  <a href="https://facebook.github.io/react/index.html">React</a> is a JavaScript library for building user interfaces. A simplified way to look at it is that it can be used as the V in an MV* application. It was created by Facebook and is being actively developed.</p>
+[React] (https://facebook.github.io/react/index.html) is a JavaScript library for building user interfaces. A simplified way to look at it is that it can be used as the V in an MV* application. It was created by Facebook and is being actively developed.
 
-  <p>Building with React lets developers create a modular and reusable component architecture. We can reuse the business logic in existing models and controllers because it only provides the View layer. The components you write are self-contained, which aids developers in reasoning what a component does directly by reading the source. Finally, it is ideally suited to Universal JavaScript (previously called Isomorphic JavaScript), the practice of sharing code between Server and Client.</p>
+Building with React lets developers create a modular and reusable component architecture. We can reuse the business logic in existing models and controllers because it only provides the View layer. The components you write are self-contained, which aids developers in reasoning what a component does directly by reading the source. Finally, it is ideally suited to Universal JavaScript (previously called Isomorphic JavaScript), the practice of sharing code between Server and Client.
 
-Next, navigate to <'your-awesome-app'>/client/styles/base.css:</p>
+Next, navigate to `<your-awesome-app'>/client/styles/base.css`:
 
 {% raw  %}
 ```
@@ -32,7 +31,7 @@ client
 
 We will use [CSS Modules](https://github.com/css-modules/css-modules): a CSS file in which all class names and animation names are scoped locally by default. At WalmartLabs this helps us tackle big scale style issues by fixing the issue of the global scope in CSS.
 
-<p>Let's peer inside of our client/app.jsx to get a better understanding of the relationship between the client and the server: <'your-awesome-app'>/client/app.jsx:</p>
+Let's peer inside of our client/app.jsx to get a better understanding of the relationship between the client and the server: `<your-awesome-app'>/client/app.jsx`:
 
 {% raw  %}
 ```
@@ -41,42 +40,42 @@ client
 ```
 {% endraw %}
 
-<p class="body-text">Below is the information you need to know about what the app.jsx is doing. We've broken it down, with links on where you can learn even more: </p>
+Below is the information you need to know about what the app.jsx is doing. We've broken it down, with links on where you can learn even more:
 
 ```javascript
   import React from "react";
   import { routes } from "./routes";
   import { Router } from "react-router";
 ```
-  <p>Any real world web application needs to be able to handle different routes serving different content, so how do we handle the concept of routing in the Electrode platform? The library chosen to take care of this for us is <a href="https://github.com/reactjs/react-router/tree/master/docs" class="doc-links">react-router</a>.</p>
+Any real world web application needs to be able to handle different routes serving different content, so how do we handle the concept of routing in the Electrode platform? The library chosen to take care of this for us is [react-router] (https://github.com/reactjs/react-router/tree/master/docs).
 
-  <p>Why <a href="https://github.com/reactjs/react-router/tree/master/docs" class="doc-links">react-router</a>? The project is mature, well documented and integrates well within the Electrode tech stack.</p>
+Why react-router? The project is mature, well documented and integrates well within the Electrode tech stack.
 
 ```javascript
   import { Resolver } from "react-resolver";
 ```
 
-  <p><a href="http://ericclemmons.com/react-resolver/" class="doc-links">React-Resolver</a> lets you define data requirements per component and will handle the nested, async rendering on both the server and client for you. This approach matches the Electrode methodology of keeping definitions of what a component needs within the component (), and also allows us to write universal javascript applications in a non-blocking way. This solves our frequent need for pages that are rendered on the server.</p>
+[React-Resolver] (http://ericclemmons.com/react-resolver/) lets you define data requirements per component and will handle the nested, async rendering on both the server and client for you. This approach matches the Electrode methodology of keeping definitions of what a component needs within the component and also allows us to write universal javascript applications in a non-blocking way. This solves our frequent need for pages that are rendered on the server.
 
 ```javascript
   import { createHistory } from "history";
   import "./styles/base.css";
 ```
 
-  <p><a href="https://github.com/mjackson/history" class="doc-links">History</a> is a JavaScript library that lets you easily manage session history anywhere JavaScript runs and abstracts away the differences in various environments.</p>
+[History] (https://github.com/mjackson/history) is a JavaScript library that lets you easily manage session history anywhere JavaScript runs and abstracts away the differences in various environments.
 
 ```javascript
-    window.webappStart = () => {
-      Resolver.render(
-        () => <Router history={createHistory()}>{routes}</Router>,
-        document.querySelector(".js-content")
-      );
-    };
+  window.webappStart = () => {
+    Resolver.render(
+      () => <Router history={createHistory()}>{routes}</Router>,
+      document.querySelector(".js-content")
+    );
+  };
 ```
 
-<p class="body-text">If you have a universal application and server side rendering, <a href="http://ericclemmons.com/react-resolver/docs/getting-started/ServerRendering.html" class="doc-links">react-resolver</a> handles bootstrapping server-rendered markup via Resolver.render instead of React.render.</p>
+If you have a universal application and server side rendering, [react-resolver] (http://ericclemmons.com/react-resolver/docs/getting-started/ServerRendering.html) handles bootstrapping server-rendered markup via Resolver.render instead of React.render.
 
-<p>We will be sharing our routes between server and client so obviously we only want to define them in one place, in your <'your-awesome-app'>/client/routes.jsx:</p>
+We will be sharing our routes between server and client so obviously we only want to define them in one place, in your `<your-awesome-app>/client/routes.jsx`:
 
 {% raw  %}
 ```
@@ -85,11 +84,11 @@ client
 ```
 {% endraw %}
 
-<p>In your <'your-awesome-app'>/config we are leveraging one of most important stand alone modules: <a href="#/link-to-internal-confippet-doc" class="doc-links">electrode-confippet</a>.</p>
+In your `<your-awesome-app>/config` we are leveraging one of most important stand alone modules: [Electrode-Confippet](confippet.html).
 
-<p>Confippet is a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a <a href="https://github.com/electrode-io/electrode-confippet" class="doc-links">preset config</a> out of the box.</p>
+Confippet is a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a [preset config] (https://github.com/electrode-io/electrode-confippet) out of the box.
 
-<p>We use this to keep your environment specific configurations manageable. Once you have your config files setup according to the configuration files setup, you can simply pass the config object to electrode server.</p>
+We use this to keep your environment specific configurations manageable. Once you have your config files setup according to the configuration files setup, you can simply pass the config object to electrode server.
 
 {% raw  %}
 ```
@@ -115,9 +114,9 @@ server
 ```
 {% endraw %}
 
-<p>You are now using <a href="#" class="doc-links">Electrode-Server</a>, a NodeJS module that allows you to start up a Hapi server with a single function call, but gives you a lot of flexibility through configurations. This is the baseline functionality of a Hapi web server that you can extend via configuration.</p>
+You are now using [Electrode-Server](https://github.com/electrode-io/electrode-server), a NodeJS module that allows you to start up a Hapi server with a single function call, but gives you a lot of flexibility through configurations. This is the baseline functionality of a [Hapi] (http://hapijs.com/) web server that you can extend via configuration.
 
-<p>Before we move on, we should inspect a critical file, <'your-awesome-app'>/server/plugins/webapp/index.html. This is where the server side "magic" happens. By magic, of course we mean the benefits of using the generate-electrode + server side rendering.</p>
+Before we move on, we should inspect a critical file, `<your-awesome-app'>/server/plugins/webapp/index.html`. This is where the server side "magic" happens. By magic, of course we mean the benefits of using the generate-electrode + server side rendering.
 
 {% raw  %}
 ```
@@ -145,22 +144,21 @@ All of your content will be served into an HTML string and placed in this unassu
 ```
 {% endraw %}
 
-<p>This includes <a href="" class="doc-links">React</a> components and Redux. To achieve this, the Electrode team has created another powerful module here to optimize performance for your out-the-box Universal app:</p>
-<p><a href="https://github.com/electrode-io/redux-router-engine" class="doc-links">Electrode-Router-Resolver-Engine</a> which takes React routes and requests and returns HTML to be rendered by electrode-react-webapp. We have found this to be the best tool for dealing with <a href="https://github.com/electrode-io/redux-router-engine" class="doc-links">redux asynchronous actions</a>.</p>
+This includes React components and Redux. To achieve this, the Electrode team has created another powerful module here to optimize performance for your out-the-box Universal app: [Electrode-Router-Resolver-Engine] (https://github.com/electrode-io/redux-router-engine) which takes React routes and requests and returns HTML to be rendered by electrode-react-webapp. We have found this to be the [best tool] (https://github.com/electrode-io/redux-router-engine) for dealing with redux asynchronous actions.
 
 Next, we should discuss the `<your-awesome-app>/.babelrc`:
 
-```
+```bash
 .babelrc
 ```
 
-<p>This is where we extend our electrode-archetype-react-app babel <a href="https://babeljs.io/docs/usage/babelrc/" class="doc-links">configuration</a> to allow us to use the <a href="https://babeljs.io/docs/plugins/preset-es2015/" class="doc-links">presets</a> (ES6, React) and any plugins or projects that need additional Babel settings.</p>
+This is where we extend our electrode-archetype-react-app [Babel] (https://babeljs.io/docs/usage/babelrc/) to allow us to use the [presets] (https://babeljs.io/docs/plugins/preset-es2015/) (ES6, React) and any plugins or projects that need additional Babel settings.
 
 Following, we have the `<your-awesome-app>/isomorphic-loader-config.json`:
 
 ```
 .isomorphic-loader-config.json
 ```
-<p>This <a href="https://github.com/jchip/isomorphic-loader" class="doc-links">Webpack loader</a> and tools to make NodeJS require understands files such as images when you are doing server side rendering. It contains three pieces: a Webpack loader, Webpack plugin and a library for your NodeJS app.</p>
+This [powerful tool] (https://github.com/jchip/isomorphic-loader) makes NodeJS `require` understand files such as images when you are doing server side rendering. It contains three pieces: a Webpack loader, Webpack plugin and a library for your NodeJS app.
 
-<p>With the generator-electrode, we've created a dynamic and performant full stack Electrode app in under five minutes, using some of our favorites technologies, like [React] (https://facebook.github.io/react/index.html) and [Hapi] (http://hapijs.com/). Let's explore and personalize this web application in our next section, [Getting Started: Build More] (_docs/02.3-build_more.markdown).
+With the generator-electrode, we've created a dynamic and performant full stack Electrode app in under five minutes, using some of our favorites technologies, like [React] (https://facebook.github.io/react/index.html) and [Hapi] (http://hapijs.com/). Let's explore and personalize this web application in our next section, [Getting Started: Build More](build_more.html).

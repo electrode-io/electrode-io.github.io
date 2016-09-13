@@ -8,110 +8,110 @@ toplevel: "Getting Started: Intermediate"
 
 Now that we have our Open Source friends, their latest ten collaborators and a working demo from before, we can continue to quickly build out our components to both handle user interaction on our application and send requests to the Github Api for more friends to our party. Let's also add some style elements using [CSS modules](https://github.com/css-modules/css-modules) to create a dynamic application.
 
-Navigate to `<'your-awesome-component'>/src/components/your-awesome-component.jsx`. Copy, paste and save the code below into this file:
+Navigate to `<your-awesome-component>/src/components/your-awesome-component.jsx`. Copy, paste and save the code below into this file:
 
-```
-import React, { Component, PropTypes } from "react";
+```javascript
+  import React, { Component, PropTypes } from "react";
 
-import styles from "../styles/resource-list.css";
-import RenderFriend from "./render-friend";
-import GuestList from "./guest-list";
+  import styles from "../styles/resource-list.css";
+  import RenderFriend from "./render-friend";
+  import GuestList from "./guest-list";
 
-const exampleObj = [
-  {name: 'electrode', img: '//goo.gl/UdhbKO', size: 15, invited: true},
-  {name: 'hapi', img: '//goo.gl/q9uIFW', size: 15, invited: false},
-  {name: 'React', img: '//goo.gl/dL5MXT', size: 15, invited: false},
-  {name: 'Redux', img: '//goo.gl/L0mLmT', size: 15, invited: false},
-  {name: 'Webpack', img: '//goo.gl/2AV3Dn', size: 15, invited: false,
-    friends: [
-      {name: 'electrode', img: '//randomuser.me/api/portraits/men/44.jpg', invited: true},
-      {name: 'hapi', img: '//randomuser.me/api/portraits/men/43.jpg', invited: true},
-      {name: 'React', img: '//randomuser.me/api/portraits/men/40.jpg', invited: true},
-      {name: 'Redux', img: '//randomuser.me/api/portraits/men/30.jpg', invited: true},
-      {name: 'Webpack', img: '//randomuser.me/api/portraits/men/24.jpg', invited: true},
-      {name: 'electrode', img: '//randomuser.me/api/portraits/men/49.jpg', invited: true},
-      {name: 'hapi', img: '//randomuser.me/api/portraits/men/87.jpg', invited: true},
-      {name: 'React', img: '//randomuser.me/api/portraits/men/90.jpg', invited: true},
-      {name: 'Redux', img: '//randomuser.me/api/portraits/men/37.jpg', invited: true},
-      {name: 'Webpack', img: '//randomuser.me/api/portraits/men/94.jpg', invited: true}]},
-  {img: '//goo.gl/UdhbKO', name: 'wizard', size: 15, invited: true,
-    friends: [
-      {name: 'electrode', img: '//randomuser.me/api/portraits/men/44.jpg', invited: true},
-      {name: 'hapi', img: '//randomuser.me/api/portraits/men/43.jpg', invited: true},
-      {name: 'React', img: '//randomuser.me/api/portraits/men/40.jpg', invited: true},
-      {name: 'Redux', img: '//randomuser.me/api/portraits/men/30.jpg', invited: true},
-      {name: 'Webpack', img: '//randomuser.me/api/portraits/men/24.jpg', invited: true},
-      {name: 'electrode', img: '//randomuser.me/api/portraits/men/49.jpg', invited: true},
-      {name: 'hapi', img: '//randomuser.me/api/portraits/men/87.jpg', invited: true},
-      {name: 'React', img: '//randomuser.me/api/portraits/men/90.jpg', invited: true},
-      {name: 'Redux', img: '//randomuser.me/api/portraits/men/37.jpg', invited: true},
-      {name: 'Webpack', img: '//randomuser.me/api/portraits/men/94.jpg', invited: true}]}
-];
+  const exampleObj = [
+    {name: 'electrode', img: '//goo.gl/UdhbKO', size: 15, invited: true},
+    {name: 'hapi', img: '//goo.gl/q9uIFW', size: 15, invited: false},
+    {name: 'React', img: '//goo.gl/dL5MXT', size: 15, invited: false},
+    {name: 'Redux', img: '//goo.gl/L0mLmT', size: 15, invited: false},
+    {name: 'Webpack', img: '//goo.gl/2AV3Dn', size: 15, invited: false,
+      friends: [
+        {name: 'electrode', img: '//randomuser.me/api/portraits/men/44.jpg', invited: true},
+        {name: 'hapi', img: '//randomuser.me/api/portraits/men/43.jpg', invited: true},
+        {name: 'React', img: '//randomuser.me/api/portraits/men/40.jpg', invited: true},
+        {name: 'Redux', img: '//randomuser.me/api/portraits/men/30.jpg', invited: true},
+        {name: 'Webpack', img: '//randomuser.me/api/portraits/men/24.jpg', invited: true},
+        {name: 'electrode', img: '//randomuser.me/api/portraits/men/49.jpg', invited: true},
+        {name: 'hapi', img: '//randomuser.me/api/portraits/men/87.jpg', invited: true},
+        {name: 'React', img: '//randomuser.me/api/portraits/men/90.jpg', invited: true},
+        {name: 'Redux', img: '//randomuser.me/api/portraits/men/37.jpg', invited: true},
+        {name: 'Webpack', img: '//randomuser.me/api/portraits/men/94.jpg', invited: true}]},
+    {img: '//goo.gl/UdhbKO', name: 'wizard', size: 15, invited: true,
+      friends: [
+        {name: 'electrode', img: '//randomuser.me/api/portraits/men/44.jpg', invited: true},
+        {name: 'hapi', img: '//randomuser.me/api/portraits/men/43.jpg', invited: true},
+        {name: 'React', img: '//randomuser.me/api/portraits/men/40.jpg', invited: true},
+        {name: 'Redux', img: '//randomuser.me/api/portraits/men/30.jpg', invited: true},
+        {name: 'Webpack', img: '//randomuser.me/api/portraits/men/24.jpg', invited: true},
+        {name: 'electrode', img: '//randomuser.me/api/portraits/men/49.jpg', invited: true},
+        {name: 'hapi', img: '//randomuser.me/api/portraits/men/87.jpg', invited: true},
+        {name: 'React', img: '//randomuser.me/api/portraits/men/90.jpg', invited: true},
+        {name: 'Redux', img: '//randomuser.me/api/portraits/men/37.jpg', invited: true},
+        {name: 'Webpack', img: '//randomuser.me/api/portraits/men/94.jpg', invited: true}]}
+    ];
 
 
-export default class ResourceList extends Component {
+  export default class ResourceList extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      invitees: ['electrode', 'wizard']
-    };
-    this.toggleGuest = this.toggleGuest.bind(this);
-  }
+    constructor(props) {
+      super(props);
+      this.state = {
+        invitees: ['electrode', 'wizard']
+      };
+      this.toggleGuest = this.toggleGuest.bind(this);
+    }
 
-  renderFriends(friends) {
-    return friends
-      .filter(friend => friend.invited)
-      .map(friend => (<RenderFriend friend={friend}/>));
-  }
+    renderFriends(friends) {
+      return friends
+        .filter(friend => friend.invited)
+        .map(friend => (<RenderFriend friend={friend}/>));
+    }
 
-  invited(friends) {
-    return friends
-      .map((friend) => {
-        friend.invited = this.state.invitees.filter(invitee => invitee === friend.name).length;
-        return friend;
-      })
-  }
+    invited(friends) {
+      return friends
+        .map((friend) => {
+          friend.invited = this.state.invitees.filter(invitee => invitee === friend.name).length;
+          return friend;
+        })
+    }
 
-  toggleGuest(name, invited) {
-    let invitees = this.state.invitees;
-    invitees = invited ? invitees.push(name) : invitees.splice(invitees.indexOf(name), 1);
+    toggleGuest(name, invited) {
+      let invitees = this.state.invitees;
+      invitees = invited ? invitees.push(name) : invitees.splice(invitees.indexOf(name), 1);
 
-    this.setState({invitees: invitees})
-    console.log(name, invited);
-    console.log('invitees: ',this.state.invitees)
-  }
+      this.setState({invitees: invitees})
+      console.log(name, invited);
+      console.log('invitees: ',this.state.invitees)
+    }
 
-  render() {
-    let { ourFriends, message } = this.props;
-    ourFriends = !!ourFriends ? ourFriends : exampleObj;
+    render() {
+      let { ourFriends, message } = this.props;
+      ourFriends = !!ourFriends ? ourFriends : exampleObj;
 
-    return (
-      <div className={styles.houseParty}>
-        {!!message && <p>{message}</p>}
-        <GuestList friends={ourFriends} toggleGuest={this.toggleGuest}/>
-        <div>
-          {this.renderFriends(ourFriends)}
+      return (
+        <div className={styles.houseParty}>
+          {!!message && <p>{message}</p>}
+          <GuestList friends={ourFriends} toggleGuest={this.toggleGuest}/>
+          <div>
+            {this.renderFriends(ourFriends)}
+          </div>
         </div>
-      </div>
-    );
-  }
+      );
+    }
 
-};
+  };
 
-ResourceList.displayName = "ResourceList";
+  ResourceList.displayName = "ResourceList";
 
-ResourceList.PropTypes = {
-  ourBestFriends: PropTypes.array,
-  message: PropTypes.string
-};
+  ResourceList.PropTypes = {
+    ourBestFriends: PropTypes.array,
+    message: PropTypes.string
+  };
 
-ResourceList.defaultProps = {};
+  ResourceList.defaultProps = {};
 ```
 
-Navigate to `<'your-awesome-component'>/src/components/render-friend.jsx`. Copy, paste and save the code below into this file:
+Navigate to `<your-awesome-component>/src/components/render-friend.jsx`. Copy, paste and save the code below into this file:
 
-```
+```javascript
 import React from 'react';
 
 import styles from "../styles/resource-list.css";
@@ -141,168 +141,167 @@ const RenderFriend = ({friend, styleObj}) => {
     })
   }
 
-  return (
-    <div className={applyClass} style={applyStyle}>
-      {!!friends && renderFriends(friends)}
-      {!!friends && <RenderFriend friend={parentFriend} styleObj={style('parent', size)}/>}
-    </div>
-  )
-};
-
-RenderFriend.propTypes = {
-  friend: React.PropTypes.object,
-  styleObj: React.PropTypes.object
-};
-
-export default RenderFriend;
-```
-
-Navigate to `<'your-awesome-component'>/src/components/` folder. Add a file titled `guest-list.jsx` (`<'your-awesome-component'>/src/components/` Copy, paste and save the code below into this file:
-
-```
-import React, { Component, PropTypes } from "react";
-
-import styles from "../styles/resource-list.css";
-
-export default class GuestList extends Component {
-
-  constructor(props){
-    super(props);
-
-  }
-
-  renderFriends(friends){
-    return friends.map((friend) => (
-      <div className={styles.guestName}>
-        <input id={friend.name} type="checkbox" checked={friend.invited} onChange={this.props.toggleGuest(friend.name, !friend.invited)}/>
-        <label htmlFor={friend.name}>{friend.name}</label>
-      </div>
-    ))
-  }
-
-  render() {
-    const { friends } = this.props;
-
-    return(
-      <div className={styles.guestList}>
-        <h1>Guest List:</h1>
-        {this.renderFriends(friends)}
+    return (
+      <div className={applyClass} style={applyStyle}>
+        {!!friends && renderFriends(friends)}
+        {!!friends && <RenderFriend friend={parentFriend} styleObj={style('parent', size)}/>}
       </div>
     )
-  }
-
-
-};
-
-
-GuestList.propTypes = {
-  friends: React.PropTypes.array,
-  toggleGuest: React.PropTypes.func
-};
-```
-
-You get the idea. Navigate to `<'your-awesome-component'>/src/styles/guest-list.jsx`. Delete the existing code and copy, paste and save the code below into this file:
-
-```
-@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
-
-
-body {
-  font-family: sans-serif;
-}
-
-p {
-    padding: 15px;
-}
-
-label { font-size: 24px; }
-input[type=checkbox] { display:none; }
-input[type=checkbox] + label:before {
-  font-family: FontAwesome;
-  display: inline-block;
-}
-input[type=checkbox] + label:before { content: "\f096"; }
-input[type=checkbox] + label:before { letter-spacing: 10px; }
-input[type=checkbox]:checked + label:before { content: "\f046"; }
-input[type=checkbox]:checked + label:before { letter-spacing: 5px; }
-
-.friend {
-  border-radius: 50%;
-  background-color: #efefef;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 60%;
-}
-.houseParty {
-  background-color: #e2e2ff;
-  border-radius: 10px;
-}
-.guestList {
-  background-color: white;
-  display: inline-block;
-  padding-left: 3em;
-  padding-right: 3em;
-  padding-bottom: 1.5em;
-  border-radius: 5px;
-  margin: 1em;
-}
-
-.guestName {
-  margin-bottom: .5em;
-}
-```
-
-Whew, last step. Create a file called  `<'your-awesome-component'>/src/helpers/graph-styles.js`. We will discuss this helper more later. Copy, paste and save the code below into this file:
-
-```
-'use strict';
-
-export default (type, size, rotateVal) => {
-
-  const nodeSize = type === 'child' ? (size / 4) : (size / 2);
-
-  let parentOrSingle = {
-    width:  `${nodeSize}em`,
-    height: `${nodeSize}em`,
-    margin: `-${nodeSize / 2}em`,
-    display: `block`,
-    position: `absolute`,
-    top:  `50%`,
-    left: `50%`,
-    transform: `translate(0em)`
   };
 
-  switch(type){
+  RenderFriend.propTypes = {
+    friend: React.PropTypes.object,
+    styleObj: React.PropTypes.object
+  };
 
-    case 'single':
-      const singleNode = {
-        display: `inline-block`,
-        position: `relative`,
-        margin: `${nodeSize / 8}em`
-      };
-      ['width', 'height'].map(prop => singleNode[prop] = parentOrSingle[prop]);
-      return singleNode;
+  export default RenderFriend;
+```
 
-    case 'child':
-      const childNode = {
-        transform: `rotate(${rotateVal * 1}deg) translate(${nodeSize * 2}em) rotate(${(rotateVal * -1)}deg)`,
-        backgroundSize: `100%`,
-      };
-      return Object.assign(parentOrSingle, childNode);
+Navigate to `<your-awesome-component>/src/components/` folder. Add a file titled `guest-list.jsx` (`<your-awesome-component>/src/components/` Copy, paste and save the code below into this file:
 
-    case 'container':
-      return {
-        position: `relative`,
-        width:  `${size}em`,
-        height: `${size}em`,
-        padding: `${size * .13}em`,
-        borderRadius: `50%`,
-        display: `inline-block`,
-        margin: `${size * .13}em`
-      }
+```javascript
+  import React, { Component, PropTypes } from "react";
 
-    default:
-      return parentOrSingle;
+  import styles from "../styles/resource-list.css";
+
+  export default class GuestList extends Component {
+
+    constructor(props){
+      super(props);
+
+    }
+
+    renderFriends(friends){
+      return friends.map((friend) => (
+        <div className={styles.guestName}>
+          <input id={friend.name} type="checkbox" checked={friend.invited} onChange={this.props.toggleGuest(friend.name, !friend.invited)}/>
+          <label htmlFor={friend.name}>{friend.name}</label>
+        </div>
+      ))
+    }
+
+    render() {
+      const { friends } = this.props;
+
+      return(
+        <div className={styles.guestList}>
+          <h1>Guest List:</h1>
+          {this.renderFriends(friends)}
+        </div>
+      )
+    }
+  };
+
+
+  GuestList.propTypes = {
+    friends: React.PropTypes.array,
+    toggleGuest: React.PropTypes.func
+  };
+```
+
+You get the idea. Navigate to `<your-awesome-component>/src/styles/guest-list.jsx`. Delete the existing code and copy, paste and save the code below into this file:
+
+```css
+  @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+  body {
+    font-family: sans-serif;
   }
-};
+
+  p {
+      padding: 15px;
+  }
+
+  label { font-size: 24px; }
+  input[type=checkbox] { display:none; }
+  input[type=checkbox] + label:before {
+    font-family: FontAwesome;
+    display: inline-block;
+  }
+  input[type=checkbox] + label:before { content: "\f096"; }
+  input[type=checkbox] + label:before { letter-spacing: 10px; }
+  input[type=checkbox]:checked + label:before { content: "\f046"; }
+  input[type=checkbox]:checked + label:before { letter-spacing: 5px; }
+
+  .friend {
+    border-radius: 50%;
+    background-color: #efefef;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+  }
+
+  .houseParty {
+    background-color: #e2e2ff;
+    border-radius: 10px;
+  }
+
+  .guestList {
+    background-color: white;
+    display: inline-block;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-bottom: 1.5em;
+    border-radius: 5px;
+    margin: 1em;
+  }
+
+  .guestName {
+    margin-bottom: .5em;
+  }
+```
+
+Whew, last step. Create a file called  `<your-awesome-component>/src/helpers/graph-styles.js`. We will discuss this helper more later. Copy, paste and save the code below into this file:
+
+```javascript
+  'use strict';
+
+  export default (type, size, rotateVal) => {
+
+    const nodeSize = type === 'child' ? (size / 4) : (size / 2);
+
+    let parentOrSingle = {
+      width:  `${nodeSize}em`,
+      height: `${nodeSize}em`,
+      margin: `-${nodeSize / 2}em`,
+      display: `block`,
+      position: `absolute`,
+      top:  `50%`,
+      left: `50%`,
+      transform: `translate(0em)`
+    };
+
+    switch(type){
+
+      case 'single':
+        const singleNode = {
+          display: `inline-block`,
+          position: `relative`,
+          margin: `${nodeSize / 8}em`
+        };
+        ['width', 'height'].map(prop => singleNode[prop] = parentOrSingle[prop]);
+        return singleNode;
+
+      case 'child':
+        const childNode = {
+          transform: `rotate(${rotateVal * 1}deg) translate(${nodeSize * 2}em) rotate(${(rotateVal * -1)}deg)`,
+          backgroundSize: `100%`,
+        };
+        return Object.assign(parentOrSingle, childNode);
+
+      case 'container':
+        return {
+          position: `relative`,
+          width:  `${size}em`,
+          height: `${size}em`,
+          padding: `${size * .13}em`,
+          borderRadius: `50%`,
+          display: `inline-block`,
+          margin: `${size * .13}em`
+        }
+
+      default:
+        return parentOrSingle;
+    }
+  };
 ```

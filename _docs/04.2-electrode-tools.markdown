@@ -3,3 +3,9 @@ title:  "Powerful Electrode Tools"
 permalink: docs/electrode_tools.html
 toplevel: "Getting Started: Quick Guide"
 ---
+
+###Using Powerful Electrode Tools
+
+*  [Electrify](electrify.html) is a sophisticated tool for analyzing the module tree of project bundles.
+
+*  [Electrode-Explorer](electrode_explorer.html) a dynamic, real-time showcase of all your components.

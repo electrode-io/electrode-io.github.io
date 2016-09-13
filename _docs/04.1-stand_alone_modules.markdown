@@ -3,3 +3,13 @@ title:  "Stand Alone Modules"
 permalink: docs/stand_alone_modules.html
 toplevel: "Getting Started: Advanced"
 ---
+
+###Leveraging Stand Alone Modules
+
+*  [Confippet](confippet.html) is a versatile, flexible utility for managing configurations of Node.js applications.
+
+*  [Above the Fold Rendering](above_fold_rendering.html) is a React component wrapper for optionally skipping Server Side Rendering.
+
+*  [Server Side Render Cache + Profiling](server_side_render_cache.html) supports profiling React Server Side Rendering time and component caching to help you speed up SSR.
+
+*  [Stateless CSRF Validation](stateless_csrf_validation.html) is a plugin that enables stateless CSRF protection using in Electrode, Express or Hapi applications.

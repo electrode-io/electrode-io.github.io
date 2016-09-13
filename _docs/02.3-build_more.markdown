@@ -1,11 +1,11 @@
 ---
-title:  "Build More"
+title:  "Build More + Deploy"
 permalink: docs/build_more.html
 toplevel: "Getting Started: Quick Guide"
 ---
-Here at WalmartLabs we love to [build](http://www.walmartlabs.com/2016/08/weve-moved-follow-walmartlabs-on-medium/).
+###Here at WalmartLabs we love to [build](what_is_electrode.html).
 
-Navigate to `<'your-awesome-app'>/client/components/home.jsx`:
+Navigate to `<your-awesome-app>/client/components/home.jsx`:
 
 ```javascript
 import React from "react";
@@ -19,7 +19,7 @@ export class Home extends React.Component {
 }
 ```
 
-We will need a place to keep all of the resources we learned in the [Getting Started: Quick Guide](quick_guide.html) organized. Let's make a library for our present stack and technologies we are excited about! Copy the code below and paste it into `<'your-awesome-app'>/client/components/home.jsx`:
+We will need a place to keep all of the resources we learned in the [Getting Started: Quick Guide](quick_guide.html) organized. Let's make a library for our present stack and technologies we are excited about! Copy the code below and paste it into `<your-awesome-app>/client/components/home.jsx`:
 
 ```javascript
 import React from "react";
@@ -43,7 +43,7 @@ export class Home extends React.Component {
 }
 ```
 
-Let's finish the UI by adding styles. Navigate to <your-awesome-app>/client/styles/base.css and add the code below:
+Let's finish the UI by adding styles. Navigate to `<your-awesome-app>/client/styles/base.css` and add the code below:
 
 ```css
 a {
@@ -65,11 +65,15 @@ a:hover {
 }
 ```
 
-Run our new favorite command to see your tech list: `gulp dev`
+Run our new favorite command to see your tech list:
 
-##### Deploy
+```bash
+gulp dev
+```
 
-<p class="body-text">We're almost finished. The final step is to deploy your-awesome-app and share it with your fellow developers using <a href="https://devcenter.heroku.com/categories/deployment" class="doc-links">Heroku</a> . We have listed the steps below, but feel free to learn more about Heroku <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction" class="doc-links">here</a>. These instructions assume you have a GitHub account. Navigate to your GitHub and create a new repo 'your-awesome-app'. Hit the clone your-awesome-repo and follow the steps below in order:</p>
+### Deploy
+
+We're almost finished. The final step is to deploy your-awesome-app and share it with your fellow developers using [Heroku] (https://devcenter.heroku.com/categories/deployment). We have listed the steps below, but feel free to learn more about Heroku [here] (https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction). These instructions assume you have a GitHub account. Navigate to your GitHub and create a new repo 'Your-Awesome-App'. Hit the `clone your-awesome-repo` and follow the steps below in order:</p>
 
 ```bash
 $ git init
@@ -92,8 +96,8 @@ $ heroku login
 Enter your Heroku credentials:
 
 ```bash
-    Email: your-example-email@walmartlabs.com
-    Password:
+Email: your-example-email@walmartlabs.com
+Password:
 ```
 
 You should see a terminal message `Logged in as your-example-email@walmartlabs.com`. Now, let's deploy!
