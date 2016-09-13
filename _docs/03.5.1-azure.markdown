@@ -40,36 +40,37 @@ Getting Ready to Deploy:
 
 Now, let's deploy some code to Azure using Git:
 
-In your command-line, make a new directory, with a different name and clone Your-Awesome-App like this:
+In your command-line, make a new directory, with a different name and clone this sample app, `https://github.com/Azure-Samples/app-service-web-html-get-started` , like this:
 
 ```bash
-git clone <your-awesome-app>
+git clone https://github.com/Azure-Samples/app-service-web-html-get-started
 ```
 
-Switch back to the original Your-Awesome-App repo. Configure the Git remote for your Azure app its Git URL, which you copied from the Portal a few steps ago.
+Cd into this sample app
 
 ```bash
-git remote add azure <new-cloned-repo-of-your-awesome-app>
+$ cd app-service-web-html-get-started
+```
+
+Configure the Git remote for your Azure app its Git URL, which you copied from the Portal a few steps ago.
+
+```bash
+$ git remote add azure <copied-git-url-from-your-portal>
 ```
 
 Deploy your code to your Azure app:
 
 ```bash
-git push azure master
+$ git push azure master
 ```
 
-To make updates use the folling steps:
+To make updates use the following steps:
 
 ```bash
 $ git add .
 $ git commit -m "Updates Azure App Service"
 $ git push azure master
 ```
-
-Launch your live Azure app from the command line:
-
-```bash
-$ azure site browse
-```
+In your browser, navigate to http://<appname>.azurewebsites.net to see it in action.
 
 Feel free to explore the [Azure] (https://azure.microsoft.com/en-us/documentation/articles/app-service-web-overview/) site and learn more about best practices such as specifiying your [Node version] (https://azure.microsoft.com/en-us/documentation/articles/nodejs-specify-node-version-azure-apps/), using [Node modules] (https://azure.microsoft.com/en-us/documentation/articles/nodejs-use-node-modules-azure-apps/) with Azure Apps and how to [debug a Node app] (https://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-debug/) in Azure App service.
