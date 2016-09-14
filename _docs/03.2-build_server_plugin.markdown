@@ -11,7 +11,9 @@ At WalmartLabs, we use [Hapi](http://hapijs.com/) because of it's flexible and r
 Let's make a deal! Actually, scratch that, let's make a plugin! Plugins are way to extend our server's functionality. Building upon our open source theme, let's make a plugin that retrieves the our Tech Friends for our "resource party."
 
 
-At their core, plugins are a simple `register` object, that has the signature `function(server, options, next)`. Read more about building plugins from scratch in the [Hapi documentation](http://hapijs.com/tutorials/plugins). For now, navigate to the <your-awesome-app>/server/plugins folder. Make a folder called `friends`. Cd into your new `friends` folder and:
+At their core, plugins are a simple `register` object, that has the signature `function(server, options, next)`. Read more about building plugins from scratch in the [Hapi documentation](http://hapijs.com/tutorials/plugins).
+
+Let's head back to Your Awesome App. Now we can integrate your published `<your-awesome-component` as a node module and build out the app. Navigate to the <your-awesome-app>/server/plugins folder. Make a folder called `friends`. Cd into your new `friends` folder and:
 
 ```bash
   touch index.js
@@ -32,6 +34,37 @@ Your Server file pattern should now look like this:
     |_index.js
 ```
 {% endraw %}
+
+Navigate to `<your-awesome-app>/server/index.js` Copy, paste and save the code below between `const staticPathsDecor = require("electrode-static-paths");` and `require("babel-register")({`. This is so you app can consume the transpiled CSS modules from your published component:
+
+```javascript
+require.extensions[".css"] = () => {
+  return;
+};
+```
+
+It should now look like this:
+
+```javascript
+"use strict";
+
+process.on('SIGINT', function () {
+  process.exit(0);
+});
+
+const config = require("electrode-confippet").config;
+const staticPathsDecor = require("electrode-static-paths");
+
+require.extensions[".css"] = () => {
+  return;
+};
+
+require("babel-register")({
+  ignore: /node_modules\/(?!react\/)/
+});
+
+require("electrode-server")(config, [staticPathsDecor()]);
+```
 
 Navigate to `<your-awesome-app>/server/plugins/friends/index.js` Copy, paste and save the code below:
 
