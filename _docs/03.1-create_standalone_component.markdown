@@ -73,7 +73,6 @@ ourFriends={[
 ]}
 ```
 
-
 Now, the fun part! We will be building out `your-awesome-component` and adding two sub-components (or dumb components). Trust me, it will be worth it.
 
 In your `<your-awesome-component>/src/components/your-awesome-component.jsx`, delete what it inside and copy, paste and save the code below into this file. Change all references from the literal `your-awesome-component or YourAwesomeComponent` to your actual component name:
@@ -247,7 +246,6 @@ export default class GuestList extends Component {
     e.preventDefault();
     this.props.toggleGuest(e.target.id, e.target.checked);
   }
-
 
   render() {
     const { invitees } = this.props;
