@@ -4,4 +4,4 @@ permalink: docs/faq.html
 toplevel: "Resources"
 ---
 
-test2
+Coming Soon!
