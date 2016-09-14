@@ -35,7 +35,7 @@ Your Server file pattern should now look like this:
 ```
 {% endraw %}
 
-Navigate to `<your-awesome-app>/server/index.js` Copy, paste and save the code below between `const staticPathsDecor = require("electrode-static-paths");` and `require("babel-register")({`. This is so you app can consume the transpiled CSS modules from your published component:
+Navigate to `<your-awesome-app>/server/index.js` Copy, paste and save the code below between `const staticPathsDecor = require("electrode-static-paths");` and `require("babel-register")({`. This is so your app can consume the transpiled CSS modules from your published component:
 
 ```javascript
 require.extensions[".css"] = () => {
