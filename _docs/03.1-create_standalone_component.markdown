@@ -51,234 +51,402 @@ Open the application up with your favorite text editor. We will start with a fas
 We are going to quickly and carefully add the code below to scaffold out our Resource List and focus on the capabilities of yo generator-electrode-component. Navigate to `<your-awesome-component>/demo/examples/your-awesome-component.example`. Between your component tag, copy, paste and save the code below into this file:
 
 ```
-<YourAwesomeComponent
--insert code below here-
-                  />.
+  <YourAwesomeComponent
+  -insert code below here-
+                    />.
 ```
-
-```
-ourFriends={[
-  'electrode',
-  //un-comment the lines below to invite our friends!
-  //'React',
-  //'Redux',
-  //'Webpack',
-  //'hapi'
-  ]}
-```
-
-Navigate to
-`<your-awesome-component>/demo/examples` folder. Create a file titled:
-`<your-awesome-component>/demo/examples/render-friend.example`. Copy, paste and save the code below into this file:
-
-```
-<RenderFriend />
-```
-
-Next, let's add a short snippet to `<your-awesome-component>/demo/examples/demo.jsx`. Copy, paste and save the code below into this file, under `title: "YourAwesomeComponent" object`:
+Between your component tag, copy, paste and save the code below into this file:
 
 ```javascript
-{
-  title: "renderFriend",
-  examples: [
-    {
-      type: "playground",
-      code: require("raw!./examples/render-friend.example"),
-      noRender: true
-    }
-  ]
+message={
+
+  `One is not a party! Check the box next to our friends to invite them to party!`
+
 }
-
-```
-Don't forget to add a comma after `TestComponent`! It should now look like this:
-
-```javascript
-  const components = [
-    {
-      title: "TestComponent",
-      examples: [
-        {
-          type: "playground",
-          code: require("raw!./examples/test-component.example"),
-          noRender: true
-        }
-      ]
-    },
-    {
-      title: "renderFriend",
-      examples: [
-        {
-          type: "playground",
-          code: require("raw!./examples/render-friend.example"),
-          noRender: true
-        }
-      ]
-    }
-  ];
+ourFriends={[
+  {name: "electrode", img: "//goo.gl/CZ4wAF", size: 12},
+  {name: "hapi", img: "//goo.gl/q9uIFW", size: 12},
+  {name: "React", img: "//goo.gl/dL5MXT", size: 12},
+  {name: "Redux", img: "//goo.gl/L0mLmT", size: 12},
+  {name: "Webpack", img: "//goo.gl/2AV3Dn", size: 12},
+  {img: "//goo.gl/UdhbKO", name: "wizard", size: 12}
+]}
 ```
 
-Now, the fun part! We will be building out `your-awesome-component.jsx` and adding a two sub-components (or dumb components). Trust me, it will be worth it.
+Now, the fun part! We will be building out `your-awesome-component` and adding two sub-components (or dumb components). Trust me, it will be worth it.
 
-In your `<your-awesome-component>/src/components/your-awesome-component.jsx`, delete what it inside and copy, paste and save the code below into this file. Change all references from the literal `your awesome component` to your actual component name:
+In your `<your-awesome-component>/src/components/your-awesome-component.jsx`, delete what it inside and copy, paste and save the code below into this file. Change all references from the literal `your-awesome-component or YourAwesomeComponent` to your actual component name:
 
 ```javascript
-  import React, { Component, PropTypes } from "react";
+import React, { Component, PropTypes } from "react";
 
-  import styles from "../styles/your-awesome-component.css";
-  import RenderFriend from "./render-friend";
+import styles from "../../src/styles/your-awesome-component.css";
+import RenderFriend from "./render-friend";
+import GuestList from "./guest-list";
 
-  export default class YourAwesomeComponent extends React.Component {
+export default class YourAwesomeComponent extends Component {
 
-    renderFriends(friends) {
-      const partyTime = friends.length === 5;
-      return friends.map((friend, i, arr) => <RenderFriend friend={friend} partyTime={partyTime}/>);
-    }
-
-    render() {
-      const { ourFriends } = this.props;
-
-      return (
-        <div>
-          <div>One is not a party! Un-comment our friends in the playground above to invite them to party!</div>
-          <div className="funroom">
-            { this.renderFriends(ourFriends) }
-          </div>
-        </div>
-      );
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      invitees: this.props.ourFriends.map(({name}) => {
+        return {name: name, invited: false};
+      }),
+      invitee: {}
+    };
+    this.toggleGuest = this.toggleGuest.bind(this);
+    this.renderFriends = this.renderFriends.bind(this);
   }
 
-  YourAwesomeComponent.displayName = "YourAwesomeComponent";
-  YourAwesomeComponent.PropTypes = {
-    ourBestFriends: PropTypes.array
-  };
-  YourAwesomeComponent.defaultProps = {
-    ourBestFriends: []
-  };
+  renderFriends(friends) {
+    const invitees = this.state.invitees;
+    const partyTime = invitees.length === invitees.filter(invitee => invitee.invited).length ? styles.party : '';
+    return friends
+      .filter((friend) => !!invitees.filter(invitee => invitee.name === friend.name && invitee.invited).length)
+      .map((friend) => (<RenderFriend className={partyTime} key={friend.name} friend={friend}/>));
+  }
+
+  toggleGuest({name, invited}) {
+    const invitees = this.state.invitees.map((invitee) => {
+      if(invitee.name === name) {
+        invitee.invited = !invited;
+      }
+      return invitee;
+    });
+    this.setState({invitees: invitees});
+  }
+
+  render() {
+    let { ourFriends, message, outFocus } = this.props;
+    const { invitees } = this.state;
+    ourFriends = !!ourFriends ? ourFriends : exampleObj;
+    const houseParty = invitees.length === invitees.filter(invitee => invitee.invited).length ? `${styles.houseParty} ${styles.house}` : styles.house;
+    const containerStyle = outFocus ? `${styles.container} ${styles.outFocus}` : styles.container;
+
+    return (
+      <div>
+        {!!message && <p>{message}</p>}
+        <GuestList invitees={invitees} toggleGuest={invitee => this.toggleGuest(invitee)}/>
+        <div className={containerStyle}>
+          <div className={houseParty}>
+            <div className={styles.room}>
+              {this.renderFriends(ourFriends)}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+};
+
+YourAwesomeComponent.displayName = "YourAwesomeComponent";
+
+YourAwesomeComponent.PropTypes = {
+  ourBestFriends: PropTypes.array,
+  message: PropTypes.string
+};
+
+YourAwesomeComponent.defaultProps = {};
 ```
 
 Create a file titled: `<your-awesome-component>/src/components/render-friend.jsx`. Copy, paste and save the code below into this file:
 
 {% raw  %}
 ```javascript
-  import React from 'react';
+import React from "react";
 
-  import PartyOn from "./party-on";
+import styles from "../../src/styles/your-awesome-component.css";
+import style from "../helpers/graph-styles";
 
-  const imageMap = {
-    'React': 'http://daynin.github.io/clojurescript-presentation/img/react-logo.png',
-    'Redux': 'https://raw.githubusercontent.com/reactjs/redux/master/logo/logo.png',
-    'Webpack': 'http://freevector.co/wp-content/uploads/2014/04/webpack.png',
-    'hapi': 'http://hapijs.com/public/img/logo.svg',
-    'electrode': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emoji_u26a1.svg/2000px-Emoji_u26a1.svg.png'
-  }
+const DEFAULT_SIZE = 15;
+const DEGREES_OF_COOL = 360;
 
-  const RenderFriend = ({friend, partyTime}) => {
+const RenderFriend = ({friend, styleObj, className}) => {
 
-    const classes = !!partyTime ? 'friend party' : 'friend';
+  const { name, img, profile, friends } = friend;
+  let { size } = friend;
+  const parentFriend = { name, img, profile };
+  size = size ? size : DEFAULT_SIZE;
 
-    return (
-        <div className={classes} style={{backgroundImage: `url(${imageMap[friend]})`}} %}>
-        {!!partyTime && <PartyOn />}
-      </div>
-    )
+  const bgImg = {backgroundImage: `url(${img})`};
+  let applyStyle = styleObj
+    ? Object.assign(bgImg, styleObj)
+    : Object.assign(bgImg, style("single", size));
+
+  applyStyle = friends ? style("container", size) : applyStyle;
+  let applyClass = friends ? styles.join : styles.friend;
+  console.log('className', className);
+  applyClass = styleObj ? applyClass : `${applyClass} ${styles.join} ${className || ''}`;
+
+  const renderFriends = (friendsArr) => {
+    const angleVal = (DEGREES_OF_COOL / friendsArr.length);
+    let rotateVal = 0;
+
+    return friendsArr.map((friendObj) => {
+      rotateVal += angleVal;
+      return (
+        <RenderFriend
+          key={friendObj.name}
+          friend={friendObj}
+          styleObj={style("child", size, rotateVal)}/>
+        );
+    });
   };
 
-  RenderFriend.propTypes = {
-    friend: React.PropTypes.string
-  };
-  RenderFriend.defaultProps = {
-    friend: 'electrode'
-  };
+  return (
+    <div className={applyClass} style={applyStyle}>
+      {!!friends && renderFriends(friends)}
+      {!!friends && <RenderFriend friend={parentFriend} styleObj={style("parent", size)}/>}
+    </div>
+  );
+};
 
-  export default RenderFriend;
+RenderFriend.propTypes = {
+  friend: React.PropTypes.object,
+  styleObj: React.PropTypes.object
+};
+
+export default RenderFriend;
 ```
 {% endraw %}
 
 
 Create a file titled:
-`<your-awesome-component>/src/components/party-on.jsx`. Copy, paste and save the code below into this file:
+`<your-awesome-component>/src/components/guest-list.jsx`. Copy, paste and save the code below into this file:
 
 ```javascript
-  import React from 'react';
+import React, { Component, PropTypes } from "react";
 
-  const images = [
-    { attire: 'kazoo', url: "https://shareicon.net/data/128x128/2016/07/27/802813_birthday_512x512.png" },
-    { attire: 'hat', url: "http://icons.iconarchive.com/icons/sonya/swarm/256/Party-Hat-icon.png" }
-  ];
+import styles from "../../src/styles/your-awesome-component.css";
 
-  const PartyOn = () => (
-      <div>
-        {images.map((image) => <img src={image.url} alt={image.attire} className={image.attire+' party'}/>)}
+export default class GuestList extends Component {
+
+  constructor(props) {
+    super(props);
+    this.handleCheck = this.handleCheck.bind(this);
+  }
+
+  renderInvitees(inviteesArr) {
+    return inviteesArr.map((invitee) => (
+      <div key={invitee.name} className={styles.guestName}>
+        <input
+          id={invitee.name}
+          type="checkbox"
+          checked={invitee.invited}
+          onChange={() => this.props.toggleGuest(invitee)}/>
+        <label htmlFor={invitee.name}>
+          {invitee.name}
+        </label>
       </div>
-    )
+    ));
+  }
 
-  export default PartyOn;
+  handleCheck(e) {
+    e.preventDefault();
+    this.props.toggleGuest(e.target.id, e.target.checked);
+  }
+
+  render() {
+    const { invitees } = this.props;
+
+    return (
+      <div className={styles.guestList}>
+        <h1>Guest List:</h1>
+        {this.renderInvitees(invitees)}
+      </div>
+    );
+  }
+
+}
+
+GuestList.propTypes = {
+  friends: PropTypes.array,
+  toggleGuest: PropTypes.func
+};
 ```
 
-In your `<your-awesome-component>/src/style/your-awesome-component.css`, delete what it inside and copy, paste and save the code below into this file:
+In `src` create a folder titled `helpers` with file titled `graph-styles.js` inside - `<your-awesome-component>/src/helper/graph-styles.js`. Copy, paste and save the code below into this file:
+
+```javascript
+
+const PARENT = {divisor: 2};
+const CHILD = {divisor: 4, rotateBack: -1};
+const SINGLE = {marginDivisor: 8};
+const CONTAINER = {paddingDivisor: .13, marginDivisor: .13};
+
+
+export default (type, size, rotateVal) => {
+
+  const nodeSize = type === "child" ? (size / CHILD.divisor) : (size / PARENT.divisor);
+
+  const parentOrSingle = {
+    width: `${nodeSize}em`,
+    height: `${nodeSize}em`,
+    margin: `-${nodeSize / PARENT.divisor}em`,
+    display: `block`,
+    position: `absolute`,
+    top: `50%`,
+    left: `50%`,
+    transform: `translate(0em)`
+  };
+
+  switch (type) {
+
+  case "single": {
+    const singleNode = {
+      display: `inline-block`,
+      position: `relative`,
+      margin: `${nodeSize / SINGLE.marginDivisor}em`
+    };
+    ["width", "height"].map((prop) => singleNode[prop] = parentOrSingle[prop]);
+    return singleNode;
+  }
+
+  case "child": {
+    const childNode = {
+      transform: `rotate(${rotateVal * 1}deg) translate(${nodeSize * PARENT.divisor}em) rotate(${rotateVal * CHILD.rotateBack}deg)`,
+      backgroundSize: `100%`
+    };
+    return Object.assign(parentOrSingle, childNode);
+  }
+
+  case "container": {
+    return {
+      position: `relative`,
+      width: `${size}em`,
+      height: `${size}em`,
+      padding: `${size * CONTAINER.paddingDivisor}em`,
+      borderRadius: `50%`,
+      display: `inline-block`,
+      margin: `${size * CONTAINER.marginDivisor}em`
+    };
+  }
+
+  default: {
+    return parentOrSingle;
+    }
+  }
+};
+```
+
+Let's also add some style elements using [CSS modules](https://github.com/css-modules/css-modules) to create a dynamic application. In your `<your-awesome-component>/src/style/your-awesome-component.css`, delete what it inside and copy, paste and save the code below into this file:
 
 ```css
-  @keyframes tada {
-    from {
-      transform: scale3d(1, 1, 1);
-    }
-    10%, 20% {
-      transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
-    }
-    30%, 50%, 70%, 90% {
-      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-    }
-    40%, 60%, 80% {
-      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-    }
-    to {
-      transform: scale3d(1, 1, 1);
-    }
-  }
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
-  .friend {
-    width: 6rem;
-    height: 6rem;
-    margin: 3rem;
-    display: inline-block;
-    border-radius: 50%;
-    background-color: #efefef;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 60%;
-    animation-delay: .25s;
-    animation-name: tada;
-    animation-duration: 1s;
-    animation-fill-mode: both;
+body {
+  font-family: sans-serif;
+}
+p {
+  padding: 15px;
+}
+@keyframes partyLights {
+  0%{background-position:0% 51%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 51%}
+}
+@keyframes shake {
+  from {
+    transform: scale3d(1, 1, 1);
   }
+  10%, 20% {
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%, 50%, 70%, 90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%, 60%, 80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.join {
+  animation-name: shake;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.party {
+  animation-name: shake;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
 
-  .party {
-    animation-iteration-count: infinite;
-  }
+label { font-size: 24px; }
+input[type=checkbox] { display:none; }
+input[type=checkbox] + label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+}
+input[type=checkbox] + label:before { content: "\f096"; }
+input[type=checkbox] + label:before { letter-spacing: 10px; }
+input[type=checkbox]:checked + label:before { content: "\f046"; }
+input[type=checkbox]:checked + label:before { letter-spacing: 5px; }
 
-  .hat {
-    position: absolute;
-    top: -67px;
-    width: 105px;
-    left: -48px;
-    transform: rotate(-41deg);
-    animation-delay: .5s;
-  }
+.friend {
+  border-radius: 50%;
+  background-color: #efefef;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+.houseParty {
+	-webkit-clip-path: polygon(2% 97%, 98% 97%, 98% 44%, 51% 8%, 3% 45%);
+  clip-path: polygon(2% 97%, 98% 97%, 98% 44%, 51% 8%, 3% 45%);
+  background: linear-gradient(269deg, #ff90f1, #27ff8f, #6db0ff, #a398ff);
+  background-size: 800% 800%;
+  animation: partyLights 5s ease infinite;
+  min-height: 12em;
+}
+.house {
+  clip-path: polygon(2% 97%, 98% 97%, 98% 44%, 51% 8%, 3% 45%);
+  background-color: #474747;
+  padding: 10em 2em 2em 2em;
+  border-radius: 10px;
+  min-height: 12em;
+}
+.container {
+  position: relative;
+  transition: filter .7s ease-in-out;
+}
+.outFocus {
+  filter: blur(23px);
+}
+.container:before {
+  content: '';
+  display: block;
+  position: absolute;
+  background-image: url(//goo.gl/l01JZJ);
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 19em;
+  height: 11em;
+  z-index: 999;
+  left: 20em;
+  top: -1em;
+}
+.room {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 2em;
+}
+.guestList {
+  background-color: white;
+  display: inline-block;
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-bottom: 1.5em;
+  border-radius: 5px;
+  margin: 1em;
+}
 
-  .kazoo {
-    position: absolute;
-    top: -2px;
-    width: 65px;
-    left: 77px;
-    transform: rotate(-15deg);
-    animation-delay: 1s;
-  }
-
-  .blur {
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
-  }
+.guestName {
+  margin-bottom: .5em;
+}
 ```
 
 Last edit! In your `<your-awesome-component>index.js`, add the line below:
@@ -292,6 +460,14 @@ Now run it and explore the live demo!
 ```bash
   $ gulp build && gulp demo
 ```
+
+In the demo, you will see first see a Guest List header with a checkbox listing all of our resources, now referred to as Friends:
+
+![resource-list-1](/img/house-party.png)
+
+Have fun! Check the box before each Friend (resource). The Electrode stack is now like an awesome party, where all of our favorite technologies get invited:
+
+![resource-list-2](/img/resource-list-03.png)
 
 Walmartlabs believes that testing is critical to writing great, high performant code. This includes unit testing at both the component and application level. For your component, we are using [Mocha] (https://mochajs.org/), a Javascript testing framework that is perfect for running async tests, with [Enzyme] (http://airbnb.io/enzyme/docs/guides/mocha.html), airbnb's awesome testing utility for React.
 
