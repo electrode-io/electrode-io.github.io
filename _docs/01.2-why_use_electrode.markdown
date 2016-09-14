@@ -6,4 +6,10 @@ toplevel: "Overview"
 
 ### Learn More
 
-Learn about what inspires us and read more about the tools we are building.
+You know us as the world’s largest retailer, but we’re also one of the world’s fastest growing [e-commerce](www.walmartlabs.com) companies. [Electrode](www.github.com/electrode-io) is the platform that powers the Walmart.com customer experience. When you use [Walmart.com](www.walmart.com), you use Electrode — so you know it’s battle tested!
+
+We solve complex problems on an unimaginably big scale and build the [tools](stand_alone_modules.html) that optimize performance and efficiency. o	[Electrode](what is electrode.html) enforces modern web development best practices throughout the development cycle, encouraging clean, modular, reusable components while remaining easy to develop and deploy on.
+
+Electrode also supports isomorphic rendering/universal JavaScript, CSRF (Cross Site Request Forgery) detection, internationalization, component tooling, progressive web app standards, and everything developers need to successfully develop and deploy complex enterprise-scale React/Node.js applications.
+
+We are continuing to improve Electrode—future enhancements will include more progressive web app features for mobile, bigger investments in performance, and much more. Learn about what inspires us and [read more about](stand_alone_modules.html) the tools we are building.
