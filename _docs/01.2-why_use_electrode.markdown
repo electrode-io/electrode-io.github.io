@@ -12,4 +12,4 @@ We solve complex problems on an unimaginably big scale and build the [tools](sta
 
 Electrode also supports isomorphic rendering/universal JavaScript, CSRF (Cross Site Request Forgery) detection, internationalization, component tooling, progressive web app standards, and everything developers need to successfully develop and deploy complex enterprise-scale React/Node.js applications.
 
-We are continuing to improve Electrode—future enhancements will include more progressive web app features for mobile, bigger investments in performance, and much more. Learn about what inspires us and [read more about](stand_alone_modules,html) the tools we are building.
+We are continuing to improve Electrode—future enhancements will include more progressive web app features for mobile, bigger investments in performance, and much more. Learn about what inspires us and [read more about](stand_alone_modules.html) the tools we are building.
