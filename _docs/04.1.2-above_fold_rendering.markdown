@@ -4,7 +4,7 @@ permalink: docs/above_fold_rendering.html
 toplevel: "Stand Alone Modules"
 ---
 
-The [above-the-fold-rendering-module](https://github.com/electrode-io/above-the-fold-only-server-render) is a React component for optionally skipping server side rendering of components "above-the-fold" or outside of the viewport. This component helps render your components on the server that are above the fold and the remaining components on the client. We will demonstrate how to use this module in Electrode, Express, or Hapi applications.
+The [above-the-fold-rendering-module](https://github.com/electrode-io/above-the-fold-only-server-render) is a React component for optionally skipping server side rendering of components outside above-the-fold (or outside of the viewport). This component helps render your components on the server that are above the fold and the remaining components on the client. We will demonstrate how to use this module in Electrode, Express, or Hapi applications.
 
 ### Why do we need this module?
 
@@ -20,7 +20,7 @@ Footer Component Performance Table
 
 By default, the [above-the-fold-only-server-render](https://github.com/electrode-io/above-the-fold-only-server-render) component is an exercise in simplicity; it does nothing and only returns the child component.
 
-You can tell the component to skip server side rendering either by passing a prop `skip={true}` or by setting up `skipServerRender` in your app context and passing the component a `contextKey` prop.
+You can tell the component to skip server side rendering either by passing a `skip={true}` prop or by setting up `skipServerRender` in your app context and passing the component a `contextKey` prop.
 
 You can skip server side rendering by passing a `skip prop`:
 
@@ -28,29 +28,30 @@ You can skip server side rendering by passing a `skip prop`:
 
 const SomeComponent = () => {
   return (
-    <SkipServerRender skip={true}>
+    <AboveTheFoldOnlyServerRender skip={true}>
       <div>This will not be server side rendered.</div>
-    </SkipServerRender>
+    </AboveTheFoldOnlyServerRender>
   );
 };
+
 ```
 
-You can also skip server side rendering by `setting context and passing a contextKey prop`:
+You can also skip server side rendering by `setting context in your app and passing a contextKey prop`:
 
 ```js
 
 const SomeComponent = () => {
     return (
-      <SkipServerRender contextKey="skipServerRender.SomeComponent">
+      <AboveTheFoldOnlyServerRender contextKey="aboveTheFoldOnlyServerRender.SomeComponent">
         <div>This will not be server side rendered based on the context.</div>
-      </SkipServerRender>
+      </AboveTheFoldOnlyServerRender>
     );
 };
 
 class SomeApp extends React.Component {
   getChildContext() {
     return {
-      skipServerRender: {
+      aboveTheFoldOnlyServerRender: {
         SomeComponent: true
       }
     };
@@ -64,7 +65,7 @@ class SomeApp extends React.Component {
 }
 
 SomeApp.childContextTypes = {
-  skipServerRender: React.PropTypes.shape({
+  aboveTheFoldOnlyServerRender: React.PropTypes.shape({
     AnotherComponent: React.PropTypes.bool
   })
 };
