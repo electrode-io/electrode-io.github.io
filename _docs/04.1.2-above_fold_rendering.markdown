@@ -4,13 +4,13 @@ permalink: docs/above_fold_rendering.html
 toplevel: "Stand Alone Modules"
 ---
 
-The [above-the-fold-rendering-module](https://github.com/electrode-io/above-the-fold-only-server-render) is a React component for optionally skipping server side rendering of components outside of above-the-fold. This component helps render your components on the server that are above the fold and the rest on client. We will demonstrate how to use this module in Electrode, Express, or Hapi applications.
+The [above-the-fold-rendering-module](https://github.com/electrode-io/above-the-fold-only-server-render) is a React component for optionally skipping server side rendering of components "above-the-fold" or outside of the viewport. This component helps render your components on the server that are above the fold and the remaining components on the client. We will demonstrate how to use this module in Electrode, Express, or Hapi applications.
 
 ### Why do we need this module?
 
 [Above-the-fold-only-server-render](https://github.com/electrode-io/above-the-fold-only-server-render) helps increase performance both by decreasing the load on renderToString and sending the end user a smaller amount of markup.
 
-The table below outlines a clear performance increase in the example app by skipping server rendering of the [Walmrt.com](walmart.com) `Footer` component and several other below the fold zones:
+The table below outlines a clear performance increase in the example app by skipping server rendering of the [Walmart.com](walmart.com) `Footer` component and several other below the fold zones:
 
 Footer Component Performance Table
 
