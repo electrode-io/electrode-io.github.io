@@ -8,70 +8,64 @@ toplevel: "Getting Started: Intermediate"
 
 At WalmartLabs, we use [Hapi](http://hapijs.com/) because of it's flexible and robust plugin system. It allows us to modularize our application into isolated pieces of business logic and reusable utilities.
 
-Let's make a deal! Actually, scratch that, let's make a plugin! Plugins are way to extend our server's functionality. Building upon our open source theme, let's make a plugin that retrieves the Github contributors of our "party friends."
+Let's make a deal! Actually, scratch that, let's make a plugin! Plugins are way to extend our server's functionality. Building upon our open source theme, let's make a plugin that retrieves the our Tech Friends for our "resource party."
 
-We are going to use the [GitHub Api](https://developer.github.com/v3/) to grab the latest 10 contributors of our Open Source friends and display them in Your Awesome App.
 
-The GitHub [site](https://developer.github.com/v3/) has great documentation and awesome libraries to help jumpstart our plugin. Let's begin there by installing a Node.js wrapper called [Node-github](https://github.com/mikedeboer/node-github):
-
-```bash
-  npm install github
-```
-
-At their core, plugins are a simple `register` object, that has the signature `function(server, options, next)`. Read more about building plugins from scratch in the [Hapi documentation](http://hapijs.com/tutorials/plugins). For now, navigate to the <your-awesome-app>/server/plugins folder. Make a folder called `GitHub`. Cd into your new `GitHub` folder and:
+At their core, plugins are a simple `register` object, that has the signature `function(server, options, next)`. Read more about building plugins from scratch in the [Hapi documentation](http://hapijs.com/tutorials/plugins). For now, navigate to the <your-awesome-app>/server/plugins folder. Make a folder called `friends`. Cd into your new `friends` folder and:
 
 ```bash
-  touch github.js && index.js
+  touch index.js
 ```
+Your Server file pattern should now look like this:
 
-Navigate to github.js. This is where we will make an external API call to Github and request the last ten contributors of our selected Open Source 'friend' using a URL `https://api.github.com/ + /repos/:user/:repo/contributors`. Because we are looking at public repos we do not have to go through the process of oAuth to access GitHub data. Our GitHub wrapper [library](https://github.com/mikedeboer/node-github) will allow us a built in method, `github.repos.getContributors({})` to streamline this process and return an array of Open Source contributors. We will also use [Bluebird](http://bluebirdjs.com/docs/getting-started.html), a Promise library that makes working with our async API calls much more manageable.  Copy, paste and save the code below:
+{% raw  %}
+```
+  server
+    |_plugins
+      |_friends
+        |_index.js
+      |_webapp
+        |_index.html
+      |_index.js
+    |_views
+      |_index-view.jsx
+    |_index.js
+```
+{% endraw %}
+
+Navigate to `<your-awesome-app>/server/plugins/friends/index.js` Copy, paste and save the code below:
 
 ```javascript
   'use strict';
 
-  //my simple plugin requires the GitHub api
-  const github = require('github');
-  const Promise = require("bluebird");
-  const Config = require("electrode-confippet").config;
-  const newGithub = new GitHubApi(Config.githubApi);
+  //a very simple plugin
+  exports.register = (server, options, next) => {
 
-  let guestList = [];
+      const friendsArr = JSON.stringify({friends: [
+        {name: "electrode", img: "//goo.gl/CZ4wAF", size: 12},
+        {name: "hapi", img: "//goo.gl/q9uIFW", size: 12},
+        {name: "React", img: "//goo.gl/dL5MXT", size: 12},
+        {name: "Redux", img: "//goo.gl/L0mLmT", size: 12},
+        {name: "Webpack", img: "//goo.gl/2AV3Dn", size: 12},
+        {name: "wizard", img: "//goo.gl/UdhbKO", size: 12}
+      ]});
 
-  const friendInfo = (githubRepo, githubUrl) => {
-    return {
-      avatar: githubRepo.avatar_url,
-      link: githubRepo.html_url
-    };
+      server.route({
+          method: 'GET',
+          path: '/friends',
+          handler: function (request, reply) {
+              reply(friendsArr);
+          }
+      });
+
+      next();
   };
 
-  const githubInfo = {
-    user: org,
-    repo: friend,
-    anon: true,
-    page: 1,
-    per_page: 10
-  };
-
-  const myGitHubFriendPlugin = (org, friend) => {
-
-    github.repos.getContributors(githubInfo, (err, response) {
-
-        if (err) {
-          return reply("Error").code(err.code || 500);
-        }
-
-        const githubCollaborators = JSON.stringify(response.content);
-
-        reply({githubCollaborators});
-    });
-  };
-
-  myGitHubFriendPlugin.register.attributes = {
-    name: 'myGitFacePlugin',
+  exports.register.attributes = {
+    name: 'getFriends',
     version: '1.0.0'
   };
 
-  module.exports = myGitHubFriendPlugin;
 ```
 
 A great tool for testing your server requests (it's user interface for view response objects and errors is incredible) is [Postman]("https://www.getpostman.com/"). For now, you will have to trust as we build out Your Awesome App. Navigate to [Intermediate: Add Routes](add_routes.html), to add routing to the app and also extend our UI to display our contributor array.

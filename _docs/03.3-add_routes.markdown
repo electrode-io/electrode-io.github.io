@@ -4,109 +4,94 @@ permalink: docs/add_routes.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-###Add Routes + Build out your UI
+###Add Routes
 
-Now that we have our Open Source friends, their latest ten collaborators and a working demo from before, we can continue to quickly build out our components to both handle user interaction on our application and send requests to the Github Api for more friends to our party. Let's also add some style elements using [CSS modules](https://github.com/css-modules/css-modules) to create a dynamic application.
+Now that we have our Open Source friends, the ability to have a resource-list house party and a working demo from before, we can continue to quickly build out our components to both handle user interaction on our application and send requests to Hapi Plugin for more friends to our party. We will use [React-Router](https://github.com/ReactTraining/react-router) to create different routes and server different content to our views.
 
-Navigate to `<your-awesome-component>/src/components/your-awesome-component.jsx`. Copy, paste and save the code below into this file:
+First though, let's grab our published npm module and install it into Your Awesome App:
+
+```bash
+  npm i --save your-awesome-npm-module
+```
+
+Navigate to `<your-awesome-component>/client/routes.jsx`. Copy, paste and save the code below into this file:
 
 ```javascript
-  import React, { Component, PropTypes } from "react";
+  import React from "react";
+  import { Route, IndexRoute} from "react-router";
+  import { Home } from "./components/home";
+  import { YourAwesomeComponent } from "your-awesome-component-module";
 
-  import styles from "../styles/resource-list.css";
-  import RenderFriend from "./render-friend";
-  import GuestList from "./guest-list";
+  export const routes = (
+    <Route path="/" component={Home}>
+      <IndexRoute component={YourAwesomeComponent}/>
+      <Route path="/invite" component={YourAwesomeComponent}/>
+      <Route path="/invite/friendsof/:friendName" component={YourAwesomeComponent}/>
+    </Route>
+  );
+```
 
-  const exampleObj = [
-    {name: 'electrode', img: '//goo.gl/UdhbKO', size: 15, invited: true},
-    {name: 'hapi', img: '//goo.gl/q9uIFW', size: 15, invited: false},
-    {name: 'React', img: '//goo.gl/dL5MXT', size: 15, invited: false},
-    {name: 'Redux', img: '//goo.gl/L0mLmT', size: 15, invited: false},
-    {name: 'Webpack', img: '//goo.gl/2AV3Dn', size: 15, invited: false,
-      friends: [
-        {name: 'electrode', img: '//randomuser.me/api/portraits/men/44.jpg', invited: true},
-        {name: 'hapi', img: '//randomuser.me/api/portraits/men/43.jpg', invited: true},
-        {name: 'React', img: '//randomuser.me/api/portraits/men/40.jpg', invited: true},
-        {name: 'Redux', img: '//randomuser.me/api/portraits/men/30.jpg', invited: true},
-        {name: 'Webpack', img: '//randomuser.me/api/portraits/men/24.jpg', invited: true},
-        {name: 'electrode', img: '//randomuser.me/api/portraits/men/49.jpg', invited: true},
-        {name: 'hapi', img: '//randomuser.me/api/portraits/men/87.jpg', invited: true},
-        {name: 'React', img: '//randomuser.me/api/portraits/men/90.jpg', invited: true},
-        {name: 'Redux', img: '//randomuser.me/api/portraits/men/37.jpg', invited: true},
-        {name: 'Webpack', img: '//randomuser.me/api/portraits/men/94.jpg', invited: true}]},
-    {img: '//goo.gl/UdhbKO', name: 'wizard', size: 15, invited: true,
-      friends: [
-        {name: 'electrode', img: '//randomuser.me/api/portraits/men/44.jpg', invited: true},
-        {name: 'hapi', img: '//randomuser.me/api/portraits/men/43.jpg', invited: true},
-        {name: 'React', img: '//randomuser.me/api/portraits/men/40.jpg', invited: true},
-        {name: 'Redux', img: '//randomuser.me/api/portraits/men/30.jpg', invited: true},
-        {name: 'Webpack', img: '//randomuser.me/api/portraits/men/24.jpg', invited: true},
-        {name: 'electrode', img: '//randomuser.me/api/portraits/men/49.jpg', invited: true},
-        {name: 'hapi', img: '//randomuser.me/api/portraits/men/87.jpg', invited: true},
-        {name: 'React', img: '//randomuser.me/api/portraits/men/90.jpg', invited: true},
-        {name: 'Redux', img: '//randomuser.me/api/portraits/men/37.jpg', invited: true},
-        {name: 'Webpack', img: '//randomuser.me/api/portraits/men/94.jpg', invited: true}]}
-    ];
+Navigate to `<your-awesome-component>/src/components/your-awesome-component.jsx`. Delete the existing code. Copy, paste and save the code below into this file:
+
+```javascript
+import React from "react";
+
+import RenderFriend from "./render-friend";
+import GuestList from "./guest-list";
+import { Link } from "react-router";
+
+export class ResourceList extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      intro: this.props.location.pathname === "/",
+      invite: this.props.location.pathname === "/invite",
+      friends: []
+    };
+  }
+
+  componentDidMount() {
+    fetch('/friends', {method: 'GET'})
+    .then((res) => res.json())
+    .then((json) => this.setState({friends: json.friends}))
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState = {
+      intro: nextProps.location.pathname === "/",
+      invite: nextProps.location.pathname === "/invite"
+    };
+  }
+
+  introMessage() {
+    return (
+      <div>
+        <h1>We should have a house party and invite all our friends!</h1>
+        <Link to="/invite">Click Here to Make it a Party!</Link>
+      </div>
+    )
+  }
+
+  renderFriends(friends) {
+    return friends.length ? friends.map(friend => (<RenderFriend friend={friend} />)) : [];
+  }
 
 
-  export default class ResourceList extends Component {
 
-    constructor(props) {
-      super(props);
-      this.state = {
-        invitees: ['electrode', 'wizard']
-      };
-      this.toggleGuest = this.toggleGuest.bind(this);
-    }
+  render() {
+    const { location: { pathname } } = this.props;
+    const { friends } = this.state;
 
-    renderFriends(friends) {
-      return friends
-        .filter(friend => friend.invited)
-        .map(friend => (<RenderFriend friend={friend}/>));
-    }
-
-    invited(friends) {
-      return friends
-        .map((friend) => {
-          friend.invited = this.state.invitees.filter(invitee => invitee === friend.name).length;
-          return friend;
-        })
-    }
-
-    toggleGuest(name, invited) {
-      let invitees = this.state.invitees;
-      invitees = invited ? invitees.push(name) : invitees.splice(invitees.indexOf(name), 1);
-
-      this.setState({invitees: invitees})
-      console.log(name, invited);
-      console.log('invitees: ',this.state.invitees)
-    }
-
-    render() {
-      let { ourFriends, message } = this.props;
-      ourFriends = !!ourFriends ? ourFriends : exampleObj;
-
-      return (
-        <div className={styles.houseParty}>
-          {!!message && <p>{message}</p>}
-          <GuestList friends={ourFriends} toggleGuest={this.toggleGuest}/>
-          <div>
-            {this.renderFriends(ourFriends)}
-          </div>
-        </div>
-      );
-    }
-
-  };
-
-  ResourceList.displayName = "ResourceList";
-
-  ResourceList.PropTypes = {
-    ourBestFriends: PropTypes.array,
-    message: PropTypes.string
-  };
-
-  ResourceList.defaultProps = {};
+    return (
+      <div>
+        {pathname === "/" && this.introMessage()}
+        {pathname === "/invite" && <GuestList invitees={friends}/>}
+        {this.renderFriends(friends)}
+      </div>
+    );
+  }
+}
 ```
 
 Navigate to `<your-awesome-component>/src/components/render-friend.jsx`. Copy, paste and save the code below into this file:
@@ -114,7 +99,7 @@ Navigate to `<your-awesome-component>/src/components/render-friend.jsx`. Copy, p
 ```javascript
 import React from 'react';
 
-import styles from "../styles/resource-list.css";
+import styles from "../styles/your-awesome-component.css";
 import style from "../helpers/graph-styles";
 
 const RenderFriend = ({friend, styleObj}) => {
@@ -162,7 +147,7 @@ Navigate to `<your-awesome-component>/src/components/` folder. Add a file titled
 ```javascript
   import React, { Component, PropTypes } from "react";
 
-  import styles from "../styles/resource-list.css";
+  import styles from "../styles/your-awesome-component.css";
 
   export default class GuestList extends Component {
 

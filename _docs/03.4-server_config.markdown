@@ -6,7 +6,7 @@ toplevel: "Getting Started: Intermediate"
 
 ###Server Config + Confippet
 
-Out the box we are given [Confippet] (https://github.com/electrode-io/electrode-confippet), a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a preset config out of the box:
+Out the box we are given [Confippet](https://github.com/electrode-io/electrode-confippet), a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a preset config out of the box:
 
 ```
   config
@@ -15,24 +15,30 @@ Out the box we are given [Confippet] (https://github.com/electrode-io/electrode-
     |_production.json
 ```
 
-We will need to extend our default.json to include our myGitHubFace plugin, github.js. We can also use this opportunity to update our update our settings, including a way to show server log errors.
+We will need to extend our default.json to include our `friends` plugin and module `./server/plugins/friends`.
 
-Navigate to `<your-awesome-app>/config/development.json`. Delete the existing code; copy, paste and save the code below:
+Navigate to `<your-awesome-app>/config/development.json`. Copy, paste and save the code below. Make sure to add the comma `,` before `"friends"`:
 
-```
-  {
-    "plugins": {
-      "webapp": {
-        "module": "./server/plugins/webapp",
-        "options": {
-          "paths": {
-            "/{args*}": {
-              "content": {
-                "module": "./server/views/index-view"
-              }
+```json
+{
+  "plugins": {
+    "webapp": {
+      "module": "./server/plugins/webapp",
+      "options": {
+        "paths": {
+          "/{args*}": {
+            "content": {
+              "module": "./server/views/index-view"
             }
           }
         }
       }
+    },
+    "friends": {
+      "module": "./server/plugins/friends"
     }
+  }
+}
 ```
+
+You can learn more about Confippet and ways to extend your config in our Advanced Electrode App with the [Confippet](confippet.html) stand alone module.
