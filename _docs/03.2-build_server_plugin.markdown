@@ -18,7 +18,7 @@ The GitHub [site](https://developer.github.com/v3/) has great documentation and 
   npm install github
 ```
 
-At their core, plugins are a simple `register` object, that has the signature `function(server, options, next)`. Read more about building plugins from scratch in the [Hapi documentation](http://hapijs.com/tutorials/plugins). For now, navigate to the <your-awesome-app>/server/plugins folder. Make a folder called `GitHub`. Cd into your new `GitHub` folder and:
+At their core, plugins are simple `register` objects, that have the signature `function(server, options, next)`. Read more about building plugins from scratch in the [Hapi documentation](http://hapijs.com/tutorials/plugins). For now, navigate to the <your-awesome-app>/server/plugins folder. Make a folder called `GitHub`. Cd into your new `GitHub` folder and:
 
 ```bash
   touch github.js && index.js

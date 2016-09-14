@@ -117,9 +117,9 @@ Don't forget to add a comma after `TestComponent`! It should now look like this:
   ];
 ```
 
-Now, the fun part! We will be building out `your-awesome-component.jsx` and adding a two sub-components (or dumb components). Trust me, it will be worth it.
+Now, the fun part! We will be building out `your-awesome-component.jsx` and adding two sub-components (or dumb components). Trust me, it will be worth it.
 
-In your `<your-awesome-component>/src/components/your-awesome-component.jsx`, delete what it inside and copy, paste and save the code below into this file. Change all references from the literal `your awesome component` to your actual component name:
+In your `<your-awesome-component>/src/components/your-awesome-component.jsx`, delete what is inside and copy, paste and save the code below into this file. Change all references from the literal `your awesome component` to your actual component name:
 
 ```javascript
   import React, { Component, PropTypes } from "react";
@@ -216,7 +216,7 @@ Create a file titled:
   export default PartyOn;
 ```
 
-In your `<your-awesome-component>/src/style/your-awesome-component.css`, delete what it inside and copy, paste and save the code below into this file:
+In your `<your-awesome-component>/src/style/your-awesome-component.css`, delete what is inside and copy, paste and save the code below into this file:
 
 ```css
   @keyframes tada {
@@ -293,7 +293,7 @@ Now run it and explore the live demo!
   $ gulp build && gulp demo
 ```
 
-Walmartlabs believes that testing is critical to writing great, high performant code. This includes unit testing at both the component and application level. For your component, we are using [Mocha] (https://mochajs.org/), a Javascript testing framework that is perfect for running async tests, with [Enzyme] (http://airbnb.io/enzyme/docs/guides/mocha.html), airbnb's awesome testing utility for React.
+Walmartlabs believes that testing is critical to writing great, highly performant code. This includes unit testing at both the component and application level. For your component, we are using [Mocha] (https://mochajs.org/), a Javascript testing framework that is perfect for running async tests, with [Enzyme] (http://airbnb.io/enzyme/docs/guides/mocha.html), airbnb's awesome testing utility for React.
 
 ```bash
   $ gulp check
