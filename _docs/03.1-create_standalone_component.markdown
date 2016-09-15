@@ -525,3 +525,48 @@ Or, to run both simultaneously, you can just run:
 ```
 
 Now that we've run our tests and they've passed, let's publish our component so we can use it again in Your-Awesome-App on [NPM] (https://docs.npmjs.com/getting-started/publishing-npm-packages). You will need to [sign up] (https://www.npmjs.com/signup) for an account if you do not have one and follow the steps in the [NPM documentation] (https://docs.npmjs.com/getting-started/creating-node-modules).
+
+Let's test out the published YourAwesomeComponent module! Use your editor to open Your-Awesome-App and follow the steps below:
+
+```bash
+  npm i your-awesome-npm-module --save
+```
+
+Navigate to `<your-awesome-app>/client/components/home.jsx` Copy, paste and save the code below. Remember to swap out `ResourceList` and `resource-list` for the name of your actual component (`<your-awesome-component`):
+
+```javascript
+  'use strict';
+
+  //code for home.jsx file
+  import React from "react";
+
+  import {ResourceList} from "resource-list";
+
+  const exaList = [
+    {name: "electrode", img: "//goo.gl/CZ4wAF", size: 12},
+    {name: "hapi", img: "//goo.gl/q9uIFW", size: 12},
+    {name: "React", img: "//goo.gl/dL5MXT", size: 12},
+    {name: "Redux", img: "//goo.gl/L0mLmT", size: 12},
+    {name: "Webpack", img: "//goo.gl/2AV3Dn", size: 12},
+    {img: "//goo.gl/UdhbKO", name: "wizard", size: 12}
+  ];
+
+  export class Home extends React.Component {
+    render() {
+      return (
+        <div>
+        <h1>Hello <a href="https://github.com/electrode-io">Electrode</a></h1>
+          <ResourceList ourFriends={exaList}/>
+        </div>
+      );
+    }
+  }
+
+```
+
+```bash
+  gulp dev
+```
+
+Open `localhost:3000` in your browser and marvel at your Awesome Tech Party App!
+Let's continue to build more by creating a [Hapi server plugin](server_config.html).

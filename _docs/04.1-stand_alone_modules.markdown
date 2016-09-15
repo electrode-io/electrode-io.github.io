@@ -13,3 +13,5 @@ toplevel: "Getting Started: Advanced"
 *  [Server Side Render Cache + Profiling](server_side_render_cache.html) supports profiling React Server Side Rendering time and component caching to help you speed up SSR.
 
 *  [Stateless CSRF Validation](stateless_csrf_validation.html) is a plugin that enables stateless CSRF protection using in Electrode, Express or Hapi applications.
+
+*  [Electrode Redux Router Engine](redux_router_engine.html) is a plugin that hanles async data for React Server Side Rendering using [react-router](https://github.com/ReactTraining/react-router), Redux and the [Redux Server Rendering](http://redux.js.org/docs/recipes/ServerRendering.html) pattern.

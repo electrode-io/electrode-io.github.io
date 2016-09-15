@@ -6,15 +6,9 @@ toplevel: "Getting Started: Intermediate"
 
 ###Add Routes
 
-Now that we have our Open Source friends, the ability to have a resource-list house party and a working demo from before, we can continue to quickly build out our components to both handle user interaction on our application and send requests to Hapi Plugin for more friends to our party. We will use [React-Router](https://github.com/ReactTraining/react-router) to create different routes and server different content to our views.
+Now that we have our Open Source friends, the ability to have a resource-list house party and a working demo from before, we can continue to quickly build out our components to both handle user interaction on our application and send requests to Hapi Plugin for more friends to our party. We will use [React-Router](https://github.com/ReactTraining/react-router) to create different routes and serve different content to our views.
 
-First though, let's grab our published npm module and install it into Your Awesome App:
-
-```bash
-  npm i --save your-awesome-npm-module
-```
-
-Navigate to `<your-awesome-component>/client/routes.jsx`. Copy, paste and save the code below into this file:
+Navigate to `<your-awesome-component>/client/routes.jsx`. Copy, paste and save the code below into this file. Change from the literal `YourAwesomeComponent` to your actual component name:
 
 ```javascript
   import React from "react";
@@ -31,7 +25,7 @@ Navigate to `<your-awesome-component>/client/routes.jsx`. Copy, paste and save t
   );
 ```
 
-Navigate to `<your-awesome-component>/src/components/your-awesome-component.jsx`. Delete the existing code. Copy, paste and save the code below into this file:
+Navigate to `<your-awesome-app>/client/components`. Create a file with the name of your-awesome-component (the same from [Create a Standalone component](create_standalone_component.html)). The path for this component will look like this: `<your-awesome-app>/client/components/your-awesome-component.jsx` Copy, paste and save the code below into this file:
 
 ```javascript
 import React from "react";
@@ -94,7 +88,7 @@ export class ResourceList extends React.Component {
 }
 ```
 
-Navigate to `<your-awesome-component>/src/components/render-friend.jsx`. Copy, paste and save the code below into this file:
+Navigate to `<your-awesome-app>/client/components`. Create a file with the name of `render-friend.jsx`. The path for this component will look like this: `<your-awesome-app>/client/components/render-friend.jsx` Copy, paste and save the code below into this file. Change the `import styles from "../styles/your-awesome-component.css";` line to your actual awesome-component.css:
 
 ```javascript
 import React from 'react';
@@ -142,7 +136,7 @@ const RenderFriend = ({friend, styleObj}) => {
   export default RenderFriend;
 ```
 
-Navigate to `<your-awesome-component>/src/components/` folder. Add a file titled `guest-list.jsx` (`<your-awesome-component>/src/components/` Copy, paste and save the code below into this file:
+Navigate to `<your-awesome-app>/client/components`. Create a file with the name of `guest-list.jsx`. The path for this component will look like this: `<your-awesome-app>/client/components/guest-list.jsx` Copy, paste and save the code below into this file. Remember: change the `import styles from "../styles/your-awesome-component.css";` line to your actual awesome-component.css:
 
 ```javascript
   import React, { Component, PropTypes } from "react";
@@ -184,7 +178,7 @@ Navigate to `<your-awesome-component>/src/components/` folder. Add a file titled
   };
 ```
 
-You get the idea. Navigate to `<your-awesome-component>/src/styles/guest-list.jsx`. Delete the existing code and copy, paste and save the code below into this file:
+You get the idea. We need to do this for the `styles` now. Navigate to `<your-awesome-app>/styles`. Create a file with the name of `guest-list.css`. The path for this component will look like this: `<your-awesome-app>/styles/guest-list.css` Copy, paste and save the code below into this file.
 
 ```css
   @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
@@ -236,7 +230,7 @@ You get the idea. Navigate to `<your-awesome-component>/src/styles/guest-list.js
   }
 ```
 
-Whew, last step. Create a file called  `<your-awesome-component>/src/helpers/graph-styles.js`. We will discuss this helper more later. Copy, paste and save the code below into this file:
+Whew, last step. Create a folder called `helpers` inside of `client`. Create a file here called `graph-styles.js`. It will now look like this: `<your-awesome-component>/client/helpers/graph-styles.js`. We will discuss this helper more later. Copy, paste and save the code below into this file:
 
 ```javascript
   'use strict';
