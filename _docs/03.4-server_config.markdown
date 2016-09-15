@@ -6,7 +6,7 @@ toplevel: "Getting Started: Intermediate"
 
 ###Server Config + Confippet
 
-Out of the box we are given [Confippet](https://github.com/electrode-io/electrode-confippet), a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a preset config out of the box:
+Out of the box we're given [Confippet](https://github.com/electrode-io/electrode-confippet), a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a preset config out of the box:
 
 ```
   config
@@ -15,7 +15,7 @@ Out of the box we are given [Confippet](https://github.com/electrode-io/electrod
     |_production.json
 ```
 
-We will need to extend our default.json to include our `friends` plugin and module `./server/plugins/friends`.
+We'll need to extend our default.json to include our `friends` plugin and module `./server/plugins/friends`.
 
 Navigate to `<your-awesome-app>/config/development.json`. Copy, paste and save `friends` plugin below the `webapp` plugin:
 
@@ -61,4 +61,4 @@ Let's check it out! We'll run through our steps to test, run the app and view it
 
 Navigate to `localhost:3000`. Feel free to add your own personal touch and build out your Resource List House Party.
 
-When you are ready, you can deploy Your Awesome App to [Heroku](https://devcenter.heroku.com/categories/deployment) by following the previous steps in our [Getting Started: Build More](build_more.html) section. You can also navigate to [Intermediate: More Deployments](more_deployments.html) to learn how to deploy with [Azure](azure.html), [Docker](docker.html) and [Kubernetes](kubernetes.html).
+When you're ready, you can deploy Your Awesome App to [Heroku](https://devcenter.heroku.com/categories/deployment) by following the previous steps in our [Getting Started: Build More](build_more.html) section. You can also navigate to [Intermediate: More Deployments](more_deployments.html) to learn how to deploy with [Azure](azure.html), [Docker](docker.html) and [Kubernetes](kubernetes.html).
