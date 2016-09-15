@@ -6,14 +6,14 @@
 $ npm install --save {{ include.moduleId }}
 ```
 
-### Example Applications
+#### Example Applications using {{ include.moduleId }}
 
-* [Electrode](https://github.com/electrode-io/electrode-boilerplate-universal-react-node)
+* [Electrode Boilerplate](https://github.com/electrode-io/electrode-boilerplate-universal-react-node)
 {% if include.express == true %}
-* [Express](https://github.com/electrode-io/express-example-with-standalone-electrode-modules)
+* [Express.js Example App](https://github.com/electrode-io/express-example-with-standalone-electrode-modules)
 {% endif %}
 {% if include.hapi == true %}
-* [Hapi](https://github.com/electrode-io/hapijs-example-with-standalone-electrode-modules)
+* [Hapi.js Example App](https://github.com/electrode-io/hapijs-example-with-standalone-electrode-modules)
 {% endif %}
 
 
