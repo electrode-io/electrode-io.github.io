@@ -20,7 +20,7 @@ $ yo electrode-component
 
 Fill out the Electrode generator-electrode-component with your information.
 
-Open the application up with your favorite text editor. We will start with a fast high level view of the most important files in your component:
+Open the application up with your favorite text editor. We'll start with a fast high level view of the most important files in your component:
 
 ```
   demo
@@ -64,7 +64,7 @@ Open the application up with your favorite text editor. We will start with a fas
 
 ```
 
-We are going to quickly and carefully add the code below to scaffold out our Resource List and focus on the capabilities of yo generator-electrode-component. Navigate to `<your-awesome-component>/demo/examples/your-awesome-component.example`. Between your component tag, copy, paste and save the code below into this file:
+We're going to quickly and carefully add the code below to scaffold out our Resource List and focus on the capabilities of yo generator-electrode-component. Navigate to `<your-awesome-component>/demo/examples/your-awesome-component.example`. Between your component tag, copy, paste and save the code below into this file:
 
 ```
   <YourAwesomeComponent
@@ -346,7 +346,7 @@ export default (type, size, rotateVal) => {
 };
 ```
 
-Let's also add some style elements using [CSS modules](https://github.com/css-modules/css-modules) to create a dynamic application. In your `<your-awesome-component>/src/style/your-awesome-component.css`, delete what it inside and copy, paste and save the code below into this file:
+Let's also add some style elements using [CSS modules](https://github.com/css-modules/css-modules) to create a dynamic application. In your `<your-awesome-component>/src/style/your-awesome-component.css`, delete what it says inside and copy, paste and save the code below into this file:
 
 ```css
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
