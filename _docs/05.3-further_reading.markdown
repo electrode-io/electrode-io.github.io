@@ -4,4 +4,4 @@ permalink: docs/further_reading.html
 toplevel: "Resources"
 ---
 
-test2
+Coming Soon!

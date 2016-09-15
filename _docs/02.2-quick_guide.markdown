@@ -22,36 +22,48 @@ $ yo electrode
 
 Fill out the Electrode App generator with your information.
 
-Let's take a quick high level overview of our file structure and what `generator-electrode` gives you out the box. Read through our [Explore](#explore) for a more detailed description.
+Let's take a quick high level overview of our file structure and what `generator-electrode` gives you out the box. Read through our [Explore](explore.html) for a more detailed description.
 
 ```
 client
   Contains your client side code and our favs, React, Redux + CSS modules.
   |_components
-    This is the folder for your React components. We love React and how it helps us to manage User Interface complexity. Read more in the Explore section.
+    This is the folder for your React components. We love React and how it helps
+    us to manage User Interface complexity. Read more in the Explore section.
 
   |_styles
-    This is the folder for your CSS files. We will use CSS Modules: a CSS file in which all class names and animation names are scoped locally by default. At WalmartLabs this helps us tackle big scale style issues by fixing the issue of the global scope in CSS.
+    This is the folder for your CSS files. We will use CSS Modules: a CSS file
+    in which all class names and animation names are scoped locally by default. 
+    At WalmartLabs this helps us tackle big scale style issues by fixing the
+    issue of the global scope in CSS.
 
   app.jsx
-    The entry point for the client. It contains powerful Electrode modules that we will leverage as we continue to Build More.
+    The entry point for the client. It contains powerful Electrode modules that
+    we will leverage as we continue to Build More.
 
   routes.jsx
-    The shared routes between client and server are defined here in one place and we use react-router.
+    The shared routes between client and server are defined here in one place
+    and we use react-router.
 
 config
-    Your environment specific configuration code goes here. We have used a versatile module here, our Electrode-Confippet, a preset config that you can customize and extend.
+    Your environment specific configuration code goes here. We have used a
+    versatile module here, our Electrode-Confippet, a preset config that you
+    can customize and extend.
 
 node_modules
-  Other Javascript files contained in modules that we will use in this application, including Electrode modules that create your out-the-box Univeresal app.
+  Other Javascript files contained in modules that we will use in this
+  application, including Electrode modules that create your out-the-box 
+  Univeresal app.
 
 server
-  Contains your server code. Electrode-Server gives you a powerful plugin capable of SSR out the box. Learn more in the Explore section.
+  Contains your server code. Electrode-Server gives you a powerful plugin
+  capable of SSR out the box. Learn more in the Explore section.
   |_plugins
   |_views
 
 .babelrc
-  Where we extend our app babel configuration to allow us to use the presets and any additional babel settings.
+  Where we extend our app babel configuration to allow us to use the presets and
+  any additional babel settings.
 
 .editorconfig
 .gitattributes
@@ -59,20 +71,25 @@ server
    A file that tell git what files (or patterns) to ignore when you commit.
 
 .ismorphic-loader-config.json
-  A webpack loader, plugin and library to make NodeJS 'require' understand complex files like images when we are doing server side rendering.
+  A webpack loader, plugin and library to make NodeJS 'require' understand
+  complex files like images when we are doing server side rendering.
 
 .travis.yml
-  A file where you can customize any process in the Travis default build environment.
+  A file where you can customize any process in the Travis default build
+  environment.
 
 gulpfile.js
-  A file that stores all your Gulp configurations. We will explore this more in Getting Started: Intermediate.
+  A file that stores all your Gulp configurations. We will explore this more in 
+  Getting Started: Intermediate.
 
 LICENSE
 package.json
-  Contains the metadata for your-awesome-app and a list of your dependencies to install from npm when running npm install.
+  Contains the metadata for your-awesome-app and a list of your dependencies to
+  install from npm when running npm install.
 
 README.md
-  Info you want users to know about your app (installation instructions, licensing, contributors, etc.).
+  Info you want users to know about your app (installation instructions,
+  licensing, contributors, etc.).
 ```
 
 Run one simple command. Presto!
@@ -81,4 +98,4 @@ Run one simple command. Presto!
 $ gulp dev
 ```
 
-Open [localhost:3000] (http://localhost:3000) in your browser. Hello Electrode!
+Open [localhost:3000](http://localhost:3000) in your browser. Hello Electrode!
