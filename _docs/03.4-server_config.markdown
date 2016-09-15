@@ -17,30 +17,48 @@ Out the box we are given [Confippet](https://github.com/electrode-io/electrode-c
 
 We will need to extend our default.json to include our `friends` plugin and module `./server/plugins/friends`.
 
-Navigate to `<your-awesome-app>/config/development.json`. Copy, paste and save the code below. Make sure to add the comma `,` before `"friends"`:
+Navigate to `<your-awesome-app>/config/development.json`. Copy, paste and save `friends` plugin below the `webapp` plugin:
 
 ```json
-{
-  "plugins": {
-    "webapp": {
-      "module": "./server/plugins/webapp",
-      "options": {
-        "paths": {
-          "/{args*}": {
-            "content": {
-              "module": "./server/views/index-view"
+
+  "friends": {
+    "module": "./server/plugins/friends"
+  }
+
+```
+Make sure to add the comma `,` before `"friends"`. It should now look like this:
+
+```json
+  {
+    "plugins": {
+      "webapp": {
+        "module": "./server/plugins/webapp",
+        "options": {
+          "paths": {
+            "/{args*}": {
+              "content": {
+                "module": "./server/views/index-view"
+              }
             }
           }
         }
+      },
+      "friends": {
+        "module": "./server/plugins/friends"
       }
-    },
-    "friends": {
-      "module": "./server/plugins/friends"
     }
   }
-}
 ```
 
 You can learn more about Confippet and ways to extend your config in our Advanced Electrode App with the [Confippet](confippet.html) stand alone module.
 
-You can deploy Your Awesome App to [Heroku](https://devcenter.heroku.com/categories/deployment) by following the previous steps in our [Getting Started: Build More](build_more.html) section. You can also navigate to [Intermediate: More Deployments](more_deployments.html) to learn how to deploy with [Azure](azure.html), [Docker](docker.html) and [Kubernetes](kubernetes.html).
+Let's check it out! We'll run through our steps to test, run the app and view it in the browser:
+
+```bash
+  gulp check
+  gulp hot
+```
+
+Navigate to `localhost:3000`. Feel free to add your own personal touch and build out your Resource List House Party.
+
+When you are ready, you can deploy Your Awesome App to [Heroku](https://devcenter.heroku.com/categories/deployment) by following the previous steps in our [Getting Started: Build More](build_more.html) section. You can also navigate to [Intermediate: More Deployments](more_deployments.html) to learn how to deploy with [Azure](azure.html), [Docker](docker.html) and [Kubernetes](kubernetes.html).
