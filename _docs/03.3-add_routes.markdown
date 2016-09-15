@@ -290,4 +290,4 @@ Whew, last step. Create a file called  `<your-awesome-component>/src/helpers/gra
     }
   };
 ```
-Navigate to [Intermediate: Server Config](server_config.html), to learn about [Confippet](confippet.html) and add our Hapi plugin to our [server config](server_config.html).
+Navigate to [Intermediate: Server Config](server_config.html), to learn about [Confippet](confippet.html) and add our Hapi plugin to our server config.
