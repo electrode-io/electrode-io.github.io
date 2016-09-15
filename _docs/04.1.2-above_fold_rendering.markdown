@@ -4,25 +4,27 @@ permalink: docs/above_fold_rendering.html
 toplevel: "Stand Alone Modules"
 ---
 
-The [above-the-fold-rendering-module](https://github.com/electrode-io/above-the-fold-only-server-render) is a React component for optionally skipping server side rendering of components outside above-the-fold (or outside of the viewport). This component helps render your components on the server that are above the fold and the remaining components on the client. We will demonstrate how to use this module in Electrode, Express, or Hapi applications.
+The [above-the-fold-rendering-module](https://github.com/electrode-io/above-the-fold-only-server-render) is a React component for optionally skipping server side rendering of components outside above-the-fold (or outside of the viewport). This component helps render your components on the server that are above the fold and the remaining components on the client.
+
+[above-the-fold-only-server-render](https://github.com/electrode-io/above-the-fold-only-server-render) is a *standalone* module, it is *agnostic* of your web-server framework, here in this tutorial we will demonstrate how to use this module in Electrode, Express.js and Hapi.js applications.
 
 ### Why do we need this module?
 
-[Above-the-fold-only-server-render](https://github.com/electrode-io/above-the-fold-only-server-render) helps increase performance both by decreasing the load on renderToString and sending the end user a smaller amount of markup.
+[above-the-fold-only-server-render](https://github.com/electrode-io/above-the-fold-only-server-render) helps increase performance both by decreasing the load on renderToString and sending the end user a smaller amount of markup.
 
-The table below outlines a clear performance increase in the example app by skipping server rendering of the [Walmart.com](walmart.com) `Footer` component and several other below the fold zones:
+The table below outlines a clear performance increase in the example app by skipping server rendering of `Footer` component and several other below the fold zones on [walmart.com](http://www.walmart.com):
 
-Footer Component Performance Table
+Performance Improvement Numbers below:
 
 ![above-the-fold-table](/img/above-the-fold-table.png)
 
-{% include module_usage.md moduleId="electrode-above-the-fold-render" express=true hapi=true %}
+{% include module_usage.md moduleId="above-the-fold-only-server-render" express=true hapi=true %}
 
-By default, the [above-the-fold-only-server-render](https://github.com/electrode-io/above-the-fold-only-server-render) component is an exercise in simplicity; it does nothing and only returns the child component.
+By default, the [above-the-fold-only-server-render](https://github.com/electrode-io/above-the-fold-only-server-render) component is an exercise in simplicity; high-level it returns the child component.
 
-You can tell the component to skip server side rendering either by passing a `skip={true}` prop or by setting up `skipServerRender` in your app context and passing the component a `contextKey` prop.
+You can tell the component to skip server side rendering either by passing a `skip={true}` prop or by setting up `aboveTheFoldOnlyServerRender` in your app context and passing the component a `contextKey` prop.
 
-You can skip server side rendering by passing a `skip prop`:
+You can selectively choose to not server side render a component by passing a `skip prop`:
 
 ```js
 
@@ -72,6 +74,6 @@ SomeApp.childContextTypes = {
 
 ```
 
-## Platforms
+## Supported Platforms
 
-This module can be used with either [Electrode](#electrode), [Express](#express), or [Hapi](#hapi).
+This module is web-server Platform agnostic can be used with your favorite node.js server framework [Electrode](https://github.com/electrode-io/electrode-boilerplate-universal-react-node), [Express.js](https://github.com/electrode-io/express-example-with-standalone-electrode-modules), or [Hapi.js](https://github.com/electrode-io/hapijs-example-with-standalone-electrode-modules).
