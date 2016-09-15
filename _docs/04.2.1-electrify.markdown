@@ -9,7 +9,7 @@ toplevel: "Stand Alone Modules"
 # electrify
 
 Electrify is a tool for analyzing the module tree of
-[electrode-io/webpack](https://github.com/webpack/docs/wiki/node.js-api#stats) project bundles. It's especially handy
+[electrode-io + webpack](https://github.com/webpack/docs/wiki/node.js-api#stats) project bundles. It's especially handy
 for catching large and/or duplicate modules which might be either bloating up
 your bundle or slowing down the build process.
 
@@ -82,7 +82,7 @@ more than expected.
 Nothing particularly special about these palettes – colored for legibility and
 aesthetics respectively.
 
-## Other useful bundle/stats viewers ##
+## Other useful bundle/stats generators ##
 - [disc-browserify](https://github.com/hughsk/disc) (Helpful for analyzing **browserify** projects and a huge inspiration for electrify, used *disc* extensively in my past **browserify** based projects)
 - [webpack-bundle-size-analyzer](https://github.com/robertknight/webpack-bundle-size-analyzer)
 - [webpack-visualizer](https://github.com/chrisbateman/webpack-visualizer)

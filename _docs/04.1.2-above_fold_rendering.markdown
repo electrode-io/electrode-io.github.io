@@ -10,7 +10,7 @@ The [above-the-fold-rendering-module](https://github.com/electrode-io/above-the-
 
 ### Why do we need this module?
 
-[above-the-fold-only-server-render](https://github.com/electrode-io/above-the-fold-only-server-render) helps increase performance both by decreasing the load on renderToString and sending the end user a smaller amount of markup.
+[above-the-fold-only-server-render](https://github.com/electrode-io/above-the-fold-only-server-render) helps increase performance both by decreasing the load on [renderToString](https://facebook.github.io/react/docs/top-level-api.html#reactdomserver.rendertostring) and sending the end user a smaller amount of markup.
 
 The table below outlines a clear performance increase in the example app by skipping server rendering of `Footer` component and several other below the fold zones on [walmart.com](http://www.walmart.com):
 
