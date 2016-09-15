@@ -4,4 +4,4 @@ permalink: docs/glossary.html
 toplevel: "Resources"
 ---
 
-test2
+Coming Soon!
