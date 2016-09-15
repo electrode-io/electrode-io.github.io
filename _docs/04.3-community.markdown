@@ -4,4 +4,4 @@ permalink: docs/community.html
 toplevel: "Getting Started: Advanced"
 ---
 
-test2
+Coming Soon!

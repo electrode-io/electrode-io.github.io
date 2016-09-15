@@ -8,7 +8,7 @@ toplevel: "Overview"
 > Universal React and Node Applications simplified, performant, and reusable.
 
 #### Core: Quick + Easy
-The heart of the platform is Electrode “archetypes”. It allows scaffolding of the app, react components, and ensures that app, components, and modules are simple to develop, consistent, and easy to deploy. It only takes five minutes with our [Getting Started: Quick Guide](quick_guide.html)
+The heart of the platform is Electrode “archetypes”. It allows scaffolding of the app and its associated react components, and also ensures streamlined development and deployment. It only takes five minutes with our [Getting Started: Quick Guide](quick_guide.html)
 
 #### Stand Alone Modules: Optimize Where You Want
 As part of the Electrode Platform, we have a number of modules that each do one specific task. Anything from [server-side render caching](server_side_render_cache.html) to [flexible configuration management](confippet.html). These modules can be used independently of the platform, and you can [learn more about integrating them into your existing apps](stand_alone_modules.html).
@@ -33,7 +33,7 @@ A fully loaded boilerplate with the best technologies available:
 
 *  [Webpack](https://webpack.github.io/docs/motivation.html) a powerful module bundler.
 
-*  [Webpack Isomorphic Loader](https://github.com/reactjs/react-router) an powerful tool that makes NodeJS `require` understand files such as images for SSR.
+*  [Webpack Isomorphic Loader](https://github.com/reactjs/react-router) a powerful tool that makes NodeJS `require` understand files such as images for SSR.
 
 *  [Babel](https://babeljs.io/) transpiles ES6 + 7.
 

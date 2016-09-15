@@ -84,7 +84,7 @@ client
 ```
 {% endraw %}
 
-In your `<your-awesome-app>/config` we are leveraging one of most important stand alone modules: [Electrode-Confippet](confippet.html).
+In your `<your-awesome-app>/config` we are leveraging one of the most important stand alone modules: [Electrode-Confippet](confippet.html).
 
 Confippet is a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a [preset config] (https://github.com/electrode-io/electrode-confippet) out of the box.
 
@@ -144,7 +144,7 @@ All of your content will be served into an HTML string and placed in this unassu
 ```
 {% endraw %}
 
-This includes React components and Redux. To achieve this, the Electrode team has created another powerful module here to optimize performance for your out-the-box Universal app: [Electrode-Router-Resolver-Engine] (https://github.com/electrode-io/redux-router-engine) which takes React routes and requests and returns HTML to be rendered by electrode-react-webapp. We have found this to be the [best tool] (https://github.com/electrode-io/redux-router-engine) for dealing with redux asynchronous actions.
+This includes React components and Redux. To achieve this, the Electrode team has created another powerful module here to optimize performance for your out-of-the-box Universal app: [Electrode-Router-Resolver-Engine] (https://github.com/electrode-io/redux-router-engine) which takes React routes and requests and returns HTML to be rendered by electrode-react-webapp. We have found this to be the [best tool] (https://github.com/electrode-io/redux-router-engine) for dealing with redux asynchronous actions.
 
 Next, we should discuss the `<your-awesome-app>/.babelrc`:
 

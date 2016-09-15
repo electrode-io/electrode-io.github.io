@@ -24,27 +24,43 @@ Open the application up with your favorite text editor. We will start with a fas
 
 ```
   demo
-    A live demo of your component. You can play with it's integration in real time. This folder contains the .example files which you can customize to demonstrate the default state of your components when mounted in the playground.
+    A live demo of your component. You can play with it's integration in real
+    time. This folder contains the .example files which you can customize to
+    demonstrate the default state of your components when mounted in the
+    playground.
 
   node_modules
-    Other Javascript files contained in modules that we will use in this application, including Electrode modules that create your out-the-box Universal app.
+    Other Javascript files contained in modules that we will use in this
+    application, including Electrode modules that create your out-the-box
+    Universal app.
 
   src
-    Where all our component's source code lives, in their respective files. Non-universal apps might normally call this the “client” folder, but since our app code will run both on the client and server, via server side rendering, we call this folder "src".
+    Where all our component's source code lives, in their respective files.
+    Non-universal apps might normally call this the “client” folder, but
+    since our app code will run both on the client and server, via server
+    side rendering, we call this folder "src".
 
   test
-  Test driven development is the WalmartLabs way and critical for successful growth and scaling. All testing code lives in this folder and we will focus on unit testing with Mocha + Enzyme soon.
+  Test driven development is the WalmartLabs way and critical for successful
+  growth and scaling. All testing code lives in this folder and we will focus
+  on unit testing with Mocha + Enzyme soon.
     |_client
       |_components
         |_helpers
       |_.eslintrc
-        A configuration file that sets our custom linting rules and basic syntax validation. In this case it is extended from the electrode-archetype-react-component.
+        A configuration file that sets our custom linting rules and basic syntax
+        validation. In this case it is extended from the
+        electrode-archetype-react-component.
 
   components.json
-    This JSON file is automatically generated to described and bootstrap your component so that the playground/explore can mount it in your component library.
+    This JSON file is automatically generated to described and bootstrap your
+    component so that the playground/explore can mount it in your component
+    library.
 
   gulpfile.js
-    Gulp is a Javascript build tool that lets us automate tasks and the gulpfile.js is where we define those tasks. We like it's simple syntax and the increased productivity from using an intuitive task runner.
+    Gulp is a Javascript build tool that lets us automate tasks and the
+    gulpfile.js is where we define those tasks. We like it's simple syntax
+    and the increased productivity from using an intuitive task runner.
 
 ```
 
