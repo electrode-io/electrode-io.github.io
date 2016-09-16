@@ -73,7 +73,7 @@ We're going to quickly and carefully add the code below to scaffold out our Reso
 ```
 Between your component tag, copy, paste and save the code below into this file:
 
-```javascript
+```
   ourFriends={[
    {name: "electrode", img: "//goo.gl/CZ4wAF", size: 12},
    {name: "hapi", img: "//goo.gl/q9uIFW", size: 12},
@@ -98,7 +98,29 @@ Between your component tag, copy, paste and save the code below into this file:
 
 Now, the fun part! We will be building out `your-awesome-component` and adding two sub-components (or dumb components). We will also create two more demos for them so you have an amazing demo to show off. Trust me, it will be worth it.
 
-In your `<your-awesome-component>/src/components/your-awesome-component.jsx`, delete what it inside and copy, paste and save the code below into this file. Change all references from the literal `your-awesome-component or YourAwesomeComponent` to your actual component name:
+Create a file titled: `<your-awesome-component>/demo/examples/render-friend.example`. Copy, paste and save the code below into this file:
+
+```
+  <RenderFriend
+    friend={
+      {name: "John", img: "//goo.gl/dL5MXT"}
+    } />
+```
+
+Create a file titled: `<your-awesome-component>/demo/examples/guest-list.example`. Copy, paste and save the code below into this file:
+
+```
+<GuestList
+  invitees={[
+  {name: 'John Smith', invited: false},
+  {name: 'Jane Smith', invited: false},
+  {name: 'Dan Jones', invited: false}
+  ]}
+  toggleGuest={(invitee) => alert(invitee.name)}
+  />
+```
+
+Navigate to `<your-awesome-component>/src/components/<your-awesome-component>.jsx`. Delete the existing code. Copy, paste and save the code below into this file. Change all references from the literal `your-awesome-component or YourAwesomeComponent` to your actual component name:
 
 ```javascript
 import React, { Component, PropTypes } from "react";
@@ -111,246 +133,240 @@ export default class YourAwesomeComponent extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      invitees: this.props.ourFriends.map(({name}) => {
-        return {name: name, invited: false};
-      }),
-      invitee: {}
-    };
-    this.toggleGuest = this.toggleGuest.bind(this);
-    this.renderFriends = this.renderFriends.bind(this);
   }
 
-  renderFriends(friends) {
-    const invitees = this.state.invitees;
-    const partyTime = invitees.length === invitees.filter(invitee => invitee.invited).length ? styles.party : '';
+  renderFriends(friends, party) {
+    const invitees = this.props.invitees;
+    const partyTime = party ? styles.party : "";
+
     return friends
-      .filter((friend) => !!invitees.filter(invitee => invitee.name === friend.name && invitee.invited).length)
-      .map((friend) => (<RenderFriend className={partyTime} key={friend.name} friend={friend}/>));
+      .filter((friend) => {
+        return !!invitees.filter((invitee) => {
+          return invitee.name === friend.name && invitee.invited;
+        }).length;
+      })
+      .map((friend) => (
+        <RenderFriend className={partyTime} key={friend.name} friend={friend}/>
+      ));
   }
 
-  toggleGuest({name, invited}) {
-    const invitees = this.state.invitees.map((invitee) => {
-      if(invitee.name === name) {
-        invitee.invited = !invited;
-      }
-      return invitee;
-    });
-    this.setState({invitees: invitees});
+  viewState(view) {
+    if (view) {
+      return view;
+    }
+    return {
+      intro: true,
+      invite: true
+    };
+  }
+
+  houseParty(invitees, party) {
+    return party
+      ? `${styles.houseParty} ${styles.house}`
+      : styles.house;
   }
 
   render() {
-    let { ourFriends, message, outFocus } = this.props;
-    const { invitees } = this.state;
-    ourFriends = !!ourFriends ? ourFriends : exampleObj;
-    const houseParty = invitees.length === invitees.filter(invitee => invitee.invited).length ? `${styles.houseParty} ${styles.house}` : styles.house;
-    const containerStyle = outFocus ? `${styles.container} ${styles.outFocus}` : styles.container;
+    const { ourFriends, invitees, view, message, toggleGuest } = this.props;
+    const party = invitees.length === invitees.filter((invitee) => invitee.invited).length &&
+      invitees.length > 0;
+    const { invite, intro } = this.viewState(view);
+    const houseParty = this.houseParty(invitees, party);
 
     return (
       <div>
-        {!!message && <p>{message}</p>}
-        <GuestList invitees={invitees} toggleGuest={invitee => this.toggleGuest(invitee)}/>
-        <div className={containerStyle}>
+        {invite && invitees.length > 0 &&
+          <GuestList invitees={invitees} toggleGuest={(invitee) => toggleGuest(invitee)}/>}
+        <div className={styles.container}>
+        {intro && !invitees.filter((invitee) => invitee.invited).length && message(styles.message)}
           <div className={houseParty}>
             <div className={styles.room}>
-              {this.renderFriends(ourFriends)}
+              {this.renderFriends(ourFriends, party)}
             </div>
           </div>
         </div>
       </div>
     );
   }
-
-};
+}
 
 YourAwesomeComponent.displayName = "YourAwesomeComponent";
 
-YourAwesomeComponent.PropTypes = {
-  ourBestFriends: PropTypes.array,
-  message: PropTypes.string
+YourAwesomeComponent.propTypes = {
+  ourFriends: PropTypes.array,
+  message: PropTypes.func,
+  invitees: PropTypes.array,
+  view: PropTypes.object,
+  toggleGuest: PropTypes.func
 };
 
-YourAwesomeComponent.defaultProps = {};
+YourAwesomeComponent.defaultProps = {
+  message: `<p>Let's party! Un-comment the all the commented-out lines in the
+  playground then check the boxes on the GuestList to invite our friends to the party!</p>`
+};
 ```
 
-Create a file titled: `<your-awesome-component>/src/components/render-friend.jsx`. Copy, paste and save the code below into this file:
-
-{% raw  %}
-```javascript
-import React from "react";
-
-import styles from "../../src/styles/your-awesome-component.css";
-import style from "../helpers/graph-styles";
-
-const DEFAULT_SIZE = 15;
-const DEGREES_OF_COOL = 360;
-
-const RenderFriend = ({friend, styleObj, className}) => {
-
-  const { name, img, profile, friends } = friend;
-  let { size } = friend;
-  const parentFriend = { name, img, profile };
-  size = size ? size : DEFAULT_SIZE;
-
-  const bgImg = {backgroundImage: `url(${img})`};
-  let applyStyle = styleObj
-    ? Object.assign(bgImg, styleObj)
-    : Object.assign(bgImg, style("single", size));
-
-  applyStyle = friends ? style("container", size) : applyStyle;
-  let applyClass = friends ? styles.join : styles.friend;
-  console.log('className', className);
-  applyClass = styleObj ? applyClass : `${applyClass} ${styles.join} ${className || ''}`;
-
-  const renderFriends = (friendsArr) => {
-    const angleVal = (DEGREES_OF_COOL / friendsArr.length);
-    let rotateVal = 0;
-
-    return friendsArr.map((friendObj) => {
-      rotateVal += angleVal;
-      return (
-        <RenderFriend
-          key={friendObj.name}
-          friend={friendObj}
-          styleObj={style("child", size, rotateVal)}/>
-        );
-    });
-  };
-
-  return (
-    <div className={applyClass} style={applyStyle}>
-      {!!friends && renderFriends(friends)}
-      {!!friends && <RenderFriend friend={parentFriend} styleObj={style("parent", size)}/>}
-    </div>
-  );
-};
-
-RenderFriend.propTypes = {
-  friend: React.PropTypes.object,
-  styleObj: React.PropTypes.object
-};
-
-export default RenderFriend;
-```
-{% endraw %}
-
-
-Create a file titled:
-`<your-awesome-component>/src/components/guest-list.jsx`. Copy, paste and save the code below into this file:
+Create a file titled: `<your-awesome-component>/src/components/guest-list.jsx`. Copy, paste and save the code below into this file:
 
 ```javascript
-import React, { Component, PropTypes } from "react";
+  import React from "react";
 
-import styles from "../../src/styles/your-awesome-component.css";
+  import styles from "../../src/styles/guest-list.css";
 
-export default class GuestList extends Component {
+  const GuestList = ({invitees, toggleGuest}) => {
 
-  constructor(props) {
-    super(props);
-    this.handleCheck = this.handleCheck.bind(this);
-  }
-
-  renderInvitees(inviteesArr) {
-    return inviteesArr.map((invitee) => (
-      <div key={invitee.name} className={styles.guestName}>
-        <input
-          id={invitee.name}
-          type="checkbox"
-          checked={invitee.invited}
-          onChange={() => this.props.toggleGuest(invitee)}/>
-        <label htmlFor={invitee.name}>
-          {invitee.name}
-        </label>
-      </div>
-    ));
-  }
-
-  handleCheck(e) {
-    e.preventDefault();
-    this.props.toggleGuest(e.target.id, e.target.checked);
-  }
-
-  render() {
-    const { invitees } = this.props;
+    const renderInvitees = (inviteesArr) => {
+      return inviteesArr.map((invitee) => (
+        <div key={invitee.name} className={styles.guestName}>
+          <input
+            id={invitee.name}
+            type="checkbox"
+            checked={invitee.invited}
+            onChange={() => toggleGuest(invitee)}/>
+          <label htmlFor={invitee.name}>
+            {invitee.name}
+          </label>
+        </div>
+      ));
+    };
 
     return (
       <div className={styles.guestList}>
         <h1>Guest List:</h1>
-        {this.renderInvitees(invitees)}
+        {renderInvitees(invitees)}
       </div>
     );
-  }
 
-}
+  };
 
-GuestList.propTypes = {
-  friends: PropTypes.array,
-  toggleGuest: PropTypes.func
-};
+  GuestList.propTypes = {
+    invitees: React.PropTypes.array,
+    toggleGuest: React.PropTypes.func
+  };
+
+  export default GuestList;
+```
+
+Create a file titled: `<your-awesome-component>/src/components/render-friend.jsx`. Copy, paste and save the code below into this file:
+
+```javascript
+  import React from "react";
+
+  import styles from "../../src/styles/render-friend.css";
+  import style from "../helpers/graph-styles";
+
+  const DEFAULT_SIZE = 15;
+  const DEGREES_OF_COOL = 360;
+
+  const RenderFriend = ({friend, styleObj, className}) => {
+
+    const { name, img, profile, friends } = friend;
+    let { size } = friend;
+    const parentFriend = { name, img, profile };
+    size = size ? size : DEFAULT_SIZE;
+
+    const bgImg = {backgroundImage: `url(${img})`};
+    let applyStyle = styleObj
+      ? Object.assign(bgImg, styleObj)
+      : Object.assign(bgImg, style("single", size));
+
+    applyStyle = friends ? style("container", size) : applyStyle;
+    let applyClass = friends ? styles.join : styles.friend;
+    applyClass = styleObj ? applyClass : `${applyClass} ${styles.join} ${className || ""}`;
+
+    const renderFriends = (friendsArr) => {
+      const angleVal = (DEGREES_OF_COOL / friendsArr.length);
+      let rotateVal = 0;
+
+      return friendsArr.map((friendObj) => {
+        rotateVal += angleVal;
+        return (
+          <RenderFriend
+            key={friendObj.name}
+            friend={friendObj}
+            styleObj={style("child", size, rotateVal)}/>
+          );
+      });
+    };
+
+    return (
+      <div className={applyClass} style={applyStyle}>
+        {!!friends && renderFriends(friends)}
+        {!!friends && <RenderFriend friend={parentFriend} styleObj={style("parent", size)}/>}
+      </div>
+    );
+  };
+
+  RenderFriend.propTypes = {
+    friend: React.PropTypes.object,
+    styleObj: React.PropTypes.object
+  };
+
+  export default RenderFriend;
+
 ```
 
 In `src` create a folder titled `helpers` with file titled `graph-styles.js` inside - `<your-awesome-component>/src/helper/graph-styles.js`. Copy, paste and save the code below into this file:
 
 ```javascript
+  const PARENT = {divisor: 2};
+  const CHILD = {divisor: 4, rotateBack: -1};
+  const SINGLE = {marginDivisor: 8};
+  const CONTAINER = {paddingDivisor: .13, marginDivisor: .13};
 
-const PARENT = {divisor: 2};
-const CHILD = {divisor: 4, rotateBack: -1};
-const SINGLE = {marginDivisor: 8};
-const CONTAINER = {paddingDivisor: .13, marginDivisor: .13};
 
+  export default (type, size, rotateVal) => {
 
-export default (type, size, rotateVal) => {
+    const nodeSize = type === "child" ? (size / CHILD.divisor) : (size / PARENT.divisor);
 
-  const nodeSize = type === "child" ? (size / CHILD.divisor) : (size / PARENT.divisor);
-
-  const parentOrSingle = {
-    width: `${nodeSize}em`,
-    height: `${nodeSize}em`,
-    margin: `-${nodeSize / PARENT.divisor}em`,
-    display: `block`,
-    position: `absolute`,
-    top: `50%`,
-    left: `50%`,
-    transform: `translate(0em)`
-  };
-
-  switch (type) {
-
-  case "single": {
-    const singleNode = {
-      display: `inline-block`,
-      position: `relative`,
-      margin: `${nodeSize / SINGLE.marginDivisor}em`
+    const parentOrSingle = {
+      width: `${nodeSize}em`,
+      height: `${nodeSize}em`,
+      margin: `-${nodeSize / PARENT.divisor}em`,
+      display: `block`,
+      position: `absolute`,
+      top: `50%`,
+      left: `50%`,
+      transform: `translate(0em)`
     };
-    ["width", "height"].map((prop) => singleNode[prop] = parentOrSingle[prop]);
-    return singleNode;
-  }
 
-  case "child": {
-    const childNode = {
-      transform: `rotate(${rotateVal * 1}deg) translate(${nodeSize * PARENT.divisor}em) rotate(${rotateVal * CHILD.rotateBack}deg)`,
-      backgroundSize: `100%`
-    };
-    return Object.assign(parentOrSingle, childNode);
-  }
+    switch (type) {
 
-  case "container": {
-    return {
-      position: `relative`,
-      width: `${size}em`,
-      height: `${size}em`,
-      padding: `${size * CONTAINER.paddingDivisor}em`,
-      borderRadius: `50%`,
-      display: `inline-block`,
-      margin: `${size * CONTAINER.marginDivisor}em`
-    };
-  }
-
-  default: {
-    return parentOrSingle;
+    case "single": {
+      const singleNode = {
+        display: `inline-block`,
+        position: `relative`,
+        margin: `${nodeSize / SINGLE.marginDivisor}em`
+      };
+      ["width", "height"].map((prop) => singleNode[prop] = parentOrSingle[prop]);
+      return singleNode;
     }
-  }
-};
+
+    case "child": {
+      const childNode = {
+        transform: `rotate(${rotateVal * 1}deg) translate(${nodeSize * PARENT.divisor}em) rotate(${rotateVal * CHILD.rotateBack}deg)`, // eslint-disable-line max-len
+        backgroundSize: `100%`
+      };
+      return Object.assign(parentOrSingle, childNode);
+    }
+
+    case "container": {
+      return {
+        position: `relative`,
+        width: `${size}em`,
+        height: `${size}em`,
+        padding: `${size * CONTAINER.paddingDivisor}em`,
+        borderRadius: `50%`,
+        display: `inline-block`,
+        margin: `${size * CONTAINER.marginDivisor}em`
+      };
+    }
+
+    default: {
+      return parentOrSingle;
+    }
+    }
+  };
 ```
 
 Let's also add some style elements using [CSS modules](https://github.com/css-modules/css-modules) to create a dynamic application. In your `<your-awesome-component>/src/style/your-awesome-component.css`, delete what it says inside and copy, paste and save the code below into this file:
@@ -386,11 +402,7 @@ p {
     transform: scale3d(1, 1, 1);
   }
 }
-.join {
-  animation-name: shake;
-  animation-duration: 1s;
-  animation-fill-mode: both;
-}
+
 .party {
   animation-name: shake;
   animation-duration: 1s;
@@ -409,13 +421,6 @@ input[type=checkbox] + label:before { letter-spacing: 10px; }
 input[type=checkbox]:checked + label:before { content: "\f046"; }
 input[type=checkbox]:checked + label:before { letter-spacing: 5px; }
 
-.friend {
-  border-radius: 50%;
-  background-color: #efefef;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 60%;
-}
 .houseParty {
 	-webkit-clip-path: polygon(2% 97%, 98% 97%, 98% 44%, 51% 8%, 3% 45%);
   clip-path: polygon(2% 97%, 98% 97%, 98% 44%, 51% 8%, 3% 45%);
@@ -434,9 +439,6 @@ input[type=checkbox]:checked + label:before { letter-spacing: 5px; }
 .container {
   position: relative;
   transition: filter .7s ease-in-out;
-}
-.outFocus {
-  filter: blur(23px);
 }
 .container:before {
   content: '';
@@ -457,12 +459,31 @@ input[type=checkbox]:checked + label:before { letter-spacing: 5px; }
   bottom: 0;
   padding-bottom: 2em;
 }
+.message {
+  display: block;
+  position: absolute;
+  width: 19em;
+  height: 11em;
+  z-index: 999;
+  left: 10.5em;
+  top: 9.5em;
+  text-align: center;
+  color: white;
+  font-weight: 100;
+  font-size: larger;
+}
+```
+Create a file titled: `<your-awesome-component>/src/styles/guest-list.css`. Copy, paste and save the code below into this file:
+
+```css
 .guestList {
-  background-color: white;
+  border: 2px solid whitesmoke;
+  background-color: rgba(255, 255, 255, 0.87);
   display: inline-block;
   padding-left: 3em;
   padding-right: 3em;
-  padding-bottom: 1.5em;
+  padding-bottom: 2em;
+  padding-top: .7em;
   border-radius: 5px;
   margin: 1em;
 }
@@ -472,10 +493,45 @@ input[type=checkbox]:checked + label:before { letter-spacing: 5px; }
 }
 ```
 
-Last edit! In your `<your-awesome-component>index.js`, add the line below:
+Create a file titled: `<your-awesome-component>/src/styles/render-friend.css`. Copy, paste and save the code below into this file:
+
+```css
+@keyframes shake {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  10%, 20% {
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%, 50%, 70%, 90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%, 60%, 80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.join {
+  animation-name: shake;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.friend {
+  border-radius: 50%;
+  background-color: #efefef;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+```
+Last edit! In your `<your-awesome-component>index.js`, add the two lines below:
 
 ```javascript
   export { default as RenderFriend } from "./components/render-friend";
+  export { default as GuestList } from "./components/guest-list";
+
 ```
 
 Now run it and explore the live demo!
@@ -539,41 +595,4 @@ Let's test out the published YourAwesomeComponent module! Use your editor to ope
   npm i your-awesome-npm-module --save
 ```
 
-Navigate to `<your-awesome-app>/client/components/home.jsx` Copy, paste and save the code below. Remember to swap out `ResourceList` and `resource-list` for the name of your actual component (`<your-awesome-component`):
-
-```javascript
-  'use strict';
-
-  //code for home.jsx file
-  import React from "react";
-
-  import {ResourceList} from "resource-list";
-
-  const exaList = [
-    {name: "electrode", img: "//goo.gl/CZ4wAF", size: 12},
-    {name: "hapi", img: "//goo.gl/q9uIFW", size: 12},
-    {name: "React", img: "//goo.gl/dL5MXT", size: 12},
-    {name: "Redux", img: "//goo.gl/L0mLmT", size: 12},
-    {name: "Webpack", img: "//goo.gl/2AV3Dn", size: 12},
-    {img: "//goo.gl/UdhbKO", name: "wizard", size: 12}
-  ];
-
-  export class Home extends React.Component {
-    render() {
-      return (
-        <div>
-        <h1>Hello <a href="https://github.com/electrode-io">Electrode</a></h1>
-          <ResourceList ourFriends={exaList}/>
-        </div>
-      );
-    }
-  }
-
-```
-
-```bash
-  gulp dev
-```
-
-Open `localhost:3000` in your browser and marvel at your Awesome Tech Party App!
-Let's continue to build more by creating a [Hapi server plugin](build_server_plugin.html).
+Let's continue by building out [Your Awesome App](build_out_app.html) so we can incorporate a Hapi Server plugin, routes and some awesome CSS modules.
