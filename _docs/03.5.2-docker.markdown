@@ -17,7 +17,7 @@ Let's check the versions of `Docker Engine`, `Compose` and `Machine` by running 
 ```bash
  docker --version
 
-	docker-compose --version
+ docker-compose --version
 
  docker-machine --version
 ```

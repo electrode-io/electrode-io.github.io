@@ -33,129 +33,77 @@ Navigate to `<your-awesome-component>/client/routes.jsx`. Copy, paste and save t
 Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existing code by copy, pasting and saving the code below:
 
 ```javascript
-import React, { Component, PropTypes } from "react";
-import { Link } from "react-router";
+  import React, { Component, PropTypes } from "react";
+  import { Link } from "react-router";
 
-export class Home extends Component {
+  export class Home extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      ourFriends: [],
-      invitees: []
-    };
-    this.toggleGuest = this.toggleGuest.bind(this);
-  }
+    constructor(props) {
+      super(props);
+      this.state = {
+        ourFriends: [],
+        invitees: []
+      };
+      this.toggleGuest = this.toggleGuest.bind(this);
+    }
 
-  componentDidMount() {
-    fetch("/friends", {method: "GET"})
-    .then((res) => res.json())
-    .then((json) => {
-      const ourFriends = json.friends;
-      const invitees = ourFriends.map(({name}) => {
-        return { name, invited: false};
+    componentDidMount() {
+      fetch("/friends", {method: "GET"})
+      .then((res) => res.json())
+      .then((json) => {
+        const ourFriends = json.friends;
+        const invitees = ourFriends.map(({name}) => {
+          return { name, invited: false};
+        });
+        this.setState({ourFriends, invitees}); //eslint-disable-line
       });
-      this.setState({ourFriends, invitees}); //eslint-disable-line
-    });
+    }
+
+    componentView({ location: { pathname } }) {
+      return {
+        intro: pathname === "/",
+        invite: pathname === "/invite"
+      };
+    }
+
+    toggleGuest({name, invited}) {
+      const invitees = this.state.invitees.map((invitee) => {
+        if (invitee.name === name) {
+          invitee.invited = !invited;
+        }
+        return invitee;
+      });
+      this.setState({invitees});
+    }
+
+    introMessage(className) {
+      return (
+        <div className={className}>
+          <p>We shoulde have a house party and invite all of our friends!</p>
+          <Link to="/invite">Click Here to Make it a Party!</Link>
+        </div>
+      );
+    }
+
+    render() {
+      const { ourFriends, invitees } = this.state;
+      const toggleGuest = this.toggleGuest;
+      const view = this.componentView(this.props);
+      const message = this.introMessage;
+
+      return (
+        <div>
+          {React.cloneElement(this.props.children, {
+            ourFriends, invitees, toggleGuest, view, message
+          })}
+        </div>
+      );
+    }
   }
 
-  componentView({ location: { pathname } }) {
-    return {
-      intro: pathname === "/",
-      invite: pathname === "/invite"
-    };
-  }
-
-  toggleGuest({name, invited}) {
-    const invitees = this.state.invitees.map((invitee) => {
-      if (invitee.name === name) {
-        invitee.invited = !invited;
-      }
-      return invitee;
-    });
-    this.setState({invitees});
-  }
-
-  introMessage(className) {
-    return (
-      <div className={className}>
-        <p>We should have a house party and invite all of our friends!</p>
-        <Link to="/invite">Click Here to Make it a Party!</Link>
-      </div>
-    );
-  }
-
-  render() {
-    const { ourFriends, invitees } = this.state;
-    const toggleGuest = this.toggleGuest;
-    const view = this.componentView(this.props);
-    const message = this.introMessage;
-
-    return (
-      <div>
-        {React.cloneElement(this.props.children, {
-          ourFriends, invitees, toggleGuest, view, message
-        })}
-      </div>
-    );
-  }
-}
-
-Home.propTypes = {
-  children: PropTypes.node
-};
-```
-
-You get the idea. We need to do this for the `styles` now. Navigate to `<your-awesome-app>/styles`. Create a file with the name of `guest-list.css`. The path for this component will look like this: `<your-awesome-app>/styles/guest-list.css` Copy, paste and save the code below into this file.
-
-```css
-  @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
-
-  body {
-    font-family: sans-serif;
-  }
-
-  p {
-      padding: 15px;
-  }
-
-  label { font-size: 24px; }
-  input[type=checkbox] { display:none; }
-  input[type=checkbox] + label:before {
-    font-family: FontAwesome;
-    display: inline-block;
-  }
-  input[type=checkbox] + label:before { content: "\f096"; }
-  input[type=checkbox] + label:before { letter-spacing: 10px; }
-  input[type=checkbox]:checked + label:before { content: "\f046"; }
-  input[type=checkbox]:checked + label:before { letter-spacing: 5px; }
-
-  .friend {
-    border-radius: 50%;
-    background-color: #efefef;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 60%;
-  }
-
-  .houseParty {
-    background-color: #e2e2ff;
-    border-radius: 10px;
-  }
-
-  .guestList {
-    background-color: white;
-    display: inline-block;
-    padding-left: 3em;
-    padding-right: 3em;
-    padding-bottom: 1.5em;
-    border-radius: 5px;
-    margin: 1em;
-  }
-
-  .guestName {
-    margin-bottom: .5em;
-  }
+  Home.propTypes = {
+    children: PropTypes.node
+  };
 ```
 
 Navigate to [Intermediate: Server Config](server_config.html), to learn about [Confippet](confippet.html) and add our Hapi plugin to our server config.
