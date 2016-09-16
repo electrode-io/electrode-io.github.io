@@ -13,11 +13,13 @@
   <meta property="og:description" content="Universal React and Node Applications simplified, performant, and reusable.">
   <meta property="fb:app_id" content="623268441017527">
 
+
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="alternate" type="application/rss+xml" title="Electrode" href="https://electrode-io.github.io/feed.xml">
 
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/electrode.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
   <script src="//use.typekit.net/vqa1hcx.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
@@ -37,16 +39,16 @@
       <div class="wrap">
         <a class="nav-home" href="/index.html">
           <img class="nav-logo" src="/img/electrode-02.png" width="45" height="45" style="margin-bottom: 5px;">
-          Electrode
+          electrode
         </a>
+
         <ul class="nav-site nav-site-internal">
-          <li><a href="/docs/what_is_electrode.html" class="active">Docs</a></li>
+          <li><a href="/docs/what_is_electrode.html" class="active">docs</a></li>
           <!--<li><a href="/support.html">Support</a></li>-->
         </ul>
-
         <ul class="nav-site nav-site-external">
           <li><a href="https://github.com/electrode-io">GitHub</a></li>
-          <li><a href="http://walmartlabs.com">WalmartLabs</a></li>
+          <li><a href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a></li>
         </ul>
       </div>
     </div>
@@ -1126,38 +1128,27 @@ new component through npm (<a href="https://github.com/electrode-io/electrode-ex
 
   <span class="s2">&quot;GHACCESS_TOKEN_NAME&quot;</span><span class="o">:</span> <span class="s2">&quot;GHACCESS_TOKEN&quot;</span> <span class="c1">// github token variable name, your token would be accessible via `process.env[&quot;GHACCESS_TOKEN&quot;]`}</span>
 </code></pre></div><h2><a class="anchor" name="start-server"></a>Start server <a class="hash-link" href="#start-server">#</a></h2>
-<p>First install dependencies
-<code>bash
-npm i
-</code></p>
-
-<p>Export github access token or set it as an environment variable
-<code>bash
-export GHACCESS_TOKEN=YOUR_GITHUB_TOKEN
-</code></p>
-
-<p>For development mode
-<code>bash
-gulp dev
-</code>
-or
-<code>bash
-GHACCESS_TOKEN=YOUR_GITHUB_TOKEN gulp dev
-</code></p>
-
-<p>For production mode
-<code>bash
-gulp build
-</code>
-and
-<code>bash
-NODE_ENV=production node .
-</code>
-or
-<code>bash
-GHACCESS_TOKEN=YOUR_GITHUB_TOKEN NODE_ENV=production node .
-</code></p>
-<h2><a class="anchor" name="deploy"></a>Deploy <a class="hash-link" href="#deploy">#</a></h2>
+<p>First install dependencies</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm i
+</code></pre></div>
+<p>Export github access token or set it as an environment variable</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">GHACCESS_TOKEN</span><span class="o">=</span>YOUR_GITHUB_TOKEN
+</code></pre></div>
+<p>For development mode</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">gulp dev
+</code></pre></div>
+<p>or</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">GHACCESS_TOKEN</span><span class="o">=</span>YOUR_GITHUB_TOKEN gulp dev
+</code></pre></div>
+<p>For production mode</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">gulp build
+</code></pre></div>
+<p>and</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">NODE_ENV</span><span class="o">=</span>production node .
+</code></pre></div>
+<p>or</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">GHACCESS_TOKEN</span><span class="o">=</span>YOUR_GITHUB_TOKEN <span class="nv">NODE_ENV</span><span class="o">=</span>production node .
+</code></pre></div><h2><a class="anchor" name="deploy"></a>Deploy <a class="hash-link" href="#deploy">#</a></h2>
 <p>Since this is an electrode app, it can be deployed the same way as any other electrode app. Just remember to set your github token as an environment variable.</p>
 <h2><a class="anchor" name="learn-more"></a>Learn more <a class="hash-link" href="#learn-more">#</a></h2>
 <p>Wish to learn more? Check our <a href="https://github.com/electrode-io/electrode-explorer/wiki">wiki</a> page!</p>
