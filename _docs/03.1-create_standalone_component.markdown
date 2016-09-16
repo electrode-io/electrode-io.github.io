@@ -160,9 +160,9 @@ export default class YourAwesomeComponent extends Component {
     };
   }
 
-  houseParty(invitees, party) {
+  yourAwesomeComponent(invitees, party) {
     return party
-      ? `${styles.houseParty} ${styles.house}`
+      ? `${styles.yourAwesomeComponent} ${styles.house}`
       : styles.house;
   }
 
@@ -171,7 +171,7 @@ export default class YourAwesomeComponent extends Component {
     const party = invitees.length === invitees.filter((invitee) => invitee.invited).length &&
       invitees.length > 0;
     const { invite, intro } = this.viewState(view);
-    const houseParty = this.houseParty(invitees, party);
+    const yourAwesomeComponent = this.yourAwesomeComponent(invitees, party);
 
     return (
       <div>
@@ -179,7 +179,7 @@ export default class YourAwesomeComponent extends Component {
           <GuestList invitees={invitees} toggleGuest={(invitee) => toggleGuest(invitee)}/>}
         <div className={styles.container}>
         {intro && !invitees.filter((invitee) => invitee.invited).length && message(styles.message)}
-          <div className={houseParty}>
+          <div className={yourAwesomeComponent}>
             <div className={styles.room}>
               {this.renderFriends(ourFriends, party)}
             </div>
@@ -429,6 +429,7 @@ input[type=checkbox]:checked + label:before { letter-spacing: 5px; }
   animation: partyLights 5s ease infinite;
   min-height: 12em;
 }
+
 .house {
   clip-path: polygon(2% 97%, 98% 97%, 98% 44%, 51% 8%, 3% 45%);
   background-color: #474747;
@@ -542,11 +543,14 @@ Now run it and explore the live demo!
 
 In the demo, you will first see a Guest List header with a checkbox listing all of our resources, now referred to as Friends:
 
-![resource-list-1](/img/house-party.png)
+![party-false](/img/party-component-false.png)
 
-Have fun! Check the box before each Friend (resource). The Electrode stack is now like an awesome party, where all of our favorite technologies get invited:
 
-![resource-list-2](/img/resource-list-03.png)
+Have fun! Change key `invited` to true in `invitees` array. The Electrode stack is now like an awesome party, where all of our favorite technologies get invited:
+
+
+![party-true](/img/party-component-true.png)
+
 
 WalmartLabs believes that testing is critical to writing great, high performance code. This includes unit testing at both the component and application level. For your component, we are using [Mocha] (https://mochajs.org/), a Javascript testing framework that is perfect for running async tests, with [Enzyme] (http://airbnb.io/enzyme/docs/guides/mocha.html), airbnb's awesome testing utility for React.
 
@@ -589,10 +593,5 @@ Or, to run both simultaneously, you can just run:
 
 Now that we've run our tests and they've passed, let's publish our component so we can use it again in Your-Awesome-App on [NPM] (https://docs.npmjs.com/getting-started/publishing-npm-packages). You will need to [sign up] (https://www.npmjs.com/signup) for an account if you do not have one and follow the steps in the [NPM documentation] (https://docs.npmjs.com/getting-started/creating-node-modules).
 
-Let's test out the published YourAwesomeComponent module! Use your editor to open Your-Awesome-App and follow the steps below:
 
-```bash
-  npm i your-awesome-npm-module --save
-```
-
-Let's continue by building out [Your Awesome App](build_out_app.html) so we can incorporate a Hapi Server plugin, routes and some awesome CSS modules.
+Let's continue to build more by creating our own [Hapi server plugin](build_server_plugin.html), incorporating routes and adding some awesome CSS modules.
