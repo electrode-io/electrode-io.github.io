@@ -25,13 +25,13 @@ Let's check the versions of `Docker Engine`, `Compose` and `Machine` by running 
 Verify your installation by running the Docker version of "Hello World":
 
 ```bash
-	docker run hello-world
+  docker run hello-world
 ```
 
 To show all the containers on the system, run the command below:
 
 ```bash
-	docker ps -a
+  docker ps -a
 ```
 
 Electrode has a [Dockerfile and Docker image](https://hub.docker.com/r/electrode/electrode-io/) built-in to expedite deployment. Simply:
@@ -65,25 +65,25 @@ Go to the app folder, you can stop the container and start your development:
 Now let's build a new image, by entering the following command:
 
 ```bash
-	docker build -t docker-awesome-container .
+  docker build -t docker-awesome-container .
 ```
 
 Run the command below to see a lit of the images you currently have:
 
 ```bash
-	docker images
+  docker images
 ```
 
 You'll see `node` listed. Find the corresponding `IMAGE ID` for your `node` image. We will now build a command to properly tag the image. It'll be using your `image id` + `account name/repo-name:latest`
 
 ```bash
-	docker tag your-image-id-# your-account-name/docker-awesome-container:latest
+  docker tag your-image-id-# your-account-name/docker-awesome-container:latest
 ```
 
 Let's see it! Run the `images` command below to see a lit of the images you currently have:
 
 ```bash
-	docker images
+  docker images
 ```
 
 Run your image on your local container:
@@ -109,13 +109,13 @@ Now you can stop the container:
 Log into Docker Hub from the command line. The format is below. Enter you password when prompted:
 
 ```bash
-	docker login --username=yourhubusername --email=youremail@company.com
+  docker login --username=yourhubusername --email=youremail@company.com
 ```
 
 Type the push command below to push your image to your new repo:
 
 ```bash
-	docker push your-username/docker-awesome-container
+  docker push your-username/docker-awesome-container
 ```
 
 You have successfully pushed your new image to the Docker Cloud repository! From here, you can use the [User Guide](https://docs.docker.com/engine/userguide/intro/) to run your own containers and build Docker images.
