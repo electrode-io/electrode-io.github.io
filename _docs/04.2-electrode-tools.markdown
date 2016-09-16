@@ -10,4 +10,8 @@ We've created incredible tools for better leverage of your application's capabil
 
 *  [Electrify](electrify.html) is a sophisticated tool for analyzing the module tree of project bundles.
 
+![screencast](https://cloud.githubusercontent.com/assets/360041/18318796/ea0ddae4-74d7-11e6-89cb-08e02e4b1683.gif)
+
 *  [Electrode-Explorer](electrode_explorer.html) a dynamic, real-time showcase of all your components.
+
+![electrode-explorer](/img/electrode-explorer.png)

@@ -6,7 +6,7 @@ toplevel: "Stand Alone Modules"
 
 An electrode application that showcases all your components.
 
-<img src="https://github.com/electrode-io/electrode-explorer/blob/master/data/screenshot.png" height="500px"/>
+![electrode-explorer](/img/electrode-explorer.png)
 
 ## Prerequisites
 
@@ -58,13 +58,13 @@ This post processing script works well with all electrode components. If you hav
     "host": "github.com"
   },
 
-  "ORGS": [ 
+  "ORGS": [
     // org/user names under which components will be included in the explorer
-    // for example, put ["xxx", "yyy"] to include every repo under github.com/xxx and github.com/yyy 
+    // for example, put ["xxx", "yyy"] to include every repo under github.com/xxx and github.com/yyy
   ],
 
   "REPOS_USAGE_INCLUDE": [
-    // consumers need to contain one of these substrings to be included in usages 
+    // consumers need to contain one of these substrings to be included in usages
     // for example, put ["react"] so consumers named /*react*/ will be included in usages
   ],
 
