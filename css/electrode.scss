@@ -33,8 +33,6 @@ html {
   background: $pageBg;
 }
 
-
-
 .left {
   float: left;
 }
@@ -101,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-main {
   @include clearfix;
-  background: $darkestColor;
+  background: linear-gradient($darkerColor, $darkestColor);
   color: $lightTextColor;
   position: fixed;
   top: 0;
@@ -418,7 +416,7 @@ section.black content {
       padding: 15px 30px 15px 15px;
       margin: 20px 0;
       background-color: rgba(204, 122, 111, 0.09999999999999998);
-      border-left: 5px solid rgba(191, 87, 73, 0.19999999999999996);
+      border-left: 5px solid #db2975;
     h4 {
       margin-top: 0;
     }
@@ -428,7 +426,7 @@ section.black content {
     // Treat first child as the title - promote to H4.
     p:first-child {
       font-weight: bold;
-      font-size: 17.5px;
+      font-size: 14.5px;
       line-height: 20px;
       margin-top: 0;
       text-rendering: optimizelegibility;
@@ -654,3 +652,12 @@ h1 {
     float: right;
   }
 }
+
+.logo-blue{
+  color: $textLogoBlue;
+}
+
+.logo-orange{
+  color: $textLogoOrange;
+}
+

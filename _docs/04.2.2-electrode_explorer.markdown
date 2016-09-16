@@ -36,7 +36,7 @@ new component through npm ([scripts/install-module.sh]) after a waiting period, 
 
 To make the server update immediately or force an update, add a url parameter to the POST request, `/api/update/{org}/{repoName}?updateNow=1`.
 
-This post processing script works well with all electrode components. If you have non-electrode components, you can modify your [scripts/post-install-module.sh].
+This post processing script works well with all electrode components. If you have non-electrode components, you can modify your [scripts/post-install-module.sh] to babel transpile and bundle your demo files.
 
 ## Config
 
@@ -88,34 +88,43 @@ This post processing script works well with all electrode components. If you hav
 ## Start server
 
 First install dependencies
-```sh
+
+```bash
 npm i
 ```
 
 Export github access token or set it as an environment variable
-```sh
+
+```bash
 export GHACCESS_TOKEN=YOUR_GITHUB_TOKEN
 ```
 
 For development mode
-```sh
+
+```bash
 gulp dev
 ```
 or
-```sh
+
+```bash
 GHACCESS_TOKEN=YOUR_GITHUB_TOKEN gulp dev
 ```
 
 For production mode
-```sh
+
+```bash
 gulp build
 ```
+
 and
-```sh
+
+```bash
 NODE_ENV=production node .
 ```
+
 or
-```sh
+
+```bash
 GHACCESS_TOKEN=YOUR_GITHUB_TOKEN NODE_ENV=production node .
 ```
 
