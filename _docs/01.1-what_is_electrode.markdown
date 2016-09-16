@@ -14,10 +14,12 @@ The heart of the platform is [Electrode Archetypes](https://github.com/electrode
 ### Stand Alone Modules: Optimize Where You Want
 As part of the Electrode Platform, we have a number of modules that each do one specific task. Anything from [server-side render caching](server_side_render_cache.html) to [flexible configuration management](confippet.html). These modules can be used independently of the platform, and you can [learn more about integrating them into your existing apps](stand_alone_modules.html).
 
-Start using these modules in your existing application with our [guide](stand_alone_modules.html).
+**Start using these modules in your existing application with our [guide](stand_alone_modules.html).**
 
 ### Tools: Power Up Your Existing Applications
 The Electrode Platform also has tools that can be consumed by existing applications (though some of the tools require far less configuration to use with Electrode core and some are bundled with Electrode Core.). There are currently two powerful tools: one which enables [discovery of reusable components](electrode_explorer.html) and another to help understand the [performance of JS bundles](electrify.html).
+
+**Start using these tools in your existing applications [Electrode Explorer](electrode_explorer.html) and [Electrify](electrify.html).**
 
 ##Features
 [Electrode Boilerplate](https://github.com/electrode-io/electrode-boilerplate-universal-react-node) comes fully loaded with the best technologies available:
