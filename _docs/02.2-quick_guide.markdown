@@ -6,10 +6,10 @@ toplevel: "Getting Started: Quick Guide"
 
 ##### Quick Guide
 
-Install [Yeoman](http://yeoman.io/) and the Electrode [generator-electrode](https://github.com/electrode-io/generator-electrode):
+Install [Yeoman](http://yeoman.io/) and the [Electrode Generator](https://github.com/electrode-io/generator-electrode):
 
 ```bash
-$ npm install -g yo generator-electrode
+$ sudo npm install -g yo generator-electrode
 ```
 Make a new directory for your awesome app.
 
