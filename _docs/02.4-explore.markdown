@@ -144,7 +144,7 @@ All of your content will be served into an HTML string and placed in this unassu
 ```
 {% endraw %}
 
-This includes React components and Redux. To achieve this, the Electrode team has created another powerful module here to optimize performance for your out-of-the-box Universal app: [Electrode-Router-Resolver-Engine] (https://github.com/electrode-io/redux-router-engine) which takes React routes and requests and returns HTML to be rendered by electrode-react-webapp. We have found this to be the [best tool] (https://github.com/electrode-io/redux-router-engine) for dealing with redux asynchronous actions.
+This includes React components and Redux. To achieve this, the Electrode team has created another powerful module here to optimize performance for your out-of-the-box Universal app: [Electrode-Router-Resolver-Engine] (https://github.com/electrode-io/electrode-redux-router-engine) which takes React routes and requests and returns HTML to be rendered by electrode-react-webapp. We have found this to be the [best tool] (https://github.com/electrode-io/electrode-redux-router-engine) for dealing with redux asynchronous actions.
 
 Next, we should discuss the `<your-awesome-app>/.babelrc`:
 
@@ -159,6 +159,6 @@ Following, we have the `<your-awesome-app>/isomorphic-loader-config.json`:
 ```
 .isomorphic-loader-config.json
 ```
-This [powerful tool] (https://github.com/jchip/isomorphic-loader) makes NodeJS `require` understand files such as images when you are doing server side rendering. It contains three pieces: a Webpack loader, Webpack plugin and a library for your NodeJS app.
+This [powerful tool] (https://github.com/jchip/isomorphic-loader) makes NodeJS `require` understanding files such as images when you are doing server side rendering. It contains three pieces: a Webpack loader, Webpack plugin and a library for your NodeJS app.
 
 With the generator-electrode, we've created a dynamic and performant full stack Electrode app in under five minutes, using some of our favorites technologies, like [React] (https://facebook.github.io/react/index.html) and [Hapi] (http://hapijs.com/). Let's explore and personalize this web application in our next section, [Intermediate: Create a Standalone Component](create_standalone_component.html).

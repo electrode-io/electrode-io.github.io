@@ -6,10 +6,8 @@ toplevel: "Stand Alone Modules"
 
 [![Build Status](https://travis-ci.com/electrode-io/electrify.svg?token=9dyHRhqfyW5wqcpfkeLr&branch=master)](https://travis-ci.com/electrode-io/electrify)
 
-# electrify
-
-Electrify is a tool for analyzing the module tree of
-[electrode-io/webpack](https://github.com/webpack/docs/wiki/node.js-api#stats) project bundles. It's especially handy
+An Electrode Javascript bundle viewer aptly named [Electrify](https://github.com/electrode-io/electrify), this is a stunning visual tool for analyzing the module tree of
+[electrode-io + webpack](https://github.com/webpack/docs/wiki/node.js-api#stats) project bundles. It's especially handy
 for catching large and/or duplicate modules which might be either bloating up
 your bundle or slowing down the build process.
 
@@ -17,7 +15,7 @@ your bundle or slowing down the build process.
 
 ## Installation ##
 
-Electrify lives on [npm](https://www.npmjs.com/package/electrode-electrify), so if you haven't already
+Electrify lives on [npm](https://www.npmjs.com/package/electrode-electrify), so if you haven't already,
 make sure you have [node](http://nodejs.org/) installed on your machine first.
 
 Installing should then be as easy as:
@@ -25,6 +23,8 @@ Installing should then be as easy as:
 ``` bash
 sudo npm install -g electrode-electrify
 ```
+
+{% include module_usage.md moduleId="electrode-electrify" %}
 
 ## Command-Line Interface ##
 
@@ -38,13 +38,13 @@ Options:
                 either "count" or "size". Default: size
 ```
 
-When you install electrify globally, `electrify` command-line tool is made
+When you install Electrify globally, `electrify` command-line tool is made
 available as the quickest means of checking out your bundle. As of `electrode-electrify@v1.0.0`,
 the tool takes any [webpack-stats](https://github.com/webpack/docs/wiki/node.js-api#stats) object [example](https://github.com/webpack/analyse/blob/master/app/pages/upload/example.json) as input and spits out a
 standalone HTML page as output.
 
 You can easily chain the stats file into another command, or use the `--open`
-flag to open electrify in your browser automatically:
+flag to open Electrify in your browser automatically:
 
 
 For example:
@@ -82,7 +82,7 @@ more than expected.
 Nothing particularly special about these palettes – colored for legibility and
 aesthetics respectively.
 
-## Other useful bundle/stats viewers ##
+### Other useful bundle/stats generators ###
 - [disc-browserify](https://github.com/hughsk/disc) (Helpful for analyzing **browserify** projects and a huge inspiration for electrify, used *disc* extensively in my past **browserify** based projects)
 - [webpack-bundle-size-analyzer](https://github.com/robertknight/webpack-bundle-size-analyzer)
 - [webpack-visualizer](https://github.com/chrisbateman/webpack-visualizer)

@@ -4,9 +4,11 @@ permalink: docs/confippet.html
 toplevel: "Stand Alone Modules"
 ---
 
-Confippet is a versatile, flexible utility for managing configurations of
+[Confippet](https://github.com/electrode-io/electrode-confippet) is a versatile, flexible utility for managing configurations of
 Node.js applications. It's simple to get started, and can be customized and
-extended to meet the needs of your app [Confippet](https://github.com/electrode-io/electrode-confippet) can be used as a standalone
+extended to meet the needs of your app
+
+[Confippet](https://github.com/electrode-io/electrode-confippet) can be used as a standalone
 module in your favorite node.js web server framework.
 
 ### Features
