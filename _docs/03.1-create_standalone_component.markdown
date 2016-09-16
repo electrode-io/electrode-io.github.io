@@ -74,22 +74,29 @@ We are going to quickly and carefully add the code below to scaffold out our Res
 Between your component tag, copy, paste and save the code below into this file:
 
 ```javascript
-message={
+  ourFriends={[
+   {name: "electrode", img: "//goo.gl/CZ4wAF", size: 12},
+   {name: "hapi", img: "//goo.gl/q9uIFW", size: 12},
+   {name: "React", img: "//goo.gl/dL5MXT", size: 12},
+  ]}
 
-  `One is not a party! Check the box next to our friends to invite them to party!`
+  invitees={[
+   {name: "electrode", invited: false},
+   {name: "hapi", invited: false},
+   {name: "React", invited: false}
+  ]}
 
-}
-ourFriends={[
-  {name: "electrode", img: "//goo.gl/CZ4wAF", size: 12},
-  {name: "hapi", img: "//goo.gl/q9uIFW", size: 12},
-  {name: "React", img: "//goo.gl/dL5MXT", size: 12},
-  {name: "Redux", img: "//goo.gl/L0mLmT", size: 12},
-  {name: "Webpack", img: "//goo.gl/2AV3Dn", size: 12},
-  {img: "//goo.gl/UdhbKO", name: "wizard", size: 12}
-]}
+  toggleGuest={(invitee) => alert('Edit invitees array in playground to invite a guest!')}
+
+  message={(c)=>(
+
+  <div className={c}>Change key 'invited' to true in 'invitees' array in the playground
+  above to invite guests!</div>
+
+  )}
 ```
 
-Now, the fun part! We will be building out `your-awesome-component` and adding two sub-components (or dumb components). Trust me, it will be worth it.
+Now, the fun part! We will be building out `your-awesome-component` and adding two sub-components (or dumb components). We will also create two more demos for them so you have an amazing demo to show off. Trust me, it will be worth it.
 
 In your `<your-awesome-component>/src/components/your-awesome-component.jsx`, delete what it inside and copy, paste and save the code below into this file. Change all references from the literal `your-awesome-component or YourAwesomeComponent` to your actual component name:
 
