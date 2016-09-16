@@ -19,7 +19,7 @@ export class Home extends React.Component {
 }
 ```
 
-We will need a place to keep all of the resources we learned in the [Getting Started: Quick Guide](quick_guide.html) organized. Let's make a library for our present stack and technologies we are excited about! Copy the code below and paste it into `<your-awesome-app>/client/components/home.jsx`:
+We'll need a place to keep all of the resources we learned in the [Getting Started: Quick Guide](quick_guide.html) organized. Let's make a library for our present stack and exciting technologies! Copy the code below and paste it into `<your-awesome-app>/client/components/home.jsx`:
 
 ```javascript
 import React from "react";
