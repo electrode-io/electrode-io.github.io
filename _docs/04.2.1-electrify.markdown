@@ -38,13 +38,13 @@ Options:
                 either "count" or "size". Default: size
 ```
 
-When you install electrify globally, `electrify` command-line tool is made
+When you install Electrify globally, `electrify` command-line tool is made
 available as the quickest means of checking out your bundle. As of `electrode-electrify@v1.0.0`,
 the tool takes any [webpack-stats](https://github.com/webpack/docs/wiki/node.js-api#stats) object [example](https://github.com/webpack/analyse/blob/master/app/pages/upload/example.json) as input and spits out a
 standalone HTML page as output.
 
 You can easily chain the stats file into another command, or use the `--open`
-flag to open electrify in your browser automatically:
+flag to open Electrify in your browser automatically:
 
 
 For example:
