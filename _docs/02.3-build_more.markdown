@@ -3,7 +3,7 @@ title:  "Build More + Deploy"
 permalink: docs/build_more.html
 toplevel: "Getting Started: Quick Guide"
 ---
-###Here at WalmartLabs we love to build!.
+###Here at WalmartLabs we love to build!
 
 Navigate to `<your-awesome-app>/client/components/home.jsx`:
 
