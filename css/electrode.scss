@@ -426,7 +426,7 @@ section.black content {
     // Treat first child as the title - promote to H4.
     p:first-child {
       font-weight: bold;
-      font-size: 17.5px;
+      font-size: 14.5px;
       line-height: 20px;
       margin-top: 0;
       text-rendering: optimizelegibility;
@@ -654,9 +654,10 @@ h1 {
 }
 
 .logo-blue{
-  color: #54a7de;
+  color: $textLogoBlue;
 }
+
 .logo-orange{
-  color: #F1BF6D;
+  color: $textLogoOrange;
 }
 
