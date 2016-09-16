@@ -8,7 +8,7 @@ toplevel: "Overview"
 > Universal React and Node Applications simplified, performant, and reusable.
 
 #### Core: Quick + Easy
-The heart of the platform is Electrode “archetypes”. It allows scaffolding of the app and its associated react components, and also ensures streamlined development and deployment. It only takes five minutes with our [Getting Started: Quick Guide](quick_guide.html)
+The heart of the platform is [Electrode Archetypes](https://github.com/electrode-io?utf8=%E2%9C%93&query=archetype%20only%3Asources%20). It allows for standardized configurations/structure of the app and its associated react components, also ensures streamlined development and deployment. It only takes five minutes with our [Getting Started: Quick Guide](quick_guide.html)
 
 #### Stand Alone Modules: Optimize Where You Want
 As part of the Electrode Platform, we have a number of modules that each do one specific task. Anything from [server-side render caching](server_side_render_cache.html) to [flexible configuration management](confippet.html). These modules can be used independently of the platform, and you can [learn more about integrating them into your existing apps](stand_alone_modules.html).
@@ -17,7 +17,7 @@ As part of the Electrode Platform, we have a number of modules that each do one 
 The Electrode Platform also has tools that can be consumed by existing applications (though they come integrated with the Electrode code). There are currently two powerful tools: one which enables [discovery of reusable components](electrode_explorer.html) and another to help understand the [performance of JS bundles](electrify.html).
 
 ###Features
-A fully loaded boilerplate with the best technologies available:
+[Electrode Boilerplate](https://github.com/electrode-io/electrode-boilerplate-universal-react-node) comes fully loaded with the best technologies available:
 
 *  [React](https://facebook.github.io/react/index.html) is an awesome JavaScript library for building user interfaces, created by Facebook.
 
@@ -25,15 +25,13 @@ A fully loaded boilerplate with the best technologies available:
 
 *  [React Router](https://github.com/ReactTraining/react-router/tree/master/docs) is a powerful routing library built on top of React.
 
-*  [Electrode-Redux-Resolver-Engine](https://github.com/electrode-io/redux-router-engine) An Electrode routing and rendering engine for react-router and redux.
-
-*  [Electrode-Server](https://github.com/electrode-io/electrode-server) A configurable web server using Hapi.js on top of Node.js.
+*  [CSS Modules](https://github.com/css-modules/css-modules) a CSS file in which all class names and animation names are scoped locally by default. Fixes the problem of the global scope in CSS. #winning
 
 *  [Universal rendering](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.xjxr5yj5z) rendering built in.
 
 *  [Webpack](https://webpack.github.io/docs/motivation.html) a powerful module bundler.
 
-*  [Webpack Isomorphic Loader](https://github.com/reactjs/react-router) a powerful tool that makes NodeJS `require` understand files such as images for SSR.
+*  [Webpack Isomorphic Loader](https://github.com/jchip/isomorphic-loader) a powerful tool that makes NodeJS `require` understand files such as images for SSR.
 
 *  [Babel](https://babeljs.io/) transpiles ES6 + 7.
 
@@ -45,17 +43,24 @@ A fully loaded boilerplate with the best technologies available:
 
 *  [TravisCI](https://travis-ci.org/) a continuous integration service to build and test software projects.
 
-*  [CSS Modules](https://github.com/css-modules/css-modules) a CSS file in which all class names and animation names are scoped locally by default. Fixes the problem of the global scope in CSS. #winning
-
-*  [Electrode Confippet](https://github.com/electrode-io/electrode-confippet) Confippet is a versatile, flexible utility for managing configurations of Node.js applications.
-
-*  [React-Router](https://github.com/reactjs/react-router) an awesome routing library for React.
-
 *  [Gulp](http://gulpjs.com/) a Javascript build tool that lets us automate tasks.
 
+*  [Yeoman](http://yeoman.io/) a Scaffolding tool for modern webapps.
 
 *  [History](https://www.npmjs.com/package/history) a Javascript library for managing session history.
 
 *  [Bluebird](http://bluebirdjs.com/docs/why-promises.html) a great Javascript promise library.
 
-*  [Electrode-Docgen](http://bluebirdjs.com/docs/why-promises.html) a great Javascript promise library.
+*  [Electrode Confippet](https://github.com/electrode-io/electrode-confippet) Confippet is a versatile, flexible utility for managing configurations of Node.js applications.
+
+*  [Electrode JWT CSRF](https://github.com/electrode-io/electrode-csrf-jwt) Cross-Site Request Forgery (CSRF) protection with JWT.
+
+*  [Electrode-Redux-Router-Engine](https://github.com/electrode-io/redux-router-engine) An Electrode routing and rendering engine for react-router and redux.
+
+*  [Component Caching](https://github.com/electrode-io/electrode-react-ssr-caching) Optimize React SSR with profiling and component caching.
+
+*  [Electrode-Server](https://github.com/electrode-io/electrode-server) A configurable web server using Hapi.js on top of Node.js.
+
+*  [Electrify](https://github.com/electrode-io/electrify) Tool for analyzing the module tree of webpack projects.
+
+*  [Electrode-Docgen](https://github.com/electrode-io/electrode-docgen) A custom metadata extractor for the Electrode framework, automates component documentation.
