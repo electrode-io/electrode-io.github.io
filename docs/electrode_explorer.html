@@ -1081,7 +1081,120 @@
     </h1>
     <div class="subHeader"></div>
 
-    
+    <p>An electrode application that showcases all your components.</p>
+
+<p><img src="https://github.com/electrode-io/electrode-explorer/blob/master/data/screenshot.png" height="500px"/></p>
+<h2><a class="anchor" name="prerequisites"></a>Prerequisites <a class="hash-link" href="#prerequisites">#</a></h2>
+<ul>
+<li>node: &quot;&gt;=4.2.0&quot;</li>
+<li>npm: &quot;&gt;=3.0.0&quot;</li>
+<li>Github access token</li>
+</ul>
+<h2><a class="anchor" name="overview"></a>Overview <a class="hash-link" href="#overview">#</a></h2>
+<p>This is a central place where you can view</p>
+
+<ul>
+<li>demos of all the components under the organizations you specified</li>
+<li>documentations of your components</li>
+<li>dependencies your components have (dependencies)</li>
+<li>other components/applications that depend on your components (usages)</li>
+</ul>
+
+<p>There are 2 ways the components can update dynamically:</p>
+
+<ol>
+<li>Add github hooks to send POST requests to <code>/api/update/{org}/{repoName}</code> when a new tag is created</li>
+<li>Enable <code>./server/poll</code> plugin, so the server will send the POST requests every certain interval</li>
+</ol>
+
+<p>It&#39;s recommended to use Method #1 to see updates in near real time.</p>
+
+<p>After the server receives the POST request, it will fetch the <code>package.json</code> file under <code>yourGithubUrl/org/repoName</code>,
+update <a href="https://github.com/electrode-io/electrode-explorer/blob/master/data/orgs.json">data/orgs.json</a> and <code>data/{org}/{repoName}.json</code> files. If there is a newer version, it will try to download the
+new component through npm (<a href="https://github.com/electrode-io/electrode-explorer/blob/master/scripts/install-module.sh">scripts/install-module.sh</a>) after a waiting period, babel transpile, and webpack the demo module (<a href="https://github.com/electrode-io/electrode-explorer/blob/master/scripts/post-install-module.sh">scripts/post-install-module.sh</a>).</p>
+
+<p>To make the server update immediately or force an update, add a url parameter to the POST request, <code>/api/update/{org}/{repoName}?updateNow=1</code>.</p>
+
+<p>This post processing script works well with all electrode components. If you have non-electrode components, you can modify your <a href="https://github.com/electrode-io/electrode-explorer/blob/master/scripts/post-install-module.sh">scripts/post-install-module.sh</a>.</p>
+<h2><a class="anchor" name="config"></a>Config <a class="hash-link" href="#config">#</a></h2><div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// config/default.json</span>
+<span class="p">{</span>
+  <span class="s2">&quot;plugins&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;./server/poll&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;options&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;enable&quot;</span><span class="o">:</span> <span class="kc">false</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+
+  <span class="s2">&quot;githubApi&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;3.0.0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pathPrefix&quot;</span><span class="o">:</span> <span class="s2">&quot;/api/v3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;protocol&quot;</span><span class="o">:</span> <span class="s2">&quot;https&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;host&quot;</span><span class="o">:</span> <span class="s2">&quot;github.com&quot;</span>
+  <span class="p">},</span>
+
+  <span class="s2">&quot;ORGS&quot;</span><span class="o">:</span> <span class="p">[</span> 
+    <span class="c1">// org/user names under which components will be included in the explorer</span>
+    <span class="c1">// for example, put [&quot;xxx&quot;, &quot;yyy&quot;] to include every repo under github.com/xxx and github.com/yyy </span>
+  <span class="p">],</span>
+
+  <span class="s2">&quot;REPOS_USAGE_INCLUDE&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="c1">// consumers need to contain one of these substrings to be included in usages </span>
+    <span class="c1">// for example, put [&quot;react&quot;] so consumers named /*react*/ will be included in usages</span>
+  <span class="p">],</span>
+
+  <span class="s2">&quot;REPOS_USAGE_EXCLUDE&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="c1">// consumers containing any of these substrings won&#39;t be included in usages</span>
+    <span class="c1">// for example, put [&quot;training&quot;] so consumers named /*training*/ will be excluded in usages</span>
+  <span class="p">],</span>
+
+  <span class="s2">&quot;MODULE_PREFIXES_INCLUDE&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="c1">// only module names beginning with one of these strings will be included in dependencies</span>
+    <span class="c1">// for example, put [&quot;react&quot;] so only modules with name starting with &quot;react&quot; will be included in dependencies</span>
+  <span class="p">],</span>
+
+  <span class="s2">&quot;NPM_WAITING_TIME&quot;</span><span class="o">:</span> <span class="mi">300000</span><span class="p">,</span> <span class="c1">// wait for 5 minutes before `npm install`</span>
+
+  <span class="s2">&quot;POLL_INTERVAL&quot;</span><span class="o">:</span> <span class="mi">3600000</span><span class="p">,</span> <span class="c1">// poll for updates once an hour, applicable when you enable poll plugin</span>
+
+  <span class="s2">&quot;GHACCESS_TOKEN_NAME&quot;</span><span class="o">:</span> <span class="s2">&quot;GHACCESS_TOKEN&quot;</span> <span class="c1">// github token variable name, your token would be accessible via `process.env[&quot;GHACCESS_TOKEN&quot;]`}</span>
+</code></pre></div><h2><a class="anchor" name="start-server"></a>Start server <a class="hash-link" href="#start-server">#</a></h2>
+<p>First install dependencies
+<code>sh
+npm i
+</code></p>
+
+<p>Export github access token or set it as an environment variable
+<code>sh
+export GHACCESS_TOKEN=YOUR_GITHUB_TOKEN
+</code></p>
+
+<p>For development mode
+<code>sh
+gulp dev
+</code>
+or
+<code>sh
+GHACCESS_TOKEN=YOUR_GITHUB_TOKEN gulp dev
+</code></p>
+
+<p>For production mode
+<code>sh
+gulp build
+</code>
+and
+<code>sh
+NODE_ENV=production node .
+</code>
+or
+<code>sh
+GHACCESS_TOKEN=YOUR_GITHUB_TOKEN NODE_ENV=production node .
+</code></p>
+<h2><a class="anchor" name="deploy"></a>Deploy <a class="hash-link" href="#deploy">#</a></h2>
+<p>Since this is an electrode app, it can be deployed the same way as any other electrode app. Just remember to set your github token as an environment variable.</p>
+<h2><a class="anchor" name="learn-more"></a>Learn more <a class="hash-link" href="#learn-more">#</a></h2>
+<p>Wish to learn more? Check our <a href="https://github.com/electrode-io/electrode-explorer/wiki">wiki</a> page!</p>
+
 
     
 

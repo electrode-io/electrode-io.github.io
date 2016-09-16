@@ -1122,12 +1122,7 @@
     ADD package.json ./
 
     <span class="c"># Copy application files</span>
-    COPY package.json /usr/src/app
-    COPY server /usr/src/app/server
-    COPY client /usr/src/app/client
-    COPY config /usr/src/app/config
-    COPY gulpfile.js /usr/src/app
-    COPY .babelrc /usr/src/app
+    COPY . /usr/src/app
 
     <span class="c">#</span>
     RUN npm install
@@ -1140,6 +1135,9 @@
 <p>In your .dockerignore file add:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">    .git
     .gitignore
+    .idea
+    .isomorphic-loader-config.json
+    dist
     node_modules
 </code></pre></div>
 <p>Verify that the Dockerfile is in your current directory by entering the command below:</p>
@@ -1156,6 +1154,17 @@
 </code></pre></div>
 <p>Let&#39;s see it! Run the <code>images</code> command below to see a lit of the images you currently have:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">    docker images
+</code></pre></div>
+<p>Run your image on your local container:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">  docker run -d -p 3000:3000 docker-awesome-container
+</code></pre></div>
+<p>Open <code>localhost:3000</code> in your browser to see your app.</p>
+
+<p>Your container id will print in the terminal, or you can run the command below to see your containers:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">  docker ps
+</code></pre></div>
+<p>Now you can stop the container:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">  docker stop &lt;container_id&gt;
 </code></pre></div>
 <p>Log into Docker Hub from the command line. The format is below. Enter you password when prompted:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">    docker login --username<span class="o">=</span>yourhubusername --email<span class="o">=</span>youremail@company.com
