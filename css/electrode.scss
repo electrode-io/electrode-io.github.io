@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-main {
   @include clearfix;
-  background: $darkestColor;
+  background: linear-gradient($darkerColor, $darkestColor);
   color: $lightTextColor;
   position: fixed;
   top: 0;
@@ -416,7 +416,7 @@ section.black content {
       padding: 15px 30px 15px 15px;
       margin: 20px 0;
       background-color: rgba(204, 122, 111, 0.09999999999999998);
-      border-left: 5px solid rgba(191, 87, 73, 0.19999999999999996);
+      border-left: 5px solid #db2975;
     h4 {
       margin-top: 0;
     }
@@ -652,3 +652,11 @@ h1 {
     float: right;
   }
 }
+
+.logo-blue{
+  color: #54a7de;
+}
+.logo-orange{
+  color: #F1BF6D;
+}
+

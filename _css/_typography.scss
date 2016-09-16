@@ -4,8 +4,7 @@ $textColor: #2d2d2d;
 $textColorLight: lighten($textColor, 20%);
 
 html {
-  font-family: $helvetica;
-  font-family: proxima-nova, $helvetica;
+  font-family: "Lato", "Helvetica Rounded", Arial, sans-serif;
   color: $textColor;
   line-height: 1.28;
 }
