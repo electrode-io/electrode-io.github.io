@@ -6,7 +6,7 @@ toplevel: "Getting Started: Intermediate"
 
 ###Be Hapi and Build a server plugin
 
-At WalmartLabs, we use [Hapi](http://hapijs.com/) because of it's flexible and robust plugin system. It allows us to modularize our application into isolated pieces of business logic and reusable utilities.
+At WalmartLabs, we use [Hapi](http://hapijs.com/) because of its flexible and robust plugin system. It allows us to modularize our application into isolated pieces of business logic and reusable utilities.
 
 Let's make a deal! Actually, scratch that, let's make a plugin! Plugins are way to extend our server's functionality. Building upon our open source theme, let's make a plugin that retrieves the our Tech Friends for our "resource party."
 
