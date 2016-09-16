@@ -70,7 +70,7 @@ function handler(req, res) {
 Where options could contain the following fields:
 
   - `routes` - **required** The react-router routes
-  - `createReduxStore` - **required** async callback that returns a promise resolving to the Redux store
+  - `createReduxStore` - **required** async callback that returns a promise resolving to the Redux store.
     - It should take `(req, match)` arguments where match is react-router's match result.
     - If it's a `function` then its `this` references the engine instance.
   - `withIds` - **optional** boolean to indicate whether to render with react-dataids.
@@ -91,7 +91,7 @@ Method to render a route.
     - `stringifyPreloadedState`
     - `createReduxStore`
 
-If everything worked out, then it returns a promise resolving to:
+If rendering the route is a success, then it returns a promise resolving to:
 
 ```js
 {
@@ -101,7 +101,7 @@ If everything worked out, then it returns a promise resolving to:
 }
 ```
 
-If error occured, then it returns a promise resolving to:
+If an error occured, then it returns a promise resolving to:
 
 ```js
 {
