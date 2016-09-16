@@ -120,7 +120,7 @@ Create a file titled: `<your-awesome-component>/demo/examples/guest-list.example
   />
 ```
 
-Navigate to `<your-awesome-component>/src/components/<your-awesome-component>.jsx`. Delete the existing code. Copy, paste and save the code below into this file. Change all references from the literal `your-awesome-component or YourAwesomeComponent` to your actual component name:
+Override the code in `<your-awesome-component>/src/components/your-awesome-component.jsx` with the code below. Change all references from the literal `your-awesome-component or YourAwesomeComponent` to your actual component name:
 
 ```javascript
 import React, { Component, PropTypes } from "react";
@@ -369,7 +369,7 @@ In `src` create a folder titled `helpers` with file titled `graph-styles.js` ins
   };
 ```
 
-Let's also add some style elements using [CSS modules](https://github.com/css-modules/css-modules) to create a dynamic application. In your `<your-awesome-component>/src/style/your-awesome-component.css`, delete what it says inside and copy, paste and save the code below into this file:
+Let's also add some style elements using [CSS modules](https://github.com/css-modules/css-modules) to create a dynamic application. In your `<your-awesome-component>/src/style/your-awesome-component.css`, override the code and copy, paste and save the code below into this file:
 
 ```css
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
