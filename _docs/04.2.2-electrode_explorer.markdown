@@ -88,33 +88,42 @@ This post processing script works well with all electrode components. If you hav
 ## Start server
 
 First install dependencies
+
 ```bash
 npm i
 ```
 
 Export github access token or set it as an environment variable
+
 ```bash
 export GHACCESS_TOKEN=YOUR_GITHUB_TOKEN
 ```
 
 For development mode
+
 ```bash
 gulp dev
 ```
 or
+
 ```bash
 GHACCESS_TOKEN=YOUR_GITHUB_TOKEN gulp dev
 ```
 
 For production mode
+
 ```bash
 gulp build
 ```
+
 and
+
 ```bash
 NODE_ENV=production node .
 ```
+
 or
+
 ```bash
 GHACCESS_TOKEN=YOUR_GITHUB_TOKEN NODE_ENV=production node .
 ```
