@@ -61,7 +61,7 @@ Open the application up with your favorite text editor. We'll start with a fast 
 
 Now that we have basic structure of the component. Lets build a sample component by following below steps.
 
-1. [Develop couple of low-level components](#develop-couple-of-low-level-components)
+1. [Develop a couple of low-level components](#develop-couple-of-low-level-components)
 2. [Develop helpers for the components](#develop-helpers-for-the-components)
 3. [Develop tests for the above components](#develop-tests-for-the-above-components)
 4. [Develop styles using CSS modules](#develop-styles-using-css-modules)
@@ -72,7 +72,7 @@ Now that we have basic structure of the component. Lets build a sample component
 
 Trust me, it will be worth it.
 
-###Develop couple of low-level components
+###Develop a couple of low-level components
 Create a file titled: `<your-awesome-component>/src/components/guest-list.jsx`. Copy the code from below into this file:
 
 ```javascript
@@ -476,7 +476,7 @@ export default class YourAwesomeComponent extends Component {
     };
   }
 
-  yourAwesomeComponent(invitees, party) {
+  houseParty(invitees, party) {
     return party
       ? `${styles.yourAwesomeComponent} ${styles.house}`
       : styles.house;
@@ -487,7 +487,7 @@ export default class YourAwesomeComponent extends Component {
     const party = invitees.length === invitees.filter((invitee) => invitee.invited).length &&
       invitees.length > 0;
     const { invite, intro } = this.viewState(view);
-    const yourAwesomeComponent = this.yourAwesomeComponent(invitees, party);
+    const houseParty = this.houseParty(invitees, party);
 
     return (
       <div>
@@ -495,7 +495,7 @@ export default class YourAwesomeComponent extends Component {
           <GuestList invitees={invitees} toggleGuest={(invitee) => toggleGuest(invitee)}/>}
         <div className={styles.container}>
         {intro && !invitees.filter((invitee) => invitee.invited).length && message(styles.message)}
-          <div className={yourAwesomeComponent}>
+          <div className={houseParty}>
             <div className={styles.room}>
               {this.renderFriends(ourFriends, party)}
             </div>
