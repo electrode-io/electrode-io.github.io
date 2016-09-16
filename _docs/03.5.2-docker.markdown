@@ -76,6 +76,9 @@ In your .dockerignore file add:
 ```bash
 	.git
 	.gitignore
+	.idea
+	.isomorphic-loader-config.json
+	dist
 	node_modules
 ```
 
@@ -107,6 +110,26 @@ Let's see it! Run the `images` command below to see a lit of the images you curr
 
 ```bash
 	docker images
+```
+
+Run your image on your local container:
+
+```bash
+  docker run -d -p 3000:3000 docker-awesome-container
+```
+
+Open `localhost:3000` in your browser to see your app.
+
+Your container id will print in the terminal, or you can run the command below to see your containers:
+
+```bash
+  docker ps
+```
+
+Now you can stop the container:
+
+```bash
+  docker stop <container_id>
 ```
 
 Log into Docker Hub from the command line. The format is below. Enter you password when prompted:
