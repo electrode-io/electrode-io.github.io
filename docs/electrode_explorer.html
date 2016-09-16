@@ -1082,7 +1082,7 @@ new component through npm (<a href="https://github.com/electrode-io/electrode-ex
 
 <p>To make the server update immediately or force an update, add a url parameter to the POST request, <code>/api/update/{org}/{repoName}?updateNow=1</code>.</p>
 
-<p>This post processing script works well with all electrode components. If you have non-electrode components, you can modify your <a href="https://github.com/electrode-io/electrode-explorer/blob/master/scripts/post-install-module.sh">scripts/post-install-module.sh</a>.</p>
+<p>This post processing script works well with all electrode components. If you have non-electrode components, you can modify your <a href="https://github.com/electrode-io/electrode-explorer/blob/master/scripts/post-install-module.sh">scripts/post-install-module.sh</a> to babel transpile and bundle your demo files.</p>
 <h2><a class="anchor" name="config"></a>Config <a class="hash-link" href="#config">#</a></h2><div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// config/default.json</span>
 <span class="p">{</span>
   <span class="s2">&quot;plugins&quot;</span><span class="o">:</span> <span class="p">{</span>
@@ -1127,34 +1127,34 @@ new component through npm (<a href="https://github.com/electrode-io/electrode-ex
   <span class="s2">&quot;GHACCESS_TOKEN_NAME&quot;</span><span class="o">:</span> <span class="s2">&quot;GHACCESS_TOKEN&quot;</span> <span class="c1">// github token variable name, your token would be accessible via `process.env[&quot;GHACCESS_TOKEN&quot;]`}</span>
 </code></pre></div><h2><a class="anchor" name="start-server"></a>Start server <a class="hash-link" href="#start-server">#</a></h2>
 <p>First install dependencies
-<code>sh
+<code>bash
 npm i
 </code></p>
 
 <p>Export github access token or set it as an environment variable
-<code>sh
+<code>bash
 export GHACCESS_TOKEN=YOUR_GITHUB_TOKEN
 </code></p>
 
 <p>For development mode
-<code>sh
+<code>bash
 gulp dev
 </code>
 or
-<code>sh
+<code>bash
 GHACCESS_TOKEN=YOUR_GITHUB_TOKEN gulp dev
 </code></p>
 
 <p>For production mode
-<code>sh
+<code>bash
 gulp build
 </code>
 and
-<code>sh
+<code>bash
 NODE_ENV=production node .
 </code>
 or
-<code>sh
+<code>bash
 GHACCESS_TOKEN=YOUR_GITHUB_TOKEN NODE_ENV=production node .
 </code></p>
 <h2><a class="anchor" name="deploy"></a>Deploy <a class="hash-link" href="#deploy">#</a></h2>
