@@ -5,22 +5,9 @@
     <description>Universal React and Node Applications simplified, performant, and reusable.</description>
     <link>https://electrode-io.github.io/</link>
     <atom:link href="https://electrode-io.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 15 Sep 2016 13:27:46 -0700</pubDate>
-    <lastBuildDate>Thu, 15 Sep 2016 13:27:46 -0700</lastBuildDate>
+    <pubDate>Thu, 15 Sep 2016 18:44:38 -0700</pubDate>
+    <lastBuildDate>Thu, 15 Sep 2016 18:44:38 -0700</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
-    
-      <item>
-        <title>Electrode is Now Open Source</title>
-        <description>&lt;p&gt;Electrode is now open source!&lt;/p&gt;
-
-&lt;p&gt;TODO: complete announcement post&lt;/p&gt;
-</description>
-        <pubDate>Thu, 29 Sep 2016 00:00:00 -0700</pubDate>
-        <link>https://electrode-io.github.io/blog/2016/09/29/electrode-is-now-open-source.html</link>
-        <guid isPermaLink="true">https://electrode-io.github.io/blog/2016/09/29/electrode-is-now-open-source.html</guid>
-        
-        
-      </item>
     
   </channel>
 </rss>
