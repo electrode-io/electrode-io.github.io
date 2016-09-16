@@ -34,52 +34,10 @@ To show all the containers on the system, run the command below:
 	docker ps -a
 ```
 
-Create a Dockerfile, a set of instructions to let Docker know how we would like to build our container:
+Electrode has a [Dockerfile and Docker image](https://hub.docker.com/r/electrode/electrode-io/) built-in to expedite deployment. Simply:
 
 ```bash
-	 touch Dockerfile && touch .dockerignore
-```
-
-In your Dockerfile add:
-
-```bash
-	# Dockerfile
-
-	FROM node:4.5
-
-	# Run updates and install deps
-	RUN apt-get update
-
-	# Set the work directory
-	RUN mkdir -p /usr/src/app
-	WORKDIR /usr/src/app
-
-	# Add our package.json
-	RUN npm i -g npm@3
-
-	ADD package.json ./
-
-	# Copy application files
-	COPY . /usr/src/app
-
-	#
-	RUN npm install
-
-	#Expose the port
-	EXPOSE 3000
-
-	CMD [node server]
-```
-
-In your .dockerignore file add:
-
-```bash
-	.git
-	.gitignore
-	.idea
-	.isomorphic-loader-config.json
-	dist
-	node_modules
+  docker pull electrode/electrode-io
 ```
 
 Verify that the Dockerfile is in your current directory by entering the command below:
