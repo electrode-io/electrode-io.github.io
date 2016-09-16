@@ -60,12 +60,7 @@ In your Dockerfile add:
 	ADD package.json ./
 
 	# Copy application files
-	COPY package.json /usr/src/app
-	COPY server /usr/src/app/server
-	COPY client /usr/src/app/client
-	COPY config /usr/src/app/config
-	COPY gulpfile.js /usr/src/app
-	COPY .babelrc /usr/src/app
+	COPY . /usr/src/app
 
 	#
 	RUN npm install
