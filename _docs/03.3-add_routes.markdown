@@ -8,174 +8,102 @@ toplevel: "Getting Started: Intermediate"
 
 Now that we have our Open Source friends, the ability to have a resource-list house party and a working demo from before, we can continue to quickly build out our components to both handle user interaction on our application and send requests to Hapi Plugin for more friends to our party. We will use [React-Router](https://github.com/ReactTraining/react-router) to create different routes and serve different content to our views.
 
+Now we can integrate your published `<your-awesome-component` as a node module and build out the app. Use your editor to open Your-Awesome-App and follow the steps below:
+
+```bash
+  npm i your-awesome-npm-module --save
+```
+
 Navigate to `<your-awesome-component>/client/routes.jsx`. Copy, paste and save the code below into this file. Change from the literal `YourAwesomeComponent` to your actual component name:
 
 ```javascript
   import React from "react";
-  import { Route, IndexRoute} from "react-router";
+  import { Route, IndexRoute } from "react-router";
   import { Home } from "./components/home";
-  import { YourAwesomeComponent } from "your-awesome-component-module";
+  import { HouseParty } from "electrode-houseparty-example-component";
 
   export const routes = (
     <Route path="/" component={Home}>
-      <IndexRoute component={YourAwesomeComponent}/>
-      <Route path="/invite" component={YourAwesomeComponent}/>
-      <Route path="/invite/friendsof/:friendName" component={YourAwesomeComponent}/>
+      <IndexRoute component={HouseParty}/>
+      <Route path="/invite" component={HouseParty}/>
     </Route>
   );
 ```
 
-Navigate to `<your-awesome-app>/client/components`. Create a file with the name of your-awesome-component (the same from [Create a Standalone component](create_standalone_component.html)). The path for this component will look like this: `<your-awesome-app>/client/components/your-awesome-component.jsx` Copy, paste and save the code below into this file:
+Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existing code by copy, pasting and saving the code below:
 
 ```javascript
-import React from "react";
-
-import RenderFriend from "./render-friend";
-import GuestList from "./guest-list";
+import React, { Component, PropTypes } from "react";
 import { Link } from "react-router";
 
-export class ResourceList extends React.Component {
+export class Home extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      intro: this.props.location.pathname === "/",
-      invite: this.props.location.pathname === "/invite",
-      friends: []
+      ourFriends: [],
+      invitees: []
     };
+    this.toggleGuest = this.toggleGuest.bind(this);
   }
 
   componentDidMount() {
-    fetch('/friends', {method: 'GET'})
+    fetch("/friends", {method: "GET"})
     .then((res) => res.json())
-    .then((json) => this.setState({friends: json.friends}))
+    .then((json) => {
+      const ourFriends = json.friends;
+      const invitees = ourFriends.map(({name}) => {
+        return { name, invited: false};
+      });
+      this.setState({ourFriends, invitees}); //eslint-disable-line
+    });
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState = {
-      intro: nextProps.location.pathname === "/",
-      invite: nextProps.location.pathname === "/invite"
+  componentView({ location: { pathname } }) {
+    return {
+      intro: pathname === "/",
+      invite: pathname === "/invite"
     };
   }
 
-  introMessage() {
+  toggleGuest({name, invited}) {
+    const invitees = this.state.invitees.map((invitee) => {
+      if (invitee.name === name) {
+        invitee.invited = !invited;
+      }
+      return invitee;
+    });
+    this.setState({invitees});
+  }
+
+  introMessage(className) {
     return (
-      <div>
-        <h1>We should have a house party and invite all our friends!</h1>
+      <div className={className}>
+        <p>We should have a house party and invite all of our friends!</p>
         <Link to="/invite">Click Here to Make it a Party!</Link>
       </div>
-    )
+    );
   }
-
-  renderFriends(friends) {
-    return friends.length ? friends.map(friend => (<RenderFriend friend={friend} />)) : [];
-  }
-
-
 
   render() {
-    const { location: { pathname } } = this.props;
-    const { friends } = this.state;
+    const { ourFriends, invitees } = this.state;
+    const toggleGuest = this.toggleGuest;
+    const view = this.componentView(this.props);
+    const message = this.introMessage;
 
     return (
       <div>
-        {pathname === "/" && this.introMessage()}
-        {pathname === "/invite" && <GuestList invitees={friends}/>}
-        {this.renderFriends(friends)}
+        {React.cloneElement(this.props.children, {
+          ourFriends, invitees, toggleGuest, view, message
+        })}
       </div>
     );
   }
 }
-```
 
-Navigate to `<your-awesome-app>/client/components`. Create a file with the name of `render-friend.jsx`. The path for this component will look like this: `<your-awesome-app>/client/components/render-friend.jsx` Copy, paste and save the code below into this file. Change the `import styles from "../styles/your-awesome-component.css";` line to your actual awesome-component.css:
-
-```javascript
-import React from 'react';
-
-import styles from "../styles/your-awesome-component.css";
-import style from "../helpers/graph-styles";
-
-const RenderFriend = ({friend, styleObj}) => {
-
-  let { name, img, profile, size, friends } = friend;
-  const parentFriend = { name, img, profile };
-  size = !!size ? size : 15;
-
-  const bgImg = {backgroundImage: `url(${img})`};
-  let applyStyle = !!styleObj
-    ? Object.assign(bgImg, styleObj)
-    : Object.assign(bgImg, style('single', size));
-
-  applyStyle = !!friends ? style('container', size) : applyStyle;
-  const applyClass = !!friends ? "" : styles.friend;
-
-  const renderFriends = (friends) => {
-    let angleVal = (360 / friends.length);
-    let rotateVal = 0;
-
-    return friends.map((friend, i, arr) => {
-      rotateVal = rotateVal + angleVal;
-      return(<RenderFriend friend={friend} styleObj={style('child', size, rotateVal)}/>);
-    })
-  }
-
-    return (
-      <div className={applyClass} style={applyStyle}>
-        {!!friends && renderFriends(friends)}
-        {!!friends && <RenderFriend friend={parentFriend} styleObj={style('parent', size)}/>}
-      </div>
-    )
-  };
-
-  RenderFriend.propTypes = {
-    friend: React.PropTypes.object,
-    styleObj: React.PropTypes.object
-  };
-
-  export default RenderFriend;
-```
-
-Navigate to `<your-awesome-app>/client/components`. Create a file with the name of `guest-list.jsx`. The path for this component will look like this: `<your-awesome-app>/client/components/guest-list.jsx` Copy, paste and save the code below into this file. Remember: change the `import styles from "../styles/your-awesome-component.css";` line to your actual awesome-component.css:
-
-```javascript
-  import React, { Component, PropTypes } from "react";
-
-  import styles from "../styles/your-awesome-component.css";
-
-  export default class GuestList extends Component {
-
-    constructor(props){
-      super(props);
-
-    }
-
-    renderFriends(friends){
-      return friends.map((friend) => (
-        <div className={styles.guestName}>
-          <input id={friend.name} type="checkbox" checked={friend.invited} onChange={this.props.toggleGuest(friend.name, !friend.invited)}/>
-          <label htmlFor={friend.name}>{friend.name}</label>
-        </div>
-      ))
-    }
-
-    render() {
-      const { friends } = this.props;
-
-      return(
-        <div className={styles.guestList}>
-          <h1>Guest List:</h1>
-          {this.renderFriends(friends)}
-        </div>
-      )
-    }
-  };
-
-
-  GuestList.propTypes = {
-    friends: React.PropTypes.array,
-    toggleGuest: React.PropTypes.func
-  };
+Home.propTypes = {
+  children: PropTypes.node
+};
 ```
 
 You get the idea. We need to do this for the `styles` now. Navigate to `<your-awesome-app>/styles`. Create a file with the name of `guest-list.css`. The path for this component will look like this: `<your-awesome-app>/styles/guest-list.css` Copy, paste and save the code below into this file.
@@ -230,58 +158,4 @@ You get the idea. We need to do this for the `styles` now. Navigate to `<your-aw
   }
 ```
 
-Whew, last step. Create a folder called `helpers` inside of `client`. Create a file here called `graph-styles.js`. It will now look like this: `<your-awesome-component>/client/helpers/graph-styles.js`. We will discuss this helper more later. Copy, paste and save the code below into this file:
-
-```javascript
-  'use strict';
-
-  export default (type, size, rotateVal) => {
-
-    const nodeSize = type === 'child' ? (size / 4) : (size / 2);
-
-    let parentOrSingle = {
-      width:  `${nodeSize}em`,
-      height: `${nodeSize}em`,
-      margin: `-${nodeSize / 2}em`,
-      display: `block`,
-      position: `absolute`,
-      top:  `50%`,
-      left: `50%`,
-      transform: `translate(0em)`
-    };
-
-    switch(type){
-
-      case 'single':
-        const singleNode = {
-          display: `inline-block`,
-          position: `relative`,
-          margin: `${nodeSize / 8}em`
-        };
-        ['width', 'height'].map(prop => singleNode[prop] = parentOrSingle[prop]);
-        return singleNode;
-
-      case 'child':
-        const childNode = {
-          transform: `rotate(${rotateVal * 1}deg) translate(${nodeSize * 2}em) rotate(${(rotateVal * -1)}deg)`,
-          backgroundSize: `100%`,
-        };
-        return Object.assign(parentOrSingle, childNode);
-
-      case 'container':
-        return {
-          position: `relative`,
-          width:  `${size}em`,
-          height: `${size}em`,
-          padding: `${size * .13}em`,
-          borderRadius: `50%`,
-          display: `inline-block`,
-          margin: `${size * .13}em`
-        }
-
-      default:
-        return parentOrSingle;
-    }
-  };
-```
 Navigate to [Intermediate: Server Config](server_config.html), to learn about [Confippet](confippet.html) and add our Hapi plugin to our server config.

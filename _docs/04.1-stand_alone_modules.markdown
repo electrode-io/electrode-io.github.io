@@ -15,3 +15,5 @@ toplevel: "Getting Started: Advanced"
 *  [Stateless CSRF Validation](stateless_csrf_validation.html) is a plugin that enables stateless CSRF protection using in Electrode, Express or Hapi applications.
 
 *  [Electrode Redux Router Engine](redux_router_engine.html) is a plugin that handles async data for React Server Side Rendering using [react-router](https://github.com/ReactTraining/react-router), Redux and the [Redux Server Rendering](http://redux.js.org/docs/recipes/ServerRendering.html) pattern.
+
+###Bringing It All Together in an Advanced Electrode App

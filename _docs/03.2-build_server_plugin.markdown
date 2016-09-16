@@ -13,7 +13,7 @@ Let's make a deal! Actually, scratch that, let's make a plugin! Plugins are way 
 
 At their core, plugins are a simple `register object`, that has the `signature function(server, options, next)`. Read more about building plugins from scratch in the [Hapi documentation](http://hapijs.com/tutorials/plugins).
 
-Let's head back to Your Awesome App. Now we can integrate your published `<your-awesome-component` as a node module and build out the app. Navigate to the <your-awesome-app>/server/plugins folder. Make a folder called `friends`. Cd into your new `friends` folder and:
+Let's head back to Your Awesome App. Navigate to the <your-awesome-app>/server/plugins folder. Make a folder called `friends`. Cd into your new `friends` folder and:
 
 ```bash
   touch index.js
