@@ -33,7 +33,7 @@ client
 
   |_styles
     This is the folder for your CSS files. We will use CSS Modules: a CSS file
-    in which all class names and animation names are scoped locally by default. 
+    in which all class names and animation names are scoped locally by default.
     At WalmartLabs this helps us tackle big scale style issues by fixing the
     issue of the global scope in CSS.
 
@@ -52,7 +52,7 @@ config
 
 node_modules
   Other Javascript files contained in modules that we will use in this
-  application, including Electrode modules that create your out-the-box 
+  application, including Electrode modules that create your out-the-box
   Univeresal app.
 
 server
@@ -79,7 +79,7 @@ server
   environment.
 
 gulpfile.js
-  A file that stores all your Gulp configurations. We will explore this more in 
+  A file that stores all your Gulp configurations. We will explore this more in
   Getting Started: Intermediate.
 
 LICENSE
