@@ -20,7 +20,7 @@ $ yo electrode-component
 
 Fill out the Electrode generator-electrode-component with your information.
 
-Open the application up with your favorite text editor. We will start with a fast high level view of the most important files in your component:
+Open the application up with your favorite text editor. We'll start with a fast high level view of the most important files in your component:
 
 ```
   demo
