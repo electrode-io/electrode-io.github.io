@@ -59,7 +59,7 @@ Open the application up with your favorite text editor. We will start with a fas
 
   gulpfile.js
     Gulp is a Javascript build tool that lets us automate tasks and the
-    gulpfile.js is where we define those tasks. We like it's simple syntax
+    gulpfile.js is where we define those tasks. We like its simple syntax
     and the increased productivity from using an intuitive task runner.
 
 ```
