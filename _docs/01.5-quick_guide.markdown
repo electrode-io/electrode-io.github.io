@@ -19,7 +19,9 @@ Then [generate](https://github.com/electrode-io/generator-electrode) your new pr
 $ yo electrode
 ```
 
-Fill out the Electrode App generator with your information.
+Fill out the Electrode App generator with your information:
+
+![generator-app](/img/generator-application.png)
 
 Let's take a quick high level overview of our file structure and what `generator-electrode` gives you out the box. Read through our [Explore More](explore.html) for a more detailed description.
 
