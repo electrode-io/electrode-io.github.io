@@ -1,15 +1,15 @@
 ---
-title:  "Server Side Render Caching & Profiling"
+title:  "Server Side Render Caching + Profiling"
 permalink: docs/server_side_render_cache.html
 toplevel: "Stand Alone Modules"
 ---
 
-Optimize React SSR with profiling and component caching,
+Optimize React SSR with profiling and component caching. The
 [electrode-react-ssr-caching](https://github.com/electrode-io/electrode-react-ssr-caching) module supports profiling React Server Side Rendering time
-to enable component caching to help you speed up Server Side Rendering of your components,
+to enable component caching to help you speed up Server Side Rendering of your components.
 
 [electrode-react-ssr-caching](https://github.com/electrode-io/electrode-react-ssr-caching) module can be used a *standalone* module and is *agnostic* of
-your web-server framework, here in this tutorial we will demonstrate how to use this module in Electrode, Express.js and Hapi.js applications.
+your web-server framework. In this tutorial we will demonstrate how to use this module in Electrode, Express.js and Hapi.js applications.
 
 {% include module_usage.md moduleId="electrode-react-ssr-caching" express=true hapi=true %}
 
@@ -37,7 +37,7 @@ console.log(JSON.stringify(SSRCaching.profileData, null, 2));
 
 #### Caching
 
-Once you determined the most expensive components with profiling, you can enable component caching this module provides to speed up SSR performance.
+Once you've determined the most expensive components with profiling, you can enable the component caching in this module to speed up SSR performance.
 
 The basic steps to enabling caching are:
 
@@ -105,7 +105,7 @@ This strategy is not very flexible.  You need a cache entry for each different p
 
 The `template` caching strategy is more complex but flexible.  
 
-The idea is akin to generating logic-less handlebars template from your React components and then use string replace to process the template with different props.
+The idea is akin to generating logic-less handlebars templates from your React components and then use string Replace to process the template with different props.
 
 If you have this component:
 
@@ -148,7 +148,7 @@ We cache this template html using the tokenized props as cache key.  When we nee
 cachedTemplateHtml.replace( /@0@/g, props.name ).replace( /@1@/g, props.message );
 ```
 
-That's the gist of the template strategy.  Of course there are many small details such as handling the encoding of special characters, preserving props that can't be tokenized, avoid tokenizing non-string props, or preserving `data-reactid` and `data-react-checksum`.
+That's the gist of the template strategy.  Of course there are many small details such as handling the encoding of special characters, preserving props that can't be tokenized, avoiding tokenizing non-string props, or preserving `data-reactid` and `data-react-checksum`.
 
 To specify a component to be cached with the `template` strategy:
 
