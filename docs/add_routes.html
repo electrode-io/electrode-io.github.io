@@ -96,19 +96,6 @@
     <li>
     
 
-    <a href="/docs/get_started.html"> &nbsp; Get Started</a>
-
-    
-    </li>
-  
-
-  
-  
-  
-  
-    <li>
-    
-
     <a href="/docs/requirements.html"> &nbsp; Requirements</a>
 
     
@@ -276,11 +263,6 @@
   
   
   
-
-  
-  
-  
-  
     <li>
     
 
@@ -410,11 +392,6 @@
           <ul>
             
 
-
-  
-  
-  
-  
 
   
   
@@ -629,11 +606,6 @@
           <ul>
             
 
-
-  
-  
-  
-  
 
   
   
@@ -1010,11 +982,6 @@
   
   
   
-
-  
-  
-  
-  
     <li>
     
 
@@ -1101,126 +1068,85 @@
   <span class="p">);</span>
 </code></pre></div>
 <p>Navigate to <code>&lt;your-awesome-app&gt;/client/components/home.jsx</code>. Override the existing code by copy, pasting and saving the code below:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">PropTypes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Link</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react-router&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">PropTypes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
+  <span class="kr">import</span> <span class="p">{</span> <span class="nx">Link</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react-router&quot;</span><span class="p">;</span>
+  <span class="kr">import</span> <span class="nx">styles</span> <span class="nx">from</span> <span class="s2">&quot;../styles/base.css&quot;</span><span class="p">;</span>
 
-<span class="kr">export</span> <span class="kr">class</span> <span class="nx">Home</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="kr">export</span> <span class="kr">class</span> <span class="nx">Home</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
 
-  <span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">ourFriends</span><span class="o">:</span> <span class="p">[],</span>
-      <span class="nx">invitees</span><span class="o">:</span> <span class="p">[]</span>
-    <span class="p">};</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">toggleGuest</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">toggleGuest</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-  <span class="p">}</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">ourFriends</span><span class="o">:</span> <span class="p">[],</span>
+        <span class="nx">invitees</span><span class="o">:</span> <span class="p">[]</span>
+      <span class="p">};</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">toggleGuest</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">toggleGuest</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="p">}</span>
 
-  <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;/friends&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">method</span><span class="o">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">})</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">json</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kr">const</span> <span class="nx">ourFriends</span> <span class="o">=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">friends</span><span class="p">;</span>
-      <span class="kr">const</span> <span class="nx">invitees</span> <span class="o">=</span> <span class="nx">ourFriends</span><span class="p">.</span><span class="nx">map</span><span class="p">(({</span><span class="nx">name</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">{</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">invited</span><span class="o">:</span> <span class="kc">false</span><span class="p">};</span>
+    <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;/friends&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">method</span><span class="o">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">})</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">json</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">ourFriends</span> <span class="o">=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">friends</span><span class="p">;</span>
+        <span class="kr">const</span> <span class="nx">invitees</span> <span class="o">=</span> <span class="nx">ourFriends</span><span class="p">.</span><span class="nx">map</span><span class="p">(({</span><span class="nx">name</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="p">{</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">invited</span><span class="o">:</span> <span class="kc">false</span><span class="p">};</span>
+        <span class="p">});</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">ourFriends</span><span class="p">,</span> <span class="nx">invitees</span><span class="p">});</span> <span class="c1">//eslint-disable-line</span>
       <span class="p">});</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">ourFriends</span><span class="p">,</span> <span class="nx">invitees</span><span class="p">});</span> <span class="c1">//eslint-disable-line</span>
-    <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="nx">componentView</span><span class="p">({</span> <span class="nx">location</span><span class="o">:</span> <span class="p">{</span> <span class="nx">pathname</span> <span class="p">}</span> <span class="p">})</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">intro</span><span class="o">:</span> <span class="nx">pathname</span> <span class="o">===</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+        <span class="nx">invite</span><span class="o">:</span> <span class="nx">pathname</span> <span class="o">===</span> <span class="s2">&quot;/invite&quot;</span>
+      <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="nx">toggleGuest</span><span class="p">({</span><span class="nx">name</span><span class="p">,</span> <span class="nx">invited</span><span class="p">})</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">invitees</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">invitees</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">invitee</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">invitee</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">invitee</span><span class="p">.</span><span class="nx">invited</span> <span class="o">=</span> <span class="o">!</span><span class="nx">invited</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">invitee</span><span class="p">;</span>
+      <span class="p">});</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">invitees</span><span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="nx">introMessage</span><span class="p">(</span><span class="nx">className</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">className</span><span class="p">}</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">We</span> <span class="nx">should</span> <span class="nx">have</span> <span class="nx">a</span> <span class="nx">house</span> <span class="nx">party</span> <span class="nx">and</span> <span class="nx">invite</span> <span class="nx">all</span> <span class="nx">of</span> <span class="nx">our</span> <span class="nx">friends</span><span class="o">!&lt;</span><span class="err">/p&gt;</span>
+          <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">to</span><span class="o">=</span><span class="s2">&quot;/invite&quot;</span><span class="o">&gt;</span><span class="nx">Click</span> <span class="nx">Here</span> <span class="nx">to</span> <span class="nx">Make</span> <span class="nx">it</span> <span class="nx">a</span> <span class="nx">Party</span><span class="o">!&lt;</span><span class="err">/Link&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+      <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="p">{</span> <span class="nx">ourFriends</span><span class="p">,</span> <span class="nx">invitees</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">;</span>
+      <span class="kr">const</span> <span class="nx">toggleGuest</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">toggleGuest</span><span class="p">;</span>
+      <span class="kr">const</span> <span class="nx">view</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">componentView</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">);</span>
+      <span class="kr">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">introMessage</span><span class="p">;</span>
+
+      <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">rootDiv</span><span class="p">}</span><span class="o">&gt;</span>
+          <span class="p">{</span><span class="nx">React</span><span class="p">.</span><span class="nx">cloneElement</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">,</span> <span class="p">{</span>
+            <span class="nx">ourFriends</span><span class="p">,</span> <span class="nx">invitees</span><span class="p">,</span> <span class="nx">toggleGuest</span><span class="p">,</span> <span class="nx">view</span><span class="p">,</span> <span class="nx">message</span>
+          <span class="p">})}</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+      <span class="p">);</span>
+    <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="nx">componentView</span><span class="p">({</span> <span class="nx">location</span><span class="o">:</span> <span class="p">{</span> <span class="nx">pathname</span> <span class="p">}</span> <span class="p">})</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="nx">intro</span><span class="o">:</span> <span class="nx">pathname</span> <span class="o">===</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
-      <span class="nx">invite</span><span class="o">:</span> <span class="nx">pathname</span> <span class="o">===</span> <span class="s2">&quot;/invite&quot;</span>
-    <span class="p">};</span>
-  <span class="p">}</span>
-
-  <span class="nx">toggleGuest</span><span class="p">({</span><span class="nx">name</span><span class="p">,</span> <span class="nx">invited</span><span class="p">})</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">invitees</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">invitees</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">invitee</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">invitee</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">invitee</span><span class="p">.</span><span class="nx">invited</span> <span class="o">=</span> <span class="o">!</span><span class="nx">invited</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="k">return</span> <span class="nx">invitee</span><span class="p">;</span>
-    <span class="p">});</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">invitees</span><span class="p">});</span>
-  <span class="p">}</span>
-
-  <span class="nx">introMessage</span><span class="p">(</span><span class="nx">className</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">className</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">We</span> <span class="nx">should</span> <span class="nx">have</span> <span class="nx">a</span> <span class="nx">house</span> <span class="nx">party</span> <span class="nx">and</span> <span class="nx">invite</span> <span class="nx">all</span> <span class="nx">of</span> <span class="nx">our</span> <span class="nx">friends</span><span class="o">!&lt;</span><span class="err">/p&gt;</span>
-        <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">to</span><span class="o">=</span><span class="s2">&quot;/invite&quot;</span><span class="o">&gt;</span><span class="nx">Click</span> <span class="nx">Here</span> <span class="nx">to</span> <span class="nx">Make</span> <span class="nx">it</span> <span class="nx">a</span> <span class="nx">Party</span><span class="o">!&lt;</span><span class="err">/Link&gt;</span>
-      <span class="o">&lt;</span><span class="err">/div&gt;</span>
-    <span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="p">{</span> <span class="nx">ourFriends</span><span class="p">,</span> <span class="nx">invitees</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">;</span>
-    <span class="kr">const</span> <span class="nx">toggleGuest</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">toggleGuest</span><span class="p">;</span>
-    <span class="kr">const</span> <span class="nx">view</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">componentView</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">);</span>
-    <span class="kr">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">introMessage</span><span class="p">;</span>
-
-    <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-        <span class="p">{</span><span class="nx">React</span><span class="p">.</span><span class="nx">cloneElement</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">,</span> <span class="p">{</span>
-          <span class="nx">ourFriends</span><span class="p">,</span> <span class="nx">invitees</span><span class="p">,</span> <span class="nx">toggleGuest</span><span class="p">,</span> <span class="nx">view</span><span class="p">,</span> <span class="nx">message</span>
-        <span class="p">})}</span>
-      <span class="o">&lt;</span><span class="err">/div&gt;</span>
-    <span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">Home</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">children</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">node</span>
-<span class="p">};</span>
+  <span class="nx">Home</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">children</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">node</span>
+  <span class="p">};</span>
 </code></pre></div>
-<p>You get the idea. We need to do this for the <code>styles</code> now. Navigate to <code>&lt;your-awesome-app&gt;/styles</code>. Create a file with the name of <code>guest-list.css</code>. The path for this component will look like this: <code>&lt;your-awesome-app&gt;/styles/guest-list.css</code> Copy, paste and save the code below into this file.</p>
-<div class="highlight"><pre><code class="language-css" data-lang="css">  <span class="k">@import</span> <span class="nt">url</span><span class="o">(//</span><span class="nt">netdna</span><span class="nc">.bootstrapcdn.com</span><span class="o">/</span><span class="nt">font-awesome</span><span class="o">/</span><span class="nt">3</span><span class="nc">.2.1</span><span class="o">/</span><span class="nt">css</span><span class="o">/</span><span class="nt">font-awesome</span><span class="nc">.css</span><span class="o">)</span><span class="p">;</span>
-
-  <span class="nt">body</span> <span class="p">{</span>
-    <span class="k">font-family</span><span class="o">:</span> <span class="k">sans-serif</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="nt">p</span> <span class="p">{</span>
-      <span class="k">padding</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="nt">label</span> <span class="p">{</span> <span class="k">font-size</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span> <span class="p">}</span>
-  <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span> <span class="p">{</span> <span class="k">display</span><span class="o">:</span><span class="k">none</span><span class="p">;</span> <span class="p">}</span>
-  <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span> <span class="o">+</span> <span class="nt">label</span><span class="nd">:before</span> <span class="p">{</span>
-    <span class="k">font-family</span><span class="o">:</span> <span class="n">FontAwesome</span><span class="p">;</span>
-    <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span> <span class="o">+</span> <span class="nt">label</span><span class="nd">:before</span> <span class="p">{</span> <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;\f096&quot;</span><span class="p">;</span> <span class="p">}</span>
-  <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span> <span class="o">+</span> <span class="nt">label</span><span class="nd">:before</span> <span class="p">{</span> <span class="k">letter-spacing</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span> <span class="p">}</span>
-  <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span><span class="nd">:checked</span> <span class="o">+</span> <span class="nt">label</span><span class="nd">:before</span> <span class="p">{</span> <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;\f046&quot;</span><span class="p">;</span> <span class="p">}</span>
-  <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span><span class="nd">:checked</span> <span class="o">+</span> <span class="nt">label</span><span class="nd">:before</span> <span class="p">{</span> <span class="k">letter-spacing</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span> <span class="p">}</span>
-
-  <span class="nc">.friend</span> <span class="p">{</span>
-    <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">50%</span><span class="p">;</span>
-    <span class="k">background-color</span><span class="o">:</span> <span class="m">#efefef</span><span class="p">;</span>
-    <span class="k">background-repeat</span><span class="o">:</span> <span class="k">no-repeat</span><span class="p">;</span>
-    <span class="k">background-position</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
-    <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="m">60%</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="nc">.houseParty</span> <span class="p">{</span>
-    <span class="k">background-color</span><span class="o">:</span> <span class="m">#e2e2ff</span><span class="p">;</span>
-    <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="nc">.guestList</span> <span class="p">{</span>
-    <span class="k">background-color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
-    <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
-    <span class="k">padding-left</span><span class="o">:</span> <span class="m">3em</span><span class="p">;</span>
-    <span class="k">padding-right</span><span class="o">:</span> <span class="m">3em</span><span class="p">;</span>
-    <span class="k">padding-bottom</span><span class="o">:</span> <span class="m">1.5em</span><span class="p">;</span>
-    <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
-    <span class="k">margin</span><span class="o">:</span> <span class="m">1em</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="nc">.guestName</span> <span class="p">{</span>
-    <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">.5em</span><span class="p">;</span>
-  <span class="p">}</span>
+<p>Let&#39;s also add some style elements using in your <code>&lt;your-awesome-app&gt;/client/style/base.css</code>; copy, paste and save the code below into this file:</p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.rootDiv</span> <span class="p">{</span>
+  <span class="k">max-width</span><span class="o">:</span> <span class="m">1000px</span><span class="p">;</span>
+  <span class="k">margin-left</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="k">margin-right</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Navigate to <a href="server_config.html">Intermediate: Server Config</a>, to learn about <a href="confippet.html">Confippet</a> and add our Hapi plugin to our server config.</p>
 

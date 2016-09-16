@@ -96,19 +96,6 @@
     <li>
     
 
-    <a href="/docs/get_started.html"> &nbsp; Get Started</a>
-
-    
-    </li>
-  
-
-  
-  
-  
-  
-    <li>
-    
-
     <a href="/docs/requirements.html"> &nbsp; Requirements</a>
 
     
@@ -276,11 +263,6 @@
   
   
   
-
-  
-  
-  
-  
     <li>
     
 
@@ -410,11 +392,6 @@
           <ul>
             
 
-
-  
-  
-  
-  
 
   
   
@@ -629,11 +606,6 @@
           <ul>
             
 
-
-  
-  
-  
-  
 
   
   
@@ -1010,11 +982,6 @@
   
   
   
-
-  
-  
-  
-  
     <li>
     
 
@@ -1131,9 +1098,9 @@
 <ol>
 <li><a href="#develop-couple-of-low-level-components">Develop couple of low-level components</a></li>
 <li><a href="#develop-helpers-for-the-components">Develop helpers for the components</a></li>
-<li><a href="#develop-tests-for-the-above-components">Develop tests for the above components</a></li>
 <li><a href="#develop-styles-using-css-modules">Develop styles using CSS modules</a></li>
 <li><a href="#develop-main-high-level-component">Develop main high-level component</a></li>
+<li><a href="#develop-tests-for-the-above-components">Develop tests for the above components</a></li>
 <li><a href="#Add-Demo-data">Add Demo data</a></li>
 <li><a href="#build-and-demo-the-component">Build and Demo the component</a></li>
 <li><a href="#generating-documentation">Generating documentation</a></li>
@@ -1234,7 +1201,7 @@
 
   <span class="kr">export</span> <span class="k">default</span> <span class="nx">RenderFriend</span><span class="p">;</span>
 </code></pre></div><h3><a class="anchor" name="develop-helpers-for-the-components"></a>Develop helpers for the components <a class="hash-link" href="#develop-helpers-for-the-components">#</a></h3>
-<p>In <code>src</code> create a folder titled <code>helpers</code> with file titled <code>graph-styles.js</code> inside - <code>&lt;your-awesome-component&gt;/src/helper/graph-styles.js</code>. Copy the code from below into this file:</p>
+<p>In <code>src</code> create a folder titled <code>helpers</code> with file titled <code>graph-styles.js</code> inside - <code>&lt;your-awesome-component&gt;/src/helpers/graph-styles.js</code>. Copy the code from below into this file:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kr">const</span> <span class="nx">PARENT</span> <span class="o">=</span> <span class="p">{</span><span class="nx">divisor</span><span class="o">:</span> <span class="mi">2</span><span class="p">};</span>
   <span class="kr">const</span> <span class="nx">CHILD</span> <span class="o">=</span> <span class="p">{</span><span class="nx">divisor</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">rotateBack</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">};</span>
   <span class="kr">const</span> <span class="nx">SINGLE</span> <span class="o">=</span> <span class="p">{</span><span class="nx">marginDivisor</span><span class="o">:</span> <span class="mi">8</span><span class="p">};</span>
@@ -1293,16 +1260,12 @@
     <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">};</span>
-</code></pre></div><h3><a class="anchor" name="develop-tests-for-the-above-components"></a>Develop tests for the above components <a class="hash-link" href="#develop-tests-for-the-above-components">#</a></h3>
-<p>WalmartLabs believes that testing is critical to writing great, high performance code. This includes unit testing at both the component and application level. For your component, we are using <a href="https://mochajs.org/">Mocha</a>, a Javascript testing framework that is perfect for running async tests, with <a href="http://airbnb.io/enzyme/docs/guides/mocha.html">Enzyme</a>, airbnb&#39;s awesome testing utility for React.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nv">$ </span>gulp check
 </code></pre></div><h3><a class="anchor" name="develop-styles-using-css-modules"></a>Develop styles using CSS modules <a class="hash-link" href="#develop-styles-using-css-modules">#</a></h3>
 <p>Let&#39;s also add some style elements using <a href="https://github.com/css-modules/css-modules">CSS modules</a> to create a dynamic application. Override the below code into your <code>&lt;your-awesome-component&gt;/src/style/your-awesome-component.css</code>:</p>
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@import</span> <span class="nt">url</span><span class="o">(//</span><span class="nt">netdna</span><span class="nc">.bootstrapcdn.com</span><span class="o">/</span><span class="nt">font-awesome</span><span class="o">/</span><span class="nt">3</span><span class="nc">.2.1</span><span class="o">/</span><span class="nt">css</span><span class="o">/</span><span class="nt">font-awesome</span><span class="nc">.css</span><span class="o">)</span><span class="p">;</span>
-
-<span class="nt">body</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">body</span> <span class="p">{</span>
   <span class="k">font-family</span><span class="o">:</span> <span class="k">sans-serif</span><span class="p">;</span>
 <span class="p">}</span>
+
 <span class="nt">p</span> <span class="p">{</span>
   <span class="k">padding</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
 <span class="p">}</span>
@@ -1311,6 +1274,7 @@
   <span class="nt">50</span><span class="o">%</span><span class="p">{</span><span class="k">background-position</span><span class="o">:</span><span class="m">100%</span> <span class="m">50%</span><span class="p">}</span>
   <span class="nt">100</span><span class="o">%</span><span class="p">{</span><span class="k">background-position</span><span class="o">:</span><span class="m">0%</span> <span class="m">51%</span><span class="p">}</span>
 <span class="p">}</span>
+
 <span class="k">@keyframes</span> <span class="nt">shake</span> <span class="p">{</span>
   <span class="nt">from</span> <span class="p">{</span>
     <span class="n">transform</span><span class="o">:</span> <span class="n">scale3d</span><span class="p">(</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="p">);</span>
@@ -1336,17 +1300,6 @@
   <span class="n">animation</span><span class="o">-</span><span class="n">iteration</span><span class="o">-</span><span class="n">count</span><span class="o">:</span> <span class="n">infinite</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nt">label</span> <span class="p">{</span> <span class="k">font-size</span><span class="o">:</span> <span class="m">24px</span><span class="p">;</span> <span class="p">}</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span> <span class="p">{</span> <span class="k">display</span><span class="o">:</span><span class="k">none</span><span class="p">;</span> <span class="p">}</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span> <span class="o">+</span> <span class="nt">label</span><span class="nd">:before</span> <span class="p">{</span>
-  <span class="k">font-family</span><span class="o">:</span> <span class="n">FontAwesome</span><span class="p">;</span>
-  <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span> <span class="o">+</span> <span class="nt">label</span><span class="nd">:before</span> <span class="p">{</span> <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;\f096&quot;</span><span class="p">;</span> <span class="p">}</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span> <span class="o">+</span> <span class="nt">label</span><span class="nd">:before</span> <span class="p">{</span> <span class="k">letter-spacing</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span> <span class="p">}</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span><span class="nd">:checked</span> <span class="o">+</span> <span class="nt">label</span><span class="nd">:before</span> <span class="p">{</span> <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;\f046&quot;</span><span class="p">;</span> <span class="p">}</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span><span class="nd">:checked</span> <span class="o">+</span> <span class="nt">label</span><span class="nd">:before</span> <span class="p">{</span> <span class="k">letter-spacing</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span> <span class="p">}</span>
-
 <span class="nc">.houseParty</span> <span class="p">{</span>
     <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">clip</span><span class="o">-</span><span class="n">path</span><span class="o">:</span> <span class="n">polygon</span><span class="p">(</span><span class="m">2%</span> <span class="m">97%</span><span class="o">,</span> <span class="m">98%</span> <span class="m">97%</span><span class="o">,</span> <span class="m">98%</span> <span class="m">44%</span><span class="o">,</span> <span class="m">51%</span> <span class="m">8%</span><span class="o">,</span> <span class="m">3%</span> <span class="m">45%</span><span class="p">);</span>
   <span class="k">clip</span><span class="o">-</span><span class="n">path</span><span class="o">:</span> <span class="n">polygon</span><span class="p">(</span><span class="m">2%</span> <span class="m">97%</span><span class="o">,</span> <span class="m">98%</span> <span class="m">97%</span><span class="o">,</span> <span class="m">98%</span> <span class="m">44%</span><span class="o">,</span> <span class="m">51%</span> <span class="m">8%</span><span class="o">,</span> <span class="m">3%</span> <span class="m">45%</span><span class="p">);</span>
@@ -1361,56 +1314,92 @@
   <span class="k">background-color</span><span class="o">:</span> <span class="m">#474747</span><span class="p">;</span>
   <span class="k">padding</span><span class="o">:</span> <span class="m">10em</span> <span class="m">2em</span> <span class="m">2em</span> <span class="m">2em</span><span class="p">;</span>
   <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
-  <span class="k">min-height</span><span class="o">:</span> <span class="m">12em</span><span class="p">;</span>
+  <span class="k">min-height</span><span class="o">:</span> <span class="m">35</span><span class="n">vh</span><span class="p">;</span>
 <span class="p">}</span>
+
 <span class="nc">.container</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">50</span><span class="n">vw</span><span class="p">;</span>
+  <span class="k">margin-left</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="k">margin-right</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">10%</span><span class="p">;</span>
+
   <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
   <span class="n">transition</span><span class="o">:</span> <span class="n">filter</span> <span class="m">.7s</span> <span class="n">ease</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">out</span><span class="p">;</span>
 <span class="p">}</span>
+
 <span class="nc">.container</span><span class="nd">:before</span> <span class="p">{</span>
   <span class="k">content</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
   <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
   <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
   <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(//goo.gl/l01JZJ)</span><span class="p">;</span>
   <span class="k">background-position</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
-  <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="m">95%</span><span class="p">;</span>
   <span class="k">background-repeat</span><span class="o">:</span> <span class="k">no-repeat</span><span class="p">;</span>
-  <span class="k">width</span><span class="o">:</span> <span class="m">19em</span><span class="p">;</span>
-  <span class="k">height</span><span class="o">:</span> <span class="m">11em</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">45%</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">45%</span><span class="p">;</span>
   <span class="k">z-index</span><span class="o">:</span> <span class="m">999</span><span class="p">;</span>
-  <span class="k">left</span><span class="o">:</span> <span class="m">20em</span><span class="p">;</span>
-  <span class="k">top</span><span class="o">:</span> <span class="m">-1em</span><span class="p">;</span>
+  <span class="k">left</span><span class="o">:</span> <span class="m">47%</span><span class="p">;</span>
+  <span class="k">top</span><span class="o">:</span> <span class="m">-9%</span><span class="p">;</span>
 <span class="p">}</span>
+
 <span class="nc">.room</span> <span class="p">{</span>
   <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
   <span class="k">bottom</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="k">padding-bottom</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+  <span class="k">right</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+  <span class="k">padding-right</span><span class="o">:</span> <span class="m">2.5em</span><span class="p">;</span>
 <span class="p">}</span>
+
 <span class="nc">.message</span> <span class="p">{</span>
   <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
   <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
   <span class="k">width</span><span class="o">:</span> <span class="m">19em</span><span class="p">;</span>
   <span class="k">height</span><span class="o">:</span> <span class="m">11em</span><span class="p">;</span>
   <span class="k">z-index</span><span class="o">:</span> <span class="m">999</span><span class="p">;</span>
-  <span class="k">left</span><span class="o">:</span> <span class="m">10.5em</span><span class="p">;</span>
-  <span class="k">top</span><span class="o">:</span> <span class="m">9.5em</span><span class="p">;</span>
-  <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+  <span class="k">left</span><span class="o">:</span> <span class="m">4.5em</span><span class="p">;</span>
+  <span class="k">top</span><span class="o">:</span> <span class="m">7.5em</span><span class="p">;</span>
   <span class="k">color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
   <span class="k">font-weight</span><span class="o">:</span> <span class="m">100</span><span class="p">;</span>
-  <span class="k">font-size</span><span class="o">:</span> <span class="k">larger</span><span class="p">;</span>
+  <span class="k">font-family</span><span class="o">:</span> <span class="n">helvetica</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">27px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">a</span><span class="o">,</span> <span class="nt">a</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">a</span><span class="nd">:active</span><span class="o">,</span> <span class="nt">a</span><span class="nd">:visited</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">93</span><span class="o">,</span> <span class="m">245</span><span class="o">,</span> <span class="m">255</span><span class="p">);</span>
+  <span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Create a file titled: <code>&lt;your-awesome-component&gt;/src/styles/guest-list.css</code>. Copy the code from below into this file:</p>
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.guestList</span> <span class="p">{</span>
-  <span class="k">border</span><span class="o">:</span> <span class="m">2px</span> <span class="k">solid</span> <span class="nb">whitesmoke</span><span class="p">;</span>
-  <span class="k">background-color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">87</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@import</span> <span class="nt">url</span><span class="o">(//</span><span class="nt">netdna</span><span class="nc">.bootstrapcdn.com</span><span class="o">/</span><span class="nt">font-awesome</span><span class="o">/</span><span class="nt">3</span><span class="nc">.2.1</span><span class="o">/</span><span class="nt">css</span><span class="o">/</span><span class="nt">font-awesome</span><span class="nc">.css</span><span class="o">)</span><span class="p">;</span>
+
+<span class="nt">label</span> <span class="p">{</span> <span class="k">font-size</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span> <span class="p">{</span> <span class="k">display</span><span class="o">:</span><span class="k">none</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span> <span class="o">+</span> <span class="nt">label</span><span class="nd">:before</span> <span class="p">{</span>
+  <span class="k">font-family</span><span class="o">:</span> <span class="n">FontAwesome</span><span class="p">;</span>
   <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
-  <span class="k">padding-left</span><span class="o">:</span> <span class="m">3em</span><span class="p">;</span>
-  <span class="k">padding-right</span><span class="o">:</span> <span class="m">3em</span><span class="p">;</span>
-  <span class="k">padding-bottom</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
-  <span class="k">padding-top</span><span class="o">:</span> <span class="m">.7em</span><span class="p">;</span>
-  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
-  <span class="k">margin</span><span class="o">:</span> <span class="m">1em</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span> <span class="o">+</span> <span class="nt">label</span><span class="nd">:before</span> <span class="p">{</span> <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;\f096&quot;</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span> <span class="o">+</span> <span class="nt">label</span><span class="nd">:before</span> <span class="p">{</span> <span class="k">letter-spacing</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span><span class="nd">:checked</span> <span class="o">+</span> <span class="nt">label</span><span class="nd">:before</span> <span class="p">{</span> <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;\f046&quot;</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span><span class="nd">:checked</span> <span class="o">+</span> <span class="nt">label</span><span class="nd">:before</span> <span class="p">{</span> <span class="k">letter-spacing</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.guestList</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+  <span class="k">z-index</span><span class="o">:</span> <span class="m">999</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">93</span><span class="p">);</span>
+  <span class="k">left</span><span class="o">:</span> <span class="m">10%</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">2px</span> <span class="k">solid</span> <span class="nb">whitesmoke</span><span class="p">;</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
+  <span class="k">padding-left</span><span class="o">:</span> <span class="m">4em</span><span class="p">;</span>
+  <span class="k">padding-right</span><span class="o">:</span> <span class="m">4em</span><span class="p">;</span>
+  <span class="k">padding-bottom</span><span class="o">:</span> <span class="m">3em</span><span class="p">;</span>
+  <span class="k">padding-top</span><span class="o">:</span> <span class="m">1.7em</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.guestList</span> <span class="nt">h1</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">2.5em</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nc">.guestName</span> <span class="p">{</span>
@@ -1435,17 +1424,20 @@
     <span class="n">transform</span><span class="o">:</span> <span class="n">scale3d</span><span class="p">(</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
+
 <span class="nc">.join</span> <span class="p">{</span>
   <span class="n">animation</span><span class="o">-</span><span class="n">name</span><span class="o">:</span> <span class="n">shake</span><span class="p">;</span>
   <span class="n">animation</span><span class="o">-</span><span class="n">duration</span><span class="o">:</span> <span class="m">1s</span><span class="p">;</span>
   <span class="n">animation</span><span class="o">-</span><span class="n">fill</span><span class="o">-</span><span class="n">mode</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span>
 <span class="p">}</span>
+
 <span class="nc">.friend</span> <span class="p">{</span>
   <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">50%</span><span class="p">;</span>
   <span class="k">background-color</span><span class="o">:</span> <span class="m">#efefef</span><span class="p">;</span>
   <span class="k">background-repeat</span><span class="o">:</span> <span class="k">no-repeat</span><span class="p">;</span>
   <span class="k">background-position</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
   <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="m">60%</span><span class="p">;</span>
+  <span class="k">float</span><span class="o">:</span> <span class="k">right</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div><h3><a class="anchor" name="develop-main-high-level-component"></a>Develop main high-level component <a class="hash-link" href="#develop-main-high-level-component">#</a></h3>
 <p>Override the code in <code>&lt;your-awesome-component&gt;/src/components/your-awesome-component.jsx</code> with the code below. Change all references from the literal <code>your-awesome-component or YourAwesomeComponent</code> to your actual component name:</p>
@@ -1534,6 +1526,9 @@
 <p>Last edit! In your <code>&lt;your-awesome-component&gt;index.js</code>, add the two lines below:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kr">export</span> <span class="p">{</span> <span class="k">default</span> <span class="nx">as</span> <span class="nx">RenderFriend</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;./components/render-friend&quot;</span><span class="p">;</span>
   <span class="kr">export</span> <span class="p">{</span> <span class="k">default</span> <span class="nx">as</span> <span class="nx">GuestList</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;./components/guest-list&quot;</span><span class="p">;</span>
+</code></pre></div><h3><a class="anchor" name="develop-tests-for-the-above-components"></a>Develop tests for the above components <a class="hash-link" href="#develop-tests-for-the-above-components">#</a></h3>
+<p>WalmartLabs believes that testing is critical to writing great, high performance code. This includes unit testing at both the component and application level. For your component, we are using <a href="https://mochajs.org/">Mocha</a>, a Javascript testing framework that is perfect for running async tests, with <a href="http://airbnb.io/enzyme/docs/guides/mocha.html">Enzyme</a>, airbnb&#39;s awesome testing utility for React.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nv">$ </span>gulp check
 </code></pre></div><h3><a class="anchor" name="add-demo-data."></a>Add Demo data. <a class="hash-link" href="#add-demo-data.">#</a></h3>
 <p>Create a file titled: <code>&lt;your-awesome-component&gt;/demo/examples/render-friend.example</code>. Copy, paste and save the code below into this file:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">  &lt;RenderFriend
