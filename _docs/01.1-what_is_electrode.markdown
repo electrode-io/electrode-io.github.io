@@ -13,7 +13,7 @@ The heart of the platform is Electrode “archetypes”. It allows scaffolding o
 #### Stand Alone Modules: Optimize Where You Want
 As part of the Electrode Platform, we have a number of modules that each do one specific task. Anything from [server-side render caching](server_side_render_cache.html) to [flexible configuration management](confippet.html). These modules can be used independently of the platform, and you can [learn more about integrating them into your existing apps](stand_alone_modules.html).
 
-#### Tools: Power Up Your Existing Applications</p>
+#### Tools: Power Up Your Existing Applications
 The Electrode Platform also has tools that can be consumed by existing applications (though they come integrated with the Electrode code). There are currently two powerful tools: one which enables [discovery of reusable components](electrode_explorer.html) and another to help understand the [performance of JS bundles](electrify.html).
 
 ###Features
