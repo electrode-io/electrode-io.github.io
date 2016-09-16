@@ -106,15 +106,26 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/requirements.html"> &nbsp; Requirements</a>
+
+    
+    </li>
+  
 
   
   
   
   
+    <li>
+    
 
-  
-  
-  
+    <a href="/docs/quick_guide.html"> &nbsp; Quick Guide</a>
+
+    
+    </li>
   
 
   
@@ -260,26 +271,10 @@
   
   
   
-    <li>
-    
-
-    <a href="/docs/requirements.html"> &nbsp; Requirements</a>
-
-    
-    </li>
-  
 
   
   
   
-  
-    <li>
-    
-
-    <a href="/docs/quick_guide.html"> &nbsp; Quick Guide</a>
-
-    
-    </li>
   
 
   
@@ -306,11 +301,6 @@
 
     
     </li>
-  
-
-  
-  
-  
   
 
   
@@ -632,11 +622,6 @@
   
   
 
-  
-  
-  
-  
-
 
           </ul>
         
@@ -888,11 +873,6 @@
   
   
 
-  
-  
-  
-  
-
 
           </ul>
         
@@ -1057,19 +1037,6 @@
     </li>
   
 
-  
-  
-  
-  
-    <li>
-    
-
-    <a href="/docs/build_with_us.html"> &nbsp; Build With Us</a>
-
-    
-    </li>
-  
-
 
         </ul>
       
@@ -1115,20 +1082,25 @@
     <div class="subHeader"></div>
 
     <p><a href="https://travis-ci.com/electrode-io/electrify"><img src="https://travis-ci.com/electrode-io/electrify.svg?token=9dyHRhqfyW5wqcpfkeLr&amp;branch=master" alt="Build Status"></a></p>
-<h1><a class="anchor" name="electrify"></a>electrify <a class="hash-link" href="#electrify">#</a></h1>
-<p>Electrify is a tool for analyzing the module tree of
+
+<p>An Electrode Javascript bundle viewer aptly named <a href="https://github.com/electrode-io/electrify">Electrify</a>, this is a stunning visual tool for analyzing the module tree of
 <a href="https://github.com/webpack/docs/wiki/node.js-api#stats">electrode-io + webpack</a> project bundles. It&#39;s especially handy
 for catching large and/or duplicate modules which might be either bloating up
 your bundle or slowing down the build process.</p>
 
 <p><img src="https://cloud.githubusercontent.com/assets/360041/18318796/ea0ddae4-74d7-11e6-89cb-08e02e4b1683.gif" alt="screencast"></p>
 <h2><a class="anchor" name="installation"></a>Installation <a class="hash-link" href="#installation">#</a></h2>
-<p>Electrify lives on <a href="https://www.npmjs.com/package/electrode-electrify">npm</a>, so if you haven&#39;t already
+<p>Electrify lives on <a href="https://www.npmjs.com/package/electrode-electrify">npm</a>, so if you haven&#39;t already,
 make sure you have <a href="http://nodejs.org/">node</a> installed on your machine first.</p>
 
 <p>Installing should then be as easy as:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo npm install -g electrode-electrify
-</code></pre></div><h2><a class="anchor" name="command-line-interface"></a>Command-Line Interface <a class="hash-link" href="#command-line-interface">#</a></h2><div class="highlight"><pre><code class="language-bash" data-lang="bash">electrify <span class="o">[</span>stats-bundle<span class="o">(</span>s<span class="o">)</span>...<span class="o">]</span> <span class="o">{</span>options<span class="o">}</span>
+</code></pre></div><h2><a class="anchor" name="module-electrode-electrify"></a>Module: <a href="https://github.com/electrode-io/electrode-electrify">electrode-electrify</a> <a class="hash-link" href="#module-electrode-electrify">#</a></h2><h3><a class="anchor" name="install-via-npm"></a>Install via <code>npm</code> <a class="hash-link" href="#install-via-npm">#</a></h3><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install --save electrode-electrify
+</code></pre></div><h4><a class="anchor" name="example-applications-using-electrode-electrify"></a>Example Applications using electrode-electrify <a class="hash-link" href="#example-applications-using-electrode-electrify">#</a></h4>
+<ul>
+<li><a href="https://github.com/electrode-io/electrode-boilerplate-universal-react-node">Electrode Boilerplate</a></li>
+</ul>
+<h2><a class="anchor" name="usage"></a>Usage <a class="hash-link" href="#usage">#</a></h2><h2><a class="anchor" name="command-line-interface"></a>Command-Line Interface <a class="hash-link" href="#command-line-interface">#</a></h2><div class="highlight"><pre><code class="language-bash" data-lang="bash">electrify <span class="o">[</span>stats-bundle<span class="o">(</span>s<span class="o">)</span>...<span class="o">]</span> <span class="o">{</span>options<span class="o">}</span>
 
 Options:
   -h, --help    Displays these instructions.
@@ -1166,7 +1138,7 @@ more than expected.</p>
 
 <p>Nothing particularly special about these palettes – colored for legibility and
 aesthetics respectively.</p>
-<h2><a class="anchor" name="other-useful-bundlestats-generators"></a>Other useful bundle/stats generators <a class="hash-link" href="#other-useful-bundlestats-generators">#</a></h2>
+<h3><a class="anchor" name="other-useful-bundlestats-generators"></a>Other useful bundle/stats generators <a class="hash-link" href="#other-useful-bundlestats-generators">#</a></h3>
 <ul>
 <li><a href="https://github.com/hughsk/disc">disc-browserify</a> (Helpful for analyzing <strong>browserify</strong> projects and a huge inspiration for electrify, used <em>disc</em> extensively in my past <strong>browserify</strong> based projects)</li>
 <li><a href="https://github.com/robertknight/webpack-bundle-size-analyzer">webpack-bundle-size-analyzer</a></li>
