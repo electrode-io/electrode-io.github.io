@@ -1,7 +1,0 @@
----
-title:  "Get Started"
-permalink: docs/get_started.html
-toplevel: "Overview"
----
-
-Use our [Getting Started: Quick Guide](requirements.html) to start building now.

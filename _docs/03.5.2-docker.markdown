@@ -17,7 +17,7 @@ Let's check the versions of `Docker Engine`, `Compose` and `Machine` by running 
 ```bash
  docker --version
 
-	docker-compose --version
+ docker-compose --version
 
  docker-machine --version
 ```
@@ -25,100 +25,97 @@ Let's check the versions of `Docker Engine`, `Compose` and `Machine` by running 
 Verify your installation by running the Docker version of "Hello World":
 
 ```bash
-	docker run hello-world
+  docker run hello-world
 ```
 
 To show all the containers on the system, run the command below:
 
 ```bash
-	docker ps -a
+  docker ps -a
 ```
 
-Create a Dockerfile, a set of instructions to let Docker know how we would like to build our container:
+Electrode has a [Dockerfile and Docker image](https://hub.docker.com/r/electrode/electrode-io/) built-in to expedite deployment. Simply:
 
 ```bash
-	 touch Dockerfile && touch .dockerignore
+  docker pull electrode/electrode-io
 ```
 
-In your Dockerfile add:
+Try the image in your docker container:
 
 ```bash
-	# Dockerfile
-
-	FROM node:4.5
-
-	# Run updates and install deps
-	RUN apt-get update
-
-	# Set the work directory
-	RUN mkdir -p /usr/src/app
-	WORKDIR /usr/src/app
-
-	# Add our package.json
-	RUN npm i -g npm@3
-
-	ADD package.json ./
-
-	# Copy application files
-	COPY . /usr/src/app
-
-	#
-	RUN npm install
-
-	#Expose the port
-	EXPOSE 3000
-
-	CMD [node server]
+  docker run -d -p 3000:3000 electrode/electrode-io
 ```
 
-In your .dockerignore file add:
+You'll see your `<container_id>` in the terminal.
+
+Verify that the server is running by opening `localhost:3000` in your browser.
+
+Copy the code from the container to your local machine for development:
 
 ```bash
-	.git
-	.gitignore
-	node_modules
+	docker cp <container_id>:/usr/src/app .
 ```
 
-Verify that the Dockerfile is in your current directory by entering the command below:
+Go to the app folder, you can stop the container and start your development:
 
 ```bash
-	cat Dockerfile
+  docker stop <container_id>
 ```
 
-You'll see your Dockerfile print in the terminal. Now let's build a new image, by entering the following command:
+Now let's build a new image, by entering the following command:
 
 ```bash
-	docker build -t docker-awesome-container .
+  docker build -t docker-awesome-container .
 ```
 
 Run the command below to see a lit of the images you currently have:
 
 ```bash
-	docker images
+  docker images
 ```
 
 You'll see `node` listed. Find the corresponding `IMAGE ID` for your `node` image. We will now build a command to properly tag the image. It'll be using your `image id` + `account name/repo-name:latest`
 
 ```bash
-	docker tag your-image-id-# your-account-name/docker-awesome-container:latest
+  docker tag your-image-id-# your-account-name/docker-awesome-container:latest
 ```
 
 Let's see it! Run the `images` command below to see a lit of the images you currently have:
 
 ```bash
-	docker images
+  docker images
+```
+
+Run your image on your local container:
+
+```bash
+  docker run -d -p 3000:3000 docker-awesome-container
+```
+
+Open `localhost:3000` in your browser to see your app.
+
+Your container id will print in the terminal, or you can run the command below to see your containers:
+
+```bash
+  docker ps
+```
+
+Now you can stop the container:
+
+```bash
+  docker stop <container_id>
 ```
 
 Log into Docker Hub from the command line. The format is below. Enter you password when prompted:
 
 ```bash
-	docker login --username=yourhubusername --email=youremail@company.com
+  docker login --username=yourhubusername --email=youremail@company.com
 ```
 
 Type the push command below to push your image to your new repo:
 
 ```bash
-	docker push your-username/docker-awesome-container
+  docker push your-username/docker-awesome-container
 ```
 
 You have successfully pushed your new image to the Docker Cloud repository! From here, you can use the [User Guide](https://docs.docker.com/engine/userguide/intro/) to run your own containers and build Docker images.
