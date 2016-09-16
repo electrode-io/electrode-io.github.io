@@ -20,22 +20,22 @@ $ yo electrode-component
 
 Fill out the Electrode generator-electrode-component with your information.
 
-Open the application up with your favorite text editor. We will start with a fast high level view of the most important files in your component:
+Open the application up with your favorite text editor. We'll start with a fast high level view of the most important files in your component:
 
 ```
   demo
-    A live demo of your component. You can play with it's integration in real
+    A live demo of your component. You can play with its integration in real
     time. This folder contains the .example files which you can customize to
     demonstrate the default state of your components when mounted in the
     playground.
 
   node_modules
     Other Javascript files contained in modules that we will use in this
-    application, including Electrode modules that create your out-the-box
+    application, including Electrode modules that create your out-of-the-box
     Universal app.
 
   src
-    Where all our component's source code lives, in their respective files.
+    Where all our components' source code lives, in their respective files.
     Non-universal apps might normally call this the “client” folder, but
     since our app code will run both on the client and server, via server
     side rendering, we call this folder "src".
@@ -59,12 +59,12 @@ Open the application up with your favorite text editor. We will start with a fas
 
   gulpfile.js
     Gulp is a Javascript build tool that lets us automate tasks and the
-    gulpfile.js is where we define those tasks. We like it's simple syntax
+    gulpfile.js is where we define those tasks. We like its simple syntax
     and the increased productivity from using an intuitive task runner.
 
 ```
 
-We are going to quickly and carefully add the code below to scaffold out our Resource List and focus on the capabilities of yo generator-electrode-component. Navigate to `<your-awesome-component>/demo/examples/your-awesome-component.example`. Between your component tag, copy, paste and save the code below into this file:
+We're going to quickly and carefully add the code below to scaffold out our Resource List and focus on the capabilities of yo generator-electrode-component. Navigate to `<your-awesome-component>/demo/examples/your-awesome-component.example`. Between your component tag, copy, paste and save the code below into this file:
 
 ```
   <YourAwesomeComponent
@@ -353,7 +353,7 @@ export default (type, size, rotateVal) => {
 };
 ```
 
-Let's also add some style elements using [CSS modules](https://github.com/css-modules/css-modules) to create a dynamic application. In your `<your-awesome-component>/src/style/your-awesome-component.css`, delete what it inside and copy, paste and save the code below into this file:
+Let's also add some style elements using [CSS modules](https://github.com/css-modules/css-modules) to create a dynamic application. In your `<your-awesome-component>/src/style/your-awesome-component.css`, delete what it says inside and copy, paste and save the code below into this file:
 
 ```css
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
@@ -484,7 +484,7 @@ Now run it and explore the live demo!
   $ gulp build && gulp demo
 ```
 
-In the demo, you will see first see a Guest List header with a checkbox listing all of our resources, now referred to as Friends:
+In the demo, you will first see a Guest List header with a checkbox listing all of our resources, now referred to as Friends:
 
 ![resource-list-1](/img/house-party.png)
 
@@ -492,7 +492,7 @@ Have fun! Check the box before each Friend (resource). The Electrode stack is no
 
 ![resource-list-2](/img/resource-list-03.png)
 
-Walmartlabs believes that testing is critical to writing great, high performant code. This includes unit testing at both the component and application level. For your component, we are using [Mocha] (https://mochajs.org/), a Javascript testing framework that is perfect for running async tests, with [Enzyme] (http://airbnb.io/enzyme/docs/guides/mocha.html), airbnb's awesome testing utility for React.
+WalmartLabs believes that testing is critical to writing great, high performance code. This includes unit testing at both the component and application level. For your component, we are using [Mocha] (https://mochajs.org/), a Javascript testing framework that is perfect for running async tests, with [Enzyme] (http://airbnb.io/enzyme/docs/guides/mocha.html), airbnb's awesome testing utility for React.
 
 ```bash
   $ gulp check
@@ -576,4 +576,4 @@ Navigate to `<your-awesome-app>/client/components/home.jsx` Copy, paste and save
 ```
 
 Open `localhost:3000` in your browser and marvel at your Awesome Tech Party App!
-Let's continue to build more by creating a [Hapi server plugin](server_config.html).
+Let's continue to build more by creating a [Hapi server plugin](build_server_plugin.html).

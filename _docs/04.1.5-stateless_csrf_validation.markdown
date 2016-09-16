@@ -4,7 +4,7 @@ permalink: docs/stateless_csrf_validation.html
 toplevel: "Stand Alone Modules"
 ---
 
-The [electrode-csrf-jwt](https://github.com/electrode-io/electrode-csrf-jwt) plugin that enables stateless CSRF protection using [JWT](https://github.com/auth0/node-jsonwebtoken) in Electrode, Express, or Hapi applications.
+The [electrode-csrf-jwt](https://github.com/electrode-io/electrode-csrf-jwt) plugin enables stateless CSRF protection using [JWT](https://github.com/auth0/node-jsonwebtoken) in Electrode, Express, or Hapi applications.
 
 ### Why do we need this module?
 
