@@ -6,7 +6,7 @@ toplevel: "Getting Started: Quick Guide"
 
 ###Using Powerful Electrode Tools
 
-We have created incredible tools for better leverage of your application's capabilities. We built them with flexibility and efficiency in mind, so you can focus on innovating:
+We've created incredible tools for better leverage of your application's capabilities. We built them with flexibility and efficiency in mind, so you can focus on innovating:
 
 *  [Electrify](electrify.html) is a sophisticated tool for analyzing the module tree of project bundles.
 

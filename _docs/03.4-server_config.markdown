@@ -59,14 +59,19 @@ Let's check it out! We'll run through our steps to test, run the app and view it
   gulp hot
 ```
 
-Navigate to `localhost:3000`. Check it out!
+Navigate to `localhost:3000`. Check it out! This is the `Index route` which renders our `Home component` using Server Side Rendering:
 
 ![app-home-view](/img/app-home-view.png)
 
-When all of our guest are invited to the House Party:
+By tapping on the `Click Here to Make it a Party` link Your Awesome App routes to the `/invite route`, which renders the `guest list component`:
+
+![app-guest-list](/img/app-guest-list-view.png)
+
+By checking the guest list, you are setting that selected `invitee object's` key to {invited: true}, which tells `renderFriends` to render.
+
+When all of our guest are invited to the House Party are CSS modules kick in and launch an Electrode House Party!
 
 ![app-party-view](/img/app-party-view.png)
-
 
 Feel free to add your own personal touch and build out your Resource List House Party.
 
