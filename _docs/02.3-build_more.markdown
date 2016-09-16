@@ -93,6 +93,7 @@ gulp dev
 ```
 
 Site should look following
+
 ![Pastel](http://i.imgur.com/nwEl64l.png)
 
 ### Deploy
