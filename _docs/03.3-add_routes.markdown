@@ -35,6 +35,7 @@ Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existi
 ```javascript
   import React, { Component, PropTypes } from "react";
   import { Link } from "react-router";
+  import styles from "../styles/base.css";
 
   export class Home extends Component {
 
@@ -79,7 +80,7 @@ Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existi
     introMessage(className) {
       return (
         <div className={className}>
-          <p>We shoulde have a house party and invite all of our friends!</p>
+          <p>We should have a house party and invite all of our friends!</p>
           <Link to="/invite">Click Here to Make it a Party!</Link>
         </div>
       );
@@ -92,7 +93,7 @@ Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existi
       const message = this.introMessage;
 
       return (
-        <div>
+        <div className={styles.rootDiv}>
           {React.cloneElement(this.props.children, {
             ourFriends, invitees, toggleGuest, view, message
           })}
@@ -104,6 +105,16 @@ Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existi
   Home.propTypes = {
     children: PropTypes.node
   };
+```
+
+Let's also add some style elements using in your `<your-awesome-app>/client/style/base.css`; copy, paste and save the code below into this file:
+
+```css
+.rootDiv {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
 ```
 
 Navigate to [Intermediate: Server Config](server_config.html), to learn about [Confippet](confippet.html) and add our Hapi plugin to our server config.

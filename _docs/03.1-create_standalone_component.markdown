@@ -379,7 +379,6 @@ body {
 p {
   padding: 15px;
 }
-
 @keyframes partyLights {
   0%{background-position:0% 51%}
   50%{background-position:100% 50%}
@@ -425,7 +424,7 @@ p {
   background-color: #474747;
   padding: 10em 2em 2em 2em;
   border-radius: 10px;
-  min-height: 33vh;
+  min-height: 35vh;
 }
 
 .container {
@@ -500,7 +499,7 @@ input[type=checkbox]:checked + label:before { letter-spacing: 5px; }
   position: absolute;
   z-index: 999;
   background-color: rgba(255, 255, 255, 0.93);
-  left: 7%;
+  left: 10%;
   border: 2px solid whitesmoke;
   display: inline-block;
   padding-left: 4em;
