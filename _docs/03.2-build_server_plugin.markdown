@@ -70,4 +70,4 @@ Navigate to `<your-awesome-app>/server/plugins/friends/index.js` Copy, paste and
 
 ```
 
-A great tool for testing your server requests (it's user interface for view response objects and errors is incredible) is [Postman]("https://www.getpostman.com/"). For now, you will have to trust as we build out Your Awesome App. Navigate to [Intermediate: Add Routes](add_routes.html), to add routing to the app and also extend our UI to display our contributor array.
+A great tool for testing your server requests (it's user interface for view response objects and errors is incredible) is [Postman](https://www.getpostman.com/). For now, you will have to trust as we build out Your Awesome App. Navigate to [Intermediate: Add Routes](add_routes.html), to add routing to the app and also extend our UI to display our contributor array.

@@ -569,4 +569,4 @@ Navigate to `<your-awesome-app>/client/components/home.jsx` Copy, paste and save
 ```
 
 Open `localhost:3000` in your browser and marvel at your Awesome Tech Party App!
-Let's continue to build more by creating a [Hapi server plugin](server_config.html).
+Let's continue to build more by creating a [Hapi server plugin](build_server_plugin.html).
