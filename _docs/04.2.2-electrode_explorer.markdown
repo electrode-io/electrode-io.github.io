@@ -5,8 +5,12 @@ toplevel: "Stand Alone Modules"
 ---
 
 > An electrode application that allows you to view all the components in your organization, play with the components, read the component docs, view the different versions of the component, and more - All in your browser.  
+<<<<<<< HEAD
 [View The Live Demo](https://electrode-explorer.herokuapp.com/)
 
+=======
+[View The Live Demo Here](https://electrode-explorer.herokuapp.com/)
+>>>>>>> 9ce43e3f35e8094b2af8e6197e17cf681cde6c7d
 
 ![electrode-explorer](/img/electrode-explorer.png)
 
