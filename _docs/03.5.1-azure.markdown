@@ -9,13 +9,15 @@ toplevel: "Getting Started: Intermediate"
 [Azure](https://azure.microsoft.com/en-us/documentation/articles/app-service-web-nodejs-get-started/) is a robust collection of integrated cloud services from Microsoft. Their goal is to offer users a flexible and efficient cloud platform that you can run anywhere. Before we walk through the instructions on how to deploy Your Awesome App on Azure, please have both a [Microsoft Azure Account](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/) and
 [Azure CLI tool belt](https://azure.microsoft.com/en-us/documentation/articles/xplat-cli-install/) installed.
 
+Ready? Let's get started!
+
 Log in to Azure from the command line:
 
 ```bash
   $ azure login
 ```
 
-You will be redirected to a browser to continue logging. Sign in using the browser and you will receive a success message in your terminal, letting you know what `info: login command OK`.
+You'll be redirected to a browser to continue logging. Sign in using the browser and you'll receive a success message in your terminal, letting you know what `info: login command OK`.
 
 Create the App Service app resource with a unique app name with this simple [Azure tutorial](https://azure.microsoft.com/en-us/documentation/articles/app-service-web-get-started/), created by Microsoft:
 
