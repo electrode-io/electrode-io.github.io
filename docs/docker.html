@@ -776,7 +776,7 @@
       <ul><li>
     
 
-    <a href="/docs/server_side_render_cache.html"> &nbsp; Server Side Render Caching & Profiling</a>
+    <a href="/docs/server_side_render_cache.html"> &nbsp; Server Side Render Caching + Profiling</a>
 
     
       </li></ul>
@@ -1115,11 +1115,11 @@
     <div class="subHeader"></div>
 
     <h3><a class="anchor" name="deploy-with-docker"></a>Deploy with Docker <a class="hash-link" href="#deploy-with-docker">#</a></h3>
-<p>Docker is a new container based technology that is designed to make applications easier to create, deploy and run. It is an increasing popular way to accelerate development and share content. To get started, sign up for a <a href="https://cloud.docker.com">Docker</a>, download <a href="https://www.docker.com/products/docker">Docker for your machine</a> and read over the corresponding system requirements. Docker requires a Linux Machine; if you are using a Mac you will need to follow the instructions based on your computer version to &quot;<a href="https://docs.docker.com/engine/installation/mac/#/docker-for-mac">virtualize the Docker Engine environment</a> and Linux kernel-specific features for the Docker daemon&quot; using a virtual machine.</p>
+<p>Docker is a new container based technology that is designed to make applications easier to create, deploy and run. It&#39;s an increasingly popular way to accelerate development and share content. To get started, sign up for a <a href="https://cloud.docker.com">Docker</a>, download <a href="https://www.docker.com/products/docker">Docker for your machine</a> and read over the corresponding system requirements. Docker requires a Linux Machine; if you are using a Mac you will need to follow the instructions based on your computer version to &quot;<a href="https://docs.docker.com/engine/installation/mac/#/docker-for-mac">virtualize the Docker Engine environment</a> and Linux kernel-specific features for the Docker daemon&quot; using a virtual machine.</p>
 
 <p>After you install and run Docker on your machine, you will be asked to authorize <code>Docker.app</code>. Double-click <code>Docker.app</code> to start Docker. The Docker Whale icon in the top status bar will let you know that Docker is running.</p>
 
-<p>On the first installation you will get a <code>success</code> message. Click the Whale icon to go to <code>Preferences</code>. Select <code>About Docker</code> to verify you have the latest version.</p>
+<p>On the first installation you&#39;ll get a <code>success</code> message. Click the Whale icon to go to <code>Preferences</code>. Select <code>About Docker</code> to verify you have the latest version.</p>
 
 <p>Let&#39;s check the versions of <code>Docker Engine</code>, <code>Compose</code> and <code>Machine</code> by running the commands below:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"> docker --version
@@ -1178,13 +1178,13 @@
 <p>Verify that the Dockerfile is in your current directory by entering the command below:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">    cat Dockerfile
 </code></pre></div>
-<p>You will see your Dockerfile print in the terminal. Now let&#39;s build a new image, by entering the following command:</p>
+<p>You&#39;ll see your Dockerfile print in the terminal. Now let&#39;s build a new image, by entering the following command:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">    docker build -t docker-awesome-container .
 </code></pre></div>
 <p>Run the command below to see a lit of the images you currently have:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">    docker images
 </code></pre></div>
-<p>You will see <code>node</code> listed. Find the corresponding <code>IMAGE ID</code> for your <code>node</code> image. We will now build a command to properly tag the image. It will be using your <code>image id</code> + <code>account name/repo-name:latest</code></p>
+<p>You&#39;ll see <code>node</code> listed. Find the corresponding <code>IMAGE ID</code> for your <code>node</code> image. We will now build a command to properly tag the image. It&#39;ll be using your <code>image id</code> + <code>account name/repo-name:latest</code></p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">    docker tag your-image-id-# your-account-name/docker-awesome-container:latest
 </code></pre></div>
 <p>Let&#39;s see it! Run the <code>images</code> command below to see a lit of the images you currently have:</p>

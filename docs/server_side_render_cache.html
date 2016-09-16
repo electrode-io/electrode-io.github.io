@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Server Side Render Caching & Profiling | Electrode</title>
+  <title>Server Side Render Caching + Profiling | Electrode</title>
   <meta name="viewport" content="width=device-width">
-  <meta property="og:title" content="Server Side Render Caching & Profiling | Electrode">
+  <meta property="og:title" content="Server Side Render Caching + Profiling | Electrode">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://electrode-io.github.io//docs/server_side_render_cache.html">
   <meta property="og:image" content="https://electrode-io.github.io/img/logo_og.png">
@@ -776,7 +776,7 @@
       <ul><li>
     
 
-    <a href="/docs/server_side_render_cache.html" class="active"> &nbsp; Server Side Render Caching & Profiling</a>
+    <a href="/docs/server_side_render_cache.html" class="active"> &nbsp; Server Side Render Caching + Profiling</a>
 
     
       </li></ul>
@@ -1110,16 +1110,16 @@
   <div class="inner-content">
     <a class="edit-page-link" href="https://github.com/electrode-io/electrode-io.github.io/tree/develop/_docs/04.1.3-server_side_render_cache.markdown" target="_blank">Edit on GitHub</a>
     <h1>
-      Server Side Render Caching & Profiling
+      Server Side Render Caching + Profiling
     </h1>
     <div class="subHeader"></div>
 
-    <p>Optimize React SSR with profiling and component caching,
+    <p>Optimize React SSR with profiling and component caching. The
 <a href="https://github.com/electrode-io/electrode-react-ssr-caching">electrode-react-ssr-caching</a> module supports profiling React Server Side Rendering time
-to enable component caching to help you speed up Server Side Rendering of your components,</p>
+to enable component caching to help you speed up Server Side Rendering of your components.</p>
 
 <p><a href="https://github.com/electrode-io/electrode-react-ssr-caching">electrode-react-ssr-caching</a> module can be used a <em>standalone</em> module and is <em>agnostic</em> of
-your web-server framework, here in this tutorial we will demonstrate how to use this module in Electrode, Express.js and Hapi.js applications.</p>
+your web-server framework. In this tutorial we will demonstrate how to use this module in Electrode, Express.js and Hapi.js applications.</p>
 <h2><a class="anchor" name="module-electrode-react-ssr-caching"></a>Module: <a href="https://github.com/electrode-io/electrode-react-ssr-caching">electrode-react-ssr-caching</a> <a class="hash-link" href="#module-electrode-react-ssr-caching">#</a></h2><h3><a class="anchor" name="install-via-npm"></a>Install via <code>npm</code> <a class="hash-link" href="#install-via-npm">#</a></h3><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install --save electrode-react-ssr-caching
 </code></pre></div><h4><a class="anchor" name="example-applications-using-electrode-react-ssr-caching"></a>Example Applications using electrode-react-ssr-caching <a class="hash-link" href="#example-applications-using-electrode-react-ssr-caching">#</a></h4>
 <ul>
@@ -1145,7 +1145,7 @@ your web-server framework, here in this tutorial we will demonstrate how to use 
 <span class="nx">SSRCaching</span><span class="p">.</span><span class="nx">enableProfiling</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">SSRCaching</span><span class="p">.</span><span class="nx">profileData</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
 </code></pre></div><h4><a class="anchor" name="caching"></a>Caching <a class="hash-link" href="#caching">#</a></h4>
-<p>Once you determined the most expensive components with profiling, you can enable component caching this module provides to speed up SSR performance.</p>
+<p>Once you&#39;ve determined the most expensive components with profiling, you can enable the component caching in this module to speed up SSR performance.</p>
 
 <p>The basic steps to enabling caching are:</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">SSRCaching</span> <span class="nx">from</span> <span class="s2">&quot;electrode-react-ssr-caching&quot;</span><span class="p">;</span>
@@ -1196,7 +1196,7 @@ your web-server framework, here in this tutorial we will demonstrate how to use 
 <h5><a class="anchor" name="template"></a>template <a class="hash-link" href="#template">#</a></h5>
 <p>The <code>template</code> caching strategy is more complex but flexible.  </p>
 
-<p>The idea is akin to generating logic-less handlebars template from your React components and then use string replace to process the template with different props.</p>
+<p>The idea is akin to generating logic-less handlebars templates from your React components and then use string Replace to process the template with different props.</p>
 
 <p>If you have this component:</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">Hello</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
@@ -1220,7 +1220,7 @@ your web-server framework, here in this tutorial we will demonstrate how to use 
 <p>We cache this template html using the tokenized props as cache key.  When we need to render the same component with a different props later, we can just lookup the template from cache and use string replace to apply the values:</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">cachedTemplateHtml</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span> <span class="sr">/@0@/g</span><span class="p">,</span> <span class="nx">props</span><span class="p">.</span><span class="nx">name</span> <span class="p">).</span><span class="nx">replace</span><span class="p">(</span> <span class="sr">/@1@/g</span><span class="p">,</span> <span class="nx">props</span><span class="p">.</span><span class="nx">message</span> <span class="p">);</span>
 </code></pre></div>
-<p>That&#39;s the gist of the template strategy.  Of course there are many small details such as handling the encoding of special characters, preserving props that can&#39;t be tokenized, avoid tokenizing non-string props, or preserving <code>data-reactid</code> and <code>data-react-checksum</code>.</p>
+<p>That&#39;s the gist of the template strategy.  Of course there are many small details such as handling the encoding of special characters, preserving props that can&#39;t be tokenized, avoiding tokenizing non-string props, or preserving <code>data-reactid</code> and <code>data-react-checksum</code>.</p>
 
 <p>To specify a component to be cached with the <code>template</code> strategy:</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">cacheConfig</span> <span class="o">=</span> <span class="p">{</span>

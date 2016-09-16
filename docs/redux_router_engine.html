@@ -776,7 +776,7 @@
       <ul><li>
     
 
-    <a href="/docs/server_side_render_cache.html"> &nbsp; Server Side Render Caching & Profiling</a>
+    <a href="/docs/server_side_render_cache.html"> &nbsp; Server Side Render Caching + Profiling</a>
 
     
       </li></ul>
@@ -1162,7 +1162,7 @@
 
 <ul>
 <li><code>routes</code> - <strong>required</strong> The react-router routes</li>
-<li><code>createReduxStore</code> - <strong>required</strong> async callback that returns a promise resolving to the Redux store
+<li><code>createReduxStore</code> - <strong>required</strong> async callback that returns a promise resolving to the Redux store.
 
 <ul>
 <li>It should take <code>(req, match)</code> arguments where match is react-router&#39;s match result.</li>
@@ -1196,14 +1196,14 @@
 </ul></li>
 </ul>
 
-<p>If everything worked out, then it returns a promise resolving to:</p>
+<p>If rendering the route is a success, then it returns a promise resolving to:</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="nx">status</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span>
   <span class="nx">html</span><span class="o">:</span> <span class="c1">// string from React renderToString,</span>
   <span class="nx">prefetch</span><span class="o">:</span> <span class="c1">// string from stringifyPreloadedState</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>If error occured, then it returns a promise resolving to:</p>
+<p>If an error occured, then it returns a promise resolving to:</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="nx">status</span><span class="o">:</span> <span class="nx">react</span><span class="o">-</span><span class="nx">router</span> <span class="nx">status</span> <span class="nx">or</span> <span class="mi">500</span><span class="p">,</span>
   <span class="nx">message</span><span class="o">:</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">,</span>

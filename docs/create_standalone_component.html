@@ -776,7 +776,7 @@
       <ul><li>
     
 
-    <a href="/docs/server_side_render_cache.html"> &nbsp; Server Side Render Caching & Profiling</a>
+    <a href="/docs/server_side_render_cache.html"> &nbsp; Server Side Render Caching + Profiling</a>
 
     
       </li></ul>
@@ -1124,20 +1124,20 @@
 </code></pre></div>
 <p>Fill out the Electrode generator-electrode-component with your information.</p>
 
-<p>Open the application up with your favorite text editor. We will start with a fast high level view of the most important files in your component:</p>
+<p>Open the application up with your favorite text editor. We&#39;ll start with a fast high level view of the most important files in your component:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">  demo
-    A live demo of your component. You can play with it&#39;s integration in real
+    A live demo of your component. You can play with its integration in real
     time. This folder contains the .example files which you can customize to
     demonstrate the default state of your components when mounted in the
     playground.
 
   node_modules
     Other Javascript files contained in modules that we will use in this
-    application, including Electrode modules that create your out-the-box
+    application, including Electrode modules that create your out-of-the-box
     Universal app.
 
   src
-    Where all our component&#39;s source code lives, in their respective files.
+    Where all our components&#39; source code lives, in their respective files.
     Non-universal apps might normally call this the “client” folder, but
     since our app code will run both on the client and server, via server
     side rendering, we call this folder &quot;src&quot;.
@@ -1161,10 +1161,10 @@
 
   gulpfile.js
     Gulp is a Javascript build tool that lets us automate tasks and the
-    gulpfile.js is where we define those tasks. We like it&#39;s simple syntax
+    gulpfile.js is where we define those tasks. We like its simple syntax
     and the increased productivity from using an intuitive task runner.
 </code></pre></div>
-<p>We are going to quickly and carefully add the code below to scaffold out our Resource List and focus on the capabilities of yo generator-electrode-component. Navigate to <code>&lt;your-awesome-component&gt;/demo/examples/your-awesome-component.example</code>. Between your component tag, copy, paste and save the code below into this file:</p>
+<p>We&#39;re going to quickly and carefully add the code below to scaffold out our Resource List and focus on the capabilities of yo generator-electrode-component. Navigate to <code>&lt;your-awesome-component&gt;/demo/examples/your-awesome-component.example</code>. Between your component tag, copy, paste and save the code below into this file:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">  &lt;YourAwesomeComponent
   -insert code below here-
                     /&gt;.
@@ -1184,7 +1184,7 @@
   <span class="p">{</span><span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/UdhbKO&quot;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;wizard&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">12</span><span class="p">}</span>
 <span class="p">]}</span>
 </code></pre></div>
-<p>Now, the fun part! We will be building out <code>your-awesome-component</code> and adding two sub-components (or dumb components). Trust me, it will be worth it.</p>
+<p>Now, the fun part! We&#39;ll be building out <code>your-awesome-component</code> and adding two sub-components (or dumb components). Trust me, it will be worth it.</p>
 
 <p>In your <code>&lt;your-awesome-component&gt;/src/components/your-awesome-component.jsx</code>, delete what it inside and copy, paste and save the code below into this file. Change all references from the literal <code>your-awesome-component or YourAwesomeComponent</code> to your actual component name:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">PropTypes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
@@ -1425,7 +1425,7 @@
   <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
-<p>Let&#39;s also add some style elements using <a href="https://github.com/css-modules/css-modules">CSS modules</a> to create a dynamic application. In your <code>&lt;your-awesome-component&gt;/src/style/your-awesome-component.css</code>, delete what it inside and copy, paste and save the code below into this file:</p>
+<p>Let&#39;s also add some style elements using <a href="https://github.com/css-modules/css-modules">CSS modules</a> to create a dynamic application. In your <code>&lt;your-awesome-component&gt;/src/style/your-awesome-component.css</code>, delete what it says inside and copy, paste and save the code below into this file:</p>
 <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@import</span> <span class="nt">url</span><span class="o">(//</span><span class="nt">netdna</span><span class="nc">.bootstrapcdn.com</span><span class="o">/</span><span class="nt">font-awesome</span><span class="o">/</span><span class="nt">3</span><span class="nc">.2.1</span><span class="o">/</span><span class="nt">css</span><span class="o">/</span><span class="nt">font-awesome</span><span class="nc">.css</span><span class="o">)</span><span class="p">;</span>
 
 <span class="nt">body</span> <span class="p">{</span>
@@ -1547,7 +1547,7 @@
 <p>Now run it and explore the live demo!</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nv">$ </span>gulp build <span class="o">&amp;&amp;</span> gulp demo
 </code></pre></div>
-<p>In the demo, you will see first see a Guest List header with a checkbox listing all of our resources, now referred to as Friends:</p>
+<p>In the demo, you will first see a Guest List header with a checkbox listing all of our resources, now referred to as Friends:</p>
 
 <p><img src="/img/house-party.png" alt="resource-list-1"></p>
 
@@ -1555,7 +1555,7 @@
 
 <p><img src="/img/resource-list-03.png" alt="resource-list-2"></p>
 
-<p>Walmartlabs believes that testing is critical to writing great, high performant code. This includes unit testing at both the component and application level. For your component, we are using <a href="https://mochajs.org/">Mocha</a>, a Javascript testing framework that is perfect for running async tests, with <a href="http://airbnb.io/enzyme/docs/guides/mocha.html">Enzyme</a>, airbnb&#39;s awesome testing utility for React.</p>
+<p>WalmartLabs believes that testing is critical to writing great, high performance code. This includes unit testing at both the component and application level. For your component, we are using <a href="https://mochajs.org/">Mocha</a>, a Javascript testing framework that is perfect for running async tests, with <a href="http://airbnb.io/enzyme/docs/guides/mocha.html">Enzyme</a>, airbnb&#39;s awesome testing utility for React.</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nv">$ </span>gulp check
 </code></pre></div>
 <p>One of the final steps to Creating a Standalone Component is writing the correct documentation, in the form of component.json and component.md. The Electrode team has automated this step for you, using <a href="https://github.com/electrode-io/electrode-docgen">Electrode-Docgen</a>. This is a custom metadata extractor for the Electrode framework. The commands have been built into the tasks of <code>&lt;your-awesome-component&gt;/gulpfile.js</code>:</p>
