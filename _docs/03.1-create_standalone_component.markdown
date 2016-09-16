@@ -63,9 +63,9 @@ Now that we have basic structure of the component. Lets build a sample component
 
 1. [Develop couple of low-level components](#develop-couple-of-low-level-components)
 2. [Develop helpers for the components](#develop-helpers-for-the-components)
-3. [Develop tests for the above components](#develop-tests-for-the-above-components)
-4. [Develop styles using CSS modules](#develop-styles-using-css-modules)
-5. [Develop main high-level component](#develop-main-high-level-component)
+3. [Develop styles using CSS modules](#develop-styles-using-css-modules)
+4. [Develop main high-level component](#develop-main-high-level-component)
+5. [Develop tests for the above components](#develop-tests-for-the-above-components)
 6. [Add Demo data](#Add-Demo-data)
 7. [Build and Demo the component](#build-and-demo-the-component)
 8. [Generating documentation](#generating-documentation)
@@ -235,14 +235,6 @@ In `src` create a folder titled `helpers` with file titled `graph-styles.js` ins
     }
     }
   };
-```
-
-###Develop tests for the above components
-
-WalmartLabs believes that testing is critical to writing great, high performance code. This includes unit testing at both the component and application level. For your component, we are using [Mocha] (https://mochajs.org/), a Javascript testing framework that is perfect for running async tests, with [Enzyme] (http://airbnb.io/enzyme/docs/guides/mocha.html), airbnb's awesome testing utility for React.
-
-```bash
-  $ gulp check
 ```
 
 ###Develop styles using CSS modules
@@ -499,6 +491,13 @@ Last edit! In your `<your-awesome-component>index.js`, add the two lines below:
   export { default as RenderFriend } from "./components/render-friend";
   export { default as GuestList } from "./components/guest-list";
 
+```
+###Develop tests for the above components
+
+WalmartLabs believes that testing is critical to writing great, high performance code. This includes unit testing at both the component and application level. For your component, we are using [Mocha] (https://mochajs.org/), a Javascript testing framework that is perfect for running async tests, with [Enzyme] (http://airbnb.io/enzyme/docs/guides/mocha.html), airbnb's awesome testing utility for React.
+
+```bash
+  $ gulp check
 ```
 
 ###Add Demo data.
