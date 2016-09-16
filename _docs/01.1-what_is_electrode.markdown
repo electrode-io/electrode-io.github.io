@@ -12,7 +12,7 @@ The heart of the platform is [Electrode Archetypes](https://github.com/electrode
 **It only takes a minute to your new Electrode application up and a few more minutes to deploy to the cloud [Getting Started: Quick Guide](quick_guide.html).**
 
 ### Stand Alone Modules: Optimize Where You Want
-As part of the Electrode Platform, we have a number of modules that each do one specific task. Anything from [server-side render caching](server_side_render_cache.html) to [flexible configuration management](confippet.html). These modules can be used independently of the platform, and you can [learn more about integrating them into your existing apps](stand_alone_modules.html).
+As part of the Electrode Platform, we have a number of modules that each do one specific task. Anything from [server-side render caching](server_side_render_cache.html) to [flexible configuration management](confippet.html). These modules can be used independently of Electrode Core, which means you can [integrate them into your existing apps](stand_alone_modules.html).
 
 **Start using these modules in your existing application with our [guide](stand_alone_modules.html).**
 
