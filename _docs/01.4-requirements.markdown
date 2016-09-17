@@ -4,7 +4,7 @@ permalink: docs/requirements.html
 toplevel: "Getting Started: Quick Guide"
 ---
 
-First, let's quickly check your development environment. You will need to have at least [NodeJS](https://nodejs.org) v4.2 installed in your machine. You will also need to have the text editor of your choice downloaded with command line tools installed. Also, install [Gulp] (https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md), a Javascript build tool that lets us automate tasks. We like it's simple syntax and the increased productivity from using an intuitive task runner.
+First, let's quickly check your development environment. You will need to have at least [NodeJS](https://nodejs.org) v4.2 installed in your machine. You will also need to have the text editor of your choice downloaded with command line tools installed. Also install [Gulp] (https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md), a Javascript build tool that lets us automate tasks. We like its simple syntax and the increased productivity from using an intuitive task runner.
 
 To generate and deploy your awesome Electrode app in under five minutes, you will need to already have existing [Heroku](https://signup.heroku.com/dc) and [Github](https://github.com/) accounts with the respective CLI tools installed in your machine and login capability.
 

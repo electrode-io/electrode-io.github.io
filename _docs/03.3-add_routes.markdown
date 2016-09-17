@@ -30,7 +30,7 @@ Navigate to `<your-awesome-component>/client/routes.jsx`. Copy, paste and save t
   );
 ```
 
-Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existing code by copy, pasting and saving the code below:
+Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existing code by copying, pasting and saving the code below:
 
 ```javascript
   import React, { Component, PropTypes } from "react";
