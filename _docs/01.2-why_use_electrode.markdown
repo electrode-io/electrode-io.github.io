@@ -24,9 +24,9 @@ lot of manual configuration.
 
 We serve millions of customers a day, and performance is vital to our business.
 React's server-side rendering has the potential to improve performance and SEO,
-but it's difficult to make it fast on a large scale. We needed a platform with
-server-side rendering built in, with a default configuration that's optimized
-for performance.
+but it's difficult to make it fast. We needed a platform with server-side
+rendering built in, with a default configuration that's optimized for
+performance.
 
 ### Startup and Deployment
 
