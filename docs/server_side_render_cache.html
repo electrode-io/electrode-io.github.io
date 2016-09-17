@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Server Side Render Caching + Profiling | Electrode</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:title" content="Server Side Render Caching + Profiling | Electrode">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://electrode-io.github.io//docs/server_side_render_cache.html">
+  <meta property="og:image" content="https://electrode-io.github.io/img/logo_og.png">
+  <meta property="og:description" content="Universal React and Node Applications simplified, performant, and reusable.">
+  <meta property="fb:app_id" content="623268441017527">
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="Electrode" href="https://electrode-io.github.io/feed.xml">
+
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/electrode.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+
+  <script src="//use.typekit.net/vqa1hcx.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <!--[if lte IE 8]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/es5-shim.min.js"></script>
+  <script src="/js/es5-sham.min.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="nav-main">
+      <div class="wrap">
+        <a class="nav-home" href="/index.html">
+          <img class="nav-logo" src="/img/electrode-02.png" width="45" height="45" style="margin-bottom: 5px;">
+          electrode
+        </a>
+
+        <ul class="nav-site nav-site-internal">
+          <li><a href="/docs/what_is_electrode.html" class="active">docs</a></li>
+          <!--<li><a href="/support.html">Support</a></li>-->
+        </ul>
+        <ul class="nav-site nav-site-external">
+          <li><a href="https://github.com/electrode-io">GitHub</a></li>
+          <li><a href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+    <section class="content wrap documentationContent">
+  <div class="nav-docs">
+  
+    <div class="nav-docs-section">
+      <h3>Overview</h3>
+      
+        <ul>
+          
+
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/what_is_electrode.html"> &nbsp; What is Electrode?</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/why_use_electrode.html"> &nbsp; Why Use Electrode?</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/requirements.html"> &nbsp; Requirements</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+        </ul>
+      
+    </div>
+  
+    <div class="nav-docs-section">
+      <h3>Getting Started</h3>
+      
+        
+          <h5>Quick Start</h5>
+          <ul>
+            
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/get_started.html"> &nbsp; Get Started</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/build_component.html"> &nbsp; Build Component</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/deploy_app.html"> &nbsp; Deploy Your App</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/whats_inside.html"> &nbsp; What's Inside</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+          </ul>
+        
+          <h5>Intermediate</h5>
+          <ul>
+            
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/create_reusable_component.html"> &nbsp; Create a Reusable Component</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/build_server_plugin.html"> &nbsp; Build a Server Plugin</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/add_routes.html"> &nbsp; Add Routes</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/server_config.html"> &nbsp; Server Config</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/more_deployments.html"> &nbsp; More Deployments</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/docker.html"> &nbsp; Docker</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/kubernetes.html"> &nbsp; Kubernetes</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+          </ul>
+        
+          <h5>Advanced</h5>
+          <ul>
+            
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/stand_alone_modules.html"> &nbsp; Stand Alone Modules</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/confippet.html"> &nbsp; Confippet</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/above_fold_rendering.html"> &nbsp; Above The Fold Rendering</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/server_side_render_cache.html" class="active"> &nbsp; Server Side Render Caching + Profiling</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/stateless_csrf_validation.html"> &nbsp; Stateless CSRF Validation</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/redux_router_engine.html"> &nbsp; Redux Router Engine</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/electrode_tools.html"> &nbsp; Powerful Electrode Tools</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/electrify.html"> &nbsp; Electrify</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/electrode_explorer.html"> &nbsp; Electrode Explorer</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/community.html"> &nbsp; Community</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+          </ul>
+        
+      
+    </div>
+  
+    <div class="nav-docs-section">
+      <h3>Resources</h3>
+      
+        <ul>
+          
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/faq.html"> &nbsp; FAQs</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/further_reading.html"> &nbsp; Further Reading</a>
+
+    
+    </li>
+  
+
+
+        </ul>
+      
+    </div>
+  
+
+
+  <!-- Tips Nav -->
+  <!-- 
+    <div class="nav-docs-section">
+      <h3>Tips</h3>
+      <ul>
+        
+          <li>
+            <a href="/tips/introduction.html">Introduction</a>
+          </li>
+        
+      </ul>
+    </div>
+   -->
+
+  <!-- Contributing Nav -->
+  <!-- 
+    <div class="nav-docs-section">
+      <h3>Contributing</h3>
+      <ul>
+        
+          <li>
+            <a href="/contributing/design-principles.html">Design Principles</a>
+          </li>
+        
+      </ul>
+    </div>
+   -->
+</div>
+
+
+  <div class="inner-content">
+    <a class="edit-page-link" href="https://github.com/electrode-io/electrode-io.github.io/tree/develop/_docs/04.1.3-server_side_render_cache.markdown" target="_blank">Edit on GitHub</a>
+    <h1>
+      Server Side Render Caching + Profiling
+    </h1>
+    <div class="subHeader"></div>
+
+    <p>Optimize React SSR with profiling and component caching. The
+<a href="https://github.com/electrode-io/electrode-react-ssr-caching">electrode-react-ssr-caching</a> module supports profiling React Server Side Rendering time
+to enable component caching to help you speed up Server Side Rendering of your components.</p>
+
+<p><a href="https://github.com/electrode-io/electrode-react-ssr-caching">electrode-react-ssr-caching</a> module can be used a <em>standalone</em> module and is <em>agnostic</em> of
+your web-server framework. In this tutorial we will demonstrate how to use this module in Electrode, Express.js and Hapi.js applications.</p>
+<h2><a class="anchor" name="module-electrode-react-ssr-caching"></a>Module: <a href="https://github.com/electrode-io/electrode-react-ssr-caching">electrode-react-ssr-caching</a> <a class="hash-link" href="#module-electrode-react-ssr-caching">#</a></h2><h3><a class="anchor" name="install-via-npm"></a>Install via <code>npm</code> <a class="hash-link" href="#install-via-npm">#</a></h3><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install --save electrode-react-ssr-caching
+</code></pre></div><h3><a class="anchor" name="example-applications"></a>Example Applications <a class="hash-link" href="#example-applications">#</a></h3>
+<ul>
+<li><p><a href="https://github.com/electrode-io/electrode-boilerplate-universal-react-node">Electrode Boilerplate</a></p></li>
+<li><p><a href="https://github.com/docs-code-examples-electrode-io/express-example-with-standalone-electrode-modules">Express Example with Standalone Modules</a></p></li>
+<li><p><a href="https://github.com/docs-code-examples-electrode-io/hapijs-example-with-standalone-electrode-modules">Hapi Example with Standalone Modules</a></p></li>
+</ul>
+<h2><a class="anchor" name="usage"></a>Usage <a class="hash-link" href="#usage">#</a></h2><h4><a class="anchor" name="profiling"></a>Profiling <a class="hash-link" href="#profiling">#</a></h4>
+<p>You can use this module to inspect the time each component took to render.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">SSRCaching</span> <span class="nx">from</span> <span class="s2">&quot;electrode-react-ssr-caching&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">renderToString</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react-dom/server&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">MyComponent</span> <span class="nx">from</span> <span class="s2">&quot;mycomponent&quot;</span><span class="p">;</span>
+
+<span class="c1">// First you should render your component in</span>
+<span class="c1">// a loop to prime the JS engine (i.e: V8 for NodeJS)</span>
+<span class="k">for</span><span class="p">(</span> <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span> <span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">renderToString</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">MyComponent</span> <span class="o">/&gt;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">SSRCaching</span><span class="p">.</span><span class="nx">clearProfileData</span><span class="p">();</span>
+<span class="nx">SSRCaching</span><span class="p">.</span><span class="nx">enableProfiling</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">html</span> <span class="o">=</span> <span class="nx">renderToString</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">MyComponent</span> <span class="o">/&gt;</span><span class="p">);</span>
+<span class="nx">SSRCaching</span><span class="p">.</span><span class="nx">enableProfiling</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">SSRCaching</span><span class="p">.</span><span class="nx">profileData</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+</code></pre></div><h4><a class="anchor" name="caching"></a>Caching <a class="hash-link" href="#caching">#</a></h4>
+<p>Once you&#39;ve determined the most expensive components with profiling, you can enable the component caching in this module to speed up SSR performance.</p>
+
+<p>The basic steps to enabling caching are:</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">SSRCaching</span> <span class="nx">from</span> <span class="s2">&quot;electrode-react-ssr-caching&quot;</span><span class="p">;</span>
+
+<span class="nx">SSRCaching</span><span class="p">.</span><span class="nx">enableCaching</span><span class="p">();</span>
+<span class="nx">SSRCaching</span><span class="p">.</span><span class="nx">setCachingConfig</span><span class="p">(</span><span class="nx">cacheConfig</span><span class="p">);</span>
+</code></pre></div>
+<p>Where <code>cacheConfig</code> contains information on what component to apply caching.  See below for details.</p>
+<h5><a class="anchor" name="cacheconfig"></a>cacheConfig <a class="hash-link" href="#cacheconfig">#</a></h5>
+<p>SSR component caching was first demonstrated in <a href="https://www.youtube.com/watch?v=PnpfGy7q96U">Sasha Aickin&#39;s talk</a>.</p>
+
+<p>His demo requires each component to provide a function for generating the cache key.</p>
+
+<p>Here we implemented two cache key generation strategies: <code>simple</code> and <code>template</code>.</p>
+
+<p>You are required to pass in the <code>cacheConfig</code> to tell this module what component to apply caching.</p>
+
+<p>For example:</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">cacheConfig</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;Component1&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">strategy</span><span class="o">:</span> <span class="s2">&quot;simple&quot;</span><span class="p">,</span>
+      <span class="nx">enable</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Component2&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">strategy</span><span class="o">:</span> <span class="s2">&quot;template&quot;</span><span class="p">,</span>
+      <span class="nx">enable</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">SSRCaching</span><span class="p">.</span><span class="nx">setCachingConfig</span><span class="p">(</span><span class="nx">cacheConfig</span><span class="p">);</span>
+</code></pre></div><h4><a class="anchor" name="caching-strategies"></a>Caching Strategies <a class="hash-link" href="#caching-strategies">#</a></h4><h5><a class="anchor" name="simple"></a>simple <a class="hash-link" href="#simple">#</a></h5>
+<p>The <code>simple</code> caching strategy is basically doing a <code>JSON.stringify</code> on the component&#39;s props.  You can also specify a callback in <code>cacheConfig</code> to return the key.</p>
+
+<p>For example:</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">cacheConfig</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">Component1</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">strategy</span><span class="o">:</span> <span class="s2">&quot;simple&quot;</span><span class="p">,</span>
+      <span class="nx">enable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">genCacheKey</span><span class="o">:</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>This strategy is not very flexible.  You need a cache entry for each different props.  However it requires very little processing time.</p>
+<h5><a class="anchor" name="template"></a>template <a class="hash-link" href="#template">#</a></h5>
+<p>The <code>template</code> caching strategy is more complex but flexible.  </p>
+
+<p>The idea is akin to generating logic-less handlebars templates from your React components and then use string Replace to process the template with different props.</p>
+
+<p>If you have this component:</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">Hello</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}.</span>  <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>And you render it with props:</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;How&#39;re you?&quot;</span> <span class="p">}</span>
+</code></pre></div>
+<p>You get back HTML string:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div&gt;</span>Hello, <span class="nt">&lt;span&gt;</span>Bob<span class="nt">&lt;/span&gt;</span>.  <span class="nt">&lt;span&gt;</span>How<span class="ni">&amp;#x27;</span>re you?<span class="nt">&lt;/span&gt;&lt;/div&gt;</span>
+</code></pre></div>
+<p>Now if you replace values in props with tokens, and you remember that <code>@0@</code> refers to <code>props.name</code> and <code>@1@</code> refers to <code>props.message</code>:</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">tokenProps</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;@0@&quot;</span><span class="p">,</span> <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;@1@&quot;</span> <span class="p">}</span>
+</code></pre></div>
+<p>You get back HTML string that could be akin to a handlebars template:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div&gt;</span>Hello, <span class="nt">&lt;span&gt;</span>@0@<span class="nt">&lt;/span&gt;</span>.  <span class="nt">&lt;span&gt;</span>@1@<span class="nt">&lt;/span&gt;&lt;/div&gt;</span>
+</code></pre></div>
+<p>We cache this template html using the tokenized props as cache key.  When we need to render the same component with a different props later, we can just lookup the template from cache and use string replace to apply the values:</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">cachedTemplateHtml</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span> <span class="sr">/@0@/g</span><span class="p">,</span> <span class="nx">props</span><span class="p">.</span><span class="nx">name</span> <span class="p">).</span><span class="nx">replace</span><span class="p">(</span> <span class="sr">/@1@/g</span><span class="p">,</span> <span class="nx">props</span><span class="p">.</span><span class="nx">message</span> <span class="p">);</span>
+</code></pre></div>
+<p>That&#39;s the gist of the template strategy.  Of course there are many small details such as handling the encoding of special characters, preserving props that can&#39;t be tokenized, avoiding tokenizing non-string props, or preserving <code>data-reactid</code> and <code>data-react-checksum</code>.</p>
+
+<p>To specify a component to be cached with the <code>template</code> strategy:</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">cacheConfig</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">Hello</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">strategy</span><span class="o">:</span> <span class="s2">&quot;template&quot;</span><span class="p">,</span>
+            <span class="nx">enable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">preserveKeys</span><span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;key1&quot;</span><span class="p">,</span> <span class="s2">&quot;key2&quot;</span> <span class="p">],</span>
+            <span class="nx">preserveEmptyKeys</span><span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;key3&quot;</span><span class="p">,</span> <span class="s2">&quot;key4&quot;</span> <span class="p">],</span>
+            <span class="nx">ignoreKeys</span><span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;key5&quot;</span><span class="p">,</span> <span class="s2">&quot;key6&quot;</span> <span class="p">],</span>
+            <span class="nx">whiteListNonStringKeys</span><span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;key7&quot;</span><span class="p">,</span> <span class="s2">&quot;key8&quot;</span> <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<ul>
+<li><code>preserveKeys</code> - List of keys that should not be tokenized.</li>
+<li><code>preserveEmptyKeys</code> - List of keys that should not be tokenized if they are empty string <code>&quot;&quot;</code></li>
+<li><code>ignoreKeys</code> - List of keys that should be completely ignored as part of the template cache key.</li>
+<li><code>whiteListNonStringKeys</code> - List of non-string keys that should be tokenized.</li>
+</ul>
+<h1><a class="anchor" name="api"></a>API <a class="hash-link" href="#api">#</a></h1><h3><a class="anchor" name="enableprofilingflag"></a><a href="#enableprofilingflag"><code>enableProfiling(flag)</code></a> <a class="hash-link" href="#enableprofilingflag">#</a></h3>
+<p>Enable profiling according to flag</p>
+
+<ul>
+<li><code>undefined</code> or <code>true</code> -  enable profiling</li>
+<li><code>false</code> - disable profiling</li>
+</ul>
+<h3><a class="anchor" name="enablecachingflag"></a><a href="#enablecachingflag"><code>enableCaching(flag)</code></a> <a class="hash-link" href="#enablecachingflag">#</a></h3>
+<p>Enable cache according to flag</p>
+
+<ul>
+<li><code>undefined</code> or <code>true</code> - enable caching</li>
+<li><code>false</code> - disable caching</li>
+</ul>
+<h3><a class="anchor" name="enablecachingdebugflag"></a><a href="#enablecachingdebugflag"><code>enableCachingDebug(flag)</code></a> <a class="hash-link" href="#enablecachingdebugflag">#</a></h3>
+<p>Enable cache debugging according to flag.</p>
+
+<blockquote>
+<p>Caching must be enabled for this to have any effect.</p>
+</blockquote>
+
+<ul>
+<li><code>undefined</code> or <code>true</code> - enable cache debugging</li>
+<li><code>false</code> - disable cache debugging</li>
+</ul>
+<h3><a class="anchor" name="setcachingconfigconfig"></a><a href="#setcachingconfigconfig"><code>setCachingConfig(config)</code></a> <a class="hash-link" href="#setcachingconfigconfig">#</a></h3>
+<p>Set caching config to <code>config</code>.</p>
+<h3><a class="anchor" name="stripurlprotocolflag"></a><a href="#stripurlprotocolflag"><code>stripUrlProtocol(flag)</code></a> <a class="hash-link" href="#stripurlprotocolflag">#</a></h3>
+<p>Remove <code>http:</code> or <code>https:</code> from prop values that are URLs according to flag.</p>
+
+<blockquote>
+<p>Caching must be enabled for this to have any effect.</p>
+</blockquote>
+
+<ul>
+<li><code>undefined</code> or <code>true</code> - strip URL protocol</li>
+<li><code>false</code> - don&#39;t strip</li>
+</ul>
+<h3><a class="anchor" name="shouldhashkeysflag-hashfn"></a><a href="#shouldhashkeysflaghashfn"><code>shouldHashKeys(flag, [hashFn])</code></a> <a class="hash-link" href="#shouldhashkeysflag-hashfn">#</a></h3>
+<p>Set whether the <code>template</code> strategy should hash the cache key and use that instead.</p>
+
+<blockquote>
+<p>Caching must be enabled for this to have any effect.</p>
+</blockquote>
+
+<ul>
+<li><code>flag</code>
+
+<ul>
+<li><code>undefined</code> or <code>true</code> - use a hash value of the cache key</li>
+<li><code>false</code> - don&#39;t use a hash valueo f the cache key</li>
+</ul></li>
+<li><code>hashFn</code> - optional, a custom callback to generate the hash from the cache key, which is passed in as a string
+
+<ul>
+<li>i.e. <code>function customHashFn(key) { return hash(key); }</code></li>
+</ul></li>
+</ul>
+
+<p>If no <code>hashFn</code> is provided, then <a href="https://github.com/google/farmhash">farmhash</a> is used if it&#39;s available, otherwise hashing is turned off.</p>
+<h3><a class="anchor" name="clearprofiledata"></a><a href="#clearprofiledata"><code>clearProfileData()</code></a> <a class="hash-link" href="#clearprofiledata">#</a></h3>
+<p>Clear profiling data</p>
+<h3><a class="anchor" name="clearcache"></a><a href="#clearcache"><code>clearCache()</code></a> <a class="hash-link" href="#clearcache">#</a></h3>
+<p>Clear caching data</p>
+<h3><a class="anchor" name="cacheentries"></a><a href="#cacheentries"><code>cacheEntries()</code></a> <a class="hash-link" href="#cacheentries">#</a></h3>
+<p>Get total number of cache entries</p>
+<h3><a class="anchor" name="cachehitreport"></a><a href="#cachehitreport"><code>cacheHitReport()</code></a> <a class="hash-link" href="#cachehitreport">#</a></h3>
+<p>Print out cache entries and number of hits each one has.</p>
+
+
+    
+
+
+
+
+
+
+
+
+<div class="docs-prevnext">
+  
+    <a class="docs-prev" href="/docs/above_fold_rendering.html">&larr; Prev</a>
+  
+  
+    <a class="docs-next" href="/docs/stateless_csrf_validation.html">Next &rarr;</a>
+  
+</div>
+
+
+  </div>
+</section>
+
+
+    <footer class="wrap">
+      <div class="left">
+        <a href="https://github.com/orgs/electrode-io/people" target="_blank">Acknowledgements</a>
+      </div>
+      <div class="right">
+        &copy; 2016 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
+        Apache-2.0 license.
+      </div>
+    </footer>
+  </div>
+  <div id="fb-root"></div>
+
+  <!--
+    TODO: analytics js, etc.
+  -->
+</body>
+</html>
