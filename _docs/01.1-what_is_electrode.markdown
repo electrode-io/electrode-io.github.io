@@ -16,6 +16,8 @@ The Electrode Platform is built on a number of modules that each do one specific
 
 **Start using these modules in your existing application with our [guide](stand_alone_modules.html).**
 
+<hr>
+
 ### Tools: Power Up Your Existing Applications
 The Electrode Platform also has tools that can be consumed by existing applications (though some of the tools require far less configuration to use with Electrode Core, while others are bundled with Electrode Core). There are currently two powerful tools: one which enables [discovery of reusable components](electrode_explorer.html) and another to help understand the [performance of JS bundles](electrify.html).
 
