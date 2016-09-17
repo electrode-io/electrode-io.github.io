@@ -4,23 +4,23 @@ permalink: docs/why_use_electrode.html
 toplevel: "Overview"
 ---
 
-At @WalmartLabs, we recently migrated our web site to a universal React/Node.js
-stack. Along the way, we hit a few stumbling blocks:
+At @WalmartLabs, we recently migrated our web site to a universal JavaScript
+stack using React/Node.js. Along the way, we hit a few stumbling blocks:
 
-* Reuse is hard. We reuse React components across brands, and maintaining
+* Code/UI reuse is hard. We reuse React components across brands, and maintaining
     thousands of flexible components is a huge headache.
-* We need all builds to be the same.
+* We need all application builds and deploys to be the same.
 * We have a lot of teams working on a lot of projects, and need to ensure
     a consistent level of quality.
-* Server-side rendering is slow and complicated to set up.
+* React server-side rendering is slow and complicated to set up.
 
 To solve these problems, we created the Electrode platform. Electrode consists
 of three pillars: Electrode Core, Electrode Modules, and Electrode Tools.
 
-*Electrode Core* provides a set of build scripts that get you started with a
-simple, consistent structure that follows modern best practices. When you're
-ready to take your app into production, Electrode automatically deploys to your
-favorite cloud provider.
+*Electrode Core* provides a set of modules that get you started with a simple,
+consistent structure that follows modern best practices. When you're ready to
+take your app into production, Electrode automatically deploys to your favorite
+cloud provider.
 
 *Electrode Modules* improve performance, efficiency, and security by adding
 features like above the fold rendering, configuration management, and cross-site
