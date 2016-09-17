@@ -4,8 +4,6 @@ permalink: docs/explore.html
 toplevel: "Getting Started: Quick Guide"
 ---
 
-###Explore More
-
 What does generate-electrode give you? Let's begin by navigating to `<your-awesome-app>/client/components/home.jsx`:
 
 {% raw  %}
