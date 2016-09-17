@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Quick Guide | Electrode</title>
+  <title>Deploy Your App | Electrode</title>
   <meta name="viewport" content="width=device-width">
-  <meta property="og:title" content="Quick Guide | Electrode">
+  <meta property="og:title" content="Deploy Your App | Electrode">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://electrode-io.github.io//docs/quick_guide.html">
+  <meta property="og:url" content="https://electrode-io.github.io//docs/deploy_app.html">
   <meta property="og:image" content="https://electrode-io.github.io/img/logo_og.png">
   <meta property="og:description" content="Universal React and Node Applications simplified, performant, and reusable.">
   <meta property="fb:app_id" content="623268441017527">
@@ -107,14 +107,6 @@
   
   
   
-  
-    <li>
-    
-
-    <a href="/docs/quick_guide.html" class="active"> &nbsp; Quick Guide</a>
-
-    
-    </li>
   
 
   
@@ -260,15 +252,10 @@
   
   
   
-
-  
-  
-  
-  
     <li>
     
 
-    <a href="/docs/build_more.html"> &nbsp; Build More</a>
+    <a href="/docs/get_started.html"> &nbsp; Get Started</a>
 
     
     </li>
@@ -281,7 +268,7 @@
     <li>
     
 
-    <a href="/docs/deploy.html"> &nbsp; Deploy</a>
+    <a href="/docs/build_component.html"> &nbsp; Build Component</a>
 
     
     </li>
@@ -294,7 +281,20 @@
     <li>
     
 
-    <a href="/docs/explore.html"> &nbsp; Explore More</a>
+    <a href="/docs/deploy_app.html" class="active"> &nbsp; Deploy Your App</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/whats_inside.html"> &nbsp; What's Inside</a>
 
     
     </li>
@@ -445,7 +445,7 @@
     <li>
     
 
-    <a href="/docs/create_standalone_component.html"> &nbsp; Create a Standalone Component</a>
+    <a href="/docs/create_reusable_component.html"> &nbsp; Create a Reusable Component</a>
 
     
     </li>
@@ -1040,98 +1040,101 @@
 
 
   <div class="inner-content">
-    <a class="edit-page-link" href="https://github.com/electrode-io/electrode-io.github.io/tree/develop/_docs/01.5-quick_guide.markdown" target="_blank">Edit on GitHub</a>
+    <a class="edit-page-link" href="https://github.com/electrode-io/electrode-io.github.io/tree/develop/_docs/02.5-deploy_app.markdown" target="_blank">Edit on GitHub</a>
     <h1>
-      Quick Guide
+      Deploy Your App
     </h1>
     <div class="subHeader"></div>
 
-    <h5><a class="anchor" name="quick-guide"></a>Quick Guide <a class="hash-link" href="#quick-guide">#</a></h5>
-<p>Install <a href="http://yeoman.io/">Yeoman</a>, <a href="http://gulpjs.com/">gulp</a> and the <a href="https://github.com/electrode-io/generator-electrode">Electrode Generator</a>:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo npm install -g yo gulp generator-electrode
+    <p>We&#39;re almost finished with our Quick Start. The final step is to deploy your-awesome-app and share it with your fellow developers using <a href="https://devcenter.heroku.com/categories/deployment">Heroku</a>. We have listed the steps below, but feel free to learn more about Heroku <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction">here</a>. These instructions assume you have a GitHub account. Navigate to your GitHub and create a new repo &#39;Your-Awesome-App&#39;. Hit the <code>clone your-awesome-repo</code> and follow the steps below in order:</p></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git init
+<span class="nv">$ </span>git add .
+<span class="nv">$ </span>git commit -m <span class="s1">&#39;first commit&#39;</span>
+<span class="nv">$ </span>git remote add origin https://github.com/your-Github-name/your-awesome-app.git
+<span class="nv">$ </span>git push -u origin master
 </code></pre></div>
-<p>Make a new directory for your awesome app.</p>
+<p>Navigate to the <a href="https://signup.heroku.com/dc">Heroku site</a> and set up a free account. This will help streamline our deployment process (we will do this several times).</p>
 
-<p>Then <a href="https://github.com/electrode-io/generator-electrode">generate</a> your new project:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>mkdir my-electrode-app
-<span class="nv">$ </span><span class="nb">cd </span>my-electrode-app
-<span class="nv">$ </span>yo electrode
+<p>Next, let&#39;s quickly deploy <code>your-awesome-app</code> from the command line. <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up%22">Click here</a> to download and install the Heroku CLI for your machine.</p>
+
+<p>When you are finished installing, log in using the email address and password you used when creating your Heroku account.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku login
 </code></pre></div>
-<p>Fill out the Electrode App generator with your information:</p>
-
-<p><img src="/img/generator-application.png" alt="generator-app"></p>
-
-<p>Run one simple command. Presto!</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gulp dev
+<p>Enter your Heroku credentials:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Email: your-example-email@walmartlabs.com
+Password:
 </code></pre></div>
-<p>Let&#39;s take a quick high level overview of our file structure and what <code>generator-electrode</code> gives you out the box. Read through our <a href="explore.html">Explore More</a> for a more detailed description.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">client
-  Contains your client side code and our favs, React, Redux + CSS modules.
-  |_components
-    This is the folder for your React components. We love React and how it helps
-    us to manage User Interface complexity. Read more in the Explore section.
+<p>You should see a terminal message <code>Logged in as your-example-email@walmartlabs.com</code>. Now, let&#39;s deploy!</p>
 
-  |_styles
-    This is the folder for your CSS files. We will use CSS Modules: a CSS file
-    in which all class names and animation names are scoped locally by default.
-    At WalmartLabs this helps us tackle big scale style issues by fixing the
-    issue of the global scope in CSS.
-
-  app.jsx
-    The entry point for the client. It contains powerful Electrode modules that
-    we will leverage as we continue to Build More.
-
-  routes.jsx
-    The shared routes between client and server are defined here in one place
-    and we use react-router.
-
-config
-    Your environment specific configuration code goes here. We have used a
-    versatile module here, our Electrode-Confippet, a preset config that you
-    can customize and extend.
-
-node_modules
-  Other Javascript files contained in modules that we will use in this
-  application, including Electrode modules that create your out-the-box
-  Univeresal app.
-
-server
-  Contains your server code. Electrode-Server gives you a powerful plugin
-  capable of SSR out the box. Learn more in the Explore section.
-  |_plugins
-  |_views
-
-.babelrc
-  Where we extend our app babel configuration to allow us to use the presets and
-  any additional babel settings.
-
-.editorconfig
-.gitattributes
-.gitignore
-   A file that tell git what files (or patterns) to ignore when you commit.
-
-.ismorphic-loader-config.json
-  A webpack loader, plugin and library to make NodeJS &#39;require&#39; understand
-  complex files like images when we are doing server side rendering.
-
-.travis.yml
-  A file where you can customize any process in the Travis default build
-  environment.
-
-gulpfile.js
-  A file that stores all your Gulp configurations. We will explore this more in
-  Getting Started: Intermediate.
-
-LICENSE
-package.json
-  Contains the metadata for your-awesome-app and a list of your dependencies to
-  install from npm when running npm install.
-
-README.md
-  Info you want users to know about your app (installation instructions,
-  licensing, contributors, etc.).
+<p>We need to specify the <a href="https://devcenter.heroku.com/articles/node-best-practices">version of node</a> you are using on your machine into our <code>package.json</code>. Add the code below the <code>author</code> section and before the <code>contributors</code> section of your <code>package.json</code>:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json">    <span class="s2">&quot;engines&quot;</span><span class="err">:</span> <span class="p">{</span>
+      <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;4.2.x&quot;</span>
+    <span class="p">}</span><span class="err">,</span>
 </code></pre></div>
-<p>Open <a href="http://localhost:3000">localhost:3000</a> in your browser. Hello Electrode! Let&#39;s continue to <a href="build_more.html">build</a> by modifying our component and deploying in <a href="build_more.html">Quick Start: Build More</a>.</p>
+<p>It should now look like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{
+  &quot;name&quot;: &quot;your-awesome-app&quot;,
+  &quot;version&quot;: &quot;0.0.0&quot;,
+  &quot;description&quot;: &quot;your-app-description&quot;,
+  &quot;homepage&quot;: &quot;your-awesome-app&quot;,
+  &quot;author&quot;: {
+    &quot;name&quot;: &quot;your-name&quot;,
+    &quot;email&quot;: &quot;your-email-address@email.com,
+    &quot;url&quot;: &quot;your-app-url&quot;
+  },
+  &quot;engines&quot;: {
+    &quot;node&quot;: &quot;4.2.x&quot;
+  },
+  &quot;contributors&quot;: [],
+  &quot;files&quot;: [
+    &quot;lib&quot;
+  ],
+  &quot;main&quot;: &quot;lib/index.js&quot;,
+  &quot;keywords&quot;: [
+    &quot;test&quot;
+  ],
+  &quot;repository&quot;: {
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;your-repo-url&quot;
+  },
+  &quot;license&quot;: &quot;Apache-2.0&quot;,
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;gulp test&quot;,
+    &quot;coverage&quot;: &quot;gulp check&quot;
+  },
+  &quot;dependencies&quot;: {
+    &quot;bluebird&quot;: &quot;^2.10.2&quot;,
+    &quot;electrode-router-resolver-engine&quot;: &quot;^1.0.0&quot;,
+    &quot;electrode-server&quot;: &quot;^1.0.0&quot;,
+    &quot;electrode-static-paths&quot;: &quot;^1.0.0&quot;,
+    &quot;lodash&quot;: &quot;^4.10.1&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;electrode-archetype-react-app&quot;: &quot;^1.0.0&quot;,
+    &quot;electrode-archetype-react-app-dev&quot;: &quot;^1.0.0&quot;,
+    &quot;gulp&quot;: &quot;^3.9.1&quot;
+  }
+}
+</code></pre></div>
+<p>Create an app on Heroku (which prepares Heroku to receive your source code). This will also create a git remote called heroku and generate a random name:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku create
+</code></pre></div>
+<p>Or you can also create an app that will generate a your app&#39;s name (if it is available):</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku create your-awesome-app
+</code></pre></div>
+<p>Deploy your code:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git push heroku master
+</code></pre></div>
+<p>Visit the app at the generated URL by using this command:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku open
+</code></pre></div>
+<p>One last thing we can do is define a <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile">Procfile</a>, a text file to explicitly declare what command can start your-awesome-app. Create a file name <code>Procfile</code> in your root directory. Add the code below:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">web: node index.js
+</code></pre></div>
+<p>Deploy this latest code:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git push heroku master
+</code></pre></div>
+<p>And... you did it! We will build even more in our <a href="create_standalone_component.html">Getting Started: Intermediate</a> and cover complex topics like routing, server plugins and other powerful deployment software.</p>
 
 
     
@@ -1145,8 +1148,10 @@ README.md
 
 <div class="docs-prevnext">
   
-    <a class="docs-prev" href="/docs/requirements.html">&larr; Prev</a>
+    <a class="docs-prev" href="/docs/build_component.html">&larr; Prev</a>
   
+  
+    <a class="docs-next" href="/docs/whats_inside.html">Next &rarr;</a>
   
 </div>
 
