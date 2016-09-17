@@ -1065,9 +1065,9 @@
 <li><p><a href="https://github.com/docs-code-examples-electrode-io/hapijs-example-with-standalone-electrode-modules">Hapi Example with Standalone Modules</a></p></li>
 </ul>
 <h2><a class="anchor" name="usage"></a>Usage <a class="hash-link" href="#usage">#</a></h2>
-<p>By default, the <a href="https://github.com/electrode-io/above-the-fold-only-server-render">above-the-fold-only-server-render</a> component is an exercise in simplicity; high-level it returns the child component.</p>
+<p>You can tell your electrode-react components to skip server side rendering and save on CPU render time, either by passing a <code>skip={true}</code> prop or by setting up <code>aboveTheFoldOnlyServerRender</code> in your app context and passing the component a <code>contextKey</code> prop.</p>
 
-<p>You can tell the component to skip server side rendering either by passing a <code>skip={true}</code> prop or by setting up <code>aboveTheFoldOnlyServerRender</code> in your app context and passing the component a <code>contextKey</code> prop.</p>
+<p>By default, the <a href="https://github.com/electrode-io/above-the-fold-only-server-render">above-the-fold-only-server-render</a> component is an exercise in simplicity; at a high-level it returns the child component.</p>
 
 <p>You can selectively choose to not server side render a component by passing a <code>skip prop</code>:</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">SomeComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
