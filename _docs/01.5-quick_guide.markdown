@@ -10,13 +10,6 @@ Install [Yeoman](http://yeoman.io/), [gulp](http://gulpjs.com/) and the [Electro
 
 ```bash
 $ sudo npm install -g yo gulp generator-electrode
-```
-
-Make a new directory for your awesome app.
-
-Then [generate](https://github.com/electrode-io/generator-electrode) your new project:
-
-```bash
 $ mkdir my-electrode-app
 $ cd my-electrode-app
 $ yo electrode
