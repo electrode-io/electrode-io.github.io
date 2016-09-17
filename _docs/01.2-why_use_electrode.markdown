@@ -35,6 +35,7 @@ Docker containers from scratch every time we start a project. We needed to start
 fast and deploy fast, with consistent structure and optimal configuration every
 time.
 
+### Three Pillars
 To solve these problems, we created the Electrode platform. Electrode consists
 of three pillars: Electrode Core, Electrode Modules, and Electrode Tools.
 
@@ -52,13 +53,16 @@ React/Node.js application—no need to migrate to Electrode Core.
 JavaScript bundles. Like the modules, our tools can be used with any
 React/Node.js app.
 
+### Future Investment
 As we continue to solve problems like these at @WalmartLabs, Electrode will
 continue to improve. Future enhancements will include more progressive web app
 features for mobile, bigger investments in performance, and much more. We're
 committed to open source, which means our investment is your investment.
 
+### Take a Look
 So let's go! Check out the developer environment
 [requirements](requirements.html), dive into [Electrode's features in
 detail](https://electrode-io.github.io/docs/what_is_electrode.html#features), or
 use our [Getting Started: Quick Guide](quick_guide.html) to start building now.
+
 
