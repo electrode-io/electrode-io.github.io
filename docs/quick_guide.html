@@ -19,7 +19,7 @@
 
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/electrode.css">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
 
   <script src="//use.typekit.net/vqa1hcx.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
@@ -268,7 +268,20 @@
     <li>
     
 
-    <a href="/docs/build_more.html"> &nbsp; Build More + Deploy</a>
+    <a href="/docs/build_more.html"> &nbsp; Build More</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/deploy.html"> &nbsp; Deploy</a>
 
     
     </li>
@@ -285,11 +298,6 @@
 
     
     </li>
-  
-
-  
-  
-  
   
 
   
@@ -429,6 +437,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -486,23 +499,6 @@
 
     <a href="/docs/more_deployments.html"> &nbsp; More Deployments</a>
 
-    
-    </li>
-  
-
-  
-  
-  
-  
-    <li>
-    
-      <ul><li>
-    
-
-    <a href="/docs/azure.html"> &nbsp; Azure</a>
-
-    
-      </li></ul>
     
     </li>
   
@@ -1051,18 +1047,23 @@
     <div class="subHeader"></div>
 
     <h5><a class="anchor" name="quick-guide"></a>Quick Guide <a class="hash-link" href="#quick-guide">#</a></h5>
-<p>Install <a href="http://yeoman.io/">Yeoman</a> and the <a href="https://github.com/electrode-io/generator-electrode">Electrode Generator</a>:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo npm install -g yo generator-electrode
+<p>Install <a href="http://yeoman.io/">Yeoman</a>, <a href="http://gulpjs.com/">gulp</a> and the <a href="https://github.com/electrode-io/generator-electrode">Electrode Generator</a>:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo npm install -g yo gulp generator-electrode
 </code></pre></div>
 <p>Make a new directory for your awesome app.</p>
 
 <p>Then <a href="https://github.com/electrode-io/generator-electrode">generate</a> your new project:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>yo electrode
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>mkdir my-electrode-app
+<span class="nv">$ </span><span class="nb">cd </span>my-electrode-app
+<span class="nv">$ </span>yo electrode
 </code></pre></div>
 <p>Fill out the Electrode App generator with your information:</p>
 
 <p><img src="/img/generator-application.png" alt="generator-app"></p>
 
+<p>Run one simple command. Presto!</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gulp dev
+</code></pre></div>
 <p>Let&#39;s take a quick high level overview of our file structure and what <code>generator-electrode</code> gives you out the box. Read through our <a href="explore.html">Explore More</a> for a more detailed description.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">client
   Contains your client side code and our favs, React, Redux + CSS modules.
@@ -1130,10 +1131,7 @@ README.md
   Info you want users to know about your app (installation instructions,
   licensing, contributors, etc.).
 </code></pre></div>
-<p>Run one simple command. Presto!</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gulp dev
-</code></pre></div>
-<p>Open <a href="http://localhost:3000">localhost:3000</a> in your browser. Hello Electrode!</p>
+<p>Open <a href="http://localhost:3000">localhost:3000</a> in your browser. Hello Electrode! Let&#39;s continue to <a href="build_more.html">build</a> by modifying our component and deploying in <a href="build_more.html">Quick Start: Build More</a>.</p>
 
 
     

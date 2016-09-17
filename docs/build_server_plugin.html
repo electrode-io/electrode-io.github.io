@@ -19,7 +19,7 @@
 
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/electrode.css">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
 
   <script src="//use.typekit.net/vqa1hcx.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
@@ -268,7 +268,20 @@
     <li>
     
 
-    <a href="/docs/build_more.html"> &nbsp; Build More + Deploy</a>
+    <a href="/docs/build_more.html"> &nbsp; Build More</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/deploy.html"> &nbsp; Deploy</a>
 
     
     </li>
@@ -285,11 +298,6 @@
 
     
     </li>
-  
-
-  
-  
-  
   
 
   
@@ -429,6 +437,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -486,23 +499,6 @@
 
     <a href="/docs/more_deployments.html"> &nbsp; More Deployments</a>
 
-    
-    </li>
-  
-
-  
-  
-  
-  
-    <li>
-    
-      <ul><li>
-    
-
-    <a href="/docs/azure.html"> &nbsp; Azure</a>
-
-    
-      </li></ul>
     
     </li>
   
@@ -1078,14 +1074,14 @@
   <span class="c1">//a very simple plugin</span>
   <span class="nx">exports</span><span class="p">.</span><span class="nx">register</span> <span class="o">=</span> <span class="p">(</span><span class="nx">server</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
-      <span class="kr">const</span> <span class="nx">friendsArr</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">friends</span><span class="o">:</span> <span class="p">[</span>
-        <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;electrode&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/CZ4wAF&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">12</span><span class="p">},</span>
-        <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;hapi&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/q9uIFW&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">12</span><span class="p">},</span>
-        <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;React&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/dL5MXT&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">12</span><span class="p">},</span>
-        <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Redux&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/L0mLmT&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">12</span><span class="p">},</span>
-        <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Webpack&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/2AV3Dn&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">12</span><span class="p">},</span>
-        <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;wizard&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/UdhbKO&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">12</span><span class="p">}</span>
-      <span class="p">]});</span>
+    <span class="kr">const</span> <span class="nx">friendsArr</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">friends</span><span class="o">:</span> <span class="p">[</span>
+      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;electrode&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/I9utJF&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">13</span><span class="p">},</span>
+      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;hapi&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/bEBi6G&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">13</span><span class="p">},</span>
+      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;React&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/xwbqlB&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">13</span><span class="p">},</span>
+      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Redux&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/MGQ3lp&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">13</span><span class="p">},</span>
+      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Webpack&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/zgxe8s&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">13</span><span class="p">},</span>
+      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;node&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/hxmCEE&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">13</span><span class="p">}</span>
+    <span class="p">]});</span>
 
       <span class="nx">server</span><span class="p">.</span><span class="nx">route</span><span class="p">({</span>
           <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>

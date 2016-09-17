@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Build More + Deploy | Electrode</title>
+  <title>Build More | Electrode</title>
   <meta name="viewport" content="width=device-width">
-  <meta property="og:title" content="Build More + Deploy | Electrode">
+  <meta property="og:title" content="Build More | Electrode">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://electrode-io.github.io//docs/build_more.html">
   <meta property="og:image" content="https://electrode-io.github.io/img/logo_og.png">
@@ -19,7 +19,7 @@
 
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/electrode.css">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
 
   <script src="//use.typekit.net/vqa1hcx.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
@@ -268,7 +268,20 @@
     <li>
     
 
-    <a href="/docs/build_more.html" class="active"> &nbsp; Build More + Deploy</a>
+    <a href="/docs/build_more.html" class="active"> &nbsp; Build More</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/deploy.html"> &nbsp; Deploy</a>
 
     
     </li>
@@ -285,11 +298,6 @@
 
     
     </li>
-  
-
-  
-  
-  
   
 
   
@@ -429,6 +437,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -486,23 +499,6 @@
 
     <a href="/docs/more_deployments.html"> &nbsp; More Deployments</a>
 
-    
-    </li>
-  
-
-  
-  
-  
-  
-    <li>
-    
-      <ul><li>
-    
-
-    <a href="/docs/azure.html"> &nbsp; Azure</a>
-
-    
-      </li></ul>
     
     </li>
   
@@ -1046,7 +1042,7 @@
   <div class="inner-content">
     <a class="edit-page-link" href="https://github.com/electrode-io/electrode-io.github.io/tree/develop/_docs/02.3-build_more.markdown" target="_blank">Edit on GitHub</a>
     <h1>
-      Build More + Deploy
+      Build More
     </h1>
     <div class="subHeader"></div>
 
@@ -1128,96 +1124,8 @@
 <p><strong>Site should look like the following screenshot</strong></p>
 
 <p><img src="http://i.imgur.com/nwEl64l.png" alt="Pastel"></p>
-<h3><a class="anchor" name="deploy"></a>Deploy <a class="hash-link" href="#deploy">#</a></h3>
-<p>We&#39;re almost finished. The final step is to deploy your-awesome-app and share it with your fellow developers using <a href="https://devcenter.heroku.com/categories/deployment">Heroku</a>. We have listed the steps below, but feel free to learn more about Heroku <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction">here</a>. These instructions assume you have a GitHub account. Navigate to your GitHub and create a new repo &#39;Your-Awesome-App&#39;. Hit the <code>clone your-awesome-repo</code> and follow the steps below in order:</p></p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git init
-<span class="nv">$ </span>git add .
-<span class="nv">$ </span>git commit -m <span class="s1">&#39;first commit&#39;</span>
-<span class="nv">$ </span>git remote add origin https://github.com/your-Github-name/your-awesome-app.git
-<span class="nv">$ </span>git push -u origin master
-</code></pre></div>
-<p>Navigate to the <a href="https://signup.heroku.com/dc">Heroku site</a> and set up a free account. This will help streamline our deployment process (we will do this several times).</p>
 
-<p>Next, let&#39;s quickly deploy <code>your-awesome-app</code> from the command line. <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up%22">Click here</a> to download and install the Heroku CLI for your machine.</p>
-
-<p>When you are finished installing, log in using the email address and password you used when creating your Heroku account.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku login
-</code></pre></div>
-<p>Enter your Heroku credentials:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Email: your-example-email@walmartlabs.com
-Password:
-</code></pre></div>
-<p>You should see a terminal message <code>Logged in as your-example-email@walmartlabs.com</code>. Now, let&#39;s deploy!</p>
-
-<p>We need to specify the <a href="https://devcenter.heroku.com/articles/node-best-practices">version of node</a> you are using on your machine into our <code>package.json</code>. Add the code below the <code>author</code> section and before the <code>contributors</code> section of your <code>package.json</code>:</p>
-<div class="highlight"><pre><code class="language-json" data-lang="json">    <span class="s2">&quot;engines&quot;</span><span class="err">:</span> <span class="p">{</span>
-      <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;4.2.x&quot;</span>
-    <span class="p">}</span><span class="err">,</span>
-</code></pre></div>
-<p>It should now look like this:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">{
-  &quot;name&quot;: &quot;your-awesome-app&quot;,
-  &quot;version&quot;: &quot;0.0.0&quot;,
-  &quot;description&quot;: &quot;your-app-description&quot;,
-  &quot;homepage&quot;: &quot;your-awesome-app&quot;,
-  &quot;author&quot;: {
-    &quot;name&quot;: &quot;your-name&quot;,
-    &quot;email&quot;: &quot;your-email-address@email.com,
-    &quot;url&quot;: &quot;your-app-url&quot;
-  },
-  &quot;engines&quot;: {
-    &quot;node&quot;: &quot;4.2.x&quot;
-  },
-  &quot;contributors&quot;: [],
-  &quot;files&quot;: [
-    &quot;lib&quot;
-  ],
-  &quot;main&quot;: &quot;lib/index.js&quot;,
-  &quot;keywords&quot;: [
-    &quot;test&quot;
-  ],
-  &quot;repository&quot;: {
-    &quot;type&quot;: &quot;git&quot;,
-    &quot;url&quot;: &quot;your-repo-url&quot;
-  },
-  &quot;license&quot;: &quot;Apache-2.0&quot;,
-  &quot;scripts&quot;: {
-    &quot;test&quot;: &quot;gulp test&quot;,
-    &quot;coverage&quot;: &quot;gulp check&quot;
-  },
-  &quot;dependencies&quot;: {
-    &quot;bluebird&quot;: &quot;^2.10.2&quot;,
-    &quot;electrode-router-resolver-engine&quot;: &quot;^1.0.0&quot;,
-    &quot;electrode-server&quot;: &quot;^1.0.0&quot;,
-    &quot;electrode-static-paths&quot;: &quot;^1.0.0&quot;,
-    &quot;lodash&quot;: &quot;^4.10.1&quot;
-  },
-  &quot;devDependencies&quot;: {
-    &quot;electrode-archetype-react-app&quot;: &quot;^1.0.0&quot;,
-    &quot;electrode-archetype-react-app-dev&quot;: &quot;^1.0.0&quot;,
-    &quot;gulp&quot;: &quot;^3.9.1&quot;
-  }
-}
-</code></pre></div>
-<p>Create an app on Heroku (which prepares Heroku to receive your source code). This will also create a git remote called heroku and generate a random name:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku create
-</code></pre></div>
-<p>Or you can also create an app that will generate a your app&#39;s name (if it is available):</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku create your-awesome-app
-</code></pre></div>
-<p>Deploy your code:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git push heroku master
-</code></pre></div>
-<p>Visit the app at the generated URL by using this command:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku open
-</code></pre></div>
-<p>One last thing we can do is define a <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile">Procfile</a>, a text file to explicitly declare what command can start your-awesome-app. Create a file name <code>Procfile</code> in your root directory. Add the code below:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">web: node index.js
-</code></pre></div>
-<p>Deploy this latest code:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git push heroku master
-</code></pre></div>
-<p>And... you did it! We will build even more in our <a href="create_standalone_component.html">Getting Started: Intermediate</a> and cover complex topics like routing, server plugins and other powerful deployment software.</p>
+<p>Let&#39;s jump to our next step where we will deploy Your Awesome App to <a href="deploy.html">Heroku</a>.</p>
 
 
     
@@ -1232,7 +1140,7 @@ Password:
 <div class="docs-prevnext">
   
   
-    <a class="docs-next" href="/docs/explore.html">Next &rarr;</a>
+    <a class="docs-next" href="/docs/deploy.html">Next &rarr;</a>
   
 </div>
 

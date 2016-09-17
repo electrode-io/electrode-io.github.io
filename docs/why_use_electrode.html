@@ -19,7 +19,7 @@
 
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/electrode.css">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
 
   <script src="//use.typekit.net/vqa1hcx.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
@@ -268,7 +268,20 @@
     <li>
     
 
-    <a href="/docs/build_more.html"> &nbsp; Build More + Deploy</a>
+    <a href="/docs/build_more.html"> &nbsp; Build More</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/deploy.html"> &nbsp; Deploy</a>
 
     
     </li>
@@ -285,11 +298,6 @@
 
     
     </li>
-  
-
-  
-  
-  
   
 
   
@@ -429,6 +437,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -486,23 +499,6 @@
 
     <a href="/docs/more_deployments.html"> &nbsp; More Deployments</a>
 
-    
-    </li>
-  
-
-  
-  
-  
-  
-    <li>
-    
-      <ul><li>
-    
-
-    <a href="/docs/azure.html"> &nbsp; Azure</a>
-
-    
-      </li></ul>
     
     </li>
   
@@ -1050,16 +1046,59 @@
     </h1>
     <div class="subHeader"></div>
 
-    <h3><a class="anchor" name="learn-more"></a>Learn More <a class="hash-link" href="#learn-more">#</a></h3>
-<p>You know us as the world’s largest retailer, but we’re also one of the world’s fastest growing <a href="www.walmartlabs.com">e-commerce</a> companies. <a href="www.github.com/electrode-io">Electrode</a> is the platform that powers the Walmart.com customer experience. When you use <a href="www.walmart.com">Walmart.com</a>, you use Electrode — so you know it’s battle tested!</p>
+    <blockquote>
+<p>If you&#39;re writing a universal React/Node.js application, Electrode is for you.</p>
+</blockquote>
 
-<p>We solve complex problems on an unimaginably big scale and build <a href="stand_alone_modules.html">awesome modules</a> that optimize performance and efficiency. <a href="what%20is%20electrode.html">Electrode</a> enforces modern web development best practices throughout the development cycle, encouraging clean, modular, reusable components while remaining easy to develop and deploy on.</p>
+<p>At @WalmartLabs, we recently migrated our web site to a universal JavaScript
+stack using React/Node.js, and along the way we hit a few stumbling blocks that
+might sound familiar if you&#39;ve worked on a large, complex web app before.</p>
+<h3><a class="anchor" name="codeui-reuse"></a>Code/UI Reuse <a class="hash-link" href="#codeui-reuse">#</a></h3>
+<p>We reuse React components across all of our brands, which means our developers
+need to be able to search through thousands of components, view their
+documentation and see them rendered, and use another developer&#39;s component
+secure in the knowledge that its structure and implementation are consistent
+with our standards. We needed a way to ensure that all components were built
+according to modern best practices, without slowing our developers down with a
+lot of manual configuration.</p>
+<h3><a class="anchor" name="server-side-performance"></a>Server-side Performance <a class="hash-link" href="#server-side-performance">#</a></h3>
+<p>We serve millions of customers a day, and performance is vital to our business.
+React&#39;s server-side rendering has the potential to improve performance and SEO,
+but it&#39;s difficult to make it fast. We needed a platform with server-side
+rendering built in, with a default configuration that&#39;s optimized for
+performance.</p>
+<h3><a class="anchor" name="startup-and-deployment"></a>Startup and Deployment <a class="hash-link" href="#startup-and-deployment">#</a></h3>
+<p>We don&#39;t have time to create an application structure, configuration files, and
+Docker containers from scratch every time we start a project. We needed to start
+fast and deploy fast, with consistent structure and optimal configuration every
+time.</p>
 
-<p>Electrode also supports isomorphic rendering/universal JavaScript, CSRF (Cross Site Request Forgery) protection, internationalization, component tooling, progressive web app standards, and everything developers need to successfully develop and deploy complex enterprise-scale React/Node.js applications.</p>
+<p>To solve these problems, we created the Electrode platform. Electrode consists
+of three pillars: Electrode Core, Electrode Modules, and Electrode Tools.</p>
 
-<p>We are continuing to improve Electrode—future enhancements will include more progressive web app features for mobile, bigger investments in performance, and much more. Learn about what inspires us and <a href="stand_alone_modules.html">read more about</a> the framework we are building.</p>
+<p><em>Electrode Core</em> provides a set of modules that get you started with a simple,
+consistent structure that follows modern best practices. When you&#39;re ready to
+take your app into production, Electrode automatically deploys to your favorite
+cloud provider.</p>
 
-<p>Let&#39;s go! Check out the developer environment <a href="requirements.html">requirements</a> and use our <a href="quick_guide.html">Getting Started: Quick Guide</a> to start building now.</p>
+<p><em>Electrode Modules</em> improve performance, efficiency, and security by adding
+features like above the fold rendering, configuration management, and cross-site
+request forgery detection. These modules can be used with your existing
+React/Node.js application—no need to migrate to Electrode Core.</p>
+
+<p><em>Electrode Tools</em> help organize reusable components and optimize large
+JavaScript bundles. Like the modules, our tools can be used with any
+React/Node.js app.</p>
+
+<p>As we continue to solve problems like these at @WalmartLabs, Electrode will
+continue to improve. Future enhancements will include more progressive web app
+features for mobile, bigger investments in performance, and much more. We&#39;re
+committed to open source, which means our investment is your investment.</p>
+
+<p>So let&#39;s go! Check out the developer environment
+<a href="requirements.html">requirements</a>, dive into <a href="https://electrode-io.github.io/docs/what_is_electrode.html#features">Electrode&#39;s features in
+detail</a>, or
+use our <a href="quick_guide.html">Getting Started: Quick Guide</a> to start building now.</p>
 
 
     

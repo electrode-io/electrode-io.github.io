@@ -19,7 +19,7 @@
 
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/electrode.css">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
 
   <script src="//use.typekit.net/vqa1hcx.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
@@ -268,7 +268,20 @@
     <li>
     
 
-    <a href="/docs/build_more.html"> &nbsp; Build More + Deploy</a>
+    <a href="/docs/build_more.html"> &nbsp; Build More</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/deploy.html"> &nbsp; Deploy</a>
 
     
     </li>
@@ -285,11 +298,6 @@
 
     
     </li>
-  
-
-  
-  
-  
   
 
   
@@ -429,6 +437,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -486,23 +499,6 @@
 
     <a href="/docs/more_deployments.html"> &nbsp; More Deployments</a>
 
-    
-    </li>
-  
-
-  
-  
-  
-  
-    <li>
-    
-      <ul><li>
-    
-
-    <a href="/docs/azure.html"> &nbsp; Azure</a>
-
-    
-      </li></ul>
     
     </li>
   
@@ -1050,7 +1046,7 @@
     </h1>
     <div class="subHeader"></div>
 
-    <p>First things first. Let&#39;s make our thing... a Thing! In this Getting Started: Intermediate guide, we’ll take some of the basics we explored in our <a href="quick_guide.html">Quick Start</a> and go further. We will make our resource list a dynamic list that is styled, tested, published and capable of being deployed with other deployment software like Azure, Docker and Kubernetes.</p>
+    <p>First things first. Let&#39;s make our thing... a Thing! In this Getting Started: Intermediate guide, we’ll take some of the basics we explored in our <a href="quick_guide.html">Quick Start</a> and go further. We will make our resource list a dynamic list that is styled, tested, published and capable of being deployed with other deployment software like Docker and Kubernetes.</p>
 
 <p>Again, we are leveraging <a href="http://yeoman.io/">Yeoman</a> to quick start the creation of our first stand alone component. We will globally install the Electrode <a href="https://github.com/electrode-io/generator-electrode-component">generator-electrode-component</a>:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install -g generator-electrode-component
@@ -1098,7 +1094,7 @@
 <p>Now that we have basic structure of the component. Lets build a sample component by following below steps.</p>
 
 <ol>
-<li><a href="#develop-couple-of-low-level-components">Develop couple of low-level components</a></li>
+<li><a href="#develop-couple-of-low-level-components">Develop a couple of low-level components</a></li>
 <li><a href="#develop-helpers-for-the-components">Develop helpers for the components</a></li>
 <li><a href="#develop-styles-using-css-modules">Develop styles using CSS modules</a></li>
 <li><a href="#develop-main-high-level-component">Develop main high-level component</a></li>
@@ -1109,7 +1105,7 @@
 </ol>
 
 <p>Trust me, it will be worth it.</p>
-<h3><a class="anchor" name="develop-couple-of-low-level-components"></a>Develop couple of low-level components <a class="hash-link" href="#develop-couple-of-low-level-components">#</a></h3>
+<h3><a class="anchor" name="develop-a-couple-of-low-level-components"></a>Develop a couple of low-level components <a class="hash-link" href="#develop-a-couple-of-low-level-components">#</a></h3>
 <p>Create a file titled: <code>&lt;your-awesome-component&gt;/src/components/guest-list.jsx</code>. Copy the code from below into this file:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
 
@@ -1333,7 +1329,7 @@
   <span class="k">content</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
   <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
   <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
-  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(//goo.gl/l01JZJ)</span><span class="p">;</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(//goo.gl/8f5GrX)</span><span class="p">;</span>
   <span class="k">background-position</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
   <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="m">95%</span><span class="p">;</span>
   <span class="k">background-repeat</span><span class="o">:</span> <span class="k">no-repeat</span><span class="p">;</span>
@@ -1480,7 +1476,7 @@
     <span class="p">};</span>
   <span class="p">}</span>
 
-  <span class="nx">yourAwesomeComponent</span><span class="p">(</span><span class="nx">invitees</span><span class="p">,</span> <span class="nx">party</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">houseParty</span><span class="p">(</span><span class="nx">invitees</span><span class="p">,</span> <span class="nx">party</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">party</span>
       <span class="o">?</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">yourAwesomeComponent</span><span class="p">}</span> <span class="nx">$</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">house</span><span class="p">}</span><span class="err">`</span>
       <span class="o">:</span> <span class="nx">styles</span><span class="p">.</span><span class="nx">house</span><span class="p">;</span>
@@ -1491,7 +1487,7 @@
     <span class="kr">const</span> <span class="nx">party</span> <span class="o">=</span> <span class="nx">invitees</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="nx">invitees</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">invitee</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">invitee</span><span class="p">.</span><span class="nx">invited</span><span class="p">).</span><span class="nx">length</span> <span class="o">&amp;&amp;</span>
       <span class="nx">invitees</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span>
     <span class="kr">const</span> <span class="p">{</span> <span class="nx">invite</span><span class="p">,</span> <span class="nx">intro</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">viewState</span><span class="p">(</span><span class="nx">view</span><span class="p">);</span>
-    <span class="kr">const</span> <span class="nx">yourAwesomeComponent</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">yourAwesomeComponent</span><span class="p">(</span><span class="nx">invitees</span><span class="p">,</span> <span class="nx">party</span><span class="p">);</span>
+    <span class="kr">const</span> <span class="nx">houseParty</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">houseParty</span><span class="p">(</span><span class="nx">invitees</span><span class="p">,</span> <span class="nx">party</span><span class="p">);</span>
 
     <span class="k">return</span> <span class="p">(</span>
       <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
@@ -1499,7 +1495,7 @@
           <span class="o">&lt;</span><span class="nx">GuestList</span> <span class="nx">invitees</span><span class="o">=</span><span class="p">{</span><span class="nx">invitees</span><span class="p">}</span> <span class="nx">toggleGuest</span><span class="o">=</span><span class="p">{(</span><span class="nx">invitee</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">toggleGuest</span><span class="p">(</span><span class="nx">invitee</span><span class="p">)}</span><span class="o">/&gt;</span><span class="p">}</span>
         <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">container</span><span class="p">}</span><span class="o">&gt;</span>
         <span class="p">{</span><span class="nx">intro</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">invitees</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">invitee</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">invitee</span><span class="p">.</span><span class="nx">invited</span><span class="p">).</span><span class="nx">length</span> <span class="o">&amp;&amp;</span> <span class="nx">message</span><span class="p">(</span><span class="nx">styles</span><span class="p">.</span><span class="nx">message</span><span class="p">)}</span>
-          <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">yourAwesomeComponent</span><span class="p">}</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">houseParty</span><span class="p">}</span><span class="o">&gt;</span>
             <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">room</span><span class="p">}</span><span class="o">&gt;</span>
               <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">renderFriends</span><span class="p">(</span><span class="nx">ourFriends</span><span class="p">,</span> <span class="nx">party</span><span class="p">)}</span>
             <span class="o">&lt;</span><span class="err">/div&gt;</span>
