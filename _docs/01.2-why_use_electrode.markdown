@@ -4,9 +4,13 @@ permalink: docs/why_use_electrode.html
 toplevel: "Overview"
 ---
 
+> If you're writing a universal React/Node.js application, Electrode is for you.
+
 At @WalmartLabs, we recently migrated our web site to a universal JavaScript
 stack using React/Node.js, and along the way we hit a few stumbling blocks that
 might sound familiar if you've worked on a large, complex web app before.
+
+### Code/UI Reuse
 
 We reuse React components across all of our brands, which means our developers
 need to be able to search through thousands of components, view their
@@ -16,15 +20,20 @@ with our standards. We needed a way to ensure that all components were built
 according to modern best practices, without slowing our developers down with a
 lot of manual configuration.
 
+### Server-side Performance
+
 We serve millions of customers a day, and performance is vital to our business.
 React's server-side rendering has the potential to improve performance and SEO,
-but it can be complicated to set up. We needed a platform with server-side
-rendering built in by default, so new projects would be optimized from day one.
+but it's difficult to make it fast on a large scale. We needed a platform with
+server-side rendering built in, with a default configuration that's optimized
+for performance.
 
-Configuration and deployment of a web app at this scale can get out of hand
-quickly. We needed tools to manage multiple complex configurations, deploy to
-multiple environments and hosts, and optimize the bundles we deliver to
-customers.
+### Startup and Deployment
+
+We don't have time to create an application structure, configuration files, and
+Docker containers from scratch every time we start a project. We needed to start
+fast and deploy fast, with consistent structure and optimal configuration every
+time.
 
 To solve these problems, we created the Electrode platform. Electrode consists
 of three pillars: Electrode Core, Electrode Modules, and Electrode Tools.
@@ -45,7 +54,8 @@ React/Node.js app.
 
 As we continue to solve problems like these at @WalmartLabs, Electrode will
 continue to improve. Future enhancements will include more progressive web app
-features for mobile, bigger investments in performance, and much more.
+features for mobile, bigger investments in performance, and much more. We're
+committed to open source, which means our investment is your investment.
 
 So let's go! Check out the developer environment
 [requirements](requirements.html) and use our [Getting Started: Quick
