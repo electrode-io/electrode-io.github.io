@@ -29,12 +29,7 @@ We will use your [Docker image](_docs/03.5.2-docker.markdown) from the "Deploy w
   EXPOSE 3000
   RUN mkdir -p /usr/src/app
   WORKDIR /usr/src/app
-  COPY package.json /usr/src/app
-  COPY server /usr/src/app/server
-  COPY client /usr/src/app/client
-  COPY config /usr/src/app/config
-  COPY gulpfile.js /usr/src/app
-  COPY .babelrc /usr/src/app
+  COPY . /usr/src/app
   RUN npm install
   RUN /usr/src/app/node_modules/.bin/gulp build
   CMD node server
