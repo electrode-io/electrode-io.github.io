@@ -38,11 +38,6 @@ To show all the containers on the system, run the command below:
 
 ```bash
   docker pull electrode/electrode-io
-
-Electrode has a [Dockerfile and Docker image](https://hub.docker.com/r/electrode/electrode-io/) built-in to expedite deployment. Simply:
-
-```bash
-  docker pull electrode/electrode-io
 ```
 
 Try the image in your docker container:
@@ -59,7 +54,6 @@ Copy the code from the container to your local machine for development:
 
 ```bash
 	docker cp <container_id>:/usr/src/app .
->>>>>>> upstream/develop
 ```
 
 Go to the app folder, you can stop the container and start your development:
