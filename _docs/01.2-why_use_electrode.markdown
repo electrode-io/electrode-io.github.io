@@ -4,24 +4,32 @@ permalink: docs/why_use_electrode.html
 toplevel: "Overview"
 ---
 
-At Walmart Labs, we solve problems on a vast scale, serving millions of
-customers every day via our web and mobile apps. So we designed Electrode to
-handle large, complex React/Node.js applications, with advanced features
-including server-side rendering, CSRF (Cross Site Request Forgery) detection,
-internationalization, component tooling, and progressive web application
-standards.
+At @WalmartLabs, we recently migrated our web site to a universal React/Node.js
+stack. Along the way, we hit a few stumbling blocks:
 
-We don't think a powerful, performant, and scalable web application should be
-difficult to set up, so we included a set of build scripts that get you started
-with a simple, consistent structure that follows modern development best
-practices. And when you're ready to take your app to production, Electrode
-automatically deploys to your favorite cloud provider.
+* Reuse is hard. We reuse React components across brands, and maintaining
+    thousands of flexible components is a huge headache.
+* We need all builds to be the same.
+* We have a lot of teams working on a lot of projects, and need to ensure
+    a consistent level of quality.
+* Server-side rendering is slow and complicated to set up.
 
-We also built some [awesome modules](stand_alone_modules.html) to optimize
-performance and efficiency and [convenient tools](electrode_tools.html) to help
-organize reusable components and optimize JavaScript bundles. These tools and
-modules can be used in any React/Node.js application, even if it's not an
-Electrode app.
+To solve these problems, we created the Electrode platform. Electrode consists
+of three pillars: Electrode Core, Electrode Modules, and Electrode Tools.
+
+*Electrode Core* provides a set of build scripts that get you started with a
+simple, consistent structure that follows modern best practices. When you're
+ready to take your app into production, Electrode automatically deploys to your
+favorite cloud provider.
+
+*Electrode Modules* improve performance, efficiency, and security by adding
+features like above the fold rendering, configuration management, and cross-site
+request forgery detection. These modules can be used with your existing
+React/Node.js application—no need to migrate to Electrode Core.
+
+*Electrode Tools* help organize reusable components and optimize large
+JavaScript bundles. Like the modules, our tools can be used with any
+React/Node.js app.
 
 Electrode will continue to improve—future enhancements will include more
 progressive web app features for mobile, bigger investments in performance, and
