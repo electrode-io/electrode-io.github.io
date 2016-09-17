@@ -34,7 +34,7 @@ To show all the containers on the system, run the command below:
   docker ps -a
 ```
 
-<b>Electrode has a [Dockerfile and Docker image](https://hub.docker.com/r/electrode/electrode-io/) built-in to expedite deployment. Simply:</b>
+**Electrode has a [Dockerfile and Docker image](https://hub.docker.com/r/electrode/electrode-io/) built-in to expedite deployment. Simply:**
 
 ```bash
   docker pull electrode/electrode-io

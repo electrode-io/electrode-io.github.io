@@ -1,0 +1,127 @@
+---
+title:  "Deploy"
+permalink: docs/deploy.html
+toplevel: "Getting Started: Quick Guide"
+---
+
+We're almost finished with our Quick Start. The final step is to deploy your-awesome-app and share it with your fellow developers using [Heroku] (https://devcenter.heroku.com/categories/deployment). We have listed the steps below, but feel free to learn more about Heroku [here] (https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction). These instructions assume you have a GitHub account. Navigate to your GitHub and create a new repo 'Your-Awesome-App'. Hit the `clone your-awesome-repo` and follow the steps below in order:</p>
+
+```bash
+$ git init
+$ git add .
+$ git commit -m 'first commit'
+$ git remote add origin https://github.com/your-Github-name/your-awesome-app.git
+$ git push -u origin master
+```
+
+Navigate to the [Heroku site](https://signup.heroku.com/dc) and set up a free account. This will help streamline our deployment process (we will do this several times).
+
+Next, let's quickly deploy `your-awesome-app` from the command line. [Click here](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up") to download and install the Heroku CLI for your machine.
+
+When you are finished installing, log in using the email address and password you used when creating your Heroku account.
+
+```bash
+$ heroku login
+```
+
+Enter your Heroku credentials:
+
+```bash
+Email: your-example-email@walmartlabs.com
+Password:
+```
+
+You should see a terminal message `Logged in as your-example-email@walmartlabs.com`. Now, let's deploy!
+
+We need to specify the [version of node](https://devcenter.heroku.com/articles/node-best-practices) you are using on your machine into our `package.json`. Add the code below the `author` section and before the `contributors` section of your `package.json`:
+
+```json
+    "engines": {
+      "node": "4.2.x"
+    },
+```
+
+It should now look like this:
+
+```
+{
+  "name": "your-awesome-app",
+  "version": "0.0.0",
+  "description": "your-app-description",
+  "homepage": "your-awesome-app",
+  "author": {
+    "name": "your-name",
+    "email": "your-email-address@email.com,
+    "url": "your-app-url"
+  },
+  "engines": {
+    "node": "4.2.x"
+  },
+  "contributors": [],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "keywords": [
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "your-repo-url"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "gulp test",
+    "coverage": "gulp check"
+  },
+  "dependencies": {
+    "bluebird": "^2.10.2",
+    "electrode-router-resolver-engine": "^1.0.0",
+    "electrode-server": "^1.0.0",
+    "electrode-static-paths": "^1.0.0",
+    "lodash": "^4.10.1"
+  },
+  "devDependencies": {
+    "electrode-archetype-react-app": "^1.0.0",
+    "electrode-archetype-react-app-dev": "^1.0.0",
+    "gulp": "^3.9.1"
+  }
+}
+```
+
+Create an app on Heroku (which prepares Heroku to receive your source code). This will also create a git remote called heroku and generate a random name:
+
+```bash
+$ heroku create
+```
+
+Or you can also create an app that will generate a your app's name (if it is available):
+
+```bash
+$ heroku create your-awesome-app
+```
+
+Deploy your code:
+
+```bash
+$ git push heroku master
+```
+
+Visit the app at the generated URL by using this command:
+
+```bash
+$ heroku open
+```
+One last thing we can do is define a [Procfile](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile), a text file to explicitly declare what command can start your-awesome-app. Create a file name `Procfile` in your root directory. Add the code below:
+
+```
+web: node index.js
+```
+
+Deploy this latest code:
+
+```bash
+$ git push heroku master
+```
+
+And... you did it! We will build even more in our [Getting Started: Intermediate](create_standalone_component.html) and cover complex topics like routing, server plugins and other powerful deployment software.

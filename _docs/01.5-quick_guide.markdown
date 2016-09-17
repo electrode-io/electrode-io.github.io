@@ -103,4 +103,4 @@ README.md
 ```
 
 
-Open [localhost:3000](http://localhost:3000) in your browser. Hello Electrode!
+Open [localhost:3000](http://localhost:3000) in your browser. Hello Electrode! Let's continue to [build](build_more.html) by modifying our component and deploying in [Quick Start: Build More](build_more.html).
