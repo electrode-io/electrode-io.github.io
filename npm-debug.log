@@ -1,0 +1,24 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/vn0em08/.nvm/versions/node/v4.2.6/bin/node',
+1 verbose cli   '/Users/vn0em08/.nvm/versions/node/v4.2.6/bin/npm',
+1 verbose cli   'install' ]
+2 info using npm@2.14.12
+3 info using node@v4.2.6
+4 verbose config Skipping project config: /Users/vn0em08/.npmrc. (matches userconfig)
+5 verbose readDependencies loading dependencies from /Users/vn0em08/package.json
+6 error install Couldn't read dependencies
+7 verbose stack Error: ENOENT: no such file or directory, open '/Users/vn0em08/package.json'
+7 verbose stack     at Error (native)
+8 verbose cwd /Users/vn0em08/Desktop/Projects/elect-docs-1
+9 error Darwin 15.3.0
+10 error argv "/Users/vn0em08/.nvm/versions/node/v4.2.6/bin/node" "/Users/vn0em08/.nvm/versions/node/v4.2.6/bin/npm" "install"
+11 error node v4.2.6
+12 error npm  v2.14.12
+13 error path /Users/vn0em08/package.json
+14 error code ENOPACKAGEJSON
+15 error errno -2
+16 error syscall open
+17 error package.json ENOENT: no such file or directory, open '/Users/vn0em08/package.json'
+17 error package.json This is most likely not a problem with npm itself.
+17 error package.json npm can't find a package.json file in your current directory.
+18 verbose exit [ -2, true ]
