@@ -4,14 +4,61 @@ permalink: docs/why_use_electrode.html
 toplevel: "Overview"
 ---
 
-### Learn More
+> If you're writing a universal React/Node.js application, Electrode is for you.
 
-You know us as the world’s largest retailer, but we’re also one of the world’s fastest growing [e-commerce](www.walmartlabs.com) companies. [Electrode](www.github.com/electrode-io) is the platform that powers the Walmart.com customer experience. When you use [Walmart.com](www.walmart.com), you use Electrode — so you know it’s battle tested!
+At @WalmartLabs, we recently migrated our web site to a universal JavaScript
+stack using React/Node.js, and along the way we hit a few stumbling blocks that
+might sound familiar if you've worked on a large, complex web app before.
 
-We solve complex problems on an unimaginably big scale and build [awesome modules](stand_alone_modules.html) that optimize performance and efficiency. [Electrode](what is electrode.html) enforces modern web development best practices throughout the development cycle, encouraging clean, modular, reusable components while remaining easy to develop and deploy on.
+### Code/UI Reuse
 
-Electrode also supports isomorphic rendering/universal JavaScript, CSRF (Cross Site Request Forgery) protection, internationalization, component tooling, progressive web app standards, and everything developers need to successfully develop and deploy complex enterprise-scale React/Node.js applications.
+We reuse React components across all of our brands, which means our developers
+need to be able to search through thousands of components, view their
+documentation and see them rendered, and use another developer's component
+secure in the knowledge that its structure and implementation are consistent
+with our standards. We needed a way to ensure that all components were built
+according to modern best practices, without slowing our developers down with a
+lot of manual configuration.
 
-We are continuing to improve Electrode—future enhancements will include more progressive web app features for mobile, bigger investments in performance, and much more. Learn about what inspires us and [read more about](stand_alone_modules.html) the framework we are building.
+### Server-side Performance
 
-Let's go! Check out the developer environment [requirements](requirements.html) and use our [Getting Started: Quick Guide](quick_guide.html) to start building now.
+We serve millions of customers a day, and performance is vital to our business.
+React's server-side rendering has the potential to improve performance and SEO,
+but it's difficult to make it fast. We needed a platform with server-side
+rendering built in, with a default configuration that's optimized for
+performance.
+
+### Startup and Deployment
+
+We don't have time to create an application structure, configuration files, and
+Docker containers from scratch every time we start a project. We needed to start
+fast and deploy fast, with consistent structure and optimal configuration every
+time.
+
+To solve these problems, we created the Electrode platform. Electrode consists
+of three pillars: Electrode Core, Electrode Modules, and Electrode Tools.
+
+*Electrode Core* provides a set of modules that get you started with a simple,
+consistent structure that follows modern best practices. When you're ready to
+take your app into production, Electrode automatically deploys to your favorite
+cloud provider.
+
+*Electrode Modules* improve performance, efficiency, and security by adding
+features like above the fold rendering, configuration management, and cross-site
+request forgery detection. These modules can be used with your existing
+React/Node.js application—no need to migrate to Electrode Core.
+
+*Electrode Tools* help organize reusable components and optimize large
+JavaScript bundles. Like the modules, our tools can be used with any
+React/Node.js app.
+
+As we continue to solve problems like these at @WalmartLabs, Electrode will
+continue to improve. Future enhancements will include more progressive web app
+features for mobile, bigger investments in performance, and much more. We're
+committed to open source, which means our investment is your investment.
+
+So let's go! Check out the developer environment
+[requirements](requirements.html), dive into [Electrode's features in
+detail](https://electrode-io.github.io/docs/what_is_electrode.html#features), or
+use our [Getting Started: Quick Guide](quick_guide.html) to start building now.
+
