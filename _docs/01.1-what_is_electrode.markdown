@@ -34,6 +34,8 @@ The Electrode Platform also has tools that can be consumed by existing applicati
 
 *  [React Router](https://github.com/ReactTraining/react-router/tree/master/docs) is a powerful routing library built on top of React.
 
+*  [Server Side Rendering](https://facebook.github.io/react/docs/environments.html#node.js) is built into the Electrode Application by default.
+
 *  [CSS Modules](https://github.com/css-modules/css-modules) a CSS file in which all class names and animation names are scoped locally by default. Fixes the problem of the global scope in CSS. #winning
 
 *  [Universal rendering](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.xjxr5yj5z) built in.
