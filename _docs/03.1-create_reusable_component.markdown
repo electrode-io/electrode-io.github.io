@@ -1,6 +1,6 @@
 ---
-title:  "Create a Standalone Component"
-permalink: docs/create_standalone_component.html
+title:  "Create a Reusable Component"
+permalink: docs/create_reusable_component.html
 toplevel: "Getting Started: Intermediate"
 ---
 
@@ -66,7 +66,7 @@ Now that we have basic structure of the component. Lets build a sample component
 3. [Develop styles using CSS modules](#develop-styles-using-css-modules)
 4. [Develop main high-level component](#develop-main-high-level-component)
 5. [Develop tests for the above components](#develop-tests-for-the-above-components)
-6. [Add Demo data](#Add-Demo-data)
+6. [Add Demo data](#add-demo-data.)
 7. [Build and Demo the component](#build-and-demo-the-component)
 8. [Generating documentation](#generating-documentation)
 

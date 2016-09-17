@@ -1,6 +1,6 @@
 ---
-title:  "Deploy"
-permalink: docs/deploy.html
+title:  "Deploy Your App"
+permalink: docs/deploy_app.html
 toplevel: "Getting Started: Quick Guide"
 ---
 

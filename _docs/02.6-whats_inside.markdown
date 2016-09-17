@@ -1,6 +1,6 @@
 ---
-title:  "Explore More"
-permalink: docs/explore.html
+title:  "What's Inside"
+permalink: docs/whats_inside.html
 toplevel: "Getting Started: Quick Guide"
 ---
 

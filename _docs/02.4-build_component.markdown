@@ -1,6 +1,6 @@
 ---
-title:  "Build More"
-permalink: docs/build_more.html
+title:  "Build Component"
+permalink: docs/build_component.html
 toplevel: "Getting Started: Quick Guide"
 ---
 ###Here at WalmartLabs we love to build!

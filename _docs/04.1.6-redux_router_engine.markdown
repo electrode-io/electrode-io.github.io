@@ -6,17 +6,13 @@ toplevel: "Stand Alone Modules"
 
 Electrode Redux Router Engine handles async data for React Server Side Rendering using [react-router], Redux, and the [Redux Server Rendering] pattern.
 
-## Install
+{% include module_usage.md moduleId="electrode-redux-router-engine" express_react_redux=true hapi_react_redux=true %}
 
-```bash
-$ npm install -save electrode-redux-router-engine
-```
+### react-router
 
-## Usage
+To use the redux-router engine, you first need to specify your routes according to [react-router]'s specs.
 
-You need to specify your routes according to [react-router]'s specs.
-
-For example, a file routes.jsx:
+For example, a typical `routes.jsx` file might look like this:
 
 ```js
 import { Route, IndexRoute, Redirect } from "react-router";
@@ -29,15 +25,15 @@ export default (
 );
 ```
 
-And an example using the [Redux Async Actions] pattern:
+### redux-router
 
-```js
+A corresponding redux-router configuration (using the [Redux Async Actions] pattern) in a server-side component would create the redux store and connect it with a promise library (the example below uses [bluebird](https://github.com/petkaantonov/bluebird/)) to create an initializer. The `ReduxRouterEngine` is created using this initializer and the `routes.jsx` component. The engine can then be used within a route handler to return the HTML. An example usage follows:
 
+```javascript
 const ReduxRouterEngine = require("electrode-redux-router-engine");
 
 function createReduxStore(req, match) {
     // this refs to engine
-
     const store = configureStore();
 
     return Promise.all([
@@ -49,19 +45,55 @@ function createReduxStore(req, match) {
 }
 
 const routes = require("./routes");
-
 const engine = new ReduxRouterEngine({routes, createReduxStore});
 
 // express or Hapi route handler:
-
 function handler(req, res) {
   engine.render(req)
     .then( (result) => {
-      // send full HTML with result back using res
+      // TODO: send full HTML with result back using res
     });
 }
 ```
 
+Note the route handler configuration above is a stub in this case. In an Electrode app, this handler could be as simple as returning the result of `engine.render(req)`; in a Hapi or Express app, the route handler would be more complex.
+
+### Electrode
+
+In an Electrode app, configuration is straightforward: the store is initialized and wired in a similar fashion as the above example, but the route handling logic simply returns the output of the engine's `render` function in the `module.exports` clause:
+
+#### Example `server/views/index-view.jsx` configuration
+
+```javascript
+import ReduxRouterEngine from 'electrode-redux-router-engine';
+import { routes } from "../../client/routes";
+const Promise = require("bluebird");
+import { createStore } from "redux";
+
+let rootReducer = (s, a) => s;
+
+function createReduxStore(req, match) {
+
+  let initialState = {};
+  const store = createStore(rootReducer, initialState);
+
+  return Promise.all([
+      // DO ASYNC THUNK ACTIONS HERE : store.dispatch(boostrapApp())
+      Promise.resolve({})
+    ]).then(() => {
+      return store;
+  });
+}
+
+module.exports = (req) => {
+
+  if (!req.server.app.routesEngine) {
+    req.server.app.routesEngine = new ReduxRouterEngine({ routes, createReduxStore });
+  }
+
+  return req.server.app.routesEngine.render(req);
+};
+```
 
 ## API
 
