@@ -661,3 +661,21 @@ h1 {
   color: $textLogoOrange;
 }
 
+
+small code,
+li code,
+p code {
+  color: #555;
+  background-color: rgba(0, 0, 0, .04);
+  padding: 1px 3px;
+}
+
+small a code,
+li a code,
+p a code {
+  color: inherit;
+}
+
+.cm-s-default span.cm-string-2 {
+  color: inherit;
+}
