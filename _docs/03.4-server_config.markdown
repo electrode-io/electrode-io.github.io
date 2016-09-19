@@ -73,7 +73,7 @@ When all of our guest are invited to the House Party are CSS modules kick in and
 
 ![app-party-view](/img/app-party-view.png)
 
-Feel free to add your own personal touch and build out your Resource List House Party.
+Feel free to add your own personal touch and build out your Resource List House Party. [Click here](https://electrode-example-app.herokuapp.com/) to view our Heroku deployed example app.
 
 When you're ready, you can deploy Your Awesome App to [Heroku](https://devcenter.heroku.com/categories/deployment) by following the previous steps in our [Getting Started: Build More](build_component.html) section. You can also navigate to [Intermediate: More Deployments](more_deployments.html) to learn how to deploy with
 [Docker](docker.html) and [Kubernetes](kubernetes.html).
