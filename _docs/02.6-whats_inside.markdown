@@ -161,4 +161,4 @@ Following, we have the `<your-awesome-app>/isomorphic-loader-config.json`:
 ```
 This [powerful tool] (https://github.com/jchip/isomorphic-loader) makes NodeJS `require` understanding files such as images when you are doing server side rendering. It contains three pieces: a Webpack loader, Webpack plugin and a library for your NodeJS app.
 
-With the generator-electrode, we've created a dynamic and performant full stack Electrode app in under five minutes, using some of our favorites technologies, like [React] (https://facebook.github.io/react/index.html) and [Hapi] (http://hapijs.com/). Let's explore and personalize this web application in our next section, [Intermediate: Create a Standalone Component](create_standalone_component.html).
+With the generator-electrode, we've created a dynamic and performant full stack Electrode app in under five minutes, using some of our favorite technologies, like [React] (https://facebook.github.io/react/index.html) and [Hapi] (http://hapijs.com/). Let's explore and personalize this web application in our next section, [Intermediate: Create a Standalone Component](create_standalone_component.html).
