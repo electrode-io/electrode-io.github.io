@@ -4,7 +4,7 @@ permalink: docs/why_use_electrode.html
 toplevel: "Overview"
 ---
 
-> If you're writing a universal React/Node.js application, Electrode is for you.
+> If you're writing a universal React/Node.js application, Electrode is for you!
 
 At @WalmartLabs, we recently migrated our web site to a universal JavaScript
 stack using React/Node.js, and along the way we hit a few stumbling blocks that
