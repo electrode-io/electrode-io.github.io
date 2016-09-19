@@ -19,7 +19,7 @@ export class Home extends React.Component {
 }
 ```
 
-We'll need a place to keep all of the resources we learned in the [Getting Started: Quick Guide](quick_guide.html) organized. Let's make a library for our present stack and exciting technologies! Copy the code below and paste it into `<your-awesome-app>/client/components/home.jsx`:
+We'll need a place to keep all of the resources we learned in the [Getting Started: Quick Guide](get_started.html) organized. Let's make a library for our present stack and exciting technologies! Copy the code below and paste it into `<your-awesome-app>/client/components/home.jsx`:
 
 ```javascript
 import React from "react";
@@ -96,4 +96,4 @@ gulp dev
 
 ![Pastel](http://i.imgur.com/nwEl64l.png)
 
-Let's jump to our next step where we will deploy Your Awesome App to [Heroku](deploy.html).
+Let's jump to our next step where we will deploy Your Awesome App to [Heroku](deploy_app.html).
