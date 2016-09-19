@@ -4,7 +4,7 @@ permalink: docs/create_reusable_component.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-First things first. Let's make our thing... a Thing! In this Getting Started: Intermediate guide, we’ll take some of the basics we explored in our [Quick Start](quick_guide.html) and go further. We will make our resource list a dynamic list that is styled, tested, published and capable of being deployed with other deployment software like Docker and Kubernetes.
+First things first. Let's make our thing... a Thing! In this Getting Started: Intermediate guide, we’ll take some of the basics we explored in our [Quick Start](get_started.html) and go further. We will make our resource list a dynamic list that is styled, tested, published and capable of being deployed with other deployment software like Docker and Kubernetes.
 
 Again, we are leveraging [Yeoman](http://yeoman.io/) to quick start the creation of our first stand alone component. We will globally install the Electrode [generator-electrode-component](https://github.com/electrode-io/generator-electrode-component):
 
