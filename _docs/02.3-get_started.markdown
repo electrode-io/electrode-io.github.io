@@ -1,6 +1,6 @@
 ---
-title:  "Quick Guide"
-permalink: docs/quick_guide.html
+title:  "Get Started"
+permalink: docs/get_started.html
 toplevel: "Getting Started: Quick Guide"
 ---
 

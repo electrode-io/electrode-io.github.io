@@ -1,10 +1,10 @@
 ---
-title:  "Create a Standalone Component"
-permalink: docs/create_standalone_component.html
+title:  "Create a Reusable Component"
+permalink: docs/create_reusable_component.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-First things first. Let's make our thing... a Thing! In this Getting Started: Intermediate guide, we’ll take some of the basics we explored in our [Quick Start](quick_guide.html) and go further. We will make our resource list a dynamic list that is styled, tested, published and capable of being deployed with other deployment software like Azure, Docker and Kubernetes.
+First things first. Let's make our thing... a Thing! In this Getting Started: Intermediate guide, we’ll take some of the basics we explored in our [Quick Start](quick_guide.html) and go further. We will make our resource list a dynamic list that is styled, tested, published and capable of being deployed with other deployment software like Docker and Kubernetes.
 
 Again, we are leveraging [Yeoman](http://yeoman.io/) to quick start the creation of our first stand alone component. We will globally install the Electrode [generator-electrode-component](https://github.com/electrode-io/generator-electrode-component):
 
@@ -66,7 +66,7 @@ Now that we have basic structure of the component. Lets build a sample component
 3. [Develop styles using CSS modules](#develop-styles-using-css-modules)
 4. [Develop main high-level component](#develop-main-high-level-component)
 5. [Develop tests for the above components](#develop-tests-for-the-above-components)
-6. [Add Demo data](#Add-Demo-data)
+6. [Add Demo data](#add-demo-data.)
 7. [Build and Demo the component](#build-and-demo-the-component)
 8. [Generating documentation](#generating-documentation)
 
@@ -311,7 +311,7 @@ p {
   content: '';
   display: block;
   position: absolute;
-  background-image: url(//goo.gl/l01JZJ);
+  background-image: url(//goo.gl/8f5GrX);
   background-position: center;
   background-size: 95%;
   background-repeat: no-repeat;

@@ -4,7 +4,7 @@ permalink: docs/above_fold_rendering.html
 toplevel: "Stand Alone Modules"
 ---
 
-The [above-the-fold-rendering-module](https://github.com/electrode-io/above-the-fold-only-server-render) is a React component for optionally skipping server side rendering of components outside above-the-fold (or outside of the viewport). This component helps render your components on the server that are above the fold and the remaining components on the client.
+The [above-the-fold-rendering-module](https://github.com/electrode-io/above-the-fold-only-server-render) is a React component for optionally skipping server side rendering of components outside above-the-fold (or inside of the viewport). This component helps render your components on the server that are above the fold and the remaining components on the client.
 
 [Above-the-fold-only-server-render](https://github.com/electrode-io/above-the-fold-only-server-render) is a *standalone* module. It is *agnostic* of your web-server framework. In this tutorial we will demonstrate how to use this module in Electrode, Express.js and Hapi.js applications.
 
@@ -20,9 +20,9 @@ Performance Improvement Numbers below:
 
 {% include module_usage.md moduleId="above-the-fold-only-server-render" express=true hapi=true %}
 
-By default, the [above-the-fold-only-server-render](https://github.com/electrode-io/above-the-fold-only-server-render) component is an exercise in simplicity; high-level it returns the child component.
+You can tell your electrode-react components to skip server side rendering and save on CPU render time, either by passing a `skip={true}` prop or by setting up `aboveTheFoldOnlyServerRender` in your app context and passing the component a `contextKey` prop.
 
-You can tell the component to skip server side rendering either by passing a `skip={true}` prop or by setting up `aboveTheFoldOnlyServerRender` in your app context and passing the component a `contextKey` prop.
+By default, the [above-the-fold-only-server-render](https://github.com/electrode-io/above-the-fold-only-server-render) component is an exercise in simplicity; at a high-level it returns the child component.
 
 You can selectively choose to not server side render a component by passing a `skip prop`:
 
