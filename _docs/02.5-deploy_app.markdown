@@ -127,7 +127,7 @@ Use the command below to set a configuration so that Heroku installs Your-Awesom
 $ heroku config:set NPM_CONFIG_PRODUCTION=false
 ```
 
-Use the command below to set a configuration that for [production.js](https://github.com/docs-code-examples-electrode-io/electrode-example-app-with-plugin-and-routes/blob/master/config/production.js#L11):
+Use the command below to set a configuration for [production.js](https://github.com/docs-code-examples-electrode-io/electrode-example-app-with-plugin-and-routes/blob/master/config/production.js#L11):
 
 ```bash
 $ heroku config:set STATIC_FILES=true
@@ -144,6 +144,7 @@ Visit the app at the generated URL by using this command:
 ```bash
 $ heroku open
 ```
+```
 One last thing we can do is define a [Procfile](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile), a text file to explicitly declare what command can start your-awesome-app. Create a file name `Procfile` in your root directory. Add the code below:
 
 ```
@@ -157,4 +158,4 @@ $ git push heroku master
 ```
 
 And... you did it! [Click here](https://electrode-example-party-app.herokuapp.com/) for our deployed Heroku version.
-We will build even more in our [Getting Started: Intermediate](create_standalone_component.html) and cover complex topics like routing, server plugins and other powerful deployment software.
+We will build even more in our [Getting Started: Intermediate](create_reusable_component.html) and cover complex topics like routing, server plugins and other powerful deployment software.
