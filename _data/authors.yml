@@ -1,0 +1,6 @@
+# Map of short name to more information. `name` will be used but if you don't
+# want to use your real name, just use whatever. If url is included, your name
+# will be a link to the provided url.
+team:
+  name: The Electrode Team
+  url: https://github.com/orgs/electrode-io/people

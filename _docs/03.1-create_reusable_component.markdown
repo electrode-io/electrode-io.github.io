@@ -1,0 +1,75 @@
+---
+title:  "Create a Reusable Component"
+permalink: docs/create_reusable_component.html
+toplevel: "Getting Started: Intermediate"
+---
+
+First things first. Let's make our thing... a Thing! In this Getting Started: Intermediate guide, we’ll take some of the basics we explored in our [Quick Start](get_started.html) and go further. We will make our resource list a dynamic list that is styled, tested, published and capable of being deployed with other deployment software like Docker and Kubernetes.
+
+Building this application with React components will allow for greater modularity, which will enable reuse of code in later iterations. This Service-oriented Architecture also greatly increases workflow efficiency by allowing developers to easily divide and conquer tasks during the production process. Furthermore, better separation of concerns allows for much easier debugging in general.
+
+Again, we are leveraging [Yeoman](http://yeoman.io/) to quick start the creation of our first stand alone component. We will globally install the Electrode [generator-electrode-component](https://github.com/electrode-io/generator-electrode-component):
+
+```bash
+$ npm install -g generator-electrode-component
+```
+
+Then [generate] (https://github.com/electrode-io/generator-electrode-component) your new component:
+
+```bash
+$ yo electrode-component
+```
+
+Fill out the Electrode generator-electrode-component with your information.
+
+Open the application up with your favorite text editor. We'll start with a fast high level view of the most important files in your component:
+
+```
+  demo
+    A live demo of your component. You can play with its integration in real
+    time. This folder contains the .example files which you can customize to
+    demonstrate the default state of your components when mounted in the
+    playground.
+
+  node_modules
+    Other Javascript files contained in modules that we will use in this
+    application, including Electrode modules that create your out-of-the-box
+    Universal app.
+
+  src
+    Where all our components' source code lives, in their respective files.
+    Non-universal apps might normally call this the “client” folder, but
+    since our app code will run both on the client and server, via server
+    side rendering, we call this folder "src".
+
+  test
+  Test driven development is the WalmartLabs way and critical for successful
+  growth and scaling. All testing code lives in this folder and we will focus
+  on unit testing with Mocha + Enzyme soon.
+    |_client
+      |_components
+        |_helpers
+      |_.eslintrc
+        A configuration file that sets our custom linting rules and basic syntax
+        validation. In this case it is extended from the
+        electrode-archetype-react-component.
+
+  gulpfile.js
+    Gulp is a Javascript build tool that lets us automate tasks and the
+    gulpfile.js is where we define those tasks. We like its simple syntax
+    and the increased productivity from using an intuitive task runner.
+
+```
+
+Now that we have basic structure of the component. Lets build a sample component by following below steps.
+
+1. [Develop a couple of low-level components](low_level_components.html)
+2. [Develop helpers for the components](component_helpers.html)
+3. [Develop styles using CSS modules](develop_styles.html)
+4. [Develop main high-level component](high_level_component.html)
+5. [Develop tests for the above components](test_components.html)
+6. [Add Demo data](add_data.html)
+7. [Build and Demo the component](build_and_demo.html)
+8. [Generating documentation](generate_docs.html)
+
+Trust me, it will be worth it.

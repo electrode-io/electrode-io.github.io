@@ -1,0 +1,56 @@
+---
+title:  "Kubernetes"
+permalink: docs/kubernetes.html
+toplevel: "Getting Started: Intermediate"
+---
+
+###Deploy with Google's Kubernetes
+
+[Kubernetes](http://kubernetes.io/) is "an open-source system for automating deployment, scaling, and management of containerized applications." It was developed by Google to handle the ops demand for an organization of that scale and the flexibility for running an infrastructure at any size.
+
+First off, make sure you already have a [Google Account](https://accounts.google.com/SignUp). Sign in to the [Google Cloud Platform](https://console.cloud.google.com/home/dashboard?project=gentle-waters-127300&pli=1). Remember your project ID and use it on your command line:
+
+```bash
+  export PROJECT_ID="your-project-id"
+```
+
+Install [Google Cloud SDK](https://cloud.google.com/sdk/). After this installs,
+run the following command to install [Kubernetes](http://kubernetes.io/docs/user-guide/kubectl-overview/):
+
+```bash
+  gcloud components install kubectl
+```
+
+We will use your [Docker image](docker.html) from the "Deploy with Docker" section, but you will need to update it to the following below:
+
+```bash
+  FROM node:4.5
+  RUN npm i -g npm@3
+  EXPOSE 3000
+  RUN mkdir -p /usr/src/app
+  WORKDIR /usr/src/app
+  COPY . /usr/src/app
+  RUN npm install
+  RUN /usr/src/app/node_modules/.bin/gulp build
+  CMD node server
+```
+
+Let's test out your image with Docker. Run the command below:
+
+```bash
+  docker run -d -p 3000:3000 --name your-awesome-app gcr.io/$PROJECT_ID/your-awesome-app:v1
+```
+
+Visit your app in the browser at `http://localhost:3000`. You can stop running the container by using the command below:
+
+```bash
+  docker stop your-awesome-app
+```
+
+We can now push the image to the [Google Container Registry](https://cloud.google.com/container-registry/). Your Docker images will be stored in a private repo that is accessible from every Google Cloud project as well as from outside the Google Cloud Platform.
+
+```bash
+  gcloud docker push gcr.io/$PROJECT_ID/your-awesome-app:v1
+```
+
+You can explore other [Kubernetes capabilities](http://kubernetes.io/docs/hellonode/) and dig deeper in the the extensive [reference documentation](http://kubernetes.io/docs/reference/).

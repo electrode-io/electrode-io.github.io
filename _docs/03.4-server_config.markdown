@@ -1,0 +1,81 @@
+---
+title:  "Server Config"
+permalink: docs/server_config.html
+toplevel: "Getting Started: Intermediate"
+---
+
+###Server Config + Confippet
+
+Out of the box we're given [Confippet](https://github.com/electrode-io/electrode-confippet), a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a preset config out of the box:
+
+```
+  config
+    |_default.json
+    |_development.json
+    |_production.json
+```
+
+We'll need to extend our default.json to include our `friends` plugin and module `./server/plugins/friends`.
+
+Navigate to `<your-awesome-app>/config/development.json`. Copy, paste and save `friends` plugin below the `webapp` plugin:
+
+```json
+
+  "friends": {
+    "module": "./server/plugins/friends"
+  }
+
+```
+Make sure to add the comma `,` before `"friends"`. It should now look like this:
+
+```json
+  {
+    "plugins": {
+      "webapp": {
+        "module": "./server/plugins/webapp",
+        "options": {
+          "paths": {
+            "/{args*}": {
+              "content": {
+                "module": "./server/views/index-view"
+              }
+            }
+          }
+        }
+      },
+      "friends": {
+        "module": "./server/plugins/friends"
+      }
+    }
+  }
+```
+
+You can learn more about Confippet and ways to extend your config in our Advanced Electrode App with the [Confippet](confippet.html) stand alone module.
+
+Let's check it out! We'll run through our steps to test, run the app and view it in the browser:
+
+```bash
+  gulp check
+  gulp hot
+```
+
+Navigate to `localhost:3000`. Check it out! This is the `Index route` which renders our `Home component` using Server Side Rendering:
+
+![app-home-view](/img/app-home-view.png)
+
+By tapping on the `Click Here to Make it a Party` link Your Awesome App routes to the `/invite route`, which renders the `guest list component`:
+
+![app-guest-list](/img/app-guest-list-view.png)
+
+By checking the guest list, you are setting that selected `invitee object's` key to {invited: true}, which tells `renderFriends` to render.
+
+When all of our guests are invited to the House Party our CSS modules kick in and launch an Electrode House Party!
+
+![app-party-view](/img/collabo-party-view.png)
+
+Feel free to add your own personal touch and build out your Resource List House Party. [Click here](https://electrode-example-app.herokuapp.com/) to view our Heroku deployed example app.
+
+When you're ready, you can deploy Your Awesome App to [Heroku](https://devcenter.heroku.com/categories/deployment) by following the previous steps in our [Getting Started: Build More](build_component.html) section. If you choose this step, make sure you set all of the Heroku configurations, including the one for our [GitHub Api](build_server_plugin).
+
+You can also navigate to [Intermediate: More Deployments](more_deployments.html) to learn how to deploy with
+[Docker](docker.html) and [Kubernetes](kubernetes.html).
