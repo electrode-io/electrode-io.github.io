@@ -89,6 +89,13 @@ It should now look like this:
 }
 ```
 
+Use the following commands to commit your changes:
+
+```bash
+$ git add .
+$ git commit -m "Updates package.json"
+```
+
 Create an app on Heroku (which prepares Heroku to receive your source code). This will also create a git remote called heroku and generate a random name:
 
 ```bash
