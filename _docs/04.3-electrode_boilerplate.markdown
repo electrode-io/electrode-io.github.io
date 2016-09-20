@@ -6,13 +6,13 @@ toplevel: "Electrode Boilerplate"
 
 ###Maximum Performance Out of the Box
 
-In our [Getting Started](get_started.html) section, we introduced you to our Yeoman Electrode [Generator](https://github.com/electrode-io/generator-electrode) and we built an impressive application out of the built in technologies that the simple `yo electrode` command gave us:
+In our [Getting Started](get_started.html) section, we introduced you to our Yeoman Electrode [Generator](https://github.com/electrode-io/generator-electrode) and we constructed an impressive application with the built in technologies that the simple `yo electrode` command gave us:
 
 `React * Redux * CSS Modules * Electrode-Server * Electrode Confippet * Universal JavaScript Babel * Webapack * Webpack Isomorphic Loader * React-Router * History React-Resolver * Electrode Bundle Analyzer Electrode-Static-Paths * Lodash *  Electrode-Docgen * Bluebird * Gulp * ESLint * Mocha * Enzyme * Travis * Yeoman`
 
-This is the beginning foundation of the Electrode  [Boilerplate](https://github.com/electrode-io/electrode-boilerplate-universal-react-node). You have learned in the Stand Alone [Modules](stand_alone_modules.html) section that each of the Electrode modules are agnostic and can be used individually to enhance one specific area of your application. However, integrated together, you have a supercharged application, one that is capable of handling the complex problems we face at [WalmartLabs](www.walmartlabs.com) and reach maximum efficiency and performance.
+This is the beginning foundation of the Electrode  [Boilerplate](https://github.com/electrode-io/electrode-boilerplate-universal-react-node). You have learned in the Stand Alone [Modules](stand_alone_modules.html) section that each of the Electrode modules are agnostic and can be used individually to enhance one specific area of your application. However, integrated together, you have a supercharged application; one that is capable of handling the complex problems we face at [WalmartLabs](www.walmartlabs.com) and reach maximum efficiency and performance.
 
-This boilerplate includes all of the [Electrode Generator](whats_inside.html) and it also has all of the below stand alone modules and tools built in for peak optimization out-of-the-box:
+This boilerplate includes the [Electrode Generator](whats_inside.html) and it also has the following stand alone modules and tools built in for peak optimization out-of-the-box:
 
 *  [Above the Fold Rendering](above_fold_rendering.html)
 *  [Server Side Render Cache + Profiling](server_side_render_cache.html)
