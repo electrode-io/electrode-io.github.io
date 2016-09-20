@@ -10,9 +10,9 @@ At WalmartLabs, we use [Hapi](http://hapijs.com/) because of its flexible and ro
 
 Let's make a deal! Actually, scratch that, let's make a plugin! Plugins are way to extend our server's functionality. Building upon our open source theme, let's make a plugin that retrieves the our Tech Friends for our "resource party."
 
-We are going to use the [GitHub Api] (https://developer.github.com/v3/) to grab the latest 10 contributors of our Open Source friends and display them in Your Awesome App.
+We are going to use the [GitHub Api](https://developer.github.com/v3/) to grab the latest 10 contributors of our Open Source friends and display them in Your Awesome App.
 
-The GitHub [site] (https://developer.github.com/v3/) has great documentation and awesome libraries to help jumpstart our plugin. Let's begin there by installing a Node.js wrapper called [Node-github] (https://github.com/mikedeboer/node-github):
+The GitHub [site](https://developer.github.com/v3/) has great documentation and awesome libraries to help jumpstart our plugin. Let's begin there by installing a Node.js wrapper called [Node-github](https://github.com/mikedeboer/node-github):
 
 ```bash
 npm install github
@@ -42,7 +42,7 @@ Your Server file pattern should now look like this:
 ```
 {% endraw %}
 
-Navigate to `<your-awesome-app>/server/plugins/friends/index.js`. This is where we will make an external API call to Github and request the last ten contributors of our selected Open Source 'friend' using a URL `https://api.github.com/ + /repos/:user/:repo/contributors`. Because we are looking at public repos we do not have to go through the process of oAuth to access GitHub data. Our GitHub wrapper [library](https://github.com/mikedeboer/node-github) will allow us a built in method, `github.repos.getContributors({})` to streamline this process and return an array of Open Source contributors. We will also use [Bluebird](http://bluebirdjs.com/docs/getting-started.html), a Promise library that makes working with our async API calls much more manageable. Copy, paste and save the code below:
+Navigate to `<your-awesome-app>/server/plugins/friends/index.js`. This is where we will make an external API call to Github and request the last ten contributors of our selected Open Source 'friend' using a URL `https://api.github.com/ + /repos/:user/:repo/contributors`. Our GitHub wrapper [library](https://github.com/mikedeboer/node-github) will allow us a built in method, `github.repos.getContributors({})` to streamline this process and return an array of Open Source contributors. We will also use [Bluebird](http://bluebirdjs.com/docs/getting-started.html), a Promise library that makes working with our async API calls much more manageable. Copy, paste and save the code below:
 
 ```javascript
   'use strict';
