@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Develop Main Component | Electrode</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:title" content="Develop Main Component | Electrode">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://electrode-io.github.io//docs/high_level_component.html">
+  <meta property="og:image" content="https://electrode-io.github.io/img/logo_og.png">
+  <meta property="og:description" content="Universal React and Node Applications simplified, performant, and reusable.">
+  <meta property="fb:app_id" content="623268441017527">
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="Electrode" href="https://electrode-io.github.io/feed.xml">
+
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/electrode.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+
+  <script src="//use.typekit.net/vqa1hcx.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <!--[if lte IE 8]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/es5-shim.min.js"></script>
+  <script src="/js/es5-sham.min.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="nav-main">
+      <div class="wrap">
+        <a class="nav-home" href="/index.html">
+          <img class="nav-logo" src="/img/electrode-02.png" width="45" height="45" style="margin-bottom: 5px;">
+          electrode
+        </a>
+
+        <ul class="nav-site nav-site-internal">
+          <li><a href="/docs/what_is_electrode.html" class="active">docs</a></li>
+          <!--<li><a href="/support.html">Support</a></li>-->
+        </ul>
+        <ul class="nav-site nav-site-external">
+          <li><a href="https://github.com/electrode-io">GitHub</a></li>
+          <li><a href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+    <section class="content wrap documentationContent">
+  <div class="nav-docs">
+  
+    <div class="nav-docs-section">
+      <h3>Overview</h3>
+      
+        <ul>
+          
+
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/what_is_electrode.html"> &nbsp; What is Electrode?</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/why_use_electrode.html"> &nbsp; Why Use Electrode?</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/requirements.html"> &nbsp; Requirements</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+        </ul>
+      
+    </div>
+  
+    <div class="nav-docs-section">
+      <h3>Getting Started</h3>
+      
+        
+          <h5>Quick Start</h5>
+          <ul>
+            
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/get_started.html"> &nbsp; Get Started</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/build_component.html"> &nbsp; Build Component</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/deploy_app.html"> &nbsp; Deploy Your App</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/whats_inside.html"> &nbsp; What's Inside</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+          </ul>
+        
+          <h5>Intermediate</h5>
+          <ul>
+            
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/create_reusable_component.html"> &nbsp; Create a Reusable Component</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/low_level_components.html"> &nbsp; Low-Level Components</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/component_helpers.html"> &nbsp; Component Helpers</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/develop_styles.html"> &nbsp; Develop Styles</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/high_level_component.html" class="active"> &nbsp; Develop Main Component</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/test_components.html"> &nbsp; Test Components</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/add_data.html"> &nbsp; Add Data</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/build_and_demo.html"> &nbsp; Build and Demo</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/generate_docs.html"> &nbsp; Generate Docs</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/build_server_plugin.html"> &nbsp; Build a Server Plugin</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/add_routes.html"> &nbsp; Add Routes</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/server_config.html"> &nbsp; Server Config</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/more_deployments.html"> &nbsp; More Deployments</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/docker.html"> &nbsp; Docker</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/kubernetes.html"> &nbsp; Kubernetes</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+          </ul>
+        
+          <h5>Advanced</h5>
+          <ul>
+            
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/stand_alone_modules.html"> &nbsp; Stand Alone Modules</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/confippet.html"> &nbsp; Confippet</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/above_fold_rendering.html"> &nbsp; Above The Fold Rendering</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/server_side_render_cache.html"> &nbsp; Server Side Render Caching + Profiling</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/stateless_csrf_validation.html"> &nbsp; Stateless CSRF Validation</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/redux_router_engine.html"> &nbsp; Redux Router Engine</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/electrode_tools.html"> &nbsp; Powerful Electrode Tools</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/electrify.html"> &nbsp; Electrify</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/electrode_explorer.html"> &nbsp; Electrode Explorer</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/electrode_boilerplate.html"> &nbsp; Electrode Boilerplate</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/community.html"> &nbsp; Community</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+          </ul>
+        
+      
+    </div>
+  
+    <div class="nav-docs-section">
+      <h3>Resources</h3>
+      
+        <ul>
+          
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/faq.html"> &nbsp; FAQs</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/further_reading.html"> &nbsp; Further Reading</a>
+
+    
+    </li>
+  
+
+
+        </ul>
+      
+    </div>
+  
+
+
+  <!-- Tips Nav -->
+  <!-- 
+    <div class="nav-docs-section">
+      <h3>Tips</h3>
+      <ul>
+        
+          <li>
+            <a href="/tips/introduction.html">Introduction</a>
+          </li>
+        
+      </ul>
+    </div>
+   -->
+
+  <!-- Contributing Nav -->
+  <!-- 
+    <div class="nav-docs-section">
+      <h3>Contributing</h3>
+      <ul>
+        
+          <li>
+            <a href="/contributing/design-principles.html">Design Principles</a>
+          </li>
+        
+      </ul>
+    </div>
+   -->
+</div>
+
+
+  <div class="inner-content">
+    <a class="edit-page-link" href="https://github.com/electrode-io/electrode-io.github.io/tree/develop/_docs/03.1.4-high_level_component.markdown" target="_blank">Edit on GitHub</a>
+    <h1>
+      Develop Main Component
+    </h1>
+    <div class="subHeader"></div>
+
+    <h3><a class="anchor" name="develop-main-high-level-component"></a>Develop main high-level component <a class="hash-link" href="#develop-main-high-level-component">#</a></h3>
+<p>Override the code in <code>&lt;your-awesome-component&gt;/src/components/your-awesome-component.jsx</code> with the code below. Change all references from the literal <code>your-awesome-component or YourAwesomeComponent</code> to your actual component name:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">PropTypes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="nx">styles</span> <span class="nx">from</span> <span class="s2">&quot;../../src/styles/your-awesome-component.css&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">RenderFriend</span> <span class="nx">from</span> <span class="s2">&quot;./render-friend&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">GuestList</span> <span class="nx">from</span> <span class="s2">&quot;./guest-list&quot;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="kr">class</span> <span class="nx">YourAwesomeComponent</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">renderFriends</span><span class="p">(</span><span class="nx">friends</span><span class="p">,</span> <span class="nx">party</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">invitees</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">invitees</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">partyTime</span> <span class="o">=</span> <span class="nx">party</span> <span class="o">?</span> <span class="nx">styles</span><span class="p">.</span><span class="nx">party</span> <span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nx">friends</span>
+      <span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">friend</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="o">!!</span><span class="nx">invitees</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">invitee</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="nx">invitee</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">friend</span><span class="p">.</span><span class="nx">name</span> <span class="o">&amp;&amp;</span> <span class="nx">invitee</span><span class="p">.</span><span class="nx">invited</span><span class="p">;</span>
+        <span class="p">}).</span><span class="nx">length</span><span class="p">;</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">friend</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">RenderFriend</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">partyTime</span><span class="p">}</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">friend</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span> <span class="nx">friend</span><span class="o">=</span><span class="p">{</span><span class="nx">friend</span><span class="p">}</span><span class="o">/&gt;</span>
+      <span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="nx">viewState</span><span class="p">(</span><span class="nx">view</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">view</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">view</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">intro</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">invite</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+
+  <span class="nx">houseParty</span><span class="p">(</span><span class="nx">invitees</span><span class="p">,</span> <span class="nx">party</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">party</span>
+      <span class="o">?</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">yourAwesomeComponent</span><span class="p">}</span> <span class="nx">$</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">house</span><span class="p">}</span><span class="err">`</span>
+      <span class="o">:</span> <span class="nx">styles</span><span class="p">.</span><span class="nx">house</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">ourFriends</span><span class="p">,</span> <span class="nx">invitees</span><span class="p">,</span> <span class="nx">view</span><span class="p">,</span> <span class="nx">message</span><span class="p">,</span> <span class="nx">toggleGuest</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">party</span> <span class="o">=</span> <span class="nx">invitees</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="nx">invitees</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">invitee</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">invitee</span><span class="p">.</span><span class="nx">invited</span><span class="p">).</span><span class="nx">length</span> <span class="o">&amp;&amp;</span>
+      <span class="nx">invitees</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">invite</span><span class="p">,</span> <span class="nx">intro</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">viewState</span><span class="p">(</span><span class="nx">view</span><span class="p">);</span>
+    <span class="kr">const</span> <span class="nx">houseParty</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">houseParty</span><span class="p">(</span><span class="nx">invitees</span><span class="p">,</span> <span class="nx">party</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">invite</span> <span class="o">&amp;&amp;</span> <span class="nx">invitees</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span>
+          <span class="o">&lt;</span><span class="nx">GuestList</span> <span class="nx">invitees</span><span class="o">=</span><span class="p">{</span><span class="nx">invitees</span><span class="p">}</span> <span class="nx">toggleGuest</span><span class="o">=</span><span class="p">{(</span><span class="nx">invitee</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">toggleGuest</span><span class="p">(</span><span class="nx">invitee</span><span class="p">)}</span><span class="o">/&gt;</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">container</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">intro</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">invitees</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">invitee</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">invitee</span><span class="p">.</span><span class="nx">invited</span><span class="p">).</span><span class="nx">length</span> <span class="o">&amp;&amp;</span> <span class="nx">message</span><span class="p">(</span><span class="nx">styles</span><span class="p">.</span><span class="nx">message</span><span class="p">)}</span>
+          <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">houseParty</span><span class="p">}</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">room</span><span class="p">}</span><span class="o">&gt;</span>
+              <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">renderFriends</span><span class="p">(</span><span class="nx">ourFriends</span><span class="p">,</span> <span class="nx">party</span><span class="p">)}</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+          <span class="o">&lt;</span><span class="err">/div&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">YourAwesomeComponent</span><span class="p">.</span><span class="nx">displayName</span> <span class="o">=</span> <span class="s2">&quot;YourAwesomeComponent&quot;</span><span class="p">;</span>
+
+<span class="nx">YourAwesomeComponent</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">ourFriends</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">array</span><span class="p">,</span>
+  <span class="nx">message</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span><span class="p">,</span>
+  <span class="nx">invitees</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">array</span><span class="p">,</span>
+  <span class="nx">view</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">object</span><span class="p">,</span>
+  <span class="nx">toggleGuest</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span>
+<span class="p">};</span>
+
+<span class="nx">YourAwesomeComponent</span><span class="p">.</span><span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">message</span><span class="o">:</span> <span class="err">`</span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Let</span><span class="err">&#39;</span><span class="nx">s</span> <span class="nx">party</span><span class="o">!</span> <span class="nx">Un</span><span class="o">-</span><span class="nx">comment</span> <span class="nx">the</span> <span class="nx">all</span> <span class="nx">the</span> <span class="nx">commented</span><span class="o">-</span><span class="nx">out</span> <span class="nx">lines</span> <span class="k">in</span> <span class="nx">the</span>
+  <span class="nx">playground</span> <span class="nx">then</span> <span class="nx">check</span> <span class="nx">the</span> <span class="nx">boxes</span> <span class="nx">on</span> <span class="nx">the</span> <span class="nx">GuestList</span> <span class="nx">to</span> <span class="nx">invite</span> <span class="nx">our</span> <span class="nx">friends</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">party</span><span class="o">!&lt;</span><span class="err">/p&gt;`</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Last edit! In your <code>&lt;your-awesome-component&gt;index.js</code>, add the two lines below:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kr">export</span> <span class="p">{</span> <span class="k">default</span> <span class="nx">as</span> <span class="nx">RenderFriend</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;./components/render-friend&quot;</span><span class="p">;</span>
+  <span class="kr">export</span> <span class="p">{</span> <span class="k">default</span> <span class="nx">as</span> <span class="nx">GuestList</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;./components/guest-list&quot;</span><span class="p">;</span>
+</code></pre></div>
+
+    
+
+
+
+
+
+
+
+
+<div class="docs-prevnext">
+  
+    <a class="docs-prev" href="/docs/develop_styles.html">&larr; Prev</a>
+  
+  
+    <a class="docs-next" href="/docs/test_components.html">Next &rarr;</a>
+  
+</div>
+
+
+  </div>
+</section>
+
+
+    <footer class="wrap">
+      <div class="left">
+        <a href="https://github.com/orgs/electrode-io/people" target="_blank">Acknowledgements</a>
+      </div>
+      <div class="right">
+        &copy; 2016 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
+        Apache-2.0 license.
+      </div>
+    </footer>
+  </div>
+  <div id="fb-root"></div>
+
+  <!--
+    TODO: analytics js, etc.
+  -->
+</body>
+</html>
