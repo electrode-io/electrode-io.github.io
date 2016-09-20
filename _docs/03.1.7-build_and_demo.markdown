@@ -1,0 +1,23 @@
+---
+title:  "Build and Demo"
+permalink: docs/build_and_demo.html
+toplevel: "Getting Started: Intermediate"
+---
+
+###Build and Demo the component
+
+Now run it and explore the live demo!
+
+```bash
+  $ gulp build && gulp demo
+```
+
+In the demo, you will first see a Guest List header with a checkbox listing all of our resources, now referred to as Friends:
+
+![party-false](/img/party-component-false.png)
+
+
+Have fun! Change key `invited` to true in `invitees` array. The Electrode stack is now like an awesome party, where all of our favorite technologies get invited:
+
+
+![party-true](/img/party-component-true.png)
