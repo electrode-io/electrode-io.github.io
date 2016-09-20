@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Electrode Boilerplate | Electrode</title>
+  <title>Bundle Analyzer | Electrode</title>
   <meta name="viewport" content="width=device-width">
-  <meta property="og:title" content="Electrode Boilerplate | Electrode">
+  <meta property="og:title" content="Bundle Analyzer | Electrode">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://electrode-io.github.io//docs/electrode_boilerplate.html">
+  <meta property="og:url" content="https://electrode-io.github.io//docs/bundle-analyzer.html">
   <meta property="og:image" content="https://electrode-io.github.io/img/logo_og.png">
   <meta property="og:description" content="Universal React and Node Applications simplified, performant, and reusable.">
   <meta property="fb:app_id" content="623268441017527">
@@ -1115,7 +1115,7 @@
       <ul><li>
     
 
-    <a href="/docs/bundle-analyzer.html"> &nbsp; Bundle Analyzer</a>
+    <a href="/docs/bundle-analyzer.html" class="active"> &nbsp; Bundle Analyzer</a>
 
     
       </li></ul>
@@ -1130,7 +1130,7 @@
     <li>
     
 
-    <a href="/docs/electrode_boilerplate.html" class="active"> &nbsp; Electrode Boilerplate</a>
+    <a href="/docs/electrode_boilerplate.html"> &nbsp; Electrode Boilerplate</a>
 
     
     </li>
@@ -1406,51 +1406,66 @@
 
 
   <div class="inner-content">
-    <a class="edit-page-link" href="https://github.com/electrode-io/electrode-io.github.io/tree/develop/_docs/04.3-electrode_boilerplate.markdown" target="_blank">Edit on GitHub</a>
+    <a class="edit-page-link" href="https://github.com/electrode-io/electrode-io.github.io/tree/develop/_docs/04.2.3-bundle_analyzer.markdown" target="_blank">Edit on GitHub</a>
     <h1>
-      Electrode Boilerplate
+      Bundle Analyzer
     </h1>
     <div class="subHeader"></div>
 
-    <h3><a class="anchor" name="maximum-performance-out-of-the-box"></a>Maximum Performance Out of the Box <a class="hash-link" href="#maximum-performance-out-of-the-box">#</a></h3>
-<p>In our <a href="get_started.html">Getting Started</a> section, we introduced you to our Yeoman Electrode <a href="https://github.com/electrode-io/generator-electrode">Generator</a> and we constructed an impressive application with the built in technologies that the simple <code>yo electrode</code> command gave us (read our Getting Started: <a href="whats_inside.html">What&#39;s Inside</a> to learn more):</p>
+    <p>A <a href="https://webpack.github.io">webpack</a> bundle analyzer that gives you a detail list of all the files that went into your deduped and minified bundle JS file.</p>
+<h2><a class="anchor" name="installation"></a>Installation <a class="hash-link" href="#installation">#</a></h2>
+<p>Bundle Analyzer lives on <a href="https://www.npmjs.com/package/electrode-bundle-">npm</a>, so if you haven&#39;t already,
+make sure you have <a href="http://nodejs.org/">node</a> installed on your machine first.</p>
+
+<p>Installing should then be as easy as:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo npm install -g electrode-bundle-analyzer
+</code></pre></div><h2><a class="anchor" name="module-electrode-bundle-analyzer"></a>Module: <a href="https://github.com/electrode-io/electrode-bundle-analyzer">electrode-bundle-analyzer</a> <a class="hash-link" href="#module-electrode-bundle-analyzer">#</a></h2><h3><a class="anchor" name="install-via-npm"></a>Install via <code>npm</code> <a class="hash-link" href="#install-via-npm">#</a></h3><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install --save electrode-bundle-analyzer
+</code></pre></div><h3><a class="anchor" name="example-applications"></a>Example Applications <a class="hash-link" href="#example-applications">#</a></h3>
+<ul>
+<li><a href="https://github.com/electrode-io/electrode-boilerplate-universal-react-node#electrode-bundle-analyzer">Electrode Boilerplate</a></li>
+</ul>
+<h2><a class="anchor" name="usage"></a>Usage <a class="hash-link" href="#usage">#</a></h2>
+<p>Bundle Analyzer expects a particular set of data for it to work. </p>
+
+<p>Bundle Analyzer looks for the webpack module ID comment that normally looks something like this:</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/***/</span> <span class="p">},</span>
+<span class="cm">/* 1 */</span>
+<span class="cm">/***/</span> <span class="kd">function</span><span class="p">(</span><span class="nx">module</span><span class="p">,</span> <span class="nx">exports</span><span class="p">,</span> <span class="nx">__webpack_require__</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div>
+<p>You can find more information about it <a href="https://github.com/electrode-io/electrode-bundle-analyzer#generating-the-necessary-data">here</a>.</p>
+<h2><a class="anchor" name="command-line-interface"></a>Command-Line Interface <a class="hash-link" href="#command-line-interface">#</a></h2><div class="highlight"><pre><code class="language-bash" data-lang="bash">Usage: analyze-bundle --bundle <span class="o">[</span>bundle.js<span class="o">]</span> --stats <span class="o">[</span>stats.json<span class="o">]</span> --dir
+<span class="o">[</span>output_dir<span class="o">]</span> --rewrite
+
+Options:
+  -b, --bundle   JS bundle file from webpack                          <span class="o">[</span>required<span class="o">]</span>
+  -s, --stats    stats JSON file from webpack<span class="o">[</span>default: <span class="s2">&quot;dist/server/stats.json&quot;</span><span class="o">]</span>
+  -r, --rewrite  rewrite the bundle file with module ID comments removed
+  -d, --dir      directory to write the analyze results       <span class="o">[</span>default: <span class="s2">&quot;.etmp&quot;</span><span class="o">]</span>
+  -h, --help     Show <span class="nb">help</span>                                             <span class="o">[</span>boolean<span class="o">]</span>
+</code></pre></div>
+<p>When you install Bundle Analyzer globally, <code>analyze-bundle</code> command-line tool is made
+available as the quickest means of checking out your bundle. </p>
+
+<p>If you don&#39;t specify an output directory, a default one <code>.etmp</code> will be created and a <code>.gitignore</code>file is also added there to avoid git picking it up.</p>
+
+<p>Two files will be written to the output directory:</p>
 
 <ul>
-<li><p><a href="https://facebook.github.io/react/index.html">React</a></p></li>
-<li><p><a href="http://redux.js.org/docs/basics/UsageWithReact.html">Redux</a></p></li>
-<li><p><a href="https://github.com/ReactTraining/react-router/tree/master/docs">React Router</a></p></li>
-<li><p><a href="https://github.com/css-modules/css-modules">CSS Modules</a></p></li>
-<li><p><a href="https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.xjxr5yj5z">Universal rendering</a></p></li>
-<li><p><a href="https://webpack.github.io/docs/motivation.html">Webpack</a></p></li>
-<li><p><a href="https://github.com/jchip/isomorphic-loader">Webpack Isomorphic Loader</a></p></li>
-<li><p><a href="https://babeljs.io/">Babel</a></p></li>
-<li><p><a href="http://eslint.org/">ESLint</a></p></li>
-<li><p><a href="https://mochajs.org/">Mocha</a> + <a href="https://github.com/airbnb/enzyme">Enzyme</a> + <a href="https://travis-ci.org/">TravisCI</a></p></li>
-<li><p><a href="http://gulpjs.com/">Gulp</a></p></li>
-<li><p><a href="http://yeoman.io/">Yeoman</a></p></li>
-<li><p><a href="https://www.npmjs.com/package/history">History</a></p></li>
-<li><p><a href="http://bluebirdjs.com/docs/why-promises.html">Bluebird</a></p></li>
-<li><p><a href="https://github.com/electrode-io/electrode-confippet">Electrode Confippet</a></p></li>
-<li><p><a href="https://github.com/electrode-io/electrode-server">Electrode-Server</a></p></li>
-<li><p><a href="https://github.com/electrode-io/electrode-docgen">Electrode-Docgen</a></p></li>
+<li><code>bundle.analyze.json</code></li>
+<li><code>bundle.analyze.tsv</code></li>
 </ul>
 
-<p>This is the beginning foundation of the Electrode  <a href="https://github.com/electrode-io/electrode-boilerplate-universal-react-node">Boilerplate</a>. You have learned in the Stand Alone <a href="stand_alone_modules.html">Modules</a> section that each of the Electrode modules are agnostic and can be used individually to enhance one specific area of your application. However, integrated together, you have a supercharged application; one that is capable of handling the complex problems we face at <a href="www.walmartlabs.com">WalmartLabs</a> and reach maximum efficiency and performance.</p>
+<p>The <code>tsv</code> file is a Tab Separated Values text file that you can easily import into a spreadsheet for viewing.</p>
 
-<p>This boilerplate includes the <a href="whats_inside.html">Electrode Generator</a> and it also has the following stand alone modules and tools built in for peak optimization out-of-the-box:</p>
-
-<ul>
-<li> <a href="above_fold_rendering.html">Above the Fold Rendering</a></li>
-<li> <a href="server_side_render_cache.html">Server Side Render Cache + Profiling</a></li>
-<li> <a href="stateless_csrf_validation.html">Stateless CSRF Validation</a></li>
-<li> <a href="redux_router_engine.html">Electrode Redux Router Engine</a></li>
-<li> <a href="bundle_analyzer.html">Electrode Bundle Analyzer</a></li>
-<li> <a href="electrify.html">Electrify</a></li>
-</ul>
-
-<blockquote>
-<p>Start creating a more complex application today with the <a href="https://github.com/electrode-io/electrode-boilerplate-universal-react-node">Electrode Boilerplate</a>. We can&#39;t wait to see what you build!</p>
-</blockquote>
+<p>For example:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Module ID       Full Path       Identity Path   Size (bytes)
+0       ./client/app.jsx        ./client/app.jsx  328
+1       ./~/react/react.js      ~/react/react.js        46
+2       ./~/react/lib/React.js  ~/react/lib/React.js    477
+3       ./~/object-assign/index.js      ~/object-assign/index.js        984
+4       ./~/react/lib/ReactChildren.js  ~/react/lib/ReactChildren.js    1344
+</code></pre></div>
+<p>You can view an example <code>bundle.analyze.tsv</code> output using the <a href="https://github.com/electrode-io/electrode-boilerplate-universal-react-node#electrode-bundle-analyzer">Electrode Boilerplate</a> code <a href="https://docs.google.com/spreadsheets/d/1IomT2fYCKEwVY0CO-0jImc7CBj_uAmgy70Egsm4CnVE/edit?usp=sharing&amp;rm=minimal">here</a></p>
 
 
     
@@ -1464,10 +1479,10 @@
 
 <div class="docs-prevnext">
   
-    <a class="docs-prev" href="/docs/bundle-analyzer.html">&larr; Prev</a>
+    <a class="docs-prev" href="/docs/electrode_explorer.html">&larr; Prev</a>
   
   
-    <a class="docs-next" href="/docs/community.html">Next &rarr;</a>
+    <a class="docs-next" href="/docs/electrode_boilerplate.html">Next &rarr;</a>
   
 </div>
 
