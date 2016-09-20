@@ -20,7 +20,7 @@ What does generate-electrode give you? Let's begin by navigating to `<your-aweso
 
 Building with React lets developers create a modular and reusable component architecture. We can reuse the business logic in existing models and controllers because it only provides the View layer. The components you write are self-contained, which aids developers in reasoning what a component does directly by reading the source. Finally, it is ideally suited to Universal JavaScript (previously called Isomorphic JavaScript), the practice of sharing code between Server and Client.
 
-Next, navigate to `<your-awesome-app'>/client/styles/base.css`:
+Next, navigate to `<your-awesome-app>/client/styles/base.css`:
 
 {% raw  %}
 ```
@@ -31,7 +31,7 @@ client
 
 We will use [CSS Modules](https://github.com/css-modules/css-modules): a CSS file in which all class names and animation names are scoped locally by default. At WalmartLabs, this helps us tackle large-scale styling issues by mitigating the issues inherent in the global scope in CSS.
 
-Let's peer inside of our client/app.jsx to get a better understanding of the relationship between the client and the server: `<your-awesome-app'>/client/app.jsx`:
+Let's peer inside of our client/app.jsx to get a better understanding of the relationship between the client and the server: `<your-awesome-app>/client/app.jsx`:
 
 {% raw  %}
 ```
@@ -116,7 +116,7 @@ server
 
 You are now using [Electrode-Server](https://github.com/electrode-io/electrode-server), a NodeJS module that allows you to start up a Hapi server with a single function call, but gives you a lot of flexibility through configurations. This is the baseline functionality of a [Hapi] (http://hapijs.com/) web server that you can extend via configuration.
 
-Before we move on, we should inspect a critical file, `<your-awesome-app'>/server/plugins/webapp/index.html`. This is where the server side "magic" happens. By magic, of course we mean the benefits of using the generate-electrode + server side rendering.
+Before we move on, we should inspect a critical file, `<your-awesome-app>/server/plugins/webapp/index.html`. This is where the server side "magic" happens. By magic, of course we mean the benefits of using the generate-electrode + server side rendering.
 
 {% raw  %}
 ```
@@ -161,4 +161,4 @@ Following, we have the `<your-awesome-app>/isomorphic-loader-config.json`:
 ```
 This [powerful tool] (https://github.com/jchip/isomorphic-loader) makes NodeJS `require` understanding files such as images when you are doing server side rendering. It contains three pieces: a Webpack loader, Webpack plugin and a library for your NodeJS app.
 
-With the generator-electrode, we've created a dynamic and performant full stack Electrode app in under five minutes, using some of our favorite technologies, like [React] (https://facebook.github.io/react/index.html) and [Hapi] (http://hapijs.com/). Let's explore and personalize this web application in our next section, [Intermediate: Create a Standalone Component](create_reusable_component.html).
+With the generator-electrode, we've created a dynamic and performant full stack Electrode app in under five minutes, using some of our favorite technologies, like [React] (https://facebook.github.io/react/index.html) and [Hapi] (http://hapijs.com/). Let's explore and personalize this web application in our next section, [Intermediate: Create a Resuable Component](create_reusable_component.html).
