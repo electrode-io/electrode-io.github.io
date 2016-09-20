@@ -29,7 +29,7 @@ client
 ```
 {% endraw %}
 
-We will use [CSS Modules](https://github.com/css-modules/css-modules): a CSS file in which all class names and animation names are scoped locally by default. At WalmartLabs this helps us tackle big scale style issues by fixing the issue of the global scope in CSS.
+We will use [CSS Modules](https://github.com/css-modules/css-modules): a CSS file in which all class names and animation names are scoped locally by default. At WalmartLabs, this helps us tackle large-scale styling issues by mitigating the issues inherent in the global scope in CSS.
 
 Let's peer inside of our client/app.jsx to get a better understanding of the relationship between the client and the server: `<your-awesome-app'>/client/app.jsx`:
 
@@ -75,7 +75,7 @@ Why react-router? The project is mature, well documented and integrates well wit
 
 If you have a universal application and server side rendering, [react-resolver] (http://ericclemmons.com/react-resolver/docs/getting-started/ServerRendering.html) handles bootstrapping server-rendered markup via Resolver.render instead of React.render.
 
-We will be sharing our routes between server and client so obviously we only want to define them in one place, in your `<your-awesome-app>/client/routes.jsx`:
+We will be sharing our routes between server and client, so obviously we only want to define them in one place, in your `<your-awesome-app>/client/routes.jsx`:
 
 {% raw  %}
 ```
