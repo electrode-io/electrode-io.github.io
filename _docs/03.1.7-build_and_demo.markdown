@@ -9,6 +9,7 @@ toplevel: "Getting Started: Intermediate"
 Now run it and explore the live demo!
 
 ```bash
+  $ cd your-awesome-component
   $ gulp build && gulp demo
 ```
 
