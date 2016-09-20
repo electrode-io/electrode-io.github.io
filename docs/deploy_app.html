@@ -219,6 +219,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -298,6 +303,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -597,6 +607,11 @@
   
   
 
+  
+  
+  
+  
+
 
           </ul>
         
@@ -827,6 +842,19 @@
     <li>
     
 
+    <a href="/docs/electrode_boilerplate.html"> &nbsp; Electrode Boilerplate</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
     <a href="/docs/community.html"> &nbsp; Community</a>
 
     
@@ -855,6 +883,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1122,6 +1155,26 @@ Password:
 <p>Or you can also create an app that will generate a your app&#39;s name (if it is available):</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku create your-awesome-app
 </code></pre></div>
+<p>Navigate to your <code>package.json.</code> Add this line in the <code>scripts</code>:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json">  <span class="s2">&quot;heroku-postbuild&quot;</span><span class="err">:</span> <span class="s2">&quot;gulp build&quot;</span><span class="err">,</span>
+</code></pre></div>
+<p>It should now look like this:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;gulp dev&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;gulp test&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;coverage&quot;</span><span class="p">:</span> <span class="s2">&quot;gulp check&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;heroku-postbuild&quot;</span><span class="p">:</span> <span class="s2">&quot;gulp build&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;node server/index.js&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Use the command below to set a configuration so that Heroku installs Your-Awesome-App&#39;s devDependencies:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku config:set <span class="nv">NPM_CONFIG_PRODUCTION</span><span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
+<p>Use the command below to set a configuration for <a href="https://github.com/docs-code-examples-electrode-io/electrode-example-app-with-plugin-and-routes/blob/master/config/production.js#L11">production.js</a>:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku config:set <span class="nv">STATIC_FILES</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
 <p>Deploy your code:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git push heroku master
 </code></pre></div>
@@ -1134,7 +1187,7 @@ Password:
 <p>Deploy this latest code:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git push heroku master
 </code></pre></div>
-<p>And... you did it! We will build even more in our <a href="create_standalone_component.html">Getting Started: Intermediate</a> and cover complex topics like routing, server plugins and other powerful deployment software.</p>
+<p>And... you did it! <a href="https://electrode-example-party-app.herokuapp.com/">Click here</a> for our deployed Heroku version. We will build even more in our <a href="create_reusable_component.html">Getting Started: Intermediate</a> and cover complex topics like routing, server plugins and other powerful deployment software.</p>
 
 
     
