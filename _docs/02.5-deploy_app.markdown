@@ -128,6 +128,13 @@ It should now look like this:
 }
 ```
 
+Use the following commands to commit this change as well:
+
+```bash
+$ git add .
+$ git commit -m "Updates package.json"
+```
+
 Use the command below to set a configuration so that Heroku installs Your-Awesome-App's devDependencies:
 
 ```bash
@@ -152,4 +159,4 @@ Visit the app at the generated URL by using this command:
 $ heroku open
 ```
 
-And... you did it! [Click here](https://electrode-example-party-app.herokuapp.com/) for our deployed Heroku version. We will build even more in our [Getting Started: Intermediate](create_reusable_component.html) and cover complex topics like routing, server plugins and other powerful deployment software.
+And... you did it! [Click here](https://first-electrode-example-app.herokuapp.com) for our deployed Heroku version. We will build even more in our [Getting Started: Intermediate](create_reusable_component.html) and cover complex topics like routing, server plugins and other powerful deployment software.
