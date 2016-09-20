@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Deploy Your App | Electrode</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:title" content="Deploy Your App | Electrode">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://electrode-io.github.io//docs/deploy_app.html">
+  <meta property="og:image" content="https://electrode-io.github.io/img/logo_og.png">
+  <meta property="og:description" content="Universal React and Node Applications simplified, performant, and reusable.">
+  <meta property="fb:app_id" content="623268441017527">
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="Electrode" href="https://electrode-io.github.io/feed.xml">
+
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/electrode.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+
+  <script src="//use.typekit.net/vqa1hcx.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <!--[if lte IE 8]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/es5-shim.min.js"></script>
+  <script src="/js/es5-sham.min.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="nav-main">
+      <div class="wrap">
+        <a class="nav-home" href="/index.html">
+          <img class="nav-logo" src="/img/electrode-02.png" width="45" height="45" style="margin-bottom: 5px;">
+          electrode
+        </a>
+
+        <ul class="nav-site nav-site-internal">
+          <li><a href="/docs/what_is_electrode.html" class="active">docs</a></li>
+          <!--<li><a href="/support.html">Support</a></li>-->
+        </ul>
+        <ul class="nav-site nav-site-external">
+          <li><a href="https://github.com/electrode-io">GitHub</a></li>
+          <li><a href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+    <section class="content wrap documentationContent">
+  <div class="nav-docs">
+  
+    <div class="nav-docs-section">
+      <h3>Overview</h3>
+      
+        <ul>
+          
+
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/what_is_electrode.html"> &nbsp; What is Electrode?</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/why_use_electrode.html"> &nbsp; Why Use Electrode?</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/requirements.html"> &nbsp; Requirements</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+        </ul>
+      
+    </div>
+  
+    <div class="nav-docs-section">
+      <h3>Getting Started</h3>
+      
+        
+          <h5>Quick Start</h5>
+          <ul>
+            
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/get_started.html"> &nbsp; Get Started</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/build_component.html"> &nbsp; Build Component</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/deploy_app.html" class="active"> &nbsp; Deploy Your App</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/whats_inside.html"> &nbsp; What's Inside</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+          </ul>
+        
+          <h5>Intermediate</h5>
+          <ul>
+            
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/create_reusable_component.html"> &nbsp; Create a Reusable Component</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/low_level_components.html"> &nbsp; Low-Level Components</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/component_helpers.html"> &nbsp; Component Helpers</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/develop_styles.html"> &nbsp; Develop Styles</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/high_level_component.html"> &nbsp; Develop Main Component</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/test_components.html"> &nbsp; Test Components</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/add_data.html"> &nbsp; Add Data</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/build_and_demo.html"> &nbsp; Build and Demo</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/generate_docs.html"> &nbsp; Generate Docs</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/build_server_plugin.html"> &nbsp; Build a Server Plugin</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/add_routes.html"> &nbsp; Add Routes</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/server_config.html"> &nbsp; Server Config</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/more_deployments.html"> &nbsp; More Deployments</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/docker.html"> &nbsp; Docker</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/kubernetes.html"> &nbsp; Kubernetes</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+          </ul>
+        
+          <h5>Advanced</h5>
+          <ul>
+            
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/stand_alone_modules.html"> &nbsp; Stand Alone Modules</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/confippet.html"> &nbsp; Confippet</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/above_fold_rendering.html"> &nbsp; Above The Fold Rendering</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/server_side_render_cache.html"> &nbsp; Server Side Render Caching + Profiling</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/stateless_csrf_validation.html"> &nbsp; Stateless CSRF Validation</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/redux_router_engine.html"> &nbsp; Redux Router Engine</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/electrode_tools.html"> &nbsp; Powerful Electrode Tools</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/electrify.html"> &nbsp; Electrify</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/electrode_explorer.html"> &nbsp; Electrode Explorer</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/electrode_boilerplate.html"> &nbsp; Electrode Boilerplate</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/community.html"> &nbsp; Community</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+          </ul>
+        
+      
+    </div>
+  
+    <div class="nav-docs-section">
+      <h3>Resources</h3>
+      
+        <ul>
+          
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/faq.html"> &nbsp; FAQs</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/further_reading.html"> &nbsp; Further Reading</a>
+
+    
+    </li>
+  
+
+
+        </ul>
+      
+    </div>
+  
+
+
+  <!-- Tips Nav -->
+  <!-- 
+    <div class="nav-docs-section">
+      <h3>Tips</h3>
+      <ul>
+        
+          <li>
+            <a href="/tips/introduction.html">Introduction</a>
+          </li>
+        
+      </ul>
+    </div>
+   -->
+
+  <!-- Contributing Nav -->
+  <!-- 
+    <div class="nav-docs-section">
+      <h3>Contributing</h3>
+      <ul>
+        
+          <li>
+            <a href="/contributing/design-principles.html">Design Principles</a>
+          </li>
+        
+      </ul>
+    </div>
+   -->
+</div>
+
+
+  <div class="inner-content">
+    <a class="edit-page-link" href="https://github.com/electrode-io/electrode-io.github.io/tree/develop/_docs/02.5-deploy_app.markdown" target="_blank">Edit on GitHub</a>
+    <h1>
+      Deploy Your App
+    </h1>
+    <div class="subHeader"></div>
+
+    <p>We&#39;re almost finished with our Quick Start. The final step is to deploy your-awesome-app and share it with your fellow developers using <a href="https://devcenter.heroku.com/categories/deployment">Heroku</a>. We have listed the steps below, but feel free to learn more about Heroku <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction">here</a>. These instructions assume you have a GitHub account. Navigate to your GitHub and create a new repo &#39;Your-Awesome-App&#39;. Hit the <code>clone your-awesome-repo</code> and follow the steps below in order:</p></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git init
+<span class="nv">$ </span>git add .
+<span class="nv">$ </span>git commit -m <span class="s1">&#39;first commit&#39;</span>
+<span class="nv">$ </span>git remote add origin https://github.com/your-Github-name/your-awesome-app.git
+<span class="nv">$ </span>git push -u origin master
+</code></pre></div>
+<p>Navigate to the <a href="https://signup.heroku.com/dc">Heroku site</a> and set up a free account. This will help streamline our deployment process (we will do this several times).</p>
+
+<p>Next, let&#39;s quickly deploy <code>your-awesome-app</code> from the command line. <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up%22">Click here</a> to download and install the Heroku CLI for your machine.</p>
+
+<p>When you are finished installing, log in using the email address and password you used when creating your Heroku account.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku login
+</code></pre></div>
+<p>Enter your Heroku credentials:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Email: your-example-email@walmartlabs.com
+Password:
+</code></pre></div>
+<p>You should see a terminal message <code>Logged in as your-example-email@walmartlabs.com</code>. Now, let&#39;s deploy!</p>
+
+<p>We need to specify the <a href="https://devcenter.heroku.com/articles/node-best-practices">version of node</a> you are using on your machine into our <code>package.json</code>. Add the code below the <code>author</code> section and before the <code>contributors</code> section of your <code>package.json</code>:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json">    <span class="s2">&quot;engines&quot;</span><span class="err">:</span> <span class="p">{</span>
+      <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;4.2.x&quot;</span>
+    <span class="p">}</span><span class="err">,</span>
+</code></pre></div>
+<p>It should now look like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{
+  &quot;name&quot;: &quot;your-awesome-app&quot;,
+  &quot;version&quot;: &quot;0.0.0&quot;,
+  &quot;description&quot;: &quot;your-app-description&quot;,
+  &quot;homepage&quot;: &quot;your-awesome-app&quot;,
+  &quot;author&quot;: {
+    &quot;name&quot;: &quot;your-name&quot;,
+    &quot;email&quot;: &quot;your-email-address@email.com,
+    &quot;url&quot;: &quot;your-app-url&quot;
+  },
+  &quot;engines&quot;: {
+    &quot;node&quot;: &quot;4.2.x&quot;
+  },
+  &quot;contributors&quot;: [],
+  &quot;files&quot;: [
+    &quot;lib&quot;
+  ],
+  &quot;main&quot;: &quot;lib/index.js&quot;,
+  &quot;keywords&quot;: [
+    &quot;test&quot;
+  ],
+  &quot;repository&quot;: {
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;your-repo-url&quot;
+  },
+  &quot;license&quot;: &quot;Apache-2.0&quot;,
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;gulp test&quot;,
+    &quot;coverage&quot;: &quot;gulp check&quot;
+  },
+  &quot;dependencies&quot;: {
+    &quot;bluebird&quot;: &quot;^2.10.2&quot;,
+    &quot;electrode-router-resolver-engine&quot;: &quot;^1.0.0&quot;,
+    &quot;electrode-server&quot;: &quot;^1.0.0&quot;,
+    &quot;electrode-static-paths&quot;: &quot;^1.0.0&quot;,
+    &quot;lodash&quot;: &quot;^4.10.1&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;electrode-archetype-react-app&quot;: &quot;^1.0.0&quot;,
+    &quot;electrode-archetype-react-app-dev&quot;: &quot;^1.0.0&quot;,
+    &quot;gulp&quot;: &quot;^3.9.1&quot;
+  }
+}
+</code></pre></div>
+<p>Use the following commands to commit your changes:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git add .
+<span class="nv">$ </span>git commit -m <span class="s2">&quot;Updates package.json&quot;</span>
+</code></pre></div>
+<p>Create an app on Heroku (which prepares Heroku to receive your source code). This will also create a git remote called heroku and generate a random name:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku create
+</code></pre></div>
+<p>Or you can also create an app that will generate a your app&#39;s name (if it is available):</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku create your-awesome-app
+</code></pre></div>
+<p>Navigate to your <code>package.json.</code> Add this line in the <code>scripts</code>:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json">  <span class="s2">&quot;heroku-postbuild&quot;</span><span class="err">:</span> <span class="s2">&quot;gulp build&quot;</span><span class="err">,</span>
+</code></pre></div>
+<p>It should now look like this:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;gulp dev&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;gulp test&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;coverage&quot;</span><span class="p">:</span> <span class="s2">&quot;gulp check&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;heroku-postbuild&quot;</span><span class="p">:</span> <span class="s2">&quot;gulp build&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;node server/index.js&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Use the command below to set a configuration so that Heroku installs Your-Awesome-App&#39;s devDependencies:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku config:set <span class="nv">NPM_CONFIG_PRODUCTION</span><span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
+<p>Use the command below to set a configuration for <a href="https://github.com/docs-code-examples-electrode-io/electrode-example-app-with-plugin-and-routes/blob/master/config/production.js#L11">production.js</a>:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku config:set <span class="nv">STATIC_FILES</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<p>Deploy your code:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git push heroku master
+</code></pre></div>
+<p>Visit the app at the generated URL by using this command:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku open
+</code></pre></div>
+<p>And... you did it! <a href="https://electrode-example-party-app.herokuapp.com/">Click here</a> for our deployed Heroku version. We will build even more in our <a href="create_reusable_component.html">Getting Started: Intermediate</a> and cover complex topics like routing, server plugins and other powerful deployment software.</p>
+
+
+    
+
+
+
+
+
+
+
+
+<div class="docs-prevnext">
+  
+    <a class="docs-prev" href="/docs/build_component.html">&larr; Prev</a>
+  
+  
+    <a class="docs-next" href="/docs/whats_inside.html">Next &rarr;</a>
+  
+</div>
+
+
+  </div>
+</section>
+
+
+    <footer class="wrap">
+      <div class="left">
+        <a href="https://github.com/orgs/electrode-io/people" target="_blank">Acknowledgements</a>
+      </div>
+      <div class="right">
+        &copy; 2016 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
+        Apache-2.0 license.
+      </div>
+    </footer>
+  </div>
+  <div id="fb-root"></div>
+
+  <!--
+    TODO: analytics js, etc.
+  -->
+</body>
+</html>
