@@ -62,12 +62,10 @@ Navigate to `<your-awesome-app>/server/plugins/friends/index.js`. This is where 
   exports.register = (server, options, next) => {
 
     const friendsArr = [
-      {name: "electrode", img: "//goo.gl/I9utJF", size: 9, github: "https://github.com/electrode-io/electrode-boilerplate-universal-react-node"},
-      {name: "hapi", img: "//goo.gl/bEBi6G", size: 9, github: "https://github.com/hapijs/hapi"},
+      {name: "Electrode", img: "//goo.gl/I9utJF", size: 9, github: "https://github.com/electrode-io/electrode-boilerplate-universal-react-node"},
       {name: "React", img: "//goo.gl/xwbqlB", size: 9, github: "https://github.com/facebook/react"},
       {name: "Redux", img: "//goo.gl/MGQ3lp", size: 9, github: "https://github.com/reactjs/redux"},
-      {name: "Webpack", img: "//goo.gl/zgxe8s", size: 9, github: "https://github.com/webpack/webpack"},
-      {name: "node", img: "//goo.gl/hxmCEE", size: 9, github: "https://github.com/nodejs/node"}
+      {name: "Node", img: "//goo.gl/hxmCEE", size: 9, github: "https://github.com/nodejs/node"}
     ];
 
     const getContributorsPromises = friendsArr.map((friend) => {
