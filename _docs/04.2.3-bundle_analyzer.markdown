@@ -30,7 +30,7 @@ Bundle Analyzer looks for the webpack module ID comment that normally looks some
 /***/ function(module, exports, __webpack_require__) {
 ```
 
-You can find more information about it [here](https://github.com/electrode-io/electrode-bundle-analyzer#generating-the-necessary-data).
+You can find more information about it in the Bundle Analyzer [readme](https://github.com/electrode-io/electrode-bundle-analyzer#generating-the-necessary-data) file.
 
 ## Command-Line Interface ##
 
@@ -70,4 +70,4 @@ Module ID       Full Path       Identity Path   Size (bytes)
 4       ./~/react/lib/ReactChildren.js  ~/react/lib/ReactChildren.js    1344
 ```
 
-You can view an example `bundle.analyze.tsv` output using the [Electrode Boilerplate](https://github.com/electrode-io/electrode-boilerplate-universal-react-node#electrode-bundle-analyzer) code [here](https://docs.google.com/spreadsheets/d/1IomT2fYCKEwVY0CO-0jImc7CBj_uAmgy70Egsm4CnVE/edit?usp=sharing&rm=minimal)
+You can view an example [`bundle.analyze.tsv`](https://docs.google.com/spreadsheets/d/1IomT2fYCKEwVY0CO-0jImc7CBj_uAmgy70Egsm4CnVE/edit?usp=sharing&rm=minimal) output using the [Electrode Boilerplate](https://github.com/electrode-io/electrode-boilerplate-universal-react-node#electrode-bundle-analyzer) code.
