@@ -26,7 +26,7 @@ This is a central place where you can view
 
 There are 2 ways the components can update dynamically:
 
-1. Add github hooks to send POST requests to `/api/update/{org}/{repoName}` when a new tag is created
+1. Add GitHub hooks to send POST requests to `/api/update/{org}/{repoName}` when a new tag is created
 2. Enable `./server/poll` plugin, so the server will send the POST requests every certain interval
 
 It's recommended to use Method #1 to see updates in near real time.

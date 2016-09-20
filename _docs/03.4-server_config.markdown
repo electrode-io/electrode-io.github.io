@@ -69,7 +69,7 @@ By tapping on the `Click Here to Make it a Party` link Your Awesome App routes t
 
 By checking the guest list, you are setting that selected `invitee object's` key to {invited: true}, which tells `renderFriends` to render.
 
-When all of our guest are invited to the House Party are CSS modules kick in and launch an Electrode House Party!
+When all of our guests are invited to the House Party our CSS modules kick in and launch an Electrode House Party!
 
 ![app-party-view](/img/app-party-view.png)
 
