@@ -71,9 +71,11 @@ By checking the guest list, you are setting that selected `invitee object's` key
 
 When all of our guests are invited to the House Party our CSS modules kick in and launch an Electrode House Party!
 
-![app-party-view](/img/app-party-view.png)
+![app-party-view](/img/collabo-party-view.png)
 
 Feel free to add your own personal touch and build out your Resource List House Party. [Click here](https://electrode-example-app.herokuapp.com/) to view our Heroku deployed example app.
 
-When you're ready, you can deploy Your Awesome App to [Heroku](https://devcenter.heroku.com/categories/deployment) by following the previous steps in our [Getting Started: Build More](build_component.html) section. You can also navigate to [Intermediate: More Deployments](more_deployments.html) to learn how to deploy with
+When you're ready, you can deploy Your Awesome App to [Heroku](https://devcenter.heroku.com/categories/deployment) by following the previous steps in our [Getting Started: Build More](build_component.html) section. If you choose this step, make sure you set all of the Heroku configurations, including the one for our [GitHub Api](build_server_plugin).
+
+You can also navigate to [Intermediate: More Deployments](more_deployments.html) to learn how to deploy with
 [Docker](docker.html) and [Kubernetes](kubernetes.html).
