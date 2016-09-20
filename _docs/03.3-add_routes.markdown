@@ -30,12 +30,11 @@ Navigate to `<your-awesome-component>/client/routes.jsx`. Copy, paste and save t
   );
 ```
 
-Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existing code by copy, pasting and saving the code below:
+Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existing code by copying, pasting and saving the code below:
 
 ```javascript
   import React, { Component, PropTypes } from "react";
   import { Link } from "react-router";
-  import styles from "../styles/base.css";
 
   export class Home extends Component {
 
@@ -93,7 +92,7 @@ Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existi
       const message = this.introMessage;
 
       return (
-        <div className={styles.rootDiv}>
+        <div>
           {React.cloneElement(this.props.children, {
             ourFriends, invitees, toggleGuest, view, message
           })}
@@ -105,16 +104,6 @@ Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existi
   Home.propTypes = {
     children: PropTypes.node
   };
-```
-
-Let's also add some style elements using in your `<your-awesome-app>/client/style/base.css`; copy, paste and save the code below into this file:
-
-```css
-.rootDiv {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
 ```
 
 Navigate to [Intermediate: Server Config](server_config.html), to learn about [Confippet](confippet.html) and add our Hapi plugin to our server config.

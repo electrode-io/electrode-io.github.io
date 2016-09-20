@@ -29,7 +29,7 @@ client
 ```
 {% endraw %}
 
-We will use [CSS Modules](https://github.com/css-modules/css-modules): a CSS file in which all class names and animation names are scoped locally by default. At WalmartLabs this helps us tackle big scale style issues by fixing the issue of the global scope in CSS.
+We will use [CSS Modules](https://github.com/css-modules/css-modules): a CSS file in which all class names and animation names are scoped locally by default. At WalmartLabs, this helps us tackle large-scale styling issues by mitigating the issues inherent in the global scope in CSS.
 
 Let's peer inside of our client/app.jsx to get a better understanding of the relationship between the client and the server: `<your-awesome-app'>/client/app.jsx`:
 
@@ -75,7 +75,7 @@ Why react-router? The project is mature, well documented and integrates well wit
 
 If you have a universal application and server side rendering, [react-resolver] (http://ericclemmons.com/react-resolver/docs/getting-started/ServerRendering.html) handles bootstrapping server-rendered markup via Resolver.render instead of React.render.
 
-We will be sharing our routes between server and client so obviously we only want to define them in one place, in your `<your-awesome-app>/client/routes.jsx`:
+We will be sharing our routes between server and client, so obviously we only want to define them in one place, in your `<your-awesome-app>/client/routes.jsx`:
 
 {% raw  %}
 ```
@@ -161,4 +161,4 @@ Following, we have the `<your-awesome-app>/isomorphic-loader-config.json`:
 ```
 This [powerful tool] (https://github.com/jchip/isomorphic-loader) makes NodeJS `require` understanding files such as images when you are doing server side rendering. It contains three pieces: a Webpack loader, Webpack plugin and a library for your NodeJS app.
 
-With the generator-electrode, we've created a dynamic and performant full stack Electrode app in under five minutes, using some of our favorites technologies, like [React] (https://facebook.github.io/react/index.html) and [Hapi] (http://hapijs.com/). Let's explore and personalize this web application in our next section, [Intermediate: Create a Standalone Component](create_reusable_component.html).
+With the generator-electrode, we've created a dynamic and performant full stack Electrode app in under five minutes, using some of our favorite technologies, like [React] (https://facebook.github.io/react/index.html) and [Hapi] (http://hapijs.com/). Let's explore and personalize this web application in our next section, [Intermediate: Create a Standalone Component](create_reusable_component.html).

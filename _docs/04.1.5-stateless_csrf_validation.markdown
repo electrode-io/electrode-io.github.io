@@ -14,7 +14,7 @@ CSRF protection is an important security feature, but in systems which don't hav
 
 ***Double JWT CSRF tokens***
 
-We rely on the fact that cross site requests can't set headers.
+We rely on the fact that cross-site requests can't set headers.
 
 Two JWT CSRF tokens are generated on the server side with the same payload but different types (see below), one for the HTTP header, one for the cookie.
 
@@ -25,9 +25,9 @@ cookiePayload = { type: "cookie", UUID: "12345" };
 
 When a client makes a request, the JWT token must be sent in the headers.
 
-On server side, both tokens are received, decoded, and validated to make sure the payloads match.
+On the server side, both tokens are received, decoded, and validated to make sure the payloads match.
 
-Disadvantage: relies on client making all request through AJAX.
+The disadvantage is that this method relies on the client making all requests through AJAX.
 
 {% include module_usage.md moduleId="electrode-csrf-jwt" express=true hapi=true %}
 
