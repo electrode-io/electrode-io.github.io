@@ -27,16 +27,9 @@ Create a file titled: `<your-awesome-component>/demo/examples/guest-list.example
   />
 ```
 
-Navigate to `<your-awesome-component>/demo/examples/your-awesome-component.example`. Add the code below between your component tags:
+Navigate to `<your-awesome-component>/demo/examples/your-awesome-component.example`. Add the code below. Don't forget to change the references from the literal YourAwesomeComponent to your actual component name:
 
-```
-  <YourAwesomeComponent
-  -insert code below here-
-                    />.
-```
-It should look like this:
-
-```
+```javascript
 <YourAwesomeComponent
   ourFriends={[
    {name: "electrode", img: "//goo.gl/CZ4wAF", size: 12},
