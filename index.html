@@ -12,20 +12,20 @@
         <a class="nav-home" href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a>
 	    </div>
 
-        	<div class="col-md-3 col-md-offset-4">
-		        <ul class="nav-site nav-site-index">
-		          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>HOME</a></li>
-		          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>DOCS</a></li>
-		          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>CONTRIBUTE</a></li>
-		        </ul>
-		    </div>
-	        <div class="col-md-2">
-		        <ul class="nav-site nav-site-index">
-		          <li><a href="https://github.com/electrode-io">A</a></li>
-		          <li><a href="https://github.com/electrode-io">B</a></li>
-		          <li><a href="https://github.com/electrode-io">C</a></li>
-		        </ul>
-		    </div>
+    	<div class="col-md-3 col-md-offset-4">
+	        <ul class="nav-site">
+	          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>HOME</a></li>
+	          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>DOCS</a></li>
+	          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>CONTRIBUTE</a></li>
+	        </ul>
+	    </div>
+        <div class="col-md-2">
+	        <ul class="nav-site">
+	          <li><a href="https://github.com/electrode-io">A</a></li>
+	          <li><a href="https://github.com/electrode-io">B</a></li>
+	          <li><a href="https://github.com/electrode-io">C</a></li>
+	        </ul>
+	    </div>
       </div>
 	</div>
 
@@ -43,16 +43,19 @@
 			<img src="/img/placeholder2.png" width="50" height="50"/>
 			<h3>CORE</h3>
 			<div>Build a simple, flexible scaffold in minutes, with support for server-side rendering and easy deployment to multiple could providers. Electrode lets you focus on code, not configuration. <a href="#">Learn More.</a></div>
+			<button class="btn">MORE</button>
 		</div>
 		<div class="col-md-4">
 			<img src="/img/placeholder2.png" width="50" height="50"/>
 			<h3>MODULES</h3>
 			<div>Level up your app with features like above-the-fold rendering, server-side render caching, and stateless CSRF validation. Modules work with your existing React/Node app - no need to emigrate to Electrode core. <a href="#">Learn More.</a></div>
+			<button class="btn">MORE</button>
 		</div>
 		<div class="col-md-4">
 			<img src="/img/placeholder2.png" width="50" height="50"/>
 			<h3>TOOLS</h3>
 			<div>Discover reusable components and optimize your JS bundle with standalone tools. These tools can be used with any React/Node app, but work best with the structure provided by Electrode Core. <a href="#">Learn More.</a></div>
+			<button class="btn">MORE</button>
 		</div>
 	</div>
 
@@ -61,7 +64,7 @@
 			<img class="snippet-selectors" id="core" src="/img/placeholder2.png" height="50" width="50">
 			<img class="snippet-selectors" id="modules" src="/img/placeholder2.png" height="50" width="50">
 			<img class="snippet-selectors" id="tools" src="/img/placeholder2.png" height="50" width="50">
-			<img src="/img/placeholder2.png" height="50" width="50">
+			<img src="/img/placeholder2.png" height="50" width="50" class="scroll-up">
 		</div>
 		<div class="col-md-4 center">
 			<img src="/img/placeholder2.png" height="50" width="50">
@@ -87,10 +90,10 @@
 
 	<div class="row buttons">
 		<div class="col-md-4 left">
-			<img class="snippet-selectors" id="core" src="/img/placeholder2.png" height="50" width="50">
-			<img class="snippet-selectors" id="modules" src="/img/placeholder2.png" height="50" width="50">
-			<img class="snippet-selectors" id="tools" src="/img/placeholder2.png" height="50" width="50">
-			<img src="/img/placeholder2.png" height="50" width="50">
+			<img class="snippet-selectors" src="/img/placeholder2.png" height="50" width="50">
+			<img class="snippet-selectors" src="/img/placeholder2.png" height="50" width="50">
+			<img class="snippet-selectors" src="/img/placeholder2.png" height="50" width="50">
+			<img src="/img/placeholder2.png" height="50" width="50" class="scroll-up">
 		</div>
 		<div class="col-md-4 center">
 			<img src="/img/placeholder2.png" height="50" width="50">
@@ -145,6 +148,32 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="footer">
+		<div class="col-md-6">
+	        <a class="nav-home" href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a>
+	        <div>Open Sourced Under Apache, Built with &hearts; by @WalmartLabs.</div>
+	        <div>Electrode is maintained by the core team with help of our contributors.</div>
+		</div>
+
+		<div class="col-md-6">
+        	<div class="col-md-3 col-md-offset-4">
+		        <ul>
+		          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>HOME</a></li>
+		          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>DOCS</a></li>
+		          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>CONTRIBUTE</a></li>
+		        </ul>
+		    </div>
+	        <div class="col-md-2">
+		        <ul>
+		          <li><a href="https://github.com/electrode-io">A</a></li>
+		          <li><a href="https://github.com/electrode-io">B</a></li>
+		          <li><a href="https://github.com/electrode-io">C</a></li>
+		        </ul>
+		    </div>
+		</div>
+		<button class="btn col-md-offset-6">BACK TO THE TOP</button>
 	</div>
 
 </body>

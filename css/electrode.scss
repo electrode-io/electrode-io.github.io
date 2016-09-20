@@ -416,7 +416,7 @@ section.black content {
       padding: 15px 30px 15px 15px;
       margin: 20px 0;
       background-color: rgba(204, 122, 111, 0.09999999999999998);
-      border-left: 5px solid #db2975;
+      border-left: 5px solid $primary;
     h4 {
       margin-top: 0;
     }
@@ -737,8 +737,46 @@ p a code {
 
 .electrode-modules{
   text-align: center;
+
+  div{
+    padding: 10px 30px 10px 30px;
+  }
 }
 
 .buttons{
   margin: 25px 0px 25px 0px;
+}
+
+.footer{
+  @include clearfix;
+  background: linear-gradient($darkestColor, $darkerColor);
+  color: $lightTextColor;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+  z-index: 100;
+
+  width: 100%;
+  overflow: hidden;
+
+  ul {
+    list-style: none;
+    position: relative;
+    left: 50%;
+    width: 32%;
+    display: inline-block;
+
+    li {
+      position: relative;
+      display: inline-block;
+      right: 50%;
+    }
+  }
+
+  button{
+    background: white;
+    color: black;
+  }
+}
+
+.scroll-up{
+  cursor: n-resize;
 }
