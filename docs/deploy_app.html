@@ -1445,6 +1445,10 @@ Password:
   }
 }
 </code></pre></div>
+<p>Use the following commands to commit your changes:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git add .
+<span class="nv">$ </span>git commit -m <span class="s2">&quot;Updates package.json&quot;</span>
+</code></pre></div>
 <p>Create an app on Heroku (which prepares Heroku to receive your source code). This will also create a git remote called heroku and generate a random name:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku create
 </code></pre></div>
@@ -1476,12 +1480,6 @@ Password:
 </code></pre></div>
 <p>Visit the app at the generated URL by using this command:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku open
-</code></pre></div>
-<p>One last thing we can do is define a <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile">Procfile</a>, a text file to explicitly declare what command can start your-awesome-app. Create a file name <code>Procfile</code> in your root directory. Add the code below:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">web: node index.js
-</code></pre></div>
-<p>Deploy this latest code:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git push heroku master
 </code></pre></div>
 <p>And... you did it! <a href="https://electrode-example-party-app.herokuapp.com/">Click here</a> for our deployed Heroku version. We will build even more in our <a href="create_reusable_component.html">Getting Started: Intermediate</a> and cover complex topics like routing, server plugins and other powerful deployment software.</p>
 

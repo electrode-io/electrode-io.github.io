@@ -1402,7 +1402,7 @@
       |_index-view.jsx
     |_index.js
 </code></pre></div>
-<p>Navigate to <code>&lt;your-awesome-app&gt;/server/plugins/friends/index.js</code>. This is where we will make an external API call to Github and request the last ten contributors of our selected Open Source &#39;friend&#39; using a URL <code>https://api.github.com/ + /repos/:user/:repo/contributors</code>. Our GitHub wrapper <a href="https://github.com/mikedeboer/node-github">library</a> will allow us a built in method, <code>github.repos.getContributors({})</code> to streamline this process and return an array of Open Source contributors. We will also use <a href="http://bluebirdjs.com/docs/getting-started.html">Bluebird</a>, a Promise library that makes working with our async API calls much more manageable. Copy, paste and save the code below:</p>
+<p>Navigate to <code>&lt;your-awesome-app&gt;/server/plugins/friends/index.js</code>. This is where we will make an external API call to Github and request the last ten contributors of our selected Open Source &#39;friend&#39; using a URL <code>https://api.github.com/ + /repos/:user/:repo/contributors</code>. Our GitHub wrapper <a href="https://github.com/mikedeboer/node-github">library</a> will allow us to use a built in method, <code>github.repos.getContributors({})</code>, to streamline this process and return an array of Open Source contributors. We will also use <a href="http://bluebirdjs.com/docs/getting-started.html">Bluebird</a>, a Promise library that makes working with our async API calls much more manageable. Copy, paste and save the code below:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
 
   <span class="c1">//a very simple plugin</span>
@@ -1464,7 +1464,7 @@
     <span class="nx">version</span><span class="o">:</span> <span class="s2">&quot;1.0.0&quot;</span>
   <span class="p">};</span>
 </code></pre></div>
-<p>If you are like us, and you plan on building out Your Awesome App even further, you will need to <a href="https://github.com/settings/tokens/new">generate a GitHup Api OAuth token</a> to remove the preset limit for API requests. We have already add the code to accept and use the token in our Hapi server plugin above <code>const AUTH_TOKEN = process.env.token</code>.</p>
+<p>If you are like us, and you plan on building out Your Awesome App even further, you will need to <a href="https://github.com/settings/tokens/new">generate a GitHup Api OAuth token</a> to remove the preset limit for API requests. We have already added the code to accept and use the token in our Hapi server plugin above <code>const AUTH_TOKEN = process.env.token</code>.</p>
 
 <p>Click <a href="https://github.com/settings/tokens/new">here</a> to set a new personal access token. Create your own <code>token description</code> in the form given and for <code>Select scopes</code> simply check: <code>public repo</code>. Then hit the green <code>Generate token</code> button.</p>
 
