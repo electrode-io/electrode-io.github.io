@@ -48,6 +48,8 @@ Navigate to `<your-awesome-app>/server/plugins/friends/index.js`. This is where 
   'use strict';
 
   //a very simple plugin
+  "use strict";
+
   const Promise = require("bluebird");
   const GitHubApi = require("github");
   const github = new GitHubApi();
@@ -55,21 +57,21 @@ Navigate to `<your-awesome-app>/server/plugins/friends/index.js`. This is where 
   github.authenticate({
     type: "oauth",
     token: AUTH_TOKEN
-});
+  });
 
   const githubGetContributors = Promise.promisify(github.repos.getContributors);
 
   exports.register = (server, options, next) => {
 
-    const friendsArr = [
-      {name: "Electrode", img: "//goo.gl/I9utJF", size: 9, github: "https://github.com/electrode-io/electrode-boilerplate-universal-react-node"},
-      {name: "React", img: "//goo.gl/xwbqlB", size: 9, github: "https://github.com/facebook/react"},
-      {name: "Redux", img: "//goo.gl/MGQ3lp", size: 9, github: "https://github.com/reactjs/redux"},
-      {name: "Node", img: "//goo.gl/hxmCEE", size: 9, github: "https://github.com/nodejs/node"}
-    ];
+    const friendsArr = [ /*eslint-disable max-len */
+      {name: "Electrode", img: "//goo.gl/I9utJF", size: 8, github: "https://github.com/electrode-io/electrode-boilerplate-universal-react-node"},
+      {name: "React", img: "//goo.gl/xwbqlB", size: 8, github: "https://github.com/facebook/react"},
+      {name: "Redux", img: "//goo.gl/MGQ3lp", size: 8, github: "https://github.com/reactjs/redux"},
+      {name: "node", img: "//goo.gl/hxmCEE", size: 8, github: "https://github.com/nodejs/node"}
+    ]; /*eslint-enable max-len */
 
-    const getContributorsPromises = friendsArr.map((friend) => {
-      let githubUrl = friend.github.split('/');
+    const getContributorsPromises = friendsArr.map((friend) => { /*eslint-disable camelcase */
+      const githubUrl = friend.github.split("/");
       const githubInfo = {
         repo: githubUrl.pop(),
         user: githubUrl.pop(),
@@ -79,15 +81,17 @@ Navigate to `<your-awesome-app>/server/plugins/friends/index.js`. This is where 
       };
       return githubGetContributors(githubInfo)
         .then((response) => {
-          friend["friends"] = response.map(({ login, avatar_url, url }) => ({name: login, img: avatar_url, profile: url}));
+          friend.friends = response.map(({ login, avatar_url, html_url }) => (
+            {name: login, img: avatar_url, profile: html_url}
+          ));
           return friend;
-        })
-    });
+        });
+    }); /*eslint-enable camelcase */
 
     const getFriendsAndContributors = (reply) => {
       return Promise.all(getContributorsPromises)
-        .then((response) => (reply(null, JSON.stringify({friends: response}))))
-        .catch((err) => reply(err))
+        .then((response) => reply(null, JSON.stringify({friends: response})))
+        .catch((err) => reply(err));
     };
 
     server.route({
@@ -103,7 +107,6 @@ Navigate to `<your-awesome-app>/server/plugins/friends/index.js`. This is where 
     name: "getFriends",
     version: "1.0.0"
   };
-
 ```
 
 If you are like us, and you plan on building out Your Awesome App even further, you will need to [generate a GitHup Api OAuth token](https://github.com/settings/tokens/new) to remove the preset limit for API requests. We have already added the code to accept and use the token in our Hapi server plugin above `const AUTH_TOKEN = process.env.token`.
