@@ -8,14 +8,17 @@ toplevel: "Getting Started: Quick Guide"
 
 We've created incredible tools for better leverage of your application's capabilities. We built them with flexibility and efficiency in mind, so you can focus on innovating:
 
-*  [Electrify](electrify.html) is a sophisticated tool for analyzing the module tree of project bundles.
+<br>
+#### [Electrify](electrify.html) is a sophisticated tool for analyzing the module tree of project bundles.
 
 ![screencast](https://cloud.githubusercontent.com/assets/360041/18318796/ea0ddae4-74d7-11e6-89cb-08e02e4b1683.gif)
 
-*  [Electrode-Explorer](electrode_explorer.html) a dynamic, real-time showcase of all your components.
+<br>
+#### [Electrode-Explorer](electrode_explorer.html) a dynamic, real-time showcase of all your components.
 
 ![electrode-explorer](/img/electrode-explorer.png)
 
-* [Bundle Analyzer](bundle-analyzer.html) is a webpack tool that gives you a detail list of all the files that went into your deduped and minified bundle JS file.
+<br>
+#### [Bundle Analyzer](bundle-analyzer.html) is a webpack tool that gives you a detail list of all the files that went into your deduped and minified bundle JS file.
 
 <iframe width="600" height="300" src="https://docs.google.com/spreadsheets/d/1IomT2fYCKEwVY0CO-0jImc7CBj_uAmgy70Egsm4CnVE/edit?usp=sharing&rm=minimal" frameborder="0" allowfullscreen></iframe>
