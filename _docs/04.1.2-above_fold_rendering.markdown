@@ -18,7 +18,7 @@ Performance Improvement Numbers below:
 
 ![above-the-fold-table](/img/above-the-fold-table.png)
 
-{% include module_usage.md moduleId="above-the-fold-only-server-render" express=true hapi=true %}
+{% include module_usage.md moduleId="above-the-fold-only-server-render" express_react_redux=true hapi_react_redux=true %}
 
 You can tell your electrode-react components to skip server side rendering and save on CPU render time, either by passing a `skip={true}` prop or by setting up `aboveTheFoldOnlyServerRender` in your app context and passing the component a `contextKey` prop.
 
