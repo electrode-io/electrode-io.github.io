@@ -152,16 +152,4 @@ Visit the app at the generated URL by using this command:
 $ heroku open
 ```
 
-One last thing we can do is define a [Procfile](https://devcenter.heroku.com/articles/getting-started-with-nodejs#define-a-procfile), a text file to explicitly declare what command can start your-awesome-app. Create a file name `Procfile` in your root directory. Add the code below:
-
-```
-web: node index.js
-```
-
-Deploy this latest code:
-
-```bash
-$ git push heroku master
-```
-
 And... you did it! [Click here](https://electrode-example-party-app.herokuapp.com/) for our deployed Heroku version. We will build even more in our [Getting Started: Intermediate](create_reusable_component.html) and cover complex topics like routing, server plugins and other powerful deployment software.
