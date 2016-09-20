@@ -177,28 +177,29 @@ Create a file titled: `<your-awesome-component>/src/components/render-friend.jsx
 In `src` create a folder titled `helpers` with file titled `graph-styles.js` inside - `<your-awesome-component>/src/helpers/graph-styles.js`. Copy the code from below into this file:
 
 ```javascript
-  const PARENT = {divisor: 2};
-  const CHILD = {divisor: 4, rotateBack: -1};
-  const SINGLE = {marginDivisor: 8};
-  const CONTAINER = {paddingDivisor: .13, marginDivisor: .13};
+
+const PARENT = {divisor: 2};
+const CHILD = {divisor: 4, rotateBack: -1};
+const SINGLE = {marginDivisor: 8};
+const CONTAINER = {paddingDivisor: .13, marginDivisor: .13};
 
 
-  export default (type, size, rotateVal) => {
+export default (type, size, rotateVal) => {
 
-    const nodeSize = type === "child" ? (size / CHILD.divisor) : (size / PARENT.divisor);
+  const nodeSize = type === "child" ? (size / CHILD.divisor) : (size / PARENT.divisor);
 
-    const parentOrSingle = {
-      width: `${nodeSize}em`,
-      height: `${nodeSize}em`,
-      margin: `-${nodeSize / PARENT.divisor}em`,
-      display: `block`,
-      position: `absolute`,
-      top: `50%`,
-      left: `50%`,
-      transform: `translate(0em)`
-    };
+  const parentOrSingle = {
+    width: `${nodeSize}em`,
+    height: `${nodeSize}em`,
+    margin: `-${nodeSize / PARENT.divisor}em`,
+    display: `block`,
+    position: `absolute`,
+    top: `50%`,
+    left: `50%`,
+    transform: `translate(0em)`
+  };
 
-    switch (type) {
+  switch (type) {
 
     case "single": {
       const singleNode = {
@@ -226,15 +227,16 @@ In `src` create a folder titled `helpers` with file titled `graph-styles.js` ins
         padding: `${size * CONTAINER.paddingDivisor}em`,
         borderRadius: `50%`,
         display: `inline-block`,
-        margin: `${size * CONTAINER.marginDivisor}em`
+        margin: `${size * CONTAINER.marginDivisor}em`,
+        float: `right`
       };
     }
 
     default: {
       return parentOrSingle;
     }
-    }
-  };
+  }
+};
 ```
 
 ###Develop styles using CSS modules
@@ -249,6 +251,7 @@ body {
 p {
   padding: 15px;
 }
+
 @keyframes partyLights {
   0%{background-position:0% 51%}
   50%{background-position:100% 50%}
@@ -294,17 +297,15 @@ p {
   background-color: #474747;
   padding: 10em 2em 2em 2em;
   border-radius: 10px;
-  min-height: 35vh;
+  min-height: 56vh;
 }
 
 .container {
-  width: 50vw;
+  width: 60vw;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%;
-
+  margin-top: 5%;
   position: relative;
-  transition: filter .7s ease-in-out;
 }
 
 .container:before {
