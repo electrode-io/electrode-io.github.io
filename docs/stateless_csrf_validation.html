@@ -224,6 +224,46 @@
   
   
 
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
 
         </ul>
       
@@ -405,6 +445,46 @@
   
   
 
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
 
           </ul>
         
@@ -457,6 +537,142 @@
 
     <a href="/docs/create_reusable_component.html"> &nbsp; Create a Reusable Component</a>
 
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/low_level_components.html"> &nbsp; Low-Level Components</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/component_helpers.html"> &nbsp; Component Helpers</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/develop_styles.html"> &nbsp; Develop Styles</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/high_level_component.html"> &nbsp; Develop Main Component</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/test_components.html"> &nbsp; Test Components</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/add_data.html"> &nbsp; Add Data</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/build_and_demo.html"> &nbsp; Build and Demo</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/generate_docs.html"> &nbsp; Generate Docs</a>
+
+    
+      </li></ul>
     
     </li>
   
@@ -619,6 +835,46 @@
           <ul>
             
 
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
 
   
   
@@ -1013,6 +1269,46 @@
   
   
   
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
     <li>
     
 
@@ -1085,7 +1381,7 @@
 <h3><a class="anchor" name="how-do-we-validate-requests"></a>How do we validate requests? <a class="hash-link" href="#how-do-we-validate-requests">#</a></h3>
 <p><strong><em>Double JWT CSRF tokens</em></strong></p>
 
-<p>We rely on the fact that cross site requests can&#39;t set headers.</p>
+<p>We rely on the fact that cross-site requests can&#39;t set headers.</p>
 
 <p>Two JWT CSRF tokens are generated on the server side with the same payload but different types (see below), one for the HTTP header, one for the cookie.</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">headerPayload</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="nx">UUID</span><span class="o">:</span> <span class="s2">&quot;12345&quot;</span> <span class="p">};</span>

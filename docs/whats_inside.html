@@ -224,6 +224,46 @@
   
   
 
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
 
         </ul>
       
@@ -405,6 +445,46 @@
   
   
 
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
 
           </ul>
         
@@ -457,6 +537,142 @@
 
     <a href="/docs/create_reusable_component.html"> &nbsp; Create a Reusable Component</a>
 
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/low_level_components.html"> &nbsp; Low-Level Components</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/component_helpers.html"> &nbsp; Component Helpers</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/develop_styles.html"> &nbsp; Develop Styles</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/high_level_component.html"> &nbsp; Develop Main Component</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/test_components.html"> &nbsp; Test Components</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/add_data.html"> &nbsp; Add Data</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/build_and_demo.html"> &nbsp; Build and Demo</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/generate_docs.html"> &nbsp; Generate Docs</a>
+
+    
+      </li></ul>
     
     </li>
   
@@ -619,6 +835,46 @@
           <ul>
             
 
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
 
   
   
@@ -1013,6 +1269,46 @@
   
   
   
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
     <li>
     
 
@@ -1093,7 +1389,7 @@
 <div class="highlight"><pre><code class="language-text" data-lang="text">client
   |_base.css
 </code></pre></div>
-<p>We will use <a href="https://github.com/css-modules/css-modules">CSS Modules</a>: a CSS file in which all class names and animation names are scoped locally by default. At WalmartLabs this helps us tackle big scale style issues by fixing the issue of the global scope in CSS.</p>
+<p>We will use <a href="https://github.com/css-modules/css-modules">CSS Modules</a>: a CSS file in which all class names and animation names are scoped locally by default. At WalmartLabs, this helps us tackle large-scale styling issues by mitigating the issues inherent in the global scope in CSS.</p>
 
 <p>Let&#39;s peer inside of our client/app.jsx to get a better understanding of the relationship between the client and the server: <code>&lt;your-awesome-app&#39;&gt;/client/app.jsx</code>:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">client
@@ -1123,7 +1419,7 @@
 </code></pre></div>
 <p>If you have a universal application and server side rendering, <a href="http://ericclemmons.com/react-resolver/docs/getting-started/ServerRendering.html">react-resolver</a> handles bootstrapping server-rendered markup via Resolver.render instead of React.render.</p>
 
-<p>We will be sharing our routes between server and client so obviously we only want to define them in one place, in your <code>&lt;your-awesome-app&gt;/client/routes.jsx</code>:</p>
+<p>We will be sharing our routes between server and client, so obviously we only want to define them in one place, in your <code>&lt;your-awesome-app&gt;/client/routes.jsx</code>:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">client
   |_routes.jsx
 </code></pre></div>
