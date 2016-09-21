@@ -30,15 +30,15 @@ Your Server file pattern should now look like this:
 {% raw  %}
 ```
 server
-  |_plugins
-    |_friends
-      |_index.js
-    |_webapp
-      |_index.html
-      |_index.js
-  |_views
-    |_index-view.jsx
-  |_index.js
+    ├── index.js
+    ├── plugins
+    │   ├── friends
+    │   │   └── index.js
+    │   └── webapp
+    │       ├── index.html
+    │       └── index.js
+    └── views
+        └── index-view.jsx
 ```
 {% endraw %}
 
