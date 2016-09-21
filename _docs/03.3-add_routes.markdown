@@ -8,34 +8,33 @@ toplevel: "Getting Started: Intermediate"
 
 Now that we have our Open Source friends, the ability to have a resource-list house party and a working demo from before, we can continue to quickly build out our components to both handle user interaction on our application and send requests to Hapi Plugin for more friends to our party. We will use [React-Router](https://github.com/ReactTraining/react-router) to create different routes and serve different content to our views.
 
-Now we can integrate your published `<your-awesome-component>` as a node module and build out the app. Use your editor to open Your-Awesome-App and follow the steps below:
+Now we can integrate your published `<your-awesome-component>` as a node module and build out the app. Make sure you are inside of **Your Awesome App** and follow the steps below:
 
 ```bash
-  npm i your-awesome-npm-module --save
+  npm i your-awesome-published-npm-module --save
 ```
 
-Navigate to `<your-awesome-component>/client/routes.jsx`. Copy, paste and save the code below into this file. Change from the literal `YourAwesomeComponent` to your actual component name:
+Navigate to `<your-awesome-component>/client/routes.jsx`. Copy, paste and save the code below into this file. Change from the literal `YourAwesomeComponent` and `your-awesome-node-module` to your actual component name:
 
 ```javascript
   import React from "react";
   import { Route, IndexRoute } from "react-router";
   import { Home } from "./components/home";
-  import { HouseParty } from "electrode-houseparty-example-component";
+  import { YourAwesomeComponent } from "your-awesome-published-npm-module";
 
   export const routes = (
     <Route path="/" component={Home}>
-      <IndexRoute component={HouseParty}/>
-      <Route path="/invite" component={HouseParty}/>
+      <IndexRoute component={YourAwesomeComponent}/>
+      <Route path="/invite" component={YourAwesomeComponent}/>
     </Route>
   );
 ```
 
-Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existing code by copy, pasting and saving the code below:
+Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existing code by copying, pasting and saving the code below:
 
 ```javascript
   import React, { Component, PropTypes } from "react";
   import { Link } from "react-router";
-  import styles from "../styles/base.css";
 
   export class Home extends Component {
 
@@ -93,7 +92,7 @@ Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existi
       const message = this.introMessage;
 
       return (
-        <div className={styles.rootDiv}>
+        <div>
           {React.cloneElement(this.props.children, {
             ourFriends, invitees, toggleGuest, view, message
           })}
@@ -105,16 +104,6 @@ Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existi
   Home.propTypes = {
     children: PropTypes.node
   };
-```
-
-Let's also add some style elements using in your `<your-awesome-app>/client/style/base.css`; copy, paste and save the code below into this file:
-
-```css
-.rootDiv {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
 ```
 
 Navigate to [Intermediate: Server Config](server_config.html), to learn about [Confippet](confippet.html) and add our Hapi plugin to our server config.
