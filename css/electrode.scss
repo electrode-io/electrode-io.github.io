@@ -892,10 +892,27 @@ p a code {
   }
 }
 
-.buttons{
-  margin: 25px 0px 25px 0px;
-}
-
 .scroll-up{
   cursor: n-resize;
+}
+
+.buttons {
+  padding: 25px;
+
+  div {
+    display: inline;
+
+    a {
+      padding: 3px;
+    }
+  }
+
+  .buttons-right {
+    float: right;
+  }
+
+  .landing-logo{
+    background: blue;
+    border-radius: 3px;
+  }
 }
