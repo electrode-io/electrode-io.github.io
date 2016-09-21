@@ -14,18 +14,18 @@ Now we can integrate your published `<your-awesome-component>` as a node module 
   npm i your-awesome-npm-module --save
 ```
 
-Navigate to `<your-awesome-component>/client/routes.jsx`. Copy, paste and save the code below into this file. Change from the literal `YourAwesomeComponent` to your actual component name:
+Navigate to `<your-awesome-component>/client/routes.jsx`. Copy, paste and save the code below into this file. Change from the literal `YourAwesomeComponent` and `your-awesome-node-module` to your actual component name:
 
 ```javascript
   import React from "react";
   import { Route, IndexRoute } from "react-router";
   import { Home } from "./components/home";
-  import { HouseParty } from "electrode-houseparty-example-component";
+  import { YourAwesomeComponent } from "your-awesome-node-module";
 
   export const routes = (
     <Route path="/" component={Home}>
-      <IndexRoute component={HouseParty}/>
-      <Route path="/invite" component={HouseParty}/>
+      <IndexRoute component={YourAwesomeComponent}/>
+      <Route path="/invite" component={YourAwesomeComponent}/>
     </Route>
   );
 ```
