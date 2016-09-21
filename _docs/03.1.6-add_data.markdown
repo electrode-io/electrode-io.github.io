@@ -4,19 +4,20 @@ permalink: docs/add_data.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-###Add Data to Your Demo
-Create a file titled: `<your-awesome-component>/demo/examples/render-friend.example`. Copy, paste and save the code below into this file:
+### Add Data to Your Demo
 
-```
+Create a file named: `<your-awesome-component>/demo/examples/render-friend.example`. Copy, paste and save the code below into this file:
+
+```javascript
   <RenderFriend
     friend={
       {name: "John", img: "//goo.gl/dL5MXT"}
     } />
 ```
 
-Create a file titled: `<your-awesome-component>/demo/examples/guest-list.example`. Copy, paste and save the code below into this file:
+Create a file named: `<your-awesome-component>/demo/examples/guest-list.example`. Copy, paste and save the code below into this file:
 
-```
+```javascript
 <GuestList
   invitees={[
   {name: 'John Smith', invited: false},
@@ -27,7 +28,7 @@ Create a file titled: `<your-awesome-component>/demo/examples/guest-list.example
   />
 ```
 
-Navigate to `<your-awesome-component>/demo/examples/your-awesome-component.example`. Add the code below. Don't forget to change the references from the literal YourAwesomeComponent to your actual component name:
+Navigate to `<your-awesome-component>/demo/examples/your-awesome-component.example`. Add the code below. Don't forget to change the references from the literal `YourAwesomeComponent` to your actual component name:
 
 ```javascript
 <YourAwesomeComponent
