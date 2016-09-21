@@ -873,9 +873,10 @@ p a code {
 }
 
 .landing-logo{
-  width: 125px;
-  heigh: 125px;
+  width: 5%;
+  border-radius: 5px;
   margin: -10px -20px 7px -20px;
+  background: blue;
 }
 
 .landing-paragraphs {
@@ -940,11 +941,6 @@ p a code {
 
   .buttons-right {
     float: right;
-  }
-
-  .landing-logo{
-    background: blue;
-    border-radius: 3px;
   }
 }
 
