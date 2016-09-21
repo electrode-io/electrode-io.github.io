@@ -201,16 +201,21 @@ h1, h2, h3, h4, h5, h6 {
   .footer {
     text-align: center;
 
-    ul{
-      max-height: 0;
-      width: 100%;
+    .collapsing-footer {
+      display: block;
 
-      li {
-        box-sizing: border-box;
+      ul{
+        max-height: 0;
         width: 100%;
-        padding: 15px;
+
+        li {
+          box-sizing: border-box;
+          width: 100%;
+          padding: 15px;
+        }
       }
     }
+
   }
 }
 
@@ -251,7 +256,6 @@ h1, h2, h3, h4, h5, h6 {
         box-sizing: border-box;
         width: 100%;
         padding: 15px;
-        display: none !important;
       }
     }
   }
@@ -287,13 +291,13 @@ h1, h2, h3, h4, h5, h6 {
   .collapsing-footer {
     float: right;
     display: inline-block;
-  }
 
-  ul {
-    display: inline;
-
-    li {
+    ul {
       display: inline;
+
+      li {
+        display: inline;
+      }
     }
   }
 
