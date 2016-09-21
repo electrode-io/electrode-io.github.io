@@ -5,7 +5,7 @@ toplevel: "Getting Started: Intermediate"
 ---
 
 ###Develop helpers for the components
-In `src` create a folder titled `helpers` with file titled `graph-styles.js` inside - `<your-awesome-component>/src/helpers/graph-styles.js`. Copy the code from below into this file:
+In `src` create a folder titled `helpers` with file titled `graph-styles.js` inside `<your-awesome-component>/src/helpers/graph-styles.js`. Copy the code from below into this file:
 
 ```javascript
   const PARENT = {divisor: 2};

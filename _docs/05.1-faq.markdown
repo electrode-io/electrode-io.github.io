@@ -4,4 +4,13 @@ permalink: docs/faq.html
 toplevel: "Resources"
 ---
 
+You Ask, We Answer:
+
+Why do we focus on Universal Javascript?
+
+Is Electrode really being used to power Walmart?
+
+Yes!
+
+
 Coming Soon!

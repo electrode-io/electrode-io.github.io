@@ -5,7 +5,7 @@ toplevel: "Getting Started: Intermediate"
 ---
 
 ###Generating documentation
-One of the final steps to Creating a Standalone Component is writing the correct documentation, in the form of component.json and component.md. The Electrode team has automated this step for you, using [Electrode-Docgen] (https://github.com/electrode-io/electrode-docgen). This is a custom metadata extractor for the Electrode framework. The commands have been built into the tasks of `<your-awesome-component>/gulpfile.js`:
+One of the final steps to Creating a Reusable Component is writing the correct documentation, in the form of component.json and component.md. The Electrode team has automated this step for you, using [Electrode-Docgen] (https://github.com/electrode-io/electrode-docgen). This is a custom metadata extractor for the Electrode framework. The commands have been built into the tasks of `<your-awesome-component>/gulpfile.js`:
 
 ```
 const tasks = {
