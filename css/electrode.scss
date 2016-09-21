@@ -623,13 +623,19 @@ h1 {
 .downloadSection:hover {
   text-decoration: none !important;
 }
+///responsive header
 
-@media screen and (max-width: 768px) {
-  .nav-main{
+
+@media only screen and (max-device-width: 480px){
+  .nav-main {
     float: none;
     width: 100%;
 
-    .nav-site{
+    .handle {
+      display: inline-block !important;
+    }
+
+    .nav-site {
       background: #222;
       max-height: 0;
       width: 100%;
@@ -638,17 +644,20 @@ h1 {
         box-sizing: border-box;
         width: 100%;
         padding: 15px;
+        display: none;
       }
 
-      .handle {
-        display:block;
-      }
     }
 
     .landing-nav.show{
       max-height:20em;
     }
   }
+}
+
+.handle {
+  display: none;
+  float: right;
 }
 
 @media screen and (max-width: 960px) {
@@ -807,12 +816,3 @@ p a code {
 .scroll-up{
   cursor: n-resize;
 }
-
-//decided to just make separate class rather than modify nav-site, note to discuss & refactor as needed
-
-.handle {
-  display: none;
-}
-
-
-
