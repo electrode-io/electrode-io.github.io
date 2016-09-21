@@ -34,9 +34,9 @@ export const imageUrls = [
 ];
 
 export class Home extends React.Component {
-  renderImage(imageUrl, i) {
+  renderImage(imageUrl, key) {
     return (
-        <img key={i} src={imageUrl} width="10%" height="10%"/>
+        <img key={key} src={imageUrl} width="10%" height="10%"/>
     );
   }
   render() {
