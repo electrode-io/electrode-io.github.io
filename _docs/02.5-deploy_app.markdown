@@ -119,7 +119,6 @@ It should now look like this:
 ```json
 {
   "scripts": {
-    "start": "gulp dev",
     "test": "gulp test",
     "coverage": "gulp check",
     "heroku-postbuild": "gulp build",
