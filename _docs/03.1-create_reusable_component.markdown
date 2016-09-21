@@ -11,15 +11,7 @@ Building this application with React components will allow for greater modularit
 Let's begin by creating using `cd` to exit Your-Awesome-App and return to our root to create a new directory:
 
 ```bash
-$ cd
-$ mkdir my-electrode-component
-$ cd my-electrode-component
-```
-
-Let's begin by using `cd` to exit Your-Awesome-App to create a new and separate directory for your reusable component:
-
-```bash
-$ cd
+$ cd ..
 $ mkdir my-electrode-component
 $ cd my-electrode-component
 ```
