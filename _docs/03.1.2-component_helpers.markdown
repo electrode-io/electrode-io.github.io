@@ -4,7 +4,7 @@ permalink: docs/component_helpers.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-### Develop helpers for the components
+#### Develop helpers for the components
 
 In `src`, create a folder named `helpers` with a file named `graph-styles.js` inside (`<your-awesome-component>/src/helpers/graph-styles.js`). Copy the code from below into this file:
 

@@ -4,7 +4,7 @@ permalink: docs/kubernetes.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-### Deploy with Google's Kubernetes
+#### Deploy with Google's Kubernetes
 
 [Kubernetes](http://kubernetes.io/) is "an open-source system for automating deployment, scaling, and management of containerized applications." It was developed by Google to handle the ops demand for an organization of that scale and the flexibility for running an infrastructure at any size.
 

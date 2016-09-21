@@ -4,7 +4,7 @@ permalink: docs/build_and_demo.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-###Build and Demo the component
+#### Build and Demo the component
 
 Now run it and explore the live demo!
 

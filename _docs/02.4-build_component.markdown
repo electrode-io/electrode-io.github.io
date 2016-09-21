@@ -3,7 +3,7 @@ title:  "Build Component"
 permalink: docs/build_component.html
 toplevel: "Getting Started: Quick Guide"
 ---
-###Here at WalmartLabs we love to build!
+#### Here at WalmartLabs we love to build!
 
 After you've generated your awesome electrode app, you are ready to focus on writing your React components.
 
@@ -21,7 +21,7 @@ export class Home extends React.Component {
 }
 ```
 
-We'll need a place to keep all of the resources we learned in the [Getting Started: Quick Guide](get_started.html) organized. Let's make a library for our present stack and exciting technologies! Copy the code below and paste it into `<your-awesome-app>/client/components/home.jsx`:
+We'll need a place to keep all of the resources we learned in the [Get Started](get_started.html) section. Let's make a visual library for our present stack and exciting technologies! Copy the code below and paste it into `<your-awesome-app>/client/components/home.jsx`:
 
 ```javascript
 import React from "react";

@@ -16,6 +16,14 @@ $ mkdir my-electrode-component
 $ cd my-electrode-component
 ```
 
+Let's begin by using `cd` to exit Your-Awesome-App to create a new and separate directory for your reusable component:
+
+```bash
+$ cd
+$ mkdir my-electrode-component
+$ cd my-electrode-component
+```
+
 Again, we are leveraging [Yeoman](http://yeoman.io/) to quick start the creation of our first stand alone component. We will globally install the Electrode [generator-electrode-component]:
 
 ```bash

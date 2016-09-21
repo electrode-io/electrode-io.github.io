@@ -4,7 +4,7 @@ permalink: docs/test_components.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-###Develop tests for the above components
+#### Develop tests for the above components
 
 WalmartLabs believes that testing is critical to writing great, high performance code. This includes unit testing at both the component and application level. For your component, we are using [Mocha] (https://mochajs.org/), a Javascript testing framework that is perfect for running async tests, with [Enzyme] (http://airbnb.io/enzyme/docs/guides/mocha.html), airbnb's awesome testing utility for React.
 
