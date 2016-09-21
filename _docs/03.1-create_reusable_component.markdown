@@ -6,7 +6,15 @@ toplevel: "Getting Started: Intermediate"
 
 First things first. Let's make our thing... a Thing! In this Getting Started: Intermediate guide, we’ll take some of the basics we explored in our [Quick Start](get_started.html) and go further. We will make our resource list a dynamic list that is styled, tested, published and capable of being deployed with other deployment software like Docker and Kubernetes.
 
-Building this application with React components will allow for greater modularity, which will enable reuse of code in later iterations. This Service-oriented Architecture also greatly increases workflow efficiency by allowing developers to easily divide and conquer tasks during the production process. Furthermore, better separation of concerns allows for much easier debugging in general.
+Building this application with React components will allow for greater modularity, which will enable reuse of code in later iterations. This greatly increases workflow efficiency by allowing developers to easily divide and conquer tasks during the production process. Furthermore, better separation of concerns allows for much easier debugging in general.
+
+Let's begin by creating using `cd` to exit Your-Awesome-App and return to our root to create a new directory:
+
+```bash
+$ cd
+$ mkdir my-electrode-component
+$ cd my-electrode-component
+```
 
 Let's begin by creating using `cd` to exit Your-Awesome-App and return to our root to create a new directory:
 
