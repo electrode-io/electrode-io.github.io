@@ -13,7 +13,7 @@ First, let's quickly check your development environment. You will need to have t
 *  Recommend installing version 3 of [npm](https://www.npmjs.com/) with `npm install -g npm@3`.
   * Note: NodeJS v6.x already comes with npm@3 by default.
 *  Install [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) with `npm install -g gulp`.
-*  The text editor of your choice downloaded with CLI tools installed.  
+*  The text editor of your choice downloaded with CLI tools installed.
 
 ## For Online Deployments
 

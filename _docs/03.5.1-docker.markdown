@@ -4,7 +4,7 @@ permalink: docs/docker.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-###Deploy with Docker
+#### Deploy with Docker
 
 Docker is a new container based technology that is designed to make applications easier to create, deploy and run. It's an increasingly popular way to accelerate development and share content. To get started, sign up for a [Docker](https://cloud.docker.com), download [Docker for your machine](https://www.docker.com/products/docker) and read over the corresponding system requirements. Docker requires a Linux Machine; if you are using a Mac you will need to follow the instructions based on your computer version to "[virtualize the Docker Engine environment](https://docs.docker.com/engine/installation/mac/#/docker-for-mac) and Linux kernel-specific features for the Docker daemon" using a virtual machine.
 

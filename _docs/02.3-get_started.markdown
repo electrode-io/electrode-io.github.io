@@ -4,7 +4,7 @@ permalink: docs/get_started.html
 toplevel: "Getting Started: Quick Guide"
 ---
 
-##### Quick Guide
+#### Quick Guide
 
 Are you ready to build your first Electrode App?
 

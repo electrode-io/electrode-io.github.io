@@ -4,7 +4,7 @@ permalink: docs/high_level_component.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-###Develop main high-level component
+#### Develop main high-level component
 
 Override the code in `<your-awesome-component>/src/components/your-awesome-component.jsx` with the code below. Change all references from the literal `your-awesome-component or YourAwesomeComponent` to your actual component name:
 
@@ -91,7 +91,7 @@ YourAwesomeComponent.defaultProps = {
   playground then check the boxes on the GuestList to invite our friends to the party!</p>`
 };
 ```
-Last edit! In your `<your-awesome-component>index.js`, add the two lines below:
+Last edit! In your `<your-awesome-component>index.js` add the two lines below:
 
 ```javascript
   export { default as RenderFriend } from "./components/render-friend";
