@@ -10,6 +10,19 @@ At [@WalmartLabs](http://www.walmartlabs.com/), we recently migrated our web sit
 stack using React/Node.js, and along the way we hit a few stumbling blocks that
 might sound familiar if you've worked on a large, complex web app before.
 
+### Universal JavaScript
+Universal JavaScript allows us to use the same view rendering code from the 
+server and client. When a user requests a page, they immediately receive 
+the fully rendered HTML on initial page load. They will not have to wait 
+for the client side JavaScript code to load and render the page. 
+
+At the same time, when they change and navigate across different routes or 
+get new data, the client side code will handle all the rendering of the views. 
+Only the data changes will be sent between the client and the server. 
+This approach provides for an optimized user experience resulting in fast 
+page loads and even faster navigation experience. In the world of eCommerce 
+where every millisecond counts, we believe this is the best way forward. 
+
 ### Code/UI Reuse
 
 We reuse React components across all of our brands, which means our developers
