@@ -14,9 +14,7 @@ First, install [Yeoman](http://yeoman.io/) and the [Electrode Generator](https:/
 $ sudo npm install -g yo gulp generator-electrode
 ```
 
-Make a new directory for your awesome app.
-
-Then [generate](https://github.com/electrode-io/generator-electrode) your new project:
+Make a new directory for your awesome app, then [generate](https://github.com/electrode-io/generator-electrode) your new project:
 
 ```bash
 $ mkdir my-electrode-app
@@ -28,11 +26,17 @@ Fill out the Electrode App generator with your information:
 
 ![generator-app](/img/generator-application.png)
 
-Run one simple command. Presto!
+Run one simple command to start the server. Presto!
 
 ```bash
 $ gulp dev
 ```
+
+Now open [localhost:3000](http://localhost:3000) in your browser to access the app. Hello Electrode!
+
+---
+
+##### Project Structure
 
 Let's take a quick high level overview of our file structure and what `generator-electrode` gives you out the box. Read through our [Explore More](whats_inside.html) for a more detailed description.
 
@@ -104,5 +108,4 @@ README.md
   licensing, contributors, etc.).
 ```
 
-
-Open [localhost:3000](http://localhost:3000) in your browser. Hello Electrode! Let's continue to [build](build_component.html) by modifying our component and deploying in [Quick Start: Build More](build_component.html).
+Let's continue to [build](build_component.html) by modifying our component and deploying in [Quick Start: Build More](build_component.html).
