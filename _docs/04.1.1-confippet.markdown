@@ -23,14 +23,14 @@ extended to meet the needs of your app
 
 {% include module_usage.md moduleId="electrode-confippet" express=true hapi=true %}
 
-* [Example Basic Use](#example-basic-use)
+* [Getting Started](#getting-started)
 * [Config Composition](#config-composition)
 * [Environment Variables](#environment-variables)
 * [Using Templates](#using-templates)
 * [Usage in Node Modules](#usage-in-node-modules)
 * [Customization](#customization)
 
-### Example Basic Use
+### Getting Started
 Let's say that in our application we need to access a database that is running 
 locally in our development environment but is running on a specific hostname 
 while running in our production environment. We would like to be able to get 
