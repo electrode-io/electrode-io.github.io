@@ -5,6 +5,8 @@ toplevel: "Getting Started: Quick Guide"
 ---
 ###Here at WalmartLabs we love to build!
 
+After you've generated your awesome electrode app, you are ready to focus on writing your React components.
+
 Navigate to `<your-awesome-app>/client/components/home.jsx`:
 
 ```javascript
@@ -31,8 +33,6 @@ export const imageUrls = [
   'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emoji_u26a1.svg/2000px-Emoji_u26a1.svg.png'
 ];
 
-export var i=0;
-
 export class Home extends React.Component {
   renderImage(imageUrl, i) {
     return (
@@ -40,6 +40,7 @@ export class Home extends React.Component {
     );
   }
   render() {
+    let i = 0;
     return (
       <div>
         <h1>Hello <a href="https://github.com/electrode-io">Electrode</a></h1>
