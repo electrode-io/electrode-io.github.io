@@ -92,10 +92,12 @@ Run our new favorite command to see your tech list:
 gulp dev
 ```
 
-Navigate to `https://localhost:3000`. **Site should look like the following screenshot:**
+Navigate to [https://localhost:3000](https://localhost:3000]).
 
-> If you are already running your app in dev mode, then your changes should've been updated automatically and you can just refresh your browser to see the changes. 
+> If you are already running your app in dev mode, then your changes should've been updated automatically and you can just refresh your browser to see the changes.
+
+**The page should resemble the following screenshot:**
 
 ![Pastel](http://i.imgur.com/nwEl64l.png)
 
-Let's jump to our next step where we will deploy Your Awesome App to [Heroku](deploy_app.html).
+Now let's jump to our next step, where we will deploy Your Awesome App to [Heroku](deploy_app.html).

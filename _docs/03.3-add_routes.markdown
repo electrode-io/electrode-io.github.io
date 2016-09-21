@@ -4,106 +4,106 @@ permalink: docs/add_routes.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-###Add Routes
+### Add Routes
 
 Now that we have our Open Source friends, the ability to have a resource-list house party and a working demo from before, we can continue to quickly build out our components to both handle user interaction on our application and send requests to Hapi Plugin for more friends to our party. We will use [React-Router](https://github.com/ReactTraining/react-router) to create different routes and serve different content to our views.
 
 Now we can integrate your published `<your-awesome-component>` as a node module and build out the app. Make sure you are inside of **Your Awesome App** and follow the steps below:
 
 ```bash
-  npm i your-awesome-published-npm-module --save
+$ npm i your-awesome-published-npm-module --save
 ```
 
 Navigate to `<your-awesome-component>/client/routes.jsx`. Copy, paste and save the code below into this file. Change from the literal `YourAwesomeComponent` and `your-awesome-node-module` to your actual component name:
 
 ```javascript
-  import React from "react";
-  import { Route, IndexRoute } from "react-router";
-  import { Home } from "./components/home";
-  import { YourAwesomeComponent } from "your-awesome-published-npm-module";
+import React from "react";
+import { Route, IndexRoute } from "react-router";
+import { Home } from "./components/home";
+import { YourAwesomeComponent } from "your-awesome-published-npm-module";
 
-  export const routes = (
-    <Route path="/" component={Home}>
-      <IndexRoute component={YourAwesomeComponent}/>
-      <Route path="/invite" component={YourAwesomeComponent}/>
-    </Route>
-  );
+export const routes = (
+  <Route path="/" component={Home}>
+    <IndexRoute component={YourAwesomeComponent}/>
+    <Route path="/invite" component={YourAwesomeComponent}/>
+  </Route>
+);
 ```
 
 Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existing code by copying, pasting and saving the code below:
 
 ```javascript
-  import React, { Component, PropTypes } from "react";
-  import { Link } from "react-router";
+import React, { Component, PropTypes } from "react";
+import { Link } from "react-router";
 
-  export class Home extends Component {
+export class Home extends Component {
 
-    constructor(props) {
-      super(props);
-      this.state = {
-        ourFriends: [],
-        invitees: []
-      };
-      this.toggleGuest = this.toggleGuest.bind(this);
-    }
-
-    componentDidMount() {
-      fetch("/friends", {method: "GET"})
-      .then((res) => res.json())
-      .then((json) => {
-        const ourFriends = json.friends;
-        const invitees = ourFriends.map(({name}) => {
-          return { name, invited: false};
-        });
-        this.setState({ourFriends, invitees}); //eslint-disable-line
-      });
-    }
-
-    componentView({ location: { pathname } }) {
-      return {
-        intro: pathname === "/",
-        invite: pathname === "/invite"
-      };
-    }
-
-    toggleGuest({name, invited}) {
-      const invitees = this.state.invitees.map((invitee) => {
-        if (invitee.name === name) {
-          invitee.invited = !invited;
-        }
-        return invitee;
-      });
-      this.setState({invitees});
-    }
-
-    introMessage(className) {
-      return (
-        <div className={className}>
-          <p>We should have a house party and invite all of our friends!</p>
-          <Link to="/invite">Click Here to Make it a Party!</Link>
-        </div>
-      );
-    }
-
-    render() {
-      const { ourFriends, invitees } = this.state;
-      const toggleGuest = this.toggleGuest;
-      const view = this.componentView(this.props);
-      const message = this.introMessage;
-
-      return (
-        <div>
-          {React.cloneElement(this.props.children, {
-            ourFriends, invitees, toggleGuest, view, message
-          })}
-        </div>
-      );
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      ourFriends: [],
+      invitees: []
+    };
+    this.toggleGuest = this.toggleGuest.bind(this);
   }
 
-  Home.propTypes = {
-    children: PropTypes.node
-  };
+  componentDidMount() {
+    fetch("/friends", {method: "GET"})
+    .then((res) => res.json())
+    .then((json) => {
+      const ourFriends = json.friends;
+      const invitees = ourFriends.map(({name}) => {
+        return { name, invited: false};
+      });
+      this.setState({ourFriends, invitees}); //eslint-disable-line
+    });
+  }
+
+  componentView({ location: { pathname } }) {
+    return {
+      intro: pathname === "/",
+      invite: pathname === "/invite"
+    };
+  }
+
+  toggleGuest({name, invited}) {
+    const invitees = this.state.invitees.map((invitee) => {
+      if (invitee.name === name) {
+        invitee.invited = !invited;
+      }
+      return invitee;
+    });
+    this.setState({invitees});
+  }
+
+  introMessage(className) {
+    return (
+      <div className={className}>
+        <p>We should have a house party and invite all of our friends!</p>
+        <Link to="/invite">Click Here to Make it a Party!</Link>
+      </div>
+    );
+  }
+
+  render() {
+    const { ourFriends, invitees } = this.state;
+    const toggleGuest = this.toggleGuest;
+    const view = this.componentView(this.props);
+    const message = this.introMessage;
+
+    return (
+      <div>
+        {React.cloneElement(this.props.children, {
+          ourFriends, invitees, toggleGuest, view, message
+        })}
+      </div>
+    );
+  }
+}
+
+Home.propTypes = {
+  children: PropTypes.node
+};
 ```
 
 Navigate to [Intermediate: Server Config](server_config.html), to learn about [Confippet](confippet.html) and add our Hapi plugin to our server config.

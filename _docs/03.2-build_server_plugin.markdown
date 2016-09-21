@@ -4,7 +4,7 @@ permalink: docs/build_server_plugin.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-###Be Hapi and Build a server plugin
+### Be Hapi and Build a server plugin
 
 At WalmartLabs, we use [Hapi](http://hapijs.com/) because of its flexible and robust plugin system. It allows us to modularize our application into isolated pieces of business logic and reusable utilities.
 
@@ -15,97 +15,97 @@ We are going to use the [GitHub Api](https://developer.github.com/v3/) to grab t
 The GitHub [site](https://developer.github.com/v3/) has great documentation and awesome libraries to help jumpstart our plugin. Let's begin there by installing a Node.js wrapper called [node-github](https://github.com/mikedeboer/node-github) in Your Awesome App:
 
 ```bash
-npm install github
+$ npm install github
 ```
 
 At their core, plugins are a simple `register object`, that has the `signature function(server, options, next)`. Read more about building plugins from scratch in the [Hapi documentation](http://hapijs.com/tutorials/plugins).
 
-Navigate to the `<your-awesome-app>/server/plugins` folder. Make a folder called `friends`. Cd into your new `friends` folder and:
+Navigate to the `<your-awesome-app>/server/plugins` folder. Make a folder called `friends`, `cd` into your new `friends` folder, and create an empty `index.js` file:
 
 ```bash
-  touch index.js
+$ touch index.js
 ```
 Your Server file pattern should now look like this:
 
 {% raw  %}
 ```
-  server
-    |_plugins
-      |_friends
-        |_index.js
-      |_webapp
-        |_index.html
+server
+  |_plugins
+    |_friends
       |_index.js
-    |_views
-      |_index-view.jsx
-    |_index.js
+    |_webapp
+      |_index.html
+      |_index.js
+  |_views
+    |_index-view.jsx
+  |_index.js
 ```
 {% endraw %}
 
 Navigate to `<your-awesome-app>/server/plugins/friends/index.js`. This is where we will make an external API call to Github and request the last ten contributors of our selected Open Source 'friend' using a URL `https://api.github.com/ + /repos/:user/:repo/contributors`. Our GitHub wrapper [library](https://github.com/mikedeboer/node-github) will allow us to use a built in method, `github.repos.getContributors({})`, to streamline this process and return an array of Open Source contributors. We will also use [Bluebird](http://bluebirdjs.com/docs/getting-started.html), a Promise library that makes working with our async API calls much more manageable. Copy, paste and save the code below:
 
 ```javascript
-  'use strict';
+'use strict';
 
-  //a very simple plugin
+//a very simple plugin
 
-  const Promise = require("bluebird");
-  const GitHubApi = require("github");
-  const github = new GitHubApi();
-  const AUTH_TOKEN = process.env.token;
-  github.authenticate({
-    type: "oauth",
-    token: AUTH_TOKEN
+const Promise = require("bluebird");
+const GitHubApi = require("github");
+const github = new GitHubApi();
+const AUTH_TOKEN = process.env.token;
+github.authenticate({
+  type: "oauth",
+  token: AUTH_TOKEN
+});
+
+const githubGetContributors = Promise.promisify(github.repos.getContributors);
+
+exports.register = (server, options, next) => {
+
+  const friendsArr = [ /*eslint-disable max-len */
+    {name: "Electrode", img: "//goo.gl/I9utJF", size: 8, github: "https://github.com/electrode-io/electrode-boilerplate-universal-react-node"},
+    {name: "React", img: "//goo.gl/xwbqlB", size: 8, github: "https://github.com/facebook/react"},
+    {name: "Redux", img: "//goo.gl/MGQ3lp", size: 8, github: "https://github.com/reactjs/redux"},
+    {name: "node", img: "//goo.gl/hxmCEE", size: 8, github: "https://github.com/nodejs/node"}
+  ]; /*eslint-enable max-len */
+
+  const getContributorsPromises = friendsArr.map((friend) => { /*eslint-disable camelcase */
+    const githubUrl = friend.github.split("/");
+    const githubInfo = {
+      repo: githubUrl.pop(),
+      user: githubUrl.pop(),
+      anon: true,
+      page: 1,
+      per_page: 10
+    };
+    return githubGetContributors(githubInfo)
+      .then((response) => {
+        friend.friends = response.map(({ login, avatar_url, html_url }) => (
+          {name: login, img: avatar_url, profile: html_url}
+        ));
+        return friend;
+      });
+  }); /*eslint-enable camelcase */
+
+  const getFriendsAndContributors = (reply) => {
+    return Promise.all(getContributorsPromises)
+      .then((response) => reply(null, JSON.stringify({friends: response})))
+      .catch((err) => reply(err));
+  };
+
+  server.route({
+    method: "GET",
+    path: "/friends",
+    handler: (request, reply) => getFriendsAndContributors(reply)
   });
 
-  const githubGetContributors = Promise.promisify(github.repos.getContributors);
+  next();
+};
 
-  exports.register = (server, options, next) => {
-
-    const friendsArr = [ /*eslint-disable max-len */
-      {name: "Electrode", img: "//goo.gl/I9utJF", size: 8, github: "https://github.com/electrode-io/electrode-boilerplate-universal-react-node"},
-      {name: "React", img: "//goo.gl/xwbqlB", size: 8, github: "https://github.com/facebook/react"},
-      {name: "Redux", img: "//goo.gl/MGQ3lp", size: 8, github: "https://github.com/reactjs/redux"},
-      {name: "node", img: "//goo.gl/hxmCEE", size: 8, github: "https://github.com/nodejs/node"}
-    ]; /*eslint-enable max-len */
-
-    const getContributorsPromises = friendsArr.map((friend) => { /*eslint-disable camelcase */
-      const githubUrl = friend.github.split("/");
-      const githubInfo = {
-        repo: githubUrl.pop(),
-        user: githubUrl.pop(),
-        anon: true,
-        page: 1,
-        per_page: 10
-      };
-      return githubGetContributors(githubInfo)
-        .then((response) => {
-          friend.friends = response.map(({ login, avatar_url, html_url }) => (
-            {name: login, img: avatar_url, profile: html_url}
-          ));
-          return friend;
-        });
-    }); /*eslint-enable camelcase */
-
-    const getFriendsAndContributors = (reply) => {
-      return Promise.all(getContributorsPromises)
-        .then((response) => reply(null, JSON.stringify({friends: response})))
-        .catch((err) => reply(err));
-    };
-
-    server.route({
-      method: "GET",
-      path: "/friends",
-      handler: (request, reply) => getFriendsAndContributors(reply)
-    });
-
-    next();
-  };
-
-  exports.register.attributes = {
-    name: "getFriends",
-    version: "1.0.0"
-  };
+exports.register.attributes = {
+  name: "getFriends",
+  version: "1.0.0"
+};
 ```
 
 If you are like us, and you plan on building out Your Awesome App even further, you will need to [generate a GitHup Api oAuth token](https://github.com/settings/tokens/new) to remove the preset limit for API requests. We have already added the code to accept and use the token in our Hapi server plugin above `const AUTH_TOKEN = process.env.token`.
@@ -118,7 +118,7 @@ Copy and save this token. You will also use this token in your command line as f
 Set the token locally:
 
 ```bash
- token='your-token-here'
+$ token='your-token-here'
 ```
 
 Set your token for heroku deployment:
@@ -127,4 +127,4 @@ Set your token for heroku deployment:
 heroku config: set token='your-token-here'
 ```
 
-A great tool for testing your server requests (it's user interface for view response objects and errors is incredible) is [Postman](https://www.getpostman.com/). For now, you will have to trust as we build out Your Awesome App. Navigate to [Intermediate: Add Routes](add_routes.html), to add routing to the app and also extend our UI to display our contributor array.
+A great tool for testing your server requests (its user interface for view response objects and errors is incredible) is [Postman](https://www.getpostman.com/). For now, you will have to trust as we build out Your Awesome App. Navigate to [Intermediate: Add Routes](add_routes.html), to add routing to the app and also extend our UI to display our contributor array.
