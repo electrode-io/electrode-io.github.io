@@ -7,7 +7,7 @@ toplevel: "Resources"
 <br>
 #### Universal Javascript
 
-*  [Universal Javascript](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.vql04qjs4) - Defining things is hard: this articles outlines what Universal Javascript is and isn't. Naming things is hard: why developers are moving away from the term "Isomoprhic".
+*  [Universal Javascript](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.vql04qjs4) - Defining things is hard: this articles outlines what Universal Javascript is and isn't. Naming things is hard: why developers are moving away from the term "Isomorphic".
 
 *  [Why Everyone is Talking About Isomorphic / Universal JavaScript and Why it Matters](https://medium.com/capital-one-developers/why-everyone-is-talking-about-isomorphic-universal-javascript-and-why-it-matters-38c07c87905#.ut4ggn60w) - Short overview of the history of web development + why Universal Javascript is awesome.
 
@@ -19,7 +19,7 @@ toplevel: "Resources"
 
 *  [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html) + [Design Principles](https://facebook.github.io/react/contributing/design-principles.html) - Read the React docs.
 
-*  [Building React.js at Enterprise Scale](https://medium.com/walmartlabs/building-react-js-at-enterprise-scale-17c17a36fd1f#.ewkzubo8i) - Why ReactJS + Walmart are a perfect match.
+*  [Building React.js at Enterprise Scale](https://medium.com/walmartlabs/building-react-js-at-enterprise-scale-17c17a36fd1f#.ewkzubo8i) - Why ReactJS + [WalmartLabs](www.walmartlabs.com) are a perfect match.
 
 #### Redux
 
@@ -54,4 +54,4 @@ toplevel: "Resources"
 
 *  [Babel Docs](https://babeljs.io/docs/learn-es2015/) - The Babel docs, guides, and blog are very user friendly.
 
-*  [A Quick Tour Of ES6 (Or, The Bits You’ll Actually Use)](http://jamesknelson.com/es6-the-bits-youll-actually-use/) - Highlights the commonly used syntax.
+*  [A Quick Tour Of ES6 (Or, The Bits You’ll Actually Use)](http://jamesknelson.com/es6-the-bits-youll-actually-use/) - Highlights the commonly used ES6 syntax.
