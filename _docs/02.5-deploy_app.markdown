@@ -93,7 +93,7 @@ Use the following commands to commit your changes:
 
 ```bash
 $ git add .
-$ git commit -m "Updates package.json"
+$ git commit -m "Updates package.json with node version"
 ```
 
 Create an app on Heroku (which prepares Heroku to receive your source code). This will also create a git remote called heroku and generate a random name:
@@ -132,7 +132,7 @@ Use the following commands to commit this change as well:
 
 ```bash
 $ git add .
-$ git commit -m "Updates package.json"
+$ git commit -m "Updates package.json with heroku scripts"
 ```
 
 Use the command below to set a configuration so that Heroku installs Your-Awesome-App's devDependencies:
