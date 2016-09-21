@@ -6,7 +6,9 @@ toplevel: "Getting Started: Quick Guide"
 
 ##### Quick Guide
 
-Install [Yeoman](http://yeoman.io/), [gulp](http://gulpjs.com/) and the [Electrode Generator](https://github.com/electrode-io/generator-electrode):
+Are you ready to build your first Electrode App?
+
+First, install [Yeoman](http://yeoman.io/) and the [Electrode Generator](https://github.com/electrode-io/generator-electrode):
 
 ```bash
 $ sudo npm install -g yo gulp generator-electrode
