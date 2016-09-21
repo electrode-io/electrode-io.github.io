@@ -19,7 +19,6 @@ First, let's quickly check your development environment. You will need to have t
 
 *  A [Heroku](https://signup.heroku.com/dc) account + [CLI tools](https://devcenter.heroku.com/articles/heroku-command-line).
 *  A [Github](https://github.com/) account.
-*  An [NPM](https://www.npmjs.com/signup) account.
 
 > We write NodeJS code with ES6 features that NodeJS 4.2 supports.
 
