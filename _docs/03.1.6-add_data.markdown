@@ -4,7 +4,7 @@ permalink: docs/add_data.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-###Add Demo data.
+###Add Data to Your Demo
 Create a file titled: `<your-awesome-component>/demo/examples/render-friend.example`. Copy, paste and save the code below into this file:
 
 ```
