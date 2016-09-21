@@ -4,7 +4,7 @@ permalink: docs/develop_styles.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-###Develop styles using CSS modules
+#### Develop styles using CSS modules
 
 Let's also add some style elements using [CSS modules](https://github.com/css-modules/css-modules) to create a dynamic application. Override the below code into your `<your-awesome-component>/src/style/your-awesome-component.css`:
 
@@ -116,7 +116,8 @@ a, a:hover, a:active, a:visited {
   text-decoration: none;
 }
 ```
-Create a file titled: `<your-awesome-component>/src/styles/guest-list.css`. Copy the code from below into this file:
+
+Create a file named: `<your-awesome-component>/src/styles/guest-list.css`. Copy the code from below into this file:
 
 ```css
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
@@ -156,7 +157,7 @@ input[type=checkbox]:checked + label:before { letter-spacing: 5px; }
 }
 ```
 
-Create a file titled: `<your-awesome-component>/src/styles/render-friend.css`. Copy the code from below into this file:
+Create a file named: `<your-awesome-component>/src/styles/render-friend.css`. Copy the code from below into this file:
 
 ```css
 @keyframes shake {

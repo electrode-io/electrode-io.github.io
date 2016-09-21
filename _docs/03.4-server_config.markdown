@@ -4,15 +4,15 @@ permalink: docs/server_config.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-###Server Config + Confippet
+#### Server Config + Confippet
 
-Out of the box we're given [Confippet](https://github.com/electrode-io/electrode-confippet), a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a preset config out of the box inside **Your Awesome (Electrode) App**:
+Out of the box we're given [Confippet](https://github.com/electrode-io/electrode-confippet), a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but it offers a preset config out of the box inside **Your Awesome (Electrode) App**:
 
 ```
-  config
-    |_default.json
-    |_development.json
-    |_production.json
+config
+  |_default.json
+  |_development.json
+  |_production.json
 ```
 
 We'll need to extend our default.json to include our `friends` plugin and module `./server/plugins/friends`.
@@ -93,8 +93,8 @@ describe("Home", () => {
 Let's check it out! We'll run through our steps to test, run the app and view it in the browser. We will need your GitHubApi token as well:
 
 ```bash
-  gulp check
-  token='your-token-here' gulp hot
+$ gulp check
+$ token='your-token-here' gulp hot
 ```
 
 Navigate to `localhost:3000`. Check it out! This is the `Index route` which renders our `Home component` using Server Side Rendering:

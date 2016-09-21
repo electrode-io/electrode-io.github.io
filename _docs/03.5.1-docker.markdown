@@ -4,7 +4,7 @@ permalink: docs/docker.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-###Deploy with Docker
+#### Deploy with Docker
 
 Docker is a new container based technology that is designed to make applications easier to create, deploy and run. It's an increasingly popular way to accelerate development and share content. To get started, sign up for a [Docker](https://cloud.docker.com), download [Docker for your machine](https://www.docker.com/products/docker) and read over the corresponding system requirements. Docker requires a Linux Machine; if you are using a Mac you will need to follow the instructions based on your computer version to "[virtualize the Docker Engine environment](https://docs.docker.com/engine/installation/mac/#/docker-for-mac) and Linux kernel-specific features for the Docker daemon" using a virtual machine.
 
@@ -15,35 +15,35 @@ On the first installation you'll get a `success` message. Click the Whale icon t
 Let's check the versions of `Docker Engine`, `Compose` and `Machine` by running the commands below:
 
 ```bash
- docker --version
+$ docker --version
 
- docker-compose --version
+$ docker-compose --version
 
- docker-machine --version
+$ docker-machine --version
 ```
 
 Verify your installation by running the Docker version of "Hello World":
 
 ```bash
-  docker run hello-world
+$ docker run hello-world
 ```
 
 To show all the containers on the system, run the command below:
 
 ```bash
-  docker ps -a
+$ docker ps -a
 ```
 
 **Electrode has a [Dockerfile and Docker image](https://hub.docker.com/r/electrode/electrode-io/) built-in to expedite deployment. Simply:**
 
 ```bash
-  docker pull electrode/electrode-io
+$ docker pull electrode/electrode-io
 ```
 
 Try the image in your docker container:
 
 ```bash
-  docker run -d -p 3000:3000 electrode/electrode-io
+$ docker run -d -p 3000:3000 electrode/electrode-io
 ```
 
 You'll see your `<container_id>` in the terminal.
@@ -53,43 +53,43 @@ Verify that the server is running by opening `localhost:3000` in your browser.
 Copy the code from the container to your local machine for development:
 
 ```bash
-	docker cp <container_id>:/usr/src/app .
+$ docker cp <container_id>:/usr/src/app .
 ```
 
-Go to the app folder, you can stop the container and start your development:
+Go to the app folder, and use the following command to stop the container so you can start your development:
 
 ```bash
-  docker stop <container_id>
+$ docker stop <container_id>
 ```
 
-Now let's build a new image, by entering the following command:
+Now let's build a new image by entering the following command:
 
 ```bash
-  docker build -t docker-awesome-container .
+$ docker build -t docker-awesome-container .
 ```
 
 Run the command below to see a lit of the images you currently have:
 
 ```bash
-  docker images
+$ docker images
 ```
 
 You'll see `node` listed. Find the corresponding `IMAGE ID` for your `node` image. We will now build a command to properly tag the image. It'll be using your `image id` + `account name/repo-name:latest`
 
 ```bash
-  docker tag your-image-id-# your-account-name/docker-awesome-container:latest
+$ docker tag your-image-id-# your-account-name/docker-awesome-container:latest
 ```
 
 Let's see it! Run the `images` command below to see a lit of the images you currently have:
 
 ```bash
-  docker images
+$ docker images
 ```
 
 Run your image on your local container:
 
 ```bash
-  docker run -d -p 3000:3000 docker-awesome-container
+$ docker run -d -p 3000:3000 docker-awesome-container
 ```
 
 Open `localhost:3000` in your browser to see your app.
@@ -97,25 +97,25 @@ Open `localhost:3000` in your browser to see your app.
 Your container id will print in the terminal, or you can run the command below to see your containers:
 
 ```bash
-  docker ps
+$ docker ps
 ```
 
 Now you can stop the container:
 
 ```bash
-  docker stop <container_id>
+$ docker stop <container_id>
 ```
 
 Log into Docker Hub from the command line. The format is below. Enter you password when prompted:
 
 ```bash
-  docker login --username=yourhubusername --email=youremail@company.com
+$ docker login --username=yourhubusername --email=youremail@company.com
 ```
 
-Type the push command below to push your image to your new repo:
+Run the `push` command below to push your image to your new repo:
 
 ```bash
-  docker push your-username/docker-awesome-container
+$ docker push your-username/docker-awesome-container
 ```
 
 You have successfully pushed your new image to the Docker Cloud repository! From here, you can use the [User Guide](https://docs.docker.com/engine/userguide/intro/) to run your own containers and build Docker images.

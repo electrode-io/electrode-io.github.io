@@ -4,7 +4,7 @@ permalink: docs/low_level_components.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-###Develop a couple of low-level components
+#### Develop a couple of low-level components
 Create a file titled: `<your-awesome-component>/src/components/guest-list.jsx`. Copy the code from below into this file:
 
 ```javascript

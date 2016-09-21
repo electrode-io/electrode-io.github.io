@@ -6,8 +6,8 @@ toplevel: "Overview"
 
 > If you're writing a universal React/Node.js application, then Electrode is for you!
 
-At [@WalmartLabs](http://www.walmartlabs.com/), we recently migrated our web site to a [Universal JavaScript](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.k3j9fruyn)
-stack using React/Node.js, and along the way we hit a few stumbling blocks that
+At [@WalmartLabs](http://www.walmartlabs.com/), we recently migrated [walmart.com](http://walmart.com) to a [Universal JavaScript](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.k3j9fruyn)
+stack using React/Node.js. Along the way, we hit a few stumbling blocks that
 might sound familiar if you've worked on a large, complex web app before.
 
 ### Code/UI Reuse
@@ -22,16 +22,16 @@ lot of manual configuration.
 
 ### Server Side Rendering (SSR) Performance
 
-We serve millions of customers a day, and performance is vital to our business.
+We serve millions of customers a day, so performance is critical to our business.
 React's SSR support is vital for SEO (Search Engine Optimization) and has the potential to improve performance,
-but it's intensive on the server CPUs. We needed a platform with SSR built in and
+but it's intensive on the server CPUs. We needed a platform with SSR built-in with
 a default configuration that's optimized for performance.
 
 ### Fast Startup and Deployment
 
 We don't have time to create an application structure, configuration files, and
-Docker containers from scratch every time we start a project. We needed to start
-fast and deploy fast, with consistent structure and optimal configuration every
+Docker containers from scratch every time we start a project. We need to start
+fast and to deploy fast, with a consistent structure and optimal configuration every
 time.
 
 ### Three Pillars
@@ -45,7 +45,7 @@ take your app into production, Electrode automatically deploys to your favorite
 cloud provider.
 
 ***Electrode Modules*** improve performance, efficiency, and security by adding
-features like [above the fold rendering](above_fold_rendering.html), [configuration management](confippet.html), and [cross-site request forgery protection](stateless_csrf_validation.html). These modules can be used with your existing React/Node.js application—no need to migrate to Electrode Core.
+features like [above the fold rendering](above_fold_rendering.html), [configuration management](confippet.html), and [cross-site request forgery protection](stateless_csrf_validation.html). These modules can even be used with your existing React/Node.js application—so there's no need to migrate to Electrode Core.
 
 ***Electrode Tools*** help [organize](electrode_explorer.html) reusable components and [optimize large
 JavaScript bundles](electrify.html). Like the modules, our tools can be used with any

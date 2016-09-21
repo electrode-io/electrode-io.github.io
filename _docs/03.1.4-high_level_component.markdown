@@ -4,7 +4,7 @@ permalink: docs/high_level_component.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-###Develop main high-level component
+#### Develop main high-level component
 
 Override the code in `<your-awesome-component>/src/components/your-awesome-component.jsx` with the code below. Change all references from the literal `your-awesome-component or YourAwesomeComponent` to your actual component name:
 
