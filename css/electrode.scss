@@ -170,7 +170,128 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media only screen and (max-device-width: 480px){
+  .nav-main{
+    float: none;
+    width: 100%;
 
+    .handle {
+      display: inline-block;
+    }
+
+    .nav-site {
+      background: #222;
+      max-height: 0;
+      width: 100%;
+
+      li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 15px;
+        display: none;
+      }
+
+    }
+
+    .landing-nav.show{
+      max-height:20em;
+    }
+  }
+
+  .footer {
+    ul{
+      max-height: 0;
+      width: 100%;
+
+      li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 15px;
+        display: none !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1019px){
+  .nav-main{
+    float: none;
+    width: 100%;
+
+    .handle {
+      display: inline-block;
+    }
+
+    .nav-site {
+      background: #222;
+      max-height: 0;
+      width: 100%;
+
+      li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 15px;
+        display: none;
+      }
+
+    }
+
+    .landing-nav.show{
+      max-height:20em;
+    }
+  }
+
+  .footer {
+    ul{
+      max-height: 0;
+      width: 100%;
+
+      li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 15px;
+        display: none !important;
+      }
+    }
+  }
+}
+
+.handle {
+  display: none;
+  float: right;
+}
+
+@media screen and (max-width: 960px) {
+  .nav-main {
+    position: static;
+  }
+  .container {
+    padding-top: 0;
+  }
+}
+
+.footer {
+  @include clearfix;
+  background: linear-gradient($darkerColor, $darkestColor);
+  color: $lightTextColor;
+  max-height: 100px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+  width: 100%;
+  z-index: 100;
+
+  ul {
+    display: inline;
+
+    li {
+      display: inline;
+    }
+  }
+
+  button{
+    background: white;
+    color: black;
+  }
+}
 
 .buttons-unit {
   margin-top: 60px;
@@ -623,51 +744,6 @@ h1 {
 .downloadSection:hover {
   text-decoration: none !important;
 }
-///responsive header
-
-
-@media only screen and (max-device-width: 480px){
-  .nav-main {
-    float: none;
-    width: 100%;
-
-    .handle {
-      display: inline-block !important;
-    }
-
-    .nav-site {
-      background: #222;
-      max-height: 0;
-      width: 100%;
-
-      li {
-        box-sizing: border-box;
-        width: 100%;
-        padding: 15px;
-        display: none;
-      }
-
-    }
-
-    .landing-nav.show{
-      max-height:20em;
-    }
-  }
-}
-
-.handle {
-  display: none;
-  float: right;
-}
-
-@media screen and (max-width: 960px) {
-  .nav-main {
-    position: static;
-  }
-  .container {
-    padding-top: 0;
-  }
-}
 
 .post {
   margin-bottom: 30px;
@@ -788,29 +864,6 @@ p a code {
 
 .buttons{
   margin: 25px 0px 25px 0px;
-}
-
-.footer{
-  @include clearfix;
-  background: linear-gradient($darkerColor, $darkestColor);
-  color: $lightTextColor;
-  height: $navHeight;
-  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
-  width: 100%;
-  z-index: 100;
-
-  ul {
-    display: inline;
-
-    li {
-      display: inline;
-    }
-  }
-
-  button{
-    background: white;
-    color: black;
-  }
 }
 
 .scroll-up{
