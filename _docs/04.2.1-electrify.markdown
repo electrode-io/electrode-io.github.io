@@ -22,7 +22,7 @@ make sure you have [node](http://nodejs.org/) installed on your machine first.
 Installing should then be as easy as:
 
 ``` bash
-sudo npm install -g electrode-electrify
+$ sudo npm install -g electrode-electrify
 ```
 
 {% include module_usage.md moduleId="electrode-electrify" %}
@@ -44,14 +44,13 @@ available as the quickest means of checking out your bundle. As of `electrode-el
 the tool takes any [webpack-stats](https://github.com/webpack/docs/wiki/node.js-api#stats) object [example](https://github.com/webpack/analyse/blob/master/app/pages/upload/example.json) as input and spits out a
 standalone HTML page as output.
 
-You can easily chain the stats file into another command, or use the `--open`
-flag to open Electrify in your browser automatically:
+You can easily chain the stats file into another command, or use the `--open` flag to open Electrify in your browser automatically:
 
 
 For example:
 
 ``` bash
-electrify build/stats.json --open
+$ electrify build/stats.json --open
 ```
 
 

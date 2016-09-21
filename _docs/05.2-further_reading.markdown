@@ -4,7 +4,6 @@ permalink: docs/further_reading.html
 toplevel: "Resources"
 ---
 
-
 <br>
 #### Universal Javascript
 

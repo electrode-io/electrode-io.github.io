@@ -10,9 +10,9 @@ Out of the box we're given [Confippet](https://github.com/electrode-io/electrode
 
 ```
 config
-  |_default.json
-  |_development.json
-  |_production.json
+    ├── default.json
+    ├── development.json
+    └── production.json
 ```
 
 We'll need to extend our default.json to include our `friends` plugin and module `./server/plugins/friends`.
