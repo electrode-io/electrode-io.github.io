@@ -52,6 +52,44 @@ Make sure to add the comma `,` before `"friends"`. It should now look like this:
 
 You can learn more about Confippet and ways to extend your config in our Advanced Electrode App with the [Confippet](confippet.html) stand alone module.
 
+We should update our app test to reflect the changes we have made. Navigate to `<your-awesome-app>/test/client/components/home.spec.js`. Override the existing code by copying and pasting the code below:
+
+```javascript
+require("isomorphic-fetch");
+
+import React from "react";
+import ReactDOM from "react-dom";
+import { Home } from "client/components/home";
+
+class ChildComponent extends React.Component {
+  render() {
+    return (
+      <div></div>
+    );
+  }
+}
+
+describe("Home", () => {
+  let component;
+  let container;
+  let location;
+
+  beforeEach(() => {
+    container = document.createElement("div");
+    location = { pathname: "/" };
+  });
+
+  it("has expected content with deep render", () => {
+    component = ReactDOM.render(
+      <Home location={location}>
+        <ChildComponent />
+      </Home>,
+      container);
+    expect(component).to.not.be.false;
+  });
+});
+```
+
 Let's check it out! We'll run through our steps to test, run the app and view it in the browser. We will need your GitHubApi token as well:
 
 ```bash
