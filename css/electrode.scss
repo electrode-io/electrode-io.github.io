@@ -835,16 +835,28 @@ p a code {
   background-repeat: no-repeat;
   background-size: 100% auto;
 
-
   .inner-text {
-    margin: 100px 0px 100px 0px;
-    padding: 0px 300px 0px 300px;
+    margin-top: 135px;
+  }
+
+  h1 {
+    font-size: 120px;
+  }
+
+  h3 {
+    font-size: 28px;
   }
 
   button {
     margin-top: 100px;
     background: #d62470;
   }
+}
+
+.landing-logo{
+  width: 125px;
+  heigh: 125px;
+  margin: -10px -20px 7px -20px;
 }
 
 .landing-paragraphs {
