@@ -171,7 +171,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media only screen and (max-device-width: 480px){
-  .nav-main{
+  .nav-main {
     float: none;
     width: 100%;
 
@@ -190,7 +190,6 @@ h1, h2, h3, h4, h5, h6 {
         padding: 15px;
         display: none;
       }
-
     }
 
     .landing-nav.show{
@@ -201,8 +200,12 @@ h1, h2, h3, h4, h5, h6 {
   .footer {
     text-align: center;
 
+    div {
+      display: block !important;
+    }
+
     .collapsing-footer {
-      display: block;
+      float: none !important;
 
       ul{
         max-height: 0;
@@ -291,6 +294,10 @@ h1, h2, h3, h4, h5, h6 {
   .collapsing-footer {
     float: right;
     display: inline-block;
+
+    div {
+      display: inline-block;
+    }
 
     ul {
       display: inline;
