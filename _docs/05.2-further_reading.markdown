@@ -29,7 +29,7 @@ toplevel: "Resources"
 
 #### Universal Rendering
 
-*  [ReactJS SSR Profiling + Caching](https://medium.com/walmartlabs/reactjs-ssr-profiling-and-caching-5d8e9e49240c#.yqnmwbp6t) - Outlines the [WalmartLabs](www.walmartlabs.com) SSR problem domain + tool created to solve this.
+*  [ReactJS SSR Profiling + Caching](https://medium.com/walmartlabs/reactjs-ssr-profiling-and-caching-5d8e9e49240c#.yqnmwbp6t) - Outlines the [WalmartLabs](http://www.walmartlabs.com) Server Side Rendering challenges + ways to solve this.
 
 *  [Server-Side Rendering With React, Node And Express](https://www.smashingmagazine.com/2016/03/server-side-rendering-react-node-express/) - A fast and clear explanation about the general advantages of SSR.
 
@@ -37,7 +37,9 @@ toplevel: "Resources"
 
 *  [How to Deploy Software](https://zachholman.com/posts/deploying-software) - Why the deployment process is complex, can be painful, and the solutions.
 
-#### Testing + Continuous Deployment
+*  [Enterprise NodeJS On OneOps](https://medium.com/walmartlabs/enterprise-nodejs-on-oneops-f4bc7b1050cc#.sfsslnetq) - An overview of Node.js on WalmartLabs open-source deployment platform [OneOps](http://www.oneops.com/).
+
+#### Testing
 
 *  [Approaches to testing React components - an overview](http://reactkungfu.com/2015/07/approaches-to-testing-react-components-an-overview/) - A general overview to React testing with pros + cons.
 
@@ -54,4 +56,4 @@ toplevel: "Resources"
 
 *  [Babel Docs](https://babeljs.io/docs/learn-es2015/) - The Babel docs, guides, and blog are very user friendly.
 
-*  [A Quick Tour Of ES6 (Or, The Bits You’ll Actually Use)](http://jamesknelson.com/es6-the-bits-youll-actually-use/) - Highlights the commonly used ES6 syntax.
+*  [A Quick Tour Of ES6 (Or, The Bits You’ll Actually Use)](http://jamesknelson.com/es6-the-bits-youll-actually-use/) - Highlights the commonly used parts of the ES6 syntax.
