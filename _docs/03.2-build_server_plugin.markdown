@@ -35,7 +35,7 @@ server
       |_index.js
     |_webapp
       |_index.html
-    |_index.js
+      |_index.js
   |_views
     |_index-view.jsx
   |_index.js
