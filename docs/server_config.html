@@ -1412,12 +1412,12 @@
     </h1>
     <div class="subHeader"></div>
 
-    <h3><a class="anchor" name="server-config--confippet"></a>Server Config + Confippet <a class="hash-link" href="#server-config--confippet">#</a></h3>
-<p>Out of the box we&#39;re given <a href="https://github.com/electrode-io/electrode-confippet">Confippet</a>, a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a preset config out of the box inside <strong>Your Awesome (Electrode) App</strong>:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">  config
-    |_default.json
-    |_development.json
-    |_production.json
+    <h4><a class="anchor" name="server-config--confippet"></a>Server Config + Confippet <a class="hash-link" href="#server-config--confippet">#</a></h4>
+<p>Out of the box we&#39;re given <a href="https://github.com/electrode-io/electrode-confippet">Confippet</a>, a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but it offers a preset config out of the box inside <strong>Your Awesome (Electrode) App</strong>:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">config
+    ├── default.json
+    ├── development.json
+    └── production.json
 </code></pre></div>
 <p>We&#39;ll need to extend our default.json to include our <code>friends</code> plugin and module <code>./server/plugins/friends</code>.</p>
 
@@ -1449,9 +1449,44 @@
 </code></pre></div>
 <p>You can learn more about Confippet and ways to extend your config in our Advanced Electrode App with the <a href="confippet.html">Confippet</a> stand alone module.</p>
 
+<p>We should update our app test to reflect the changes we have made. Navigate to <code>&lt;your-awesome-app&gt;/test/client/components/home.spec.js</code>. Override the existing code by copying and pasting the code below:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;isomorphic-fetch&quot;</span><span class="p">);</span>
+
+<span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">ReactDOM</span> <span class="nx">from</span> <span class="s2">&quot;react-dom&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Home</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;client/components/home&quot;</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">ChildComponent</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;Home&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">component</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">container</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">location</span><span class="p">;</span>
+
+  <span class="nx">beforeEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">container</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span>
+    <span class="nx">location</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">pathname</span><span class="o">:</span> <span class="s2">&quot;/&quot;</span> <span class="p">};</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;has expected content with deep render&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">component</span> <span class="o">=</span> <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">Home</span> <span class="nx">location</span><span class="o">=</span><span class="p">{</span><span class="nx">location</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">ChildComponent</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="err">/Home&gt;,</span>
+      <span class="nx">container</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">component</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">not</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="kc">false</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
 <p>Let&#39;s check it out! We&#39;ll run through our steps to test, run the app and view it in the browser. We will need your GitHubApi token as well:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">  gulp check
-  <span class="nv">token</span><span class="o">=</span><span class="s1">&#39;your-token-here&#39;</span> gulp hot
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gulp check
+<span class="nv">$ token</span><span class="o">=</span><span class="s1">&#39;your-token-here&#39;</span> gulp hot
 </code></pre></div>
 <p>Navigate to <code>localhost:3000</code>. Check it out! This is the <code>Index route</code> which renders our <code>Home component</code> using Server Side Rendering:</p>
 

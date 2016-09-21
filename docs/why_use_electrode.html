@@ -1413,11 +1413,11 @@
     <div class="subHeader"></div>
 
     <blockquote>
-<p>If you&#39;re writing a universal React/Node.js application, Electrode is for you!</p>
+<p>If you&#39;re writing a universal React/Node.js application, then Electrode is for you!</p>
 </blockquote>
 
-<p>At <a href="http://www.walmartlabs.com/">@WalmartLabs</a>, we recently migrated our web site to a <a href="https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.k3j9fruyn">Universal JavaScript</a>
-stack using React/Node.js, and along the way we hit a few stumbling blocks that
+<p>At <a href="http://www.walmartlabs.com/">@WalmartLabs</a>, we recently migrated <a href="http://walmart.com">walmart.com</a> to a <a href="https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.k3j9fruyn">Universal JavaScript</a>
+stack using React/Node.js. Along the way, we hit a few stumbling blocks that
 might sound familiar if you&#39;ve worked on a large, complex web app before.</p>
 <h3><a class="anchor" name="codeui-reuse"></a>Code/UI Reuse <a class="hash-link" href="#codeui-reuse">#</a></h3>
 <p>We reuse React components across all of our brands, which means our developers
@@ -1427,16 +1427,15 @@ secure in the knowledge that its structure and implementation are consistent
 with our standards. We needed a way to ensure that all components were built
 according to modern best practices, without slowing our developers down with a
 lot of manual configuration.</p>
-<h3><a class="anchor" name="server-side-performance"></a>Server-side Performance <a class="hash-link" href="#server-side-performance">#</a></h3>
-<p>We serve millions of customers a day, and performance is vital to our business.
-React&#39;s server-side rendering has the potential to improve performance and SEO,
-but it&#39;s difficult to make it fast. We needed a platform with server-side
-rendering built in, with a default configuration that&#39;s optimized for
-performance.</p>
-<h3><a class="anchor" name="startup-and-deployment"></a>Startup and Deployment <a class="hash-link" href="#startup-and-deployment">#</a></h3>
+<h3><a class="anchor" name="server-side-rendering-ssr-performance"></a>Server Side Rendering (SSR) Performance <a class="hash-link" href="#server-side-rendering-ssr-performance">#</a></h3>
+<p>We serve millions of customers a day, so performance is critical to our business.
+React&#39;s SSR support is vital for SEO (Search Engine Optimization) and has the potential to improve performance,
+but it&#39;s intensive on the server CPUs. We needed a platform with SSR built-in with
+a default configuration that&#39;s optimized for performance.</p>
+<h3><a class="anchor" name="fast-startup-and-deployment"></a>Fast Startup and Deployment <a class="hash-link" href="#fast-startup-and-deployment">#</a></h3>
 <p>We don&#39;t have time to create an application structure, configuration files, and
-Docker containers from scratch every time we start a project. We needed to start
-fast and deploy fast, with consistent structure and optimal configuration every
+Docker containers from scratch every time we start a project. We need to start
+fast and to deploy fast, with a consistent structure and optimal configuration every
 time.</p>
 <h3><a class="anchor" name="three-pillars"></a>Three Pillars <a class="hash-link" href="#three-pillars">#</a></h3>
 <p>To solve these problems, we created the Electrode platform. Electrode consists
@@ -1448,14 +1447,13 @@ take your app into production, Electrode automatically deploys to your favorite
 cloud provider.</p>
 
 <p><strong><em>Electrode Modules</em></strong> improve performance, efficiency, and security by adding
-features like <a href="above_fold_rendering.html">above the fold rendering</a>, <a href="confippet.html">configuration management</a>, and <a href="stateless_csrf_validation.html">cross-site request forgery detection</a>. These modules can be used with your existing React/Node.js application—no need to migrate to Electrode Core.</p>
+features like <a href="above_fold_rendering.html">above the fold rendering</a>, <a href="confippet.html">configuration management</a>, and <a href="stateless_csrf_validation.html">cross-site request forgery protection</a>. These modules can even be used with your existing React/Node.js application—so there&#39;s no need to migrate to Electrode Core.</p>
 
 <p><strong><em>Electrode Tools</em></strong> help <a href="electrode_explorer.html">organize</a> reusable components and <a href="electrify.html">optimize large
 JavaScript bundles</a>. Like the modules, our tools can be used with any
 React/Node.js app.</p>
 <h3><a class="anchor" name="future-investment"></a>Future Investment <a class="hash-link" href="#future-investment">#</a></h3>
-<p><a href="https://github.com/electrode-io">Electrode</a> will
-continue to improve as we continue to solve problems like these at <a href="http://www.walmartlabs.com/">@WalmartLabs</a>. Future enhancements will include more <a href="https://developers.google.com/web/progressive-web-apps/">progressive web app
+<p><a href="https://github.com/electrode-io">Electrode</a> will continue to improve as we continue to solve problems like these at <a href="http://www.walmartlabs.com/">@WalmartLabs</a>. Future enhancements will include more <a href="https://developers.google.com/web/progressive-web-apps/">progressive web app
 features</a> for web and mobile, bigger investments in performance, and much more.</p>
 
 <p>We&#39;re committed to open source, which means our investment is your investment.</p>

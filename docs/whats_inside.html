@@ -1412,37 +1412,38 @@
     </h1>
     <div class="subHeader"></div>
 
-    <h3><a class="anchor" name="explore-more"></a>Explore More <a class="hash-link" href="#explore-more">#</a></h3>
-<p>What does generate-electrode give you? Let&#39;s begin by navigating to <code>&lt;your-awesome-app&gt;/client/components/home.jsx</code>:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">  client
-    |_components
-      |_home.jsx
-</code></pre></div>
-<p><a href="https://facebook.github.io/react/index.html">React</a> is a JavaScript library for building user interfaces. A simplified way to look at it is that it can be used as the V in an MV* application. It was created by Facebook and is being actively developed.</p>
+    <h4><a class="anchor" name="explore-more"></a>Explore More <a class="hash-link" href="#explore-more">#</a></h4>
+<p>What does <code>generate-electrode</code> give you? Let&#39;s go through the most important files to understand the structure of your new app.</p>
 
-<p>Building with React lets developers create a modular and reusable component architecture. We can reuse the business logic in existing models and controllers because it only provides the View layer. The components you write are self-contained, which aids developers in reasoning what a component does directly by reading the source. Finally, it is ideally suited to Universal JavaScript (previously called Isomorphic JavaScript), the practice of sharing code between Server and Client.</p>
+<blockquote>
+<p><code>&lt;your-awesome-app&gt;/client/components/home.jsx</code></p>
+</blockquote>
 
-<p>Next, navigate to <code>&lt;your-awesome-app&gt;/client/styles/base.css</code>:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">client
-  |_base.css
-</code></pre></div>
-<p>We will use <a href="https://github.com/css-modules/css-modules">CSS Modules</a>: a CSS file in which all class names and animation names are scoped locally by default. At WalmartLabs, this helps us tackle large-scale styling issues by mitigating the issues inherent in the global scope in CSS.</p>
+<p>This is the home React component for your app. <a href="https://facebook.github.io/react/index.html">React</a> is a JavaScript library for building user interfaces. A simplified way to look at React is that it can be used as the <em>View</em> in a <em>Model-View-Controller</em> application. It was created by Facebook and is being actively developed.</p>
 
-<p>Let&#39;s peer inside of our client/app.jsx to get a better understanding of the relationship between the client and the server: <code>&lt;your-awesome-app&gt;/client/app.jsx</code>:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">client
-  |_app.jsx
-</code></pre></div>
-<p>Below is the information you need to know about what the app.jsx is doing. We&#39;ve broken it down, with links on where you can learn even more:</p>
+<p>Building with React lets developers create a modular and reusable component architecture. We can then reuse the business logic in existing <em>models</em> and <em>controllers</em> because React components encapsulate only the <em>view</em> layer. The components you write are self-contained, which aids developers in quickly determining what a component does directly by reading the source. Finally, it is ideally suited to Universal JavaScript (previously called Isomorphic JavaScript), the practice of sharing code between the server and the client.</p>
+
+<blockquote>
+<p><code>&lt;your-awesome-app&gt;/client/styles/base.css</code></p>
+</blockquote>
+
+<p>We will use <a href="https://github.com/css-modules/css-modules">CSS Modules</a>: a CSS file in which all class names and animation names are scoped locally by default. At WalmartLabs, this helps us tackle large-scale styling requirements by mitigating the issues inherent in the global scope in CSS.</p>
+
+<blockquote>
+<p><code>&lt;your-awesome-app&gt;/client/app.jsx</code></p>
+</blockquote>
+
+<p>To help you understand what <code>client/app.jsx</code> is doing, including the relationship between client and server, we&#39;ve broken down each part of this file with a brief explanation below, including links to sources where you can learn even more:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
   <span class="kr">import</span> <span class="p">{</span> <span class="nx">routes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;./routes&quot;</span><span class="p">;</span>
   <span class="kr">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react-router&quot;</span><span class="p">;</span>
 </code></pre></div>
 <p>Any real world web application needs to be able to handle different routes serving different content, so how do we handle the concept of routing in the Electrode platform? The library chosen to take care of this for us is <a href="https://github.com/reactjs/react-router/tree/master/docs">react-router</a>.</p>
 
-<p>Why react-router? The project is mature, well documented and integrates well within the Electrode tech stack.</p>
+<p>Why react-router? The project is mature, well-documented, and integrates well within the Electrode tech stack.</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kr">import</span> <span class="p">{</span> <span class="nx">Resolver</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react-resolver&quot;</span><span class="p">;</span>
 </code></pre></div>
-<p><a href="http://ericclemmons.com/react-resolver/">React-Resolver</a> lets you define data requirements per component and will handle the nested, async rendering on both the server and client for you. This approach matches the Electrode methodology of keeping definitions of what a component needs within the component and also allows us to write universal javascript applications in a non-blocking way. This solves our frequent need for pages that are rendered on the server.</p>
+<p><a href="http://ericclemmons.com/react-resolver/">React-Resolver</a> lets you define data requirements per component and will handle the nested, asynchronous rendering on both the server and client for you. This approach matches the Electrode methodology of keeping definitions of what a component needs within the component itself and also allows us to write universal javascript applications in a non-blocking way. This solves our frequent need for pages that are rendered on the server.</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kr">import</span> <span class="p">{</span> <span class="nx">createHistory</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;history&quot;</span><span class="p">;</span>
   <span class="kr">import</span> <span class="s2">&quot;./styles/base.css&quot;</span><span class="p">;</span>
 </code></pre></div>
@@ -1454,65 +1455,75 @@
     <span class="p">);</span>
   <span class="p">};</span>
 </code></pre></div>
-<p>If you have a universal application and server side rendering, <a href="http://ericclemmons.com/react-resolver/docs/getting-started/ServerRendering.html">react-resolver</a> handles bootstrapping server-rendered markup via Resolver.render instead of React.render.</p>
+<p>If you have a universal application and server-side rendering, <a href="http://ericclemmons.com/react-resolver/docs/getting-started/ServerRendering.html">react-resolver</a> handles bootstrapping server-rendered markup via <code>Resolver.render</code> instead of <code>React.render</code>.</p>
 
-<p>We will be sharing our routes between server and client, so obviously we only want to define them in one place, in your <code>&lt;your-awesome-app&gt;/client/routes.jsx</code>:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">client
-  |_routes.jsx
-</code></pre></div>
-<p>In your <code>&lt;your-awesome-app&gt;/config</code> we are leveraging one of the most important stand alone modules: <a href="confippet.html">Electrode-Confippet</a>.</p>
+<blockquote>
+<p><code>&lt;your-awesome-app&gt;/client/routes.jsx</code></p>
+</blockquote>
 
-<p>Confippet is a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a <a href="https://github.com/electrode-io/electrode-confippet">preset config</a> out of the box.</p>
+<p>We will be sharing our routes between server and client, so obviously we only want to define them in one place. The <code>client/routes.jsx</code> encapsulates the routing logic accordingly.</p>
 
-<p>We use this to keep your environment specific configurations manageable. Once you have your config files setup according to the configuration files setup, you can simply pass the config object to electrode server.</p>
+<blockquote>
+<p><code>&lt;your-awesome-app&gt;/config</code></p>
+</blockquote>
+
+<p>In this folder we are leveraging one of our most important stand alone modules: <a href="confippet.html">Electrode-Confippet</a>. Confippet is a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility while offering a <a href="https://github.com/electrode-io/electrode-confippet">preset configuration</a> out of the box.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">config
-  |_default.json
-  |_development.json
-  |_production.json
+    ├── default.json
+    ├── development.json
+    └── production.json
 </code></pre></div>
-<p>Let&#39;s checkout your <code>&lt;your-awesome-app&gt;/server</code>:</p>
+<p>We use this to keep environment-specific configurations manageable. Once you have your configuration files setup accordingly, you can simply pass the config object to electrode server.</p>
+
+<blockquote>
+<p><code>&lt;your-awesome-app&gt;/server</code></p>
+</blockquote>
 <div class="highlight"><pre><code class="language-text" data-lang="text">server
-  |_plugins
-    |_webapp
-      |_index.html
-    |_index.js
-  |_views
-    |_index-view.jsx
-  |_index.js
+    ├── index.js
+    ├── plugins
+    │   └── webapp
+    │       ├── index.html
+    │       └── index.js
+    └── views
+        └── index-view.jsx
 </code></pre></div>
 <p>You are now using <a href="https://github.com/electrode-io/electrode-server">Electrode-Server</a>, a NodeJS module that allows you to start up a Hapi server with a single function call, but gives you a lot of flexibility through configurations. This is the baseline functionality of a <a href="http://hapijs.com/">Hapi</a> web server that you can extend via configuration.</p>
 
-<p>Before we move on, we should inspect a critical file, <code>&lt;your-awesome-app&gt;/server/plugins/webapp/index.html</code>. This is where the server side &quot;magic&quot; happens. By magic, of course we mean the benefits of using the generate-electrode + server side rendering.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">  &lt;!DOCTYPE html&gt;
-  &lt;html lang=&quot;en&quot;&gt;
-    &lt;head&gt;
-      &lt;meta charset=&quot;UTF-8&quot;&gt;
-      &lt;title&gt;{{PAGE_TITLE}}&lt;/title&gt;
+<p>Before we move on, we should inspect a critical file, <code>&lt;your-awesome-app&gt;/server/plugins/webapp/index.html</code>. This is where the server-side rendering magic happens, implemented automatically via <code>generate-electrode</code>:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html">  <span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;UTF-8&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;title&gt;</span>{{PAGE_TITLE}}<span class="nt">&lt;/title&gt;</span>
       {{WEBAPP_BUNDLES}}
       {{PREFETCH_BUNDLES}}
-    &lt;/head&gt;
-    &lt;body&gt;
-      &lt;div class=&quot;js-content&quot;&gt;{{SSR_CONTENT}}&lt;/div&gt;
-      &lt;script&gt;if (window.webappStart) webappStart();&lt;/script&gt;
-    &lt;/body&gt;
-  &lt;/html&gt;
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;js-content&quot;</span><span class="nt">&gt;</span>{{SSR_CONTENT}}<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;script&gt;</span><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">webappStart</span><span class="p">)</span> <span class="nx">webappStart</span><span class="p">();</span><span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span>
 </code></pre></div>
-<p>All of your content will be served into an HTML string and placed in this unassuming piece of code:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">  &lt;div class=&quot;js-content&quot;&gt;{{SSR_CONTENT}}&lt;/div&gt;
+<p>All of your content will be served as an HTML string and placed in this unassuming piece of code:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;js-content&quot;</span><span class="nt">&gt;</span>{{SSR_CONTENT}}<span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
-<p>This includes React components and Redux. To achieve this, the Electrode team has created another powerful module here to optimize performance for your out-of-the-box Universal app: <a href="https://github.com/electrode-io/electrode-redux-router-engine">Electrode-Router-Resolver-Engine</a> which takes React routes and requests and returns HTML to be rendered by electrode-react-webapp. We have found this to be the <a href="https://github.com/electrode-io/electrode-redux-router-engine">best tool</a> for dealing with redux asynchronous actions.</p>
+<p>This includes React components and Redux. To achieve this, the Electrode team has created another powerful module to optimize performance for an out-of-the-box Universal app: <a href="https://github.com/electrode-io/electrode-redux-router-engine">Electrode-Router-Resolver-Engine</a>, which takes React routes and requests and returns HTML to be rendered by <code>electrode-react-webapp</code>. We have found this to be the <a href="https://github.com/electrode-io/electrode-redux-router-engine">best tool</a> for dealing with asynchronous redux actions.</p>
 
-<p>Next, we should discuss the <code>&lt;your-awesome-app&gt;/.babelrc</code>:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">.babelrc
-</code></pre></div>
-<p>This is where we extend our electrode-archetype-react-app <a href="https://babeljs.io/docs/usage/babelrc/">Babel</a> to allow us to use the <a href="https://babeljs.io/docs/plugins/preset-es2015/">presets</a> (ES6, React) and any plugins or projects that need additional Babel settings.</p>
+<blockquote>
+<p><code>&lt;your-awesome-app&gt;/.babelrc</code></p>
+</blockquote>
 
-<p>Following, we have the <code>&lt;your-awesome-app&gt;/isomorphic-loader-config.json</code>:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">.isomorphic-loader-config.json
-</code></pre></div>
-<p>This <a href="https://github.com/jchip/isomorphic-loader">powerful tool</a> makes NodeJS <code>require</code> understanding files such as images when you are doing server side rendering. It contains three pieces: a Webpack loader, Webpack plugin and a library for your NodeJS app.</p>
+<p>This is where we extend our <code>electrode-archetype-react-app</code> <a href="https://babeljs.io/docs/usage/babelrc/">Babel</a> configuration to use <a href="https://babeljs.io/docs/plugins/preset-es2015/">the ES6 presets</a>, as well as specifying any plugins or projects that need additional Babel settings.</p>
 
-<p>With the generator-electrode, we&#39;ve created a dynamic and performant full stack Electrode app in under five minutes, using some of our favorite technologies, like <a href="https://facebook.github.io/react/index.html">React</a> and <a href="http://hapijs.com/">Hapi</a>. Let&#39;s explore and personalize this web application in our next section, <a href="create_reusable_component.html">Intermediate: Create a Resuable Component</a>.</p>
+<blockquote>
+<p><code>&lt;your-awesome-app&gt;/isomorphic-loader-config.json</code></p>
+</blockquote>
+
+<p>This <a href="https://github.com/jchip/isomorphic-loader">powerful tool</a> makes NodeJS <code>require</code> work with files such as images for server-side rendering. It contains three pieces: a Webpack loader, Webpack plugin, and a library for your NodeJS app.</p>
+
+<hr>
+
+<p>With <code>generator-electrode</code>, we&#39;ve created a dynamic and performant full stack Electrode app in under five minutes, using some of our favorite technologies, like <a href="https://facebook.github.io/react/index.html">React</a> and <a href="http://hapijs.com/">Hapi</a>. Let&#39;s explore and personalize this web application in our next section, <a href="create_reusable_component.html">Intermediate: Create a Resuable Component</a>.</p>
 
 
     

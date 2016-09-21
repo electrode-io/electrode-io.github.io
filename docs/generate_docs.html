@@ -1412,28 +1412,28 @@
     </h1>
     <div class="subHeader"></div>
 
-    <h3><a class="anchor" name="generating-documentation"></a>Generating documentation <a class="hash-link" href="#generating-documentation">#</a></h3>
-<p>One of the final steps to Creating a Standalone Component is writing the correct documentation, in the form of component.json and component.md. The Electrode team has automated this step for you, using <a href="https://github.com/electrode-io/electrode-docgen">Electrode-Docgen</a>. This is a custom metadata extractor for the Electrode framework. The commands have been built into the tasks of <code>&lt;your-awesome-component&gt;/gulpfile.js</code>:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">const tasks = {
-  &quot;demo&quot;: [&quot;generate&quot;, &quot;server-dev&quot;],
-  &quot;demo-iso&quot;: [&quot;dev-iso&quot;],
-  &quot;generate&quot;: [&quot;generate-metadata&quot;, &quot;generate-documentation&quot;],
-  &quot;generate-documentation&quot;: () =&gt; exec(`electrode-docgen --package ./package.json --src ./src --markdown components.md`),
-  &quot;generate-metadata&quot;: () =&gt; exec(`electrode-docgen --package ./package.json --src ./src --metadata components.json`),
-  &quot;prepublish&quot;: [&quot;npm:prepublish&quot;],
-  &quot;preversion&quot;: [&quot;check-cov&quot;]
-};
+    <h4><a class="anchor" name="generating-documentation"></a>Generating documentation <a class="hash-link" href="#generating-documentation">#</a></h4>
+<p>One of the final steps to Creating a Reusable Component is writing the correct documentation, in the form of <code>component.json</code> and <code>component.md</code>. The Electrode team has automated this step for you, using <a href="https://github.com/electrode-io/electrode-docgen">Electrode-Docgen</a>. This is a custom metadata extractor for the Electrode framework. The commands have been built into the tasks of <code>&lt;your-awesome-component&gt;/gulpfile.js</code>:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;demo&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;generate&quot;</span><span class="p">,</span> <span class="s2">&quot;server-dev&quot;</span><span class="p">],</span>
+  <span class="s2">&quot;demo-iso&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;dev-iso&quot;</span><span class="p">],</span>
+  <span class="s2">&quot;generate&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;generate-metadata&quot;</span><span class="p">,</span> <span class="s2">&quot;generate-documentation&quot;</span><span class="p">],</span>
+  <span class="s2">&quot;generate-documentation&quot;</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">exec</span><span class="p">(</span><span class="err">`</span><span class="nx">electrode</span><span class="o">-</span><span class="nx">docgen</span> <span class="o">--</span><span class="kr">package</span> <span class="p">.</span><span class="o">/</span><span class="kr">package</span><span class="p">.</span><span class="nx">json</span> <span class="o">--</span><span class="nx">src</span> <span class="p">.</span><span class="o">/</span><span class="nx">src</span> <span class="o">--</span><span class="nx">markdown</span> <span class="nx">components</span><span class="p">.</span><span class="nx">md</span><span class="err">`</span><span class="p">),</span>
+  <span class="s2">&quot;generate-metadata&quot;</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">exec</span><span class="p">(</span><span class="err">`</span><span class="nx">electrode</span><span class="o">-</span><span class="nx">docgen</span> <span class="o">--</span><span class="kr">package</span> <span class="p">.</span><span class="o">/</span><span class="kr">package</span><span class="p">.</span><span class="nx">json</span> <span class="o">--</span><span class="nx">src</span> <span class="p">.</span><span class="o">/</span><span class="nx">src</span> <span class="o">--</span><span class="nx">metadata</span> <span class="nx">components</span><span class="p">.</span><span class="nx">json</span><span class="err">`</span><span class="p">),</span>
+  <span class="s2">&quot;prepublish&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;npm:prepublish&quot;</span><span class="p">],</span>
+  <span class="s2">&quot;preversion&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;check-cov&quot;</span><span class="p">]</span>
+<span class="p">};</span>
 </code></pre></div>
 <p>Simply run the commands below to auto generate the necessary docs:</p>
 
 <p>To generate metadata:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"> gulp generate-metadata
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gulp generate-metadata
 </code></pre></div>
 <p>To generate documentation:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"> gulp generate-documentation
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gulp generate-documentation
 </code></pre></div>
 <p>Or, to run both simultaneously, you can just run:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"> gulp generate
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gulp generate
 </code></pre></div>
 <p>Now that we&#39;ve run our tests and they&#39;ve passed, let&#39;s publish our component so we can use it again in Your-Awesome-App on <a href="https://docs.npmjs.com/getting-started/publishing-npm-packages">NPM</a>. You will need to <a href="https://www.npmjs.com/signup">sign up</a> for an account if you do not have one and follow the steps in the <a href="https://docs.npmjs.com/getting-started/creating-node-modules">NPM documentation</a>.</p>
 

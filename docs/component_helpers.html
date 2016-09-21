@@ -1412,66 +1412,65 @@
     </h1>
     <div class="subHeader"></div>
 
-    <h3><a class="anchor" name="develop-helpers-for-the-components"></a>Develop helpers for the components <a class="hash-link" href="#develop-helpers-for-the-components">#</a></h3>
-<p>In <code>src</code> create a folder titled <code>helpers</code> with file titled <code>graph-styles.js</code> inside - <code>&lt;your-awesome-component&gt;/src/helpers/graph-styles.js</code>. Copy the code from below into this file:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kr">const</span> <span class="nx">PARENT</span> <span class="o">=</span> <span class="p">{</span><span class="nx">divisor</span><span class="o">:</span> <span class="mi">2</span><span class="p">};</span>
-  <span class="kr">const</span> <span class="nx">CHILD</span> <span class="o">=</span> <span class="p">{</span><span class="nx">divisor</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">rotateBack</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">};</span>
-  <span class="kr">const</span> <span class="nx">SINGLE</span> <span class="o">=</span> <span class="p">{</span><span class="nx">marginDivisor</span><span class="o">:</span> <span class="mi">8</span><span class="p">};</span>
-  <span class="kr">const</span> <span class="nx">CONTAINER</span> <span class="o">=</span> <span class="p">{</span><span class="nx">paddingDivisor</span><span class="o">:</span> <span class="p">.</span><span class="mi">13</span><span class="p">,</span> <span class="nx">marginDivisor</span><span class="o">:</span> <span class="p">.</span><span class="mi">13</span><span class="p">};</span>
+    <h4><a class="anchor" name="develop-helpers-for-the-components"></a>Develop helpers for the components <a class="hash-link" href="#develop-helpers-for-the-components">#</a></h4>
+<p>In <code>src</code>, create a folder named <code>helpers</code> with a file named <code>graph-styles.js</code> inside (<code>&lt;your-awesome-component&gt;/src/helpers/graph-styles.js</code>). Copy the code from below into this file:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">PARENT</span> <span class="o">=</span> <span class="p">{</span><span class="nx">divisor</span><span class="o">:</span> <span class="mi">2</span><span class="p">};</span>
+<span class="kr">const</span> <span class="nx">CHILD</span> <span class="o">=</span> <span class="p">{</span><span class="nx">divisor</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">rotateBack</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">};</span>
+<span class="kr">const</span> <span class="nx">SINGLE</span> <span class="o">=</span> <span class="p">{</span><span class="nx">marginDivisor</span><span class="o">:</span> <span class="mi">8</span><span class="p">};</span>
+<span class="kr">const</span> <span class="nx">CONTAINER</span> <span class="o">=</span> <span class="p">{</span><span class="nx">paddingDivisor</span><span class="o">:</span> <span class="p">.</span><span class="mi">13</span><span class="p">,</span> <span class="nx">marginDivisor</span><span class="o">:</span> <span class="p">.</span><span class="mi">13</span><span class="p">};</span>
 
+<span class="kr">export</span> <span class="k">default</span> <span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">rotateVal</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
-  <span class="kr">export</span> <span class="k">default</span> <span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">rotateVal</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">nodeSize</span> <span class="o">=</span> <span class="nx">type</span> <span class="o">===</span> <span class="s2">&quot;child&quot;</span> <span class="o">?</span> <span class="p">(</span><span class="nx">size</span> <span class="o">/</span> <span class="nx">CHILD</span><span class="p">.</span><span class="nx">divisor</span><span class="p">)</span> <span class="o">:</span> <span class="p">(</span><span class="nx">size</span> <span class="o">/</span> <span class="nx">PARENT</span><span class="p">.</span><span class="nx">divisor</span><span class="p">);</span>
 
-    <span class="kr">const</span> <span class="nx">nodeSize</span> <span class="o">=</span> <span class="nx">type</span> <span class="o">===</span> <span class="s2">&quot;child&quot;</span> <span class="o">?</span> <span class="p">(</span><span class="nx">size</span> <span class="o">/</span> <span class="nx">CHILD</span><span class="p">.</span><span class="nx">divisor</span><span class="p">)</span> <span class="o">:</span> <span class="p">(</span><span class="nx">size</span> <span class="o">/</span> <span class="nx">PARENT</span><span class="p">.</span><span class="nx">divisor</span><span class="p">);</span>
-
-    <span class="kr">const</span> <span class="nx">parentOrSingle</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">width</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">nodeSize</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">height</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">nodeSize</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">margin</span><span class="o">:</span> <span class="err">`</span><span class="o">-</span><span class="nx">$</span><span class="p">{</span><span class="nx">nodeSize</span> <span class="o">/</span> <span class="nx">PARENT</span><span class="p">.</span><span class="nx">divisor</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">display</span><span class="o">:</span> <span class="err">`</span><span class="nx">block</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">position</span><span class="o">:</span> <span class="err">`</span><span class="nx">absolute</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">top</span><span class="o">:</span> <span class="err">`</span><span class="mi">50</span><span class="o">%</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">left</span><span class="o">:</span> <span class="err">`</span><span class="mi">50</span><span class="o">%</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">transform</span><span class="o">:</span> <span class="err">`</span><span class="nx">translate</span><span class="p">(</span><span class="mi">0</span><span class="nx">em</span><span class="p">)</span><span class="err">`</span>
-    <span class="p">};</span>
-
-    <span class="k">switch</span> <span class="p">(</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
-
-    <span class="k">case</span> <span class="s2">&quot;single&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="kr">const</span> <span class="nx">singleNode</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">display</span><span class="o">:</span> <span class="err">`</span><span class="nx">inline</span><span class="o">-</span><span class="nx">block</span><span class="err">`</span><span class="p">,</span>
-        <span class="nx">position</span><span class="o">:</span> <span class="err">`</span><span class="nx">relative</span><span class="err">`</span><span class="p">,</span>
-        <span class="nx">margin</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">nodeSize</span> <span class="o">/</span> <span class="nx">SINGLE</span><span class="p">.</span><span class="nx">marginDivisor</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span>
-      <span class="p">};</span>
-      <span class="p">[</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="s2">&quot;height&quot;</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">prop</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">singleNode</span><span class="p">[</span><span class="nx">prop</span><span class="p">]</span> <span class="o">=</span> <span class="nx">parentOrSingle</span><span class="p">[</span><span class="nx">prop</span><span class="p">]);</span>
-      <span class="k">return</span> <span class="nx">singleNode</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">case</span> <span class="s2">&quot;child&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="kr">const</span> <span class="nx">childNode</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">transform</span><span class="o">:</span> <span class="err">`</span><span class="nx">rotate</span><span class="p">(</span><span class="nx">$</span><span class="p">{</span><span class="nx">rotateVal</span> <span class="o">*</span> <span class="mi">1</span><span class="p">}</span><span class="nx">deg</span><span class="p">)</span> <span class="nx">translate</span><span class="p">(</span><span class="nx">$</span><span class="p">{</span><span class="nx">nodeSize</span> <span class="o">*</span> <span class="nx">PARENT</span><span class="p">.</span><span class="nx">divisor</span><span class="p">}</span><span class="nx">em</span><span class="p">)</span> <span class="nx">rotate</span><span class="p">(</span><span class="nx">$</span><span class="p">{</span><span class="nx">rotateVal</span> <span class="o">*</span> <span class="nx">CHILD</span><span class="p">.</span><span class="nx">rotateBack</span><span class="p">}</span><span class="nx">deg</span><span class="p">)</span><span class="err">`</span><span class="p">,</span> <span class="c1">// eslint-disable-line max-len</span>
-        <span class="nx">backgroundSize</span><span class="o">:</span> <span class="err">`</span><span class="mi">100</span><span class="o">%</span><span class="err">`</span>
-      <span class="p">};</span>
-      <span class="k">return</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">parentOrSingle</span><span class="p">,</span> <span class="nx">childNode</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="k">case</span> <span class="s2">&quot;container&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="p">{</span>
-        <span class="nx">position</span><span class="o">:</span> <span class="err">`</span><span class="nx">relative</span><span class="err">`</span><span class="p">,</span>
-        <span class="nx">width</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">size</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
-        <span class="nx">height</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">size</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
-        <span class="nx">padding</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">size</span> <span class="o">*</span> <span class="nx">CONTAINER</span><span class="p">.</span><span class="nx">paddingDivisor</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
-        <span class="nx">borderRadius</span><span class="o">:</span> <span class="err">`</span><span class="mi">50</span><span class="o">%</span><span class="err">`</span><span class="p">,</span>
-        <span class="nx">display</span><span class="o">:</span> <span class="err">`</span><span class="nx">inline</span><span class="o">-</span><span class="nx">block</span><span class="err">`</span><span class="p">,</span>
-        <span class="nx">margin</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">size</span> <span class="o">*</span> <span class="nx">CONTAINER</span><span class="p">.</span><span class="nx">marginDivisor</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span>
-      <span class="p">};</span>
-    <span class="p">}</span>
-
-    <span class="k">default</span><span class="o">:</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">parentOrSingle</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="p">}</span>
+  <span class="kr">const</span> <span class="nx">parentOrSingle</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">width</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">nodeSize</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">nodeSize</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
+    <span class="nx">margin</span><span class="o">:</span> <span class="err">`</span><span class="o">-</span><span class="nx">$</span><span class="p">{</span><span class="nx">nodeSize</span> <span class="o">/</span> <span class="nx">PARENT</span><span class="p">.</span><span class="nx">divisor</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
+    <span class="nx">display</span><span class="o">:</span> <span class="err">`</span><span class="nx">block</span><span class="err">`</span><span class="p">,</span>
+    <span class="nx">position</span><span class="o">:</span> <span class="err">`</span><span class="nx">absolute</span><span class="err">`</span><span class="p">,</span>
+    <span class="nx">top</span><span class="o">:</span> <span class="err">`</span><span class="mi">50</span><span class="o">%</span><span class="err">`</span><span class="p">,</span>
+    <span class="nx">left</span><span class="o">:</span> <span class="err">`</span><span class="mi">50</span><span class="o">%</span><span class="err">`</span><span class="p">,</span>
+    <span class="nx">transform</span><span class="o">:</span> <span class="err">`</span><span class="nx">translate</span><span class="p">(</span><span class="mi">0</span><span class="nx">em</span><span class="p">)</span><span class="err">`</span>
   <span class="p">};</span>
+
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="k">case</span> <span class="s2">&quot;single&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">singleNode</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">display</span><span class="o">:</span> <span class="err">`</span><span class="nx">inline</span><span class="o">-</span><span class="nx">block</span><span class="err">`</span><span class="p">,</span>
+      <span class="nx">position</span><span class="o">:</span> <span class="err">`</span><span class="nx">relative</span><span class="err">`</span><span class="p">,</span>
+      <span class="nx">margin</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">nodeSize</span> <span class="o">/</span> <span class="nx">SINGLE</span><span class="p">.</span><span class="nx">marginDivisor</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span>
+    <span class="p">};</span>
+    <span class="p">[</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="s2">&quot;height&quot;</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">prop</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">singleNode</span><span class="p">[</span><span class="nx">prop</span><span class="p">]</span> <span class="o">=</span> <span class="nx">parentOrSingle</span><span class="p">[</span><span class="nx">prop</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="nx">singleNode</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">case</span> <span class="s2">&quot;child&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">childNode</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">transform</span><span class="o">:</span> <span class="err">`</span><span class="nx">rotate</span><span class="p">(</span><span class="nx">$</span><span class="p">{</span><span class="nx">rotateVal</span> <span class="o">*</span> <span class="mi">1</span><span class="p">}</span><span class="nx">deg</span><span class="p">)</span> <span class="nx">translate</span><span class="p">(</span><span class="nx">$</span><span class="p">{</span><span class="nx">nodeSize</span> <span class="o">*</span> <span class="nx">PARENT</span><span class="p">.</span><span class="nx">divisor</span><span class="p">}</span><span class="nx">em</span><span class="p">)</span> <span class="nx">rotate</span><span class="p">(</span><span class="nx">$</span><span class="p">{</span><span class="nx">rotateVal</span> <span class="o">*</span> <span class="nx">CHILD</span><span class="p">.</span><span class="nx">rotateBack</span><span class="p">}</span><span class="nx">deg</span><span class="p">)</span><span class="err">`</span><span class="p">,</span> <span class="c1">// eslint-disable-line max-len</span>
+      <span class="nx">backgroundSize</span><span class="o">:</span> <span class="err">`</span><span class="mi">100</span><span class="o">%</span><span class="err">`</span>
+    <span class="p">};</span>
+    <span class="k">return</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">parentOrSingle</span><span class="p">,</span> <span class="nx">childNode</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">case</span> <span class="s2">&quot;container&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">position</span><span class="o">:</span> <span class="err">`</span><span class="nx">relative</span><span class="err">`</span><span class="p">,</span>
+      <span class="nx">width</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">size</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
+      <span class="nx">height</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">size</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
+      <span class="nx">padding</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">size</span> <span class="o">*</span> <span class="nx">CONTAINER</span><span class="p">.</span><span class="nx">paddingDivisor</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
+      <span class="nx">borderRadius</span><span class="o">:</span> <span class="err">`</span><span class="mi">50</span><span class="o">%</span><span class="err">`</span><span class="p">,</span>
+      <span class="nx">display</span><span class="o">:</span> <span class="err">`</span><span class="nx">inline</span><span class="o">-</span><span class="nx">block</span><span class="err">`</span><span class="p">,</span>
+      <span class="nx">margin</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">size</span> <span class="o">*</span> <span class="nx">CONTAINER</span><span class="p">.</span><span class="nx">marginDivisor</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+
+  <span class="k">default</span><span class="o">:</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">parentOrSingle</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
 </code></pre></div>
 
     
