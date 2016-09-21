@@ -4,12 +4,12 @@ permalink: docs/what_is_electrode.html
 toplevel: "Overview"
 ---
 
-> Electrode is a platform for building universal React/Node.js applications with standardized structure, best practices, and modern technologies baked in. Electrode focuses on performance, component reusability, and simple deployment to multiple cloud providers—so you can focus on what makes your app unique.
+> Electrode is a platform for building universal React/Node.js applications with a standardized structure, best practices, and modern technologies baked in. Electrode focuses on performance, component reusability, and simple deployment to multiple cloud providers—so you can focus on what makes your app unique.
 
 ### Core: Quick + Easy
-Electrode Core gets you up and running quickly by providing build scripts to streamline development and deployment, and [Electrode Archetypes](https://github.com/electrode-io?utf8=%E2%9C%93&query=archetype%20only%3Asources%20) to standardize the structure of your app and its associated React components. Electrode's archetype system provides for common patterns across projects and components, helping teams standardize on development best practices.
+Electrode Core gets you up and running quickly by providing build scripts to streamline development and deployment and [Electrode Archetypes](https://github.com/electrode-io?utf8=%E2%9C%93&query=archetype%20only%3Asources%20) to standardize the structure of your app and its associated React components. Electrode's archetype system establishes common patterns across projects and components, helping teams standardize on development best practices.
 
-**It only takes a minute to get your new Electrode application running, and a
+**It only takes a minute to get your new Electrode application running and a
 few more minutes to deploy your app to the cloud. See our [Getting Started:
 Quick Guide](get_started.html) to get started now.**
 
@@ -29,10 +29,10 @@ apps](stand_alone_modules.html).
 
 ### Tools: Power Up Your Existing Applications
 The Electrode Platform also has tools that can be consumed by existing
-applications (though some tools require far less configuration to use with
-Electrode core, and some are bundled with Electrode Core). There are currently
+applications using other platforms (though with
+Electrode core, these tools are either bundled directly or require far less configuration). There are currently
 two powerful tools: one which enables [discovery of reusable
-components](electrode_explorer.html), and another to help optimize your
+components](electrode_explorer.html) and another to help optimize your
 [JavaScript bundles](electrify.html)
 
 **Start using these tools in your existing applications [Electrode Explorer](electrode_explorer.html) and [Electrify](electrify.html).**
