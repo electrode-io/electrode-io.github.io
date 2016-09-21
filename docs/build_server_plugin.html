@@ -1415,16 +1415,16 @@
     <h3><a class="anchor" name="be-hapi-and-build-a-server-plugin"></a>Be Hapi and Build a server plugin <a class="hash-link" href="#be-hapi-and-build-a-server-plugin">#</a></h3>
 <p>At WalmartLabs, we use <a href="http://hapijs.com/">Hapi</a> because of its flexible and robust plugin system. It allows us to modularize our application into isolated pieces of business logic and reusable utilities.</p>
 
-<p>Let&#39;s make a deal! Actually, scratch that, let&#39;s make a plugin! Plugins are way to extend our server&#39;s functionality. Building upon our open source theme, let&#39;s make a plugin that retrieves the our Tech Friends for our &quot;resource party.&quot;</p>
+<p>Let&#39;s make a deal! Actually, scratch that, let&#39;s make a plugin! Plugins are way to extend our server&#39;s functionality. Building upon our open source theme, let&#39;s make a plugin that retrieves the our Tech Friends for our &quot;resource party.&quot; <strong>Let&#39;s head back to Your Awesome App.</strong></p>
 
 <p>We are going to use the <a href="https://developer.github.com/v3/">GitHub Api</a> to grab the latest 10 contributors of our Open Source friends and display them in Your Awesome App.</p>
 
-<p>The GitHub <a href="https://developer.github.com/v3/">site</a> has great documentation and awesome libraries to help jumpstart our plugin. Let&#39;s begin there by installing a Node.js wrapper called <a href="https://github.com/mikedeboer/node-github">Node-github</a>:</p>
+<p>The GitHub <a href="https://developer.github.com/v3/">site</a> has great documentation and awesome libraries to help jumpstart our plugin. Let&#39;s begin there by installing a Node.js wrapper called <a href="https://github.com/mikedeboer/node-github">node-github</a> in Your Awesome App:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install github
 </code></pre></div>
 <p>At their core, plugins are a simple <code>register object</code>, that has the <code>signature function(server, options, next)</code>. Read more about building plugins from scratch in the <a href="http://hapijs.com/tutorials/plugins">Hapi documentation</a>.</p>
 
-<p>Let&#39;s head back to Your Awesome App. Navigate to the <your-awesome-app>/server/plugins folder. Make a folder called <code>friends</code>. Cd into your new <code>friends</code> folder and:</p>
+<p>Navigate to the <code>&lt;your-awesome-app&gt;/server/plugins</code> folder. Make a folder called <code>friends</code>. Cd into your new <code>friends</code> folder and:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">  touch index.js
 </code></pre></div>
 <p>Your Server file pattern should now look like this:</p>
@@ -1443,6 +1443,7 @@
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
 
   <span class="c1">//a very simple plugin</span>
+
   <span class="kr">const</span> <span class="nx">Promise</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;bluebird&quot;</span><span class="p">);</span>
   <span class="kr">const</span> <span class="nx">GitHubApi</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;github&quot;</span><span class="p">);</span>
   <span class="kr">const</span> <span class="nx">github</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GitHubApi</span><span class="p">();</span>
@@ -1450,23 +1451,21 @@
   <span class="nx">github</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">({</span>
     <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;oauth&quot;</span><span class="p">,</span>
     <span class="nx">token</span><span class="o">:</span> <span class="nx">AUTH_TOKEN</span>
-<span class="p">});</span>
+  <span class="p">});</span>
 
   <span class="kr">const</span> <span class="nx">githubGetContributors</span> <span class="o">=</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">promisify</span><span class="p">(</span><span class="nx">github</span><span class="p">.</span><span class="nx">repos</span><span class="p">.</span><span class="nx">getContributors</span><span class="p">);</span>
 
   <span class="nx">exports</span><span class="p">.</span><span class="nx">register</span> <span class="o">=</span> <span class="p">(</span><span class="nx">server</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
-    <span class="kr">const</span> <span class="nx">friendsArr</span> <span class="o">=</span> <span class="p">[</span>
-      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;electrode&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/I9utJF&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span> <span class="nx">github</span><span class="o">:</span> <span class="s2">&quot;https://github.com/electrode-io/electrode-boilerplate-universal-react-node&quot;</span><span class="p">},</span>
-      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;hapi&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/bEBi6G&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span> <span class="nx">github</span><span class="o">:</span> <span class="s2">&quot;https://github.com/hapijs/hapi&quot;</span><span class="p">},</span>
-      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;React&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/xwbqlB&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span> <span class="nx">github</span><span class="o">:</span> <span class="s2">&quot;https://github.com/facebook/react&quot;</span><span class="p">},</span>
-      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Redux&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/MGQ3lp&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span> <span class="nx">github</span><span class="o">:</span> <span class="s2">&quot;https://github.com/reactjs/redux&quot;</span><span class="p">},</span>
-      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Webpack&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/zgxe8s&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span> <span class="nx">github</span><span class="o">:</span> <span class="s2">&quot;https://github.com/webpack/webpack&quot;</span><span class="p">},</span>
-      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;node&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/hxmCEE&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span> <span class="nx">github</span><span class="o">:</span> <span class="s2">&quot;https://github.com/nodejs/node&quot;</span><span class="p">}</span>
-    <span class="p">];</span>
+    <span class="kr">const</span> <span class="nx">friendsArr</span> <span class="o">=</span> <span class="p">[</span> <span class="cm">/*eslint-disable max-len */</span>
+      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Electrode&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/I9utJF&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span> <span class="nx">github</span><span class="o">:</span> <span class="s2">&quot;https://github.com/electrode-io/electrode-boilerplate-universal-react-node&quot;</span><span class="p">},</span>
+      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;React&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/xwbqlB&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span> <span class="nx">github</span><span class="o">:</span> <span class="s2">&quot;https://github.com/facebook/react&quot;</span><span class="p">},</span>
+      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Redux&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/MGQ3lp&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span> <span class="nx">github</span><span class="o">:</span> <span class="s2">&quot;https://github.com/reactjs/redux&quot;</span><span class="p">},</span>
+      <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;node&quot;</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="s2">&quot;//goo.gl/hxmCEE&quot;</span><span class="p">,</span> <span class="nx">size</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span> <span class="nx">github</span><span class="o">:</span> <span class="s2">&quot;https://github.com/nodejs/node&quot;</span><span class="p">}</span>
+    <span class="p">];</span> <span class="cm">/*eslint-enable max-len */</span>
 
-    <span class="kr">const</span> <span class="nx">getContributorsPromises</span> <span class="o">=</span> <span class="nx">friendsArr</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">friend</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">githubUrl</span> <span class="o">=</span> <span class="nx">friend</span><span class="p">.</span><span class="nx">github</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
+    <span class="kr">const</span> <span class="nx">getContributorsPromises</span> <span class="o">=</span> <span class="nx">friendsArr</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">friend</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="cm">/*eslint-disable camelcase */</span>
+      <span class="kr">const</span> <span class="nx">githubUrl</span> <span class="o">=</span> <span class="nx">friend</span><span class="p">.</span><span class="nx">github</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">);</span>
       <span class="kr">const</span> <span class="nx">githubInfo</span> <span class="o">=</span> <span class="p">{</span>
         <span class="nx">repo</span><span class="o">:</span> <span class="nx">githubUrl</span><span class="p">.</span><span class="nx">pop</span><span class="p">(),</span>
         <span class="nx">user</span><span class="o">:</span> <span class="nx">githubUrl</span><span class="p">.</span><span class="nx">pop</span><span class="p">(),</span>
@@ -1476,15 +1475,17 @@
       <span class="p">};</span>
       <span class="k">return</span> <span class="nx">githubGetContributors</span><span class="p">(</span><span class="nx">githubInfo</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-          <span class="nx">friend</span><span class="p">[</span><span class="s2">&quot;friends&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">map</span><span class="p">(({</span> <span class="nx">login</span><span class="p">,</span> <span class="nx">avatar_url</span><span class="p">,</span> <span class="nx">url</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="nx">login</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="nx">avatar_url</span><span class="p">,</span> <span class="nx">profile</span><span class="o">:</span> <span class="nx">url</span><span class="p">}));</span>
+          <span class="nx">friend</span><span class="p">.</span><span class="nx">friends</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">map</span><span class="p">(({</span> <span class="nx">login</span><span class="p">,</span> <span class="nx">avatar_url</span><span class="p">,</span> <span class="nx">html_url</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+            <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="nx">login</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="nx">avatar_url</span><span class="p">,</span> <span class="nx">profile</span><span class="o">:</span> <span class="nx">html_url</span><span class="p">}</span>
+          <span class="p">));</span>
           <span class="k">return</span> <span class="nx">friend</span><span class="p">;</span>
-        <span class="p">})</span>
-    <span class="p">});</span>
+        <span class="p">});</span>
+    <span class="p">});</span> <span class="cm">/*eslint-enable camelcase */</span>
 
     <span class="kr">const</span> <span class="nx">getFriendsAndContributors</span> <span class="o">=</span> <span class="p">(</span><span class="nx">reply</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">getContributorsPromises</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">reply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">friends</span><span class="o">:</span> <span class="nx">response</span><span class="p">}))))</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">reply</span><span class="p">(</span><span class="nx">err</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">reply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">friends</span><span class="o">:</span> <span class="nx">response</span><span class="p">})))</span>
+        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">reply</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
     <span class="p">};</span>
 
     <span class="nx">server</span><span class="p">.</span><span class="nx">route</span><span class="p">({</span>
@@ -1501,7 +1502,7 @@
     <span class="nx">version</span><span class="o">:</span> <span class="s2">&quot;1.0.0&quot;</span>
   <span class="p">};</span>
 </code></pre></div>
-<p>If you are like us, and you plan on building out Your Awesome App even further, you will need to <a href="https://github.com/settings/tokens/new">generate a GitHup Api OAuth token</a> to remove the preset limit for API requests. We have already added the code to accept and use the token in our Hapi server plugin above <code>const AUTH_TOKEN = process.env.token</code>.</p>
+<p>If you are like us, and you plan on building out Your Awesome App even further, you will need to <a href="https://github.com/settings/tokens/new">generate a GitHup Api oAuth token</a> to remove the preset limit for API requests. We have already added the code to accept and use the token in our Hapi server plugin above <code>const AUTH_TOKEN = process.env.token</code>.</p>
 
 <p>Click <a href="https://github.com/settings/tokens/new">here</a> to set a new personal access token. Create your own <code>token description</code> in the form given and for <code>Select scopes</code> simply check: <code>public repo</code>. Then hit the green <code>Generate token</code> button.</p>
 

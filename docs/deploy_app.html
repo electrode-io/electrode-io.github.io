@@ -1412,7 +1412,7 @@
     </h1>
     <div class="subHeader"></div>
 
-    <p>We&#39;re almost finished with our Quick Start. The final step is to deploy your-awesome-app and share it with your fellow developers using <a href="https://devcenter.heroku.com/categories/deployment">Heroku</a>. We have listed the steps below, but feel free to learn more about Heroku <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction">here</a>. These instructions assume you have a GitHub account. Navigate to your GitHub and create a new repo &#39;Your-Awesome-App&#39;. Hit the <code>clone your-awesome-repo</code> and follow the steps below in order:</p></p>
+    <p>We&#39;re almost finished with our Quick Start. The final step is to deploy your-awesome-app and share it with your fellow developers using <a href="https://devcenter.heroku.com/categories/deployment">Heroku</a>. We have listed the steps below, but feel free to learn more about Heroku <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction">here</a>. These instructions assume you have a GitHub account. Navigate to your GitHub and create a new empty repo &#39;Your-Awesome-App&#39;. Hit the <code>clone your-awesome-repo</code> and follow the steps below in order:</p></p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git init
 <span class="nv">$ </span>git add .
 <span class="nv">$ </span>git commit -m <span class="s1">&#39;first commit&#39;</span>
@@ -1506,6 +1506,10 @@ Password:
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+<p>Use the following commands to commit this change as well:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git add .
+<span class="nv">$ </span>git commit -m <span class="s2">&quot;Updates package.json&quot;</span>
+</code></pre></div>
 <p>Use the command below to set a configuration so that Heroku installs Your-Awesome-App&#39;s devDependencies:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku config:set <span class="nv">NPM_CONFIG_PRODUCTION</span><span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
@@ -1518,7 +1522,7 @@ Password:
 <p>Visit the app at the generated URL by using this command:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku open
 </code></pre></div>
-<p>And... you did it! <a href="https://electrode-example-party-app.herokuapp.com/">Click here</a> for our deployed Heroku version. We will build even more in our <a href="create_reusable_component.html">Getting Started: Intermediate</a> and cover complex topics like routing, server plugins and other powerful deployment software.</p>
+<p>And... you did it! <a href="https://first-electrode-example-app.herokuapp.com">Click here</a> for our deployed Heroku version. We will build even more in our <a href="create_reusable_component.html">Getting Started: Intermediate</a> and cover complex topics like routing, server plugins and other powerful deployment software.</p>
 
 
     

@@ -1416,8 +1416,7 @@
 Node.js applications. It&#39;s simple to get started, and can be customized and
 extended to meet the needs of your app</p>
 
-<p><a href="https://github.com/electrode-io/electrode-confippet">Confippet</a> can be used as a standalone
-module in your favorite node.js web server framework.</p>
+<p><a href="https://github.com/electrode-io/electrode-confippet">Confippet</a> can be used as a standalone module in your favorite Node.js web server framework or application.</p>
 <h3><a class="anchor" name="features"></a>Features <a class="hash-link" href="#features">#</a></h3>
 <ul>
 <li><strong>Simple</strong> - Confippet&#39;s <code>presetConfig</code> automatically composes a single config
@@ -1425,7 +1424,7 @@ object from multiple files. For most applications, no further customization is
 necessary.</li>
 <li><strong>Flexible</strong> - Supports JSON, YAML, and JavaScript config files.</li>
 <li><strong>Powerful</strong> - Handles complex multi-instance enterprise deployments.</li>
-<li><strong>Platform Agnostic</strong> - This module is platform agnostic and can be plugged-in Electrode, Express.js and Hapi.js applications.</li>
+<li><strong>Platform Agnostic</strong> - This module is platform agnostic and can be plugged-in Electrode, Express.js and Hapi.js applications or any Node.js application.</li>
 </ul>
 <h2><a class="anchor" name="module-electrode-confippet"></a>Module: <a href="https://github.com/electrode-io/electrode-confippet">electrode-confippet</a> <a class="hash-link" href="#module-electrode-confippet">#</a></h2><h3><a class="anchor" name="install-via-npm"></a>Install via <code>npm</code> <a class="hash-link" href="#install-via-npm">#</a></h3><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install --save electrode-confippet
 </code></pre></div><h3><a class="anchor" name="example-applications"></a>Example Applications <a class="hash-link" href="#example-applications">#</a></h3>
@@ -1436,20 +1435,22 @@ necessary.</li>
 </ul>
 <h2><a class="anchor" name="usage"></a>Usage <a class="hash-link" href="#usage">#</a></h2>
 <ul>
-<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#example-basic-use">Example Basic Use</a></li>
 <li><a href="#config-composition">Config Composition</a></li>
 <li><a href="#environment-variables">Environment Variables</a></li>
 <li><a href="#using-templates">Using Templates</a></li>
 <li><a href="#usage-in-node-modules">Usage in Node Modules</a></li>
 <li><a href="#customization">Customization</a></li>
 </ul>
-<h3><a class="anchor" name="getting-started"></a>Getting Started <a class="hash-link" href="#getting-started">#</a></h3>
-<p>In this example, we&#39;ll create two config files: a default file that always
-loads, and a production file that loads only when the <code>NODE_ENV</code> environment
-variable is set to <code>production</code>. We&#39;ll then import those files into a standard
-Node.js app.</p>
-<h3><a class="anchor" name="basic-use"></a>Basic Use <a class="hash-link" href="#basic-use">#</a></h3>
-<p>Create <code>config/</code> directory by running <code>mkdir config</code> inside the main app directory, and add the following into a file named <code>default.json</code> in that directory:</p>
+<h3><a class="anchor" name="example-basic-use"></a>Example Basic Use <a class="hash-link" href="#example-basic-use">#</a></h3>
+<p>Let&#39;s say that in our application we need to access a database that is running 
+locally in our development environment but is running on a specific hostname 
+while running in our production environment. We would like to be able to get 
+the correct hostname in our code, without too much effort, based on the current environment.</p>
+
+<p>Confippet can help us with this. All we have to do is to create a few config files like the following: </p>
+
+<p><code>config/default.json</code></p>
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;db&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -1460,8 +1461,16 @@ Node.js app.</p>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Next, add another file called <code>production.json</code> to the <code>config/</code> directory, with
-this content:</p>
+<p><code>config/development.json</code></p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;db&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;dev-db-server&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>config/production.json</code></p>
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;db&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -1470,8 +1479,7 @@ this content:</p>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Finally, in our Node.js app, we can import Confippet and use the configuration
-we&#39;ve created:</p>
+<p>The above configs can be used in the app using the following: </p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;electrode-confippet&quot;</span><span class="p">).</span><span class="nx">config</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;settings.db&quot;</span><span class="p">);</span>
 </code></pre></div>

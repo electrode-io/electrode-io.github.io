@@ -1413,7 +1413,7 @@
     <div class="subHeader"></div>
 
     <h3><a class="anchor" name="server-config--confippet"></a>Server Config + Confippet <a class="hash-link" href="#server-config--confippet">#</a></h3>
-<p>Out of the box we&#39;re given <a href="https://github.com/electrode-io/electrode-confippet">Confippet</a>, a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a preset config out of the box:</p>
+<p>Out of the box we&#39;re given <a href="https://github.com/electrode-io/electrode-confippet">Confippet</a>, a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a preset config out of the box inside <strong>Your Awesome (Electrode) App</strong>:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">  config
     |_default.json
     |_development.json
@@ -1449,9 +1449,9 @@
 </code></pre></div>
 <p>You can learn more about Confippet and ways to extend your config in our Advanced Electrode App with the <a href="confippet.html">Confippet</a> stand alone module.</p>
 
-<p>Let&#39;s check it out! We&#39;ll run through our steps to test, run the app and view it in the browser:</p>
+<p>Let&#39;s check it out! We&#39;ll run through our steps to test, run the app and view it in the browser. We will need your GitHubApi token as well:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">  gulp check
-  gulp hot
+  <span class="nv">token</span><span class="o">=</span><span class="s1">&#39;your-token-here&#39;</span> gulp hot
 </code></pre></div>
 <p>Navigate to <code>localhost:3000</code>. Check it out! This is the <code>Index route</code> which renders our <code>Home component</code> using Server Side Rendering:</p>
 
@@ -1465,7 +1465,7 @@
 
 <p>When all of our guests are invited to the House Party our CSS modules kick in and launch an Electrode House Party!</p>
 
-<p><img src="/img/collabo-party-view.png" alt="app-party-view"></p>
+<p><img src="/img/party-collabos.png" alt="app-party-view"></p>
 
 <p>Feel free to add your own personal touch and build out your Resource List House Party. <a href="https://electrode-example-app.herokuapp.com/">Click here</a> to view our Heroku deployed example app.</p>
 
