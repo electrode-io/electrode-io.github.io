@@ -13,12 +13,13 @@ First, let's quickly check your development environment. You will need to have t
 *  Recommend installing version 3 of [npm](https://www.npmjs.com/) with `npm install -g npm@3`.
   * Note: NodeJS v6.x already comes with npm@3 by default.
 *  Install [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) with `npm install -g gulp`.
-*  The text editor of your choice downloaded with CLI tools installed.  
+*  The text editor of your choice downloaded with CLI tools installed.
 
 ## For Online Deployments
 
 *  A [Heroku](https://signup.heroku.com/dc) account + [CLI tools](https://devcenter.heroku.com/articles/heroku-command-line).
 *  A [Github](https://github.com/) account.
+*  An [NPM](https://www.npmjs.com/signup) account.
 
 > We write NodeJS code with ES6 features that NodeJS 4.2 supports.
 

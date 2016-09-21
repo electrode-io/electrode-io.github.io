@@ -34,7 +34,7 @@ Run one simple command. Presto!
 $ gulp dev
 ```
 
-Let's take a quick high level overview of our file structure and what `generator-electrode` gives you out the box. Read through our [Explore More](whats_inside.html) for a more detailed description.
+Let's take a quick high level overview of our file structure and what `generator-electrode` gives you out the box. Read through our [What's Inside](whats_inside.html) for a more detailed description.
 
 ```
 client
