@@ -624,6 +624,33 @@ h1 {
   text-decoration: none !important;
 }
 
+@media screen and (max-width: 768px) {
+  .nav-main{
+    float: none;
+    width: 100%;
+
+    .nav-site{
+      background: #222;
+      max-height: 0;
+      width: 100%;
+
+      li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 15px;
+      }
+
+      .handle {
+        display:block;
+      }
+    }
+
+    .landing-nav.show{
+      max-height:20em;
+    }
+  }
+}
+
 @media screen and (max-width: 960px) {
   .nav-main {
     position: static;
@@ -695,7 +722,8 @@ p a code {
 
 
   .inner-text {
-    margin: 100px 400px 100px 400px;
+    margin: 100px 0px 100px 0px;
+    padding: 0px 300px 0px 300px;
   }
 
   button {
@@ -709,6 +737,7 @@ p a code {
 
   div {
     text-align: center;
+    padding-bottom: 50px;
 
     div {
       margin: 0px 50px 0px 70px;
@@ -718,6 +747,11 @@ p a code {
       display: block;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    button{
+      background: $primary;
+      color: white;
     }
   }
 }
@@ -749,25 +783,18 @@ p a code {
 
 .footer{
   @include clearfix;
-  background: linear-gradient($darkestColor, $darkerColor);
+  background: linear-gradient($darkerColor, $darkestColor);
   color: $lightTextColor;
+  height: $navHeight;
   box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+  width: 100%;
   z-index: 100;
 
-  width: 100%;
-  overflow: hidden;
-
   ul {
-    list-style: none;
-    position: relative;
-    left: 50%;
-    width: 32%;
-    display: inline-block;
+    display: inline;
 
     li {
-      position: relative;
-      display: inline-block;
-      right: 50%;
+      display: inline;
     }
   }
 
@@ -780,3 +807,12 @@ p a code {
 .scroll-up{
   cursor: n-resize;
 }
+
+//decided to just make separate class rather than modify nav-site, note to discuss & refactor as needed
+
+.handle {
+  display: none;
+}
+
+
+
