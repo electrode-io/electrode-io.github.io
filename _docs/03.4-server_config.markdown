@@ -6,7 +6,7 @@ toplevel: "Getting Started: Intermediate"
 
 ###Server Config + Confippet
 
-Out of the box we're given [Confippet](https://github.com/electrode-io/electrode-confippet), a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a preset config out of the box:
+Out of the box we're given [Confippet](https://github.com/electrode-io/electrode-confippet), a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but offers a preset config out of the box inside **Your Awesome (Electrode) App**:
 
 ```
   config

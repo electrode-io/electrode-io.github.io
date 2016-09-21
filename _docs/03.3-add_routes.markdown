@@ -8,10 +8,10 @@ toplevel: "Getting Started: Intermediate"
 
 Now that we have our Open Source friends, the ability to have a resource-list house party and a working demo from before, we can continue to quickly build out our components to both handle user interaction on our application and send requests to Hapi Plugin for more friends to our party. We will use [React-Router](https://github.com/ReactTraining/react-router) to create different routes and serve different content to our views.
 
-Now we can integrate your published `<your-awesome-component>` as a node module and build out the app. Use your editor to open Your-Awesome-App and follow the steps below:
+Now we can integrate your published `<your-awesome-component>` as a node module and build out the app. Make sure you are inside of **Your Awesome App** and follow the steps below:
 
 ```bash
-  npm i your-awesome-npm-module --save
+  npm i your-awesome-published-npm-module --save
 ```
 
 Navigate to `<your-awesome-component>/client/routes.jsx`. Copy, paste and save the code below into this file. Change from the literal `YourAwesomeComponent` and `your-awesome-node-module` to your actual component name:
@@ -20,7 +20,7 @@ Navigate to `<your-awesome-component>/client/routes.jsx`. Copy, paste and save t
   import React from "react";
   import { Route, IndexRoute } from "react-router";
   import { Home } from "./components/home";
-  import { YourAwesomeComponent } from "your-awesome-node-module";
+  import { YourAwesomeComponent } from "your-awesome-published-npm-module";
 
   export const routes = (
     <Route path="/" component={Home}>

@@ -8,11 +8,11 @@ toplevel: "Getting Started: Intermediate"
 
 At WalmartLabs, we use [Hapi](http://hapijs.com/) because of its flexible and robust plugin system. It allows us to modularize our application into isolated pieces of business logic and reusable utilities.
 
-Let's make a deal! Actually, scratch that, let's make a plugin! Plugins are way to extend our server's functionality. Building upon our open source theme, let's make a plugin that retrieves the our Tech Friends for our "resource party."
+Let's make a deal! Actually, scratch that, let's make a plugin! Plugins are way to extend our server's functionality. Building upon our open source theme, let's make a plugin that retrieves the our Tech Friends for our "resource party." **Let's head back to Your Awesome App.**
 
 We are going to use the [GitHub Api](https://developer.github.com/v3/) to grab the latest 10 contributors of our Open Source friends and display them in Your Awesome App.
 
-The GitHub [site](https://developer.github.com/v3/) has great documentation and awesome libraries to help jumpstart our plugin. Let's begin there by installing a Node.js wrapper called [Node-github](https://github.com/mikedeboer/node-github):
+The GitHub [site](https://developer.github.com/v3/) has great documentation and awesome libraries to help jumpstart our plugin. Let's begin there by installing a Node.js wrapper called [node-github](https://github.com/mikedeboer/node-github) in Your Awesome App:
 
 ```bash
 npm install github
@@ -20,7 +20,7 @@ npm install github
 
 At their core, plugins are a simple `register object`, that has the `signature function(server, options, next)`. Read more about building plugins from scratch in the [Hapi documentation](http://hapijs.com/tutorials/plugins).
 
-Let's head back to Your Awesome App. Navigate to the <your-awesome-app>/server/plugins folder. Make a folder called `friends`. Cd into your new `friends` folder and:
+Navigate to the `<your-awesome-app>/server/plugins` folder. Make a folder called `friends`. Cd into your new `friends` folder and:
 
 ```bash
   touch index.js
@@ -48,7 +48,6 @@ Navigate to `<your-awesome-app>/server/plugins/friends/index.js`. This is where 
   'use strict';
 
   //a very simple plugin
-  "use strict";
 
   const Promise = require("bluebird");
   const GitHubApi = require("github");
@@ -109,7 +108,7 @@ Navigate to `<your-awesome-app>/server/plugins/friends/index.js`. This is where 
   };
 ```
 
-If you are like us, and you plan on building out Your Awesome App even further, you will need to [generate a GitHup Api OAuth token](https://github.com/settings/tokens/new) to remove the preset limit for API requests. We have already added the code to accept and use the token in our Hapi server plugin above `const AUTH_TOKEN = process.env.token`.
+If you are like us, and you plan on building out Your Awesome App even further, you will need to [generate a GitHup Api oAuth token](https://github.com/settings/tokens/new) to remove the preset limit for API requests. We have already added the code to accept and use the token in our Hapi server plugin above `const AUTH_TOKEN = process.env.token`.
 
 Click [here](https://github.com/settings/tokens/new) to set a new personal access token. Create your own `token description` in the form given and for `Select scopes` simply check: `public repo`. Then hit the green `Generate token` button.
 
