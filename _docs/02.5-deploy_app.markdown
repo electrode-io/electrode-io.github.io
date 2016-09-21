@@ -132,7 +132,7 @@ Use the following commands to commit this change as well:
 
 ```bash
 $ git add .
-$ git commit -m "Updates package.json - adds heroku-postbuild"
+$ git commit -m "Updates package.json with heroku-postbuild"
 ```
 
 Use the command below to set a configuration so that Heroku installs Your-Awesome-App's devDependencies:
