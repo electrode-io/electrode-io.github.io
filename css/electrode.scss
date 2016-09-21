@@ -218,7 +218,6 @@ h1, h2, h3, h4, h5, h6 {
         }
       }
     }
-
   }
 }
 
@@ -251,14 +250,24 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .footer {
-    ul{
-      max-height: 0;
-      width: 100%;
+    text-align: center;
 
-      li {
-        box-sizing: border-box;
+    div {
+      display: block !important;
+    }
+
+    .collapsing-footer {
+      float: none !important;
+
+      ul{
+        max-height: 0;
         width: 100%;
-        padding: 15px;
+
+        li {
+          box-sizing: border-box;
+          width: 100%;
+          padding: 15px;
+        }
       }
     }
   }
