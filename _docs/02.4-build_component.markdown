@@ -5,6 +5,8 @@ toplevel: "Getting Started: Quick Guide"
 ---
 ###Here at WalmartLabs we love to build!
 
+After you've generated your awesome electrode app, you are ready to focus on writing your React components.
+
 Navigate to `<your-awesome-app>/client/components/home.jsx`:
 
 ```javascript
@@ -31,15 +33,14 @@ export const imageUrls = [
   'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emoji_u26a1.svg/2000px-Emoji_u26a1.svg.png'
 ];
 
-export var i=0;
-
 export class Home extends React.Component {
-  renderImage(imageUrl, i) {
+  renderImage(imageUrl, key) {
     return (
-        <img key={i} src={imageUrl} width="10%" height="10%"/>
+        <img key={key} src={imageUrl} width="10%" height="10%"/>
     );
   }
   render() {
+    let i = 0;
     return (
       <div>
         <h1>Hello <a href="https://github.com/electrode-io">Electrode</a></h1>
@@ -92,6 +93,8 @@ gulp dev
 ```
 
 Navigate to `https://localhost:3000`. **Site should look like the following screenshot:**
+
+> If you are already running your app in dev mode, then your changes should've been updated automatically and you can just refresh your browser to see the changes. 
 
 ![Pastel](http://i.imgur.com/nwEl64l.png)
 
