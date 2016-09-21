@@ -14,13 +14,13 @@ make sure you have [node](http://nodejs.org/) installed on your machine first.
 Installing should then be as easy as:
 
 ``` bash
-sudo npm install -g electrode-bundle-analyzer
+$ sudo npm install -g electrode-bundle-analyzer
 ```
 
 {% include module_usage.md moduleId="electrode-bundle-analyzer" %}
 
 
-Bundle Analyzer expects a particular set of data for it to work. 
+Bundle Analyzer expects a particular set of data for it to work.
 
 Bundle Analyzer looks for the webpack module ID comment that normally looks something like this:
 
@@ -48,9 +48,9 @@ Options:
 ```
 
 When you install Bundle Analyzer globally, `analyze-bundle` command-line tool is made
-available as the quickest means of checking out your bundle. 
+available as the quickest means of checking out your bundle.
 
-If you don't specify an output directory, a default one `.etmp` will be created and a `.gitignore `file is also added there to avoid git picking it up.
+If you don't specify an output directory, a default one `.etmp` will be created and a `.gitignore` file is also added there to avoid git picking it up.
 
 Two files will be written to the output directory:
 
