@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-main {
   @include clearfix;
-  background: linear-gradient($darkerColor, $darkestColor);
+  background: #00233F;
   color: $lightTextColor;
   position: fixed;
   top: 0;
@@ -123,8 +123,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .nav-site {
+
     li {
       margin: 0;
+      padding: 0px 35px 0px 35px;
     }
 
     li > a {
@@ -191,10 +193,6 @@ h1, h2, h3, h4, h5, h6 {
         display: none;
       }
     }
-
-    .landing-nav.show{
-      max-height:20em;
-    }
   }
 
   .footer {
@@ -230,7 +228,7 @@ h1, h2, h3, h4, h5, h6 {
       display: inline-block;
     }
 
-    .nav-site {
+    ul {
       background: #222;
       max-height: 0;
       width: 100%;
@@ -242,10 +240,6 @@ h1, h2, h3, h4, h5, h6 {
         display: none;
       }
 
-    }
-
-    .landing-nav.show{
-      max-height:20em;
     }
   }
 
@@ -293,7 +287,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media screen and (max-width: 994px) {
   .inner-text {
-    padding: 0px 10% 0px 10% !important;
+    padding: 0px 13% 0px 13% !important;
   }
 }
 
