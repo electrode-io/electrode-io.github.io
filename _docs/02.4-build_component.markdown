@@ -91,7 +91,7 @@ Run our new favorite command to see your tech list:
 gulp dev
 ```
 
-**Site should look like the following screenshot**
+Navigate to `https://localhost:3000`. **Site should look like the following screenshot:**
 
 ![Pastel](http://i.imgur.com/nwEl64l.png)
 

@@ -15,10 +15,13 @@ Now run it and explore the live demo!
 
 Open `http://localhost:4000` in your browser to see your live demo. You will first see a Guest List header with a checkbox listing all of our resources, now referred to as Friends:
 
-![party-false](/img/party-component-false.png)
+![party-false](/img/component-party-false.png)
 
+<br>
+Have fun! Change key `invited` to true in `invitees` array. This live demo is completely interactive:
 
-Have fun! Change key `invited` to true in `invitees` array. The Electrode stack is now like an awesome party, where all of our favorite technologies get invited:
+![component](/img/component-demo.png)
 
-
-![party-true](/img/party-component-true.png)
+<br>
+The Electrode stack is now like an awesome party, where all of our favorite technologies get invited:
+![party-true](/img/component-party-true.png)
