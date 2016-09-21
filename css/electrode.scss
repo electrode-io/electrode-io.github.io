@@ -123,6 +123,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .nav-site {
+    float: right;
 
     li {
       margin: 0;
@@ -143,8 +144,7 @@ h1, h2, h3, h4, h5, h6 {
 
       &.active {
         color: $lightTextColor;
-        border-bottom: 3px solid $primary;
-        background: #333;
+        border-top: 3px solid $lightColor;
       }
     }
   }
