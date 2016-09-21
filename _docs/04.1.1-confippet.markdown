@@ -4,12 +4,13 @@ permalink: docs/confippet.html
 toplevel: "Stand Alone Modules"
 ---
 
-[Confippet](https://github.com/electrode-io/electrode-confippet) is a versatile, flexible utility for managing configurations of
+[Confippet] is a versatile, flexible utility for managing configurations of
 Node.js applications. It's simple to get started, and can be customized and
 extended to meet the needs of your app
 
-[Confippet](https://github.com/electrode-io/electrode-confippet) can be used as a standalone
-module in your favorite node.js web server framework.
+[Confippet] can be used as a standalone module in your favorite Node.js web server framework or application.
+
+[Confippet]: https://github.com/electrode-io/electrode-confippet
 
 ### Features
 
@@ -18,27 +19,26 @@ module in your favorite node.js web server framework.
   necessary.
 * **Flexible** - Supports JSON, YAML, and JavaScript config files.
 * **Powerful** - Handles complex multi-instance enterprise deployments.
-* **Platform Agnostic** - This module is platform agnostic and can be plugged-in Electrode, Express.js and Hapi.js applications.
+* **Platform Agnostic** - This module is platform agnostic and can be plugged-in Electrode, Express.js and Hapi.js applications or any Node.js application.
 
 {% include module_usage.md moduleId="electrode-confippet" express=true hapi=true %}
 
-* [Getting Started](#getting-started)
+* [Example Basic Use](#example-basic-use)
 * [Config Composition](#config-composition)
 * [Environment Variables](#environment-variables)
 * [Using Templates](#using-templates)
 * [Usage in Node Modules](#usage-in-node-modules)
 * [Customization](#customization)
 
-### Getting Started
+### Example Basic Use
+Let's say that in our application we need to access a database that is running 
+locally in our development environment but is running on a specific hostname 
+while running in our production environment. We would like to be able to get 
+the correct hostname in our code, without too much effort, based on the current environment.
 
-In this example, we'll create two config files: a default file that always
-loads, and a production file that loads only when the `NODE_ENV` environment
-variable is set to `production`. We'll then import those files into a standard
-Node.js app.
+Confippet can help us with this. All we have to do is to create a few config files like the following: 
 
-### Basic Use
-
-Create `config/` directory by running `mkdir config` inside the main app directory, and add the following into a file named `default.json` in that directory:
+`config/default.json`
 
 ```json
 {
@@ -52,8 +52,19 @@ Create `config/` directory by running `mkdir config` inside the main app directo
 }
 ```
 
-Next, add another file called `production.json` to the `config/` directory, with
-this content:
+`config/development.json`
+
+```json
+{
+  "settings": {
+    "db": {
+      "host": "dev-db-server"
+    }
+  }
+}
+```
+
+`config/production.json`
 
 ```json
 {
@@ -65,8 +76,7 @@ this content:
 }
 ```
 
-Finally, in our Node.js app, we can import Confippet and use the configuration
-we've created:
+The above configs can be used in the app using the following: 
 
 ```javascript
 const config = require("electrode-confippet").config;
@@ -77,7 +87,6 @@ In this example, `default.json` will be loaded in all environments, whereas
 `production.json` will be loaded only when the `NODE_ENV` environment variable
 is set to `production`. In that case, the value of `host` in the `db` object
 will be overwritten by the value in `production.json`.
-
 
 ### Config Composition
 
