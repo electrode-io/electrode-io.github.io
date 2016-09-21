@@ -8,18 +8,10 @@ First things first. Let's make our thing... a Thing! In this Getting Started: In
 
 Building this application with React components will allow for greater modularity, which will enable reuse of code in later iterations. This greatly increases workflow efficiency by allowing developers to easily divide and conquer tasks during the production process. Furthermore, better separation of concerns allows for much easier debugging in general.
 
-Let's begin by creating using `cd` to exit Your-Awesome-App and return to our root to create a new directory:
+Let's begin by using `cd` to exit Your-Awesome-App and create a new and separate directory for your reusable component:
 
 ```bash
-$ cd
-$ mkdir my-electrode-component
-$ cd my-electrode-component
-```
-
-Let's begin by using `cd` to exit Your-Awesome-App to create a new and separate directory for your reusable component:
-
-```bash
-$ cd
+$ cd ..
 $ mkdir my-electrode-component
 $ cd my-electrode-component
 ```
