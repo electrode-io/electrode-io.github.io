@@ -11,7 +11,8 @@
   line-height: 1.5;
 }
 
-html,body {
+html,body
+{
     width: 100%;
     height: 100%;
     margin: 0px;
@@ -873,10 +874,9 @@ p a code {
 }
 
 .landing-logo{
-  width: 5%;
-  border-radius: 5px;
+  width: 125px;
+  heigh: 125px;
   margin: -10px -20px 7px -20px;
-  background: blue;
 }
 
 .landing-paragraphs {
@@ -913,6 +913,16 @@ p a code {
   div{
     margin-top: 50px;
     text-align: left;
+    display: inline;
+  }
+
+  .electrode-core-text {
+    float: left;
+  }
+
+  .electrode-core-image {
+    float: right;
+    width: 50%;
   }
 }
 
@@ -939,9 +949,20 @@ p a code {
     }
   }
 
-  .buttons-right {
-    float: right;
+  .electrode-logo{
+    background: blue;
+    border-radius: 3px;
+    width: 3%;
   }
+}
+
+.electrode-tools-image {
+  width: 100%;
+  float: left;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .get-started {
@@ -950,4 +971,9 @@ p a code {
   font-size: 115%;
   font-family: "Gotham-Rounded";
   font-weight: bold;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
 }
