@@ -19,7 +19,7 @@ toplevel: "Resources"
 
 *  [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html) + [Design Principles](https://facebook.github.io/react/contributing/design-principles.html) - Read the React docs.
 
-*  [Building React.js at Enterprise Scale](https://medium.com/walmartlabs/building-react-js-at-enterprise-scale-17c17a36fd1f#.ewkzubo8i) - Why ReactJS + [WalmartLabs](www.walmartlabs.com) are a perfect match.
+*  [Building React.js at Enterprise Scale](https://medium.com/walmartlabs/building-react-js-at-enterprise-scale-17c17a36fd1f#.ewkzubo8i) - Why ReactJS + [WalmartLabs](http://www.walmartlabs.com) are a perfect match.
 
 #### Redux
 

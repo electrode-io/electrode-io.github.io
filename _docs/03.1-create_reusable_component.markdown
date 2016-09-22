@@ -68,7 +68,7 @@ Now that we understand the basic structure of the component, let's build out the
 3. [Develop styles using CSS modules](develop_styles.html)
 4. [Develop main high-level component](high_level_component.html)
 5. [Develop tests for the above components](test_components.html)
-6. [Add Demo data](add_data.html)
+6. [Add Examples to the Demo](add_examples.html)
 7. [Build and Demo the component](build_and_demo.html)
 8. [Generating documentation](generate_docs.html)
 
