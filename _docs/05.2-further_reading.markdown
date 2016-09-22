@@ -52,6 +52,8 @@ toplevel: "Resources"
 
 *  [Modular CSS with React](https://medium.com/@pioul/modular-css-with-react-61638ae9ea3e#.b5d00dcwp) - Blog about the business case and implementation of CSS modules.
 
+*  [Understanding the CSS Modules Methodology](https://www.sitepoint.com/understanding-css-modules-methodology/) - Outlines the 'what' and 'why' of CSS modules and shares a few important gotchas.
+
 #### Babel + ES6
 
 *  [Babel Docs](https://babeljs.io/docs/learn-es2015/) - The Babel docs, guides, and blog are very user friendly.
