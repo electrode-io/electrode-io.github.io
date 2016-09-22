@@ -6,8 +6,39 @@
 </head>
 <body>
 
-    <div class="nav-main">
-      <div class="row">
+ <nav class="navbar navbar-dark bg-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+	      <li><a style="margin-top:10px;" href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>HOME</a></li>
+	      <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>DOCS</a></li>
+	      <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>CONTRIBUTE</a></li>
+          <!-- <ul class="dropdown-menu"> -->
+          <li><a href="https://github.com/electrode-io">A</a></li>
+          <li><a href="https://github.com/electrode-io">B</a></li>
+          <li><a href="https://github.com/electrode-io">C</a></li>
+          <li role="separator" class="divider"></li>
+          <!-- </ul> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- /.navbar-collapse -->
+<!-- /.container-fluid -->
+<!--       <div class="row">
 	    <div class="col-md-2 col-md-offset-1">
 	        <a class="nav-home" href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a>
 		    <button class="handle">
@@ -17,20 +48,13 @@
 
     	<div class="col-md-7">
 	        <ul class="nav-site">
-	          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>HOME</a></li>
-	          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>DOCS</a></li>
-	          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>CONTRIBUTE</a></li>
 	        </ul>
 	    </div>
         <div class="col-md-2">
 	        <ul class="nav-site-external">
-	          <li><a href="https://github.com/electrode-io">A</a></li>
-	          <li><a href="https://github.com/electrode-io">B</a></li>
-	          <li><a href="https://github.com/electrode-io">C</a></li>
 	        </ul>
 	    </div>
-      </div>
-	</div>
+      </div> -->
 
 	<div class="container landing-text"> 
 		<div class="inner-text">
