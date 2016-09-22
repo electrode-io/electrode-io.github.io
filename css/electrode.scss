@@ -220,29 +220,6 @@ h1, h2, h3, h4, h5, h6 {
   .text-left {
     text-align: right !important;
   }
-
-  .footer {
-    text-align: center;
-
-    div {
-      display: block !important;
-    }
-
-    .collapsing-footer {
-      float: none !important;
-
-      ul{
-        max-height: 0;
-        width: 100%;
-
-        li {
-          box-sizing: border-box;
-          width: 100%;
-          padding: 15px;
-        }
-      }
-    }
-  }
 }
 
 @media only screen and (max-width: 1019px){
@@ -277,29 +254,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 50% !important;
     height: 50%;
   }
-
-  .footer {
-    text-align: center;
-
-    div {
-      display: block !important;
-    }
-
-    .collapsing-footer {
-      float: none !important;
-
-      ul{
-        max-height: 0;
-        width: 100%;
-
-        li {
-          box-sizing: border-box;
-          width: 100%;
-          padding: 15px;
-        }
-      }
-    }
-  }
 }
 
 @media only screen and (max-width: 1488px){
@@ -332,39 +286,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer {
-  @include clearfix;
-  background: linear-gradient($darkerColor, $darkestColor);
-  color: $lightTextColor;
-  max-height: 100px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
-  width: 100%;
-  z-index: 100;
+  background-color: #1D1D1D !important;
 
-  .footer-text{
-    display: inline-block;
-  }
-
-  .collapsing-footer {
-    float: right;
-    display: inline-block;
-
-    div {
-      display: inline-block;
-    }
-
-    ul {
-      display: inline;
-
-      li {
-        display: inline;
-      }
-    }
-  }
-
-  button{
-    background: white;
-    color: black;
-  }
+  .footer-text {
+    float: left;
+  } 
 }
 
 .buttons-unit {
