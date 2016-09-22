@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/electrode.css">
 	</head>
 	<body>
@@ -34,18 +34,33 @@
 	   </nav>
 	  </div>
 
-
-
-	    <!-- footer -->
+    <!-- footer -->
 	  <div class="container">
-	    <div class="navbar navbar-default navbar-fixed-bottom">
-	    	<div class="container">
-	    		<p class="navbar-text pull-left">© 2014 - Site Built By Mr. M.
-	    				 <a href="http://tinyurl.com/tbvalid" target="_blank" >HTML 5 Validation</a>
-	    		</p>
+	    <div class="navbar navbar-default navbar-fixed-bottom footer">
+	    	<div class="container-fluid">
 
-	    		<a href="http://youtu.be/zJahlKPCL9g" class="navbar-btn btn-danger btn pull-right">
-	    		<span class="glyphicon glyphicon-star"></span>  Subscribe on YouTube</a>
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a>
+					</div>
+
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a style="margin-top:10px;" href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>HOME</a></li>
+							<li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>DOCS</a></li>
+							<li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>CONTRIBUTE</a></li>
+								<li><a href="https://github.com/electrode-io">A</a></li>
+								<li><a href="https://github.com/electrode-io">B</a></li>
+								<li><a href="https://github.com/electrode-io">C</a></li>
+								<li role="separator" class="divider"></li>
+						</ul>
+					</div>
+
 	    	</div>
 	    </div>
 	  </div>

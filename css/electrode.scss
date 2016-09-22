@@ -17,7 +17,7 @@ html,body
     height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 $skinnyContentWidth: 650px;
@@ -283,14 +283,6 @@ h1, h2, h3, h4, h5, h6 {
 .handle {
   display: none;
   float: right;
-}
-
-.footer {
-  background-color: #1D1D1D !important;
-
-  .footer-text {
-    float: left;
-  } 
 }
 
 .buttons-unit {
@@ -915,7 +907,7 @@ p a code {
     .active{
       border-top: 3px solid #b3b3b3;
     }
-  }  
+  }
 }
 
 .electrode-modules {
@@ -939,7 +931,7 @@ p a code {
   height: 50px;
   font-size: 115%;
   font-family: "Gotham-Rounded";
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 .pink-background {
@@ -968,12 +960,22 @@ p a code {
       padding: 0px 15px 0px 15px;
     }
 
-    .banners { 
+    .banners {
       padding: 2px;
     }
   }
-  
+
   .icon-bar {
     background: white;
+  }
+}
+
+// Footer styles
+
+.footer {
+  background-color: #1D1D1D !important;
+
+  .footer-text {
+    float: left;
   }
 }
