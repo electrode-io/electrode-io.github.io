@@ -27,6 +27,8 @@ toplevel: "Resources"
 
 *  [Getting Started with Redux](https://egghead.io/courses/getting-started-with-redux) + [Building React Applications with Idiomatic Redux](https://egghead.io/courses/building-react-applications-with-idiomatic-redux) - This is a video series, but a great Redux introduction from the library's creator.
 
+*  [Understanding Redux (Or, How I Fell in Love with a JavaScript State Container)](https://medium.com/@thejenniekim/understanding-redux-or-how-i-fell-in-love-with-a-javascript-state-container-5d940fcc10b3#.r2dui841u) - A high level synopsis of Redux with bonus links to other great resources.
+
 #### Universal Rendering
 
 *  [ReactJS SSR Profiling + Caching](https://medium.com/walmartlabs/reactjs-ssr-profiling-and-caching-5d8e9e49240c#.yqnmwbp6t) - Outlines the [WalmartLabs](http://www.walmartlabs.com) Server Side Rendering challenges + ways to solve this.
