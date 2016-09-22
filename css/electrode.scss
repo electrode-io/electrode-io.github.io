@@ -74,6 +74,7 @@ html {
 
 hr {
   height: 0;
+  margin-top: -20px;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #eee;
 }
@@ -213,6 +214,7 @@ h1, h2, h3, h4, h5, h6 {
   .electrode-modules-image {
     width: 50% !important;
     height: 50%;
+
   }
 
   .text-left {
@@ -945,16 +947,9 @@ p a code {
   }
 
   .electrode-core-image {
+    text-align: right;
     float: right;
     width: 50%;
-  }
-}
-
-.electrode-modules{
-  text-align: center;
-
-  div{
-    padding: 10px 30px 10px 30px;
   }
 }
 
@@ -964,6 +959,9 @@ p a code {
 
 .buttons {
   padding: 25px;
+  hr {
+    margin-bottom: 5px;
+  }
 
   div {
     display: inline;
@@ -982,12 +980,28 @@ p a code {
   .links {
     float: right;
     margin-right: 40px;
+
+    a {
+      color: black;
+      padding-right: 15px;
+    }
+
+    .active{
+      border-top: 3px solid #b3b3b3;
+    }
   }  
 }
 
-.electrode-modules-image {
-  width: 100%;
-  float: left;
+.electrode-modules {
+  text-align: center;
+
+  .electrode-modules-image {
+    float: left;
+
+    img {
+      width: 400px;
+    }
+  }
 }
 
 .text-left {
@@ -999,7 +1013,13 @@ p a code {
   height: 50px;
   font-size: 115%;
   font-family: "Gotham-Rounded";
-  font-weight: bold;
+  font-weight: bold; 
+}
+
+.pink-background {
+  background: $primary;
+  color: white !important;
+  border-radius: 3px;
 }
 
 .logo-img {
