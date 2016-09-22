@@ -202,6 +202,21 @@ h1, h2, h3, h4, h5, h6 {
         display: none;
       }
     }
+
+  }
+
+  .logo-img {
+    width: 20% !important;
+    background: red;
+  }
+
+  .electrode-modules-image {
+    width: 50% !important;
+    height: 50%;
+  }
+
+  .text-left {
+    text-align: right !important;
   }
 
   .footer {
@@ -250,6 +265,15 @@ h1, h2, h3, h4, h5, h6 {
       }
 
     }
+  }
+
+  .logo-img {
+    width: 30% !important;
+  }
+
+  .electrode-modules-image {
+    width: 50% !important;
+    height: 50%;
   }
 
   .footer {
@@ -954,9 +978,14 @@ p a code {
     border-radius: 3px;
     width: 3%;
   }
+
+  .links {
+    float: right;
+    margin-right: 40px;
+  }  
 }
 
-.electrode-tools-image {
+.electrode-modules-image {
   width: 100%;
   float: left;
 }
@@ -975,5 +1004,4 @@ p a code {
 
 .logo-img {
   width: 100%;
-  height: 100%;
 }
