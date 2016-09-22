@@ -25,8 +25,9 @@
 		        <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>CONTRIBUTE</a></li>
 	            <li><a href="https://github.com/electrode-io">A</a></li>
 	            <li><a href="https://github.com/electrode-io">B</a></li>
-	            <li><a href="https://github.com/electrode-io">C</a></li>
-	            <li role="separator" class="divider"></li>
+              <li role="separator" class="divider"></li>
+              <li class="banners"><a href="https://github.com/electrode-io">A</a></li>
+              <li class="banners"><a href="https://github.com/electrode-io">B</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -97,23 +98,6 @@
 	</div>
 
 	<div class="container">
-		<div class="buttons row">
-			<hr>
-				<div class="col-md-3">
-			        <a href="http://walmartlabs.com"><img src="/img/walmart-logo.png" class="logo-img"></a>
-		        </div>
-		        <div class="col-md-offset-2 col-md-6 links">
-					<a href="#electrode-core"><img class="active" id="core" src="/img/electrode-core.png" height="50" width="50"></a>
-					<a href="#electrode-modules"><img id="modules" src="/img/electrode-modules.png" height="50" width="50"></a>
-					<a href="#electrode-tools"><img id="tools" src="/img/electrode-tools.png" height="50" width="50"></a>
-					<a>DOCS</a>
-					<a>CONTRIBUTE</a>
-					<button class="pink-background">GET STARTED</button>
-			        <img class="electrode-logo" src="/img/electrode-02.png">
-				</div>
-		</div>
-		<hr>
-
 		<div class="electrode-modules row" id="electrode-modules">
 			<a href="#"><img src="/img/electrode-modules-gray.png" height="50" width="50" class="scroll-up"></a>
 			<h1>electrode modules</h1>
@@ -128,23 +112,6 @@
 	</div>
 
 	<div class="container">
-		<div class="buttons row">
-			<hr>
-				<div class="col-md-3">
-			        <a href="http://walmartlabs.com"><img src="/img/walmart-logo.png" class="logo-img"></a>
-		        </div>
-		        <div class="col-md-offset-2 col-md-6 links">
-					<a href="#electrode-core"><img class="active" id="core" src="/img/electrode-core.png" height="50" width="50"></a>
-					<a href="#electrode-modules"><img id="modules" src="/img/electrode-modules.png" height="50" width="50"></a>
-					<a href="#electrode-tools"><img id="tools" src="/img/electrode-tools.png" height="50" width="50"></a>
-					<a>DOCS</a>
-					<a>CONTRIBUTE</a>
-					<button class="pink-background">GET STARTED</button>
-			        <img class="electrode-logo" src="/img/electrode-02.png">
-				</div>
-		</div>
-		<hr>
-
 		<div class="row electrode-modules" id="electrode-tools">
 			<a href="#"><img src="/img/placeholder2.png" height="50" width="50" class="scroll-up"></a>
 			<h1>Tools</h1>
@@ -163,8 +130,6 @@
 	</div>
 
 	<nav class="navbar navbar-dark bg-inverse footer">
-<!-- 		<div class="footer-text">
-		</div> -->
 	    <div class="container-fluid">
 	    	<div class="footer-text">
 		        <a class="nav-home" href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a>
@@ -178,47 +143,11 @@
 				  <li><a href="#electrode-tools"><img id="tools" src="/img/electrode-tools.png" height="50" width="50"></a></li>
 		          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>DOCS</a></li>
 		          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>CONTRIBUTE</a></li>
-	              <li><a href="https://github.com/electrode-io">A</a></li>
-	              <li><a href="https://github.com/electrode-io">B</a></li>
-	              <li><a href="https://github.com/electrode-io">C</a></li>
 	              <li role="separator" class="divider"></li>
+	              <li class="banners"><a href="https://github.com/electrode-io">A</a></li>
+	              <li class="banners"><a href="https://github.com/electrode-io">B</a></li>
 	          </ul>
 	        </div>
-<!-- 		<div class="collapsing-footer">
-			<div>
-		        <ul>
-		          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>HOME</a></li>
-		          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>DOCS</a></li>
-		          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>CONTRIBUTE</a></li>
-		        </ul>
-		    </div>
-		    <div>
-		        <ul>
-		          <li><a href="https://github.com/electrode-io">A</a></li>
-		          <li><a href="https://github.com/electrode-io">B</a></li>
-		          <li><a href="https://github.com/electrode-io">C</a></li>
-		        </ul>
-		    </div>
-		</div> -->
 	</nav>
-
-
-	<!--  <nav class="navbar navbar-dark bg-inverse">
-	    <div class="container-fluid">
-	      <div class="navbar-header">
-	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	          <span class="sr-only">Toggle navigation</span>
-	          <span class="icon-bar"></span>
-	          <span class="icon-bar"></span>
-	          <span class="icon-bar"></span>
-	        </button>
-	        <a class="navbar-brand" href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a>
-	      </div>
-
-	    </div>
-	</nav>
--->
-
-
 </body>
 </html>

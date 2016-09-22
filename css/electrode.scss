@@ -960,6 +960,18 @@ p a code {
   a {
     color: white;
   }
+
+  .nav {
+    padding: 0px 10px 10px 10px;
+
+    li {
+      padding: 0px 15px 0px 15px;
+    }
+
+    .banners { 
+      padding: 2px;
+    }
+  }
   
   .icon-bar {
     background: white;
