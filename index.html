@@ -1,153 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/electrode.css">
-</head>
-<body>
+	<head>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/electrode.css">
+	</head>
+	<body>
+	  <!-- header -->
+	  <div class="container">
+	    <nav class="navbar navbar-dark bg-inverse">
+	       <div class="container-fluid">
+	         <div class="navbar-header">
+	           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	             <span class="sr-only">Toggle navigation</span>
+	             <span class="icon-bar"></span>
+	             <span class="icon-bar"></span>
+	             <span class="icon-bar"></span>
+	           </button>
+	           <a class="navbar-brand" href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a>
+	         </div>
 
-	 <nav class="navbar navbar-dark bg-inverse">
-	    <div class="container-fluid">
-	      <div class="navbar-header">
-	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	          <span class="sr-only">Toggle navigation</span>
-	          <span class="icon-bar"></span>
-	          <span class="icon-bar"></span>
-	          <span class="icon-bar"></span>
-	        </button>
-	        <a class="navbar-brand" href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a>
-	      </div>
+	         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	           <ul class="nav navbar-nav navbar-right">
+	             <li><a style="margin-top:10px;" href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>HOME</a></li>
+	             <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>DOCS</a></li>
+	             <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>CONTRIBUTE</a></li>
+	               <li><a href="https://github.com/electrode-io">A</a></li>
+	               <li><a href="https://github.com/electrode-io">B</a></li>
+	               <li><a href="https://github.com/electrode-io">C</a></li>
+	               <li role="separator" class="divider"></li>
+	           </ul>
+	         </div>
+	       </div>
+	   </nav>
+	  </div>
 
-	      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	        <ul class="nav navbar-nav navbar-right">
-		        <li><a style="margin-top:10px;" href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>HOME</a></li>
-		        <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>DOCS</a></li>
-		        <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>CONTRIBUTE</a></li>
-	            <li><a href="https://github.com/electrode-io">A</a></li>
-	            <li><a href="https://github.com/electrode-io">B</a></li>
-              <li role="separator" class="divider"></li>
-              <li class="banners"><a href="https://github.com/electrode-io">A</a></li>
-              <li class="banners"><a href="https://github.com/electrode-io">B</a></li>
-	        </ul>
-	      </div>
+
+
+	    <!-- footer -->
+	  <div class="container">
+	    <div class="navbar navbar-default navbar-fixed-bottom">
+	    	<div class="container">
+	    		<p class="navbar-text pull-left">© 2014 - Site Built By Mr. M.
+	    				 <a href="http://tinyurl.com/tbvalid" target="_blank" >HTML 5 Validation</a>
+	    		</p>
+
+	    		<a href="http://youtu.be/zJahlKPCL9g" class="navbar-btn btn-danger btn pull-right">
+	    		<span class="glyphicon glyphicon-star"></span>  Subscribe on YouTube</a>
+	    	</div>
 	    </div>
-	</nav>
+	  </div>
 
-	<div class="container landing-text"> 
-		<div class="inner-text">
-			<div>
-				<h1>electr<img class="landing-logo" src="/img/electrode-02.png">de</h1>
-			</div>
-			<h3>UNIVERSAL REACT/NODE.JS APPLICATION PLATFORM</h3>
-			<div>Electrode is a platform for building universal React/Node.js applications with standardized structure, best practices, and modern technologies baked in. Electrode focuses on performance, component reusability, and simple deployment to multiple cloud providers - so you can focus on what makes your app unique.</div>
-			<button class="btn get-started">GET STARTED - DEPLOY IN 5 MINUTES</button>
-		</div>
-	</div>
-
-	<div class="row landing-paragraphs">
-		<div class="col-md-4">
-			<img src="/img/electrode-core.png" width="50" height="50"/></a>
-			<h3>CORE</h3>
-			<div>Build a simple, flexible scaffold in minutes, with support for server-side rendering and easy deployment to multiple could providers. Electrode lets you focus on code, not configuration. <a href="#">Learn More.</a></div>
-		</div>
-		<div class="col-md-4">
-			<img src="/img/electrode-modules.png" width="50" height="50"/>
-			<h3>MODULES</h3>
-			<div>Level up your app with features like above-the-fold rendering, server-side render caching, and stateless CSRF validation. Modules work with your existing React/Node app - no need to emigrate to Electrode core. <a href="#">Learn More.</a></div>
-		</div>
-		<div class="col-md-4">
-			<img src="/img/electrode-tools.png" width="50" height="50"/>
-			<h3>TOOLS</h3>
-			<div>Discover reusable components and optimize your JS bundle with standalone tools. These tools can be used with any React/Node app, but work best with the structure provided by Electrode Core. <a href="#">Learn More.</a></div>
-		</div>
-	</div>
-
-
-	<div class="buttons row">
-		<hr>
-			<div class="col-md-3">
-		        <a href="http://walmartlabs.com"><img src="/img/walmart-logo.png" class="logo-img"></a>
-	        </div>
-	        <div class="col-md-offset-2 col-md-6 links">
-				<a href="#electrode-core"><img class="active" id="core" src="/img/electrode-core.png" height="50" width="50"></a>
-				<a href="#electrode-modules"><img id="modules" src="/img/electrode-modules.png" height="50" width="50"></a>
-				<a href="#electrode-tools"><img id="tools" src="/img/electrode-tools.png" height="50" width="50"></a>
-				<a>DOCS</a>
-				<a>CONTRIBUTE</a>
-				<button class="pink-background">GET STARTED</button>
-		        <img class="electrode-logo" src="/img/electrode-02.png">
-			</div>
-	</div>
-	<hr>
-
-	<div class="electrode-core row" id="electrode-core">
-		<a href="#"><img src="/img/electrode-core-gray.png" height="50" width="50" class="scroll-up"></a>
-		<h1>electrode core</h1>
-		<h3>Electrode emphasizes convention over configuration, following industry best practices for performance, consistency, and reusability.</h3>
-
-		<div class="electrode-core-text">
-			<div>The heart of the platform is Electrode Archetypes. It allows for standardized configuration/structure of the app and its associated react components, also ensures streamlined development and deployment.</div>
-			<br/>
-			<div>Adding features is easy thanks to Electrode's archetype system, which enforces a sensible structure for components, modules, and your entire app. This structure is designed to work seamlessly with Electrode's modules and tools.</div>
-			<br />
-			<div>It only takes a minute to get your new Electrode application running and a few more minutes to deploy to the cloud <a href="#">Getting Started: Quick Guide</a></div>
-		</div>
-		<div class="electrode-core-image">
-			<img src="/img/screen-right.png" width="500px">
-		</div>
-	</div>
-
-	<div class="container">
-		<div class="electrode-modules row" id="electrode-modules">
-			<a href="#"><img src="/img/electrode-modules-gray.png" height="50" width="50" class="scroll-up"></a>
-			<h1>electrode modules</h1>
-			<h3>Supercharge your app, with or without Electrode Core</h3>
-			<div class="electrode-modules-image">
-				<img src="/img/screen-left.png">
-			</div>
-			<div class="electrode-modules-text" >
-				Long paragraph of duplicative dummy text.Adding features is easy thanks to Electrode's archetype system, which enforces a sensible structure for components, modules, and your entire app. This structure is designed to work seamlessly with Electrode's modules and tools.
-			</div>
-		</div>
-	</div>
-
-	<div class="container">
-		<div class="row electrode-modules" id="electrode-tools">
-			<a href="#"><img src="/img/placeholder2.png" height="50" width="50" class="scroll-up"></a>
-			<h1>Tools</h1>
-			<h3>We will talk about tools here.</h3>
-			<div class="col-md-6 electrode-core-text">
-				<div>The heart of the platform is Electrode Archetypes. It allows for standardized configuration/structure of the app and its associated react components, also ensures streamlined development and deployment.</div>
-				<br/>
-				<div>Adding features is easy thanks to Electrode's archetype system, which enforces a sensible structure for components, modules, and your entire app. This structure is designed to work seamlessly with Electrode's modules and tools.</div>
-				<br />
-				<div>It only takes a minute to get your new Electrode application running and a few more minutes to deploy to the cloud <a href="#">Getting Started: Quick Guide</a></div>
-			</div>
-			<div class="col-md-6">
-				<div>Snippet here</div>
-			</div>
-		</div>
-	</div>
-
-	<nav class="navbar navbar-dark bg-inverse footer">
-	    <div class="container-fluid">
-	    	<div class="footer-text">
-		        <a class="nav-home" href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a>
-		        <div>Open Sourced Under Apache, Built with &hearts; by @WalmartLabs.</div>
-		        <div>Electrode is maintained by the core team with help of our contributors.</div>
-		    </div>
-	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	          <ul class="nav navbar-nav navbar-right">
-				  <li><a href="#electrode-core"><img class="active" id="core" src="/img/electrode-core.png" height="50" width="50"></a></li>
-				  <li><a href="#electrode-modules"><img id="modules" src="/img/electrode-modules.png" height="50" width="50"></a></li>
-				  <li><a href="#electrode-tools"><img id="tools" src="/img/electrode-tools.png" height="50" width="50"></a></li>
-		          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>DOCS</a></li>
-		          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>CONTRIBUTE</a></li>
-	              <li role="separator" class="divider"></li>
-	              <li class="banners"><a href="https://github.com/electrode-io">A</a></li>
-	              <li class="banners"><a href="https://github.com/electrode-io">B</a></li>
-	          </ul>
-	        </div>
-	</nav>
-</body>
+	</body>
 </html>
