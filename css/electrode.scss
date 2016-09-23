@@ -67,8 +67,16 @@ body {
   padding: 0;
   margin-top: 25em;
 }
-.pillars-section {
-  background-color: white;
+// .pillars-section {
+//   background-color: white;
+// }
+
+.pillar-icon {
+  text-align: center;
+  img {
+    width: 75%;
+  margin-top: -16.2em;
+  }
 }
 .header-content {
   font-family: "Gotham-Rounded";
