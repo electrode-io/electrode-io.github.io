@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Generate Docs | Electrode</title>
+  <title>Glossary | Electrode</title>
   <meta name="viewport" content="width=device-width">
-  <meta property="og:title" content="Generate Docs | Electrode">
+  <meta property="og:title" content="Glossary | Electrode">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://electrode-io.github.io//docs/generate_docs.html">
+  <meta property="og:url" content="https://electrode-io.github.io//docs/glossary.html">
   <meta property="og:image" content="https://electrode-io.github.io/img/logo_og.png">
   <meta property="og:description" content="Universal React and Node Applications simplified, performant, and reusable.">
   <meta property="fb:app_id" content="623268441017527">
@@ -689,7 +689,7 @@
       <ul><li>
     
 
-    <a href="/docs/generate_docs.html" class="active"> &nbsp; Generate Docs</a>
+    <a href="/docs/generate_docs.html"> &nbsp; Generate Docs</a>
 
     
       </li></ul>
@@ -1382,7 +1382,7 @@
     <li>
     
 
-    <a href="/docs/glossary.html"> &nbsp; Glossary</a>
+    <a href="/docs/glossary.html" class="active"> &nbsp; Glossary</a>
 
     
     </li>
@@ -1439,38 +1439,74 @@
 
 
   <div class="inner-content">
-    <a class="edit-page-link" href="https://github.com/electrode-io/electrode-io.github.io/tree/develop/_docs/03.1.8-generate_docs.markdown" target="_blank">Edit on GitHub</a>
+    <a class="edit-page-link" href="https://github.com/electrode-io/electrode-io.github.io/tree/develop/_docs/05.3-glossary.markdown" target="_blank">Edit on GitHub</a>
     <h1>
-      Generate Docs
+      Glossary
     </h1>
     <div class="subHeader"></div>
 
-    <h4><a class="anchor" name="generating-documentation"></a>Generating documentation <a class="hash-link" href="#generating-documentation">#</a></h4>
-<p>One of the final steps to Creating a Reusable Component is writing the correct documentation, in the form of <code>component.json</code> and <code>component.md</code>. The Electrode team has automated this step for you, using <a href="https://github.com/electrode-io/electrode-docgen">Electrode-Docgen</a>. This is a custom metadata extractor for the Electrode framework. The commands have been built into the tasks of <code>&lt;your-awesome-component&gt;/gulpfile.js</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">tasks</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">&quot;demo&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;generate&quot;</span><span class="p">,</span> <span class="s2">&quot;server-dev&quot;</span><span class="p">],</span>
-  <span class="s2">&quot;demo-iso&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;dev-iso&quot;</span><span class="p">],</span>
-  <span class="s2">&quot;generate&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;generate-metadata&quot;</span><span class="p">,</span> <span class="s2">&quot;generate-documentation&quot;</span><span class="p">],</span>
-  <span class="s2">&quot;generate-documentation&quot;</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">exec</span><span class="p">(</span><span class="err">`</span><span class="nx">electrode</span><span class="o">-</span><span class="nx">docgen</span> <span class="o">--</span><span class="kr">package</span> <span class="p">.</span><span class="o">/</span><span class="kr">package</span><span class="p">.</span><span class="nx">json</span> <span class="o">--</span><span class="nx">src</span> <span class="p">.</span><span class="o">/</span><span class="nx">src</span> <span class="o">--</span><span class="nx">markdown</span> <span class="nx">components</span><span class="p">.</span><span class="nx">md</span><span class="err">`</span><span class="p">),</span>
-  <span class="s2">&quot;generate-metadata&quot;</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">exec</span><span class="p">(</span><span class="err">`</span><span class="nx">electrode</span><span class="o">-</span><span class="nx">docgen</span> <span class="o">--</span><span class="kr">package</span> <span class="p">.</span><span class="o">/</span><span class="kr">package</span><span class="p">.</span><span class="nx">json</span> <span class="o">--</span><span class="nx">src</span> <span class="p">.</span><span class="o">/</span><span class="nx">src</span> <span class="o">--</span><span class="nx">metadata</span> <span class="nx">components</span><span class="p">.</span><span class="nx">json</span><span class="err">`</span><span class="p">),</span>
-  <span class="s2">&quot;prepublish&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;npm:prepublish&quot;</span><span class="p">],</span>
-  <span class="s2">&quot;preversion&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;check-cov&quot;</span><span class="p">]</span>
-<span class="p">};</span>
-</code></pre></div>
-<p>Simply run the commands below to auto generate the necessary docs:</p>
+    <p><br /></p>
 
-<p>To generate metadata:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gulp generate-metadata
-</code></pre></div>
-<p>To generate documentation:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gulp generate-documentation
-</code></pre></div>
-<p>Or, to run both simultaneously, you can just run:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gulp generate
-</code></pre></div>
-<p>Now that we&#39;ve run our tests and they&#39;ve passed, let&#39;s publish our component so we can use it again in Your-Awesome-App on <a href="https://docs.npmjs.com/getting-started/publishing-npm-packages">NPM</a>. You will need to <a href="https://www.npmjs.com/signup">sign up</a> for an account if you do not have one and follow the steps in the <a href="https://docs.npmjs.com/getting-started/creating-node-modules">NPM documentation</a>.</p>
-
-<p>Let&#39;s continue to build more by creating our own <a href="build_server_plugin.html">Hapi server plugin</a>, incorporating routes and adding some awesome CSS modules.</p>
+<ul>
+<li><p><strong>Caching</strong> - is a process of storing data locally in order to speed up 
+subsequent retrievals. </p></li>
+<li><p><strong>Child component</strong> - is any component that is contained in a parent component.</p></li>
+<li><p><strong>Container based technology</strong> - is an approach to virtualization in which 
+the virtualization layer runs as an application within the operating system (OS). 
+In this approach, the operating system&#39;s kernel runs on the hardware node with 
+several isolated guest virtual machines (VMs) installed on top of it. 
+The isolated guests are called containers. </p></li>
+<li><p><strong>Cross Site Request Forgery (CSRF)</strong> - is an attack that forces an end user 
+to execute unwanted actions on a web application in which they&#39;re currently 
+authenticated. CSRF attacks specifically target state-changing requests, not 
+theft of data, since the attacker has no way to see the response to the forged 
+request. </p></li>
+<li><p><strong>Hashing</strong> - is the transformation of a string of characters into a usually 
+shorter fixed-length value or key that represents the original string. </p></li>
+<li><p><strong>Linting</strong> - is the process of running a program that will analyse code for 
+potential errors.</p></li>
+<li><p><strong>Local scope</strong> - is a CSS Modules feature that keeps classes local to the 
+specified file, and does not pollute the global namespace. </p></li>
+<li><p><strong>Markup</strong> - a notation used to annotate a document&#39;s content to give 
+information regarding the structure of the text or instructions for how it is 
+to be displayed.</p></li>
+<li><p><strong>Metadata extractor</strong> - is a type of tooling that retrieves meta data 
+information from various packages. </p></li>
+<li><p><strong>Module tree</strong> - is a directory tree like structure of all the package 
+dependencies of a particula npm/node module. </p></li>
+<li><p><strong>Multi instance</strong> - is a type of architecture where multiple customers run 
+their own separate instance of an application and operating system running on 
+a separate virtual machine, all on a common hardware platform. </p></li>
+<li><p><strong>Platform agnostic</strong> - is software was runs on any combination of operating 
+system and underlying processor architecture. </p></li>
+<li><p><strong>Predictable state container</strong> - is an object that stores the state of the 
+entire app where the only way to change the state tree is to emit an action. 
+Also known as Redux. </p></li>
+<li><p><strong>Profiling</strong> - is a form of dynamic program analysis that measures, 
+for example, the space (memory) or time complexity of a program, the usage of 
+particular instructions, or the frequency and duration of function calls.</p></li>
+<li><p><strong>Promise</strong> - is an object used for asynchronous computations It represents 
+a value that may be available now, in the future or never. </p></li>
+<li><p><strong>React Data Id</strong> - is a custom attribute used so that React can uniquely 
+identify its components within the Document Object Model(DOM).</p></li>
+<li><p><strong>Rendering Engine</strong> - is a program that renders marked up content. </p></li>
+<li><p><strong>Route Handler</strong> - is a method or function that is executed when a certain 
+route was requested. It usually handles the request and returns the necessary 
+HTML to the client. </p></li>
+<li><p><strong>Routing</strong> - is the process of selecting the best paths in a network. </p></li>
+<li><p><strong>Scaffolding tool</strong> - is a tool used to generate a set of files, folders 
+and configurations that follow the most common best practices to start a new 
+project or component. </p></li>
+<li><p><strong>Server Side Rendering</strong> - a process where the initial request loads the page, 
+layout, CSS, JavaScript and content. For subsequent updates to the page, the 
+client-side rendering approach repeats the steps it used to get the initial content.</p></li>
+<li><p><strong>Stub</strong> - is a piece of code used to stand in for some other programming 
+functionality. </p></li>
+<li><p><strong>Transform</strong> - to change in composition or structure. </p></li>
+<li><p><strong>Transpile</strong> -  is a type of compilation process that takes the source code 
+of a program written in one programming language as its input and produces 
+the equivalent source code in another programming language.</p></li>
+</ul>
 
 
     
@@ -1484,10 +1520,10 @@
 
 <div class="docs-prevnext">
   
-    <a class="docs-prev" href="/docs/build_and_demo.html">&larr; Prev</a>
+    <a class="docs-prev" href="/docs/further_reading.html">&larr; Prev</a>
   
   
-    <a class="docs-next" href="/docs/build_server_plugin.html">Next &rarr;</a>
+    <a class="docs-next" href="/docs/faq.html">Next &rarr;</a>
   
 </div>
 

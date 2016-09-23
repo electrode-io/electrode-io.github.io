@@ -269,6 +269,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -348,6 +353,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -645,7 +655,7 @@
       <ul><li>
     
 
-    <a href="/docs/add_data.html"> &nbsp; Add Data</a>
+    <a href="/docs/add_examples.html"> &nbsp; Add Examples</a>
 
     
       </li></ul>
@@ -771,6 +781,11 @@
       </li></ul>
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -1159,6 +1174,11 @@
   
   
 
+  
+  
+  
+  
+
 
           </ul>
         
@@ -1349,7 +1369,7 @@
     <li>
     
 
-    <a href="/docs/faq.html"> &nbsp; FAQs</a>
+    <a href="/docs/further_reading.html"> &nbsp; Further Reading</a>
 
     
     </li>
@@ -1362,7 +1382,20 @@
     <li>
     
 
-    <a href="/docs/further_reading.html"> &nbsp; Further Reading</a>
+    <a href="/docs/glossary.html"> &nbsp; Glossary</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/faq.html"> &nbsp; FAQs</a>
 
     
     </li>
@@ -1419,6 +1452,20 @@
 <p>At <a href="http://www.walmartlabs.com/">@WalmartLabs</a>, we recently migrated <a href="http://walmart.com">walmart.com</a> to a <a href="https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.k3j9fruyn">Universal JavaScript</a>
 stack using React/Node.js. Along the way, we hit a few stumbling blocks that
 might sound familiar if you&#39;ve worked on a large, complex web app before.</p>
+<h3><a class="anchor" name="universal-javascript"></a>Universal JavaScript <a class="hash-link" href="#universal-javascript">#</a></h3>
+<p>Universal JavaScript allows us to use the same view rendering code from the 
+server and client. When a user requests a page, they immediately receive 
+the fully rendered HTML on initial page load. They will not have to wait 
+for the client side JavaScript code to load and render the page. </p>
+
+<p>Rich app like experiences are possible without requiring a full page load 
+when navigating or responding to user actions within the same page. 
+The client side code will handle all the rendering of the view changes within 
+the page. Only the data changes will be sent between the client and the server. </p>
+
+<p>This approach provides for an optimized user experience resulting in fast 
+page loads and even faster navigation experience. In the world of eCommerce 
+where every millisecond counts, we believe this is the best way forward. </p>
 <h3><a class="anchor" name="codeui-reuse"></a>Code/UI Reuse <a class="hash-link" href="#codeui-reuse">#</a></h3>
 <p>We reuse React components across all of our brands, which means our developers
 need to be able to search through thousands of components, view their
