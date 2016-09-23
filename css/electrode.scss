@@ -154,39 +154,46 @@ body {
   text-align: center;
   font-family: "Gotham-Rounded";
 
+  h1 {
+    font-family: "Gotham-Rounded-Medium";
+  }
+
   div {
     padding: 10px 0px 10px 0px;
   }
 
-  h3 {
-    padding: 0px 25% 0px 25%;
+  h4 {
+    font-family: "Gotham-Rounded-Bold";
+    padding: 0px 25% 0px 12%;
   }
 
-  .electrode-core-text {
+  #electrode-core-text {
     text-align: left;
-    padding: 15px 20px 15px 20px;
+    padding-right: 10%;
     font-size: 120%;
-  }
-
-
-
-  #snippet-bubble {
-    border: solid 1px #cccccc;
-    left: 75px;
-    top: 0px;
-    width: 60%;
-    height: auto;
-    z-index: 2;
-    font-size: 80%;
-
-    .snippet-bubble-text {
-      padding: 10px 0px 10px 0px;
-      font-size: 120%;
-      text-align:left;
-    }
 
     div {
-      padding: 0px;
+      padding-bottom: 7%;
+    }
+  }
+
+  #snippet-bubble {
+    float: right;
+    font-weight: bold;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+    border: solid 1px #cccccc;
+    text-align: left;
+    top: 0px;
+    width: 100%;
+    height: 450px;
+    z-index: 2;
+
+    .snippet-bubble-text {
+      font-size: 110%;
+      padding: 10px 0px 10px 4%;
+      font-size: 120%;
+      text-align:left;
     }
 
     h3 {
@@ -200,16 +207,45 @@ body {
 
     #details-btn {
       color: #141e26;
-      background: white;
+      background: inherit;
       border: solid 2px #141e26;
+      font-family: "Gotham-Rounded-Bold";
     }
 
     #deploy-btn {
+      font-family: "Gotham-Rounded-Bold";
       background: $primary;
       color: white;
     }
   }
+
+  #electrode-header {
+  background: linear-gradient(#00203b, #032a4a);
 }
+
+  #code-snippet {
+    background-color: #141e26;
+    color: white;
+    padding: 2% 0% 2% 0%;
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+
+    p {
+      padding-left: 5%;
+      font-size: 110%;
+    }
+  }
+
+  .grayscale{
+    filter: grayscale(100%);
+    width: 8%;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+}
+
 //END CORE STYLES
 
 
@@ -266,14 +302,6 @@ body {
     }
   }
 }
-//END MODULES STYLES
-
-
-
-
-
-
-
 
 // BEGIN FOOTER STYLES
 .footer {
@@ -409,5 +437,3 @@ img.footer-sub-logo {
   filter: invert(1);
   margin-top: 5px;
 }
-
-// END FOOTER STYLES
