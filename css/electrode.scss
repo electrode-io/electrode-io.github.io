@@ -3,8 +3,8 @@
 // @import 'bourbon';
 // @import '_variables';
 // @import '_typography';
-// @import '_solarized';
 
+//BEGIN HEADER STYLES
 .header-logo {
   height: 100%;
 }
@@ -15,7 +15,6 @@ body {
   // background-color: #00294b;
   font-family: "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
 .electrode-nav-top {
   // background: none;
   background-color: #00294b;
@@ -28,7 +27,6 @@ body {
   letter-spacing: 1px;
   margin-bottom: 0;
 }
-
 .inverse-colors {
     color: white;
     a, p, h1, h2, h3, h4 {
@@ -36,7 +34,6 @@ body {
     }
 }
 .social-nav-links {
-
   li {
     border-radius: 4px;
     margin-top: -20px;
@@ -50,7 +47,6 @@ body {
       }
     }
   }
-
 }
 .header-backdrop {
   position: absolute;
@@ -74,12 +70,10 @@ body {
     bottom: 0;
   }
 }
-
 .header-mountains-2 img {
   width: 100%;
   margin-top: -25em;
 }
-
 .pillars-section {
   background-color: white;
   padding: 0;
@@ -88,7 +82,6 @@ body {
 .pillars-section {
   background-color: white;
 }
-
 .header-content {
   .logo-text {
     font-size: 10.5em;
@@ -127,7 +120,6 @@ body {
     border-radius: 3px;
   }
 }
-
 .social-nav-links li:nth-child(2) {
   margin-left: .5em;
   background-color: #eb3d4e;
@@ -138,9 +130,6 @@ body {
 .social-nav-links li:nth-child(4) {
   background-color: white;
 }
-
-
-
 
 .primary-nav-links li {
   margin-right: 3em;
@@ -156,3 +145,4 @@ body {
   margin-top: -15px;
   margin-left: -15px;
 }
+//END HEADER STYLES
