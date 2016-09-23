@@ -12,12 +12,13 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 body {
-  background-color: #00294b;
+  // background-color: #00294b;
   font-family: "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .electrode-nav-top {
-  background: none;
+  // background: none;
+  background-color: #00294b;
   border: none;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -25,6 +26,7 @@ body {
   font-weight: 400;
   font-size: 1.1em;
   letter-spacing: 1px;
+  margin-bottom: 0;
 }
 
 .inverse-colors {
@@ -51,13 +53,15 @@ body {
 
 }
 .header-backdrop {
-  position: fixed;
-  left: 0;
-  right: 0;
+  position: absolute;
+  /* left: 0; */
+  /* right: 0; */
   z-index: -1;
   display: block;
   height: 53em;
   width: 100%;
+  top: 62px;
+  background-color: #00294b;
   .header-sky img {
     width: 100%;
     margin-top: -4em;
@@ -70,6 +74,21 @@ body {
     bottom: 0;
   }
 }
+
+.header-mountains-2 img {
+  width: 100%;
+  margin-top: -25em;
+}
+
+.pillars-section {
+  background-color: white;
+  padding: 0;
+  margin-top: 25em;
+}
+.pillars-section {
+  background-color: white;
+}
+
 .header-content {
   .logo-text {
     font-size: 10.5em;
