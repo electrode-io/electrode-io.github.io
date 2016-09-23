@@ -1,8 +1,8 @@
 ---
 ---
-// @import 'bourbon';
-// @import '_variables';
-// @import '_typography';
+@import 'bourbon';
+@import '_variables';
+@import '_typography';
 
 //BEGIN HEADER STYLES
 .header-logo {
@@ -146,3 +146,267 @@ body {
   margin-left: -15px;
 }
 //END HEADER STYLES
+
+
+//BEGIN CORE STYLES
+.electrode-core {
+  text-align: center;
+  font-family: "Gotham-Rounded";
+
+  div {
+    padding: 10px 0px 10px 0px;
+  }
+
+  h3 {
+    padding: 0px 25% 0px 25%;
+  }
+
+  .electrode-core-text {
+    text-align: left;
+    padding: 15px 20px 15px 20px;
+    font-size: 120%;
+  }
+
+
+
+  #snippet-bubble {
+    border: solid 1px #cccccc;
+    left: 75px;
+    top: 0px;
+    width: 60%;
+    height: auto;
+    z-index: 2;
+    font-size: 80%;
+
+    .snippet-bubble-text {
+      padding: 10px 0px 10px 0px;
+      font-size: 120%;
+      text-align:left;
+    }
+
+    div {
+      padding: 0px;
+    }
+
+    h3 {
+      text-align: center;
+      padding: 0px;
+    }
+
+    #deploy-msg {
+      text-align: left;
+    }
+
+    #details-btn {
+      color: #141e26;
+      background: white;
+      border: solid 2px #141e26;
+    }
+
+    #deploy-btn {
+      background: $primary;
+      color: white;
+    }
+  }
+}
+//END CORE STYLES
+
+
+//BEGIN MODULES STYLES
+.landing-logo{
+  width: 125px;
+  height: 125px;
+  margin: -10px -20px 7px -20px;
+}
+
+.electrode-modules {
+  text-align: center;
+
+  .icon-modules {
+    filter: grayscale(100%);
+    height: 100px;
+    width: 100px;
+  }
+
+  .electrode-modules-list {
+    list-style: none;
+    margin-top: 100px;
+    padding-bottom: 400px;
+    text-align: left;
+
+    .module-title {
+      font-weight: bold;
+    }
+
+    .icon-module {
+      filter: grayscale(100%);
+      margin: 60px 0 0 20px;
+      width: 80px;
+    }
+
+    li {
+      border-bottom: 1px #ECECEC solid;
+      padding-bottom: 20px;
+    }
+  }
+
+  .electrode-modules-background {
+    background-image: url("https://host-logos.firebaseapp.com/dotio/module_laptop_graphic_@1x.png");
+    background-size: 95%;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+  }
+
+  .electrode-modules-image {
+    float: left;
+
+    img {
+      width: 400px;
+    }
+  }
+}
+//END MODULES STYLES
+
+
+
+
+
+
+
+
+// BEGIN FOOTER STYLES
+.footer {
+  background-color: #1D1D1D !important;
+
+  .footer-text {
+    float: left;
+    font-size: 12px;
+    color: #c4c4c4;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    font-family: "Gotham-Rounded";
+  }
+}
+
+#footer-walmart-logo {
+  width: 40%;
+  height: auto;
+  margin-left: -15px;
+}
+
+.footer-sub-logo {
+  width: 20%;
+  height: auto;
+}
+
+#footer-nav {
+  display: inline-block;
+}
+
+a.footer-text {
+  color: #c4c4c4;
+  font-family: "Gotham-Rounded";
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.footer-sub-logo {
+
+}
+
+#doc-logos {
+  width: 400px;
+}
+
+#electrode-footer {
+  padding: 0 0 10px 10px;
+}
+
+#footer-nav-center {
+  margin-top: 35px;
+  margin-left: -60px;
+}
+
+#footer-nav-right {
+  margin-top: 30px;
+  background-color: #1d1d1d !important;
+}
+
+.social-logo {
+  padding-right: 20px;
+  padding-right: 20px;
+}
+
+.footer-sub-logo {
+  height: 40px;
+  width: auto;
+}
+
+.footer-text.bottom {
+  margin-bottom: -5px;
+}
+
+.twitter-logo {
+  background-color: #1686c0;
+  border-radius: 0 0 0.5em 0.5em;
+  height: 60px;
+  width: 35px;
+  margin-right: 20px;
+  img {
+    width: 1.3em;
+    margin-top: 25px;
+    margin-left: -5px;
+  }
+}
+
+.github-logo {
+  background-color: #3a3a3a;
+  border-radius: 0 0 0.5em 0.5em;
+  height:60px;
+  width: 35px;
+  img {
+    width: 1.3em;
+    margin-top: 25px;
+    background-color: white;
+    color: #3a3a3a;
+    margin-left: -5px;
+  }
+}
+
+div.footer-row {
+  margin: 0 -40px 0 120px;
+}
+
+div.footer-docs {
+  padding-top: 15px;
+
+  .footer-doc-links {
+    color: #c4c4c4;
+    // font-weight: bold;
+    font-size: 14px;
+    font-family: "Gotham-Rounded";
+
+    #doc-link-right: {
+      margin-left: -10px;
+    }
+  }
+}
+
+#footer-twitter {
+  margin-left: -50px;
+}
+
+div.footer-vertical-line {
+  margin-top: -20px;
+  height: 100px;
+  width: 0px;
+  position: relative;
+  border-left: 1px solid #2c2c2c;
+}
+
+img.footer-sub-logo {
+  filter: invert(1);
+  margin-top: 5px;
+}
+
+//END FOOTER STYLES
