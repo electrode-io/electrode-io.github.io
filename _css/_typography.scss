@@ -5,13 +5,8 @@ $textColorLight: lighten($textColor, 20%);
 $textLogoBlue: #F1BF6D;
 $textLogoOrange: #54a7de;
 
-@font-face {
-  font-family: "Gotham-Rounded";
-  src: url("../fonts/Gotham-Rounded-Light.ttf")
-}
-
 html {
-  font-family: "Gotham-Rounded", "Helvetica Rounded", Arial, sans-serif;
+  font-family: "Lato", "Helvetica Rounded", Arial, sans-serif;
   color: $textColor;
   line-height: 1.28;
 }
@@ -38,7 +33,7 @@ h4,
 h5,
 h6 {
   margin: 10px 0;
-  font-family: "Gotham-Rounded";
+  font-family: inherit;
   font-weight: bold;
   line-height: 20px;
   color: inherit;
