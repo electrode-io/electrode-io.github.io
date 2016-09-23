@@ -5,37 +5,110 @@
 		<link rel="stylesheet" href="css/electrode.css">
 	</head>
 	<body>
-	  <!-- header -->
-	  <div class="container">
-	    <nav class="navbar navbar-dark bg-inverse">
-	       <div class="container-fluid">
-	         <div class="navbar-header">
-	           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	             <span class="sr-only">Toggle navigation</span>
-	             <span class="icon-bar"></span>
-	             <span class="icon-bar"></span>
-	             <span class="icon-bar"></span>
-	           </button>
-	           <a class="navbar-brand" href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a>
-	         </div>
+		<div class="containter-fluid">
+			<nav class="navbar navbar-static-top electrode-nav-top inverse-colors">
+			  <div class="container">
+			    <ul class="nav navbar-nav">
+						<div class="navbar-header">
+							<a class="navbar-brand electrode-brand-top" href="#">
+								<img class="header-logo" src="https://host-logos.firebaseapp.com/dotio/header_logo_@1x.png" alt="">
+							</a>
+						</div>
+					</ul>
+			    <ul class="nav navbar-nav navbar-right social-nav-links">
+						<div class="vert-divider"></div>
+						<li>
+							<a href="">
+								<img src="https://host-logos.firebaseapp.com/dotio/pocket_@1x.png" alt="">
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="https://host-logos.firebaseapp.com/dotio/twitter_@1x.png" alt="">
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="https://host-logos.firebaseapp.com/dotio/github_@1x.png" alt="">
+							</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right primary-nav-links">
+						<li><a href="">HOME</a></li>
+						<li><a href="">DOCS</a></li>
+						<li><a href="">CONTRIBUTE</a></li>
+					</ul>
+			  </div>
+			</nav>
+		</div>
 
-	         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	           <ul class="nav navbar-nav navbar-right">
-	             <li><a style="margin-top:10px;" href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>HOME</a></li>
-	             <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>DOCS</a></li>
-	             <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>CONTRIBUTE</a></li>
-	               <li><a href="https://github.com/electrode-io">A</a></li>
-	               <li><a href="https://github.com/electrode-io">B</a></li>
-	               <li><a href="https://github.com/electrode-io">C</a></li>
-	               <li role="separator" class="divider"></li>
-	           </ul>
-	         </div>
-	       </div>
-	   </nav>
-	  </div>
+
+		<div class="header-backdrop">
+			<div class="header-sky">
+				<img src="https://host-logos.firebaseapp.com/dotio/night_sky_@1x.png" alt="">
+			</div>
+			<div class="header-mountains">
+				<img src="https://host-logos.firebaseapp.com/dotio/mountains_@1x.png" alt="">
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="header-content inverse-colors">
+				<div class="row">
+					<div class="col-sm-8 col-md-offset-2 logo-text">electr<span class="header-electrode-logo">o</span>de</div>
+				</div>
+				<div class="row"><div class="col-sm-8 col-md-offset-2 slogan">UNIVERSAL REACT/NODE APPLICATION PLATFORM</div></div>
+				<div class="row"><div class="col-sm-8 col-md-offset-2 header-info">Electrode is a platform for building universal React/Node.js applications with standardized structure, best practices, and modern technologies baked in. Electrode focuses on performance, component reusability, and simple deployment to multiple cloud providers—so you can focus on what makes your app unique.</div></div>
+				<div class="row"><div class="col-sm-4 col-md-offset-4 header-button">GET STARTED - DEPLOY IN 5 MINUTES</div></div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="col-md-4">
+				<div class="top-graphic" id="core-graphic"></div>
+				<div class="row">
+					<div class="col-sm-12 pillar-icon"></div>
+					<div class="row">
+						<div class="pillar-content">
+							<h1>CORE</h1>
+							<p>Build a simple, flexible scaffold in minutes, with support for server-side rendering and easy deployment to multiple cloud providers. Electrode lets you focus on code, not configuration.</p>
+							<a href="">Learn more</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="top-graphic" id="modules_graphic"></div>
+				<div class="row">
+					<div class="col-sm-12 pillar-icon"></div>
+					<div class="row">
+						<div class="pillar-content">
+							<h1>MODULES</h1>
+							<p>Level up your app with features like above-the-fold rendering, server-side render caching, and stateless CSRF validation. Modules work with your existing React/Node app--no need to migrate to Electrode Core.</p>
+							<a href="">Learn more</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="top-graphic" id="tools_graphic"></div>
+				<div class="row">
+					<div class="col-sm-12 pillar-icon"></div>
+					<div class="row">
+						<div class="pillar-content">
+							<h1>TOOLS</h1>
+							<p>Discover reusable components and optimize your JS bundle with standalone tools. These tools can be used with any React/Node app, but work best with the structure provided by Electrode Core.</p>
+							<a href="">Learn more</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
 
     <!-- footer -->
-	  <div class="container">
+	  <!-- <div class="container">
 	    <div class="navbar navbar-default navbar-fixed-bottom footer">
 	    	<div class="container-fluid">
 
@@ -63,7 +136,7 @@
 
 	    	</div>
 	    </div>
-	  </div>
+	  </div> -->
 
 	</body>
 </html>
