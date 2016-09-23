@@ -5,10 +5,10 @@ toplevel: "Stand Alone Modules"
 ---
 
 Optimize React SSR with profiling and component caching. The
-[electrode-react-ssr-caching](https://github.com/electrode-io/electrode-react-ssr-caching) module supports profiling React Server Side Rendering time
+[electrode-react-ssr-caching] module supports profiling React Server Side Rendering time
 to enable component caching to help you speed up Server Side Rendering of your components.
 
-[electrode-react-ssr-caching](https://github.com/electrode-io/electrode-react-ssr-caching) module can be used a *standalone* module and is *agnostic* of
+[electrode-react-ssr-caching] module can be used a *standalone* module and is *agnostic* of
 your web-server framework. In this tutorial we will demonstrate how to use this module in Electrode, Express.js and Hapi.js applications.
 
 {% include module_usage.md moduleId="electrode-react-ssr-caching" express_react_redux=true hapi_react_redux=true %}
@@ -242,3 +242,4 @@ Print out cache entries and number of hits each one has.
 
 [Sasha Aickin's talk]: https://www.youtube.com/watch?v=PnpfGy7q96U
 [farmhash]: https://github.com/google/farmhash
+[electrode-react-ssr-caching]: https://github.com/electrode-io/electrode-react-ssr-caching

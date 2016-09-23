@@ -10,8 +10,6 @@ extended to meet the needs of your app
 
 [Confippet] can be used as a standalone module in your favorite Node.js web server framework or application.
 
-[Confippet]: https://github.com/electrode-io/electrode-confippet
-
 ### Features
 
 * **Simple** - Confippet's `presetConfig` automatically composes a single config
@@ -116,7 +114,7 @@ Where:
   in that order. Each time it finds a config file, the values in that file will
   be loaded and merged into the config store. So `js` overrides `yaml`, which
   overrides `json`. You can add handlers for other file types and change their
-  loading order—see [composeConfig](https://github.com/electrode-io/electrode-confippet/blob/master/compose.md) for further details.
+  loading order—see [composeConfig] for further details.
 * `{instance}` is your app's instance string in multi-instance deployments
   (specified by the `NODE_APP_INSTANCE` environment variable).
 * `{short_hostname}` is your server name up to the first dot.
@@ -154,7 +152,7 @@ store:
 * `NODE_APP_INSTANCE` - If your app is deployed to multiple instances, you can
   set this to load instance-specific configurations.
 * `AUTO_LOAD_CONFIG_PROCESS_OFF` - By default, after composing the config from
-  all sources, Confippet will use [processConfig](https://github.com/electrode-io/electrode-confippet/blob/master/templates.md) to process
+  all sources, Confippet will use [processConfig] to process
   [templates](#using-templates). You can set this environment variable to
   disable template processing.
 * `NODE_CONFIG` - You can set this to a valid JSON string and Confippet will
@@ -166,9 +164,8 @@ store:
 ### Using Templates
 
 Values in your config files can be templates, which will be resolved with
-a preset context. See [processConfig](https://github.com/electrode-io/electrode-confippet/blob/master/templates.md) for more information about how to use
+a preset context. See [processConfig] for more information about how to use
 config value templates.
-
 
 ### Usage in Node Modules
 
@@ -176,7 +173,7 @@ If you have a Node.js module that has its own configurations based on
 environment variables, like `NODE_ENV`, you can use Confippet to load config
 files for your module.
 
-The example below will use the [default compose options](https://github.com/electrode-io/electrode-confippet/blob/master/lib/default-compose-opts.js) to compose
+The example below will use the [default compose options] to compose
 configurations from the directory `config` under the script's directory
 (`__dirname`).
 
@@ -198,7 +195,7 @@ defaults._$.compose(options);
 
 ### Customization
 
-The [composeConfig](https://github.com/electrode-io/electrode-confippet/blob/master/compose.md) feature supports a fully customizable and extendable config
+The [composeConfig] feature supports a fully customizable and extendable config
 structure. Even Confippet's own preset config structure can be extended, since
 it's composed using the same feature.
 
@@ -242,11 +239,12 @@ sources are loaded (controlled by `order`).
 It also adds a new extension handler, `json5`, to be loaded after `json`.
 
 To further understand the `_$` and the `compose` options, please see the
-documentation for [store](https://github.com/electrode-io/electrode-confippet/blob/master/store.md), [composeConfig](https://github.com/electrode-io/electrode-confippet/blob/master/compose.md), and [processConfig](https://github.com/electrode-io/electrode-confippet/blob/master/templates.md).
+documentation for [store], [composeConfig], and [processConfig].
 
+[Confippet]: https://github.com/electrode-io/electrode-confippet
 [node-config npm module]: https://github.com/lorenwest/node-config
 [node-config files]: https://github.com/lorenwest/node-config/wiki/Configuration-Files
-[store]: ./store.md
-[composeConfig]: ./compose.md
-[processConfig]: ./templates.md
-[default compose options]: ./lib/default-compose-opts.js
+[store]: https://github.com/electrode-io/electrode-confippet/blob/master/store.md
+[composeConfig]: https://github.com/electrode-io/electrode-confippet/blob/master/compose.md
+[processConfig]: https://github.com/electrode-io/electrode-confippet/blob/master/templates.md
+[default compose options]: https://github.com/electrode-io/electrode-confippet/blob/master/lib/default-compose-opts.js
