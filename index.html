@@ -394,21 +394,18 @@
       </div>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    var num = 1805;
 
-    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-      var num = 1805;
-
-      $(window).bind('scroll', function () {
-          if ($(window).scrollTop() > num) {
-              $('#second-nav').addClass('navbar-fixed-top');
-          } else {
-              $('#second-nav').removeClass('navbar-fixed-top');
-          }
-      });
-
-    </script>
-
+    $(window).bind('scroll', function () {
+      if ($(window).scrollTop() > num) {
+        $('#second-nav').addClass('navbar-fixed-top');
+      } else {
+        $('#second-nav').removeClass('navbar-fixed-top');
+      }
+    });
+  </script>
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
     integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
     crossorigin="anonymous"></script>
