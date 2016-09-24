@@ -441,7 +441,6 @@ div.footer-docs {
 
   .footer-doc-links {
     color: #c4c4c4;
-    // font-weight: bold;
     font-size: 14px;
     font-family: "Gotham-Rounded";
 
@@ -466,4 +465,19 @@ div.footer-vertical-line {
 img.footer-sub-logo {
   filter: invert(1);
   margin-top: 5px;
+}
+
+#second-nav {
+  background: #fff;
+
+  .second-nav-links {
+    a {
+      color: #333;
+    }
+  }
+
+  #get-started { 
+    background: $primary;
+    color: white;
+  }
 }
