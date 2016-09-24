@@ -179,6 +179,46 @@
  			</div>
 			<!-- end electrode core -->
 
+    <!-- beginning of second "sticky" header -->
+    <div class="containter-fluid">
+      <nav class="navbar electrode-nav-top inverse-colors second-nav">
+        <div class="container">
+          <ul class="nav navbar-nav">
+            <div class="navbar-header">
+              <a class="navbar-brand electrode-brand-top" href="#">
+                <img class="header-logo" src="https://host-logos.firebaseapp.com/dotio/header_logo_@1x.png"
+                     alt="">
+              </a>
+            </div>
+          </ul>
+          <ul class="nav navbar-nav navbar-right social-nav-links">
+            <div class="vert-divider"></div>
+            <li>
+              <a href="https://getpocket.com/">
+                <img src="https://host-logos.firebaseapp.com/dotio/pocket_@1x.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/electrode_io">
+                <img src="https://host-logos.firebaseapp.com/dotio/twitter_@1x.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/electrode-io">
+                <img src="https://host-logos.firebaseapp.com/dotio/github_@1x.png" alt="">
+              </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right primary-nav-links">
+            <li><a href="">HOME</a></li>
+            <li><a href="/docs/what_is_electrode.html">DOCS</a></li>
+            <li><a href="https://github.com/electrode-io">CONTRIBUTE</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- end of sticky header -->
+
 			<!-- begin electrode modules -->
  			<div class="container">
  				<div class="electrode-modules row" id="electrode-modules">
@@ -248,7 +288,22 @@
       </div>
     </div>
   </div>
-  <!-- end footer -->
+
+    <script   src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script> 
+      <script type="text/javascript">
+      var num = 1805;
+
+        $(window).bind('scroll', function () {
+            if ($(window).scrollTop() > num) {
+                console.log('hiya', $(window).scrollTop())
+
+                $('.second-nav').addClass('navbar-fixed-top');
+            } else {
+                $('.second-nav').removeClass('navbar-fixed-top');
+            }
+        });
+
+    </script>
 
 </body>
 </html>
