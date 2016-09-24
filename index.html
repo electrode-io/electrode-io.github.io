@@ -45,7 +45,6 @@
     </nav>
   </div>
 
-
   <div class="container-fluid night-sky">
     <div class="header-content inverse-colors">
       <div class="row">
@@ -129,122 +128,191 @@
   </div>
   <!-- end of header -->
 
-		<!-- begin electrode core -->
-		<div class="container electrode-core">
- 			  	<div class="row">
- 			  		<div class="col-md-12">
- 			  			<img class="grayscale" src="https://host-logos.firebaseapp.com/dotio/core_hex_icon_@1x.png">
- 			  		</div>
- 			  	</div>
- 			  	<div class="row">
- 			  		<div class="col-md-12">
- 			  			<h1>electrode core</h1>
- 			  			<h3>Electrode emphasizes convention overconfiguration, following industry best practices for performance, consistency, and reusability.</h3>
- 			  		</div>
- 			  	</div>
- 			  	<div class="row">
- 			  		<div class="container">
- 					  <div class="col-md-6" id="electrode-core-text">
- 		  	  			 <div> Get new projects started quickly with a simple, consistent structure that follows modern best practices. Electrode Core allows you to build a flexible scaffold in minutes, with support for server-side rendering and easy deployment to multiple cloud providers.
- 			  			 </div>
- 			  			 <div> 
-						The heart of the platform is Electrode Archetypes, which allow for standardized configurations and structure of the app and its associated react components. By enforcing a sensible structure and consistency for components, modules and the entire app, Electrode’s Archetype system helps you build scalable applications you can trust while ensuring streamlined development and deployment.
- 			  			 </div>
- 					   </div>
- 					   <div class="col-md-6">
-	 							<div id="snippet-bubble">
-	 								<div class="row">
-	 									<h4>QUICK AND EASY SETUP!</h4>
-	 								</div>
-	 								<div class="row" id="code-snippet">
-	 									<div>
-	 			  							<p> $ sudo npm install -g yo gulp generator-electrode</p>
-	 			  							<p> $ mkdir my-electrode-app</p>
-	 			  							<p> $ cd my-electrode-app</p>
-	 			  							<p> $ yo electrode</p>
-	 			  							<p> $ gulp dev</p>
-	 			  						</div>
-	 								</div>
-	 								<div class="row">
-	 									<div class="snippet-bubble-text col-md-10 col-md-offset-1">That's it! Next, deploy, your app to your favorite cloud service.</div>
-	 								</div>
-	 								<div class="row">
-	 									<button class="btn col-md-offset-1 col-md-3" id="details-btn">DETAILS</button>
-	 			  						<button class="btn col-md-offset-1 col-md-6" id="deploy-btn">DEPLOY</button>
-	 								</div>
-	 							</div>
- 						</div>
- 					</div>
- 				</div>
- 			</div>
-			<!-- end electrode core -->
+  <!-- begin electrode core -->
+  <div class="container electrode-core">
+    <div class="row">
+      <div class="col-md-12">
+        <img class="grayscale" src="https://host-logos.firebaseapp.com/dotio/core_hex_icon_@1x.png">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h1>electrode core</h1>
+        <h3>Electrode emphasizes convention overconfiguration, following industry best practices for performance, consistency, and reusability.</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="container">
+        <div class="col-md-6" id="electrode-core-text">
+          <div>
+            Get new projects started quickly with a simple, consistent structure that follows modern best practices. Electrode Core allows you to build a flexible scaffold in minutes, with support for server-side rendering and easy deployment to multiple cloud providers.
+          </div>
+          <div>
+            The heart of the platform is Electrode Archetypes, which allow for standardized configurations and structure of the app and its associated react components. By enforcing a sensible structure and consistency for components, modules and the entire app, Electrode’s Archetype system helps you build scalable applications you can trust while ensuring streamlined development and deployment.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div id="snippet-bubble">
+            <div class="row">
+              <h4>QUICK AND EASY SETUP!</h4>
+            </div>
+            <div class="row" id="code-snippet">
+              <div>
+                <p>$ sudo npm install -g yo gulp generator-electrode</p>
+                <p>$ mkdir my-electrode-app</p>
+                <p>$ cd my-electrode-app</p>
+                <p>$ yo electrode</p>
+                <p>$ gulp dev</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="snippet-bubble-text col-md-10 col-md-offset-1">That's it! Next, deploy, your app to your favorite cloud service.</div>
+            </div>
+            <div class="row">
+              <button class="btn col-md-offset-1 col-md-3" id="details-btn">DETAILS</button>
+              <button class="btn col-md-offset-1 col-md-6" id="deploy-btn">DEPLOY</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end electrode core -->
 
-			<!-- begin electrode modules -->
- 			<div class="container">
- 				<div class="electrode-modules row" id="electrode-modules">
- 					<a href="#"><img class="icon-modules scroll-up" src="https://host-logos.firebaseapp.com/dotio/modules_icon_@1x.png" /></a>
- 					<h1>electrode modules</h1>
- 					<h3>Supercharge your app, with or without Electrode Core</h3>
- 					<div class="electrode-modules-background row">
- 						<div class="col-lg-offset-5 col-lg-7">
- 							<ul class="electrode-modules-list">
- 								<li class="row">
- 									<div class="col-lg-10">
- 										<h3 class="module-title">Above-the-fold Rendering</h3>
- 										<p class="module-description">A react component that enables
- 											server side rendering of "only" the components your users see
- 											on the screen without scrolling. This way, instead of side
- 											rendering the whole page on the server, we only render what a
- 											user will see initially for improved performance.</p>
- 									</div>
- 									<img class="icon-module col-lg-2" src="https://host-logos.firebaseapp.com/dotio/above_fold_icon_@1x.png" />
- 								</li>
- 								<li class="row">
- 									<div class="col-lg-10">
- 										<h3 class="module-title">Redux Router Engine</h3>
- 										<p class="module-description">Do you need data from a service
- 											to render your component server-side? This module fetches the
- 											data asyncronously and passes it to React to render your
- 											components. Requires Redux.</p>
- 									</div>
- 									<img class="icon-module col-lg-2" src="https://host-logos.firebaseapp.com/dotio/redux_router_icon_@1x.png" />
- 								</li>
- 								<li class="row">
- 									<div class="col-lg-10">
- 										<h3 class="module-title">SSR Profiling &amp; Caching</h3>
- 										<p class="module-description">Improve your React server-side
- 											rendering performance by up to 70% by caching your components'
- 											render output.
- 										</p>
- 									</div>
- 									<img class="icon-module col-lg-2" src="https://host-logos.firebaseapp.com/dotio/SSR_profiling_icon_@1x.png" />
- 								</li>
- 								<li class="row">
- 									<div class="col-lg-10">
- 										<h3 class="module-title">Confippet</h3>
- 										<p class="module-description">Lets you define, extend, and merge
- 											configurations for different environments (such as QA, prod,
- 											and staging) that get initialized during start up or at runtime.
- 										</p>
- 									</div>
- 									<img class="icon-module col-lg-2" src="https://host-logos.firebaseapp.com/dotio/confippet_icon_@1x.png" />
- 								</li>
- 								<li class="row">
- 									<div class="col-lg-10">
- 										<h3 class="module-title">Stateless CSRF Validation</h3>
- 										<p class="module-description">Validate HTTP requests without a
- 											session--for Express and Hapi.
- 										</p>
- 									</div>
- 									<img class="icon-module col-lg-2" src="https://host-logos.firebaseapp.com/dotio/stateless_icon_@1x.png" />
- 								</li>
- 							</ul>
- 						</div>
- 					</div>
- 				</div>
- 			</div>
-			<!-- end electrode modules -->
+  <!-- begin electrode modules -->
+  <div class="container">
+    <div class="electrode-modules row" id="electrode-modules">
+      <a href="#"><img class="icon-modules scroll-up" src="https://host-logos.firebaseapp.com/dotio/modules_icon_@1x.png" /></a>
+      <h1>electrode modules</h1>
+      <h3>Supercharge your app, with or without Electrode Core</h3>
+      <div class="electrode-modules-background row">
+        <div class="col-lg-offset-5 col-lg-7">
+          <ul class="electrode-modules-list">
+            <li class="row">
+              <div class="col-lg-10">
+                <h3 class="module-title">Above-the-fold Rendering</h3>
+                <p class="module-description">A react component that enables
+                  server side rendering of "only" the components your users see
+                  on the screen without scrolling. This way, instead of side
+                  rendering the whole page on the server, we only render what a
+                  user will see initially for improved performance.</p>
+              </div>
+              <img class="icon-module col-lg-2" src="https://host-logos.firebaseapp.com/dotio/above_fold_icon_@1x.png" />
+            </li>
+            <li class="row">
+              <div class="col-lg-10">
+                <h3 class="module-title">Redux Router Engine</h3>
+                <p class="module-description">Do you need data from a service
+                  to render your component server-side? This module fetches the
+                  data asyncronously and passes it to React to render your
+                  components. Requires Redux.</p>
+              </div>
+              <img class="icon-module col-lg-2" src="https://host-logos.firebaseapp.com/dotio/redux_router_icon_@1x.png" />
+            </li>
+            <li class="row">
+              <div class="col-lg-10">
+                <h3 class="module-title">SSR Profiling &amp; Caching</h3>
+                <p class="module-description">Improve your React server-side
+                  rendering performance by up to 70% by caching your components'
+                  render output.
+                </p>
+              </div>
+              <img class="icon-module col-lg-2" src="https://host-logos.firebaseapp.com/dotio/SSR_profiling_icon_@1x.png" />
+            </li>
+            <li class="row">
+              <div class="col-lg-10">
+                <h3 class="module-title">Confippet</h3>
+                <p class="module-description">Lets you define, extend, and merge
+                  configurations for different environments (such as QA, prod,
+                  and staging) that get initialized during start up or at runtime.
+                </p>
+              </div>
+              <img class="icon-module col-lg-2" src="https://host-logos.firebaseapp.com/dotio/confippet_icon_@1x.png" />
+            </li>
+            <li class="row">
+              <div class="col-lg-10">
+                <h3 class="module-title">Stateless CSRF Validation</h3>
+                <p class="module-description">Validate HTTP requests without a
+                  session--for Express and Hapi.
+                </p>
+              </div>
+              <img class="icon-module col-lg-2" src="https://host-logos.firebaseapp.com/dotio/stateless_icon_@1x.png" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end electrode modules -->
 
+  <!-- footer -->
+  <div class="container-fluid">
+    <div id="electrode-footer" class="navbar navbar-default navbar-bottom navbar-dark footer">
+      <div class="row footer-row">
+        <div class="footer-text col-xs-12 col-s-5 col-md-5 navbar">
+          <div class="" id="footer-nav-left">
+            <div>
+              <a class="navbar-brand" href="http://walmartlabs.com">
+                <img id="footer-walmart-logo" src="https://host-logos.firebaseapp.com/dotio/header_logo_@1x.png"/>
+              </a>
+            </div>
+            <div>
+              <p class="footer-text">
+                Open Sourced Under Apache, Built with HEART by @WalmartLabs.
+              </p>
+            </div>
+            <div>
+              <p class="footer-text bottom">
+                Electrode is maintained by the core team with help of our contributors.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="footer-nav-center" class="navbar footer-text col-xs-12 col-s-7 col-md-7">
+          <div class="row">
+            <div class="col-md-1 social-nav-links">
+              <a href="https://github.com/electrode-io">
+                <img id="footer-core-logo" class="footer-sub-logo"
+                  src="https://host-logos.firebaseapp.com/dotio/core_tab_icon_@1x.png"/>
+              </a>
+            </div>
+            <div class="col-md-1 social-nav-links">
+              <a href="https://github.com/electrode-io">
+                <img id="footer-icons-logo" class="footer-sub-logo"
+                  src="https://host-logos.firebaseapp.com/dotio/modules_tab_icon_@1x.png"/>
+              </a>
+            </div>
+            <div class="col-md-1 social-nav-links">
+              <a href="https://github.com/electrode-io">
+                <img id="footer-tools-logo" class="footer-sub-logo"
+                  src="https://host-logos.firebaseapp.com/dotio/tools_tab_icon_@1x.png"/>
+              </a>
+            </div>
+            <div class="col-md-1 footer-docs">
+              <a class="footer-doc-links" href="docs/what_is_electrode.html" {% if page.sectionid== 'docs' or
+              page.sectionid == 'tips' or page.sectionid == 'contributing' %} {% endif %}>DOCS</a>
+            </div>
+            <div class="col-md-1 footer-docs">
+              <a id="doc-link-right" class="footer-doc-links" href="docs/what_is_electrode.html" {% if
+                 page.sectionid== 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} {%
+              endif %}>CONTRIBUTE</a>
+            </div>
+            <div class="col-md-offset-1 col-md-2">
+              <div class="footer-vertical-line"></div>
+            </div>
+            <div id="footer-twitter" class="col-md-1 twitter-logo">
+              <a href="https://github.com/electrode-io">
+                <img class="footer-social-logo" src="https://host-logos.firebaseapp.com/dotio/twitter_@1x.png"/>
+              </a>
+            </div>
+            <div class="col-md-1 github-logo">
+              <a href="https://github.com/electrode-io">
+                <img class="footer-social-logo" src="https://host-logos.firebaseapp.com/dotio/github_@1x.png"/>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
