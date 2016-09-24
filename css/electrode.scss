@@ -7,6 +7,9 @@
 
 // BEGIN HEADER STYLES
 $light-trans-grey: rgba(203, 203, 203, 0.32);
+$small-devices: 768px;
+$medium-devices: 992px;
+$large-devices: 1200px;
 
 .header-logo {
   height: 100%;
@@ -451,4 +454,17 @@ div.footer-vertical-line {
 img.footer-sub-logo {
   filter: invert(1);
   margin-top: 5px;
+}
+
+@media (max-width: $medium-devices) {
+   .pillars-section-2,
+   .electrode-core,
+   #electrode-modules{
+     display: none;
+   }
+}
+@media (min-width: $medium-devices) {
+   .pillars-section-2-mobile{
+     display: none;
+   }
 }
