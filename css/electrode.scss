@@ -313,6 +313,11 @@ body {
     }
   }
 }
+
+.row {
+  margin: 0px;
+}
+
 //END MODULES STYLES
 
 //BEGIN TOOLS STYLES
@@ -489,6 +494,19 @@ a.footer-text {
   margin-bottom: -5px;
 }
 
+.pocket-logo {
+  background-color: #eb3d4e;
+  border-radius: 0 0 0.5em 0.5em;
+  height: 60px;
+  width: 35px;
+  margin-right: 70px;
+  img {
+    width: 1.3em;
+    margin-top: 25px;
+    margin-left: -5px;
+  }
+}
+
 .twitter-logo {
   background-color: #1686c0;
   border-radius: 0 0 0.5em 0.5em;
@@ -525,7 +543,6 @@ div.footer-docs {
 
   .footer-doc-links {
     color: #c4c4c4;
-    // font-weight: bold;
     font-size: 14px;
     font-family: "Gotham-Rounded";
 
@@ -550,4 +567,19 @@ div.footer-vertical-line {
 img.footer-sub-logo {
   filter: invert(1);
   margin-top: 5px;
+}
+
+#second-nav {
+  background: #fff;
+
+  .second-nav-links {
+    a {
+      color: #333;
+    }
+  }
+
+  #get-started { 
+    background: $primary;
+    color: white;
+  }
 }
