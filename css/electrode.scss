@@ -6,6 +6,8 @@
 // @import '_solarized';
 
 // BEGIN HEADER STYLES
+$light-trans-grey: rgba(203, 203, 203, 0.32);
+
 .header-logo {
   height: 100%;
 }
@@ -22,7 +24,7 @@ body {
   border: none;
   padding-top: 1em;
   padding-bottom: 1em;
-  border-bottom: 1px solid rgba(179, 179, 179, 0.11);
+  border-bottom: 1px solid $light-trans-grey;
   font-weight: 400;
   font-size: 1.1em;
   letter-spacing: 1px;
@@ -33,6 +35,11 @@ body {
     a, p, h1, h2, h3, h4 {
       color: white;
     }
+}
+.night-sky {
+  background-color: #00294b;
+  padding: 0;
+  margin: 0;
 }
 .social-nav-links {
   li {
@@ -49,56 +56,55 @@ body {
     }
   }
 }
-.header-backdrop {
-  position: absolute;
-  /* left: 0; */
-  /* right: 0; */
-  z-index: -1;
-  display: block;
-  height: 53em;
+
+.header-mountains img {
   width: 100%;
-  top: 62px;
-  background-color: #00294b;
-  .header-sky img {
-    width: 100%;
-    margin-top: -4em;
-    opacity: 0.7;
-  }
-  .header-mountains img {
-    width: 100%;
-    margin-top: 14em;
-    position: absolute;
-    bottom: 0;
-  }
-}
-.header-mountains-2 img {
-  width: 100%;
-  margin-top: -25em;
+  margin-top: -2em;
+  margin-bottom: -2px;
 }
 .pillars-section {
   background-color: white;
   padding: 0;
   margin-top: 25em;
 }
-.pillars-section {
-  background-color: white;
+// .pillars-section {
+//   background-color: white;
+// }
+
+.pillar-icon {
+  text-align: center;
+  img {
+    width: 75%;
+  margin-top: -16.2em;
+  }
 }
 .header-content {
+  font-family: "Gotham-Rounded";
+  background-image: url("/img/sky.svg");
+  background-position: center top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+
   .logo-text {
     font-size: 10.5em;
     text-align: center;
     color: white;
     letter-spacing: 23px;
     font-weight: 200;
-    margin-top: -8px;
+    margin-top: .1em;
     padding: 0;
+    padding-bottom: .2em;
+    img {
+      width: 100%;
+    }
   }
   .slogan {
     font-size: 1.6em;
-    font-weight: 200;
+    font-weight: 900;
     letter-spacing: 5px;
-    border-top: 1px solid rgba(179,179,179,0.11);
-    border-bottom: 1px solid rgba(179,179,179,0.11);
+    border-top: 1px solid $light-trans-grey;
+    border-bottom: 1px solid $light-trans-grey;
     padding-top: .5em;
     padding-bottom: .5em;
     margin-top: -.6em;
@@ -106,6 +112,7 @@ body {
   }
   .header-info {
     font-size: 1.2em;
+    font-weight: 600;
     margin-top: 1.5em;
     padding: 0;
     text-align: justify;
@@ -142,7 +149,7 @@ body {
   position: absolute;
   width: 0px;
   height: 100%;
-  border-left: 1px solid rgba(179, 179, 179, 0.11);
+  border-left: 1px solid $light-trans-grey;
   margin-top: -15px;
   margin-left: -15px;
 }
