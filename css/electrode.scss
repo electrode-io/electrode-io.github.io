@@ -278,17 +278,11 @@ body {
 //BEGIN TOOLS STYLES
 .electrode-tools {
   text-align: center;
-  margin-bottom: 300px;
 
   .icon-modules {
     filter: grayscale(100%);
     height: 100px;
     width: 100px;
-  }
-
-  .carousel {
-    height: 1000px;
-    margin-bottom: 60px;
   }
 
   /* Since positioning the image, we need to help out the caption */
@@ -298,17 +292,17 @@ body {
 
   /* Declare heights because of positioning of img element */
   .carousel .item {
-    height: 1000px;
+    height: 1150px;
     background-image: url("https://host-logos.firebaseapp.com/dotio/tools_landscape_@1x.png");
     background-repeat: no-repeat;
     background-size: contain;
-    background-position-y: 630px;
+    background-position-y: 550px;
   
 
     .tool-title {
       margin-top: 40px;
       border-top: 1px #ECECEC solid;
-      margin-bottom: 40px;
+      margin-bottom: 80px;
       position: relative;
       text-align: left;
 
@@ -320,14 +314,56 @@ body {
         }
       }
     }
+
+    .image {
+      width: 90%;
+      height: 90%;  
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position-y: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .image-electrode-explorer {
+      background-image: url("https://host-logos.firebaseapp.com/dotio/explorer_laptop_graphic_@1x.png");
+    }
+
+    .image-electrode-electrify {
+      background-image: url("https://host-logos.firebaseapp.com/dotio/bundle_laptop_graphic_@1x.png");
+    }
   }
 
-  .carousel-inner > .item > img {
-    // position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    height: 1000px;
+  .carousel-control {
+    span {
+      position: absolute;
+      top: 35%;
+      background-color: #cccccc;
+      background-image: url("https://host-logos.firebaseapp.com/dotio/arrow_@1x.png");
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      width: 70px;
+      height: 70px;
+      border-radius: 70px;
+    }
+
+    span:hover {
+      background-color: #df2375;
+    }
+
+    .button-previous {
+      left: 40px;
+    }
+
+    .button-next {
+      right: 40px;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
   }
 
   .carousel-control.left, .carousel-control.right {
