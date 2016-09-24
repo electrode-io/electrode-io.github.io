@@ -268,6 +268,56 @@
 	  </div>
 	<!-- end electrode modules -->
 
+  <!-- begin electrode tools -->
+  <div class="container">
+    <div class="electrode-tools row" id="electrode-tools">
+      <a href="#"><img class="icon-modules scroll-up"
+                       src="https://host-logos.firebaseapp.com/dotio/tools_icon_@1x.png"/></a>
+      <h1>electrode tools</h1>
+      <h3>Optimize your app with standalone tools</h3>
+      <div id="tools-carousel" class="carousel slide row" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <div class="tool-title col-lg-offset-2 col-lg-8">
+              <div class="col-md-1 col-lg-1 github-logo">
+                <a href="https://github.com/electrode-io">
+                  <img class="footer-social-logo" src="https://host-logos.firebaseapp.com/dotio/github_@1x.png"/>
+                </a>
+              </div>
+              <h3 class="col-md-11 col-lg-11">Electrode Explorer</h3>
+              <p class="col-md-11 col-lg-11">Standalone web application that lets you interact with your components.</p>
+            </div>
+            <div class="image image-electrode-explorer"></div>
+          </div>
+          <div class="item">
+            <div class="tool-title col-lg-offset-2 col-lg-8">
+              <div class="col-md-1 col-lg-1 github-logo">
+                <a href="https://github.com/electrode-io">
+                  <img class="footer-social-logo" src="https://host-logos.firebaseapp.com/dotio/github_@1x.png"/>
+                </a>
+              </div>
+              <h3 class="col-md-11 col-lg-11">Electrify</h3>
+              <p class="col-md-11 col-lg-11">Electrify is a tool for analyzing the module tree of electrode-io/webpack
+                project bundles. It's especially handy for
+                catching large and/or duplicate modules which might be either bloating up your bundle or slowing down
+                the build process.</p>
+            </div>
+            <div class="image image-electrode-electrify"></div>
+          </div>
+        </div>
+        <a class="left carousel-control" href="#tools-carousel" role="button" data-slide="prev">
+          <span class="button-previous" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#tools-carousel" role="button" data-slide="next">
+          <span class="button-next" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- end electrode tools -->
+
   <!-- footer -->
   <div class="container-fluid">
     <div id="electrode-footer" class="navbar navbar-default navbar-bottom navbar-dark footer">
@@ -344,20 +394,23 @@
       </div>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    var num = 1805;
 
-    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script> 
-    <script type="text/javascript">
-      var num = 1805;
-
-      $(window).bind('scroll', function () {
-          if ($(window).scrollTop() > num) {
-              $('#second-nav').addClass('navbar-fixed-top');
-          } else {
-              $('#second-nav').removeClass('navbar-fixed-top');
-          }
-      });
-
-    </script>
-
+    $(window).bind('scroll', function () {
+      if ($(window).scrollTop() > num) {
+        $('#second-nav').addClass('navbar-fixed-top');
+      } else {
+        $('#second-nav').removeClass('navbar-fixed-top');
+      }
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
 </body>
 </html>
