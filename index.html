@@ -76,10 +76,12 @@
     </div>
   </div>
 
-  <div class="pillars-section-2-mobile">
-	  <div class="col-xs-3 col-sm-3"><h3>CORE</h3></div>
-	  <div class="col-xs-3 col-sm-3"><h3>MODULES</h3></div>
-	  <div class="col-xs-3 col-sm-3"><h3>TOOLS</h3></div>
+  <div class="pillars-section-2-mobile text-center">
+    <div class="pillars-mobile-container">
+  	  <div value="core" id="mobile-header-items" onClick="togglePillars(this)">CORE</div>
+  	  <div value="modules" id="mobile-header-items" onClick="togglePillars(this)">MODULES</div>
+  	  <div value="tools" id="mobile-header-items" onClick="togglePillars(this)">TOOLS</div>
+    </div>
 	</div>
 
   <div class="container pillars-section-2">
@@ -323,6 +325,7 @@
     </div>
   </div>
   <!-- end footer -->
-
+<script src="./scripts/mobile-pillars.js"></script>
 </body>
+<script src="myscripts.js"></script>
 </html>
