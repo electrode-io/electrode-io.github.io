@@ -637,6 +637,15 @@ img.footer-sub-logo {
   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.2);
 }
 
+.mobile-footer-toggle{
+  .footer-toggle-items{
+    float: left;
+    margin: 10px;
+    font-size: 35px;
+    cursor: pointer;
+  }
+}
+
 @media (max-width: 767px) {
    .pillars-section-2,
    .electrode-core,
