@@ -625,6 +625,16 @@ img.footer-sub-logo {
   }
 }
 
+// Global helper classes
+
+.vertical-align-this {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 //START MOBILE VIEW
 
 .pillars-section-2-mobile {
@@ -675,8 +685,8 @@ img.footer-sub-logo {
 }
 
 .mobile-footer-toggle{
-  border-bottom: 1px solid #333333;
-  height: 60px;
+  border-bottom: 1px solid #333;
+  height: 62px;
   min-width: 320px;
 
   .footer-toggle-items{
@@ -700,6 +710,21 @@ img.footer-sub-logo {
     float: right;
     margin-top: 12px;
   }
+}
+
+.mobile-footer{
+  font-family: "Gotham-Rounded";
+  font-size: 9px;
+	line-height: 1.5;
+	text-align: center;
+  background-color: #333;
+	color: #ffffff;
+  height: 50px;
+  min-width: 320px;
+  position: absolute;
+  width: 100%;
+  padding: 0 5%;
+  margin-top: 10px;
 }
 
 @media (max-width: 767px) {
