@@ -76,6 +76,52 @@
     </div>
   </div>
 
+  <!-- mobile pillars section only displays in mobile view -->
+  <!-- togglePillars() loops over child divs under div == pillars-mobile-container -->
+  <div class="pillars-section-2-mobile text-center">
+    <div id="pillars-mobile-container">
+  	  <div id="mobile-core" class="mobile-header-items" onClick="togglePillars(this)">CORE</div>
+  	  <div id="mobile-modules" class="mobile-header-items" onClick="togglePillars(this)">MODULES</div>
+  	  <div id="mobile-tools" class="mobile-header-items" onClick="togglePillars(this)">TOOLS</div>
+    </div>
+	</div>
+
+  <div class="mobile-pillar-bar"></div>
+
+  <div id="moible-pillar-content-zone">
+    <div id="mobile-core-content">
+      <div class="mobile-content-heading">
+        <p> Electrode is a platform for building universal React/Node.js applications with standardized structure, best practices, and modern technologies baked in. </p>
+      </div>
+      <p> Electrode emphasizes convention over configuration, while focusing on performance, component reusability, and simple deployment </p>
+      <p> Get new projects started quickly with a simple, consistent structure that follows modern best practices. Electrode Core allows you to build a flexible scaffold in minutes, with support for server-side rendering and easy deployment to multiple cloud providers. </p>
+      <p> The heart of the platform is Electrode Archetypes, which allow for standardized configurations and structure of the app and its associated react components. By enforcing a sensible structure and consistency for components, modules and the entire app, Electrode’s Archetype system helps you build scalable applications you can trust while ensuring streamlined </p>
+      <div id="snippet-bubble">
+        <div class="row">
+          <h4>QUICK AND EASY SETUP!</h4>
+        </div>
+        <div class="row" id="code-snippet">
+          <div>
+            <p>$ sudo npm install -g yo gulp generator-electrode</p>
+            <p>$ mkdir my-electrode-app</p>
+            <p>$ cd my-electrode-app</p>
+            <p>$ yo electrode</p>
+            <p>$ gulp dev</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="snippet-bubble-text col-md-10 col-md-offset-1">That's it! Next, deploy, your app to your favorite cloud service.</div>
+        </div>
+        <div class="row">
+          <button class="btn col-md-offset-1 col-md-3" id="details-btn">DETAILS</button>
+          <button class="btn col-md-offset-1 col-md-6" id="deploy-btn">DEPLOY</button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-modules-content">mobile-modules-content</div>
+    <div id="mobile-tools-content">mobile-tools-content</div>
+  </div>
+
   <div class="container pillars-section-2">
     <div class="col-md-4">
       <!-- <div class="top-graphic" id="core-graphic"></div> -->
@@ -394,6 +440,10 @@
       </div>
     </div>
   </div>
+
+  <!-- end footer -->
+  <script src="./scripts/mobile-pillars.js"></script>
+
   <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
   <script type="text/javascript">
     var num = 1805;
@@ -412,5 +462,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
+
 </body>
 </html>

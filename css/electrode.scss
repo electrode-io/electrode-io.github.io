@@ -7,6 +7,11 @@
 
 // BEGIN HEADER STYLES
 $light-trans-grey: rgba(203, 203, 203, 0.32);
+$small-devices: 768px;
+$medium-devices: 992px;
+$large-devices: 1200px;
+$mobile-header-color-black: #333333;
+$mobile-pillar-b-background: #efefef;
 
 .header-logo {
   height: 100%;
@@ -188,73 +193,73 @@ body {
     }
   }
 
-  #snippet-bubble {
-    float: right;
-    font-weight: bold;
-    border-radius: 4px;
-    background-color: #f4f4f4;
-    border: solid 1px #cccccc;
-    text-align: left;
-    top: 0px;
-    width: 100%;
-    height: 450px;
-    z-index: 2;
-
-    .snippet-bubble-text {
-      font-size: 110%;
-      padding: 10px 0px 10px 4%;
-      font-size: 120%;
-      text-align:left;
-    }
-
-    h3 {
-      text-align: center;
-      padding: 0px;
-    }
-
-    #deploy-msg {
-      text-align: left;
-    }
-
-    #details-btn {
-      color: #141e26;
-      background: inherit;
-      border: solid 2px #141e26;
-      font-family: "Gotham-Rounded-Bold";
-    }
-
-    #deploy-btn {
-      font-family: "Gotham-Rounded-Bold";
-      background: $primary;
-      color: white;
-    }
-  }
-
   #electrode-header {
-  background: linear-gradient(#00203b, #032a4a);
+    background: linear-gradient(#00203b, #032a4a);
+  }
 }
 
-  #code-snippet {
-    background-color: #141e26;
-    color: white;
-    padding: 2% 0% 2% 0%;
+#snippet-bubble {
+  float: right;
+  font-weight: bold;
+  border-radius: 4px;
+  background-color: #f4f4f4;
+  border: solid 1px #cccccc;
+  text-align: left;
+  top: 0px;
+  width: 100%;
+  height: 450px;
+  z-index: 2;
+
+  .snippet-bubble-text {
+    font-size: 110%;
+    padding: 10px 0px 10px 4%;
+    font-size: 120%;
+    text-align:left;
+  }
+
+  h3 {
+    text-align: center;
+    padding: 0px;
+  }
+
+  #deploy-msg {
     text-align: left;
-    width: 80%;
-    margin: 0 auto;
-
-    p {
-      padding-left: 5%;
-      font-size: 110%;
-    }
   }
 
-  .grayscale{
-    filter: grayscale(100%);
-    width: 8%;
-    height: auto;
-    display: block;
-    margin: auto;
+  #details-btn {
+    color: #141e26;
+    background: inherit;
+    border: solid 2px #141e26;
+    font-family: "Gotham-Rounded-Bold";
   }
+
+  #deploy-btn {
+    font-family: "Gotham-Rounded-Bold";
+    background: $primary;
+    color: white;
+  }
+}
+
+#code-snippet {
+  background-color: #141e26;
+  color: white;
+  padding: 2% 0% 2% 0%;
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
+
+  p {
+    padding-left: 5%;
+    font-size: 110%;
+  }
+}
+
+.grayscale{
+  filter: grayscale(100%);
+  width: 8%;
+  height: auto;
+  display: block;
+  margin: auto;
 }
 
 //END CORE STYLES
@@ -343,7 +348,6 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     background-position-y: 550px;
-  
 
     .tool-title {
       margin-top: 40px;
@@ -363,7 +367,7 @@ body {
 
     .image {
       width: 90%;
-      height: 90%;  
+      height: 90%;
       background-repeat: no-repeat;
       background-size: contain;
       background-position-y: 200px;
@@ -578,8 +582,90 @@ img.footer-sub-logo {
     }
   }
 
-  #get-started { 
+  #get-started {
     background: $primary;
     color: white;
   }
+}
+
+//START MOBILE VIEW
+
+.pillars-section-2-mobile {
+  width: 100%;
+
+  #pillars-mobile-container {
+    display: inline-block;
+    text-align: center;
+    min-width: 320px;
+
+    .mobile-header-items {
+      position: relative;
+      float: left;
+      color: $mobile-header-color-black;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 18px;
+      font-family: "Gotham-Rounded";
+      font-weight: 600;
+    }
+
+    .selected{
+      padding-bottom: 6px !important;
+      border-bottom: 4px solid #38bbff
+    }
+  }
+}
+
+#moible-pillar-content-zone {
+  padding: 6px 5%;
+  line-height: 1.4;
+  font-size: 14px;
+  font-family: "Gotham-Rounded";
+
+  .mobile-content-heading {
+    font-family: "Gotham-Rounded";
+    font-weight: 600;
+  }
+}
+
+.mobile-pillar-bar {
+  width: 100%;
+	height: 4px;
+  margin-top: -9px;
+  margin-bottom: 10px;
+	background-color: $mobile-pillar-b-background;
+  box-shadow: inset 0px 1px 1px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 767px) {
+   .pillars-section-2,
+   .electrode-core,
+   .electrode-tools,
+   .electrode-modules,
+   #second-nav,
+   #electrode-modules {
+     display: none;
+   }
+
+   #snippet-bubble {
+     height: 300px;
+     text-align: center;
+
+     .snippet-bubble-text {
+       font-size: 14px;
+       text-align: center;
+     }
+   }
+
+   #code-snippet {
+     font-size: 12px;
+     width: 90%;
+   }
+}
+
+@media (min-width: 768px) {
+   .pillars-section-2-mobile,
+   #moible-pillar-content-zone {
+     display: none;
+   }
 }
