@@ -7,6 +7,11 @@
 
 // BEGIN HEADER STYLES
 $light-trans-grey: rgba(203, 203, 203, 0.32);
+$small-devices: 768px;
+$medium-devices: 992px;
+$large-devices: 1200px;
+$mobile-header-color-black: #333333;
+$mobile-pillar-b-background: #efefef;
 
 .header-logo {
   height: 100%;
@@ -505,5 +510,90 @@ img.footer-sub-logo {
 @media (min-width: 769px) {
   .container {
     width: 96%;
+  }
+}
+
+#second-nav {
+  background: #fff;
+
+  .second-nav-links {
+    a {
+      color: #333;
+    }
+  }
+
+  #get-started {
+    background: $primary;
+    color: white;
+  }
+}
+
+//START MOBILE VIEW
+ .pillars-section-2-mobile {
+   width: 100%;
+   #pillars-mobile-container {
+     display: inline-block;
+     text-align: center;
+     min-width: 320px;
+     .mobile-header-items {
+       position: relative;
+       float: left;
+       color: $mobile-header-color-black;
+       padding: 10px 15px;
+       cursor: pointer;
+       font-size: 18px;
+       font-family: "Gotham-Rounded";
+       font-weight: 600;
+     }
+     .selected{
+       padding-bottom: 6px !important;
+       border-bottom: 4px solid #38bbff
+     }
+   }
+ }
+#moible-pillar-content-zone {
+  padding: 6px 5%;
+  line-height: 1.4;
+  font-size: 14px;
+  font-family: "Gotham-Rounded";
+  .mobile-content-heading {
+    font-family: "Gotham-Rounded";
+    font-weight: 600;
+  }
+}
+.mobile-pillar-bar {
+  width: 100%;
+  height: 4px;
+  margin-top: -9px;
+  margin-bottom: 10px;
+  background-color: $mobile-pillar-b-background;
+  box-shadow: inset 0px 1px 1px rgba(0,0,0,0.2);
+}
+@media (max-width: 767px) {
+  .pillars-section-2,
+  .electrode-core,
+  .electrode-tools,
+  .electrode-modules,
+  #second-nav,
+  #electrode-modules {
+    display: none;
+  }
+  #snippet-bubble {
+    height: 300px;
+    text-align: center;
+    .snippet-bubble-text {
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+  #code-snippet {
+    font-size: 12px;
+    width: 90%;
+  }
+}
+@media (min-width: 768px) {
+  .pillars-section-2-mobile,
+  #moible-pillar-content-zone {
+    display: none;
   }
 }
