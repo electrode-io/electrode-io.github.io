@@ -5,6 +5,21 @@ $textColorLight: lighten($textColor, 20%);
 $textLogoBlue: #F1BF6D;
 $textLogoOrange: #54a7de;
 
+@font-face {
+  font-family: "Gotham-Rounded";
+  src: url("../fonts/Gotham-Rounded-Light.ttf")
+}
+
+@font-face {
+  font-family: "Gotham-Rounded-Medium";
+  src: url("../fonts/Gotham-Rounded-Medium.ttf")
+}
+
+@font-face {
+  font-family: "Gotham-Rounded-Bold";
+  src: url("../fonts/Gotham-Rounded-Bold.ttf")
+}
+
 html {
   font-family: "Lato", "Helvetica Rounded", Arial, sans-serif;
   color: $textColor;

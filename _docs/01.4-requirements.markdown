@@ -8,20 +8,28 @@ First, let's quickly check your development environment. You will need to have t
 
 ## For Development On Your Local machine
 
-*  Install the latest [NodeJS LTS binary](https://nodejs.org) in your machine.  (at least v4.2 required).
-  * Recommend a tool like [nvm](https://github.com/creationix/nvm#install-script) for managing NodeJS installations.
-*  Recommend installing version 3 of [npm](https://www.npmjs.com/) with `npm install -g npm@3`.
+1.  Install the latest [NodeJS LTS binary] in your machine.  (at least v4.2 required).
+  * Recommend a tool like [nvm] for managing NodeJS installations.
+1.  Install latest [npm]@3 and [Gulp] (v3) with `npm install -g npm gulp`.
   * Note: NodeJS v6.x already comes with npm@3 by default.
-*  Install [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) with `npm install -g gulp`.
-*  The text editor of your choice downloaded with CLI tools installed.
+  * **Electrode Archetype modules require npm@3 to work.**
+1.  The text editor of your choice downloaded with CLI tools installed.
+
+> We write NodeJS code with ES6 features that NodeJS >= 4.2 supports.
+
+> Gulp is a Javascript build tool that lets us automate tasks.
+
+[NodeJS LTS binary]: https://nodejs.org
+[nvm]: https://github.com/creationix/nvm#install-script
+[npm]: https://www.npmjs.com/
+[gulp]: https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
 
 ## For Online Deployments
 
 *  A [Heroku](https://signup.heroku.com/dc) account + [CLI tools](https://devcenter.heroku.com/articles/heroku-command-line).
 *  A [Github](https://github.com/) account.
 
-> We write NodeJS code with ES6 features that NodeJS 4.2 supports.
-
-> Gulp is a Javascript build tool that lets us automate tasks.
 
 Ready? Let's [build](build_component.html).
+
+
