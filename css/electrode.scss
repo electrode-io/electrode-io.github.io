@@ -648,12 +648,15 @@ img.footer-sub-logo {
    }
 
    #snippet-bubble {
-     height: 300px;
+     height: 310px;
+     margin-bottom: 10px;
      text-align: center;
 
      .snippet-bubble-text {
        font-size: 14px;
        text-align: center;
+       margin: 10px;
+       padding: 0;
      }
    }
 
