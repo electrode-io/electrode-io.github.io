@@ -18,15 +18,21 @@ body {
   // background-color: #00294b;
   font-family: "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.container {
+  margin-left:36px;
+  margin-right: 0px;
+}
+
 .electrode-nav-top {
   // background: none;
   background-color: #00294b;
   border: none;
-  padding-top: 1em;
+  padding-top: 1.7em;
   padding-bottom: 1em;
   border-bottom: 1px solid $light-trans-grey;
-  font-weight: 400;
-  font-size: 1.1em;
+  font-weight: 500;
+  font-size: 1.145em;
   letter-spacing: 1px;
   margin-bottom: 0;
 }
@@ -44,14 +50,14 @@ body {
 .social-nav-links {
   li {
     border-radius: 4px;
-    margin-top: -20px;
+    margin-top: -30px;
     padding-top: 20px;
     margin-right: 1em;
 
     a {
       img {
-        width: 1.3em;
-        max-height: 1.3em;
+        width: 24px;
+        height:22px;
       }
     }
   }
@@ -140,7 +146,7 @@ body {
 }
 
 .primary-nav-links li {
-  margin-right: 3em;
+  margin-right: 4em;
 }
 .electrode-brand-top {
   padding: 12px;
@@ -155,6 +161,29 @@ body {
 }
 //END HEADER STYLES
 
+
+//PILLAR STYLES
+.pillar-content {
+  h1 {
+    text-align: center;
+  }
+  p{
+    margin: 20px 0 40px;
+  }
+  a {
+    border-radius: 8px;
+    border: 1px solid #d62470;
+    background-color: #df2375;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25em;
+    text-align: center;
+    color: #ffffff;
+    padding:10px;
+    margin: 48px 144px;
+
+  }
+}
 
 //BEGIN CORE STYLES
 .electrode-core {
@@ -321,12 +350,17 @@ body {
 .container-fluid {
   padding: 0px;
 }
+
+.navbar-brand {
+  margin: 10px 0px;
+}
+
 .footer {
   background-color: #1D1D1D !important;
 
   .footer-text {
     float: left;
-    font-size: 12px;
+    font-size: 14px;
     color: #c4c4c4;
     margin-bottom: 0px;
     padding-bottom: 0px;
@@ -335,7 +369,7 @@ body {
 }
 
 #footer-walmart-logo {
-  width: 40%;
+  width: 55%;
   height: auto;
   margin-left: -15px;
 }
@@ -365,12 +399,12 @@ a.footer-text {
 }
 
 #electrode-footer {
-  padding: 0 0 10px 10px;
+  padding: 30px 0 30px 0;
+  margin: 0;
 }
 
 #footer-nav-center {
   margin-top: 35px;
-  margin-left: -60px;
 }
 
 #footer-nav-right {
@@ -384,7 +418,7 @@ a.footer-text {
 }
 
 .footer-sub-logo {
-  height: 40px;
+  height: 50px;
   width: auto;
 }
 
@@ -433,14 +467,14 @@ a.footer-text {
 }
 
 div.footer-row {
-  margin: 0 -40px 0 120px;
+  margin: 15px -40px 0 15px;
 }
 
 div.footer-docs {
-  padding-top: 15px;
+  padding-top: 20px;
 
   .footer-doc-links {
-    color: #c4c4c4;
+    color: #fff;
     // font-weight: bold;
     font-size: 14px;
     font-family: "Gotham-Rounded";
@@ -466,4 +500,10 @@ div.footer-vertical-line {
 img.footer-sub-logo {
   filter: invert(1);
   margin-top: 5px;
+}
+
+@media (min-width: 769px) {
+  .container {
+    width: 96%;
+  }
 }
