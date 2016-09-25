@@ -676,13 +676,13 @@ img.footer-sub-logo {
 
 .mobile-footer-toggle{
   border-bottom: 1px solid #333333;
-  margin: 5%;
   height: 60px;
   min-width: 320px;
 
   .footer-toggle-items{
     float: left;
-    margin: 10px;
+    margin: 10px 0;
+    margin-left: 5%;
     font-size: 34px;
     cursor: pointer;
   }
@@ -691,8 +691,10 @@ img.footer-sub-logo {
     font-family: "Gotham-Rounded-Bold";
     background: $primary;
     border: none;
+    margin-right: 5%;
     border-radius: 3px;
     height: 34px;
+    width: 42%;
     text-align: center;
     color: white;
     float: right;
