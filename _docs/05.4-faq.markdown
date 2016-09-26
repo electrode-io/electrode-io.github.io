@@ -4,4 +4,7 @@ permalink: docs/faq.html
 toplevel: "Resources"
 ---
 
-Coming Soon!
+### Why is my server throwing error "cannot find module ..." on start up?
+
+Most likely you are using npm@2. Upgrade to npm@3 by running command `npm i -g npm@3` and redo `npm i`.
+
