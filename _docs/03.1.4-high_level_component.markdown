@@ -91,9 +91,10 @@ YourAwesomeComponent.defaultProps = {
   playground then check the boxes on the GuestList to invite our friends to the party!</p>`
 };
 ```
-Last edit! In your `<your-awesome-component>index.js` add the two lines below:
+Last edit! In your `<your-awesome-component>/src/index.js` add the two lines below:
 
 ```javascript
+  export { default as YourAwesomeComponent } from "./src/components/your-awesome-component";
   export { default as RenderFriend } from "./components/render-friend";
   export { default as GuestList } from "./components/guest-list";
 
