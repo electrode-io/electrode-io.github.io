@@ -22,7 +22,7 @@
 </head>
 <body>
   <!-- beginning of header -->
-  <div class="containter-fluid">
+  <div class="containter-fluid" id="top-header">
     <nav class="navbar navbar-static-top electrode-nav-top inverse-colors">
       <div id="electrode-nav" class="container">
         <ul class="nav navbar-nav">
@@ -75,19 +75,20 @@
       </div>
     </nav>
   </div>
+  </div>
 
   <div class="container-fluid night-sky">
     <div class="header-content inverse-colors">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 logo-text">
+        <div class="logo-text">
           <img src="/img/electrode-logo.svg" alt="">
         </div>
       </div>
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 slogan">UNIVERSAL REACT/NODE APPLICATION PLATFORM</div>
+        <div class="slogan">UNIVERSAL REACT/NODE APPLICATION PLATFORM</div>
       </div>
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 header-info">Electrode is a platform for building universal React/Node.js
+        <div class="header-info">Electrode is a platform for building universal React/Node.js
           applications with standardized structure, best practices, and modern technologies baked in. Electrode focuses on
           performance, component reusability, and simple deployment to multiple cloud providers—so you can focus on what
           makes your app unique.
@@ -95,7 +96,8 @@
       </div>
       <a href="/docs/get_started.html">
         <div class="row">
-          <div class="col-md-4 col-md-offset-4 header-button">GET STARTED - DEPLOY IN 5 MINUTES</div>
+          <div class="col-md-5 col-md-offset-1 header-button" id="about-electrode">ABOUT ELECTRODE</div>
+          <div class="col-md-4 col-md-offset-1 header-button">GET STARTED<div id="deploy-in-five"> - DEPLOY IN 5 MINUTES</div></div>
         </div>
       </a>
     </div>
@@ -352,7 +354,7 @@
     <div class="row">
       <div class="col-md-12">
         <h1>electrode core</h1>
-        <h3>Electrode emphasizes convention overconfiguration, following industry best practices for performance, consistency, and reusability.</h3>
+        <h3 id="core-h3">Electrode emphasizes convention overconfiguration, following industry best practices for performance, consistency, and reusability.</h3>
       </div>
     </div>
     <div class="row">
@@ -655,7 +657,7 @@
 
   <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
   <script type="text/javascript">
-    var stickAtHeight = 1805;
+    var stickAtHeight = 2130;
     var toggleTools = 3000;
 
     $(window).bind('scroll', function () {
@@ -664,7 +666,6 @@
         $('#electrode-modules-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link');
         $('#second-nav').addClass('navbar-fixed-top');
       } else {
-        console.log('here')
         $('#electrode-tools-logo-li').removeClass('inactive-inner-link active-inner-link');
         $('#electrode-modules-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
         $('#electrode-core-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link')
