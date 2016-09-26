@@ -661,6 +661,14 @@ img.footer-sub-logo {
     }
   }
 
+  .inner-links-ul {
+    padding-right: 50px;
+  }
+
+  .outer-links-ul {
+    padding-right: 20px;
+  }
+
   .second-nav-links-container {
     float:right;
     padding-right: 3.2%;
@@ -872,6 +880,7 @@ img.footer-sub-logo {
     margin: 0 9px;
     border-right: 1px solid #cccccc;
     border-left: 1px solid #f2f2f2;
+    border-top: 8px solid #ffffff;
 }
 
 .navbar-inverse .divider-vertical {
@@ -890,4 +899,3 @@ img.footer-sub-logo {
     width: 97%;
   }
 }
-
