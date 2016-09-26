@@ -24,6 +24,11 @@ body {
   font-family: "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .container {
   margin-left:36px;
   margin-right: 0px;
@@ -41,17 +46,22 @@ body {
   letter-spacing: 1px;
   margin-bottom: 0;
 }
+
 .inverse-colors {
     color: white;
     a, p, h1, h2, h3, h4 {
       color: white;
     }
 }
+
 .night-sky {
+  padding: auto;
   background-color: #00294b;
-  padding: 0;
-  margin: 0;
+  background-image: url("/img/sky.svg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
+
 .social-nav-links {
   li {
     border-radius: 4px;
@@ -70,8 +80,9 @@ body {
 
 .header-mountains img {
   width: 100%;
-  margin-top: -2em;
+  margin-top: 1em;
   margin-bottom: -2px;
+  background: #00294b;
 }
 .pillars-section {
   background-color: white;
@@ -89,46 +100,59 @@ body {
   margin-top: -16.2em;
   }
 }
+
 .header-content {
   font-family: "Gotham-Rounded";
-  background-image: url("/img/sky.svg");
   background-position: center 27px;
   background-size: 100%;
   background-repeat: no-repeat;
+  width: 68%;
+  margin: 0 auto;
+  text-align: center;
 
+  #deploy-in-five {
+    display: none;
+  }
+
+  img {
+    width: 100%;
+  }
 
   .logo-text {
     font-size: 10.5em;
-    text-align: center;
     color: white;
     letter-spacing: 23px;
     font-weight: 200;
     margin-top: .1em;
     padding: 0;
+    padding-right: 5%;
+    padding-left: 5%;
     padding-bottom: .2em;
-    img {
-      width: 100%;
-    }
   }
   .slogan {
     font-size: 1.6em;
     font-weight: 900;
     letter-spacing: 5px;
     border-top: 1px solid $light-trans-grey;
-    border-bottom: 1px solid $light-trans-grey;
     padding-top: .5em;
     padding-bottom: .5em;
     margin-top: -.6em;
-    text-align: center;
   }
   .header-info {
     font-size: 1.2em;
     font-weight: 600;
     margin-top: 1.5em;
     padding: 0;
-    text-align: justify;
+    border-bottom: 1px solid $light-trans-grey;
   }
+
+  #about-electrode {
+    background: transparent;
+    border: 1px solid white;
+  }
+
   .header-button {
+    font-family: "Gotham-Rounded-Medium";
     margin-top: 2em;
     font-weight: 600;
     font-size: 1.3em;
@@ -139,6 +163,13 @@ body {
     border-radius: 3px;
   }
 }
+
+@media (max-width: 1279px){
+  .header-info {
+    padding: 0%;
+  }
+}
+
 .social-nav-links li:nth-child(2) {
   margin-left: .5em;
   background-color: #eb3d4e;
@@ -153,6 +184,7 @@ body {
 .navbar-right~.navbar-right {
   margin-right: 6%;
 }
+
 .primary-nav-links {
   margin-top: 1em;
 
@@ -170,6 +202,7 @@ body {
 .electrode-brand-top {
   padding: 12px;
 }
+
 .vert-divider {
   position: absolute;
   width: 0px;
@@ -180,15 +213,16 @@ body {
 }
 //END HEADER STYLES
 
-
 //PILLAR STYLES
 .pillar-content {
   h1 {
     text-align: center;
   }
+
   p{
     margin: 20px 0 40px;
   }
+
   a {
     border-radius: 8px;
     border: 1px solid #d62470;
@@ -200,21 +234,36 @@ body {
     color: #ffffff;
     padding:10px;
     margin-left: 30%;
-
   }
 }
 
 //BEGIN CORE STYLES
+
+@media only screen and (max-width: 1656px){
+  .electrode-core {
+     #core-h3 {
+       padding: 0% 10% 0% 10% !important;
+      }
+
+    #electrode-core-text {
+      div {
+        padding-bottom: 3%;
+      }
+    }
+  }
+}
+
 .electrode-core {
   text-align: center;
   font-family: "Gotham-Rounded";
+  padding: 50px 0px 50px 0px;
 
   h1 {
     font-family: "Gotham-Rounded-Medium";
   }
 
-  h3 {
-    padding: 0% 10% 0% 10%;
+  #core-h3 {
+    padding: 0% 25% 0% 25%;
   }
 
   div {
@@ -642,6 +691,14 @@ img.footer-sub-logo {
     }
   }
 
+  .inner-links-ul {
+    padding-right: 50px;
+  }
+
+  .outer-links-ul {
+    padding-right: 20px;
+  }
+
   .second-nav-links-container {
     float:right;
     padding-right: 3.2%;
@@ -674,7 +731,21 @@ img.footer-sub-logo {
 
     img {
       width: 75%;
+      display: block;
+      margin: auto;
     }
+  }
+
+  .active-inner-link {
+    border-top: solid 8px #333333;
+    img {
+      margin-top: -7px;
+    }
+  }
+
+  .inactive-inner-link {
+    border-top: solid 1px #fff;
+
   }
 }
 
@@ -741,6 +812,7 @@ img.footer-sub-logo {
   border-bottom: 1px solid #333;
   height: 62px;
   min-width: 320px;
+  margin-top: 30px;
 
   .footer-toggle-items{
     float: left;
@@ -765,7 +837,7 @@ img.footer-sub-logo {
   }
 }
 
-.mobile-footer{
+.mobile-footer {
   font-family: "Gotham-Rounded";
   font-size: 9px;
 	line-height: 1.5;
@@ -781,16 +853,13 @@ img.footer-sub-logo {
 }
 
 .mobile-module-item {
-  padding: 20px 0;
+  padding: 20px ;
   border-bottom: 1px solid #cccccc;
 
   .mobile-module-item-text {
-    width: 72%;
+    width: 80%;
     display: inline-block;
-  }
-
-  .mobile-module-item-icon {
-    float: right;
+    padding: 20px 0;
   }
 }
 
@@ -801,8 +870,9 @@ img.footer-sub-logo {
    .electrode-modules,
    #second-nav,
    #electrode-modules,
-   #electrode-footer {
-     display: none;
+   #electrode-footer,
+   #social-header-color-links {
+    display: none;
    }
 
    #snippet-bubble {
@@ -811,10 +881,10 @@ img.footer-sub-logo {
      text-align: center;
 
      .snippet-bubble-text {
-       font-size: 14px;
-       text-align: center;
-       margin: 10px;
-       padding: 0;
+      font-size: 14px;
+      text-align: center;
+      margin: 10px;
+      padding: 0;
      }
    }
 
@@ -822,6 +892,34 @@ img.footer-sub-logo {
      font-size: 12px;
      width: 90%;
    }
+
+   .header-info {
+     display: none;
+   }
+
+   .slogan {
+     border-bottom: 1px solid $light-trans-grey;
+   }
+
+   .header-button {
+     #deploy-in-five {
+       display: inline;
+     }
+   }
+
+   #about-electrode {
+     display: none;
+   }
+
+   .header-mountains {
+     img {
+       padding-top: 75px;
+     }
+   }
+}
+
+#mobile-pillar-content-zone {
+  margin: 0 5%;
 }
 
 @media (min-width: 768px) {
@@ -829,16 +927,29 @@ img.footer-sub-logo {
    .mobile-footer-toggle,
    .mobile-footer,
    .mobile-pillar-bar,
-   #moible-pillar-content-zone {
+
+   .social-nav-links {
+     padding-right: 5px;
+   }
+
+   li.mobile-header-links,
+   #mobile-pillar-content-zone {
      display: none;
    }
+
+  #electrode-core-text {
+    div {
+      padding-bottom: 3%;
+    }
+  }
 }
 
 .navbar .divider-vertical {
-    height: 120px;
+    height: 145px;
     margin: 0 9px;
     border-right: 1px solid #cccccc;
     border-left: 1px solid #f2f2f2;
+    border-top: 8px solid #ffffff;
 }
 
 .navbar-inverse .divider-vertical {
@@ -847,9 +958,67 @@ img.footer-sub-logo {
 }
 
 @media (max-width: 767px) {
-    .navbar-collapse .nav > .divider-vertical {
-        display: none;
-     }
+
+  .navbar-collapse .nav > .divider-vertical {
+      display: none;
+   }
+
+   img.header-logo {
+     height: 120%;
+     margin-top: 0;
+   }
+}
+
+@media (max-width: 480px) {
+
+  img.header-logo {
+    height: 90%;
+    margin-top: -30px;
+    margin-left: -20px;
+  }
+
+  img.mob-menu {
+    height: 60px;
+    width: auto;
+    border-radius: 4px;
+    margin-top: -90px;
+    margin: -90px -10px 0 0;
+  }
+}
+
+@media (max-width: 380px) {
+
+  img.header-logo {
+    height: 80%;
+    margin-top: -30px;
+    margin-left: -20px;
+  }
+
+  img.mob-menu {
+    height: 50px;
+    width: auto;
+    border-radius: 4px;
+    margin-top: -90px;
+    margin: -90px -10px 0 0;
+  }
+}
+
+.mob-menu {
+  height: 65px;
+  width: auto;
+  border-radius: 4px;
+  margin-top: -70px;
+  margin-right: 1em;
+}
+
+.mobile-social-links {
+  height: 20px;
+  width: auto;
+}
+
+.mobile-git {
+  height: 30px;
+  width: auto;
 }
 
 @media (min-width: 769px) {
@@ -857,4 +1026,3 @@ img.footer-sub-logo {
     width: 97%;
   }
 }
-
