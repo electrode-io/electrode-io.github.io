@@ -46,17 +46,22 @@ html, body {
   letter-spacing: 1px;
   margin-bottom: 0;
 }
+
 .inverse-colors {
     color: white;
     a, p, h1, h2, h3, h4 {
       color: white;
     }
 }
+
 .night-sky {
+  padding: auto;
   background-color: #00294b;
-  padding: 0;
-  margin: 0;
+  background-image: url("/img/sky.svg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
+
 .social-nav-links {
   li {
     border-radius: 4px;
@@ -75,8 +80,9 @@ html, body {
 
 .header-mountains img {
   width: 100%;
-  margin-top: -2em;
+  margin-top: 1em;
   margin-bottom: -2px;
+  background: #00294b;
 }
 .pillars-section {
   background-color: white;
@@ -94,16 +100,26 @@ html, body {
   margin-top: -16.2em;
   }
 }
+
 .header-content {
   font-family: "Gotham-Rounded";
-  background-image: url("/img/sky.svg");
   background-position: center 27px;
   background-size: 100%;
   background-repeat: no-repeat;
+  width: 68%;
+  margin: 0 auto;
+  text-align: center;
+
+  #deploy-in-five {
+    display: none;
+  }
+
+  img {
+    width: 100%;
+  }
 
   .logo-text {
     font-size: 10.5em;
-    text-align: center;
     color: white;
     letter-spacing: 23px;
     font-weight: 200;
@@ -112,29 +128,31 @@ html, body {
     padding-right: 5%;
     padding-left: 5%;
     padding-bottom: .2em;
-    img {
-      width: 100%;
-    }
   }
   .slogan {
     font-size: 1.6em;
     font-weight: 900;
     letter-spacing: 5px;
     border-top: 1px solid $light-trans-grey;
-    border-bottom: 1px solid $light-trans-grey;
     padding-top: .5em;
     padding-bottom: .5em;
     margin-top: -.6em;
-    text-align: center;
   }
   .header-info {
     font-size: 1.2em;
     font-weight: 600;
     margin-top: 1.5em;
     padding: 0;
-    text-align: justify;
+    border-bottom: 1px solid $light-trans-grey;
   }
+
+  #about-electrode {
+    background: transparent;
+    border: 1px solid white;
+  }
+
   .header-button {
+    font-family: "Gotham-Rounded-Medium";
     margin-top: 2em;
     font-weight: 600;
     font-size: 1.3em;
@@ -145,6 +163,13 @@ html, body {
     border-radius: 3px;
   }
 }
+
+@media (max-width: 1279px){
+  .header-info {
+    padding: 0%;
+  }
+}
+
 .social-nav-links li:nth-child(2) {
   margin-left: .5em;
   background-color: #eb3d4e;
@@ -159,6 +184,7 @@ html, body {
 .navbar-right~.navbar-right {
   margin-right: 6%;
 }
+
 .primary-nav-links {
   margin-top: 1em;
 
@@ -176,6 +202,7 @@ html, body {
 .electrode-brand-top {
   padding: 12px;
 }
+
 .vert-divider {
   position: absolute;
   width: 0px;
@@ -186,15 +213,16 @@ html, body {
 }
 //END HEADER STYLES
 
-
 //PILLAR STYLES
 .pillar-content {
   h1 {
     text-align: center;
   }
+
   p{
     margin: 20px 0 40px;
   }
+
   a {
     border-radius: 8px;
     border: 1px solid #d62470;
@@ -206,14 +234,12 @@ html, body {
     color: #ffffff;
     padding:10px;
     margin-left: 30%;
-
   }
 }
 
 //BEGIN CORE STYLES
 
 @media only screen and (max-width: 1656px){
-
   .electrode-core {
      #core-h3 {
        padding: 0% 10% 0% 10% !important;
@@ -490,27 +516,30 @@ html, body {
   padding: 0px;
 }
 
-.navbar-brand {
-  margin: 10px 0px;
+#footer-nav-left {
+  .navbar-brand {
+    margin-right: 3%;
+    margin-bottom: 11px;
+    padding: 0;
+    height: auto;
+  }
 }
 
 .footer {
   background-color: #1D1D1D !important;
-
   .footer-text {
     float: left;
     font-size: 14px;
-    color: #c4c4c4;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
+    color: #fff;
+    margin-bottom: 0;
+    padding-bottom: 0;
     font-family: "Gotham-Rounded";
   }
 }
 
 #footer-walmart-logo {
-  width: 55%;
+  width: 48%;
   height: auto;
-  margin-left: -15px;
 }
 
 .footer-sub-logo {
@@ -538,17 +567,12 @@ a.footer-text {
 }
 
 #electrode-footer {
-  padding: 30px 0 30px 0;
+  padding: 35px 0 35px 20px;
   margin: 0;
 }
 
 #footer-nav-center {
-  margin-top: 35px;
-}
-
-#footer-nav-right {
-  margin-top: 30px;
-  background-color: #1d1d1d !important;
+  float: right;
 }
 
 .social-logo {
@@ -566,47 +590,33 @@ a.footer-text {
 }
 
 .pocket-logo {
-  background-color: #eb3d4e;
-  border-radius: 0 0 0.5em 0.5em;
-  height: 60px;
-  width: 35px;
-  margin-right: 70px;
   img {
     width: 1.3em;
-    margin-top: 25px;
-    margin-left: -5px;
   }
 }
 
 .twitter-logo {
-  background-color: #1686c0;
-  border-radius: 0 0 0.5em 0.5em;
-  height: 60px;
-  width: 35px;
-  margin-right: 20px;
   img {
     width: 1.3em;
-    margin-top: 25px;
-    margin-left: -5px;
+
   }
 }
 
 .github-logo {
-  background-color: #3a3a3a;
-  border-radius: 0 0 0.5em 0.5em;
-  height:60px;
-  width: 35px;
   img {
     width: 1.3em;
-    margin-top: 25px;
     background-color: white;
     color: #3a3a3a;
-    margin-left: -5px;
   }
 }
 
 div.footer-row {
-  margin: 15px -40px 0 15px;
+  margin: 0px
+}
+
+.footer-row-center {
+  margin-top: 24px;
+  float: right;
 }
 
 div.footer-docs {
@@ -624,9 +634,6 @@ div.footer-docs {
   }
 }
 
-#footer-twitter {
-  margin-left: -50px;
-}
 
 div.footer-vertical-line {
   margin-top: -20px;
@@ -865,7 +872,7 @@ img.footer-sub-logo {
    #electrode-modules,
    #electrode-footer,
    #social-header-color-links {
-     display: none;
+    display: none;
    }
 
    #snippet-bubble {
@@ -874,10 +881,10 @@ img.footer-sub-logo {
      text-align: center;
 
      .snippet-bubble-text {
-       font-size: 14px;
-       text-align: center;
-       margin: 10px;
-       padding: 0;
+      font-size: 14px;
+      text-align: center;
+      margin: 10px;
+      padding: 0;
      }
    }
 
@@ -885,6 +892,34 @@ img.footer-sub-logo {
      font-size: 12px;
      width: 90%;
    }
+
+   .header-info {
+     display: none;
+   }
+
+   .slogan {
+     border-bottom: 1px solid $light-trans-grey;
+   }
+
+   .header-button {
+     #deploy-in-five {
+       display: inline;
+     }
+   }
+
+   #about-electrode {
+     display: none;
+   }
+
+   .header-mountains {
+     img {
+       padding-top: 75px;
+     }
+   }
+}
+
+#mobile-pillar-content-zone {
+  margin: 0 5%;
 }
 
 #mobile-pillar-content-zone {
@@ -896,13 +931,14 @@ img.footer-sub-logo {
    .mobile-footer-toggle,
    .mobile-footer,
    .mobile-pillar-bar,
-
    li.mobile-header-links,
    #mobile-pillar-content-zone {
      display: none;
    }
 
-
+   .social-nav-links {
+     padding-right: 5px;
+   }
 
   #electrode-core-text {
     div {
@@ -922,6 +958,99 @@ img.footer-sub-logo {
 .navbar-inverse .divider-vertical {
     border-right-color: #222222;
     border-left-color: #111111;
+}
+
+#mobile-tools-content {
+  text-align: center;
+
+  .icon-modules {
+    filter: grayscale(100%);
+    height: 100px;
+    width: 100px;
+  }
+
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    z-index: 10;
+  }
+
+  /* Declare heights because of positioning of img element */
+  .carousel .item {
+    height: 600px;
+    background-image: url("https://host-logos.firebaseapp.com/dotio/tools_landscape_@1x.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: 350px;
+
+    .tool-title {
+      margin-top: 40px;
+      border-top: 1px #ECECEC solid;
+      margin-bottom: 80px;
+      position: relative;
+      text-align: left;
+
+      .github-logo {
+        float: right;
+
+        img {
+          filter: invert(100%);
+        }
+      }
+    }
+
+    .image {
+      width: 90%;
+      height: 90%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .image-electrode-explorer {
+      background-image: url("https://host-logos.firebaseapp.com/dotio/explorer_laptop_graphic_@1x.png");
+    }
+
+    .image-electrode-electrify {
+      background-image: url("https://host-logos.firebaseapp.com/dotio/bundle_laptop_graphic_@1x.png");
+    }
+  }
+
+  .carousel-control {
+    span {
+      position: absolute;
+      top: 25%;
+      background-color: #cccccc;
+      background-image: url("https://host-logos.firebaseapp.com/dotio/arrow_@1x.png");
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      width: 30px;
+      height: 30px;
+      border-radius: 30px;
+    }
+
+    span:hover {
+      background-color: #df2375;
+    }
+
+    .button-previous {
+      left: 40px;
+    }
+
+    .button-next {
+      right: 40px;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+  }
+
+  .carousel-control.left, .carousel-control.right {
+    background-image: none
+  }
 }
 
 @media (max-width: 767px) {
