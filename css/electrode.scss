@@ -788,6 +788,20 @@ img.footer-sub-logo {
   margin-top: 10px;
 }
 
+.mobile-module-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #cccccc;
+
+  .mobile-module-item-text {
+    width: 72%;
+    display: inline-block;
+  }
+
+  .mobile-module-item-icon {
+    float: right;
+  }
+}
+
 @media (max-width: 767px) {
    .pillars-section-2,
    .electrode-core,
@@ -800,7 +814,7 @@ img.footer-sub-logo {
    }
 
    #snippet-bubble {
-     height: 310px;
+     height: 315px;
      margin-bottom: 10px;
      text-align: center;
 
@@ -822,6 +836,7 @@ img.footer-sub-logo {
    .pillars-section-2-mobile,
    .mobile-footer-toggle,
    .mobile-footer,
+   .mobile-pillar-bar,
    #moible-pillar-content-zone {
      display: none;
    }
