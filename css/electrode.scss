@@ -24,6 +24,11 @@ body {
   font-family: "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .container {
   margin-left:36px;
   margin-right: 0px;
@@ -95,7 +100,7 @@ body {
   background-position: center 27px;
   background-size: 100%;
   background-repeat: no-repeat;
-
+  margin: 0 5%;
 
   .logo-text {
     font-size: 10.5em;
