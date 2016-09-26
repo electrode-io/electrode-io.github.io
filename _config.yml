@@ -82,3 +82,5 @@ collections:
 
 # display future blog posts
 future: true
+
+google_analytics: UA-84301828-1
