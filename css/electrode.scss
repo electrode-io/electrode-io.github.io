@@ -133,32 +133,53 @@ html, body {
     }
   }
   .slogan {
-    font-size: 1.6em;
-    font-weight: 900;
-    letter-spacing: 5px;
-    border-top: 1px solid $light-trans-grey;
-    border-bottom: 1px solid $light-trans-grey;
-    padding-top: .5em;
+    font-size: 1.8em;
+    font-weight: 200;
+    letter-spacing: 0.3vw;
+    border-top: 1px solid rgba(203,203,203,0.32);
+    padding-top: 1.1em;
     padding-bottom: .5em;
     margin-top: -.6em;
     text-align: center;
+    font-family: "Gotham-Rounded-Medium";
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .header-links {
+    margin-bottom: 2.5em;
   }
   .header-info {
     font-size: 1.2em;
     font-weight: 600;
-    margin-top: 1.5em;
-    padding: 0;
-    text-align: justify;
+    margin-top: .9em;
+    /* padding: 0; */
+    padding-left: 0;
+    padding-bottom: 1.5em;
+    padding-right: 0;
+    text-align: center;
+    border-bottom: 1px solid $light-trans-grey;
   }
   .header-button {
     margin-top: 2em;
-    font-weight: 600;
-    font-size: 1.3em;
-    background-color: #df2375;
-    padding-top: .6em;
-    padding-bottom: .6em;
+    font-weight: 500;
+    font-family: "Gotham-Rounded-Medium";
+    font-size: 1.9em;
+    padding-top: .5em;
+    padding-bottom: .4em;
     text-align: center;
     border-radius: 3px;
+    width: 90%;
+    @media(max-width: 902px) {
+      font-size: 1.4em;
+    }
+  }
+  .get-started {
+    background-color: #df2375;
+    border: 3.5px solid #df2375;
+  }
+  .about-electrode {
+    background-color: rgba(255, 255, 255, 0);
+    border: 3.5px solid white;
   }
 }
 .social-nav-links li:nth-child(2) {
@@ -211,6 +232,9 @@ html, body {
   p{
     margin: 20px 0 40px;
   }
+}
+
+.pillar-links {
   a {
     border-radius: 8px;
     border: 1px solid #d62470;
@@ -222,7 +246,6 @@ html, body {
     color: #ffffff;
     padding:10px;
     margin-left: 30%;
-
   }
 }
 
