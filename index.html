@@ -123,60 +123,79 @@
     </div>
 
     <div id="mobile-modules-content">
-      <div class="mobile-module-item">
-        <div class="mobile-module-item-text">
-          SSR Profiling & Caching This module can help you improve your React server-side rendering performance by up to 70% by caching your components' render
-        </div>
+      <table>
 
-        <div class="mobile-module-item-icon">
-          <img src="/img/icn-ssr.svg" alt="">
-        </div>
-      </div>
-      <div class="mobile-module-item">
-        <div class="mobile-module-item-text">
-          Above-the-Fold Rendering
-          Instead of side rendering the whole page on the server, this react component enables rendering of *only* the components your users see on the screen without scrolling, for improved performance.
-        </div>
-        <div class="mobile-module-item-icon">
-          <img src="/img/icn-atf.svg" alt="">
-        </div>
-      </div>
-      <div class="mobile-module-item">
-        <div class="mobile-module-item-text">
-          Redux Router Engine
-          Do you need data from a service to render your component server-side? This module fetches the data asynchronously and passes it to React to render your components. Requires Redux.
-        </div>
-        <div class="mobile-module-item-icon">
-          <img src="/img/icn-redux.svg" alt="">
-        </div>
-      </div>
-      <div class="mobile-module-item">
-        <div class="mobile-module-item-text">
-          Confippet
-          Lets you define, extend, and merge configurations for different environments (such as QA, prod, and staging) that get initialized during start up _or_ at runtime.
-        </div>
-        <div class="mobile-module-item-icon">
-          <img src="/img/icn-confippet.svg" alt="">
-        </div>
-      </div>
-      <div class="mobile-module-item">
-        <div class="mobile-module-item-text">
-          Stateless CSRF Validation
-          Validate HTTP requests without a session--for Express and Hapi.
-        </div>
-        <div class="mobile-module-item-icon">
-          <img src="/img/icn-csrf.svg" alt="">
-        </div>
-      </div>
-      <div class="mobile-module-item">
-        <div class="mobile-module-item-text">
-          More Modules Coming Soon!
-          New module release announcements will be Twitted on @electrode_io
-        </div>
-        <div class="mobile-module-item-icon">
-          <img src="/img/icn-more.svg" alt="">
-        </div>
-      </div>
+        <tr class="mobile-module-item">
+          <td class="mobile-module-item-text">
+              <b>SSR Profiling & Caching</b>
+              <br>This module can help you improve your React server-side rendering performance by up to 70% by caching your components' render</br>
+          </td>
+          <td>
+            <a href="/docs/server_side_render_cache.html">
+              <img src="/img/icn-ssr.svg" alt="">
+            </a>
+          </td>
+        </tr>
+
+        <tr class="mobile-module-item">
+          <td class="mobile-module-item-text">
+            <b>Above-the-Fold Rendering</b>
+            <br>Instead of side rendering the whole page on the server, this react component enables rendering of *only* the components your users see on the screen without scrolling, for improved performance.</br>
+          </td>
+          <td>
+            <a href="/docs/above_fold_rendering.html">
+              <img src="/img/icn-atf.svg" alt="">
+            </a>
+          </td>
+        </tr>
+
+        <tr class="mobile-module-item">
+          <td class="mobile-module-item-text">
+            <b>Redux Router Engine</b>
+            <br>Do you need data from a service to render your component server-side? This module fetches the data asynchronously and passes it to React to render your components. Requires Redux.</br>
+          </td>
+          <td>
+            <a href="/docs/redux_router_engine.html">
+              <img src="/img/icn-redux.svg" alt="">
+            </a>
+          </td>
+        </tr>
+
+        <tr class="mobile-module-item">
+          <td class="mobile-module-item-text">
+            <b>Confippet</b>
+            <br>Lets you define, extend, and merge configurations for different environments (such as QA, prod, and staging) that get initialized during start up or at runtime.</br>
+          </td>
+          <td>
+            <a href="/docs/confippet.html">
+              <img src="/img/icn-confippet.svg" alt=""></td>
+            </a>
+        </tr>
+
+        <tr class="mobile-module-item">
+          <td class="mobile-module-item-text">
+            <b>Stateless CSRF Validation</b>
+            <br>Validate HTTP requests without a session--for Express and Hapi.</br>
+          </td>
+          <td>
+            <a href="/docs/stateless_csrf_validation.html">
+              <img src="/img/icn-csrf.svg" alt=""></td>
+            </a>
+        </tr>
+
+        <tr class="mobile-module-item">
+          <td class="mobile-module-item-text">
+            <b>More Modules Coming Soon!</b>
+            <br>New module release announcements will be Twitted on @electrode_io</br>
+          </td>
+          <td>
+            <a href="/docs/stand_alone_modules.html">
+              <img src="/img/icn-more.svg" alt="">
+            </a>
+          </td>
+        </tr>
+
+      </table>
     </div>
 
     <div id="mobile-tools-content">mobile-tools-content</div>
@@ -186,7 +205,9 @@
     <div id="mobile-core-footer" class="elc-icon-icn-core footer-toggle-items" onClick="togglePillars('core')" ></div>
     <div id="mobile-modules-footer" class="elc-icon-icn-modules footer-toggle-items" onClick="togglePillars('modules')"></div>
     <div id="mobile-tools-footer" class="elc-icon-icn-tools footer-toggle-items" onClick="togglePillars('tools')"></div>
-    <button class="mobile-footer-getStarted-btn">GET STARTED</button>
+    <a href="/docs/get_started.html">
+      <button class="mobile-footer-getStarted-btn">GET STARTED</button>
+    </a>
   </div>
 
   <div class="mobile-footer">
