@@ -87,13 +87,31 @@ html, body {
 //   background-color: white;
 // }
 
-.pillar-icon {
-  text-align: center;
-  img {
-    width: 75%;
-  margin-top: -16.2em;
+
+.pillars-section-2 {
+
+  .pillar-icon {
+    text-align: center;
+    img {
+      width: 75%;
+      margin-top: -17vw;
+    }
+  }
+
+  .pillar-content {
+    margin-top: 2.5em;
+    h1 {
+      font-family: "Gotham-Rounded-Medium";
+      font-weight: 300;
+    }
+    p {
+      font-family: "Gotham-Rounded";
+      font-weight: 600;
+      font-size: 1.1em;
+    }
   }
 }
+
 .header-content {
   font-family: "Gotham-Rounded";
   background-image: url("/img/sky.svg");
@@ -212,6 +230,7 @@ html, body {
 .electrode-core {
   text-align: center;
   font-family: "Gotham-Rounded";
+  margin-top: 4em;
 
   h1 {
     font-family: "Gotham-Rounded-Medium";
