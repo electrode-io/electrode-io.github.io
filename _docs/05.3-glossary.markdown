@@ -26,7 +26,7 @@ request.
 * **Hashing** - is the transformation of a string of characters into a usually 
 shorter fixed-length value or key that represents the original string. 
 
-* **Linting** - is the process of running a program that will analyse code for 
+* **Linting** - is the process of running a program that will analyze code for 
 potential errors.
 
 * **Local scope** - is a CSS Modules feature that keeps classes local to the 
