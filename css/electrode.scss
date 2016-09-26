@@ -682,11 +682,21 @@ img.footer-sub-logo {
 
     img {
       width: 75%;
+      display: block;
+      margin: auto;
     }
   }
 
-  .active-section-link {
+  .active-inner-link {
     border-top: solid 5px #333333;
+    img {
+      margin-top: -4px;
+    }
+  }
+
+  .inactive-inner-link {
+    border-top: solid 1px #fff;
+
   }
 }
 

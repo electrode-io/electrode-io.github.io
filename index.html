@@ -125,7 +125,7 @@
     <div id="mobile-modules-content">
       <div class="mobile-module-item">
         <div class="mobile-module-item-text">
-          SSR Profiling & Caching This module can help you improve your React server-side rendering performance by up to 70% by caching your components' render
+          SSR Profiling &amp; Caching This module can help you improve your React server-side rendering performance by up to 70% by caching your components' render
         </div>
 
         <div class="mobile-module-item-icon">
@@ -323,21 +323,21 @@
         <div class="col-md-7">
           <div class="second-nav-links-container">
             <ul class="nav navbar-nav">
-              <li class="second-nav-inner-links second-nav-top-pad">
+              <li class="second-nav-inner-links second-nav-top-pad active-inner-link" id="electrode-core-logo-li">
                 <div class="second-nav-top-pad">
                   <a href= "#electrode-core-logo">
                     <img src="https://host-logos.firebaseapp.com/dotio/core_tab_icon_@1x.png"/>
                   </a>
                 </div>
               </li>
-              <li class="second-nav-inner-links">
+              <li class="second-nav-inner-links inactive-inner-link" id="electrode-modules-logo-li">
                 <div class="second-nav-top-pad">
                     <a href="#electrode-modules">
                       <img src="https://host-logos.firebaseapp.com/dotio/modules_tab_icon_@1x.png"/>
                     </a>
                   </div>
               </li>
-              <li class="second-nav-inner-links second-nav-top-pad">
+              <li class="second-nav-inner-links second-nav-top-pad inactive-inner-link" id="electrode-tools-logo-li">
                 <div class="second-nav-top-pad">
                   <a href="https://github.com/electrode-io">
                     <img src="https://host-logos.firebaseapp.com/dotio/tools_tab_icon_@1x.png"/>
@@ -557,13 +557,30 @@
 
   <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
   <script type="text/javascript">
-    var num = 1805;
+    var stickAtHeight = 1805;
+    var toggleTools = 3000;
 
     $(window).bind('scroll', function () {
-      if ($(window).scrollTop() > num) {
+      if ($(window).scrollTop() > stickAtHeight) {
+        $('#electrode-core-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
+        $('#electrode-modules-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link');
         $('#second-nav').addClass('navbar-fixed-top');
       } else {
+        console.log('here')
+        $('#electrode-tools-logo-li').removeClass('inactive-inner-link active-inner-link');
+        $('#electrode-modules-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
+        $('#electrode-core-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link')
         $('#second-nav').removeClass('navbar-fixed-top');
+      }
+    });
+
+    $(window).bind('scroll', function () {
+      if ($(window).scrollTop() > toggleTools) {
+        $('#electrode-modules-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
+        $('#electrode-tools-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link');
+      } else {
+        $('#electrode-tools-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
+        $('#electrode-modules-logo-li').addClass('active-inner-link');
       }
     });
   </script>
