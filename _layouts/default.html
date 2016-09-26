@@ -24,6 +24,12 @@
   <script src="//use.typekit.net/vqa1hcx.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
 
+  {% if jekyll.environment == "production" %}
+    <!-- Add GA for production env -->
+    {% include analytics.html %}
+  {% endif %}
+
+
   <!--[if lte IE 8]>
   <script src="{{ site.baseurl }}/js/html5shiv.min.js"></script>
   <script src="{{ site.baseurl }}/js/es5-shim.min.js"></script>
