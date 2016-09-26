@@ -625,6 +625,16 @@ img.footer-sub-logo {
   }
 }
 
+// Global helper classes
+
+.vertical-align-this {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 //START MOBILE VIEW
 
 .pillars-section-2-mobile {
@@ -667,45 +677,91 @@ img.footer-sub-logo {
 
 .mobile-pillar-bar {
   width: 100%;
-  height: 4px;
+	height: 4px;
   margin-top: -9px;
   margin-bottom: 10px;
-  background-color: $mobile-pillar-b-background;
+	background-color: $mobile-pillar-b-background;
   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.2);
 }
 
-@media (max-width: 767px) {
-  .pillars-section-2,
-  .electrode-core,
-  .electrode-tools,
-  .electrode-modules,
-  #second-nav,
-  #electrode-modules {
-    display: none;
+.mobile-footer-toggle{
+  border-bottom: 1px solid #333;
+  height: 62px;
+  min-width: 320px;
+
+  .footer-toggle-items{
+    float: left;
+    margin: 10px 0;
+    margin-left: 5%;
+    font-size: 34px;
+    cursor: pointer;
   }
 
-  #snippet-bubble {
-    height: 310px;
-    margin-bottom: 10px;
+  .mobile-footer-getStarted-btn {
+    font-family: "Gotham-Rounded-Bold";
+    background: $primary;
+    border: none;
+    margin-right: 5%;
+    border-radius: 3px;
+    height: 34px;
+    width: 42%;
     text-align: center;
-
-    .snippet-bubble-text {
-      font-size: 14px;
-      text-align: center;
-      margin: 10px;
-      padding: 0;
-    }
-  }
-
-  #code-snippet {
-    font-size: 12px;
-    width: 90%;
+    color: white;
+    float: right;
+    margin-top: 12px;
   }
 }
 
+.mobile-footer{
+  font-family: "Gotham-Rounded";
+  font-size: 9px;
+	line-height: 1.5;
+	text-align: center;
+  background-color: #00294b;
+	color: #ffffff;
+  height: 50px;
+  min-width: 320px;
+  position: absolute;
+  width: 100%;
+  padding: 0 5%;
+  margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+   .pillars-section-2,
+   .electrode-core,
+   .electrode-tools,
+   .electrode-modules,
+   #second-nav,
+   #electrode-modules,
+   #electrode-footer {
+     display: none;
+   }
+
+   #snippet-bubble {
+     height: 310px;
+     margin-bottom: 10px;
+     text-align: center;
+
+     .snippet-bubble-text {
+       font-size: 14px;
+       text-align: center;
+       margin: 10px;
+       padding: 0;
+     }
+   }
+
+   #code-snippet {
+     font-size: 12px;
+     width: 90%;
+   }
+}
+
 @media (min-width: 768px) {
-  .pillars-section-2-mobile,
-  #moible-pillar-content-zone {
-    display: none;
-  }
+   .pillars-section-2-mobile,
+   .mobile-footer-toggle,
+   .mobile-footer,
+   #moible-pillar-content-zone {
+     display: none;
+   }
 }

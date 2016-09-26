@@ -1,19 +1,21 @@
-var mobilePillarContainer = document.getElementById("pillars-mobile-container");
-var pillarContainerChildDivs = mobilePillarContainer.getElementsByTagName("div");
+// toggle function to toggle currently selected pillar in mobile view
 
-function togglePillars(button)
-{
-  for( i=0; i< pillarContainerChildDivs.length; i++ ) {
-   if (pillarContainerChildDivs[i].id === button.id){
-     pillarContainerChildDivs[i].setAttribute("class", "mobile-header-items selected");
+var pillarsArr = ["core", "modules", "tools"];
 
-     document.getElementById(button.id + "-content").setAttribute("class", "show");
-   }else{
-     pillarContainerChildDivs[i].setAttribute("class", "mobile-header-items");
-     document.getElementById(pillarContainerChildDivs[i].id +'-content').setAttribute("class", "hide");
-   }
-  }
-}
+function togglePillars(pillarSelection) {
 
-// Init call to set mobile-core pillar to default
-togglePillars(document.getElementById("mobile-core"));
+  pillarsArr.forEach(function(p){
+    if (pillarSelection === p){
+      document.getElementById("mobile-"+ p).setAttribute("class", "mobile-header-items selected");
+      document.getElementById("mobile-" + p + "-content").setAttribute("class", "show");
+      document.getElementById("mobile-" + p + "-footer").style.color = "#ff0076";
+    }else{
+      document.getElementById("mobile-"+ p).setAttribute("class", "mobile-header-items");
+      document.getElementById("mobile-" + p + "-content").setAttribute("class", "hide");
+      document.getElementById("mobile-" + p + "-footer").style.color = "#333";
+    }
+  });
+};
+
+// Init call to set mobile-core pillar as default
+togglePillars("core");
