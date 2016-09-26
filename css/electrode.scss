@@ -23,15 +23,21 @@ body {
   // background-color: #00294b;
   font-family: "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.container {
+  margin-left:36px;
+  margin-right: 0px;
+}
+
 .electrode-nav-top {
   // background: none;
   background-color: #00294b;
   border: none;
-  padding-top: 1em;
+  padding-top: 1.7em;
   padding-bottom: 1em;
   border-bottom: 1px solid $light-trans-grey;
-  font-weight: 400;
-  font-size: 1.1em;
+  font-weight: 500;
+  font-size: 1.145em;
   letter-spacing: 1px;
   margin-bottom: 0;
 }
@@ -49,14 +55,14 @@ body {
 .social-nav-links {
   li {
     border-radius: 4px;
-    margin-top: -20px;
+    margin-top: -30px;
     padding-top: 20px;
     margin-right: 1em;
 
     a {
       img {
-        width: 1.3em;
-        max-height: 1.3em;
+        width: 24px;
+        height:22px;
       }
     }
   }
@@ -145,7 +151,7 @@ body {
 }
 
 .primary-nav-links li {
-  margin-right: 3em;
+  margin-right: 4em;
 }
 .electrode-brand-top {
   padding: 12px;
@@ -160,6 +166,29 @@ body {
 }
 //END HEADER STYLES
 
+
+//PILLAR STYLES
+.pillar-content {
+  h1 {
+    text-align: center;
+  }
+  p{
+    margin: 20px 0 40px;
+  }
+  a {
+    border-radius: 8px;
+    border: 1px solid #d62470;
+    background-color: #df2375;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25em;
+    text-align: center;
+    color: #ffffff;
+    padding:10px;
+    margin-left: 30%;
+
+  }
+}
 
 //BEGIN CORE STYLES
 .electrode-core {
@@ -318,13 +347,9 @@ body {
     }
   }
 }
-
 .row {
   margin: 0px;
 }
-
-//END MODULES STYLES
-
 //BEGIN TOOLS STYLES
 .electrode-tools {
   margin-top: -80px;
@@ -427,12 +452,17 @@ body {
 .container-fluid {
   padding: 0px;
 }
+
+.navbar-brand {
+  margin: 10px 0px;
+}
+
 .footer {
   background-color: #1D1D1D !important;
 
   .footer-text {
     float: left;
-    font-size: 12px;
+    font-size: 14px;
     color: #c4c4c4;
     margin-bottom: 0px;
     padding-bottom: 0px;
@@ -441,7 +471,7 @@ body {
 }
 
 #footer-walmart-logo {
-  width: 40%;
+  width: 55%;
   height: auto;
   margin-left: -15px;
 }
@@ -471,12 +501,12 @@ a.footer-text {
 }
 
 #electrode-footer {
-  padding: 0 0 10px 10px;
+  padding: 30px 0 30px 0;
+  margin: 0;
 }
 
 #footer-nav-center {
   margin-top: 35px;
-  margin-left: -60px;
 }
 
 #footer-nav-right {
@@ -490,7 +520,7 @@ a.footer-text {
 }
 
 .footer-sub-logo {
-  height: 40px;
+  height: 50px;
   width: auto;
 }
 
@@ -539,14 +569,15 @@ a.footer-text {
 }
 
 div.footer-row {
-  margin: 0 -40px 0 120px;
+  margin: 15px -40px 0 15px;
 }
 
 div.footer-docs {
-  padding-top: 15px;
+  padding-top: 20px;
 
   .footer-doc-links {
-    color: #c4c4c4;
+    color: #fff;
+    // font-weight: bold;
     font-size: 14px;
     font-family: "Gotham-Rounded";
 
@@ -573,19 +604,96 @@ img.footer-sub-logo {
   margin-top: 5px;
 }
 
+@media (min-width: 769px) {
+  .container {
+    width: 96%;
+  }
+}
+
+.nav {
+  li {
+    a:hover{
+      background: inherit;
+    }
+  }
+}
+
 #second-nav {
   background: #fff;
+  border-bottom: solid 1px #cccccc;
+  border-top: solid 1px #cccccc;
+
+  .row {
+    margin-top: -2px;
+  }
+
+  .second-nav-row {
+    padding-top: 15px;
+  }
+
+  #second-nav-hr {
+    border-bottom: solid 1px #cccccc;
+  }
+
+  .second-nav-top-pad {
+    padding-top: 20px;
+  }
+
+  .second-nav-top-pad-double {
+    padding-top: 40px;
+  }
 
   .second-nav-links {
-    a {
+    font-weight:bold;
+    .dark-links {
       color: #333;
     }
   }
 
+  .second-nav-links-container {
+    float:right;
+    padding-right: 3.2%;
+  }
+
   #get-started {
     background: $primary;
-    color: white;
+    color: white !important;
+    border-radius: 3px;
+    border-top: solid 1px white;
+
+    &.focus {
+      background: $primary;
+    }
   }
+
+  #electrode-brand-header {
+    width: 50%;
+    height: auto;
+    margin-top: -10px;
+  }
+
+  #second-nav-social-img {
+    border-top: solid 1px white;
+    padding-left: 20px;
+  }
+
+  .second-nav-inner-links {
+    padding: 0px 10px 10px 0px;
+
+    img {
+      width: 75%;
+    }
+  }
+}
+
+// Global helper classes
+
+.vertical-align-this {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 //START MOBILE VIEW
@@ -637,23 +745,84 @@ img.footer-sub-logo {
   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.2);
 }
 
+.mobile-footer-toggle{
+  border-bottom: 1px solid #333;
+  height: 62px;
+  min-width: 320px;
+
+  .footer-toggle-items{
+    float: left;
+    margin: 10px 0;
+    margin-left: 5%;
+    font-size: 34px;
+    cursor: pointer;
+  }
+
+  .mobile-footer-getStarted-btn {
+    font-family: "Gotham-Rounded-Bold";
+    background: $primary;
+    border: none;
+    margin-right: 5%;
+    border-radius: 3px;
+    height: 34px;
+    width: 42%;
+    text-align: center;
+    color: white;
+    float: right;
+    margin-top: 12px;
+  }
+}
+
+.mobile-footer{
+  font-family: "Gotham-Rounded";
+  font-size: 9px;
+	line-height: 1.5;
+	text-align: center;
+  background-color: #00294b;
+	color: #ffffff;
+  height: 50px;
+  min-width: 320px;
+  position: absolute;
+  width: 100%;
+  padding: 0 5%;
+  margin-top: 10px;
+}
+
+.mobile-module-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #cccccc;
+
+  .mobile-module-item-text {
+    width: 72%;
+    display: inline-block;
+  }
+
+  .mobile-module-item-icon {
+    float: right;
+  }
+}
+
 @media (max-width: 767px) {
    .pillars-section-2,
    .electrode-core,
    .electrode-tools,
    .electrode-modules,
    #second-nav,
-   #electrode-modules {
+   #electrode-modules,
+   #electrode-footer {
      display: none;
    }
 
    #snippet-bubble {
-     height: 300px;
+     height: 315px;
+     margin-bottom: 10px;
      text-align: center;
 
      .snippet-bubble-text {
        font-size: 14px;
        text-align: center;
+       margin: 10px;
+       padding: 0;
      }
    }
 
@@ -665,7 +834,28 @@ img.footer-sub-logo {
 
 @media (min-width: 768px) {
    .pillars-section-2-mobile,
+   .mobile-footer-toggle,
+   .mobile-footer,
+   .mobile-pillar-bar,
    #moible-pillar-content-zone {
      display: none;
    }
+}
+
+.navbar .divider-vertical {
+    height: 120px;
+    margin: 0 9px;
+    border-right: 1px solid #cccccc;
+    border-left: 1px solid #f2f2f2;
+}
+
+.navbar-inverse .divider-vertical {
+    border-right-color: #222222;
+    border-left-color: #111111;
+}
+
+@media (max-width: 767px) {
+    .navbar-collapse .nav > .divider-vertical {
+        display: none;
+     }
 }
