@@ -612,16 +612,44 @@ img.footer-sub-logo {
 
 #second-nav {
   background: #fff;
+  margin-top: -20px;
+  border-bottom: 1px solid #333;
 
   .second-nav-links {
-    a {
+    font-weight:bold;
+    .dark-links {
       color: #333;
     }
   }
 
+  .second-nav-links-container {
+    float:right;
+  }
+
   #get-started {
     background: $primary;
-    color: white;
+    color: white !important;
+    &.focus {
+      background: $primary;
+    }
+  }
+
+  #electrode-brand-header {
+    width: 50%;
+    height: auto;
+    margin-top: -10px;
+  }
+
+  #second-nav-social-img {
+    padding-left: 20px;
+  }
+
+  .second-nav-inner-links {
+    padding: 0px 10px 10px 0px;
+
+    img {
+      width: 75%;
+    }
   }
 }
 
