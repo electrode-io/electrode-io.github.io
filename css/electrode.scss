@@ -107,6 +107,9 @@ html, body {
   margin: 0 auto;
   text-align: center;
 
+  #deploy-in-five {
+    display: none;
+  }
 
   img {
     width: 100%;
@@ -137,6 +140,12 @@ html, body {
     padding: 0;
     border-bottom: 1px solid $light-trans-grey;
   }
+
+  #about-electrode {
+    background: transparent;
+    border: 1px solid white;
+  }
+
   .header-button {
     font-family: "Gotham-Rounded-Medium";
     margin-top: 2em;
@@ -877,7 +886,7 @@ img.footer-sub-logo {
    #electrode-modules,
    #electrode-footer,
    #social-header-color-links {
-     display: none;
+    display: none;
    }
 
    #snippet-bubble {
@@ -886,16 +895,34 @@ img.footer-sub-logo {
      text-align: center;
 
      .snippet-bubble-text {
-       font-size: 14px;
-       text-align: center;
-       margin: 10px;
-       padding: 0;
+      font-size: 14px;
+      text-align: center;
+      margin: 10px;
+      padding: 0;
      }
    }
 
    #code-snippet {
      font-size: 12px;
      width: 90%;
+   }
+
+   .header-info {
+     display: none;
+   }
+
+   .slogan {
+     border-bottom: 1px solid $light-trans-grey;
+   }
+
+   .header-button {
+     #deploy-in-five {
+       display: inline;
+     }
+   }
+
+   #about-electrode {
+     display: none;
    }
 }
 
