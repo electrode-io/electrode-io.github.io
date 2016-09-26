@@ -40,7 +40,7 @@ to be displayed.
 information from various packages. 
 
 * **Module tree** - is a directory tree like structure of all the package 
-dependencies of a particula npm/node module. 
+dependencies of a particular npm/node module. 
 
 * **Multi instance** - is a type of architecture where multiple customers run 
 their own separate instance of an application and operating system running on 
