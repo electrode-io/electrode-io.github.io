@@ -6,7 +6,7 @@ toplevel: "Getting Started: Intermediate"
 
 #### Develop styles using CSS modules
 
-Let's also add some style elements using [CSS modules](https://github.com/css-modules/css-modules) to create a dynamic application. Override the below code into your `<your-awesome-component>/src/style/your-awesome-component.css`:
+Let's also add some style elements using [CSS modules](https://github.com/css-modules/css-modules) to create a dynamic application. Override the below code into your `<your-awesome-component>/src/styles/your-awesome-component.css`:
 
 ```css
 body {
