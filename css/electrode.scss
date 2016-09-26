@@ -205,16 +205,33 @@ body {
 }
 
 //BEGIN CORE STYLES
+
+@media only screen and (max-width: 1656px){
+
+  .electrode-core {
+     #core-h3 {
+       padding: 0% 10% 0% 10% !important;
+      }
+
+    #electrode-core-text {
+      div {
+        padding-bottom: 3%;
+      }
+    }
+  }
+}
+
 .electrode-core {
   text-align: center;
   font-family: "Gotham-Rounded";
+  padding: 50px 0px 50px 0px;
 
   h1 {
     font-family: "Gotham-Rounded-Medium";
   }
 
-  h3 {
-    padding: 0% 10% 0% 10%;
+  #core-h3 {
+    padding: 0% 25% 0% 25%;
   }
 
   div {
@@ -875,6 +892,14 @@ img.footer-sub-logo {
    #mobile-pillar-content-zone {
      display: none;
    }
+
+
+
+  #electrode-core-text {
+    div {
+      padding-bottom: 3%;
+    }
+  }
 }
 
 .navbar .divider-vertical {
