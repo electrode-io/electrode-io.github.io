@@ -11,7 +11,7 @@ toplevel: "Stand Alone Modules"
 
 ## Source
 
-https://github.com/electrode-io/electrode-explorer
+<a target="_blank" href="https://github.com/electrode-io/electrode-explorer">View source code on GitHub</a>
 
 ## Prerequisites
 
