@@ -57,6 +57,8 @@ html, body {
 .night-sky {
   padding: auto;
   background-color: #00294b;
+  background-image: url("/img/sky.svg");
+  background-repeat: no-repeat;
 }
 
 .social-nav-links {
@@ -79,6 +81,7 @@ html, body {
   width: 100%;
   margin-top: -2em;
   margin-bottom: -2px;
+  background: #00294b;
 }
 .pillars-section {
   background-color: white;
@@ -99,7 +102,6 @@ html, body {
 
 .header-content {
   font-family: "Gotham-Rounded";
-  background-image: url("/img/sky.svg");
   background-position: center 27px;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -923,6 +925,12 @@ img.footer-sub-logo {
 
    #about-electrode {
      display: none;
+   }
+
+   .header-mountains {
+     img {
+       padding-top: 75px;
+     }
    }
 }
 
