@@ -33,7 +33,7 @@ body {
   // background: none;
   background-color: #00294b;
   border: none;
-  padding-top: 1.7em;
+  padding-top: 1.5em;
   padding-bottom: 1em;
   border-bottom: 1px solid $light-trans-grey;
   font-weight: 500;
@@ -55,8 +55,8 @@ body {
 .social-nav-links {
   li {
     border-radius: 4px;
-    margin-top: -30px;
-    padding-top: 20px;
+    margin-top: -26px;
+    padding-top: 30px;
     margin-right: 1em;
 
     a {
@@ -92,7 +92,7 @@ body {
 .header-content {
   font-family: "Gotham-Rounded";
   background-image: url("/img/sky.svg");
-  background-position: center top;
+  background-position: center 27px;
   background-size: 100%;
   background-repeat: no-repeat;
 
@@ -150,9 +150,23 @@ body {
   background-color: white;
 }
 
-.primary-nav-links li {
-  margin-right: 4em;
+.navbar-right~.navbar-right {
+  margin-right: 6%;
 }
+.primary-nav-links {
+  margin-top: 1em;
+
+  li {
+    margin-right: 3em;
+  }
+
+  @media (max-width: 980px) {
+    li {
+      margin-right: 1em;
+    }
+  }
+}
+
 .electrode-brand-top {
   padding: 12px;
 }
@@ -161,7 +175,7 @@ body {
   width: 0px;
   height: 100%;
   border-left: 1px solid $light-trans-grey;
-  margin-top: -15px;
+  margin-top: -24px;
   margin-left: -15px;
 }
 //END HEADER STYLES
@@ -604,16 +618,13 @@ img.footer-sub-logo {
   margin-top: 5px;
 }
 
-@media (min-width: 769px) {
-  .container {
-    width: 96%;
-  }
-}
-
 .nav {
   li {
     a:hover{
       background: inherit;
+    }
+    a {
+      padding: 10px 7px;
     }
   }
 }
@@ -873,3 +884,10 @@ img.footer-sub-logo {
         display: none;
      }
 }
+
+@media (min-width: 769px) {
+  .container {
+    width: 97%;
+  }
+}
+
