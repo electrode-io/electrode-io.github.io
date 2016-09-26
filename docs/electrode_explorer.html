@@ -24,7 +24,16 @@
   <script src="//use.typekit.net/vqa1hcx.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
 
-  
+  <!-- Add GA for all github pages -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84301828-1', 'auto');
+  ga('send', 'pageview');
+</script>
 
 
   <!--[if lte IE 8]>
@@ -1485,7 +1494,7 @@ new component through npm (<a href="https://github.com/electrode-io/electrode-ex
 
 <p>To make the server update immediately or force an update, add a url parameter to the POST request, <code>/api/update/{org}/{repoName}?updateNow=1</code>.</p>
 
-<p>This post processing script works well with all electrode components. If you have non-electrode components, you can modify your <a href="https://github.com/electrode-io/electrode-explorer/blob/master/scripts/post-install-module.sh">scripts/post-install-module.sh</a> to babel transpile and bundle your demo files.</p>
+<p>This post processing script works well with all electrode components (meaning components using our <a href="https://github.com/electrode-io/electrode-archetype-react-component">archetype</a>). If you have non-electrode components, you can modify your <a href="https://github.com/electrode-io/electrode-explorer/blob/master/scripts/post-install-module.sh">scripts/post-install-module.sh</a> to babel transpile and bundle your demo files.</p>
 <h2><a class="anchor" name="config"></a>Config <a class="hash-link" href="#config">#</a></h2><div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// config/default.json</span>
 <span class="p">{</span>
   <span class="s2">&quot;plugins&quot;</span><span class="o">:</span> <span class="p">{</span>
