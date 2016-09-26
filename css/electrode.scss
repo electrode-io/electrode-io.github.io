@@ -55,11 +55,9 @@ html, body {
 }
 
 .night-sky {
-  padding: auto;
+  padding: 0;
+  margin: 0;
   background-color: #00294b;
-  background-image: url("/img/sky.svg");
-  background-size: 100% auto;
-  background-repeat: no-repeat;
 }
 
 .social-nav-links {
@@ -82,7 +80,7 @@ html, body {
   width: 100%;
   margin-top: 1em;
   margin-bottom: -2px;
-  background: #00294b;
+  // background: #00294b;
 }
 .pillars-section {
   background-color: white;
@@ -121,19 +119,9 @@ html, body {
 .header-content {
   font-family: "Gotham-Rounded";
   background-position: center 27px;
+  background-image: url("/img/sky.svg");
   background-size: 100%;
   background-repeat: no-repeat;
-  width: 68%;
-  margin: 0 auto;
-  text-align: center;
-
-  #deploy-in-five {
-    display: none;
-  }
-
-  img {
-    width: 100%;
-  }
 
   .logo-text {
     font-size: 10.5em;
@@ -145,6 +133,9 @@ html, body {
     padding-right: 5%;
     padding-left: 5%;
     padding-bottom: .2em;
+    img {
+      width: 100%;
+    }
   }
   .slogan {
     font-size: 1.8em;
