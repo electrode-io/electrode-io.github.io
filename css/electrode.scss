@@ -798,7 +798,7 @@ img.footer-sub-logo {
   }
 
   .mobile-module-item-icon {
-    display: inline-block;
+    float: right;
   }
 }
 
@@ -814,7 +814,7 @@ img.footer-sub-logo {
    }
 
    #snippet-bubble {
-     height: 310px;
+     height: 315px;
      margin-bottom: 10px;
      text-align: center;
 
@@ -836,6 +836,7 @@ img.footer-sub-logo {
    .pillars-section-2-mobile,
    .mobile-footer-toggle,
    .mobile-footer,
+   .mobile-pillar-bar,
    #moible-pillar-content-zone {
      display: none;
    }
