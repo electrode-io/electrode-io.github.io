@@ -46,3 +46,5 @@ Next, generate and deploy to `master` with the following command:
 ```bash
 $ jgd --branch=master
 ```
+
+Built with :heart: by [Team Electrode](https://github.com/orgs/electrode-io/people) @WalmartLabs.

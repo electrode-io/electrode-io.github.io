@@ -6,43 +6,72 @@
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="css/electrode.css">
   <link rel="stylesheet" href="css/electrode-icons.css">
+
+  <!-- Start GA analytics code -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-84301828-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <!-- End GA analytics code -->
 </head>
 <body>
   <!-- beginning of header -->
   <div class="containter-fluid">
     <nav class="navbar navbar-static-top electrode-nav-top inverse-colors">
-      <div class="container">
+      <div id="electrode-nav" class="container">
         <ul class="nav navbar-nav">
           <div class="navbar-header">
+            <button type="button" id="mob-menu-button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <img class="mob-menu" src="/img/mob-menu.svg" alt="">
+            </button>
             <a class="navbar-brand electrode-brand-top" href="#">
-              <img class="header-logo" src="https://host-logos.firebaseapp.com/dotio/header_logo_@1x.png"
+              <img class="header-logo" src="img/walmart-labs-1-white.svg"
                    alt="">
             </a>
           </div>
         </ul>
-        <ul class="nav navbar-nav navbar-right social-nav-links">
-          <div class="vert-divider"></div>
-          <li>
-            <a href="https://getpocket.com/">
-              <img src="https://host-logos.firebaseapp.com/dotio/pocket_@1x.png" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/electrode_io">
-              <img src="https://host-logos.firebaseapp.com/dotio/twitter_@1x.png" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/electrode-io">
-              <img src="https://host-logos.firebaseapp.com/dotio/github_@1x.png" alt="">
-            </a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right primary-nav-links">
-          <li><a href="">HOME</a></li>
-          <li><a href="/docs/what_is_electrode.html">DOCS</a></li>
-          <li><a href="https://github.com/electrode-io">CONTRIBUTE</a></li>
-        </ul>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul id="social-header-color-links" class="nav navbar-nav navbar-right social-nav-links">
+            <div class="vert-divider"></div>
+            <li>
+              <a href="https://getpocket.com/">
+                <img src="https://host-logos.firebaseapp.com/dotio/pocket_@1x.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/electrode_io">
+                <img src="https://host-logos.firebaseapp.com/dotio/twitter_@1x.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/electrode-io">
+                <img src="https://host-logos.firebaseapp.com/dotio/github_@1x.png" alt="">
+              </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right primary-nav-links">
+            <li><a href="">HOME</a></li>
+            <li><a href="/docs/what_is_electrode.html">DOCS</a></li>
+            <li class="mobile-header-links"><a onClick="togglePillars('core')">CORE</a></li>
+            <li class="mobile-header-links"><a onClick="togglePillars('modules')">MODULES</a></li>
+            <li class="mobile-header-links"><a onClick="togglePillars('tools')">TOOLS</a></li>
+            <li><a href="https://github.com/electrode-io">CONTRIBUTE</a></li>
+            <li class="mobile-header-links"><a href="https://getpocket.com/">
+              <img class="mobile-social-links" src="https://host-logos.firebaseapp.com/dotio/pocket_@1x.png" alt="">
+              &nbsp;POCKET</a></li>
+            <li class="mobile-header-links"><a href="">
+              <img class="mobile-social-links" src="https://host-logos.firebaseapp.com/dotio/twitter_@1x.png" alt="">
+              &nbsp;TWITTER</a></li>
+            <li class="mobile-header-links"><a href="https://github.com/electrode-io"><img class="mobile-git" src="img/circular-git.png" alt="">&nbsp;
+              GITHUB</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
   </div>
@@ -90,7 +119,7 @@
 
   <div class="mobile-pillar-bar"></div>
 
-  <div id="moible-pillar-content-zone">
+  <div id="mobile-pillar-content-zone">
 
     <div id="mobile-core-content">
       <div class="mobile-content-heading">
@@ -186,7 +215,7 @@
         <tr class="mobile-module-item">
           <td class="mobile-module-item-text">
             <b>More Modules Coming Soon!</b>
-            <br>New module release announcements will be Twitted on @electrode_io</br>
+            <br>New module release announcements will be Twitted on <a href="https://twitter.com/electrode_io">@electrode_io</a></br>
           </td>
           <td>
             <a href="/docs/stand_alone_modules.html">
@@ -212,8 +241,9 @@
 
   <div class="mobile-footer">
     <div class="mobile-footer-text-container vertical-align-this">
-      Open Sourced Under Apache, Built with ♡ by @WalmartLabs.
-      Electrode is maintained by the core team with help of our contributors.
+      Built with ♡ by @WalmartLabs,
+      Electrode is maintained by the <a href="https://github.com/orgs/electrode-io/people">core team</a> with help of our contributors.
+      Open Sourced Under Apache-2.0 license.
     </div>
   </div>
 
@@ -342,23 +372,23 @@
         </div>
 
         <div class="col-md-7">
-          <div class="second-nav-links-container">
-            <ul class="nav navbar-nav">
-              <li class="second-nav-inner-links second-nav-top-pad">
+          <div class="second-nav-links-container row">
+            <ul class="nav navbar-nav inner-links-ul">
+              <li class="second-nav-inner-links second-nav-top-pad active-inner-link" id="electrode-core-logo-li">
                 <div class="second-nav-top-pad">
                   <a href= "#electrode-core-logo">
                     <img src="https://host-logos.firebaseapp.com/dotio/core_tab_icon_@1x.png"/>
                   </a>
                 </div>
               </li>
-              <li class="second-nav-inner-links">
+              <li class="second-nav-inner-links inactive-inner-link" id="electrode-modules-logo-li">
                 <div class="second-nav-top-pad">
                     <a href="#electrode-modules">
                       <img src="https://host-logos.firebaseapp.com/dotio/modules_tab_icon_@1x.png"/>
                     </a>
                   </div>
               </li>
-              <li class="second-nav-inner-links second-nav-top-pad">
+              <li class="second-nav-inner-links second-nav-top-pad inactive-inner-link" id="electrode-tools-logo-li">
                 <div class="second-nav-top-pad">
                   <a href="https://github.com/electrode-io">
                     <img src="https://host-logos.firebaseapp.com/dotio/tools_tab_icon_@1x.png"/>
@@ -366,10 +396,12 @@
                 </div>
               </li>
             </ul>
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav outer-links-ul">
               <li class="second-nav-links"><a href="/docs/what_is_electrode.html" class="dark-links second-nav-top-pad-double no-hover">DOCS</a></li>
               <li class="second-nav-links"><a href="https://github.com/electrode-io" class="dark-links second-nav-top-pad-double no-hover">CONTRIBUTE</a></li>
               <li class="second-nav-links" id="get-started"><a href="" class="second-nav-top-pad-double no-hover">GET STARTED</a></li>
+            </ul>
+            <ul class="nav navbar-nav outer-links-ul">
               <li class="divider-vertical"></li>
               <li id="second-nav-social-img"><img src="/img/social.svg"></li>
             </ul>
@@ -509,12 +541,12 @@
             </div>
             <div>
               <p class="footer-text">
-                Open Sourced Under Apache, Built with HEART by @WalmartLabs.
+                Built with ♡ by @WalmartLabs, Electrode is maintained by the <a href="https://github.com/orgs/electrode-io/people">core team</a> with help of our contributors.
               </p>
             </div>
             <div>
               <p class="footer-text bottom">
-                Electrode is maintained by the core team with help of our contributors.
+                Open Sourced under Apache-2.0 license.
               </p>
             </div>
           </div>
@@ -578,13 +610,30 @@
 
   <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
   <script type="text/javascript">
-    var num = 1805;
+    var stickAtHeight = 1805;
+    var toggleTools = 3000;
 
     $(window).bind('scroll', function () {
-      if ($(window).scrollTop() > num) {
+      if ($(window).scrollTop() > stickAtHeight) {
+        $('#electrode-core-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
+        $('#electrode-modules-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link');
         $('#second-nav').addClass('navbar-fixed-top');
       } else {
+        console.log('here')
+        $('#electrode-tools-logo-li').removeClass('inactive-inner-link active-inner-link');
+        $('#electrode-modules-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
+        $('#electrode-core-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link')
         $('#second-nav').removeClass('navbar-fixed-top');
+      }
+    });
+
+    $(window).bind('scroll', function () {
+      if ($(window).scrollTop() > toggleTools) {
+        $('#electrode-modules-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
+        $('#electrode-tools-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link');
+      } else {
+        $('#electrode-tools-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
+        $('#electrode-modules-logo-li').addClass('active-inner-link');
       }
     });
   </script>
