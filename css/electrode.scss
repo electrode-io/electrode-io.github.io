@@ -127,6 +127,8 @@ html, body {
     font-weight: 200;
     margin-top: .1em;
     padding: 0;
+    padding-right: 5%;
+    padding-left: 5%;
     padding-bottom: .2em;
     img {
       width: 100%;
@@ -227,17 +229,34 @@ html, body {
 }
 
 //BEGIN CORE STYLES
+
+@media only screen and (max-width: 1656px){
+
+  .electrode-core {
+     #core-h3 {
+       padding: 0% 10% 0% 10% !important;
+      }
+
+    #electrode-core-text {
+      div {
+        padding-bottom: 3%;
+      }
+    }
+  }
+}
+
 .electrode-core {
   text-align: center;
   font-family: "Gotham-Rounded";
-  margin-top: 4em;
+  padding: 50px 0px 50px 0px;
+
 
   h1 {
     font-family: "Gotham-Rounded-Medium";
   }
 
-  h3 {
-    padding: 0% 10% 0% 10%;
+  #core-h3 {
+    padding: 0% 25% 0% 25%;
   }
 
   div {
@@ -730,9 +749,9 @@ img.footer-sub-logo {
   }
 
   .active-inner-link {
-    border-top: solid 5px #333333;
+    border-top: solid 8px #333333;
     img {
-      margin-top: -4px;
+      margin-top: -7px;
     }
   }
 
@@ -901,6 +920,14 @@ img.footer-sub-logo {
    #mobile-pillar-content-zone {
      display: none;
    }
+
+
+
+  #electrode-core-text {
+    div {
+      padding-bottom: 3%;
+    }
+  }
 }
 
 .navbar .divider-vertical {
