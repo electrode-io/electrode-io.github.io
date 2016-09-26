@@ -24,38 +24,54 @@
   <!-- beginning of header -->
   <div class="containter-fluid">
     <nav class="navbar navbar-static-top electrode-nav-top inverse-colors">
-      <div class="container">
+      <div id="electrode-nav" class="container">
         <ul class="nav navbar-nav">
           <div class="navbar-header">
+            <button type="button" id="mob-menu-button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <img class="mob-menu" src="/img/mob-menu.svg" alt="">
+            </button>
             <a class="navbar-brand electrode-brand-top" href="#">
-              <img class="header-logo" src="https://host-logos.firebaseapp.com/dotio/header_logo_@1x.png"
+              <img class="header-logo" src="img/walmart-labs-1-white.svg"
                    alt="">
             </a>
           </div>
         </ul>
-        <ul class="nav navbar-nav navbar-right social-nav-links">
-          <div class="vert-divider"></div>
-          <li>
-            <a href="https://getpocket.com/">
-              <img src="https://host-logos.firebaseapp.com/dotio/pocket_@1x.png" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/electrode_io">
-              <img src="https://host-logos.firebaseapp.com/dotio/twitter_@1x.png" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/electrode-io">
-              <img src="https://host-logos.firebaseapp.com/dotio/github_@1x.png" alt="">
-            </a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right primary-nav-links">
-          <li><a href="">HOME</a></li>
-          <li><a href="/docs/what_is_electrode.html">DOCS</a></li>
-          <li><a href="https://github.com/electrode-io">CONTRIBUTE</a></li>
-        </ul>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul id="social-header-color-links" class="nav navbar-nav navbar-right social-nav-links">
+            <div class="vert-divider"></div>
+            <li>
+              <a href="https://getpocket.com/">
+                <img src="https://host-logos.firebaseapp.com/dotio/pocket_@1x.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/electrode_io">
+                <img src="https://host-logos.firebaseapp.com/dotio/twitter_@1x.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/electrode-io">
+                <img src="https://host-logos.firebaseapp.com/dotio/github_@1x.png" alt="">
+              </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right primary-nav-links">
+            <li><a href="">HOME</a></li>
+            <li><a href="/docs/what_is_electrode.html">DOCS</a></li>
+            <li class="mobile-header-links"><a onClick="togglePillars('core')">CORE</a></li>
+            <li class="mobile-header-links"><a onClick="togglePillars('modules')">MODULES</a></li>
+            <li class="mobile-header-links"><a onClick="togglePillars('tools')">TOOLS</a></li>
+            <li><a href="https://github.com/electrode-io">CONTRIBUTE</a></li>
+            <li class="mobile-header-links"><a href="https://getpocket.com/">
+              <img class="mobile-social-links" src="https://host-logos.firebaseapp.com/dotio/pocket_@1x.png" alt="">
+              &nbsp;POCKET</a></li>
+            <li class="mobile-header-links"><a href="">
+              <img class="mobile-social-links" src="https://host-logos.firebaseapp.com/dotio/twitter_@1x.png" alt="">
+              &nbsp;TWITTER</a></li>
+            <li class="mobile-header-links"><a href="https://github.com/electrode-io"><img class="mobile-git" src="img/circular-git.png" alt="">&nbsp;
+              GITHUB</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
   </div>
@@ -103,7 +119,7 @@
 
   <div class="mobile-pillar-bar"></div>
 
-  <div id="moible-pillar-content-zone">
+  <div id="mobile-pillar-content-zone">
 
     <div id="mobile-core-content">
       <div class="mobile-content-heading">
@@ -136,60 +152,79 @@
     </div>
 
     <div id="mobile-modules-content">
-      <div class="mobile-module-item">
-        <div class="mobile-module-item-text">
-          SSR Profiling & Caching This module can help you improve your React server-side rendering performance by up to 70% by caching your components' render
-        </div>
+      <table>
 
-        <div class="mobile-module-item-icon">
-          <img src="/img/icn-ssr.svg" alt="">
-        </div>
-      </div>
-      <div class="mobile-module-item">
-        <div class="mobile-module-item-text">
-          Above-the-Fold Rendering
-          Instead of side rendering the whole page on the server, this react component enables rendering of *only* the components your users see on the screen without scrolling, for improved performance.
-        </div>
-        <div class="mobile-module-item-icon">
-          <img src="/img/icn-atf.svg" alt="">
-        </div>
-      </div>
-      <div class="mobile-module-item">
-        <div class="mobile-module-item-text">
-          Redux Router Engine
-          Do you need data from a service to render your component server-side? This module fetches the data asynchronously and passes it to React to render your components. Requires Redux.
-        </div>
-        <div class="mobile-module-item-icon">
-          <img src="/img/icn-redux.svg" alt="">
-        </div>
-      </div>
-      <div class="mobile-module-item">
-        <div class="mobile-module-item-text">
-          Confippet
-          Lets you define, extend, and merge configurations for different environments (such as QA, prod, and staging) that get initialized during start up _or_ at runtime.
-        </div>
-        <div class="mobile-module-item-icon">
-          <img src="/img/icn-confippet.svg" alt="">
-        </div>
-      </div>
-      <div class="mobile-module-item">
-        <div class="mobile-module-item-text">
-          Stateless CSRF Validation
-          Validate HTTP requests without a session--for Express and Hapi.
-        </div>
-        <div class="mobile-module-item-icon">
-          <img src="/img/icn-csrf.svg" alt="">
-        </div>
-      </div>
-      <div class="mobile-module-item">
-        <div class="mobile-module-item-text">
-          More Modules Coming Soon!
-          Follow <a href="https://twitter.com/electrode_io">@electrode_io</a> to get latest news about new modules.
-        </div>
-        <div class="mobile-module-item-icon">
-          <img src="/img/icn-more.svg" alt="">
-        </div>
-      </div>
+        <tr class="mobile-module-item">
+          <td class="mobile-module-item-text">
+              <b>SSR Profiling & Caching</b>
+              <br>This module can help you improve your React server-side rendering performance by up to 70% by caching your components' render</br>
+          </td>
+          <td>
+            <a href="/docs/server_side_render_cache.html">
+              <img src="/img/icn-ssr.svg" alt="">
+            </a>
+          </td>
+        </tr>
+
+        <tr class="mobile-module-item">
+          <td class="mobile-module-item-text">
+            <b>Above-the-Fold Rendering</b>
+            <br>Instead of side rendering the whole page on the server, this react component enables rendering of *only* the components your users see on the screen without scrolling, for improved performance.</br>
+          </td>
+          <td>
+            <a href="/docs/above_fold_rendering.html">
+              <img src="/img/icn-atf.svg" alt="">
+            </a>
+          </td>
+        </tr>
+
+        <tr class="mobile-module-item">
+          <td class="mobile-module-item-text">
+            <b>Redux Router Engine</b>
+            <br>Do you need data from a service to render your component server-side? This module fetches the data asynchronously and passes it to React to render your components. Requires Redux.</br>
+          </td>
+          <td>
+            <a href="/docs/redux_router_engine.html">
+              <img src="/img/icn-redux.svg" alt="">
+            </a>
+          </td>
+        </tr>
+
+        <tr class="mobile-module-item">
+          <td class="mobile-module-item-text">
+            <b>Confippet</b>
+            <br>Lets you define, extend, and merge configurations for different environments (such as QA, prod, and staging) that get initialized during start up or at runtime.</br>
+          </td>
+          <td>
+            <a href="/docs/confippet.html">
+              <img src="/img/icn-confippet.svg" alt=""></td>
+            </a>
+        </tr>
+
+        <tr class="mobile-module-item">
+          <td class="mobile-module-item-text">
+            <b>Stateless CSRF Validation</b>
+            <br>Validate HTTP requests without a session--for Express and Hapi.</br>
+          </td>
+          <td>
+            <a href="/docs/stateless_csrf_validation.html">
+              <img src="/img/icn-csrf.svg" alt=""></td>
+            </a>
+        </tr>
+
+        <tr class="mobile-module-item">
+          <td class="mobile-module-item-text">
+            <b>More Modules Coming Soon!</b>
+            <br>New module release announcements will be Twitted on <a href="https://twitter.com/electrode_io">@electrode_io</a></br>
+          </td>
+          <td>
+            <a href="/docs/stand_alone_modules.html">
+              <img src="/img/icn-more.svg" alt="">
+            </a>
+          </td>
+        </tr>
+
+      </table>
     </div>
 
     <div id="mobile-tools-content">mobile-tools-content</div>
@@ -199,7 +234,9 @@
     <div id="mobile-core-footer" class="elc-icon-icn-core footer-toggle-items" onClick="togglePillars('core')" ></div>
     <div id="mobile-modules-footer" class="elc-icon-icn-modules footer-toggle-items" onClick="togglePillars('modules')"></div>
     <div id="mobile-tools-footer" class="elc-icon-icn-tools footer-toggle-items" onClick="togglePillars('tools')"></div>
-    <button class="mobile-footer-getStarted-btn">GET STARTED</button>
+    <a href="/docs/get_started.html">
+      <button class="mobile-footer-getStarted-btn">GET STARTED</button>
+    </a>
   </div>
 
   <div class="mobile-footer">
@@ -335,23 +372,23 @@
         </div>
 
         <div class="col-md-7">
-          <div class="second-nav-links-container">
-            <ul class="nav navbar-nav">
-              <li class="second-nav-inner-links second-nav-top-pad">
+          <div class="second-nav-links-container row">
+            <ul class="nav navbar-nav inner-links-ul">
+              <li class="second-nav-inner-links second-nav-top-pad active-inner-link" id="electrode-core-logo-li">
                 <div class="second-nav-top-pad">
                   <a href= "#electrode-core-logo">
                     <img src="https://host-logos.firebaseapp.com/dotio/core_tab_icon_@1x.png"/>
                   </a>
                 </div>
               </li>
-              <li class="second-nav-inner-links">
+              <li class="second-nav-inner-links inactive-inner-link" id="electrode-modules-logo-li">
                 <div class="second-nav-top-pad">
                     <a href="#electrode-modules">
                       <img src="https://host-logos.firebaseapp.com/dotio/modules_tab_icon_@1x.png"/>
                     </a>
                   </div>
               </li>
-              <li class="second-nav-inner-links second-nav-top-pad">
+              <li class="second-nav-inner-links second-nav-top-pad inactive-inner-link" id="electrode-tools-logo-li">
                 <div class="second-nav-top-pad">
                   <a href="https://github.com/electrode-io">
                     <img src="https://host-logos.firebaseapp.com/dotio/tools_tab_icon_@1x.png"/>
@@ -359,10 +396,12 @@
                 </div>
               </li>
             </ul>
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav outer-links-ul">
               <li class="second-nav-links"><a href="/docs/what_is_electrode.html" class="dark-links second-nav-top-pad-double no-hover">DOCS</a></li>
               <li class="second-nav-links"><a href="https://github.com/electrode-io" class="dark-links second-nav-top-pad-double no-hover">CONTRIBUTE</a></li>
               <li class="second-nav-links" id="get-started"><a href="" class="second-nav-top-pad-double no-hover">GET STARTED</a></li>
+            </ul>
+            <ul class="nav navbar-nav outer-links-ul">
               <li class="divider-vertical"></li>
               <li id="second-nav-social-img"><img src="/img/social.svg"></li>
             </ul>
@@ -571,13 +610,30 @@
 
   <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
   <script type="text/javascript">
-    var num = 1805;
+    var stickAtHeight = 1805;
+    var toggleTools = 3000;
 
     $(window).bind('scroll', function () {
-      if ($(window).scrollTop() > num) {
+      if ($(window).scrollTop() > stickAtHeight) {
+        $('#electrode-core-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
+        $('#electrode-modules-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link');
         $('#second-nav').addClass('navbar-fixed-top');
       } else {
+        console.log('here')
+        $('#electrode-tools-logo-li').removeClass('inactive-inner-link active-inner-link');
+        $('#electrode-modules-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
+        $('#electrode-core-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link')
         $('#second-nav').removeClass('navbar-fixed-top');
+      }
+    });
+
+    $(window).bind('scroll', function () {
+      if ($(window).scrollTop() > toggleTools) {
+        $('#electrode-modules-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
+        $('#electrode-tools-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link');
+      } else {
+        $('#electrode-tools-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
+        $('#electrode-modules-logo-li').addClass('active-inner-link');
       }
     });
   </script>
