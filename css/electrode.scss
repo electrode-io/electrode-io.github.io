@@ -138,7 +138,12 @@ h1 {
     text-align: center;
     img {
       width: 75%;
-      margin-top: -17vw;
+      @media(min-width: 1600px){
+        margin-top: -10vw;
+      }
+      @media(max-width: 1599px){
+        margin-top: -13.5vw;
+      }
     }
   }
 
@@ -285,6 +290,19 @@ h1 {
     a {
       font-family: "Gotham-Rounded-Bold";
       padding: 41px 97.5px 0 0;
+      transition: all .3s ease-in-out;
+      &:focus {
+        background-color: inherit;
+        outline: none;
+      }
+      @media(min-width: 768px) {
+        &:hover {
+          background-color: inherit;
+          font-weight: 900;
+          text-shadow: 0px 0px 15px #adebff;
+          color: #fcffea;
+        }
+      }
       @media(max-width: 1200px) {
         padding: 45px 70px 0 0;
       }
@@ -295,8 +313,8 @@ h1 {
         padding: 45px 50px 0 0;
         font-size: 1em;
       }
-      @media(max-width: 900px) {
-        padding: 45px 40px 0 0;
+      @media(max-width: 992px) {
+        padding: 45px 30px 0 0;
         font-size: 0.9em;
       }
       &:hover {
