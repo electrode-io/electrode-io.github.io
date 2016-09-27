@@ -351,6 +351,7 @@ h1 {
 
 @media only screen and (max-width: 1656px){
   .electrode-core {
+
      #core-h3 {
        padding: 0% 10% 0% 10% !important;
       }
@@ -364,6 +365,7 @@ h1 {
 }
 
 .electrode-core {
+  border-bottom: 1px #ECECEC solid;
   text-align: center;
   font-family: "Gotham-Rounded";
   padding: 50px 0px 50px 0px;
@@ -479,7 +481,7 @@ h1 {
 }
 
 #modules-section {
-  padding: 80px 60px 80px 100px;
+  padding: 20px 60px 80px 100px;
   border-bottom: 1px solid #cccccc;
 }
 
@@ -580,7 +582,7 @@ h1 {
 
 @media (max-width: 1351px) {
   #modules-section {
-    padding: 80px 0 80px 40px;
+    padding: 20px 0 80px 40px;
   }
 
   .electrode-modules, #modules-section {
@@ -987,12 +989,12 @@ img.footer-sub-logo {
     min-width: 320px;
     font-family: "Gotham-Rounded";
 
-    .add-padding-right{
+    .add-padding-right {
       padding-right: 7%;
     }
 
-    .add-padding-left{
-      padding-left: 6%;
+    .add-padding-left {
+      padding-left: 6.5%;
     }
 
     .mobile-header-items {
@@ -1014,13 +1016,14 @@ img.footer-sub-logo {
     #mobile-core-content {
       .mobile-content-heading {
         font-weight: 600;
+        font-size: 15px;
       }
     }
   }
 }
 
 #mobile-pillar-content-zone {
-  padding: 6px 5%;
+  padding: 12px 5%;
   line-height: 1.4;
   font-size: 14px;
   font-family: "Gotham-Rounded";
@@ -1111,9 +1114,18 @@ img.footer-sub-logo {
    }
 
    #snippet-bubble {
-     height: 315px;
-     margin-bottom: 10px;
+     height: auto;
+     margin-bottom: 12px;
      text-align: center;
+     padding-left: 20px;
+     padding-right: 20px;
+     padding-bottom: 12px;
+
+     h4 {
+       padding-top: 5px;
+       font-size: 18px;
+       font-family: Gotham-Rounded-Medium;
+     }
 
      padding-left: 20px;
      padding-right: 20px;
@@ -1123,9 +1135,10 @@ img.footer-sub-logo {
      }
 
      .snippet-bubble-text {
-      font-size: 14px;
-      text-align: center;
-      margin: 10px;
+      font-size: 15px;
+      margin-top: 10px;
+      text-align: left;
+      margin-bottom: 10px;
       padding: 0;
      }
    }
@@ -1133,6 +1146,7 @@ img.footer-sub-logo {
    #code-snippet {
      font-size: 12px;
      width: 100%;
+     padding: 2% 0 0 0;
 
      h4 {
        font-size: 18px;
