@@ -351,7 +351,6 @@ html, body {
 
   h4 {
     font-family: "Gotham-Rounded-Bold";
-    padding: 0px 25% 0px 12%;
   }
 
   #electrode-core-text {
@@ -377,7 +376,6 @@ html, body {
   float: right;
   font-weight: bold;
   border-radius: 4px;
-  background-color: #f4f4f4;
   border: solid 1px #cccccc;
   text-align: left;
   top: 0px;
@@ -386,15 +384,19 @@ html, body {
   z-index: 2;
 
   .snippet-bubble-text {
-    font-size: 110%;
-    padding: 10px 0px 10px 4%;
-    font-size: 120%;
+    font-size: 16px;
+    padding: 10px 0;
     text-align:left;
   }
 
   h3 {
     text-align: center;
     padding: 0px;
+  }
+
+  h4 {
+    font-size: 26px;
+    font-weight: normal;
   }
 
   #deploy-msg {
@@ -420,8 +422,6 @@ html, body {
   color: white;
   padding: 2% 0% 2% 0%;
   text-align: left;
-  width: 80%;
-  margin: 0 auto;
 
   p {
     padding-left: 5%;
