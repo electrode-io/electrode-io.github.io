@@ -33,7 +33,7 @@ h1 {
   background-color: #00294b;
 }
 .electrode-nav-top {
-  padding-bottom:20px;  
+  padding-bottom:20px;
   font-weight: 500;
   font-size: 1.145em;
   letter-spacing: 1px;
@@ -1303,6 +1303,17 @@ img.footer-sub-logo {
    .header-mountains {
      img {
        padding-top: 0;
+     }
+   }
+
+   .primary-nav-links {
+     li {
+       a {
+         padding: 0 0 20px 10px;
+         &:hover {
+           background-color: inherit;
+         }
+       }
      }
    }
 }
