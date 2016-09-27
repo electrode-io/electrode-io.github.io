@@ -5,6 +5,11 @@
 @import '_typography';
 // @import '_solarized';
 
+//color variables
+$standardGrey: #cccccc;
+$standardWhite: #fff;
+$primaryPink: #df2375;
+
 // BEGIN HEADER STYLES
 $light-trans-grey: rgba(203, 203, 203, 0.32);
 $small-devices: 768px;
@@ -173,8 +178,8 @@ html, body {
     }
   }
   .get-started {
-    background-color: #db2975;
-    border: 3.5px solid #db2975;
+    background-color: $primaryPink;
+    border: 3.5px solid $primaryPink;
   }
   .about-electrode {
     background-color: rgba(255, 255, 255, 0);
@@ -247,7 +252,7 @@ html, body {
   a {
     border-radius: 8px;
     border: 1px solid #d62470;
-    background-color: #db2975;
+    background-color: $primaryPink;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.25em;
@@ -510,7 +515,7 @@ html, body {
     }
 
     span:hover {
-      background-color: #db2975;
+      background-color: $primaryPink;
     }
 
     .button-previous {
@@ -1054,7 +1059,7 @@ img.footer-sub-logo {
     }
 
     span:hover {
-      background-color: #db2975;
+      background-color: $primaryPink;
     }
 
     .button-previous {
