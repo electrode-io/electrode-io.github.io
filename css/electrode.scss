@@ -24,22 +24,17 @@ html, body {
   overflow-x: hidden;
 }
 
-//   #top-header {
-//     height: 98px;
-//   }
-//   #electrode-nav {
-//     height: 100%;
-//   }
-
 h1 {
   font-family: "Gotham-Rounded-Medium";
 }
 
-#top-header {
-  height: 98px;
-}
-#electrode-nav {
-  height: 100%;
+@media(min-width: 768px){
+  #top-header {
+    height: 98px;
+  }
+  #electrode-nav {
+    height: 100%;
+  }
 }
 
 .electrode-nav-top {
@@ -50,19 +45,25 @@ h1 {
   font-size: 1.145em;
   letter-spacing: 1px;
   margin-bottom: 0;
-  // height: 100%;
-
+  @media(min-width: 768px){
+    height: 100%;
+  }
   .header-logo {
     height: 29px;
     width: 224px;
   }
 }
 
+.navbar {
+  margin:0 !important;
+}
+
+
 .inverse-colors {
-  color: white;
-  a, p, h1, h2, h3, h4 {
     color: white;
-  }
+    a, p, h1, h2, h3, h4 {
+      color: white;
+    }
 }
 
 .night-sky {
@@ -92,6 +93,8 @@ h1 {
   margin-top: 1em;
   margin-bottom: -2px;
 }
+
+
 
 .pillars-section-2 {
 
@@ -129,16 +132,15 @@ h1 {
   background-repeat: no-repeat;
 
   .logo-text {
-    font-size: 10.5em;
-    color: white;
-    letter-spacing: 23px;
-    font-weight: 200;
-    margin-top: .45em;
+    margin-top: 23px;
     padding: 0;
-    padding-bottom: .2em;
+    padding-bottom: 38px;
     img {
       width: 100%;
       max-height: 156px;
+    }
+    @media(max-width: 768px) {
+      padding-bottom:37px;
     }
   }
   .slogan {
@@ -192,15 +194,16 @@ h1 {
     font-family: "Gotham-Rounded-Bold";
     margin-top: 2em;
     font-weight: 500;
-    font-size: 1.8vmax;
+    font-size: 1.5em;
     padding-top: .5em;
     padding-bottom: .2em;
     text-align: center;
     border-radius: 3px;
     width: 100%;
-
+    @media(max-width: 845px) {
+      font-size: 1.3em;
+    }
   }
-
   .get-started {
     background-color: #df2375;
     border: 3.5px solid rgb(223, 35, 117);
@@ -220,6 +223,9 @@ h1 {
     transition: all 0.5s ease;
     color: #FFF;
     border: 3.5px solid #FF0066;
+  }
+  .visible-xs-block .get-started {
+      width:100%;
   }
 }
 
@@ -247,12 +253,12 @@ h1 {
   li {
     a {
       padding: 45px 97.5px 0 0;
+      font-family: "Gotham-Rounded-Bold";
       &:hover {
         background-color: inherit;
       }
     }
   }
-
   #contribute a {
     padding-right: 0;
   }
@@ -348,6 +354,7 @@ h1 {
 
 @media only screen and (max-width: 1656px){
   .electrode-core {
+
      #core-h3 {
        padding: 0% 10% 0% 10% !important;
       }
@@ -361,6 +368,7 @@ h1 {
 }
 
 .electrode-core {
+  border-bottom: 1px #ECECEC solid;
   text-align: center;
   font-family: "Gotham-Rounded";
   padding: 50px 0px 50px 0px;
@@ -476,7 +484,7 @@ h1 {
 }
 
 #modules-section {
-  padding: 80px 60px 80px 100px;
+  padding: 20px 60px 80px 100px;
   border-bottom: 1px solid #cccccc;
 }
 
@@ -577,7 +585,7 @@ h1 {
 
 @media (max-width: 1351px) {
   #modules-section {
-    padding: 80px 0 80px 40px;
+    padding: 20px 0 80px 40px;
   }
 
   .electrode-modules, #modules-section {
@@ -982,12 +990,12 @@ img.footer-sub-logo {
     min-width: 320px;
     font-family: "Gotham-Rounded";
 
-    .add-padding-right{
+    .add-padding-right {
       padding-right: 7%;
     }
 
-    .add-padding-left{
-      padding-left: 6%;
+    .add-padding-left {
+      padding-left: 6.5%;
     }
 
     .mobile-header-items {
@@ -1009,13 +1017,14 @@ img.footer-sub-logo {
     #mobile-core-content {
       .mobile-content-heading {
         font-weight: 600;
+        font-size: 15px;
       }
     }
   }
 }
 
 #mobile-pillar-content-zone {
-  padding: 6px 5%;
+  padding: 12px 5%;
   line-height: 1.4;
   font-size: 14px;
   font-family: "Gotham-Rounded";
@@ -1097,7 +1106,6 @@ img.footer-sub-logo {
    .electrode-core,
    .electrode-tools,
    .electrode-modules,
-   .desktop-button-row,
    #second-nav,
    #electrode-modules,
    #modules-section,
@@ -1107,9 +1115,18 @@ img.footer-sub-logo {
    }
 
    #snippet-bubble {
-     height: 315px;
-     margin-bottom: 10px;
+     height: auto;
+     margin-bottom: 12px;
      text-align: center;
+     padding-left: 20px;
+     padding-right: 20px;
+     padding-bottom: 12px;
+
+     h4 {
+       padding-top: 5px;
+       font-size: 18px;
+       font-family: Gotham-Rounded-Medium;
+     }
 
      padding-left: 20px;
      padding-right: 20px;
@@ -1119,20 +1136,18 @@ img.footer-sub-logo {
      }
 
      .snippet-bubble-text {
-      font-size: 14px;
-      text-align: center;
-      margin: 10px;
+      font-size: 15px;
+      margin-top: 10px;
+      text-align: left;
+      margin-bottom: 10px;
       padding: 0;
      }
-   }
-
-   .electrode-brand-top {
-     padding-top: 10px;
    }
 
    #code-snippet {
      font-size: 12px;
      width: 100%;
+     padding: 2% 0 0 0;
 
      h4 {
        font-size: 18px;
@@ -1284,36 +1299,6 @@ img.footer-sub-logo {
 
 @media (max-width: 767px) {
 
-.primary-nav-links {
-  li {
-    a {
-      padding: 0 0 20px 10px;
-      &:hover {
-        background-color: inherit;
-      }
-    }
-  }
-}
-  .nav > li {
-    padding-left: 15px;
-    padding-top: 0;
-    margin-top: 0;
-  }
-
-  .nav > ul > li > a {
-    margin-top: 0;
-    padding-top: 0;
-  }
-
-  .mobile-header-links {
-    margin-top: 0;
-    padding-top: 0;
-  }
-
-  div#electrode-nav {
-    margin-bottom: 10px;
-  }
-
   #header-intro-paragraph,
   #desktop-modules-content,
   .navbar-collapse .nav > .divider-vertical {
@@ -1321,78 +1306,55 @@ img.footer-sub-logo {
    }
 
    img.header-logo {
-     height: 120%;
      margin-top: 0;
+     height: 15px;
+     width: 180px;
    }
 
    div#mobile-logo-text {
-     margin-top: -60px;
-     margin-bottom: -60px;
+   }
+   .header-mountains {
+     img {
+       padding-top: 0;
+     }
    }
 
-   div#mobile-slogan {
-     font-size: 21px;
-   }
-
-   div#mobile-get-started {
-     text-align: center;
-     font-size: 16px;
-     width: 380px;
-     height: 60px;
-     margin-bottom: 10px;
-     margin-right: 0;
-
-     background-color: #df2375;
-     border: 3.5px solid #df2375;
-   }
-
-   div.night-sky {
-     #mobile-mountains {
-
-       img#mobile-mountain-image {
-         padding-top: 0px;
+   .primary-nav-links {
+     li {
+       a {
+         padding: 0 0 20px 10px;
+         &:hover {
+           background-color: inherit;
+         }
        }
      }
    }
 }
 
+@media (max-width:680px) {
+
+}
+
 @media (max-width: 480px) {
 
-  .electrode-brand-top {
-    padding: 35px 0 0 25px;
-  }
+  .electrode-nav-top {
 
-  img.header-logo {
-    height: 90%;
-    margin-top: -30px;
-    margin-left: -10px;
+    img.header-logo {
+      margin-top: 0;
+      height: 25px;
+      width: 200px;
+    }
   }
 
   img.mob-menu {
     height: 60px;
     width: auto;
     border-radius: 4px;
+    margin: -30px -10px 0 0;
   }
 
   div#mobile-slogan {
     font-size: 21px;
-  }
-
-  div#mobile-get-started {
-    text-align: center;
-    font-size: 12px;
-    width: 280px;
-    height: 40px;
-    margin-right: 0;
-  }
-
-  div.night-sky {
-    #mobile-mountains {
-
-      img#mobile-mountain-image {
-        padding-top: 0px;
-      }
-    }
   }
   .header-content .get-started {
     font-size:14px;
@@ -1401,33 +1363,46 @@ img.footer-sub-logo {
   .header-content .header-button {
     width: 100%;
   }
+   .header-mountains {
+     img {
+       padding-top: 0;
+     }
+   }
 }
 
 @media (max-width: 380px) {
 
   .electrode-nav-top {
-    .header-logo {
-      height: 30px;
-      width: 180px;
+
+    img.header-logo {
+      margin: 0 10px 0 0;
+      height: 20px;
+      width: 200px;
     }
   }
 
   img.mob-menu {
     height: 50px;
-    // width: auto;
+    width: auto;
     border-radius: 4px;
-    margin-right: 10px;
   }
 
   div#mobile-slogan {
     font-size: 18px;
   }
 
-  div#mobile-get-started {
-    text-align: center;
-    font-size: 12px;
-    width: 280px;
-    height: 40px;
+ .electrode-brand-top {
+   padding-top: 10px;
+ }
+}
+
+@media (max-width: 340px) {
+  div.navbar-header {
+    padding-top: 0px;
+
+    .electrode-brand-top {
+      padding-top: -10px;
+    }
   }
 }
 
@@ -1449,10 +1424,8 @@ img.footer-sub-logo {
   width: auto;
 }
 
-ol.mobile-internal-links {
-  margin-left: -10px;
-  margin-bottom: 10px;
-  font-style: italic;
+.mobile-internal-links {
+  padding: 10px 0;
 }
 
 @media (min-width: 769px) {
@@ -1510,13 +1483,8 @@ ol.mobile-internal-links {
   font-weight: bold;
 }
 
-
-div#bs-example-navbar-collapse-1 {
-  .mobile-header-links {
-    padding-left: 10px;
-  }
-
-  .navbar-collapse {
-    padding-left: 10px;
-  }
+ol.mobile-internal-links {
+    margin-left: -10px;
+    margin-bottom: 10px;
+    font-style: italic;
 }
