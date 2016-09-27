@@ -978,12 +978,12 @@ img.footer-sub-logo {
     min-width: 320px;
     font-family: "Gotham-Rounded";
 
-    .add-padding-right{
+    .add-padding-right {
       padding-right: 7%;
     }
 
-    .add-padding-left{
-      padding-left: 6%;
+    .add-padding-left {
+      padding-left: 6.5%;
     }
 
     .mobile-header-items {
@@ -1005,13 +1005,14 @@ img.footer-sub-logo {
     #mobile-core-content {
       .mobile-content-heading {
         font-weight: 600;
+        font-size: 15px;
       }
     }
   }
 }
 
 #mobile-pillar-content-zone {
-  padding: 6px 5%;
+  padding: 12px 5%;
   line-height: 1.4;
   font-size: 14px;
   font-family: "Gotham-Rounded";
@@ -1102,9 +1103,18 @@ img.footer-sub-logo {
    }
 
    #snippet-bubble {
-     height: 315px;
-     margin-bottom: 10px;
+     height: auto;
+     margin-bottom: 12px;
      text-align: center;
+     padding-left: 20px;
+     padding-right: 20px;
+     padding-bottom: 12px;
+
+     h4 {
+       padding-top: 5px;
+       font-size: 18px;
+       font-family: Gotham-Rounded-Medium;
+     }
 
      padding-left: 20px;
      padding-right: 20px;
@@ -1114,9 +1124,10 @@ img.footer-sub-logo {
      }
 
      .snippet-bubble-text {
-      font-size: 14px;
-      text-align: center;
-      margin: 10px;
+      font-size: 15px;
+      margin-top: 10px;
+      text-align: left;
+      margin-bottom: 10px;
       padding: 0;
      }
    }
@@ -1124,6 +1135,7 @@ img.footer-sub-logo {
    #code-snippet {
      font-size: 12px;
      width: 100%;
+     padding: 2% 0 0 0;
 
      h4 {
        font-size: 18px;
