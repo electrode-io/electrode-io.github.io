@@ -163,7 +163,6 @@ html, body {
     padding-right: 0;
     text-align: center;
     border-bottom: 1px solid $light-trans-grey;
-    font-family: "Gotham-Rounded";
   }
 
   .header-button {
@@ -242,7 +241,6 @@ html, body {
 
 //PILLAR STYLES
 .pillar-content {
-  font-family: "Gotham-Rounded";
   h1 {
     text-align: center;
   }
@@ -253,6 +251,7 @@ html, body {
 }
 
 .pillar-links {
+  text-align: center;
   a {
     border-radius: 8px;
     border: 1px solid #d62470;
@@ -262,8 +261,7 @@ html, body {
     line-height: 1.25em;
     text-align: center;
     color: #ffffff;
-    padding:10px;
-    margin-left: 30%;
+    padding: 10px;
   }
 }
 
@@ -396,7 +394,6 @@ html, body {
 
 .electrode-modules {
   text-align: center;
-  font-family: "Gotham-Rounded-Medium";
 
   .icon-modules {
     filter: grayscale(100%);
@@ -448,7 +445,6 @@ html, body {
 .electrode-tools {
   margin-top: -80px;
   text-align: center;
-  font-family: "Gotham-Rounded-Medium";
 
   .icon-modules {
     filter: grayscale(100%);
@@ -637,6 +633,7 @@ a.footer-text {
 .github-logo {
   img {
     width: 1.3em;
+    background-color: white;
     color: #3a3a3a;
   }
 }
