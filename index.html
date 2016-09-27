@@ -57,11 +57,14 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right primary-nav-links">
-            <li><a href="">HOME</a></li>
+            <li><a href="">HOME</a>
+              <ul class="mobile-internal-header-links">
+                <ol class="mobile-header-links mobile-internal-links"><a onClick="togglePillars('core')">CORE</a></ol>
+                <ol class="mobile-header-links mobile-internal-links"><a onClick="togglePillars('modules')">MODULES</a></ol>
+                <ol class="mobile-header-links mobile-internal-links"><a onClick="togglePillars('tools')">TOOLS</a></ol>
+              </ul>
+            </li>
             <li><a href="/docs/what_is_electrode.html">DOCS</a></li>
-            <li class="mobile-header-links"><a onClick="togglePillars('core')">CORE</a></li>
-            <li class="mobile-header-links"><a onClick="togglePillars('modules')">MODULES</a></li>
-            <li class="mobile-header-links"><a onClick="togglePillars('tools')">TOOLS</a></li>
             <li><a href="https://github.com/electrode-io">CONTRIBUTE</a></li>
             <li class="mobile-header-links"><a href="https://getpocket.com/">
               <img class="mobile-social-links" src="https://host-logos.firebaseapp.com/dotio/pocket_@1x.png" alt="">
@@ -69,7 +72,7 @@
             <li class="mobile-header-links"><a href="">
               <img class="mobile-social-links" src="https://host-logos.firebaseapp.com/dotio/twitter_@1x.png" alt="">
               &nbsp;TWITTER</a></li>
-            <li class="mobile-header-links"><a href="https://github.com/electrode-io"><img class="mobile-git" src="img/circular-git.png" alt="">&nbsp;
+            <li class="mobile-header-links"><a href="https://github.com/electrode-io"><img class="mobile-git" src="img/sm-github.svg" alt="">&nbsp;
               GITHUB</a></li>
           </ul>
         </div>
@@ -81,12 +84,12 @@
   <div class="container-fluid night-sky">
     <div class="header-content inverse-colors">
       <div class="row">
-        <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 logo-text">
+        <div id="mobile-logo-text" class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 logo-text">
           <img src="/img/electrode-logo.svg" alt="">
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 slogan">UNIVERSAL REACT/NODE APPLICATION PLATFORM</div>
+        <div id="mobile-slogan" class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 slogan">UNIVERSAL REACT/NODE APPLICATION PLATFORM</div>
       </div>
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 header-info">Electrode is a platform for building universal React/Node.js
@@ -122,6 +125,8 @@
 
   <!-- mobile pillars section only displays in mobile view -->
   <!-- togglePillars() loops over child divs under div == pillars-mobile-container -->
+  <!-- mobile pillars section only displays in mobile view -->
+  <!-- togglePillars() loops over child divs under div == pillars-mobile-container -->
   <div class="pillars-section-2-mobile text-center">
     <div id="pillars-mobile-container">
   	  <div id="mobile-core" class="mobile-header-items" onClick="togglePillars('core')">CORE</div>
@@ -136,7 +141,7 @@
 
     <div id="mobile-core-content">
       <div class="mobile-content-heading">
-        <p> Electrode is a platform for building universal React/Node.js applications with standardized structure, best practices, and modern technologies baked in. </p>
+        <p id="mobile-header-info"> Electrode is a platform for building universal React/Node.js applications with standardized structure, best practices, and modern technologies baked in. </p>
       </div>
       <div id="snippet-bubble">
         <div class="row">
@@ -249,31 +254,38 @@
         <div id="tools-carousel" class="carousel slide row" data-ride="carousel">
           <div class="carousel-inner" role="listbox">
             <div class="item active">
-              <div class="tool-title col-lg-offset-2 col-lg-8">
-                <div class="col-md-1 col-lg-1 github-logo">
-                  <a href="https://github.com/electrode-io">
-                    <img class="footer-social-logo" src="https://host-logos.firebaseapp.com/dotio/github_@1x.png"/>
-                  </a>
-                </div>
-                <h3 class="col-md-11 col-lg-11">Electrode Explorer</h3>
-                <p class="col-md-11 col-lg-11">Standalone web application that lets you interact with your components.</p>
+              <div class="tool-title">
+                <a href="https://github.com/electrode-io">
+                  <img class="github-logo" src="/img/github-mobile.svg"/>
+                </a>
+                <h3>Electrode Explorer</h3>
+                <p>Standalone web application that lets you interact with your components.</p>
               </div>
-              <div class="image image-electrode-explorer"></div>
+              <img class="image" src="/img/tools-explorer-screen-mobile@2x.png" alt="">
+              <br>
+              <div class="inside-car-title"><h4>Electrode Explorer Features:</h4></div>
+              <ul>
+                <li>allows you to view a Live Demo of all of your components and play with their integration in real time</li>
+                <li>shows the component Documentation and Props</li>
+                <li>shows all of your component dependencies</li>
+                <li>shows consumers of the component shows component NPM versions, so you can see how they evolved</li>
+                <li>and more</li>
+              </ul>
             </div>
             <div class="item">
-              <div class="tool-title col-lg-offset-2 col-lg-8">
-                <div class="col-md-1 col-lg-1 github-logo">
-                  <a href="https://github.com/electrode-io">
-                    <img class="footer-social-logo" src="https://host-logos.firebaseapp.com/dotio/github_@1x.png"/>
-                  </a>
-                </div>
-                <h3 class="col-md-11 col-lg-11">Electrify</h3>
-                <p class="col-md-11 col-lg-11">Electrify is a tool for analyzing the module tree of electrode-io/webpack
+              <div class="tool-title">
+                <a href="https://github.com/electrode-io">
+                  <img class="github-logo" src="/img/github-mobile.svg"/>
+                </a>
+                <h3>Electrify</h3>
+                <p>Electrify is a tool for analyzing the module tree of electrode-io/webpack
                   project bundles. It's especially handy for
                   catching large and/or duplicate modules which might be either bloating up your bundle or slowing down
                   the build process.</p>
               </div>
-              <div class="image image-electrode-electrify"></div>
+              <img class="image" src="/img/electrode-electrify-screen-mobile@2x.png" alt="">
+              <br>
+              <p> The Electrode Bundle Viewer tool is called Electrify, and it's especially handy for catching large and/or duplicate modules which might be either bloating up your bundle or slowing down the build process.</p>
             </div>
           </div>
           <a class="left carousel-control" href="#tools-carousel" role="button" data-slide="prev">
@@ -707,8 +719,41 @@
 
   <!-- end footer -->
   <script src="./scripts/mobile-pillars.js"></script>
+
   <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="./scripts/sticky-nav.js"></script>
+  <script type="text/javascript">
+    var stickAtHeight = 2130;
+    var toggleTools = 3000;
+
+    $(window).bind('scroll', function () {
+      if ($(window).scrollTop() > stickAtHeight) {
+        $('#electrode-core-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
+        $('#electrode-modules-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link');
+        $('#second-nav').addClass('navbar-fixed-top');
+      } else {
+        $('#electrode-tools-logo-li').removeClass('inactive-inner-link active-inner-link');
+        $('#electrode-modules-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
+        $('#electrode-core-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link')
+        $('#second-nav').removeClass('navbar-fixed-top');
+      }
+    });
+
+    $(window).bind('scroll', function () {
+      if ($(window).scrollTop() > toggleTools) {
+        $('#electrode-modules-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
+        $('#electrode-tools-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link');
+      } else {
+        $('#electrode-tools-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
+        $('#electrode-modules-logo-li').addClass('active-inner-link');
+      }
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
 
 </body>
 </html>
