@@ -134,17 +134,37 @@ html, body {
     }
   }
   .slogan {
-    font-size: 1.8em;
+    font-size: 1.7em;
     font-weight: 200;
     letter-spacing: 0.3vw;
     border-top: 1px solid rgba(203,203,203,0.32);
     padding-top: 1.1em;
-    padding-bottom: .5em;
     margin-top: -.6em;
     text-align: center;
     font-family: "Gotham-Rounded-Medium";
     padding-left: 0;
     padding-right: 0;
+    @media(max-width: 1190px) {
+      font-size: 1.7em;
+      letter-spacing: 0.2vw;
+    }
+    @media(max-width: 1110px) {
+      font-size: x-large;
+      letter-spacing: 0;
+    }
+    @media(max-width: 980px) {
+      font-size: 1.6em;
+    }
+    @media(max-width: 915px) {
+      font-size: 1.4em;
+    }
+    @media(max-width: 805px) {
+      font-size: 1.3em;
+    }
+    @media(max-width: 768px) {
+      font-size: 1.6em;
+      padding-bottom: 1.1em;
+    }
   }
   .header-links {
     margin-bottom: 2.5em;
@@ -303,16 +323,17 @@ html, body {
     border: 1px solid #d62470;
     background-color: #df2375;
     font-size: 16px;
-    font-weight: 500;
-    line-height: 1.25em;
+    font-weight: bold;
     text-align: center;
     color: #ffffff;
     padding: 10px;
+
   }
   a:hover {
     transition: all 0.5s ease;
     background-color: #FF0066;
-    border: 3.5px solid #FF0066;
+    border: 1px solid #FF0066;
+    text-decoration:none;
   }
 }
 
