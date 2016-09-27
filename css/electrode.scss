@@ -30,17 +30,16 @@ h1 {
 
 @media(min-width: 768px){
   #top-header {
-    height: 98px;
+    // height: 98px;
+    border-bottom:1px solid $light-trans-grey;
+    background-color: #00294b;
   }
   #electrode-nav {
     height: 100%;
   }
 }
-
 .electrode-nav-top {
-  background-color: #00294b;
-  border: none;
-  border-bottom: 1px solid $light-trans-grey;
+  padding-bottom:20px;
   font-weight: 500;
   font-size: 1.145em;
   letter-spacing: 1px;
@@ -52,6 +51,9 @@ h1 {
     height: 29px;
     width: 224px;
   }
+}
+.navbar {
+  margin:0 !important;
 }
 
 
@@ -139,16 +141,15 @@ h1 {
   background-repeat: no-repeat;
 
   .logo-text {
-    font-size: 10.5em;
-    color: white;
-    letter-spacing: 23px;
-    font-weight: 200;
-    margin-top: .45em;
+    margin-top: 23px;
     padding: 0;
-    padding-bottom: .2em;
+    padding-bottom: 38px;
     img {
       width: 100%;
       max-height: 156px;
+    }
+    @media(max-width: 768px) {
+      padding-bottom:37px;
     }
   }
   .slogan {
@@ -202,13 +203,15 @@ h1 {
     font-family: "Gotham-Rounded-Bold";
     margin-top: 2em;
     font-weight: 500;
-    font-size: 1.8vmax;
+    font-size: 1.5em;
     padding-top: .5em;
     padding-bottom: .2em;
     text-align: center;
     border-radius: 3px;
     width: 100%;
-
+    @media(max-width: 845px) {
+      font-size: 1.3em;
+    }
   }
   .get-started {
     background-color: #df2375;
@@ -229,6 +232,9 @@ h1 {
     transition: all 0.5s ease;
     color: #FFF;
     border: 3.5px solid #FF0066;
+  }
+  .visible-xs-block .get-started {
+      width:100%;
   }
 }
 
@@ -1345,9 +1351,27 @@ img.footer-sub-logo {
    }
 
    div#mobile-logo-text {
-     margin-top: -40px;
-     margin-bottom: -40px;
    }
+   .header-mountains {
+     img {
+       padding-top: 0;
+     }
+   }
+
+   .primary-nav-links {
+     li {
+       a {
+         padding: 0 0 20px 10px;
+         &:hover {
+           background-color: inherit;
+         }
+       }
+     }
+   }
+}
+
+@media (max-width:680px) {
+
 }
 
 @media (max-width: 480px) {
@@ -1376,6 +1400,11 @@ img.footer-sub-logo {
   .header-content .header-button {
     width: 100%;
   }
+   .header-mountains {
+     img {
+       padding-top: 0;
+     }
+   }
 }
 
 @media (max-width: 380px) {
