@@ -332,7 +332,8 @@ html, body {
   a:hover {
     transition: all 0.5s ease;
     background-color: #FF0066;
-    border: 3.5px solid #FF0066;
+    border: 1px solid #FF0066;
+    text-decoration:none;
   }
 }
 
