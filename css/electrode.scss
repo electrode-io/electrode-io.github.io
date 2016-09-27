@@ -1074,21 +1074,21 @@ img.footer-sub-logo {
   }
 }
 
-.mobile-footer {
-  font-family: "Gotham-Rounded";
-  font-size: 9px;
-  font-weight: 600;
-	line-height: 1.5;
-	text-align: center;
-  background-color: #00294b;
-	color: #ffffff;
-  height: 50px;
-  min-width: 320px;
-  position: absolute;
-  width: 100%;
-  padding: 0 5%;
-  margin-top: 10px;
-}
+// .mobile-footer {
+//   font-family: "Gotham-Rounded";
+//   font-size: 9px;
+//   font-weight: 600;
+// 	line-height: 1.5;
+// 	text-align: center;
+//   background-color: #00294b;
+// 	color: #ffffff;
+//   height: 50px;
+//   min-width: 320px;
+//   position: absolute;
+//   width: 100%;
+//   padding: 0 5%;
+//   margin-top: 10px;
+// }
 
 .mobile-module-item {
   padding: 20px ;
@@ -1112,6 +1112,22 @@ img.footer-sub-logo {
    #electrode-footer,
    #social-header-color-links {
     display: none;
+   }
+
+   .mobile-footer {
+      font-family: "Gotham-Rounded";
+      font-size: 9px;
+      font-weight: 600;
+      line-height: 1.5;
+      text-align: center;
+      background-color: #00294b;
+      color: #ffffff;
+      height: 50px;
+      min-width: 320px;
+      position: absolute;
+      width: 100%;
+      padding: 0 5%;
+      margin-top: 10px;
    }
 
    #snippet-bubble {
@@ -1394,6 +1410,10 @@ img.footer-sub-logo {
  .electrode-brand-top {
    padding-top: 10px;
  }
+
+ p.mobile-footer-paragraph {
+   font-size: 7px;
+ }
 }
 
 @media (max-width: 340px) {
@@ -1487,4 +1507,11 @@ ol.mobile-internal-links {
     margin-left: -10px;
     margin-bottom: 10px;
     font-style: italic;
+}
+
+.mobile-footer {
+
+  p#mobile-footer-1 {
+    margin-bottom: 0;
+  }
 }
