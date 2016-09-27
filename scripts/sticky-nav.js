@@ -13,7 +13,6 @@ $(window).bind('scroll', function () {
   }
 });
 
-
 $(window).bind('scroll', function () {
   if ($(window).scrollTop() > toggleModules) {
     $('#electrode-core-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
