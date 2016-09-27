@@ -54,3 +54,40 @@ Navigate to `<your-awesome-component>/demo/examples/your-awesome-component.examp
   )}
 />
 ```
+
+Now Navigate to `<your-awesome-component>/demo/demo.jsx`. Modify `const componsnts` to include your demo examples:
+
+```javascript
+const components = [
+  {
+    title: "HouseParty",
+    examples: [
+      {
+        type: "playground",
+        code: require("raw!./examples/house-party.example"),
+        noRender: true
+      }
+    ]
+  },
+  {
+    title: "RenderFriend",
+    examples: [
+      {
+        type: "playground",
+        code: require("raw!./examples/render-friend.example"),
+        noRender: true
+      }
+    ]
+  },
+  {
+    title: "YourAwesomeComponent",
+    examples: [
+      {
+        type: "playground",
+        code: require("raw!./examples/your-awesome-component.example"),
+        noRender: true
+      }
+    ]
+  }
+];
+```
