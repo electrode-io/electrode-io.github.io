@@ -17,11 +17,15 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 body {
-  font-family: "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Gotham-Rounded","Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+h1 {
+  font-family: "Gotham-Rounded-Medium";
 }
 
 #top-header {
@@ -474,7 +478,7 @@ html, body {
 }
 
 .electrode-modules, #modules-section {
-  font-family: "Gotham-Rounded-Medium";
+  font-family: "Gotham-Rounded";
   text-align: center;
 
   .icon-modules {
@@ -500,6 +504,7 @@ html, body {
     .module-subheader {
       font-size: 20px;
       margin-top: 40px;
+      font-family: "Gotham-Rounded-Medium";
     }
 
     .desktop-module-logo img {
@@ -611,7 +616,6 @@ html, body {
 
   h1 {
     font-size: 56px;
-    font-weight: normal;
   }
 
   h3 {
