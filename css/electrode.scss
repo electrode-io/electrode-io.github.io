@@ -32,11 +32,24 @@ h1 {
   border-bottom:1px solid $light-trans-grey;
   background-color: #00294b;
 }
+
+@media(min-width: 768px){
+  #top-header {
+    height: 98px;
+  }
+  #electrode-nav {
+    height: 100%;
+  }
+}
 .electrode-nav-top {
   padding-bottom:20px;
   font-weight: 500;
   font-size: 1.145em;
   letter-spacing: 1px;
+  margin-bottom: 0;
+  @media(min-width: 768px){
+    height: 100%;
+  }
   .header-logo {
     height: 29px;
     width: 224px;
@@ -66,11 +79,22 @@ h1 {
     margin-top: -4px;
     margin-right: 1em;
     height: 79px;
+    &:hover {
+      a {
+        img {
+          transform: scale(1.2);
+        }
+      }
+    }
     a {
       padding: 34px 12px 18px 12px;
+      &:hover {
+        background-color: inherit;
+      }
       img {
         width: 24px;
         height:22px;
+        transition: transform .3s ease-in-out;
       }
     }
   }
@@ -235,40 +259,66 @@ h1 {
 .social-nav-links li:nth-child(4) {
   background-color: white;
 }
-
-.primary-nav-links {
-  padding-right: 113px;
-  li {
-    a {
-      padding: 45px 97.5px 0 0;
-      font-family: "Gotham-Rounded-Bold";
-      &:hover {
-        background-color: inherit;
+//larger desktop
+@media(min-width:1206px) {
+  .primary-nav-links {
+    padding-right: 113px;
+    li {
+      a {
+        padding: 45px 97.5px 0 0;
+        transition: all .3s ease-in-out;
+        font-family: "Gotham-Rounded";
+        font-weight: 500;
+        &:hover {
+          background-color: inherit;
+          font-weight: 900;
+          text-shadow: 0px 0px 15px #adebff;
+          color: #fcffea;
+        }
+        &:focus {
+          background-color: inherit;
+          outline: none;
+        }
+      }
+    }
+    #contribute a {
+      padding-right: 0;
+    }
+    @media(min-width: 768px){
+      #home-primary:before {
+        content: '';
+        background-color: white;
+        width: 95px;
+        height: 8px;
+        margin-bottom: -8px;
+        display: block;
+        margin-left: -21.5px;
       }
     }
   }
-  #contribute a {
-    padding-right: 0;
-  }
-  #home-primary:before {
-    content: '';
-    background-color: white;
-    width: 95px;
-    height: 8px;
-    margin-bottom: -8px;
-    display: block;
-    margin-left: -21.5px;
-  }
 }
-
-@media(max-width: 1120px) {
+//smaller desktop
+@media(min-width: 768px) and (max-width: 1206px) {
   .primary-nav-links {
     padding: 0px 5px 5px 5px;
     padding-right: 5px;
-    margin-right: 24px !important;
+    margin-right: 10px !important;
     li {
       a {
         padding: 45px 16.5px 0 0;
+        transition: all .3s ease-in-out;
+        font-family: "Gotham-Rounded";
+        font-weight: 500;
+        &:hover {
+          background-color: inherit;
+          font-weight: 900;
+          text-shadow: 0px 0px 15px #adebff;
+          color: #fcffea;
+        }
+        &:focus {
+          background-color: inherit;
+          outline: none;
+        }
       }
     }
     #home-primary:before {
@@ -289,12 +339,14 @@ h1 {
   .primary-nav-links {
     padding: 0px 0px 5px 5px;
     /* padding-right: 5px; */
-    margin-right: 16px !important;
+    margin-right: 0px !important;
   }
 }
 
-.electrode-brand-top {
-  padding-top: 38px;
+@media(min-width: 768px) {
+  .electrode-brand-top {
+    padding-top: 38px;
+  }
 }
 
 .vert-divider {
@@ -314,6 +366,7 @@ h1 {
 
   p{
     margin: 20px 0 40px;
+    min-height: 12.5em;
   }
 }
 
@@ -827,6 +880,8 @@ a.footer-text {
 .github-logo {
   img {
     width: 1.3em;
+    background-color: white;
+    color: #3a3a3a;
   }
 }
 
@@ -1397,12 +1452,6 @@ img.footer-sub-logo {
 
 .mobile-internal-links {
   padding: 10px 0;
-}
-
-@media (min-width: 769px) {
-  .container {
-    width: 97%;
-  }
 }
 
 .module-testbox {
