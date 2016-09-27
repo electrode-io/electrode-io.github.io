@@ -342,6 +342,7 @@ h1 {
 
 @media only screen and (max-width: 1656px){
   .electrode-core {
+
      #core-h3 {
        padding: 0% 10% 0% 10% !important;
       }
@@ -355,6 +356,7 @@ h1 {
 }
 
 .electrode-core {
+  border-bottom: 1px #ECECEC solid;
   text-align: center;
   font-family: "Gotham-Rounded";
   padding: 50px 0px 50px 0px;
@@ -470,7 +472,7 @@ h1 {
 }
 
 #modules-section {
-  padding: 80px 60px 80px 100px;
+  padding: 20px 60px 80px 100px;
   border-bottom: 1px solid #cccccc;
 }
 
@@ -571,7 +573,7 @@ h1 {
 
 @media (max-width: 1351px) {
   #modules-section {
-    padding: 80px 0 80px 40px;
+    padding: 20px 0 80px 40px;
   }
 
   .electrode-modules, #modules-section {
@@ -981,7 +983,11 @@ img.footer-sub-logo {
     }
 
     .add-padding-left{
+<<<<<<< HEAD
       padding-left: 7%;
+=======
+      padding-left: 6%;
+>>>>>>> a2190e92250552612c9097fbdb3aaf7682719276
     }
 
     .mobile-header-items {
@@ -1112,6 +1118,13 @@ img.footer-sub-logo {
        padding-top: 5px;
        font-size: 18px;
        font-family: Gotham-Rounded-Medium;
+     }
+
+     padding-left: 20px;
+     padding-right: 20px;
+
+     h4 {
+       font-size: 18px;
      }
 
      .snippet-bubble-text {
