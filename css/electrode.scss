@@ -5,6 +5,11 @@
 @import '_typography';
 // @import '_solarized';
 
+//color variables
+$standardGrey: #cccccc;
+$standardWhite: #fff;
+$primaryPink: #df2375;
+
 // BEGIN HEADER STYLES
 $light-trans-grey: rgba(203, 203, 203, 0.32);
 $small-devices: 768px;
@@ -20,8 +25,7 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 body {
-  // background-color: #00294b;
-  font-family: "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 html, body {
@@ -35,7 +39,6 @@ html, body {
 }
 
 .electrode-nav-top {
-  // background: none;
   background-color: #00294b;
   border: none;
   padding-top: 1.5em;
@@ -80,17 +83,12 @@ html, body {
   width: 100%;
   margin-top: 1em;
   margin-bottom: -2px;
-  // background: #00294b;
 }
 .pillars-section {
   background-color: white;
   padding: 0;
   margin-top: 25em;
 }
-// .pillars-section {
-//   background-color: white;
-// }
-
 
 .pillars-section-2 {
 
@@ -157,7 +155,6 @@ html, body {
     font-size: 1.2em;
     font-weight: 600;
     margin-top: .9em;
-    /* padding: 0; */
     padding-left: 0;
     padding-bottom: 1.5em;
     padding-right: 0;
@@ -181,8 +178,8 @@ html, body {
     }
   }
   .get-started {
-    background-color: #df2375;
-    border: 3.5px solid #df2375;
+    background-color: $primaryPink;
+    border: 3.5px solid $primaryPink;
   }
   .about-electrode {
     background-color: rgba(255, 255, 255, 0);
@@ -255,12 +252,12 @@ html, body {
   a {
     border-radius: 8px;
     border: 1px solid #d62470;
-    background-color: #df2375;
+    background-color: $primaryPink;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.25em;
     text-align: center;
-    color: #ffffff;
+    color: $standardWhite;
     padding: 10px;
   }
 }
@@ -323,7 +320,7 @@ html, body {
   font-weight: bold;
   border-radius: 4px;
   background-color: #f4f4f4;
-  border: solid 1px #cccccc;
+  border: solid 1px $standardGrey;
   text-align: left;
   top: 0px;
   width: 100%;
@@ -438,9 +435,12 @@ html, body {
     }
   }
 }
-.row {
+
+//refactor to not alter bootstrap class
+.pillar-row {
   margin: 0px;
 }
+
 //BEGIN TOOLS STYLES
 .electrode-tools {
   margin-top: 70px;
@@ -529,7 +529,7 @@ html, body {
     span {
       position: absolute;
       top: 35%;
-      background-color: #cccccc;
+      background-color: $standardGrey;
       background-image: url("https://host-logos.firebaseapp.com/dotio/arrow_@1x.png");
       background-size: 50% 50%;
       background-repeat: no-repeat;
@@ -540,7 +540,7 @@ html, body {
     }
 
     span:hover {
-      background-color: #df2375;
+      background-color: $primaryPink;
     }
 
     .button-previous {
@@ -583,7 +583,7 @@ html, body {
   .footer-text {
     float: left;
     font-size: 14px;
-    color: #fff;
+    color: $standardWhite;
     margin-bottom: 0;
     padding-bottom: 0;
     font-family: "Gotham-Rounded";
@@ -676,7 +676,7 @@ div.footer-docs {
   padding-top: 20px;
 
   .footer-doc-links {
-    color: #fff;
+    color: $standardWhite;
     // font-weight: bold;
     font-size: 14px;
     font-family: "Gotham-Rounded";
@@ -713,9 +713,9 @@ img.footer-sub-logo {
 }
 
 #second-nav {
-  background: #fff;
-  border-bottom: solid 1px #cccccc;
-  border-top: solid 1px #cccccc;
+  background: $standardWhite;
+  border-bottom: solid 1px $standardGrey;
+  border-top: solid 1px $standardGrey;
 
   .row {
     margin-top: -2px;
@@ -726,7 +726,7 @@ img.footer-sub-logo {
   }
 
   #second-nav-hr {
-    border-bottom: solid 1px #cccccc;
+    border-bottom: solid 1px $standardGrey;
   }
 
   .second-nav-top-pad {
@@ -797,7 +797,7 @@ img.footer-sub-logo {
   }
 
   .inactive-inner-link {
-    border-top: solid 1px #fff;
+    border-top: solid 1px $standardWhite;
 
   }
 }
@@ -896,7 +896,7 @@ img.footer-sub-logo {
 	line-height: 1.5;
 	text-align: center;
   background-color: #00294b;
-	color: #ffffff;
+	color: $standardWhite;
   height: 50px;
   min-width: 320px;
   position: absolute;
@@ -907,7 +907,7 @@ img.footer-sub-logo {
 
 .mobile-module-item {
   padding: 20px ;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid $standardGrey;
 
   .mobile-module-item-text {
     width: 80%;
@@ -1003,9 +1003,9 @@ img.footer-sub-logo {
 .navbar .divider-vertical {
     height: 145px;
     margin: 0 9px;
-    border-right: 1px solid #cccccc;
+    border-right: 1px solid $standardGrey;
     border-left: 1px solid #f2f2f2;
-    border-top: 8px solid #ffffff;
+    border-top: 8px solid $standardWhite;
 }
 
 .navbar-inverse .divider-vertical {
@@ -1073,7 +1073,7 @@ img.footer-sub-logo {
     span {
       position: absolute;
       top: 25%;
-      background-color: #cccccc;
+      background-color: $standardGrey;
       background-image: url("https://host-logos.firebaseapp.com/dotio/arrow_@1x.png");
       background-size: 50% 50%;
       background-repeat: no-repeat;
@@ -1084,7 +1084,7 @@ img.footer-sub-logo {
     }
 
     span:hover {
-      background-color: #df2375;
+      background-color: $primaryPink;
     }
 
     .button-previous {
