@@ -184,9 +184,19 @@ html, body {
     background-color: #df2375;
     border: 3.5px solid #df2375;
   }
+  .get-started:hover {
+    transition: all 0.5s ease;
+    background-color: #FF0066;
+    border: 3.5px solid #FF0066;
+  }
   .about-electrode {
     background-color: rgba(255, 255, 255, 0);
     border: 3.5px solid white;
+  }
+  .about-electrode:hover {
+    transition: all 0.5s ease;
+    color: #FFF;
+    border: 3.5px solid #FF0066;
   }
 }
 
@@ -262,6 +272,11 @@ html, body {
     text-align: center;
     color: #ffffff;
     padding: 10px;
+  }
+  a:hover {
+    transition: all 0.5s ease;
+    background-color: #FF0066;
+    border: 3.5px solid #FF0066;
   }
 }
 
@@ -1226,6 +1241,13 @@ img.footer-sub-logo {
   div#mobile-slogan {
     font-size: 21px;
   }
+  .header-content .get-started {
+    font-size:14px;
+    font-weight:bold;
+  }
+  .header-content .header-button {
+    width: 100%;
+  }
 }
 
 @media (max-width: 380px) {
@@ -1247,6 +1269,7 @@ img.footer-sub-logo {
   div#mobile-slogan {
     font-size: 18px;
   }
+
 }
 
 .mob-menu {
