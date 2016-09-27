@@ -115,7 +115,8 @@
 
   <div class="container-fluid night-sky">
     <div class="header-mountains">
-      <img src="img/landscape-only.svg" alt="">
+      <img class="hidden-xs" src="img/landscape-only.svg" alt="">
+      <img class="visible-xs" src="img/landscape-with-graphics.svg" alt="">
     </div>
   </div>
 
@@ -229,7 +230,7 @@
         <tr class="mobile-module-item">
           <td class="mobile-module-item-text">
             <b>More Modules Coming Soon!</b>
-            <br>New module release announcements will be Twitted on <a href="https://twitter.com/electrode_io">@electrode_io</a></br>
+            <br>New module release announcements will be Tweeted on <a href="https://twitter.com/electrode_io">@electrode_io</a></br>
           </td>
           <td>
             <a href="/docs/stand_alone_modules.html">
@@ -306,7 +307,7 @@
 
   <div class="container pillars-section-2">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-xs-4">
 				<!-- <div class="top-graphic" id="core-graphic"></div> -->
 				<div class="row">
 					<div class="col-sm-12 pillar-icon">
@@ -321,7 +322,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-xs-4">
 					<div class="row">
 						<div class="col-sm-12 pillar-icon">
 							<img src="/img/modules_pillar.svg" alt="">
@@ -335,7 +336,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-xs-4">
 						<div class="row">
 							<div class="col-sm-12 pillar-icon">
 								<img src="/img/explorer-pillar.svg" alt="">
@@ -473,71 +474,134 @@
   </div>
   <!-- end of second "sticky" header -->
 
-	<!-- begin electrode modules -->
-		<div class="container">
-		  <div class="electrode-modules row" id="electrode-modules">
-			   <a href="#"><img class="icon-modules scroll-up" src="https://host-logos.firebaseapp.com/dotio/modules_icon_@1x.png" /></a>
-			   <h1>electrode modules</h1>
-			   <h3>Supercharge your app, with or without Electrode Core</h3>
-			  <div class="electrode-modules-background row">
-				  <div class="col-lg-offset-5 col-lg-7">
-					  <ul class="electrode-modules-list">
-						  <li class="row">
-							  <div class="col-lg-10">
-								  <h3 class="module-title">Above-the-fold Rendering</h3>
-								  <p class="module-description">A react component that enables
-										server side rendering of "only" the components your users see
-										on the screen without scrolling. This way, instead of side
-										rendering the whole page on the server, we only render what a
-										user will see initially for improved performance.</p>
-							  </div>
-							  <img class="icon-module col-lg-2" src="https://host-logos.firebaseapp.com/dotio/above_fold_icon_@1x.png" />
-						  </li>
-						  <li class="row">
-							  <div class="col-lg-10">
-								  <h3 class="module-title">Redux Router Engine</h3>
-								  <p class="module-description">Do you need data from a service
-										to render your component server-side? This module fetches the
-										data asyncronously and passes it to React to render your
-										components. Requires Redux.</p>
-							  </div>
-							  <img class="icon-module col-lg-2" src="https://host-logos.firebaseapp.com/dotio/redux_router_icon_@1x.png" />
-						  </li>
-						  <li class="row">
-							  <div class="col-lg-10">
-								  <h3 class="module-title">SSR Profiling &amp; Caching</h3>
-								  <p class="module-description">Improve your React server-side
-										rendering performance by up to 70% by caching your components'
-										render output.
-								  </p>
-							  </div>
-							  <img class="icon-module col-lg-2" src="https://host-logos.firebaseapp.com/dotio/SSR_profiling_icon_@1x.png" />
-						  </li>
-						  <li class="row">
-							  <div class="col-lg-10">
-								  <h3 class="module-title">Confippet</h3>
-								  <p class="module-description">Lets you define, extend, and merge
-										configurations for different environments (such as QA, prod,
-										and staging) that get initialized during start up or at runtime.
-								  </p>
-							  </div>
-							  <img class="icon-module col-lg-2" src="https://host-logos.firebaseapp.com/dotio/confippet_icon_@1x.png" />
-						  </li>
-						  <li class="row">
-							  <div class="col-lg-10">
-								  <h3 class="module-title">Stateless CSRF Validation</h3>
-								  <p class="module-description">Validate HTTP requests without a
-										session--for Express and Hapi.
-								  </p>
-							  </div>
-							  <img class="icon-module col-lg-2" src="https://host-logos.firebaseapp.com/dotio/stateless_icon_@1x.png" />
-						  </li>
-					  </ul>
-				  </div>
-			  </div>
-		  </div>
-	  </div>
-	<!-- end electrode modules -->
+	<!-- begin electrode newest version modules -->
+
+    <div id="modules-section" class="container">
+      <div class="container-fluid">
+        <div id="desktop-modules-content">
+          <div id="desktop-modules-header" class="row">
+            <a href="#"><img id="module-icon" class="icon-modules scroll-up" src="https://host-logos.firebaseapp.com/dotio/modules_icon_@1x.png" /></a>
+            <h1>electrode modules</h1>
+            <h3>Supercharge your app, with or without Electrode Core</h3>
+          </div>
+
+          <div class="row desktop-module-item">
+            <div class="module-box">
+              <div class="col-md-6 desktop-module-text">
+                <div class="row module-testbox">
+                  <div class="col-md-12 module-subheader">
+                    <b>Above-the-Fold Rendering</b>
+                  </div>
+                  <div class="col-md-8 module-textbox">
+                    <br>Instead of side rendering the whole page on the server, this react component enables rendering of *only* the components your users see on the screen without scrolling, for improved performance.</br>
+                  </div>
+                  <div class="col-md-4 desktop-module-logo">
+                    <a href="/docs/above_fold_rendering.html">
+                      <img src="/img/icn-atf.svg" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="module-box">
+              <div class="col-md-6 desktop-module-text">
+                <div class="row module-testbox">
+                  <div class="col-md-12 module-subheader">
+                    <b>Redux Router Engine</b>
+                  </div>
+                  <div class="col-md-8 module-textbox">
+                    <br>Do you need data from a service to render your component server-side? This module fetches the data asynchronously and passes it to React to render your components. Requires Redux.</br>
+                  </div>
+                  <div class="col-md-4 desktop-module-logo">
+                    <a href="/docs/redux_router_engine.html">
+                      <img src="/img/icn-redux.svg" alt="">
+                    </a>
+                  </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row desktop-module-item">
+            <div class="module-box">
+              <div class="col-md-6 desktop-module-text">
+                <div class="row module-testbox">
+                  <div class="col-md-12 module-subheader">
+                    <b>Confippet</b>
+                  </div>
+                  <div class="col-md-8 module-textbox">
+                    <br>Lets you define, extend, and merge configurations for different environments (such as QA, prod, and staging) that get initialized during start up or at runtime.</br>
+                  </div>
+                  <div class="col-md-4 desktop-module-logo">
+                    <a href="/docs/confippet.html">
+                      <img src="/img/icn-confippet.svg" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="module-box">
+              <div class="col-md-6 desktop-module-text">
+                <div class="row module-testbox">
+                  <div class="col-md-12 module-subheader">
+                    <b>SSR Profiling & Caching</b>
+                  </div>
+                  <div class="col-md-8 module-textbox">
+                    <br>This module can help you improve your React server-side rendering performance by up to 70% by caching your components' render</br>
+                  </div>
+                  <div class="col-md-4 desktop-module-logo">
+                    <a href="/docs/server_side_render_cache.html">
+                      <img src="/img/icn-ssr.svg" alt="">
+                    </a>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="row desktop-module-item">
+            <div class="module-box">
+              <div class="col-md-6 desktop-module-text">
+                <div class="row module-testbox">
+                  <div class="col-md-12 module-subheader">
+                    <b>Stateless CSRF Validation</b>
+                  </div>
+                  <div class="col-md-8 module-textbox">
+                    <br>Validate HTTP requests without a session--for Express and Hapi.</br>
+                  </div>
+                  <div class="col-md-4 desktop-module-logo">
+                    <a href="/docs/stateless_csrf_validation.html">
+                      <img src="/img/icn-csrf.svg" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="module-box">
+              <div class="col-md-6 desktop-module-text">
+                <div class="row module-testbox">
+                  <div class="col-md-12 module-subheader">
+                    <b>More Modules Coming Soon!</b>
+                  </div>
+                  <div class="col-md-8 module-textbox">
+                    <br>New module release announcements will be Tweeted on <a href="https://twitter.com/electrode_io">@electrode_io</a></br>
+                  </div>
+                  <div class="col-md-4 desktop-module-logo">
+                    <a href="/docs/stand_alone_modules.html">
+                      <img src="/img/icn-more.svg" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
 
   <!-- begin electrode tools -->
   <div class="container">
