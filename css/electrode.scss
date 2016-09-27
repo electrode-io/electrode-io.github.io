@@ -185,19 +185,16 @@ h1 {
   }
 
   .header-button {
-    font-family: "Gotham-Rounded-Medium";
+    font-family: "Gotham-Rounded-Bold";
     margin-top: 2em;
     font-weight: 500;
-    font-family: "Gotham-Rounded-Medium";
-    font-size: 1.5vmax;
+    font-size: 1.8vmax;
     padding-top: .5em;
-    padding-bottom: .4em;
+    padding-bottom: .2em;
     text-align: center;
     border-radius: 3px;
-    width: 90%;
-    @media(max-width: 902px) {
-      font-size: 1.4em;
-    }
+    width: 100%;
+
   }
   .get-started {
     background-color: #df2375;
