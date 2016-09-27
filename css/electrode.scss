@@ -1094,6 +1094,11 @@ img.footer-sub-logo {
      height: 120%;
      margin-top: 0;
    }
+
+   div#mobile-logo-text {
+     margin-top: -40px;
+     margin-bottom: -40px;
+   }
 }
 
 @media (max-width: 480px) {
@@ -1111,6 +1116,10 @@ img.footer-sub-logo {
     margin-top: -90px;
     margin: -90px -10px 0 0;
   }
+
+  div#mobile-slogan {
+    font-size: 21px;
+  }
 }
 
 @media (max-width: 380px) {
@@ -1127,6 +1136,10 @@ img.footer-sub-logo {
     border-radius: 4px;
     margin-top: -90px;
     margin: -90px -10px 0 0;
+  }
+
+  div#mobile-slogan {
+    font-size: 18px;
   }
 }
 
@@ -1171,10 +1184,6 @@ img.footer-sub-logo {
   margin: 20px -50px 20px 50;
 }
 
-#modules-section {
-  margin-bottom: 200px;
-}
-
 #module-icon {
   filter: grayscale(100%);
   height: 100px;
@@ -1187,7 +1196,7 @@ img.footer-sub-logo {
 }
 
 #modules-section {
-  padding: 50px;
+  padding: 100px;
 }
 
 .module-subheader {
