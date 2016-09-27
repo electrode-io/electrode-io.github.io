@@ -13,32 +13,38 @@ $large-devices: 1200px;
 $mobile-header-color-black: #333333;
 $mobile-pillar-b-background: #efefef;
 
-.header-logo {
-  height: 100%;
-}
 html {
   -webkit-font-smoothing: antialiased;
 }
 body {
-  // background-color: #00294b;
   font-family: "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
 html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
 
+//   #top-header {
+//     height: 98px;
+//   }
+//   #electrode-nav {
+//     height: 100%;
+//   }
+
 .electrode-nav-top {
   background-color: #00294b;
   border: none;
-  padding-top: 1.5em;
-  padding-bottom: 1em;
   border-bottom: 1px solid $light-trans-grey;
   font-weight: 500;
   font-size: 1.145em;
   letter-spacing: 1px;
   margin-bottom: 0;
+  // height: 100%;
+
+  .header-logo {
+    height: 29px;
+    width: 224px;
+  }
 }
 
 .inverse-colors {
@@ -57,11 +63,11 @@ html, body {
 .social-nav-links {
   li {
     border-radius: 4px;
-    margin-top: -26px;
-    padding-top: 30px;
+    margin-top: -4px;
     margin-right: 1em;
-
+    height: 79px;
     a {
+      padding: 34px 12px 18px 12px;
       img {
         width: 24px;
         height:22px;
@@ -74,19 +80,15 @@ html, body {
   width: 100%;
   margin-top: 1em;
   margin-bottom: -2px;
-  // background: #00294b;
 }
-.pillars-section {
-  background-color: white;
-  padding: 0;
-  margin-top: 25em;
-}
-// .pillars-section {
-//   background-color: white;
-// }
+
 
 
 .pillars-section-2 {
+
+  .pillar-grey-border {
+    border-right: 1px solid rgba(128, 128, 128, 0.25);
+  }
 
   .pillar-icon {
     text-align: center;
@@ -122,13 +124,12 @@ html, body {
     color: white;
     letter-spacing: 23px;
     font-weight: 200;
-    margin-top: .1em;
+    margin-top: .45em;
     padding: 0;
-    padding-right: 5%;
-    padding-left: 5%;
     padding-bottom: .2em;
     img {
       width: 100%;
+      max-height: 156px;
     }
   }
   .slogan {
@@ -151,7 +152,6 @@ html, body {
     font-size: 1.2em;
     font-weight: 600;
     margin-top: .9em;
-    /* padding: 0; */
     padding-left: 0;
     padding-bottom: 1.5em;
     padding-right: 0;
@@ -164,7 +164,7 @@ html, body {
     margin-top: 2em;
     font-weight: 500;
     font-family: "Gotham-Rounded-Medium";
-    font-size: 1.9em;
+    font-size: 1.5vmax;
     padding-top: .5em;
     padding-bottom: .4em;
     text-align: center;
@@ -176,13 +176,27 @@ html, body {
   }
   .get-started {
     background-color: #df2375;
-    border: 3.5px solid #df2375;
+    border: 3.5px solid rgb(223, 35, 117);
+    transition: all .2s ease-in-out;
+  }
+  .get-started:hover {
+    transition: all 0.5s ease;
+    background-color: #FF0066;
+    border: 3.5px solid #FF0066;
   }
   .about-electrode {
     background-color: rgba(255, 255, 255, 0);
     border: 3.5px solid white;
+    transition: all .2s ease-in-out;
+  }
+  .about-electrode:hover {
+    transition: all 0.5s ease;
+    color: #FFF;
+    border: 3.5px solid #FF0066;
   }
 }
+
+
 
 @media (max-width: 1279px){
   .header-info {
@@ -191,7 +205,7 @@ html, body {
 }
 
 .social-nav-links li:nth-child(2) {
-  margin-left: .5em;
+  // margin-left: .5em;
   background-color: #eb3d4e;
 }
 .social-nav-links li:nth-child(3) {
@@ -201,26 +215,65 @@ html, body {
   background-color: white;
 }
 
-.navbar-right~.navbar-right {
-  margin-right: 6%;
-}
-
 .primary-nav-links {
-  margin-top: 1em;
-
+  padding-right: 113px;
   li {
-    margin-right: 3em;
+    a {
+      padding: 45px 97.5px 0 0;
+      &:hover {
+        background-color: inherit;
+      }
+    }
   }
 
-  @media (max-width: 980px) {
+  #contribute a {
+    padding-right: 0;
+  }
+  #home-primary:before {
+    content: '';
+    background-color: white;
+    width: 95px;
+    height: 8px;
+    margin-bottom: -8px;
+    display: block;
+    margin-left: -21.5px;
+  }
+}
+
+@media(max-width: 1120px) {
+  .primary-nav-links {
+    padding: 0px 5px 5px 5px;
+    padding-right: 5px;
+    margin-right: 24px !important;
     li {
-      margin-right: 1em;
+      a {
+        padding: 45px 16.5px 0 0;
+      }
     }
+    #home-primary:before {
+      content: '';
+      background-color: white;
+      width: 95px;
+      height: 8px;
+      margin-bottom: -8px;
+      display: block;
+      margin-left: -21.5px;
+    }
+    #contribute a {
+      padding-right: 5px;
+    }
+  }
+}
+@media(max-width: 800px) {
+  .primary-nav-links {
+    padding: 0px 0px 5px 5px;
+    /* padding-right: 5px; */
+    margin-right: 16px !important;
   }
 }
 
 .electrode-brand-top {
-  padding: 12px;
+  padding-top: 38px;
 }
 
 .vert-divider {
@@ -228,8 +281,7 @@ html, body {
   width: 0px;
   height: 100%;
   border-left: 1px solid $light-trans-grey;
-  margin-top: -24px;
-  margin-left: -15px;
+  margin-left: -22px;
 }
 //END HEADER STYLES
 
@@ -256,6 +308,11 @@ html, body {
     text-align: center;
     color: #ffffff;
     padding: 10px;
+  }
+  a:hover {
+    transition: all 0.5s ease;
+    background-color: #FF0066;
+    border: 3.5px solid #FF0066;
   }
 }
 
@@ -309,6 +366,10 @@ html, body {
 
   #electrode-header {
     background: linear-gradient(#00203b, #032a4a);
+  }
+  .top-core-content {
+    padding: 60px 0px 10px 0px;
+    border-top: 1px solid rgba(128, 128, 128, 0.25);
   }
 }
 
@@ -384,6 +445,11 @@ html, body {
   width: 125px;
   height: 125px;
   margin: -10px -20px 7px -20px;
+}
+
+#modules-section {
+  padding: 80px 60px 80px 100px;
+  border-bottom: 1px solid #cccccc;
 }
 
 .electrode-modules, #modules-section {
@@ -469,6 +535,51 @@ html, body {
     }
   }
 }
+
+@media (max-width: 1548px) {
+  .electrode-modules, #modules-section {
+    .desktop-module-item {
+      .module-testbox {
+        min-height: 270px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1351px) {
+  #modules-section {
+    padding: 80px 0 80px 40px;
+  }
+
+  .electrode-modules, #modules-section {
+    .desktop-module-item {
+      .module-testbox {
+        min-height: 340px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .electrode-modules, #modules-section {
+    .desktop-module-item {
+      .module-testbox {
+        min-height: 420px;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .electrode-modules, #modules-section {
+    .desktop-module-item {
+      .module-testbox {
+        min-height: 500px;
+      }
+    }
+  }
+}
+
 .row {
   margin: 0px;
 }
@@ -476,7 +587,6 @@ html, body {
 .electrode-tools {
   margin-top: 70px;
   text-align: center;
-  font-family: "Gotham-Rounded-Medium";
 
   h1 {
     font-size: 56px;
@@ -693,8 +803,6 @@ a.footer-text {
 .github-logo {
   img {
     width: 1.3em;
-    background-color: white;
-    color: #3a3a3a;
   }
 }
 
@@ -734,17 +842,6 @@ div.footer-vertical-line {
 img.footer-sub-logo {
   filter: invert(1);
   margin-top: 5px;
-}
-
-.nav {
-  li {
-    a:hover{
-      background: inherit;
-    }
-    a {
-      padding: 10px 7px;
-    }
-  }
 }
 
 #second-nav {
@@ -987,6 +1084,10 @@ img.footer-sub-logo {
      }
    }
 
+   .electrode-brand-top {
+     padding-top: 10px;
+   }
+
    #code-snippet {
      font-size: 12px;
      width: 90%;
@@ -1137,6 +1238,36 @@ img.footer-sub-logo {
 
 @media (max-width: 767px) {
 
+.primary-nav-links {
+  li {
+    a {
+      padding: 0 0 20px 10px;
+      &:hover {
+        background-color: inherit;
+      }
+    }
+  }
+}
+  .nav > li {
+    padding-left: 15px;
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .nav > ul > li > a {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .mobile-header-links {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  div#electrode-nav {
+    margin-bottom: 10px;
+  }
+
   #header-intro-paragraph,
   #desktop-modules-content,
   .navbar-collapse .nav > .divider-vertical {
@@ -1181,6 +1312,10 @@ img.footer-sub-logo {
 
 @media (max-width: 480px) {
 
+  .electrode-brand-top {
+    padding: 35px 0 0 25px;
+  }
+
   img.header-logo {
     height: 90%;
     margin-top: -30px;
@@ -1191,8 +1326,6 @@ img.footer-sub-logo {
     height: 60px;
     width: auto;
     border-radius: 4px;
-    margin-top: -90px;
-    margin: -90px -10px 0 0;
   }
 
   div#mobile-slogan {
@@ -1215,20 +1348,29 @@ img.footer-sub-logo {
       }
     }
   }
+  .header-content .get-started {
+    font-size:14px;
+    font-weight:bold;
+  }
+  .header-content .header-button {
+    width: 100%;
+  }
 }
 
 @media (max-width: 380px) {
 
-  img.header-logo {
-    height: 80%;
+  .electrode-nav-top {
+    .header-logo {
+      height: 30px;
+      width: 180px;
+    }
   }
 
   img.mob-menu {
     height: 50px;
-    width: 100px;
+    // width: auto;
     border-radius: 4px;
-    margin-top: -90px;
-    margin: -90px -10px 0 0;
+    margin-right: 10px;
   }
 
   div#mobile-slogan {
@@ -1240,7 +1382,6 @@ img.footer-sub-logo {
     font-size: 12px;
     width: 280px;
     height: 40px;
-    // margin-right: 10px;
   }
 }
 
@@ -1248,7 +1389,7 @@ img.footer-sub-logo {
   height: 65px;
   width: auto;
   border-radius: 4px;
-  margin-top: -70px;
+  margin-top: -30px;
   margin-right: 1em;
 }
 
@@ -1292,11 +1433,6 @@ ol.mobile-internal-links {
   margin: 50px 20px;
 }
 
-#modules-section {
-  padding: 80px 100px;
-  border-bottom: 1px solid #cccccc;
-}
-
 .module-subheader {
   margin-top: 20px;
   margin-bottom: -20px;
@@ -1320,4 +1456,15 @@ ol.mobile-internal-links {
 #mobile-header-info,
 .mobile-header-items {
   font-weight: bold;
+}
+
+
+div#bs-example-navbar-collapse-1 {
+  .mobile-header-links {
+    padding-left: 10px;
+  }
+
+  .navbar-collapse {
+    padding-left: 10px;
+  }
 }
