@@ -392,13 +392,50 @@ html, body {
   margin: -10px -20px 7px -20px;
 }
 
-.electrode-modules {
+.electrode-modules, #modules-section {
+  font-family: "Gotham-Rounded-Medium";
   text-align: center;
 
   .icon-modules {
-    filter: grayscale(100%);
-    height: 100px;
-    width: 100px;
+    height: 104px;
+    margin-bottom: 46px;
+    width: 116px;
+  }
+
+  h1 {
+    font-size: 56px;
+    font-weight: normal;
+    margin-top: 0;
+  }
+
+  h3 {
+    font-size: 26px;
+    font-weight: normal;
+  }
+
+  .desktop-module-item {
+    text-align: left;
+
+    .module-subheader {
+      font-size: 20px;
+      margin-top: 40px;
+    }
+
+    .desktop-module-logo img {
+      width: 66px;
+      float: right;
+      height: 75px;
+      margin-right: 20px;
+
+    }
+
+    .module-testbox {
+      font-size: 18px;
+      min-height: 240px;
+      padding-left: 30px;
+      margin-right: 40px;
+      margin-top: 0px;
+    }
   }
 
   .electrode-modules-list {
@@ -449,10 +486,12 @@ html, body {
 
   h1 {
     font-size: 56px;
+    font-weight: normal;
   }
 
   h3 {
     font-size: 26px;
+    font-weight: normal;
   }
 
   .icon-modules {
@@ -526,6 +565,8 @@ html, body {
   }
 
   .carousel-control {
+    width: 0;
+
     span {
       position: absolute;
       top: 35%;
@@ -1183,19 +1224,14 @@ img.footer-sub-logo {
   margin: 20px -50px 20px 50;
 }
 
-#modules-section {
-  margin-bottom: 250px;
-}
-
-#module-icon {
-  filter: grayscale(100%);
-  height: 100px;
-  width: 100px;
-}
-
 #desktop-modules-header {
   text-align: center;
   margin: 50px 20px;
+}
+
+#modules-section {
+  padding: 80px 100px;
+  border-bottom: 1px solid #cccccc;
 }
 
 .module-subheader {
