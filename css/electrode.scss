@@ -239,32 +239,36 @@ h1 {
 .social-nav-links li:nth-child(4) {
   background-color: white;
 }
-
-.primary-nav-links {
-  padding-right: 113px;
-  li {
-    a {
-      padding: 45px 97.5px 0 0;
-      &:hover {
-        background-color: inherit;
+//larger desktop
+@media(min-width:1146px) {
+  .primary-nav-links {
+    padding-right: 113px;
+    li {
+      a {
+        padding: 45px 97.5px 0 0;
+        &:hover {
+          background-color: inherit;
+        }
+      }
+    }
+    #contribute a {
+      padding-right: 0;
+    }
+    @media(min-width: 768px){
+      #home-primary:before {
+        content: '';
+        background-color: white;
+        width: 95px;
+        height: 8px;
+        margin-bottom: -8px;
+        display: block;
+        margin-left: -21.5px;
       }
     }
   }
-  #contribute a {
-    padding-right: 0;
-  }
-  #home-primary:before {
-    content: '';
-    background-color: white;
-    width: 95px;
-    height: 8px;
-    margin-bottom: -8px;
-    display: block;
-    margin-left: -21.5px;
-  }
 }
-
-@media(max-width: 1120px) {
+//smaller desktop
+@media(min-width: 768px) and (max-width: 1146px) {
   .primary-nav-links {
     padding: 0px 5px 5px 5px;
     padding-right: 5px;
@@ -296,8 +300,10 @@ h1 {
   }
 }
 
-.electrode-brand-top {
-  padding-top: 38px;
+@media(min-width: 768px) {
+  .electrode-brand-top {
+    padding-top: 38px;
+  }
 }
 
 .vert-divider {
