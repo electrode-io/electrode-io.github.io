@@ -33,26 +33,21 @@ h1 {
 }
 
 #top-header {
-  height: 98px;
-}
-#electrode-nav {
-  height: 100%;
-}
-
-.electrode-nav-top {
+  border-bottom:1px solid $light-trans-grey;
   background-color: #00294b;
-  border: none;
-  border-bottom: 1px solid $light-trans-grey;
+}
+.electrode-nav-top {
+  padding-bottom:20px;
   font-weight: 500;
   font-size: 1.145em;
   letter-spacing: 1px;
-  margin-bottom: 0;
-  height: 100%;
-
   .header-logo {
     height: 29px;
     width: 224px;
   }
+}
+.navbar {
+  margin:0 !important;
 }
 
 
@@ -129,16 +124,15 @@ h1 {
   background-repeat: no-repeat;
 
   .logo-text {
-    font-size: 10.5em;
-    color: white;
-    letter-spacing: 23px;
-    font-weight: 200;
-    margin-top: .45em;
+    margin-top: 23px;
     padding: 0;
-    padding-bottom: .2em;
+    padding-bottom: 38px;
     img {
       width: 100%;
       max-height: 156px;
+    }
+    @media(max-width: 768px) {
+      padding-bottom:37px;
     }
   }
   .slogan {
@@ -192,13 +186,15 @@ h1 {
     font-family: "Gotham-Rounded-Bold";
     margin-top: 2em;
     font-weight: 500;
-    font-size: 1.8vmax;
+    font-size: 1.5em;
     padding-top: .5em;
     padding-bottom: .2em;
     text-align: center;
     border-radius: 3px;
     width: 100%;
-
+    @media(max-width: 845px) {
+      font-size: 1.3em;
+    }
   }
   .get-started {
     background-color: #df2375;
@@ -219,6 +215,9 @@ h1 {
     transition: all 0.5s ease;
     color: #FFF;
     border: 3.5px solid #FF0066;
+  }
+  .visible-xs-block .get-started {
+      width:100%;
   }
 }
 
@@ -246,6 +245,7 @@ h1 {
   li {
     a {
       padding: 45px 97.5px 0 0;
+      font-family: "Gotham-Rounded-Bold";
       &:hover {
         background-color: inherit;
       }
@@ -346,6 +346,7 @@ h1 {
 
 @media only screen and (max-width: 1656px){
   .electrode-core {
+
      #core-h3 {
        padding: 0% 10% 0% 10% !important;
       }
@@ -359,6 +360,7 @@ h1 {
 }
 
 .electrode-core {
+  border-bottom: 1px #ECECEC solid;
   text-align: center;
   font-family: "Gotham-Rounded";
   padding: 50px 0px 50px 0px;
@@ -474,7 +476,7 @@ h1 {
 }
 
 #modules-section {
-  padding: 80px 60px 80px 100px;
+  padding: 20px 60px 80px 100px;
   border-bottom: 1px solid #cccccc;
 }
 
@@ -575,7 +577,7 @@ h1 {
 
 @media (max-width: 1351px) {
   #modules-section {
-    padding: 80px 0 80px 40px;
+    padding: 20px 0 80px 40px;
   }
 
   .electrode-modules, #modules-section {
@@ -1092,16 +1094,23 @@ img.footer-sub-logo {
   width: 100%;
 
   #pillars-mobile-container {
-    display: inline-block;
     text-align: center;
     min-width: 320px;
     font-family: "Gotham-Rounded";
 
+    .add-padding-right {
+      padding-right: 7%;
+    }
+
+    .add-padding-left {
+      padding-left: 6.5%;
+    }
+
     .mobile-header-items {
-      position: relative;
-      float: left;
       color: $mobile-header-color-black;
-      padding: 10px 15px;
+      padding: 10px 0;
+      margin-left: 2%;
+      margin-right: 2%;
       cursor: pointer;
       font-size: 18px;
       font-family: "Gotham-Rounded";
@@ -1116,13 +1125,14 @@ img.footer-sub-logo {
     #mobile-core-content {
       .mobile-content-heading {
         font-weight: 600;
+        font-size: 15px;
       }
     }
   }
 }
 
 #mobile-pillar-content-zone {
-  padding: 6px 5%;
+  padding: 12px 5%;
   line-height: 1.4;
   font-size: 14px;
   font-family: "Gotham-Rounded";
@@ -1137,7 +1147,7 @@ img.footer-sub-logo {
 .mobile-pillar-bar {
   width: 100%;
 	height: 4px;
-  margin-top: -9px;
+  margin-top: -4px;
   margin-bottom: 10px;
 	background-color: $mobile-pillar-b-background;
   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.2);
@@ -1213,21 +1223,43 @@ img.footer-sub-logo {
    }
 
    #snippet-bubble {
-     height: 315px;
-     margin-bottom: 10px;
+     height: auto;
+     margin-bottom: 12px;
      text-align: center;
+     padding-left: 20px;
+     padding-right: 20px;
+     padding-bottom: 12px;
+
+     h4 {
+       padding-top: 5px;
+       font-size: 18px;
+       font-family: Gotham-Rounded-Medium;
+     }
+
+     padding-left: 20px;
+     padding-right: 20px;
+
+     h4 {
+       font-size: 18px;
+     }
 
      .snippet-bubble-text {
-      font-size: 14px;
-      text-align: center;
-      margin: 10px;
+      font-size: 15px;
+      margin-top: 10px;
+      text-align: left;
+      margin-bottom: 10px;
       padding: 0;
      }
    }
 
    #code-snippet {
      font-size: 12px;
-     width: 90%;
+     width: 100%;
+     padding: 2% 0 0 0;
+
+     h4 {
+       font-size: 18px;
+     }
    }
 
    .header-info {
@@ -1387,9 +1419,27 @@ img.footer-sub-logo {
    }
 
    div#mobile-logo-text {
-     margin-top: -40px;
-     margin-bottom: -40px;
    }
+   .header-mountains {
+     img {
+       padding-top: 0;
+     }
+   }
+
+   .primary-nav-links {
+     li {
+       a {
+         padding: 0 0 20px 10px;
+         &:hover {
+           background-color: inherit;
+         }
+       }
+     }
+   }
+}
+
+@media (max-width:680px) {
+
 }
 
 @media (max-width: 480px) {
@@ -1418,6 +1468,11 @@ img.footer-sub-logo {
   .header-content .header-button {
     width: 100%;
   }
+   .header-mountains {
+     img {
+       padding-top: 0;
+     }
+   }
 }
 
 @media (max-width: 380px) {
@@ -1481,6 +1536,12 @@ img.footer-sub-logo {
 
 .desktop-module-text {
   margin: 20px -50px 20px 50;
+}
+
+#module-icon {
+  filter: grayscale(100%);
+  height: 100px;
+  width: 100px;
 }
 
 #desktop-modules-header {
