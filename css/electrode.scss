@@ -342,7 +342,6 @@ h1 {
 
 @media only screen and (max-width: 1656px){
   .electrode-core {
-    border-bottom: 1px #ECECEC solid;
 
      #core-h3 {
        padding: 0% 10% 0% 10% !important;
@@ -357,6 +356,7 @@ h1 {
 }
 
 .electrode-core {
+  border-bottom: 1px #ECECEC solid;
   text-align: center;
   font-family: "Gotham-Rounded";
   padding: 50px 0px 50px 0px;
