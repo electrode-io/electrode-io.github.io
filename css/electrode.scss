@@ -16,36 +16,45 @@ $mobile-pillar-b-background: #efefef;
 .header-logo {
   height: 94%;
 }
+
 html {
   -webkit-font-smoothing: antialiased;
 }
 body {
-  // background-color: #00294b;
-  font-family: "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Gotham-Rounded","Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
 html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
 
-.container {
-  margin-left:36px;
-  margin-right: 0px;
+h1 {
+  font-family: "Gotham-Rounded-Medium";
+}
+
+#top-header {
+  height: 98px;
+}
+#electrode-nav {
+  height: 100%;
 }
 
 .electrode-nav-top {
-  // background: none;
   background-color: #00294b;
   border: none;
-  padding-top: 1.5em;
-  padding-bottom: 1em;
   border-bottom: 1px solid $light-trans-grey;
   font-weight: 500;
   font-size: 1.145em;
   letter-spacing: 1px;
   margin-bottom: 0;
+  height: 100%;
+
+  .header-logo {
+    height: 29px;
+    width: 224px;
+  }
 }
+
 
 .inverse-colors {
     color: white;
@@ -63,11 +72,11 @@ html, body {
 .social-nav-links {
   li {
     border-radius: 4px;
-    margin-top: -26px;
-    padding-top: 30px;
+    margin-top: -4px;
     margin-right: 1em;
-
+    height: 79px;
     a {
+      padding: 34px 12px 18px 12px;
       img {
         width: 24px;
         height:22px;
@@ -80,19 +89,15 @@ html, body {
   width: 100%;
   margin-top: 1em;
   margin-bottom: -2px;
-  // background: #00294b;
 }
-.pillars-section {
-  background-color: white;
-  padding: 0;
-  margin-top: 25em;
-}
-// .pillars-section {
-//   background-color: white;
-// }
+
 
 
 .pillars-section-2 {
+
+  .pillar-grey-border {
+    border-right: 1px solid rgba(128, 128, 128, 0.25);
+  }
 
   .pillar-icon {
     text-align: center;
@@ -128,27 +133,46 @@ html, body {
     color: white;
     letter-spacing: 23px;
     font-weight: 200;
-    margin-top: .1em;
+    margin-top: .45em;
     padding: 0;
-    padding-right: 5%;
-    padding-left: 5%;
     padding-bottom: .2em;
     img {
       width: 100%;
+      max-height: 156px;
     }
   }
   .slogan {
-    font-size: 1.8em;
+    font-size: 1.7em;
     font-weight: 200;
     letter-spacing: 0.3vw;
     border-top: 1px solid rgba(203,203,203,0.32);
     padding-top: 1.1em;
-    padding-bottom: .5em;
     margin-top: -.6em;
     text-align: center;
     font-family: "Gotham-Rounded-Medium";
     padding-left: 0;
     padding-right: 0;
+    @media(max-width: 1190px) {
+      font-size: 1.7em;
+      letter-spacing: 0.2vw;
+    }
+    @media(max-width: 1110px) {
+      font-size: x-large;
+      letter-spacing: 0;
+    }
+    @media(max-width: 980px) {
+      font-size: 1.6em;
+    }
+    @media(max-width: 915px) {
+      font-size: 1.4em;
+    }
+    @media(max-width: 805px) {
+      font-size: 1.3em;
+    }
+    @media(max-width: 768px) {
+      font-size: 1.6em;
+      padding-bottom: 1.1em;
+    }
   }
   .header-links {
     margin-bottom: 2.5em;
@@ -157,7 +181,6 @@ html, body {
     font-size: 1.2em;
     font-weight: 600;
     margin-top: .9em;
-    /* padding: 0; */
     padding-left: 0;
     padding-bottom: 1.5em;
     padding-right: 0;
@@ -166,29 +189,40 @@ html, body {
   }
 
   .header-button {
-    font-family: "Gotham-Rounded-Medium";
+    font-family: "Gotham-Rounded-Bold";
     margin-top: 2em;
     font-weight: 500;
-    font-family: "Gotham-Rounded-Medium";
-    font-size: 1.9em;
+    font-size: 1.8vmax;
     padding-top: .5em;
-    padding-bottom: .4em;
+    padding-bottom: .2em;
     text-align: center;
     border-radius: 3px;
-    width: 90%;
-    @media(max-width: 902px) {
-      font-size: 1.4em;
-    }
+    width: 100%;
+
   }
   .get-started {
     background-color: #df2375;
-    border: 3.5px solid #df2375;
+    border: 3.5px solid rgb(223, 35, 117);
+    transition: all .2s ease-in-out;
+  }
+  .get-started:hover {
+    transition: all 0.5s ease;
+    background-color: #FF0066;
+    border: 3.5px solid #FF0066;
   }
   .about-electrode {
     background-color: rgba(255, 255, 255, 0);
     border: 3.5px solid white;
+    transition: all .2s ease-in-out;
+  }
+  .about-electrode:hover {
+    transition: all 0.5s ease;
+    color: #FFF;
+    border: 3.5px solid #FF0066;
   }
 }
+
+
 
 @media (max-width: 1279px){
   .header-info {
@@ -197,7 +231,7 @@ html, body {
 }
 
 .social-nav-links li:nth-child(2) {
-  margin-left: .5em;
+  // margin-left: .5em;
   background-color: #eb3d4e;
 }
 .social-nav-links li:nth-child(3) {
@@ -207,26 +241,64 @@ html, body {
   background-color: white;
 }
 
-.navbar-right~.navbar-right {
-  margin-right: 6%;
+.primary-nav-links {
+  padding-right: 113px;
+  li {
+    a {
+      padding: 45px 97.5px 0 0;
+      &:hover {
+        background-color: inherit;
+      }
+    }
+  }
+  #contribute a {
+    padding-right: 0;
+  }
+  #home-primary:before {
+    content: '';
+    background-color: white;
+    width: 95px;
+    height: 8px;
+    margin-bottom: -8px;
+    display: block;
+    margin-left: -21.5px;
+  }
 }
 
-.primary-nav-links {
-  margin-top: 1em;
-
-  li {
-    margin-right: 3em;
-  }
-
-  @media (max-width: 980px) {
+@media(max-width: 1120px) {
+  .primary-nav-links {
+    padding: 0px 5px 5px 5px;
+    padding-right: 5px;
+    margin-right: 24px !important;
     li {
-      margin-right: 1em;
+      a {
+        padding: 45px 16.5px 0 0;
+      }
     }
+    #home-primary:before {
+      content: '';
+      background-color: white;
+      width: 95px;
+      height: 8px;
+      margin-bottom: -8px;
+      display: block;
+      margin-left: -21.5px;
+    }
+    #contribute a {
+      padding-right: 5px;
+    }
+  }
+}
+@media(max-width: 800px) {
+  .primary-nav-links {
+    padding: 0px 0px 5px 5px;
+    /* padding-right: 5px; */
+    margin-right: 16px !important;
   }
 }
 
 .electrode-brand-top {
-  padding: 12px;
+  padding-top: 38px;
 }
 
 .vert-divider {
@@ -234,8 +306,7 @@ html, body {
   width: 0px;
   height: 100%;
   border-left: 1px solid $light-trans-grey;
-  margin-top: -24px;
-  margin-left: -15px;
+  margin-left: -22px;
 }
 //END HEADER STYLES
 
@@ -257,11 +328,17 @@ html, body {
     border: 1px solid #d62470;
     background-color: #df2375;
     font-size: 16px;
-    font-weight: 500;
-    line-height: 1.25em;
+    font-weight: bold;
     text-align: center;
     color: #ffffff;
     padding: 10px;
+
+  }
+  a:hover {
+    transition: all 0.5s ease;
+    background-color: #FF0066;
+    border: 1px solid #FF0066;
+    text-decoration:none;
   }
 }
 
@@ -300,7 +377,6 @@ html, body {
 
   h4 {
     font-family: "Gotham-Rounded-Bold";
-    padding: 0px 25% 0px 12%;
   }
 
   #electrode-core-text {
@@ -316,13 +392,16 @@ html, body {
   #electrode-header {
     background: linear-gradient(#00203b, #032a4a);
   }
+  .top-core-content {
+    padding: 60px 0px 10px 0px;
+    border-top: 1px solid rgba(128, 128, 128, 0.25);
+  }
 }
 
 #snippet-bubble {
   float: right;
   font-weight: bold;
   border-radius: 4px;
-  background-color: #f4f4f4;
   border: solid 1px #cccccc;
   text-align: left;
   top: 0px;
@@ -331,15 +410,19 @@ html, body {
   z-index: 2;
 
   .snippet-bubble-text {
-    font-size: 110%;
-    padding: 10px 0px 10px 4%;
-    font-size: 120%;
+    font-size: 16px;
+    padding: 10px 0;
     text-align:left;
   }
 
   h3 {
     text-align: center;
     padding: 0px;
+  }
+
+  h4 {
+    font-size: 26px;
+    font-weight: normal;
   }
 
   #deploy-msg {
@@ -365,8 +448,6 @@ html, body {
   color: white;
   padding: 2% 0% 2% 0%;
   text-align: left;
-  width: 80%;
-  margin: 0 auto;
 
   p {
     padding-left: 5%;
@@ -392,13 +473,56 @@ html, body {
   margin: -10px -20px 7px -20px;
 }
 
-.electrode-modules {
+#modules-section {
+  padding: 80px 60px 80px 100px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.electrode-modules, #modules-section {
+  font-family: "Gotham-Rounded";
   text-align: center;
 
   .icon-modules {
-    filter: grayscale(100%);
-    height: 100px;
-    width: 100px;
+    height: 104px;
+    margin-bottom: 46px;
+    width: 116px;
+  }
+
+  h1 {
+    font-size: 56px;
+    font-weight: normal;
+    margin-top: 0;
+  }
+
+  h3 {
+    font-size: 26px;
+    font-weight: normal;
+  }
+
+  .desktop-module-item {
+    text-align: left;
+
+    .module-subheader {
+      font-size: 20px;
+      margin-top: 40px;
+      font-family: "Gotham-Rounded-Medium";
+    }
+
+    .desktop-module-logo img {
+      width: 66px;
+      float: right;
+      height: 75px;
+      margin-right: 20px;
+
+    }
+
+    .module-testbox {
+      font-size: 18px;
+      min-height: 240px;
+      padding-left: 30px;
+      margin-right: 40px;
+      margin-top: 0px;
+    }
   }
 
   .electrode-modules-list {
@@ -438,15 +562,69 @@ html, body {
     }
   }
 }
+
+@media (max-width: 1548px) {
+  .electrode-modules, #modules-section {
+    .desktop-module-item {
+      .module-testbox {
+        min-height: 270px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1351px) {
+  #modules-section {
+    padding: 80px 0 80px 40px;
+  }
+
+  .electrode-modules, #modules-section {
+    .desktop-module-item {
+      .module-testbox {
+        min-height: 340px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .electrode-modules, #modules-section {
+    .desktop-module-item {
+      .module-testbox {
+        min-height: 420px;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .electrode-modules, #modules-section {
+    .desktop-module-item {
+      .module-testbox {
+        min-height: 500px;
+      }
+    }
+  }
+}
+
 //BEGIN TOOLS STYLES
 .electrode-tools {
-  margin-top: -80px;
+  margin-top: 70px;
   text-align: center;
 
+  h1 {
+    font-size: 56px;
+  }
+
+  h3 {
+    font-size: 26px;
+    font-weight: normal;
+  }
+
   .icon-modules {
-    filter: grayscale(100%);
-    height: 100px;
-    width: 100px;
+    height: 104px;
+    width: 116px;
+    margin-bottom: 46px;
   }
 
   /* Since positioning the image, we need to help out the caption */
@@ -465,15 +643,30 @@ html, body {
     .tool-title {
       margin-top: 40px;
       border-top: 1px #ECECEC solid;
+      padding-left: 0;
+      padding-right: 0;
       margin-bottom: 80px;
+
       position: relative;
       text-align: left;
 
+      h3, p {
+        padding-left: 0;
+        margin-left: 0;
+      }
+
+      h3 {
+        margin-top: 21px;
+      }
+
       .github-logo {
+        margin-right: 0;
+        padding-right: 0;
         float: right;
 
         img {
-          filter: invert(100%);
+          width: 48px;
+          height: 72px;
         }
       }
     }
@@ -483,6 +676,7 @@ html, body {
       height: 90%;
       background-repeat: no-repeat;
       background-size: contain;
+      background-position: center;
       background-position-y: 200px;
       margin-left: auto;
       margin-right: auto;
@@ -498,6 +692,8 @@ html, body {
   }
 
   .carousel-control {
+    width: 0;
+
     span {
       position: absolute;
       top: 35%;
@@ -670,17 +866,6 @@ img.footer-sub-logo {
   margin-top: 5px;
 }
 
-.nav {
-  li {
-    a:hover{
-      background: inherit;
-    }
-    a {
-      padding: 10px 7px;
-    }
-  }
-}
-
 #second-nav {
   max-height:98px;
   background: #fff;
@@ -700,6 +885,13 @@ img.footer-sub-logo {
   }
 
   .navbar-sticky-left {
+    .electrode-brand-top {
+      padding-top: 10px;
+      .header-logo {
+        width: 190px;
+        height: auto;
+      }
+    }
     .second-nav-top-pad {
       padding: 25px 0 0 20px;
     }
@@ -745,7 +937,7 @@ img.footer-sub-logo {
   #electrode-brand-header {
     width: 50%;
     height: auto;
-    margin-top: -10px;
+    margin-top: -15px;
   }
   .navbar-sticky-right {
     .sticky-github {
@@ -755,13 +947,15 @@ img.footer-sub-logo {
       margin-right:25px;
     }
     .sticky-social-links {
-      padding-top: 55px;
+      padding-top: 10px;
     }
+  }
+  .nav .second-nav-inner-links a:hover {
+    background-color: transparent;
   }
 
   .second-nav-inner-links {
     padding: 0px 10px 10px 0px;
-
     img {
       width: 57%;
       display: block;
@@ -792,19 +986,7 @@ img.footer-sub-logo {
     }
   }
 
-@media (max-width:860px) {
-
-  .navbar-sticky-right {
-    .outer-links-ul {
-      margin-right: 25px;
-    }
-    .social-nav-links {
-      display: none;
-    }
-  }
-}
-
-@media (max-width: 1130px) {
+@media (max-width: 1300px) {
   .second-nav-link-container {
     padding-right:15px;
 
@@ -820,7 +1002,6 @@ img.footer-sub-logo {
     }
   #second-nav {
     font-size: 10px;
-    .header
     .second-nav-inner-links {
       float: left;
       padding: 0;
@@ -859,6 +1040,41 @@ img.footer-sub-logo {
   }
 
 }
+@media (max-width: 1020px) {
+  .navbar-sticky-left {
+    .electrode-brand-top {
+      .header-logo {
+        height: 160px;
+      }
+      #electrode-brand-header {
+        .header-logo {
+          height:45px;
+        }
+      }
+    }
+  }
+
+  .navbar-sticky-right {
+    .outer-links-ul {
+      margin-right: 25px;
+    }
+    .social-nav-links {
+      display: none;
+    }
+  }
+}
+@media (max-width: 800px) {
+  #second-nav {
+    .navbar-sticky-left {
+      .electrode-brand-top {
+        .header-logo {
+          width: 160px;
+          height: auto;
+        }
+      }
+    }
+  }
+}
 
 // Global helper classes
 
@@ -879,6 +1095,7 @@ img.footer-sub-logo {
     display: inline-block;
     text-align: center;
     min-width: 320px;
+    font-family: "Gotham-Rounded";
 
     .mobile-header-items {
       position: relative;
@@ -895,18 +1112,25 @@ img.footer-sub-logo {
       padding-bottom: 6px !important;
       border-bottom: 4px solid #38bbff
     }
+
+    #mobile-core-content {
+      .mobile-content-heading {
+        font-weight: 600;
+      }
+    }
   }
 }
 
-#moible-pillar-content-zone {
+#mobile-pillar-content-zone {
   padding: 6px 5%;
   line-height: 1.4;
   font-size: 14px;
   font-family: "Gotham-Rounded";
 
-  .mobile-content-heading {
-    font-family: "Gotham-Rounded";
-    font-weight: 600;
+  #mobile-core-content {
+    .mobile-content-heading {
+      font-weight: 600;
+    }
   }
 }
 
@@ -925,7 +1149,7 @@ img.footer-sub-logo {
   min-width: 320px;
   margin-top: 30px;
 
-  .footer-toggle-items{
+  .footer-toggle-items {
     float: left;
     margin: 10px 0;
     margin-left: 5%;
@@ -951,6 +1175,7 @@ img.footer-sub-logo {
 .mobile-footer {
   font-family: "Gotham-Rounded";
   font-size: 9px;
+  font-weight: 600;
 	line-height: 1.5;
 	text-align: center;
   background-color: #00294b;
@@ -981,6 +1206,7 @@ img.footer-sub-logo {
    .electrode-modules,
    #second-nav,
    #electrode-modules,
+   #modules-section,
    #electrode-footer,
    #social-header-color-links {
     display: none;
@@ -1029,20 +1255,13 @@ img.footer-sub-logo {
    }
 }
 
-#mobile-pillar-content-zone {
-  margin: 0 5%;
-}
-
-#mobile-pillar-content-zone {
-  margin: 0 5%;
-}
-
 @media (min-width: 768px) {
    .pillars-section-2-mobile,
    .mobile-footer-toggle,
    .mobile-footer,
    .mobile-pillar-bar,
    li.mobile-header-links,
+   ol.mobile-header-links,
    #mobile-pillar-content-zone {
      display: none;
    }
@@ -1072,14 +1291,8 @@ img.footer-sub-logo {
 }
 
 #mobile-tools-content {
-  text-align: center;
-
-  .icon-modules {
-    filter: grayscale(100%);
-    height: 100px;
-    width: 100px;
-  }
-
+  font-family: "Gotham-Rounded";
+  min-width: 320px;
   /* Since positioning the image, we need to help out the caption */
   .carousel-caption {
     z-index: 10;
@@ -1087,75 +1300,71 @@ img.footer-sub-logo {
 
   /* Declare heights because of positioning of img element */
   .carousel .item {
-    height: 600px;
-    background-image: url("https://host-logos.firebaseapp.com/dotio/tools_landscape_@1x.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position-y: 350px;
+    height: auto;
+
+    .inside-car-title{
+      padding-left: 10px;
+    }
 
     .tool-title {
+      font-family: "Gotham-Rounded";
       margin-top: 40px;
-      border-top: 1px #ECECEC solid;
-      margin-bottom: 80px;
+      border-top: 1px #cccccc solid;
+      margin-bottom: 50px;
       position: relative;
       text-align: left;
+      border-bottom: 1px solid #cccccc;
 
       .github-logo {
         float: right;
-
-        img {
-          filter: invert(100%);
-        }
+        width: 34px;
+        height: 40px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
       }
     }
 
     .image {
-      width: 90%;
-      height: 90%;
       background-repeat: no-repeat;
       background-size: contain;
       margin-left: auto;
       margin-right: auto;
-    }
-
-    .image-electrode-explorer {
-      background-image: url("https://host-logos.firebaseapp.com/dotio/explorer_laptop_graphic_@1x.png");
-    }
-
-    .image-electrode-electrify {
-      background-image: url("https://host-logos.firebaseapp.com/dotio/bundle_laptop_graphic_@1x.png");
     }
   }
 
   .carousel-control {
     span {
       position: absolute;
-      top: 25%;
-      background-color: #cccccc;
+      top: 310px;
+      background-color: #df2375;
       background-image: url("https://host-logos.firebaseapp.com/dotio/arrow_@1x.png");
       background-size: 50% 50%;
       background-repeat: no-repeat;
       background-position: 50% 50%;
-      width: 30px;
-      height: 30px;
-      border-radius: 30px;
+      width: 35px;
+      height: 35px;
+      border-radius: 35px;
+
+      &.hover {
+        background-color: #df2375;
+      }
     }
 
-    span:hover {
-      background-color: #df2375;
-    }
 
     .button-previous {
-      left: 40px;
+      left: 0;
     }
 
     .button-next {
-      right: 40px;
+      right: 0;
       -webkit-transform: rotate(180deg);
       -moz-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
       -o-transform: rotate(180deg);
       transform: rotate(180deg);
+      &.hover {
+        background-color: #df2375;
+      }
     }
   }
 
@@ -1176,6 +1385,11 @@ img.footer-sub-logo {
      height: 120%;
      margin-top: 0;
    }
+
+   div#mobile-logo-text {
+     margin-top: -40px;
+     margin-bottom: -40px;
+   }
 }
 
 @media (max-width: 480px) {
@@ -1192,6 +1406,17 @@ img.footer-sub-logo {
     border-radius: 4px;
     margin-top: -90px;
     margin: -90px -10px 0 0;
+  }
+
+  div#mobile-slogan {
+    font-size: 21px;
+  }
+  .header-content .get-started {
+    font-size:14px;
+    font-weight:bold;
+  }
+  .header-content .header-button {
+    width: 100%;
   }
 }
 
@@ -1210,6 +1435,11 @@ img.footer-sub-logo {
     margin-top: -90px;
     margin: -90px -10px 0 0;
   }
+
+  div#mobile-slogan {
+    font-size: 18px;
+  }
+
 }
 
 .mob-menu {
@@ -1228,6 +1458,10 @@ img.footer-sub-logo {
 .mobile-git {
   height: 30px;
   width: auto;
+}
+
+.mobile-internal-links {
+  padding: 10px 0;
 }
 
 @media (min-width: 769px) {
@@ -1249,23 +1483,9 @@ img.footer-sub-logo {
   margin: 20px -50px 20px 50;
 }
 
-#modules-section {
-  margin-bottom: 200px;
-}
-
-#module-icon {
-  filter: grayscale(100%);
-  height: 100px;
-  width: 100px;
-}
-
 #desktop-modules-header {
   text-align: center;
   margin: 50px 20px;
-}
-
-#modules-section {
-  padding: 50px;
 }
 
 .module-subheader {
@@ -1280,4 +1500,15 @@ img.footer-sub-logo {
 .module-textbox {
   margin-bottom: 40px;
   padding-right: 60px;
+}
+
+#mob-menu-button,
+.mobile-header-links,
+.mobile-internal-links {
+  cursor: pointer;
+}
+
+#mobile-header-info,
+.mobile-header-items {
+  font-weight: bold;
 }
