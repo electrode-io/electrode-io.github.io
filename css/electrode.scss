@@ -28,6 +28,11 @@ h1 {
   font-family: "Gotham-Rounded-Medium";
 }
 
+#top-header {
+  border-bottom:1px solid $light-trans-grey;
+  background-color: #00294b;
+}
+
 @media(min-width: 768px){
   #top-header {
     height: 98px;
@@ -38,20 +43,35 @@ h1 {
 }
 
 .electrode-nav-top {
-  background-color: #00294b;
-  border: none;
-  border-bottom: 1px solid $light-trans-grey;
+  padding-bottom:20px;
   font-weight: 500;
   font-size: 1.145em;
   letter-spacing: 1px;
-  margin-bottom: 0;
-  @media(min-width: 768px){
-    height: 100%;
+  @media (max-width: 768px) {
+    padding-bottom:0;
   }
   .header-logo {
     height: 29px;
-    width: 224px;
+    width:100%;
+    @media(max-width: 1200px) {
+      width:90%
+    }
+    @media(max-width: 1120px) {
+      width:80%
+    }
+    @media(max-width: 1000px) {
+      width:70%
+    }
+    @media(max-width: 767px) {
+      width:100%
+    }
+    @media(max-width: 380px) {
+      width:80%
+    }
   }
+}
+.navbar {
+  margin:0 !important;
 }
 
 .navbar {
@@ -78,11 +98,28 @@ h1 {
     margin-top: -4px;
     margin-right: 1em;
     height: 79px;
+    @media(max-width: 820px) {
+      margin-right: 0.5em;
+    }
+    &:hover {
+      a {
+        img {
+          transform: scale(1.2);
+        }
+      }
+    }
     a {
       padding: 34px 12px 18px 12px;
+      &:hover {
+        background-color: inherit;
+      }
+      @media(max-width: 820px) {
+        padding: 34px 8px 18px 8px;
+      }
       img {
         width: 24px;
         height:22px;
+        transition: transform .3s ease-in-out;
       }
     }
   }
@@ -106,7 +143,12 @@ h1 {
     text-align: center;
     img {
       width: 75%;
-      margin-top: -17vw;
+      @media(min-width: 1600px){
+        margin-top: -10vw;
+      }
+      @media(max-width: 1599px){
+        margin-top: -13.5vw;
+      }
     }
   }
 
@@ -172,7 +214,7 @@ h1 {
       font-size: 1.3em;
     }
     @media(max-width: 768px) {
-      font-size: 1.6em;
+      font-size: 1.35em;
       padding-bottom: 1.1em;
     }
   }
@@ -249,11 +291,43 @@ h1 {
 }
 
 .primary-nav-links {
-  padding-right: 113px;
   li {
     a {
-      padding: 45px 97.5px 0 0;
       font-family: "Gotham-Rounded-Bold";
+      padding: 41px 97.5px 0 0;
+      transition: all .3s ease-in-out;
+      &:focus {
+        background-color: inherit;
+        outline: none;
+      }
+      @media(min-width: 768px) {
+        &:hover {
+          background-color: inherit;
+          font-weight: 900;
+          text-shadow: 0px 0px 15px #adebff;
+          color: #fcffea;
+        }
+      }
+      @media(max-width: 1200px) {
+        padding: 45px 70px 0 0;
+      }
+      @media(max-width: 1120px) {
+        padding: 45px 60px 0 0;
+      }
+      @media(max-width: 1000px) {
+        padding: 45px 50px 0 0;
+        font-size: 1em;
+      }
+      @media(max-width: 992px) {
+        padding: 45px 30px 0 0;
+        font-size: 0.9em;
+      }
+      @media(max-width: 820px) {
+
+      }
+      @media(max-width: 700px) {
+
+      }
       &:hover {
         background-color: inherit;
       }
@@ -270,43 +344,36 @@ h1 {
     margin-bottom: -8px;
     display: block;
     margin-left: -21.5px;
+    @media(max-width:768px) {
+      display:none;
+    }
   }
 }
 
-@media(max-width: 1120px) {
-  .primary-nav-links {
-    padding: 0px 5px 5px 5px;
-    padding-right: 5px;
-    margin-right: 24px !important;
-    li {
-      a {
-        padding: 45px 16.5px 0 0;
-      }
-    }
-    #home-primary:before {
-      content: '';
-      background-color: white;
-      width: 95px;
-      height: 8px;
-      margin-bottom: -8px;
-      display: block;
-      margin-left: -21.5px;
-    }
-    #contribute a {
-      padding-right: 5px;
-    }
-  }
+.navbar-toggle {
+  padding:0 !important;
+  margin-bottom:0 !important;
 }
-@media(max-width: 800px) {
-  .primary-nav-links {
-    padding: 0px 0px 5px 5px;
-    /* padding-right: 5px; */
-    margin-right: 16px !important;
-  }
+
+.mob-menu {
+  height: 65px;
+  width: auto;
+  border-radius: 4px;
+  margin-top: -26px;
+  margin-right: 0.5em;
+}
+
+img.mob-menu {
+  height: 60px;
+  width: auto;
+  border-radius: 4px;
 }
 
 .electrode-brand-top {
   padding-top: 38px;
+  @media (max-width: 768px) {
+    padding-top:10px;
+  }
 }
 
 .vert-divider {
@@ -326,6 +393,7 @@ h1 {
 
   p{
     margin: 20px 0 40px;
+    min-height: 12.5em;
   }
 }
 
@@ -620,6 +688,7 @@ h1 {
 .row {
   margin: 0px;
 }
+
 //BEGIN TOOLS STYLES
 .electrode-tools {
   margin-top: 70px;
@@ -839,6 +908,8 @@ a.footer-text {
 .github-logo {
   img {
     width: 1.3em;
+    background-color: white;
+    color: #3a3a3a;
   }
 }
 
@@ -1074,22 +1145,6 @@ img.footer-sub-logo {
   }
 }
 
-// .mobile-footer {
-//   font-family: "Gotham-Rounded";
-//   font-size: 9px;
-//   font-weight: 600;
-// 	line-height: 1.5;
-// 	text-align: center;
-//   background-color: #00294b;
-// 	color: #ffffff;
-//   height: 50px;
-//   min-width: 320px;
-//   position: absolute;
-//   width: 100%;
-//   padding: 0 5%;
-//   margin-top: 10px;
-// }
-
 .mobile-module-item {
   padding: 20px ;
   border-bottom: 1px solid #cccccc;
@@ -1128,7 +1183,7 @@ img.footer-sub-logo {
       width: 100%;
       padding: 0 5%;
       margin-top: 10px;
-   }
+     }
 
    #snippet-bubble {
      height: auto;
@@ -1327,8 +1382,6 @@ img.footer-sub-logo {
      width: 180px;
    }
 
-   div#mobile-logo-text {
-   }
    .header-mountains {
      img {
        padding-top: 0;
@@ -1338,13 +1391,17 @@ img.footer-sub-logo {
    .primary-nav-links {
      li {
        a {
-         padding: 0 0 20px 10px;
+         padding: 0 0 20px 20px;
          &:hover {
            background-color: inherit;
          }
        }
      }
    }
+}
+
+@media (max-width:680px) {
+
 }
 
 @media (max-width:680px) {
@@ -1448,12 +1505,6 @@ img.footer-sub-logo {
   padding: 10px 0;
 }
 
-@media (min-width: 769px) {
-  .container {
-    width: 97%;
-  }
-}
-
 .module-testbox {
   margin-top: 10px;
   margin-left: -30px;
@@ -1504,9 +1555,9 @@ img.footer-sub-logo {
 }
 
 ol.mobile-internal-links {
-    margin-left: -10px;
-    margin-bottom: 10px;
-    font-style: italic;
+  margin-left: -10px;
+  margin-bottom: 10px;
+  font-style: italic;
 }
 
 .mobile-footer {
