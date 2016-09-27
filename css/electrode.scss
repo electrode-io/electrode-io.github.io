@@ -29,26 +29,21 @@ h1 {
 }
 
 #top-header {
-  height: 98px;
-}
-#electrode-nav {
-  height: 100%;
-}
-
-.electrode-nav-top {
+  border-bottom:1px solid $light-trans-grey;
   background-color: #00294b;
-  border: none;
-  border-bottom: 1px solid $light-trans-grey;
+}
+.electrode-nav-top {
+  padding-bottom:20px;  
   font-weight: 500;
   font-size: 1.145em;
   letter-spacing: 1px;
-  margin-bottom: 0;
-  height: 100%;
-
   .header-logo {
     height: 29px;
     width: 224px;
   }
+}
+.navbar {
+  margin:0 !important;
 }
 
 
@@ -125,16 +120,15 @@ h1 {
   background-repeat: no-repeat;
 
   .logo-text {
-    font-size: 10.5em;
-    color: white;
-    letter-spacing: 23px;
-    font-weight: 200;
-    margin-top: .45em;
+    margin-top: 23px;
     padding: 0;
-    padding-bottom: .2em;
+    padding-bottom: 38px;
     img {
       width: 100%;
       max-height: 156px;
+    }
+    @media(max-width: 768px) {
+      padding-bottom:37px;
     }
   }
   .slogan {
@@ -188,13 +182,15 @@ h1 {
     font-family: "Gotham-Rounded-Bold";
     margin-top: 2em;
     font-weight: 500;
-    font-size: 1.8vmax;
+    font-size: 1.5em;
     padding-top: .5em;
     padding-bottom: .2em;
     text-align: center;
     border-radius: 3px;
     width: 100%;
-
+    @media(max-width: 845px) {
+      font-size: 1.3em;
+    }
   }
   .get-started {
     background-color: #df2375;
@@ -215,6 +211,9 @@ h1 {
     transition: all 0.5s ease;
     color: #FFF;
     border: 3.5px solid #FF0066;
+  }
+  .visible-xs-block .get-started {
+      width:100%;
   }
 }
 
@@ -242,6 +241,7 @@ h1 {
   li {
     a {
       padding: 45px 97.5px 0 0;
+      font-family: "Gotham-Rounded-Bold";
       &:hover {
         background-color: inherit;
       }
@@ -1299,9 +1299,16 @@ img.footer-sub-logo {
    }
 
    div#mobile-logo-text {
-     margin-top: -40px;
-     margin-bottom: -40px;
    }
+   .header-mountains {
+     img {
+       padding-top: 0;
+     }
+   }
+}
+
+@media (max-width:680px) {
+
 }
 
 @media (max-width: 480px) {
@@ -1330,6 +1337,11 @@ img.footer-sub-logo {
   .header-content .header-button {
     width: 100%;
   }
+   .header-mountains {
+     img {
+       padding-top: 0;
+     }
+   }
 }
 
 @media (max-width: 380px) {
