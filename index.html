@@ -57,11 +57,14 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right primary-nav-links">
-            <li><a href="">HOME</a></li>
+            <li><a href="">HOME</a>
+              <ul class="mobile-internal-header-links">
+                <ol class="mobile-header-links mobile-internal-links"><a onClick="togglePillars('core')">CORE</a></ol>
+                <ol class="mobile-header-links mobile-internal-links"><a onClick="togglePillars('modules')">MODULES</a></ol>
+                <ol class="mobile-header-links mobile-internal-links"><a onClick="togglePillars('tools')">TOOLS</a></ol>
+              </ul>
+            </li>
             <li><a href="/docs/what_is_electrode.html">DOCS</a></li>
-            <li class="mobile-header-links"><a onClick="togglePillars('core')">CORE</a></li>
-            <li class="mobile-header-links"><a onClick="togglePillars('modules')">MODULES</a></li>
-            <li class="mobile-header-links"><a onClick="togglePillars('tools')">TOOLS</a></li>
             <li><a href="https://github.com/electrode-io">CONTRIBUTE</a></li>
             <li class="mobile-header-links"><a href="https://getpocket.com/">
               <img class="mobile-social-links" src="https://host-logos.firebaseapp.com/dotio/pocket_@1x.png" alt="">
@@ -69,7 +72,7 @@
             <li class="mobile-header-links"><a href="">
               <img class="mobile-social-links" src="https://host-logos.firebaseapp.com/dotio/twitter_@1x.png" alt="">
               &nbsp;TWITTER</a></li>
-            <li class="mobile-header-links"><a href="https://github.com/electrode-io"><img class="mobile-git" src="img/circular-git.png" alt="">&nbsp;
+            <li class="mobile-header-links"><a href="https://github.com/electrode-io"><img class="mobile-git" src="img/sm-github.svg" alt="">&nbsp;
               GITHUB</a></li>
           </ul>
         </div>
@@ -136,7 +139,7 @@
 
     <div id="mobile-core-content">
       <div class="mobile-content-heading">
-        <p> Electrode is a platform for building universal React/Node.js applications with standardized structure, best practices, and modern technologies baked in. </p>
+        <p id="mobile-header-info"> Electrode is a platform for building universal React/Node.js applications with standardized structure, best practices, and modern technologies baked in. </p>
       </div>
       <div id="snippet-bubble">
         <div class="row">
