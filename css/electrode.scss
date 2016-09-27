@@ -13,39 +13,40 @@ $large-devices: 1200px;
 $mobile-header-color-black: #333333;
 $mobile-pillar-b-background: #efefef;
 
-.header-logo {
-  height: 100%;
-}
 html {
   -webkit-font-smoothing: antialiased;
 }
 body {
-  // background-color: #00294b;
   font-family: "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
 html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
 
-.container {
-  margin-left:36px;
-  margin-right: 0px;
+#top-header {
+  height: 98px;
+}
+#electrode-nav {
+  height: 100%;
 }
 
 .electrode-nav-top {
-  // background: none;
   background-color: #00294b;
   border: none;
-  padding-top: 1.5em;
-  padding-bottom: 1em;
   border-bottom: 1px solid $light-trans-grey;
   font-weight: 500;
   font-size: 1.145em;
   letter-spacing: 1px;
   margin-bottom: 0;
+  height: 100%;
+
+  .header-logo {
+    height: 29px;
+    width: 224px;
+  }
 }
+
 
 .inverse-colors {
     color: white;
@@ -63,11 +64,11 @@ html, body {
 .social-nav-links {
   li {
     border-radius: 4px;
-    margin-top: -26px;
-    padding-top: 30px;
+    margin-top: -4px;
     margin-right: 1em;
-
+    height: 79px;
     a {
+      padding: 34px 12px 18px 12px;
       img {
         width: 24px;
         height:22px;
@@ -80,19 +81,15 @@ html, body {
   width: 100%;
   margin-top: 1em;
   margin-bottom: -2px;
-  // background: #00294b;
 }
-.pillars-section {
-  background-color: white;
-  padding: 0;
-  margin-top: 25em;
-}
-// .pillars-section {
-//   background-color: white;
-// }
+
 
 
 .pillars-section-2 {
+
+  .pillar-grey-border {
+    border-right: 1px solid rgba(128, 128, 128, 0.25);
+  }
 
   .pillar-icon {
     text-align: center;
@@ -128,11 +125,12 @@ html, body {
     color: white;
     letter-spacing: 23px;
     font-weight: 200;
-    margin-top: .1em;
+    margin-top: .45em;
     padding: 0;
-    padding-bottom: .1em;
+    padding-bottom: .2em;
     img {
       width: 100%;
+      max-height: 156px;
     }
   }
   .slogan {
@@ -175,7 +173,6 @@ html, body {
     font-size: 1.2em;
     font-weight: 600;
     margin-top: .9em;
-    /* padding: 0; */
     padding-left: 0;
     padding-bottom: 1.5em;
     padding-right: 0;
@@ -188,7 +185,7 @@ html, body {
     margin-top: 2em;
     font-weight: 500;
     font-family: "Gotham-Rounded-Medium";
-    font-size: 1.9em;
+    font-size: 1.5vmax;
     padding-top: .5em;
     padding-bottom: .4em;
     text-align: center;
@@ -200,7 +197,8 @@ html, body {
   }
   .get-started {
     background-color: #df2375;
-    border: 3.5px solid #df2375;
+    border: 3.5px solid rgb(223, 35, 117);
+    transition: all .2s ease-in-out;
   }
   .get-started:hover {
     transition: all 0.5s ease;
@@ -210,6 +208,7 @@ html, body {
   .about-electrode {
     background-color: rgba(255, 255, 255, 0);
     border: 3.5px solid white;
+    transition: all .2s ease-in-out;
   }
   .about-electrode:hover {
     transition: all 0.5s ease;
@@ -218,6 +217,8 @@ html, body {
   }
 }
 
+
+
 @media (max-width: 1279px){
   .header-info {
     padding: 0%;
@@ -225,7 +226,7 @@ html, body {
 }
 
 .social-nav-links li:nth-child(2) {
-  margin-left: .5em;
+  // margin-left: .5em;
   background-color: #eb3d4e;
 }
 .social-nav-links li:nth-child(3) {
@@ -235,26 +236,64 @@ html, body {
   background-color: white;
 }
 
-.navbar-right~.navbar-right {
-  margin-right: 6%;
+.primary-nav-links {
+  padding-right: 113px;
+  li {
+    a {
+      padding: 45px 97.5px 0 0;
+      &:hover {
+        background-color: inherit;
+      }
+    }
+  }
+  #contribute a {
+    padding-right: 0;
+  }
+  #home-primary:before {
+    content: '';
+    background-color: white;
+    width: 95px;
+    height: 8px;
+    margin-bottom: -8px;
+    display: block;
+    margin-left: -21.5px;
+  }
 }
 
-.primary-nav-links {
-  margin-top: 1em;
-
-  li {
-    margin-right: 3em;
-  }
-
-  @media (max-width: 980px) {
+@media(max-width: 1120px) {
+  .primary-nav-links {
+    padding: 0px 5px 5px 5px;
+    padding-right: 5px;
+    margin-right: 24px !important;
     li {
-      margin-right: 1em;
+      a {
+        padding: 45px 16.5px 0 0;
+      }
     }
+    #home-primary:before {
+      content: '';
+      background-color: white;
+      width: 95px;
+      height: 8px;
+      margin-bottom: -8px;
+      display: block;
+      margin-left: -21.5px;
+    }
+    #contribute a {
+      padding-right: 5px;
+    }
+  }
+}
+@media(max-width: 800px) {
+  .primary-nav-links {
+    padding: 0px 0px 5px 5px;
+    /* padding-right: 5px; */
+    margin-right: 16px !important;
   }
 }
 
 .electrode-brand-top {
-  padding: 12px;
+  padding-top: 38px;
 }
 
 .vert-divider {
@@ -262,8 +301,7 @@ html, body {
   width: 0px;
   height: 100%;
   border-left: 1px solid $light-trans-grey;
-  margin-top: -24px;
-  margin-left: -15px;
+  margin-left: -22px;
 }
 //END HEADER STYLES
 
@@ -294,8 +332,7 @@ html, body {
   a:hover {
     transition: all 0.5s ease;
     background-color: #FF0066;
-    border: 1px solid #FF0066;
-    text-decoration: none;
+    border: 3.5px solid #FF0066;
   }
 }
 
@@ -334,7 +371,6 @@ html, body {
 
   h4 {
     font-family: "Gotham-Rounded-Bold";
-    padding: 0px 25% 0px 12%;
   }
 
   #electrode-core-text {
@@ -350,13 +386,16 @@ html, body {
   #electrode-header {
     background: linear-gradient(#00203b, #032a4a);
   }
+  .top-core-content {
+    padding: 60px 0px 10px 0px;
+    border-top: 1px solid rgba(128, 128, 128, 0.25);
+  }
 }
 
 #snippet-bubble {
   float: right;
   font-weight: bold;
   border-radius: 4px;
-  background-color: #f4f4f4;
   border: solid 1px #cccccc;
   text-align: left;
   top: 0px;
@@ -365,15 +404,19 @@ html, body {
   z-index: 2;
 
   .snippet-bubble-text {
-    font-size: 110%;
-    padding: 10px 0px 10px 4%;
-    font-size: 120%;
+    font-size: 16px;
+    padding: 10px 0;
     text-align:left;
   }
 
   h3 {
     text-align: center;
     padding: 0px;
+  }
+
+  h4 {
+    font-size: 26px;
+    font-weight: normal;
   }
 
   #deploy-msg {
@@ -399,8 +442,6 @@ html, body {
   color: white;
   padding: 2% 0% 2% 0%;
   text-align: left;
-  width: 80%;
-  margin: 0 auto;
 
   p {
     padding-left: 5%;
@@ -566,7 +607,6 @@ html, body {
 .electrode-tools {
   margin-top: 70px;
   text-align: center;
-  font-family: "Gotham-Rounded-Medium";
 
   h1 {
     font-size: 56px;
@@ -822,17 +862,6 @@ div.footer-vertical-line {
 img.footer-sub-logo {
   filter: invert(1);
   margin-top: 5px;
-}
-
-.nav {
-  li {
-    a:hover{
-      background: inherit;
-    }
-    a {
-      padding: 10px 7px;
-    }
-  }
 }
 
 #second-nav {

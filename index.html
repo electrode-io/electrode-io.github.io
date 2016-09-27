@@ -57,7 +57,7 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right primary-nav-links">
-            <li><a href="">HOME</a>
+            <li id="home-primary"><a href="">HOME</a>
               <ul class="mobile-internal-header-links">
                 <ol class="mobile-header-links mobile-internal-links"><a onClick="togglePillars('core')">CORE</a></ol>
                 <ol class="mobile-header-links mobile-internal-links"><a onClick="togglePillars('modules')">MODULES</a></ol>
@@ -323,53 +323,40 @@
 
   <div class="container pillars-section-2">
 		<div class="row">
-			<div class="col-xs-4">
-				<!-- <div class="top-graphic" id="core-graphic"></div> -->
-				<div class="row">
+			<div class="col-xs-4 pillar-grey-border">
 					<div class="col-sm-12 pillar-icon">
 						<img src="/img/core_pillar.svg" alt="">
 					</div>
-					<div class="row">
 						<div class="pillar-content">
 							<h1>core</h1>
 							<p>Build a simple, flexible scaffold in minutes, with support for server-side rendering and easy deployment to
 								multiple cloud providers. Electrode lets you focus on code, not configuration.</p>
 							</div>
-						</div>
-					</div>
 				</div>
-				<div class="col-xs-4">
-					<div class="row">
+				<div class="col-xs-4 pillar-grey-border">
 						<div class="col-sm-12 pillar-icon">
 							<img src="/img/modules_pillar.svg" alt="">
 						</div>
-						<div class="row">
 							<div class="pillar-content">
 								<h1>modules</h1>
 								<p>Level up your app with features like above-the-fold rendering, server-side render caching, and stateless
 									CSRF validation. Modules work with your existing React/Node app--no need to migrate to Electrode Core.</p>
 								</div>
-							</div>
-						</div>
 					</div>
 					<div class="col-xs-4">
-						<div class="row">
 							<div class="col-sm-12 pillar-icon">
 								<img src="/img/explorer-pillar.svg" alt="">
 							</div>
-							<div class="row">
 								<div class="pillar-content">
 									<h1>tools</h1>
 									<p>Discover reusable components and optimize your JS bundle with standalone tools. These tools can be used
 										with any React/Node app, but work best with the structure provided by Electrode Core.</p>
 									</div>
-								</div>
-							</div>
 						</div>
 		</div>
 		<div class="row pillar-links">
-			<div class="col-sm-4"><a href="">LEARN MORE</a></div>
-			<div class="col-sm-4"><a href="">LEARN MORE</a></div>
+			<div class="col-sm-4 pillar-grey-border"><a href="">LEARN MORE</a></div>
+			<div class="col-sm-4 pillar-grey-border"><a href="">LEARN MORE</a></div>
 			<div class="col-sm-4"><a href="">LEARN MORE</a></div>
 		</div>
   </div>
@@ -377,7 +364,7 @@
 
   <!-- begin electrode core -->
   <div class="container electrode-core">
-    <div class="row">
+    <div class="row top-core-content">
       <div class="col-md-12" id="electrode-core-logo">
         <img class="grayscale" src="https://host-logos.firebaseapp.com/dotio/core_hex_icon_@1x.png">
       </div>
@@ -401,23 +388,25 @@
         <div class="col-md-6">
           <div id="snippet-bubble">
             <div class="row">
-              <h4>QUICK AND EASY SETUP!</h4>
-            </div>
-            <div class="row" id="code-snippet">
-              <div>
-                <p>$ sudo npm install -g yo gulp generator-electrode</p>
-                <p>$ mkdir my-electrode-app</p>
-                <p>$ cd my-electrode-app</p>
-                <p>$ yo electrode</p>
-                <p>$ gulp dev</p>
-              </div>
+              <h4 class="col-sm-offset-1 col-md-offset-1">QUICK AND EASY SETUP!</h4>
             </div>
             <div class="row">
-              <div class="snippet-bubble-text col-md-10 col-md-offset-1">That's it! Next, deploy, your app to your favorite cloud service.</div>
+              <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10" id="code-snippet">
+                <div>
+                  <p>$ sudo npm install -g yo gulp generator-electrode</p>
+                  <p>$ mkdir my-electrode-app</p>
+                  <p>$ cd my-electrode-app</p>
+                  <p>$ yo electrode</p>
+                  <p>$ gulp dev</p>
+                </div>
+               </div>
             </div>
             <div class="row">
-              <a href="http://www.electrode.io/docs/get_started.html"><button class="btn col-md-offset-1 col-md-3" id="details-btn" >DETAILS</button></a>
-              <a href="http://www.electrode.io/docs/more_deployments.html"><button class="btn col-md-offset-1 col-md-6" id="deploy-btn">DEPLOY TO YOUR FAVORITE CLOUD</button></a>
+              <div class="snippet-bubble-text col-sm-offset-1 col-md-offset-1 col-md-10">That's it! Next, deploy, your app to your favorite cloud service.</div>
+            </div>
+            <div class="row">
+              <a href="http://www.electrode.io/docs/get_started.html"><button class="btn col-sm-offset-1 col-sm-3 col-md-offset-1 col-md-2" id="details-btn" >DETAILS</button></a>
+              <a href="http://www.electrode.io/docs/more_deployments.html"><button class="btn col-sm-offset-1 col-sm-6 col-md-offset-1 col-md-7" id="deploy-btn">DEPLOY TO YOUR FAVORITE CLOUD</button></a>
             </div>
           </div>
         </div>
