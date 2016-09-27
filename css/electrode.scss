@@ -17,7 +17,7 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 body {
-  font-family: "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Gotham-Rounded","Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 html, body {
   max-width: 100%;
@@ -30,6 +30,17 @@ html, body {
 //   #electrode-nav {
 //     height: 100%;
 //   }
+
+h1 {
+  font-family: "Gotham-Rounded-Medium";
+}
+
+#top-header {
+  height: 98px;
+}
+#electrode-nav {
+  height: 100%;
+}
 
 .electrode-nav-top {
   background-color: #00294b;
@@ -133,17 +144,37 @@ html, body {
     }
   }
   .slogan {
-    font-size: 1.8em;
+    font-size: 1.7em;
     font-weight: 200;
     letter-spacing: 0.3vw;
     border-top: 1px solid rgba(203,203,203,0.32);
     padding-top: 1.1em;
-    padding-bottom: .5em;
     margin-top: -.6em;
     text-align: center;
     font-family: "Gotham-Rounded-Medium";
     padding-left: 0;
     padding-right: 0;
+    @media(max-width: 1190px) {
+      font-size: 1.7em;
+      letter-spacing: 0.2vw;
+    }
+    @media(max-width: 1110px) {
+      font-size: x-large;
+      letter-spacing: 0;
+    }
+    @media(max-width: 980px) {
+      font-size: 1.6em;
+    }
+    @media(max-width: 915px) {
+      font-size: 1.4em;
+    }
+    @media(max-width: 805px) {
+      font-size: 1.3em;
+    }
+    @media(max-width: 768px) {
+      font-size: 1.6em;
+      padding-bottom: 1.1em;
+    }
   }
   .header-links {
     margin-bottom: 2.5em;
@@ -160,19 +191,16 @@ html, body {
   }
 
   .header-button {
-    font-family: "Gotham-Rounded-Medium";
+    font-family: "Gotham-Rounded-Bold";
     margin-top: 2em;
     font-weight: 500;
-    font-family: "Gotham-Rounded-Medium";
-    font-size: 1.5vmax;
+    font-size: 1.8vmax;
     padding-top: .5em;
-    padding-bottom: .4em;
+    padding-bottom: .2em;
     text-align: center;
     border-radius: 3px;
-    width: 90%;
-    @media(max-width: 902px) {
-      font-size: 1.4em;
-    }
+    width: 100%;
+
   }
   .get-started {
     background-color: #df2375;
@@ -303,16 +331,17 @@ html, body {
     border: 1px solid #d62470;
     background-color: #df2375;
     font-size: 16px;
-    font-weight: 500;
-    line-height: 1.25em;
+    font-weight: bold;
     text-align: center;
     color: #ffffff;
     padding: 10px;
+
   }
   a:hover {
     transition: all 0.5s ease;
     background-color: #FF0066;
-    border: 3.5px solid #FF0066;
+    border: 1px solid #FF0066;
+    text-decoration:none;
   }
 }
 
@@ -351,7 +380,6 @@ html, body {
 
   h4 {
     font-family: "Gotham-Rounded-Bold";
-    padding: 0px 25% 0px 12%;
   }
 
   #electrode-core-text {
@@ -377,7 +405,6 @@ html, body {
   float: right;
   font-weight: bold;
   border-radius: 4px;
-  background-color: #f4f4f4;
   border: solid 1px #cccccc;
   text-align: left;
   top: 0px;
@@ -386,15 +413,19 @@ html, body {
   z-index: 2;
 
   .snippet-bubble-text {
-    font-size: 110%;
-    padding: 10px 0px 10px 4%;
-    font-size: 120%;
+    font-size: 16px;
+    padding: 10px 0;
     text-align:left;
   }
 
   h3 {
     text-align: center;
     padding: 0px;
+  }
+
+  h4 {
+    font-size: 26px;
+    font-weight: normal;
   }
 
   #deploy-msg {
@@ -420,8 +451,6 @@ html, body {
   color: white;
   padding: 2% 0% 2% 0%;
   text-align: left;
-  width: 80%;
-  margin: 0 auto;
 
   p {
     padding-left: 5%;
@@ -453,7 +482,7 @@ html, body {
 }
 
 .electrode-modules, #modules-section {
-  font-family: "Gotham-Rounded-Medium";
+  font-family: "Gotham-Rounded";
   text-align: center;
 
   .icon-modules {
@@ -479,6 +508,7 @@ html, body {
     .module-subheader {
       font-size: 20px;
       margin-top: 40px;
+      font-family: "Gotham-Rounded-Medium";
     }
 
     .desktop-module-logo img {
@@ -590,7 +620,6 @@ html, body {
 
   h1 {
     font-size: 56px;
-    font-weight: normal;
   }
 
   h3 {
