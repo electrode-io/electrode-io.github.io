@@ -979,6 +979,14 @@ img.footer-sub-logo {
     min-width: 320px;
     font-family: "Gotham-Rounded";
 
+    .add-padding-right{
+      padding-right: 7%;
+    }
+
+    .add-padding-left{
+      padding-left: 6%;
+    }
+
     .mobile-header-items {
       color: $mobile-header-color-black;
       padding: 10px 0;
