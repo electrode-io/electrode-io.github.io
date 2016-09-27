@@ -24,6 +24,11 @@ body {
   font-family: "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .container {
   margin-left:36px;
   margin-right: 0px;
@@ -95,7 +100,7 @@ body {
   background-position: center 27px;
   background-size: 100%;
   background-repeat: no-repeat;
-
+  margin: 0 5%;
 
   .logo-text {
     font-size: 10.5em;
@@ -782,6 +787,7 @@ img.footer-sub-logo {
   border-bottom: 1px solid #333;
   height: 62px;
   min-width: 320px;
+  margin-top: 30px;
 
   .footer-toggle-items{
     float: left;
@@ -822,16 +828,13 @@ img.footer-sub-logo {
 }
 
 .mobile-module-item {
-  padding: 20px 0;
+  padding: 20px ;
   border-bottom: 1px solid #cccccc;
 
   .mobile-module-item-text {
-    width: 72%;
+    width: 80%;
     display: inline-block;
-  }
-
-  .mobile-module-item-icon {
-    float: right;
+    padding: 20px 0;
   }
 }
 
@@ -866,6 +869,10 @@ img.footer-sub-logo {
    }
 }
 
+#mobile-pillar-content-zone {
+  margin: 0 5%;
+}
+
 @media (min-width: 768px) {
    .pillars-section-2-mobile,
    .mobile-footer-toggle,
@@ -892,6 +899,8 @@ img.footer-sub-logo {
 
 @media (max-width: 767px) {
 
+  #header-intro-paragraph,
+  #desktop-modules-content,
   .navbar-collapse .nav > .divider-vertical {
       display: none;
    }
@@ -958,4 +967,57 @@ img.footer-sub-logo {
   .container {
     width: 97%;
   }
+}
+
+.module-testbox {
+  margin-top: 10px;
+  margin-left: -30px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.module-box {
+  // margin-bottom: 50px;
+  // border: 1px solid green;
+}
+
+.desktop-module-text {
+  margin: 20px -50px 20px 50;
+  // border: 1px solid gray;
+}
+
+#modules-section {
+  margin-bottom: 200px;
+}
+
+#module-icon {
+  filter: grayscale(100%);
+  height: 100px;
+  width: 100px;
+}
+
+#desktop-modules-header {
+  text-align: center;
+  margin: 50px 20px;
+}
+
+#modules-section {
+  padding: 50px;
+}
+
+.module-subheader {
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+
+.desktop-module-logo {
+  margin-top: 20px;
+}
+
+.module-textbox {
+  margin-bottom: 40px;
+  // margin-top: 40px;
+  padding-right: 60px;
 }

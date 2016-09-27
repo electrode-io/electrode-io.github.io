@@ -1,0 +1,338 @@
+<!-- table #1000 -->
+<div class="table-responsive">
+  <table class="table">
+
+    <tr class="desktop-module-item">
+      <td class="module-box">
+        <tr class="desktop-module-text">
+          <th>Above-the-Fold Rendering</th>
+          <td>Instead of side rendering the whole page on the server, this react component enables rendering of *only* the components your users see on the screen without scrolling, for improved performance.</td>
+          <td>
+            <a href="/docs/above_fold_rendering.html">
+              <img src="/img/icn-atf.svg" alt="">
+            </a>
+          </td>
+        </tr>
+
+      </td>
+
+      <td class="module-box">
+        <tr class="desktop-module-text">
+          <th>Redux Router Engine</th>
+          <td>Do you need data from a service to render your component server-side? This module fetches the data asynchronously and passes it to React to render your components. Requires Redux.</td>
+
+          <td>
+            <a href="/docs/redux_router_engine.html">
+              <img src="/img/icn-redux.svg" alt="">
+            </a>
+          </td>
+        </tr>
+      </td>
+    </tr>
+
+
+  </table>
+</div>
+
+<!-- begin electrode newest version modules -->
+
+  <div id="modules-section" class="container">
+    <div class="container-fluid">
+      <div id="desktop-modules-content">
+        <div id="desktop-modules-header" class="row">
+          <a href="#"><img id="module-icon" class="icon-modules scroll-up" src="https://host-logos.firebaseapp.com/dotio/modules_icon_@1x.png" /></a>
+          <h1>electrode modules</h1>
+          <h3>Supercharge your app, with or without Electrode Core</h3>
+        </div>
+
+
+        <div class="table-responsive">
+          <table class="table">
+
+            <tr class="desktop-module-item">
+              <td class="module-box">
+                <tr class="col-md-5 desktop-module-text">
+                  <th>Above-the-Fold Rendering</th>
+                  <td>Instead of side rendering the whole page on the server, this react component enables rendering of *only* the components your users see on the screen without scrolling, for improved performance.</td>
+                </tr>
+
+                <tr class="col-md-1 desktop-module-logo">
+                  <td>
+                    <a href="/docs/above_fold_rendering.html">
+                      <img src="/img/icn-atf.svg" alt="">
+                    </a>
+                  </td>
+                </tr>
+              </td>
+
+              <td class="module-box">
+                <tr class="col-md-5 desktop-module-text">
+                  <th>Redux Router Engine</th>
+                  <td>Do you need data from a service to render your component server-side? This module fetches the data asynchronously and passes it to React to render your components. Requires Redux.</td>
+                </tr>
+
+                <tr class="col-md-1 desktop-module-logo">
+                  <td>
+                    <a href="/docs/redux_router_engine.html">
+                      <img src="/img/icn-redux.svg" alt="">
+                    </a>
+                  </td>
+                </tr>
+              </td>
+            </tr>
+
+
+          </table>
+        </div>
+
+
+        <div class="row desktop-module-item">
+          <div class="module-box">
+            <div class="col-md-5 desktop-module-text">
+              <b>Above-the-Fold Rendering</b>
+              <br>Instead of side rendering the whole page on the server, this react component enables rendering of *only* the components your users see on the screen without scrolling, for improved performance.</br>
+            </div>
+
+            <div class="col-md-1 desktop-module-logo">
+              <a href="/docs/above_fold_rendering.html">
+                <img src="/img/icn-atf.svg" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="module-box">
+            <div class="col-md-5 desktop-module-text">
+              <b>Redux Router Engine</b>
+              <br>Do you need data from a service to render your component server-side? This module fetches the data asynchronously and passes it to React to render your components. Requires Redux.</br>
+            </div>
+
+            <div class="col-md-1 desktop-module-logo">
+              <a href="/docs/redux_router_engine.html">
+                <img src="/img/icn-redux.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row desktop-module-item">
+          <div class="module-box">
+            <div class="col-md-5 desktop-module-text">
+              <b>Confippet</b>
+              <br>Lets you define, extend, and merge configurations for different environments (such as QA, prod, and staging) that get initialized during start up or at runtime.</br>
+            </div>
+
+            <div class="col-md-1 desktop-module-logo">
+              <a href="/docs/confippet.html">
+                <img src="/img/icn-confippet.svg" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="module-box">
+            <div class="col-md-5 desktop-module-text">
+              <b>SSR Profiling & Caching</b>
+              <br>This module can help you improve your React server-side rendering performance by up to 70% by caching your components' render</br>
+            </div>
+
+            <div class="col-md-1 desktop-module-logo">
+              <a href="/docs/server_side_render_cache.html">
+                <img src="/img/icn-ssr.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row desktop-module-item">
+          <div class="module-box">
+            <div class="col-md-5 desktop-module-text">
+              <b>Stateless CSRF Validation</b>
+              <br>Validate HTTP requests without a session--for Express and Hapi.</br>
+            </div>
+
+            <div class="col-md-1 desktop-module-logo">
+              <a href="/docs/stateless_csrf_validation.html">
+                <img src="/img/icn-csrf.svg" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="module-box">
+            <div class="col-md-5 desktop-module-text">
+              <b>More Modules Coming Soon!</b>
+              <br>New module release announcements will be Twitted on <a href="https://twitter.com/electrode_io">@electrode_io</a></br>
+            </div>
+
+            <div class="col-md-1 desktop-module-logo">
+              <a href="/docs/stand_alone_modules.html">
+                <img src="/img/icn-more.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<!-- begin electrode newest version modules -->
+
+<div class="container">
+  <div class="container-fluid">
+    <div id="desktop-modules-content">
+      <a href="#"><img class="icon-modules scroll-up" src="https://host-logos.firebaseapp.com/dotio/modules_icon_@1x.png" /></a>
+      <h1>electrode modules</h1>
+      <h3>Supercharge your app, with or without Electrode Core</h3>
+      <!-- <div class="table-responsive"> -->
+        <!-- <table> -->
+        <div class="row"></div>
+          <tr class="desktop-module-item">
+            <td class="desktop-module-item-text">
+              <b>Above-the-Fold Rendering</b>
+              <br>Instead of side rendering the whole page on the server, this react component enables rendering of *only* the components your users see on the screen without scrolling, for improved performance.</br>
+            </td>
+            <td>
+              <a href="/docs/above_fold_rendering.html">
+                <img src="/img/icn-atf.svg" alt="">
+              </a>
+            </td>
+
+            <td class="desktop-module-item-text">
+              <b>Redux Router Engine</b>
+              <br>Do you need data from a service to render your component server-side? This module fetches the data asynchronously and passes it to React to render your components. Requires Redux.</br>
+            </td>
+            <td>
+              <a href="/docs/redux_router_engine.html">
+                <img src="/img/icn-redux.svg" alt="">
+              </a>
+            </td>
+          </tr>
+
+          <tr class="desktop-module-item">
+            <tr class="test">
+              <td class="desktop-module-item-text">
+                <b>Confippet</b>
+                <br>Lets you define, extend, and merge configurations for different environments (such as QA, prod, and staging) that get initialized during start up or at runtime.</br>
+              </td>
+              <td>
+                <a href="/docs/confippet.html">
+                  <img src="/img/icn-confippet.svg" alt="">
+                </a>
+              </td>
+            </tr>
+
+            <tr class="test">
+              <td class="desktop-module-item-text">
+                  <b>SSR Profiling & Caching</b>
+                  <br>This module can help you improve your React server-side rendering performance by up to 70% by caching your components' render</br>
+              </td>
+              <td>
+                <a href="/docs/server_side_render_cache.html">
+                  <img src="/img/icn-ssr.svg" alt="">
+                </a>
+              </td>
+            </tr>
+          </tr>
+
+          <tr class="desktop-module-item">
+            <td class="desktop-module-item-text">
+              <b>Stateless CSRF Validation</b>
+              <br>Validate HTTP requests without a session--for Express and Hapi.</br>
+            </td>
+            <td>
+              <a href="/docs/stateless_csrf_validation.html">
+                <img src="/img/icn-csrf.svg" alt="">
+              </a>
+            </td>
+            <td class="desktop-module-item-text">
+              <b>More Modules Coming Soon!</b>
+              <br>New module release announcements will be Twitted on <a href="https://twitter.com/electrode_io">@electrode_io</a></br>
+            </td>
+            <td>
+              <a href="/docs/stand_alone_modules.html">
+                <img src="/img/icn-more.svg" alt="">
+              </a>
+            </td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- /////// -->
+<div id="desktop-modules-content">
+  <table>
+
+    <tr class="desktop-module-item">
+      <td class="desktop-module-item-text">
+        <b>Above-the-Fold Rendering</b>
+        <br>Instead of side rendering the whole page on the server, this react component enables rendering of *only* the components your users see on the screen without scrolling, for improved performance.</br>
+      </td>
+      <td>
+        <a href="/docs/above_fold_rendering.html">
+          <img src="/img/icn-atf.svg" alt="">
+        </a>
+      </td>
+
+      <td class="desktop-module-item-text">
+        <b>Redux Router Engine</b>
+        <br>Do you need data from a service to render your component server-side? This module fetches the data asynchronously and passes it to React to render your components. Requires Redux.</br>
+      </td>
+      <td>
+        <a href="/docs/redux_router_engine.html">
+          <img src="/img/icn-redux.svg" alt="">
+        </a>
+      </td>
+    </tr>
+
+    <tr class="desktop-module-item">
+      <td class="desktop-module-item-text">
+        <b>Confippet</b>
+        <br>Lets you define, extend, and merge configurations for different environments (such as QA, prod, and staging) that get initialized during start up or at runtime.</br>
+      </td>
+      <td>
+        <a href="/docs/confippet.html">
+          <img src="/img/icn-confippet.svg" alt=""></td>
+        </a>
+      </td>
+
+      <td class="desktop-module-item-text">
+          <b>SSR Profiling & Caching</b>
+          <br>This module can help you improve your React server-side rendering performance by up to 70% by caching your components' render</br>
+      </td>
+      <td>
+        <a href="/docs/server_side_render_cache.html">
+          <img src="/img/icn-ssr.svg" alt="">
+        </a>
+      </td>
+    </tr>
+
+    <tr class="desktop-module-item">
+      <td class="desktop-module-item-text">
+        <b>Stateless CSRF Validation</b>
+        <br>Validate HTTP requests without a session--for Express and Hapi.</br>
+      </td>
+      <td>
+        <a href="/docs/stateless_csrf_validation.html">
+          <img src="/img/icn-csrf.svg" alt="">
+        </a>
+      </td>
+      <td class="desktop-module-item-text">
+        <b>More Modules Coming Soon!</b>
+        <br>New module release announcements will be Twitted on <a href="https://twitter.com/electrode_io">@electrode_io</a></br>
+      </td>
+      <td>
+        <a href="/docs/stand_alone_modules.html">
+          <img src="/img/icn-more.svg" alt="">
+        </a>
+      </td>
+    </tr>
+
+  </table>
+</div>
