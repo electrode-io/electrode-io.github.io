@@ -392,13 +392,50 @@ html, body {
   margin: -10px -20px 7px -20px;
 }
 
-.electrode-modules {
+.electrode-modules, #modules-section {
+  font-family: "Gotham-Rounded-Medium";
   text-align: center;
 
   .icon-modules {
-    filter: grayscale(100%);
-    height: 100px;
-    width: 100px;
+    height: 104px;
+    margin-bottom: 46px;
+    width: 116px;
+  }
+
+  h1 {
+    font-size: 56px;
+    font-weight: normal;
+    margin-top: 0;
+  }
+
+  h3 {
+    font-size: 26px;
+    font-weight: normal;
+  }
+
+  .desktop-module-item {
+    text-align: left;
+
+    .module-subheader {
+      font-size: 20px;
+      margin-top: 40px;
+    }
+
+    .desktop-module-logo img {
+      width: 66px;
+      float: right;
+      height: 75px;
+      margin-right: 20px;
+
+    }
+
+    .module-testbox {
+      font-size: 18px;
+      min-height: 240px;
+      padding-left: 30px;
+      margin-right: 40px;
+      margin-top: 0px;
+    }
   }
 
   .electrode-modules-list {
@@ -443,13 +480,24 @@ html, body {
 }
 //BEGIN TOOLS STYLES
 .electrode-tools {
-  margin-top: -80px;
+  margin-top: 70px;
   text-align: center;
+  font-family: "Gotham-Rounded-Medium";
+
+  h1 {
+    font-size: 56px;
+    font-weight: normal;
+  }
+
+  h3 {
+    font-size: 26px;
+    font-weight: normal;
+  }
 
   .icon-modules {
-    filter: grayscale(100%);
-    height: 100px;
-    width: 100px;
+    height: 104px;
+    width: 116px;
+    margin-bottom: 46px;
   }
 
   /* Since positioning the image, we need to help out the caption */
@@ -468,15 +516,30 @@ html, body {
     .tool-title {
       margin-top: 40px;
       border-top: 1px #ECECEC solid;
+      padding-left: 0;
+      padding-right: 0;
       margin-bottom: 80px;
+
       position: relative;
       text-align: left;
 
+      h3, p {
+        padding-left: 0;
+        margin-left: 0;
+      }
+
+      h3 {
+        margin-top: 21px;
+      }
+
       .github-logo {
+        margin-right: 0;
+        padding-right: 0;
         float: right;
 
         img {
-          filter: invert(100%);
+          width: 48px;
+          height: 72px;
         }
       }
     }
@@ -486,6 +549,7 @@ html, body {
       height: 90%;
       background-repeat: no-repeat;
       background-size: contain;
+      background-position: center;
       background-position-y: 200px;
       margin-left: auto;
       margin-right: auto;
@@ -501,6 +565,8 @@ html, body {
   }
 
   .carousel-control {
+    width: 0;
+
     span {
       position: absolute;
       top: 35%;
@@ -796,6 +862,7 @@ img.footer-sub-logo {
     display: inline-block;
     text-align: center;
     min-width: 320px;
+    font-family: "Gotham-Rounded";
 
     .mobile-header-items {
       position: relative;
@@ -812,18 +879,25 @@ img.footer-sub-logo {
       padding-bottom: 6px !important;
       border-bottom: 4px solid #38bbff
     }
+
+    #mobile-core-content {
+      .mobile-content-heading {
+        font-weight: 600;
+      }
+    }
   }
 }
 
-#moible-pillar-content-zone {
+#mobile-pillar-content-zone {
   padding: 6px 5%;
   line-height: 1.4;
   font-size: 14px;
   font-family: "Gotham-Rounded";
 
-  .mobile-content-heading {
-    font-family: "Gotham-Rounded";
-    font-weight: 600;
+  #mobile-core-content {
+    .mobile-content-heading {
+      font-weight: 600;
+    }
   }
 }
 
@@ -842,7 +916,7 @@ img.footer-sub-logo {
   min-width: 320px;
   margin-top: 30px;
 
-  .footer-toggle-items{
+  .footer-toggle-items {
     float: left;
     margin: 10px 0;
     margin-left: 5%;
@@ -868,6 +942,7 @@ img.footer-sub-logo {
 .mobile-footer {
   font-family: "Gotham-Rounded";
   font-size: 9px;
+  font-weight: 600;
 	line-height: 1.5;
 	text-align: center;
   background-color: #00294b;
@@ -898,6 +973,7 @@ img.footer-sub-logo {
    .electrode-modules,
    #second-nav,
    #electrode-modules,
+   #modules-section,
    #electrode-footer,
    #social-header-color-links {
     display: none;
@@ -946,20 +1022,13 @@ img.footer-sub-logo {
    }
 }
 
-#mobile-pillar-content-zone {
-  margin: 0 5%;
-}
-
-#mobile-pillar-content-zone {
-  margin: 0 5%;
-}
-
 @media (min-width: 768px) {
    .pillars-section-2-mobile,
    .mobile-footer-toggle,
    .mobile-footer,
    .mobile-pillar-bar,
    li.mobile-header-links,
+   ol.mobile-header-links,
    #mobile-pillar-content-zone {
      display: none;
    }
@@ -989,14 +1058,8 @@ img.footer-sub-logo {
 }
 
 #mobile-tools-content {
-  text-align: center;
-
-  .icon-modules {
-    filter: grayscale(100%);
-    height: 100px;
-    width: 100px;
-  }
-
+  font-family: "Gotham-Rounded";
+  min-width: 320px;
   /* Since positioning the image, we need to help out the caption */
   .carousel-caption {
     z-index: 10;
@@ -1004,75 +1067,71 @@ img.footer-sub-logo {
 
   /* Declare heights because of positioning of img element */
   .carousel .item {
-    height: 600px;
-    background-image: url("https://host-logos.firebaseapp.com/dotio/tools_landscape_@1x.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position-y: 350px;
+    height: auto;
+
+    .inside-car-title{
+      padding-left: 10px;
+    }
 
     .tool-title {
+      font-family: "Gotham-Rounded";
       margin-top: 40px;
-      border-top: 1px #ECECEC solid;
-      margin-bottom: 80px;
+      border-top: 1px #cccccc solid;
+      margin-bottom: 50px;
       position: relative;
       text-align: left;
+      border-bottom: 1px solid #cccccc;
 
       .github-logo {
         float: right;
-
-        img {
-          filter: invert(100%);
-        }
+        width: 34px;
+        height: 40px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
       }
     }
 
     .image {
-      width: 90%;
-      height: 90%;
       background-repeat: no-repeat;
       background-size: contain;
       margin-left: auto;
       margin-right: auto;
-    }
-
-    .image-electrode-explorer {
-      background-image: url("https://host-logos.firebaseapp.com/dotio/explorer_laptop_graphic_@1x.png");
-    }
-
-    .image-electrode-electrify {
-      background-image: url("https://host-logos.firebaseapp.com/dotio/bundle_laptop_graphic_@1x.png");
     }
   }
 
   .carousel-control {
     span {
       position: absolute;
-      top: 25%;
-      background-color: #cccccc;
+      top: 310px;
+      background-color: #df2375;
       background-image: url("https://host-logos.firebaseapp.com/dotio/arrow_@1x.png");
       background-size: 50% 50%;
       background-repeat: no-repeat;
       background-position: 50% 50%;
-      width: 30px;
-      height: 30px;
-      border-radius: 30px;
+      width: 35px;
+      height: 35px;
+      border-radius: 35px;
+
+      &.hover {
+        background-color: #df2375;
+      }
     }
 
-    span:hover {
-      background-color: #df2375;
-    }
 
     .button-previous {
-      left: 40px;
+      left: 0;
     }
 
     .button-next {
-      right: 40px;
+      right: 0;
       -webkit-transform: rotate(180deg);
       -moz-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
       -o-transform: rotate(180deg);
       transform: rotate(180deg);
+      &.hover {
+        background-color: #df2375;
+      }
     }
   }
 
@@ -1093,6 +1152,11 @@ img.footer-sub-logo {
      height: 120%;
      margin-top: 0;
    }
+
+   div#mobile-logo-text {
+     margin-top: -40px;
+     margin-bottom: -40px;
+   }
 }
 
 @media (max-width: 480px) {
@@ -1110,6 +1174,10 @@ img.footer-sub-logo {
     margin-top: -90px;
     margin: -90px -10px 0 0;
   }
+
+  div#mobile-slogan {
+    font-size: 21px;
+  }
 }
 
 @media (max-width: 380px) {
@@ -1126,6 +1194,10 @@ img.footer-sub-logo {
     border-radius: 4px;
     margin-top: -90px;
     margin: -90px -10px 0 0;
+  }
+
+  div#mobile-slogan {
+    font-size: 18px;
   }
 }
 
@@ -1147,6 +1219,10 @@ img.footer-sub-logo {
   width: auto;
 }
 
+.mobile-internal-links {
+  padding: 10px 0;
+}
+
 @media (min-width: 769px) {
   .container {
     width: 97%;
@@ -1166,23 +1242,14 @@ img.footer-sub-logo {
   margin: 20px -50px 20px 50;
 }
 
-#modules-section {
-  margin-bottom: 200px;
-}
-
-#module-icon {
-  filter: grayscale(100%);
-  height: 100px;
-  width: 100px;
-}
-
 #desktop-modules-header {
   text-align: center;
   margin: 50px 20px;
 }
 
 #modules-section {
-  padding: 50px;
+  padding: 80px 100px;
+  border-bottom: 1px solid #cccccc;
 }
 
 .module-subheader {
@@ -1197,4 +1264,15 @@ img.footer-sub-logo {
 .module-textbox {
   margin-bottom: 40px;
   padding-right: 60px;
+}
+
+#mob-menu-button,
+.mobile-header-links,
+.mobile-internal-links {
+  cursor: pointer;
+}
+
+#mobile-header-info,
+.mobile-header-items {
+  font-weight: bold;
 }
