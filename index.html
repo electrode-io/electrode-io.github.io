@@ -127,15 +127,13 @@
     </div>
   </div>
 
-  <!-- mobile pillars section only displays in mobile view -->
-  <!-- togglePillars() loops over child divs under div == pillars-mobile-container -->
-  <div class="pillars-section-2-mobile text-center">
-    <div id="pillars-mobile-container">
-  	  <div id="mobile-core" class="mobile-header-items" onClick="togglePillars('core')">CORE</div>
-  	  <div id="mobile-modules" class="mobile-header-items" onClick="togglePillars('modules')">MODULES</div>
-  	  <div id="mobile-tools" class="mobile-header-items" onClick="togglePillars('tools')">TOOLS</div>
+  <div class="pillars-section-2-mobile container-fluid">
+    <div id="pillars-mobile-container" class="row">
+      <div class="col-xs-4" onClick="togglePillars('core')"><div id="mobile-core" class="mobile-header-items">core</div></div>
+      <div class="col-xs-4" onClick="togglePillars('modules')"><div id="mobile-modules" class="mobile-header-items">modules</div></div>
+      <div class="col-xs-4" onClick="togglePillars('tools')"><div id="mobile-tools" class="mobile-header-items">tools</div></div>
     </div>
-	</div>
+  </div>
 
   <div class="mobile-pillar-bar"></div>
 

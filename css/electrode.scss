@@ -818,16 +818,15 @@ img.footer-sub-logo {
   width: 100%;
 
   #pillars-mobile-container {
-    display: inline-block;
     text-align: center;
     min-width: 320px;
     font-family: "Gotham-Rounded";
 
     .mobile-header-items {
-      position: relative;
-      float: left;
       color: $mobile-header-color-black;
-      padding: 10px 15px;
+      padding: 10px 0;
+      margin-left: 2%;
+      margin-right: 2%;
       cursor: pointer;
       font-size: 18px;
       font-family: "Gotham-Rounded";
@@ -863,7 +862,7 @@ img.footer-sub-logo {
 .mobile-pillar-bar {
   width: 100%;
 	height: 4px;
-  margin-top: -9px;
+  margin-top: -4px;
   margin-bottom: 10px;
 	background-color: $mobile-pillar-b-background;
   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.2);
