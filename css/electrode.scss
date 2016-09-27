@@ -55,11 +55,9 @@ html, body {
 }
 
 .night-sky {
-  padding: auto;
+  padding: 0;
+  margin: 0;
   background-color: #00294b;
-  background-image: url("/img/sky.svg");
-  background-size: 100% auto;
-  background-repeat: no-repeat;
 }
 
 .social-nav-links {
@@ -82,7 +80,7 @@ html, body {
   width: 100%;
   margin-top: 1em;
   margin-bottom: -2px;
-  background: #00294b;
+  // background: #00294b;
 }
 .pillars-section {
   background-color: white;
@@ -93,30 +91,37 @@ html, body {
 //   background-color: white;
 // }
 
-.pillar-icon {
-  text-align: center;
-  img {
-    width: 75%;
-  margin-top: -16.2em;
+
+.pillars-section-2 {
+
+  .pillar-icon {
+    text-align: center;
+    img {
+      width: 75%;
+      margin-top: -17vw;
+    }
+  }
+
+  .pillar-content {
+    margin-top: 2.5em;
+    h1 {
+      font-family: "Gotham-Rounded-Medium";
+      font-weight: 300;
+    }
+    p {
+      font-family: "Gotham-Rounded";
+      font-weight: 600;
+      font-size: 1.1em;
+    }
   }
 }
 
 .header-content {
   font-family: "Gotham-Rounded";
   background-position: center 27px;
+  background-image: url("/img/sky.svg");
   background-size: 100%;
   background-repeat: no-repeat;
-  width: 68%;
-  margin: 0 auto;
-  text-align: center;
-
-  #deploy-in-five {
-    display: none;
-  }
-
-  img {
-    width: 100%;
-  }
 
   .logo-text {
     font-size: 10.5em;
@@ -128,39 +133,60 @@ html, body {
     padding-right: 5%;
     padding-left: 5%;
     padding-bottom: .2em;
+    img {
+      width: 100%;
+    }
   }
   .slogan {
-    font-size: 1.6em;
-    font-weight: 900;
-    letter-spacing: 5px;
-    border-top: 1px solid $light-trans-grey;
-    padding-top: .5em;
+    font-size: 1.8em;
+    font-weight: 200;
+    letter-spacing: 0.3vw;
+    border-top: 1px solid rgba(203,203,203,0.32);
+    padding-top: 1.1em;
     padding-bottom: .5em;
     margin-top: -.6em;
+    text-align: center;
+    font-family: "Gotham-Rounded-Medium";
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .header-links {
+    margin-bottom: 2.5em;
   }
   .header-info {
     font-size: 1.2em;
     font-weight: 600;
-    margin-top: 1.5em;
-    padding: 0;
+    margin-top: .9em;
+    /* padding: 0; */
+    padding-left: 0;
+    padding-bottom: 1.5em;
+    padding-right: 0;
+    text-align: center;
     border-bottom: 1px solid $light-trans-grey;
-  }
-
-  #about-electrode {
-    background: transparent;
-    border: 1px solid white;
   }
 
   .header-button {
     font-family: "Gotham-Rounded-Medium";
     margin-top: 2em;
-    font-weight: 600;
-    font-size: 1.3em;
-    background-color: #df2375;
-    padding-top: .6em;
-    padding-bottom: .6em;
+    font-weight: 500;
+    font-family: "Gotham-Rounded-Medium";
+    font-size: 1.9em;
+    padding-top: .5em;
+    padding-bottom: .4em;
     text-align: center;
     border-radius: 3px;
+    width: 90%;
+    @media(max-width: 902px) {
+      font-size: 1.4em;
+    }
+  }
+  .get-started {
+    background-color: #df2375;
+    border: 3.5px solid #df2375;
+  }
+  .about-electrode {
+    background-color: rgba(255, 255, 255, 0);
+    border: 3.5px solid white;
   }
 }
 
@@ -222,7 +248,10 @@ html, body {
   p{
     margin: 20px 0 40px;
   }
+}
 
+.pillar-links {
+  text-align: center;
   a {
     border-radius: 8px;
     border: 1px solid #d62470;
@@ -232,8 +261,7 @@ html, body {
     line-height: 1.25em;
     text-align: center;
     color: #ffffff;
-    padding:10px;
-    margin-left: 30%;
+    padding: 10px;
   }
 }
 
@@ -1046,6 +1074,8 @@ img.footer-sub-logo {
 
 @media (max-width: 767px) {
 
+  #header-intro-paragraph,
+  #desktop-modules-content,
   .navbar-collapse .nav > .divider-vertical {
       display: none;
    }
@@ -1112,4 +1142,50 @@ img.footer-sub-logo {
   .container {
     width: 97%;
   }
+}
+
+.module-testbox {
+  margin-top: 10px;
+  margin-left: -30px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.desktop-module-text {
+  margin: 20px -50px 20px 50;
+}
+
+#modules-section {
+  margin-bottom: 200px;
+}
+
+#module-icon {
+  filter: grayscale(100%);
+  height: 100px;
+  width: 100px;
+}
+
+#desktop-modules-header {
+  text-align: center;
+  margin: 50px 20px;
+}
+
+#modules-section {
+  padding: 50px;
+}
+
+.module-subheader {
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+
+.desktop-module-logo {
+  margin-top: 20px;
+}
+
+.module-textbox {
+  margin-bottom: 40px;
+  padding-right: 60px;
 }
