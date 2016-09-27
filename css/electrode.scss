@@ -768,6 +768,7 @@ img.footer-sub-logo {
     display: inline-block;
     text-align: center;
     min-width: 320px;
+    font-family: "Gotham-Rounded";
 
     .mobile-header-items {
       position: relative;
@@ -784,18 +785,25 @@ img.footer-sub-logo {
       padding-bottom: 6px !important;
       border-bottom: 4px solid #38bbff
     }
+
+    #mobile-core-content {
+      .mobile-content-heading {
+        font-weight: 600;
+      }
+    }
   }
 }
 
-#moible-pillar-content-zone {
+#mobile-pillar-content-zone {
   padding: 6px 5%;
   line-height: 1.4;
   font-size: 14px;
   font-family: "Gotham-Rounded";
 
-  .mobile-content-heading {
-    font-family: "Gotham-Rounded";
-    font-weight: 600;
+  #mobile-core-content {
+    .mobile-content-heading {
+      font-weight: 600;
+    }
   }
 }
 
@@ -840,6 +848,7 @@ img.footer-sub-logo {
 .mobile-footer {
   font-family: "Gotham-Rounded";
   font-size: 9px;
+  font-weight: 600;
 	line-height: 1.5;
 	text-align: center;
   background-color: #00294b;
@@ -918,14 +927,6 @@ img.footer-sub-logo {
    }
 }
 
-#mobile-pillar-content-zone {
-  margin: 0 5%;
-}
-
-#mobile-pillar-content-zone {
-  margin: 0 5%;
-}
-
 @media (min-width: 768px) {
    .pillars-section-2-mobile,
    .mobile-footer-toggle,
@@ -961,14 +962,8 @@ img.footer-sub-logo {
 }
 
 #mobile-tools-content {
-  text-align: center;
-
-  .icon-modules {
-    filter: grayscale(100%);
-    height: 100px;
-    width: 100px;
-  }
-
+  font-family: "Gotham-Rounded";
+  min-width: 320px;
   /* Since positioning the image, we need to help out the caption */
   .carousel-caption {
     z-index: 10;
@@ -976,75 +971,71 @@ img.footer-sub-logo {
 
   /* Declare heights because of positioning of img element */
   .carousel .item {
-    height: 600px;
-    background-image: url("https://host-logos.firebaseapp.com/dotio/tools_landscape_@1x.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position-y: 350px;
+    height: auto;
+
+    .inside-car-title{
+      padding-left: 10px;
+    }
 
     .tool-title {
+      font-family: "Gotham-Rounded";
       margin-top: 40px;
-      border-top: 1px #ECECEC solid;
-      margin-bottom: 80px;
+      border-top: 1px #cccccc solid;
+      margin-bottom: 50px;
       position: relative;
       text-align: left;
+      border-bottom: 1px solid #cccccc;
 
       .github-logo {
         float: right;
-
-        img {
-          filter: invert(100%);
-        }
+        width: 34px;
+        height: 40px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
       }
     }
 
     .image {
-      width: 90%;
-      height: 90%;
       background-repeat: no-repeat;
       background-size: contain;
       margin-left: auto;
       margin-right: auto;
-    }
-
-    .image-electrode-explorer {
-      background-image: url("https://host-logos.firebaseapp.com/dotio/explorer_laptop_graphic_@1x.png");
-    }
-
-    .image-electrode-electrify {
-      background-image: url("https://host-logos.firebaseapp.com/dotio/bundle_laptop_graphic_@1x.png");
     }
   }
 
   .carousel-control {
     span {
       position: absolute;
-      top: 25%;
-      background-color: #cccccc;
+      top: 310px;
+      background-color: #df2375;
       background-image: url("https://host-logos.firebaseapp.com/dotio/arrow_@1x.png");
       background-size: 50% 50%;
       background-repeat: no-repeat;
       background-position: 50% 50%;
-      width: 30px;
-      height: 30px;
-      border-radius: 30px;
+      width: 35px;
+      height: 35px;
+      border-radius: 35px;
+
+      &.hover {
+        background-color: #df2375;
+      }
     }
 
-    span:hover {
-      background-color: #df2375;
-    }
 
     .button-previous {
-      left: 40px;
+      left: 0;
     }
 
     .button-next {
-      right: 40px;
+      right: 0;
       -webkit-transform: rotate(180deg);
       -moz-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
       -o-transform: rotate(180deg);
       transform: rotate(180deg);
+      &.hover {
+        background-color: #df2375;
+      }
     }
   }
 
