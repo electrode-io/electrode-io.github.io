@@ -28,11 +28,13 @@ h1 {
   font-family: "Gotham-Rounded-Medium";
 }
 
-#top-header {
-  height: 98px;
-}
-#electrode-nav {
-  height: 100%;
+@media(min-width: 768px){
+  #top-header {
+    height: 98px;
+  }
+  #electrode-nav {
+    height: 100%;
+  }
 }
 
 .electrode-nav-top {
@@ -43,8 +45,9 @@ h1 {
   font-size: 1.145em;
   letter-spacing: 1px;
   margin-bottom: 0;
-  height: 100%;
-
+  @media(min-width: 768px){
+    height: 100%;
+  }
   .header-logo {
     height: 29px;
     width: 224px;
