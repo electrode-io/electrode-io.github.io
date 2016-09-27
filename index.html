@@ -414,7 +414,7 @@
   <div class="containter-fluid">
     <nav class="navbar inverse-colors" id="second-nav">
       <div class="row">
-        <div class="col-md-5">
+        <div class="navbar-sticky-left">
           <ul class="nav navbar-nav second-nav-top-pad">
             <li>
               <div class="navbar-header">
@@ -433,39 +433,48 @@
           </ul>
         </div>
 
-        <div class="col-md-7">
+        <div class="navbar-sticky-right">
           <div class="second-nav-links-container row">
             <ul class="nav navbar-nav inner-links-ul">
-              <li class="second-nav-inner-links second-nav-top-pad active-inner-link" id="electrode-core-logo-li">
-                <div class="second-nav-top-pad">
-                  <a href= "#electrode-core-logo">
-                    <img src="https://host-logos.firebaseapp.com/dotio/core_tab_icon_@1x.png"/>
-                  </a>
-                </div>
+              <li class="second-nav-inner-links second-nav-top-pad inactive-inner-link" id="electrode-core-logo-li">
+                <a href="#electrode-core-logo">
+                  <div class="elc-icon-icn-core second-nav-top-pad" ></div>
+                </a>
               </li>
-              <li class="second-nav-inner-links inactive-inner-link" id="electrode-modules-logo-li">
-                <div class="second-nav-top-pad">
-                    <a href="#electrode-modules">
-                      <img src="https://host-logos.firebaseapp.com/dotio/modules_tab_icon_@1x.png"/>
-                    </a>
-                  </div>
+              <li class="second-nav-inner-links second-nav-top-pad inactive-inner-link" id="electrode-modules-logo-li">
+                <a href="#modules-section">
+                  <div class="elc-icon-icn-modules second-nav-top-pad"></div>
+                </a>
               </li>
               <li class="second-nav-inner-links second-nav-top-pad inactive-inner-link" id="electrode-tools-logo-li">
-                <div class="second-nav-top-pad">
-                  <a href="#electrode-tools">
-                    <img src="https://host-logos.firebaseapp.com/dotio/tools_tab_icon_@1x.png"/>
-                  </a>
-                </div>
+                <a href="#electrode-tools">
+                  <div class="elc-icon-icn-tools second-nav-top-pad"></div>
+                </a>
               </li>
             </ul>
             <ul class="nav navbar-nav outer-links-ul">
               <li class="second-nav-links"><a href="/docs/what_is_electrode.html" class="dark-links second-nav-top-pad-double no-hover">DOCS</a></li>
               <li class="second-nav-links"><a href="https://github.com/electrode-io" class="dark-links second-nav-top-pad-double no-hover">CONTRIBUTE</a></li>
               <li class="second-nav-links" id="get-started"><a href="" class="second-nav-top-pad-double no-hover">GET STARTED</a></li>
+
             </ul>
-            <ul class="nav navbar-nav outer-links-ul">
+            <ul class="nav navbar-nav outer-links-ul social-nav-links ">
               <li class="divider-vertical"></li>
-              <li id="second-nav-social-img"><img src="/img/social.svg"></li>
+              <li class="sticky-social-links">
+                <a href="https://getpocket.com/">
+                  <img src="https://host-logos.firebaseapp.com/dotio/pocket_@1x.png" alt="">
+                </a>
+              </li>
+              <li class="sticky-social-links">
+                <a href="https://twitter.com/electrode_io">
+                  <img src="https://host-logos.firebaseapp.com/dotio/twitter_@1x.png" alt="">
+                </a>
+              </li>
+              <li class="sticky-github sticky-social-links" >
+                <a href="https://github.com/electrode-io">
+                  <img src="img/sm-github.svg" alt="">
+                </a>
+              </li>
             </ul>
           </div>
         </div>

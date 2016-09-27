@@ -14,7 +14,7 @@ $mobile-header-color-black: #333333;
 $mobile-pillar-b-background: #efefef;
 
 .header-logo {
-  height: 100%;
+  height: 94%;
 }
 html {
   -webkit-font-smoothing: antialiased;
@@ -438,9 +438,6 @@ html, body {
     }
   }
 }
-.row {
-  margin: 0px;
-}
 //BEGIN TOOLS STYLES
 .electrode-tools {
   margin-top: -80px;
@@ -605,7 +602,6 @@ a.footer-text {
 
 .social-logo {
   padding-right: 20px;
-  padding-right: 20px;
 }
 
 .footer-sub-logo {
@@ -661,7 +657,6 @@ div.footer-docs {
   }
 }
 
-
 div.footer-vertical-line {
   margin-top: -20px;
   height: 100px;
@@ -687,12 +682,13 @@ img.footer-sub-logo {
 }
 
 #second-nav {
+  max-height:98px;
   background: #fff;
   border-bottom: solid 1px #cccccc;
   border-top: solid 1px #cccccc;
 
   .row {
-    margin-top: -2px;
+    margin-top: -1px;
   }
 
   .second-nav-row {
@@ -703,8 +699,10 @@ img.footer-sub-logo {
     border-bottom: solid 1px #cccccc;
   }
 
-  .second-nav-top-pad {
-    padding-top: 20px;
+  .navbar-sticky-left {
+    .second-nav-top-pad {
+      padding: 25px 0 0 20px;
+    }
   }
 
   .second-nav-top-pad-double {
@@ -712,23 +710,25 @@ img.footer-sub-logo {
   }
 
   .second-nav-links {
+    margin-right: 10px;
     font-weight:bold;
     .dark-links {
       color: #333;
     }
   }
 
-  .inner-links-ul {
-    padding-right: 50px;
-  }
-
   .outer-links-ul {
-    padding-right: 20px;
+    padding-right: 10px;
+    .divider-vertical {
+      margin-top: 3px;
+      height: 96px;
+      border: 1px solid #ccc;
+    }
+
   }
 
   .second-nav-links-container {
     float:right;
-    padding-right: 3.2%;
   }
 
   #get-started {
@@ -747,26 +747,32 @@ img.footer-sub-logo {
     height: auto;
     margin-top: -10px;
   }
-
-  #second-nav-social-img {
-    border-top: solid 1px white;
-    padding-left: 20px;
+  .navbar-sticky-right {
+    .sticky-github {
+      background: black;
+    }
+    .social-nav-links {
+      margin-right:25px;
+    }
+    .sticky-social-links {
+      padding-top: 55px;
+    }
   }
 
   .second-nav-inner-links {
     padding: 0px 10px 10px 0px;
 
     img {
-      width: 75%;
+      width: 57%;
       display: block;
       margin: auto;
     }
   }
 
   .active-inner-link {
-    border-top: solid 8px #333333;
+    border-top: solid 4px #333333;
     img {
-      margin-top: -7px;
+      margin-top: 0;
     }
   }
 
@@ -774,6 +780,84 @@ img.footer-sub-logo {
     border-top: solid 1px #fff;
 
   }
+}
+  .second-nav-inner-links {
+    .second-nav-top-pad {
+      padding-top: 5px;
+      float: left;
+      color: black;
+      margin: 10px 20px;
+      font-size: 50px;
+      cursor: pointer;
+    }
+  }
+
+@media (max-width:860px) {
+
+  .navbar-sticky-right {
+    .outer-links-ul {
+      margin-right: 25px;
+    }
+    .social-nav-links {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1130px) {
+  .second-nav-link-container {
+    padding-right:15px;
+
+    #second-nav-social-img {
+      width: 90%;
+    }
+  }
+  .second-nav-inner-links {
+    .second-nav-top-pad {
+      margin: 10px 0;
+      font-size: 30px;
+    }
+    }
+  #second-nav {
+    font-size: 10px;
+    .header
+    .second-nav-inner-links {
+      float: left;
+      padding: 0;
+      img {
+        width: 50%;
+      }
+    }
+    #second-nav-social-img {
+      padding-left: 0;
+    }
+    #electrode-brand-header {
+      width: 30%;
+      height: auto;
+      margin-top: -10px;
+    }
+    .outer-links-ul {
+      padding-right: 10px;
+    }
+    .second-nav-links {
+      margin-right: 5px;
+      font-size: 12px;
+
+      }
+    }
+    .navbar-sticky-left {
+      .second-nav-top-pad {
+        .header-logo {
+          height: 75%;
+        }
+        #electrode-brand-header {
+          .header-logo {
+            height:45px;
+          }
+        }
+    }
+  }
+
 }
 
 // Global helper classes
