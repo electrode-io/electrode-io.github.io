@@ -355,6 +355,7 @@ h1 {
   margin-bottom:0 !important;
 }
 
+// #mob-menu-button,
 .mob-menu {
   height: 65px;
   width: auto;
@@ -363,10 +364,12 @@ h1 {
   margin-right: 0.5em;
 }
 
+#mob-menu-button,
 img.mob-menu {
   height: 60px;
   width: auto;
   border-radius: 4px;
+  margin-right: 10px;
 }
 
 .electrode-brand-top {
@@ -1169,6 +1172,9 @@ img.footer-sub-logo {
     display: none;
    }
 
+  #electrode-nav {
+    padding-top: 10px;
+  }
    .mobile-footer {
       font-family: "Gotham-Rounded";
       font-size: 9px;
@@ -1248,7 +1254,13 @@ img.footer-sub-logo {
        padding-top: 75px;
      }
    }
-}
+
+  #mob-menu-button,
+    img.mob-menu {
+     margin-top: 10px;
+     margin-right: 1em;
+    }
+  }
 
 @media (min-width: 768px) {
    .pillars-section-2-mobile,
@@ -1419,11 +1431,12 @@ img.footer-sub-logo {
     }
   }
 
+  #mob-menu-button,
   img.mob-menu {
     height: 60px;
-    width: auto;
+    width: 40px;
     border-radius: 4px;
-    margin: -30px -10px 0 0;
+    margin: 5px 10px 0 0;
   }
 
   div#mobile-slogan {
@@ -1454,10 +1467,10 @@ img.footer-sub-logo {
     }
   }
 
+  #mob-menu-button,
   img.mob-menu {
     height: 50px;
     width: auto;
-    border-radius: 4px;
   }
 
   div#mobile-slogan {
@@ -1483,12 +1496,13 @@ img.footer-sub-logo {
   }
 }
 
-.mob-menu {
-  height: 65px;
-  width: auto;
-  border-radius: 4px;
-  margin-top: -30px;
-  margin-right: 1em;
+#mob-menu-button,
+  .mob-menu {
+    height: 65px;
+    width: auto;
+    border-radius: 4px;
+    margin-top: -30px;
+    margin-right: 1em;
 }
 
 .mobile-social-links {
