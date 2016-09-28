@@ -17,6 +17,10 @@ var windowWidth = window.innerWidth;
 function changeDesktopColor() {
   if (window.innerWidth > 767){
     document.getElementById("electrode-nav").style.backgroundColor = "#00294b";
+  } else {
+    if (dropDownMenuState) {
+      document.getElementById("electrode-nav").style.backgroundColor = "#000e23";
+    }
   }
 }
 

@@ -1508,7 +1508,7 @@ img.footer-sub-logo {
   .mobile-header-line {
     width: 90%;
     height: 1px;
-    margin: 20px 0 0 20px;
+    margin: 10px 0 10px 20px;
     background-color: rgba(255, 255, 255, 0.2);
   }
 
@@ -1517,6 +1517,10 @@ img.footer-sub-logo {
     margin-bottom: -23px;
   }
 
+  .mobile-social-header-links {
+    margin: 0 auto;
+  }
+  
   #mobile-nav-ul {
 
     font-size: 18px;
@@ -1525,7 +1529,8 @@ img.footer-sub-logo {
         font-size: 18px;
         font-weight: 600;
         font-family: "Gotham-Rounded";
-        margin: 0px 0 10px 25px;
+        margin-left: 20px;
+        line-height: 2;
 
         &:hover {
           color: #df2375;
