@@ -557,7 +557,7 @@ img.mob-menu {
   border-bottom: 1px solid #cccccc;
 }
 
-.electrode-modules, #modules-section {
+.electrode-modules {
   font-family: "Gotham-Rounded";
   text-align: center;
 
@@ -587,12 +587,16 @@ img.mob-menu {
       font-family: "Gotham-Rounded-Medium";
     }
 
+    .desktop-module-logo {
+      margin-top: 40px;
+      right: 60px;
+      text-align: right;
+      padding: 0;
+    }
+
     .desktop-module-logo img {
       width: 66px;
-      float: right;
       height: 75px;
-      margin-right: 20px;
-
     }
 
     .desktop-module-text {
@@ -650,49 +654,133 @@ img.mob-menu {
 }
 
 @media (min-width: 768px) {
-  .desktop-module-item.module-row-1 {
-    .module-testbox {
-      min-height: 410px;
+  .electrode-modules {
+    .module-textbox {
+      padding-right: 30px;
     }
-  }
 
-  .desktop-module-item.module-row-2 {
-    .module-testbox {
-      min-height: 313px;
+    .desktop-module-item.module-row-1 {
+      .module-testbox {
+        min-height: 410px;
+      }
     }
-  }
 
-  .desktop-module-item.module-row-3 {
-    .module-testbox {
-      min-height: 213px;
+    .desktop-module-item.module-row-2 {
+      .module-testbox {
+        min-height: 400px;
+      }
+    }
+
+    .desktop-module-item.module-row-3 {
+      .module-testbox {
+        min-height: 303px;
+      }
+    }
+
+    .desktop-module-item {
+      .desktop-module-logo {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        right: auto;
+      }
     }
   }
 }
 
 @media (min-width: 992px) {
-  .desktop-module-item.module-row-1 {
-    .module-testbox {
-      min-height: 190px;
-    }
-  }
+  .electrode-modules {
+    .desktop-module-item.module-row-1 {
+      .module-testbox {
+        min-height: 263px;
+      }
 
-  .desktop-module-item.module-row-2 {
-    .module-testbox {
-      min-height: 263px;
-    }
-  }
+      .module-column-left {
+        .desktop-module-logo {
+          right: 50px;
+        }
+      }
 
-  .desktop-module-item.module-row-3 {
-    .module-testbox {
-      min-height: 190px;
+      .module-column-right {
+        .desktop-module-logo {
+          right: 30px;
+        }
+      }
+
+      .desktop-module-logo {
+        position: absolute;
+        margin-top: 94px;
+        text-align: right;
+      }
+    }
+
+    .desktop-module-item.module-row-2 {
+      .module-testbox {
+        min-height: 263px;
+      }
+
+      .module-column-left {
+        .desktop-module-logo {
+          right: 50px;
+        }
+      }
+
+      .module-column-right {
+        .desktop-module-logo {
+          right: 30px;
+        }
+      }
+
+      .desktop-module-logo {
+        position: absolute;
+        margin-top: 94px;
+        text-align: right;
+      }
+    }
+
+    .desktop-module-item.module-row-3 {
+      .module-testbox {
+        min-height: 188px;
+      }
+
+      .module-column-left {
+        .desktop-module-logo {
+          right: 50px;
+        }
+      }
+
+      .module-column-right {
+        .desktop-module-logo {
+          right: 30px;
+        }
+      }
+
+      .desktop-module-logo {
+        position: absolute;
+        margin-top: 57px;
+        text-align: right;
+      }
     }
   }
 }
 
 @media (min-width: 1200px) {
-  .desktop-module-item.module-row-1 {
-    .module-testbox {
-      min-height: 263px;
+  .electrode-modules {
+    .desktop-module-item.module-row-1 {
+      .module-testbox {
+        min-height: 263px;
+      }
+
+      .module-testbox.module-column-right {
+        .desktop-module-logo {
+          right: 40px;
+        }
+      }
+
+      .desktop-module-logo {
+        position: absolute;
+        margin-top: 95px;
+      }
     }
   }
 
@@ -700,11 +788,32 @@ img.mob-menu {
     .module-testbox {
       min-height: 190px;
     }
+
+    .module-column-right {
+      .desktop-module-logo {
+        right: 40px;
+      }
+    }
+
+    .desktop-module-logo {
+      margin-top: 60px;
+      position: absolute;
+    }
   }
 
   .desktop-module-item.module-row-3 {
     .module-testbox {
-      min-height: 190px;
+      min-height: 163px;
+    }
+
+    .module-column-right {
+      .desktop-module-logo {
+        right: 40px;
+      }
+    }
+
+    .desktop-module-logo {
+      position: absolute;
     }
   }
 }
@@ -1491,10 +1600,6 @@ img.footer-sub-logo {
 .module-subheader {
   margin-top: 20px;
   margin-bottom: -20px;
-}
-
-.desktop-module-logo {
-  margin-top: 20px;
 }
 
 .module-textbox {
