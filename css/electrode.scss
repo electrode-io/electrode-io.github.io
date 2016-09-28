@@ -330,14 +330,17 @@ h1 {
   margin-right: 0.5em;
 }
 
+#mob-menu-button,
 img.mob-menu {
-  height: 60px;
+  height: 65px;
   width: auto;
   border-radius: 4px;
+  margin-right: 10px;
+
   //margin-top: -90px;
   //margin: -90px -10px 0 0;
   @media(max-width: 380px) {
-}
+  }
 }
 
 @media(max-width: 1120px) {
@@ -1167,6 +1170,10 @@ img.footer-sub-logo {
     display: none;
    }
 
+   #electrode-nav {
+      margin-top: -17px;
+    }
+
    #snippet-bubble {
      height: auto;
      margin-bottom: 12px;
@@ -1381,9 +1388,6 @@ img.footer-sub-logo {
 
 @media (max-width: 480px) {
 
-
-
-
   div#mobile-slogan {
     font-size: 21px;
   }
@@ -1503,6 +1507,7 @@ img.footer-sub-logo {
     border-radius: 50%;
     text-align: center;
     border: solid 1px rgba(255, 255, 255, 0.2);
+
     &:hover {
       transform: scale(1.2);
     }
