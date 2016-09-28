@@ -1246,6 +1246,8 @@ img.footer-sub-logo {
    .mobile-pillar-bar,
    li.mobile-header-links,
    ol.mobile-header-links,
+   #mob-header-text-container,
+   #mob-header-text,
    #mobile-nav-ul,
    #mobile-pillar-content-zone,
    #mobile-social-link-row,
@@ -1486,10 +1488,12 @@ img.footer-sub-logo {
   font-weight: bold;
 }
 
+//Mobile header styles
+
 @media(max-width: 767px) {
 
   #mobile-social-link-row {
-    padding: 40px 0px;
+    padding: 40px 0 10px 0;
 
     .mobile-social-logo:hover {
       color: #df2375;
@@ -1527,6 +1531,25 @@ img.footer-sub-logo {
 
   .mobile-social-header-links {
     margin: 0 auto;
+  }
+
+  div#mob-header-text-container {
+    text-align: center;
+    margin-bottom: 30px;
+
+    a:hover {
+      cursor: pointer;
+    }
+  }
+
+  img#mobile-dropDown-logo {
+    height: 16px;
+    width: auto;
+  }
+
+  p#mobile-header-text {
+    padding-top: 10px;
+    font-size: 18px;
   }
 
   #mobile-nav-ul {
