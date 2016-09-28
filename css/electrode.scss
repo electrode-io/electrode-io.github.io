@@ -758,6 +758,10 @@ img.mob-menu {
       left: 200px;
       z-index: 100;
     }
+
+    .tools-electrify-screen, .tools-explorer-screenshot {
+      margin-bottom: 2px;
+    }
   }
 
   .carousel-control {
@@ -796,6 +800,10 @@ img.mob-menu {
 
 @media (min-width: 768px) {
   .electrode-tools {
+    .carousel {
+      min-height: 600px;
+    }
+
     .carousel .item {
       .mountain-overlay {
         bottom: 5px;
@@ -828,6 +836,10 @@ img.mob-menu {
 
 @media (min-width: 992px) {
   .electrode-tools {
+    .carousel {
+      min-height: 600px;
+    }
+
     .carousel .item {
       .mountain-overlay {
         bottom: 5px;
@@ -852,6 +864,7 @@ img.mob-menu {
 @media (min-width: 1200px) {
   .electrode-tools {
     .carousel {
+      min-height: 680px;
     }
     .carousel .item {
       .mountain-overlay {
@@ -869,6 +882,28 @@ img.mob-menu {
         width: 60px;
         height: 60px;
         background-size: contain;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .electrode-tools {
+    .carousel {
+      min-height: 800px;
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .electrode-tools {
+    .carousel {
+      min-height: 1000px;
+    }
+
+    .carousel .item {
+      .tools-electrify-screen, .tools-explorer-screenshot {
+        margin-bottom: 20px;
       }
     }
   }
