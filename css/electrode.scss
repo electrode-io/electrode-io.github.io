@@ -1158,6 +1158,7 @@ img.footer-sub-logo {
    .electrode-core,
    .electrode-tools,
    .electrode-modules,
+   #desktop-nav-ul,
    #second-nav,
    #electrode-modules,
    #modules-section,
@@ -1238,6 +1239,7 @@ img.footer-sub-logo {
    .mobile-pillar-bar,
    li.mobile-header-links,
    ol.mobile-header-links,
+   #mobile-nav-ul,
    #mobile-pillar-content-zone,
    #mobile-social-link-row,
    #mobile-started-link {
@@ -1484,6 +1486,11 @@ img.footer-sub-logo {
 
   #mobile-social-link-row {
     padding: 40px 0px;
+
+    .mobile-social-logo:hover {
+      color: #df2375;
+
+    }
   }
 
   img.header-logo {
@@ -1505,19 +1512,14 @@ img.footer-sub-logo {
     background-color: rgba(255, 255, 255, 0.2);
   }
 
-  .footer-social-logo {
+  .mobile-social-logo {
     object-fit: contain;
     margin-bottom: -23px;
   }
 
-  #home-primary {
-    margin-top: -40px;
-  }
-
-  .primary-nav-links {
+  #mobile-nav-ul {
 
     font-size: 18px;
-
     li {
       a {
         font-size: 18px;
@@ -1527,16 +1529,9 @@ img.footer-sub-logo {
 
         &:hover {
           color: #df2375;
+          background-color: #000e23;
         }
       }
-    }
-  }
-}
-
-@media(min-width: 768px) {
-  div#top-header {
-    div#electrode-nav {
-      background-color: #00294b;
     }
   }
 }
