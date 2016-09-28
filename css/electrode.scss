@@ -330,14 +330,17 @@ h1 {
   margin-right: 0.5em;
 }
 
+#mob-menu-button,
 img.mob-menu {
-  height: 60px;
+  height: 65px;
   width: auto;
   border-radius: 4px;
+  margin-right: 10px;
+
   //margin-top: -90px;
   //margin: -90px -10px 0 0;
   @media(max-width: 380px) {
-}
+  }
 }
 
 @media(max-width: 1120px) {
@@ -1166,6 +1169,10 @@ img.footer-sub-logo {
    #social-header-color-links {
     display: none;
    }
+
+   #electrode-nav {
+      margin-top: -17px;
+    }
 
    #snippet-bubble {
      height: auto;
