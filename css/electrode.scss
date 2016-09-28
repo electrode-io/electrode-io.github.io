@@ -344,7 +344,6 @@ h1 {
   .electrode-core {
 
      #core-h3 {
-       padding: 0% 10% 0% 10% !important;
        font-size: 26px;
       }
 
@@ -374,7 +373,7 @@ h1 {
   }
 
   #core-h3 {
-    padding: 0% 25% 0% 25%;
+    padding: 0% 10% 0% 10%;
     font-weight: normal;
     font-size: 26px;
   }
@@ -1434,6 +1433,10 @@ img.footer-sub-logo {
 #desktop-modules-header {
   text-align: center;
   margin: 50px 20px;
+
+  a {
+    padding-right: 36px;
+  }
 }
 
 .module-subheader {
