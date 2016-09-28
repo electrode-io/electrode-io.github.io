@@ -47,6 +47,6 @@ Next, generate and deploy to `master` with the following command:
 $ jgd --branch=master
 ```
 
-Explore the [Electrode.io](http://http://www.electrode.io/) Website.
+Explore the [Electrode.io](http://www.electrode.io/) Website.
 
 Built with :heart: by [Team Electrode](https://github.com/orgs/electrode-io/people) @WalmartLabs.
