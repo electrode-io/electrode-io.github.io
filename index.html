@@ -122,11 +122,17 @@
 
   <div class="container-fluid night-sky">
     <div class="header-mountains">
-      <img class="hidden-xs" src="img/landscape-only.svg" alt="">
-      <img class="visible-xs" src="img/landscape-with-graphics.svg" alt="">
+      <img src="img/landscape-only.svg" alt="">
     </div>
   </div>
 
+  <div class="pillars-icons-mobile container-fluid">
+    <div id="pillars-mobile-container" class="row">
+      <div class="col-xs-4"><div class="theSize"><img id="mobile-core-pillar" src="/img/core-full@3x.png" onClick="togglePillars('core')"></div></div>
+      <div class="col-xs-4"><div class="theSize"><img id="mobile-modules-pillar" src="/img/modules-full@3x.png" onClick="togglePillars('modules')"></div></div>
+      <div class="col-xs-4"><div class="theSize"><img id="mobile-tools-pillar" src="/img/tools-full@3x.png" onClick="togglePillars('tools')"></div></div>
+    </div>
+  </div>
   <!-- mobile pillars section only displays in mobile view -->
   <!-- togglePillars() loops over child divs under div == pillars-mobile-container -->
   <div class="pillars-section-2-mobile container-fluid">

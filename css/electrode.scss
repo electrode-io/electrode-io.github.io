@@ -471,6 +471,31 @@ h1 {
   margin: -10px -20px 7px -20px;
 }
 
+.pillars-icons-mobile {
+  min-width: 320px;
+  margin-top: -19%;
+  .col-xs-4 {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+  }
+}
+
+.theSize{
+  text-align: center;
+  #mobile-core-pillar {
+    cursor: pointer;
+    width: 86%
+  }
+  #mobile-modules-pillar {
+    cursor: pointer;
+    width: 99%
+  }
+  #mobile-tools-pillar {
+    cursor: pointer;
+    width: 90%
+  }
+}
+
 #modules-section {
   padding: 20px 60px 80px 100px;
   border-bottom: 1px solid #cccccc;
@@ -976,14 +1001,12 @@ img.footer-sub-logo {
   #pillars-mobile-container {
     text-align: center;
     min-width: 320px;
-    font-family: "Gotham-Rounded";
+    font-family: "Gotham-Rounded-medium";
 
     .add-padding-right {
-      padding-right: 7%;
     }
 
     .add-padding-left {
-      padding-left: 6.5%;
     }
 
     .mobile-header-items {
@@ -993,8 +1016,7 @@ img.footer-sub-logo {
       margin-right: 2%;
       cursor: pointer;
       font-size: 18px;
-      font-family: "Gotham-Rounded";
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .selected{
@@ -1094,6 +1116,7 @@ img.footer-sub-logo {
    .electrode-core,
    .electrode-tools,
    .electrode-modules,
+   .pillars-section-2,
    #second-nav,
    #electrode-modules,
    #modules-section,
@@ -1172,10 +1195,11 @@ img.footer-sub-logo {
    .mobile-footer-toggle,
    .mobile-footer,
    .mobile-pillar-bar,
+   .pillars-icons-mobile,
    li.mobile-header-links,
    ol.mobile-header-links,
    #mobile-pillar-content-zone {
-     display: none;
+     display: none !important;
    }
 
    .social-nav-links {
