@@ -19,9 +19,11 @@ var windowWidth = window.innerWidth;
 function changeDesktopColor() {
   if (window.innerWidth > 767){
     document.getElementById("electrode-nav").style.backgroundColor = "#00294b";
+    document.getElementById("walmart-header-logo").style.display = "block";
   } else {
     if (dropDownMenuState) {
       document.getElementById("electrode-nav").style.backgroundColor = "#000e23";
+      document.getElementById("walmart-header-logo").style.display = "none";
     }
   }
 }
