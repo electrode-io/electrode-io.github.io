@@ -843,6 +843,16 @@ div.footer-row {
 .footer-row-center {
   margin-top: 24px;
   float: right;
+
+  li {
+    &:hover {
+      a {
+        img {
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
 }
 
 div.footer-docs {
@@ -850,7 +860,6 @@ div.footer-docs {
 
   .footer-doc-links {
     color: #fff;
-    // font-weight: bold;
     font-size: 14px;
     font-family: "Gotham-Rounded";
 
