@@ -7,7 +7,7 @@ function togglePillars(pillarSelection) {
   pillarsArr.forEach(function(p){
     if (pillarSelection === p){
       document.getElementById("mobile-"+ p).setAttribute("class", "mobile-header-items selected");
-      document.getElementById("mobile-" + p + "-content").setAttribute("class", "show");
+      document.getElementById("mobile-" + p + "-content").setAttribute("class", " show");
       document.getElementById("mobile-" + p + "-footer").style.color = "#ff0076";
     }else{
       document.getElementById("mobile-"+ p).setAttribute("class", "mobile-header-items");
