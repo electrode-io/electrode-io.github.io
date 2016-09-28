@@ -369,8 +369,8 @@
   <!-- begin electrode core -->
   <div class="container electrode-core">
     <div class="row top-core-content">
-      <div class="col-md-12" id="electrode-core-logo">
-        <img class="grayscale" src="https://host-logos.firebaseapp.com/dotio/core_hex_icon_@1x.png">
+      <div class="col-md-12" >
+        <img class="grayscale" id="electrode-core-logo" src="img/badge-core-2.svg">
       </div>
     </div>
     <div class="row">
@@ -624,26 +624,36 @@
 
         <div id="footer-nav-center" class="navbar footer-text col-sm-4 col-md-offset-3 col-md-3 col-lg-offset-3 col-lg-3">
           <div class="row footer-row-center">
-            <div class="col-sm-2 github-logo">
-              <a href="https://github.com/electrode-io">
-                <img class="footer-social-logo" src="img/sm-github.svg"/>
-              </a>
-            </div>
-            <div id="footer-twitter" class="col-sm-2 twitter-logo">
-              <a href="https://twitter.com/electrode_io">
-                <img class="footer-social-logo" src="img/sm-twitter.svg"/>
-              </a>
-            </div>
-            <div class="col-sm-2 github-logo">
-              <a href="https://facebook.com/electrode-io">
-                <img class="footer-social-logo" src="img/sm-fb.svg"/>
-              </a>
-            </div>
-            <div id="footer-pocket" class="col-sm-2 pocket-logo">
-              <a href="https://getpocket.com/">
-                <img class="footer-social-logo" src="img/sm-pocket.svg"/>
-              </a>
-            </div>
+            <ul class="nav navbar-nav">
+              <li>
+                <div class="col-sm-2 github-logo">
+                  <a href="https://github.com/electrode-io" title="github">
+                    <img class="footer-social-logo" src="img/sm-github.svg"/>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div id="footer-twitter" class="col-sm-2 twitter-logo">
+                  <a href="https://twitter.com/electrode_io" title="twitter">
+                    <img class="footer-social-logo" src="img/sm-twitter.svg"/>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="col-sm-2 github-logo">
+                  <a href="https://facebook.com/electrode-io" title="facebook">
+                    <img class="footer-social-logo" src="img/sm-fb.svg"/>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div id="footer-pocket" class="col-sm-2 pocket-logo">
+                  <a href="https://getpocket.com/" title="pocket">
+                    <img class="footer-social-logo" src="img/sm-pocket.svg"/>
+                  </a>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -654,33 +664,7 @@
   <script src="./scripts/mobile-pillars.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
-  <script type="text/javascript">
-    var stickAtHeight = 2130;
-    var toggleTools = 3000;
-
-    $(window).bind('scroll', function () {
-      if ($(window).scrollTop() > stickAtHeight) {
-        $('#electrode-core-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
-        $('#electrode-modules-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link');
-        $('#second-nav').addClass('navbar-fixed-top');
-      } else {
-        $('#electrode-tools-logo-li').removeClass('inactive-inner-link active-inner-link');
-        $('#electrode-modules-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
-        $('#electrode-core-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link')
-        $('#second-nav').removeClass('navbar-fixed-top');
-      }
-    });
-
-    $(window).bind('scroll', function () {
-      if ($(window).scrollTop() > toggleTools) {
-        $('#electrode-modules-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
-        $('#electrode-tools-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link');
-      } else {
-        $('#electrode-tools-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
-        $('#electrode-modules-logo-li').addClass('active-inner-link');
-      }
-    });
-  </script>
+  <script type="text/javascript" src="/scripts/sticky-nav.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
     integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
     crossorigin="anonymous"></script>
