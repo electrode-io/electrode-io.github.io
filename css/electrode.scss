@@ -126,41 +126,6 @@ h1 {
   margin-bottom: -2px;
 }
 
-
-
-.pillars-section-2 {
-
-  .pillar-grey-border {
-    border-right: 1px solid rgba(128, 128, 128, 0.25);
-  }
-
-  .pillar-icon {
-    text-align: center;
-    img {
-      width: 75%;
-      @media(min-width: 1600px){
-        margin-top: -10vw;
-      }
-      @media(max-width: 1599px){
-        margin-top: -13.5vw;
-      }
-    }
-  }
-
-  .pillar-content {
-    margin-top: 2.5em;
-    h1 {
-      font-family: "Gotham-Rounded-Medium";
-      font-weight: 300;
-    }
-    p {
-      font-family: "Gotham-Rounded";
-      font-weight: 600;
-      font-size: 1.1em;
-    }
-  }
-}
-
 .header-content {
   font-family: "Gotham-Rounded";
   background-position: center 27px;
@@ -387,14 +352,40 @@ img.mob-menu {
 //END HEADER STYLES
 
 //PILLAR STYLES
-.pillar-content {
-  h1 {
-    text-align: center;
+
+.pillars-section-2 {
+  .pillar-grey-border {
+    border-right: 1px solid rgba(128, 128, 128, 0.25);
   }
 
-  p{
-    margin: 20px 0 40px;
-    min-height: 12.5em;
+  .pillar-icon {
+    text-align: center;
+    img {
+      width: 75%;
+      @media(min-width: 1600px){
+        margin-top: -10vw;
+      }
+      @media(max-width: 1599px){
+        margin-top: -13.5vw;
+      }
+    }
+  }
+
+  .pillar-content {
+    text-align: center;
+    margin-top: 2.5em;
+
+    h1 {
+      font-family: "Gotham-Rounded-Medium";
+      font-size: 45px;
+    }
+
+    p {
+      font-family: "Gotham-Rounded";
+      font-size: 20px;
+      line-height: 30px;
+      margin: 20px 15px 40px 15px;
+    }
   }
 }
 
@@ -416,6 +407,24 @@ img.mob-menu {
     background-color: #FF0066;
     border: 1px solid #FF0066;
     text-decoration:none;
+  }
+}
+
+@media(min-width: 768px) {
+  .pillar-content p {
+    min-height: 440px;
+  }
+}
+
+@media(min-width: 993px) {
+  .pillar-content p {
+    min-height: 300px;
+  }
+}
+
+@media(min-width: 1200px) {
+  .pillar-content p {
+    min-height: 240px;
   }
 }
 
@@ -635,13 +644,6 @@ img.mob-menu {
       border-bottom: 1px #ECECEC solid;
       padding-bottom: 20px;
     }
-  }
-
-  .electrode-modules-background {
-    background-image: url("https://host-logos.firebaseapp.com/dotio/module_laptop_graphic_@1x.png");
-    background-size: 95%;
-    background-repeat: no-repeat;
-    background-position: bottom left;
   }
 
   .electrode-modules-image {
@@ -947,7 +949,6 @@ img.mob-menu {
 
     .button-next {
       background-image: url("/img/right-arrow-2.png");
-
       right: 100px;
     }
   }
@@ -1166,7 +1167,6 @@ a.footer-text {
 .github-logo {
   img {
     width: 1.3em;
-    background-color: white;
     color: #3a3a3a;
   }
 }
@@ -1588,21 +1588,20 @@ img.footer-sub-logo {
   .carousel-control {
     span {
       position: absolute;
-      top: 310px;
-      background-color: #df2375;
-      background-image: url("https://host-logos.firebaseapp.com/dotio/arrow_@1x.png");
+      top: 273px;
+      background-color: #cccccc;
+      background-image: url("/img/arrow_@1x.png");
       background-size: 50% 50%;
       background-repeat: no-repeat;
       background-position: 50% 50%;
-      width: 35px;
-      height: 35px;
-      border-radius: 35px;
-
-      &.hover {
-        background-color: #df2375;
-      }
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
     }
 
+    span:hover {
+      background-color: #df2375;
+    }
 
     .button-previous {
       left: 0;
