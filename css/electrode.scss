@@ -325,8 +325,9 @@ h1 {
 .mob-menu {
   height: 65px;
   width: auto;
-  border-radius: 4px;
-  margin-top: -26px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin-top: -29px;
   margin-right: 0.5em;
 }
 
@@ -337,8 +338,6 @@ img.mob-menu {
   border-radius: 4px;
   margin-right: 10px;
 
-  //margin-top: -90px;
-  //margin: -90px -10px 0 0;
   @media(max-width: 380px) {
   }
 }
@@ -903,7 +902,6 @@ div.footer-docs {
 
   .footer-doc-links {
     color: #fff;
-    // font-weight: bold;
     font-size: 14px;
     font-family: "Gotham-Rounded";
 
@@ -1413,10 +1411,20 @@ img.footer-sub-logo {
     height: 80%;
   }
 
-  div#mobile-slogan {
+  #mobile-slogan {
     font-size: 18px;
   }
 
+  .mobile-footer-text-container {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 325px) {
+
+  .mobile-footer-text-container {
+    font-size: 7px;
+  }
 }
 
 .mobile-social-links {
@@ -1501,8 +1509,10 @@ img.footer-sub-logo {
     }
   }
 
-  img.header-logo {
-    display: none;
+  #walmart-header-logo {
+    margin: 20px 0 0 10px;
+    height: 90%;
+    width: auto;
   }
 
   .mobile-oval {
@@ -1533,7 +1543,7 @@ img.footer-sub-logo {
     margin: 0 auto;
   }
 
-  div#mob-header-text-container {
+  #mob-header-text-container {
     text-align: center;
     margin-bottom: 30px;
 
@@ -1542,12 +1552,12 @@ img.footer-sub-logo {
     }
   }
 
-  img#mobile-dropDown-logo {
+  #mobile-dropDown-logo {
     height: 16px;
     width: auto;
   }
 
-  p#mobile-header-text {
+  #mobile-header-text {
     padding-top: 10px;
     font-size: 18px;
   }
