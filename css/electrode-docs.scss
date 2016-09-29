@@ -695,15 +695,6 @@ $mobile-pillar-b-background: #efefef;
   background-color: #00294b;
 }
 
-@media(min-width: 768px){
-  #top-header {
-    height: 98px;
-  }
-  #electrode-nav {
-    height: 100%;
-  }
-}
-
 .navbar {
   margin:0 !important;
 }
@@ -742,4 +733,238 @@ $mobile-pillar-b-background: #efefef;
     a, p, h1, h2, h3, h4 {
       color: white;
     }
+}
+
+#mob-menu-button,
+.mobile-header-links,
+.mobile-internal-links {
+  cursor: pointer;
+}
+
+.navbar-toggle {
+  padding:0 !important;
+  margin-bottom:0 !important;
+}
+
+.mob-menu {
+  height: 65px;
+  width: auto;
+  border-radius: 4px;
+  margin-top: -26px;
+  margin-right: 0.5em;
+}
+
+img.mob-menu {
+  height: 60px;
+  width: auto;
+  border-radius: 4px;
+  //margin-top: -90px;
+  //margin: -90px -10px 0 0;
+}
+
+.electrode-brand-top {
+  padding-top: 38px;
+  @media (max-width: 768px) {
+    padding-top:10px;
+  }
+}
+
+
+
+.social-nav-links {
+  li {
+    border-radius: 4px;
+    margin-top: -4px;
+    margin-right: 1em;
+    height: 79px;
+    @media(max-width: 820px) {
+      margin-right: 0.5em;
+    }
+    &:hover {
+      a {
+        img {
+          transform: scale(1.2);
+        }
+      }
+    }
+    a {
+      padding: 34px 12px 18px 12px;
+      &:hover {
+        background-color: inherit;
+      }
+      @media(max-width: 820px) {
+        padding: 34px 8px 18px 8px;
+      }
+      img {
+        width: 24px;
+        height:22px;
+        transition: transform .3s ease-in-out;
+      }
+    }
+  }
+}
+
+.social-nav-links li:nth-child(2) {
+  // margin-left: .5em;
+  background-color: #eb3d4e;
+}
+.social-nav-links li:nth-child(3) {
+  background-color: #1686c0;
+}
+.social-nav-links li:nth-child(4) {
+  background-color: white;
+}
+
+.vert-divider {
+  position: absolute;
+  width: 0px;
+  height: 100%;
+  border-left: 1px solid $light-trans-grey;
+  margin-left: -22px;
+}
+
+/* queries */
+
+
+@media (max-width: 380px) {
+
+  img.header-logo {
+    height: 80%;
+  }
+
+  div#mobile-slogan {
+    font-size: 18px;
+  }
+
+}
+
+@media (max-width: 767px) {
+   .pillars-section-2,
+   .electrode-core,
+   .electrode-tools,
+   .electrode-modules,
+   #second-nav,
+   #electrode-modules,
+   #modules-section,
+   #electrode-footer,
+   #social-header-color-links {
+    display: none;
+   }
+
+   #snippet-bubble {
+     height: auto;
+     margin-bottom: 12px;
+     text-align: center;
+     padding-left: 20px;
+     padding-right: 20px;
+     padding-bottom: 12px;
+
+     h4 {
+       padding-top: 5px;
+       font-size: 18px;
+       font-family: Gotham-Rounded-Medium;
+     }
+
+     padding-left: 20px;
+     padding-right: 20px;
+
+     h4 {
+       font-size: 18px;
+     }
+
+     .snippet-bubble-text {
+      font-size: 15px;
+      margin-top: 10px;
+      text-align: left;
+      margin-bottom: 10px;
+      padding: 0;
+     }
+   }
+
+   #code-snippet {
+     font-size: 12px;
+     width: 100%;
+     padding: 2% 0 0 0;
+
+     h4 {
+       font-size: 18px;
+     }
+   }
+
+   .header-info {
+     display: none;
+   }
+
+   .slogan {
+     border-bottom: 1px solid $light-trans-grey;
+   }
+
+   .header-button {
+     #deploy-in-five {
+       display: inline;
+     }
+   }
+
+   #about-electrode {
+     display: none;
+   }
+
+   .header-mountains {
+     img {
+       padding-top: 75px;
+     }
+   }
+}
+
+@media (max-width: 767px) {
+
+  #header-intro-paragraph,
+  #desktop-modules-content,
+  .navbar-collapse .nav > .divider-vertical {
+      display: none;
+   }
+
+   img.header-logo {
+     height: 120%;
+     margin-top: 0;
+   }
+
+   div#mobile-logo-text {
+   }
+   .header-mountains {
+     img {
+       padding-top: 0;
+     }
+   }
+}
+
+@media(min-width: 768px){
+  #top-header {
+    height: 98px;
+  }
+  #electrode-nav {
+    height: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+   .pillars-section-2-mobile,
+   .mobile-footer-toggle,
+   .mobile-footer,
+   .mobile-pillar-bar,
+   li.mobile-header-links,
+   ol.mobile-header-links,
+   #mobile-pillar-content-zone {
+     display: none;
+   }
+
+   .social-nav-links {
+     padding-right: 5px;
+   }
+
+  #electrode-core-text {
+    div {
+      padding-bottom: 3%;
+    }
+  }
 }
