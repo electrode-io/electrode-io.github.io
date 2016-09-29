@@ -626,12 +626,17 @@ $mobile-pillar-b-background: #efefef;
   font-weight: 500;
   font-size: 1.145em;
   letter-spacing: 1px;
+  padding-left: 30px;
   @media (max-width: 768px) {
     padding-bottom:0;
   }
+
+  #nav-electrode-logo {
+    width: 224px;
+    height: 40px;
+  }
+
   .header-logo {
-    height: 29px;
-    width:100%;
     @media(max-width: 1200px) {
       width:90%
     }
