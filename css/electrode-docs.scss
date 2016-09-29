@@ -679,3 +679,67 @@ p a code {
 .cm-s-default span.cm-string-2 {
   color: inherit;
 }
+
+
+/* begin new header styles */
+
+$light-trans-grey: rgba(203, 203, 203, 0.32);
+$small-devices: 768px;
+$medium-devices: 992px;
+$large-devices: 1200px;
+$mobile-header-color-black: #333333;
+$mobile-pillar-b-background: #efefef;
+
+#top-header {
+  border-bottom:1px solid $light-trans-grey;
+  background-color: #00294b;
+}
+
+@media(min-width: 768px){
+  #top-header {
+    height: 98px;
+  }
+  #electrode-nav {
+    height: 100%;
+  }
+}
+
+.navbar {
+  margin:0 !important;
+}
+
+.electrode-nav-top {
+  padding-bottom:20px;
+  font-weight: 500;
+  font-size: 1.145em;
+  letter-spacing: 1px;
+  @media (max-width: 768px) {
+    padding-bottom:0;
+  }
+  .header-logo {
+    height: 29px;
+    width:100%;
+    @media(max-width: 1200px) {
+      width:90%
+    }
+    @media(max-width: 1120px) {
+      width:80%
+    }
+    @media(max-width: 1000px) {
+      width:70%
+    }
+    @media(max-width: 767px) {
+      width:100%
+    }
+    @media(max-width: 380px) {
+      width:80%
+    }
+  }
+}
+
+.inverse-colors {
+    color: white;
+    a, p, h1, h2, h3, h4 {
+      color: white;
+    }
+}
