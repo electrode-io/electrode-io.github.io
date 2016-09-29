@@ -1170,8 +1170,10 @@ img.mob-menu {
 
     .mobile-social-logo:hover {
       color: #df2375;
-
     }
+    .mobile-social-logo{
+      width: 115%;
+    }  
   }
 
   img.header-logo {
@@ -1209,20 +1211,20 @@ img.mob-menu {
   div#mob-header-text-container {
     text-align: center;
     margin-bottom: 30px;
-
+    font-size: 36px;
     a:hover {
       cursor: pointer;
     }
   }
 
   img#mobile-dropDown-logo {
-    height: 16px;
+    height: 36px;
     width: auto;
+    margin-top: -5px;
   }
 
   p#mobile-header-text {
     padding-top: 10px;
-    font-size: 18px;
   }
 
   #mobile-nav-ul {
@@ -1230,7 +1232,7 @@ img.mob-menu {
     font-size: 18px;
     li {
       a {
-        font-size: 18px;
+        font-size: 60px;
         font-weight: 600;
         font-family: "Gotham-Rounded";
         margin-left: 20px;
@@ -1240,6 +1242,8 @@ img.mob-menu {
           color: #df2375;
           background-color: #000e23;
         }
+
+
       }
     }
   }
