@@ -11,7 +11,6 @@ function changeMobileNav(){
     document.getElementById("electrode-nav").style.backgroundColor = "#00294b";
     document.getElementById("mob-header-icon").setAttribute("src", "/img/mob-menu.svg");
     document.getElementById("top-header").style.backgroundColor = "#00294b";
-
   }
 };
 
