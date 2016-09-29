@@ -637,13 +637,6 @@ img.mob-menu {
     }
   }
 
-  .electrode-modules-background {
-    background-image: url("https://host-logos.firebaseapp.com/dotio/module_laptop_graphic_@1x.png");
-    background-size: 95%;
-    background-repeat: no-repeat;
-    background-position: bottom left;
-  }
-
   .electrode-modules-image {
     float: left;
 
@@ -849,7 +842,7 @@ img.mob-menu {
   /* Declare heights because of positioning of img element */
   .carousel .item {
     height: 1150px;
-    background-image: url("https://host-logos.firebaseapp.com/dotio/tools_landscape_@1x.png");
+    background-image: url("/img/tools_landscape_@1x.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position-y: 550px;
@@ -897,11 +890,11 @@ img.mob-menu {
     }
 
     .image-electrode-explorer {
-      background-image: url("https://host-logos.firebaseapp.com/dotio/explorer_laptop_graphic_@1x.png");
+      background-image: url("/img/explorer_laptop_graphic_@1x.png");
     }
 
     .image-electrode-electrify {
-      background-image: url("https://host-logos.firebaseapp.com/dotio/bundle_laptop_graphic_@1x.png");
+      background-image: url("/img/bundle_laptop_graphic_@1x.png");
     }
   }
 
@@ -912,7 +905,7 @@ img.mob-menu {
       position: absolute;
       top: 35%;
       background-color: #cccccc;
-      background-image: url("https://host-logos.firebaseapp.com/dotio/arrow_@1x.png");
+      background-image: url("/img/arrow_@1x.png");
       background-size: 50% 50%;
       background-repeat: no-repeat;
       background-position: 50% 50%;
@@ -1041,7 +1034,6 @@ a.footer-text {
 .github-logo {
   img {
     width: 1.3em;
-    background-color: white;
     color: #3a3a3a;
   }
 }
@@ -1465,7 +1457,7 @@ img.footer-sub-logo {
       position: absolute;
       top: 310px;
       background-color: #df2375;
-      background-image: url("https://host-logos.firebaseapp.com/dotio/arrow_@1x.png");
+      background-image: url("/img/arrow_@1x.png");
       background-size: 50% 50%;
       background-repeat: no-repeat;
       background-position: 50% 50%;
