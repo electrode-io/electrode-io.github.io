@@ -39,55 +39,93 @@
 
 
   <div class="containter-fluid" id="top-header">
-      <nav class="navbar navbar-static-top electrode-nav-top inverse-colors">
-        <div id="electrode-nav" class="container-fluid">
-          <ul class="nav navbar-nav">
-            <div class="navbar-header">
-              <button type="button" id="mob-menu-button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <img class="mob-menu" src="../img/mob-menu.svg" alt="">
-              </button>
-              <a class="navbar-brand electrode-brand-top" href="#">
-                <img id="nav-electrode-logo" class="header-logo" src="../img/electrode-logo.svg"
-                     alt="">
+    <nav class="navbar navbar-static-top electrode-nav-top inverse-colors">
+      <div id="electrode-nav" class="container-fluid">
+        <ul class="nav navbar-nav">
+          <div class="navbar-header">
+            <button type="button" id="mob-menu-button" onClick="changeMobileNav()" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <img id="mob-header-icon" class="mob-menu" src="../img/mob-menu.svg" alt="">
+            </button>
+            <a class="navbar-brand electrode-brand-top" href="#">
+              <img class="header-logo" id="nav-electrode-logo" src="../img/electrode-logo.svg"
+                   alt="">
+            </a>
+          </div>
+        </ul>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+          <!-- desktop header -->
+          <ul id="social-header-color-links" class="nav navbar-nav navbar-right social-nav-links">
+            <div class="vert-divider"></div>
+            <li>
+              <a href="https://getpocket.com/">
+                <img src="https://host-logos.firebaseapp.com/dotio/pocket_@1x.png" alt="">
               </a>
-            </div>
+            </li>
+            <li>
+              <a href="https://twitter.com/electrode_io">
+                <img src="https://host-logos.firebaseapp.com/dotio/twitter_@1x.png" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/electrode-io">
+                <img src="https://host-logos.firebaseapp.com/dotio/github_@1x.png" alt="">
+              </a>
+            </li>
           </ul>
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul id="social-header-color-links" class="nav navbar-nav navbar-right social-nav-links">
-              <div class="vert-divider"></div>
-              <li>
+
+          <ul id="desktop-nav-ul" class="nav navbar-nav navbar-right primary-nav-links">
+            <li id="home-primary"><a href="">HOME</a></li>
+            <li><a href="https://github.com/electrode-io">CONTRIBUTE</a></li>
+          </ul>
+
+          <!-- mobile dropdown menu -->
+          <ul id="mobile-nav-ul" class="nav navbar-nav navbar-right secondary-nav-links">
+            <li id="home-primary" class="mobile-nav-links"><a href="">Home</a></li>
+            <div class="mobile-header-line"></div>
+            <li class="mobile-nav-links"><a href="/docs/what_is_electrode.html">Docs</a></li>
+            <div class="mobile-header-line"></div>
+            <li class="mobile-nav-links"><a href="https://github.com/electrode-io">Contribute</a></li>
+            <div class="mobile-header-line"></div>
+            <li id="mobile-started-link" class="mobile-nav-links"><a href="/docs/get_started.html">Get Started</a></li>
+            <div class="mobile-header-line"></div>
+          </ul>
+
+          <div id="mobile-social-link-row" class="row">
+            <div class="col-xs-4 col-sm-4">
+              <div class="mobile-social-header-links mobile-oval">
                 <a href="https://getpocket.com/">
-                  <img src="https://host-logos.firebaseapp.com/dotio/pocket_@1x.png" alt="">
+                  <img class="mobile-social-logo" src="../img/sm-pocket.svg"/>
                 </a>
-              </li>
-              <li>
+              </div>
+            </div>
+
+            <div class="col-xs-4 col-sm-4">
+              <div class="mobile-social-header-links mobile-oval">
                 <a href="https://twitter.com/electrode_io">
-                  <img src="https://host-logos.firebaseapp.com/dotio/twitter_@1x.png" alt="">
+                  <img class="mobile-social-logo" src="../img/sm-twitter.svg"/>
                 </a>
-              </li>
-              <li>
+              </div>
+            </div>
+
+            <div class="col-xs-4 col-sm-4">
+              <div class="mobile-social-header-links mobile-oval">
                 <a href="https://github.com/electrode-io">
-                  <img src="https://host-logos.firebaseapp.com/dotio/github_@1x.png" alt="">
+                  <img class="mobile-social-logo" src="../img/sm-github.svg"/>
                 </a>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right primary-nav-links">
-              <li id="home-primary"><a href="">HOME
-              </a></li>
-              <li><a href="https://github.com/electrode-io">CONTRIBUTE</a></li>
-              <li class="mobile-header-links"><a href="https://getpocket.com/">
-                <img class="mobile-social-links" src="https://host-logos.firebaseapp.com/dotio/pocket_@1x.png" alt="">
-                &nbsp;POCKET</a></li>
-              <li class="mobile-header-links"><a href="">
-                <img class="mobile-social-links" src="https://host-logos.firebaseapp.com/dotio/twitter_@1x.png" alt="">
-                &nbsp;TWITTER</a></li>
-              <li class="mobile-header-links"><a href="https://github.com/electrode-io"><img class="mobile-git" src="../img/sm-github.svg" alt="">&nbsp;
-                GITHUB</a></li>
-            </ul>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div id="mob-header-text-container">
+            <p id="mob-header-text"><b>Built with ♡ by </b>
+              <a href="http://walmartlabs.com"><img id="mobile-dropDown-logo" src="../img/walmart-labs-1-white.svg" alt=""></a>
+            </p>
           </div>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
+  </div>
 
   <div class="container">
 
@@ -124,43 +162,7 @@
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
     integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
     crossorigin="anonymous"></script>
-  <script type="text/javascript">
-    // var clickCount = 0;
-    // $('#mob-menu-button').on('click', function(){
-    //   clickCount++;
-    //   if(clickCount % 2 === 0){
-    //     $('#top-header').removeClass('active-mobile-nav');
-    //   } else {
-    //     $('#top-header').addClass('active-mobile-nav');
-    //   }
-    // })
-var dropDownMenuState= false;
-
-function changeMobileNav(){
-  dropDownMenuState = !dropDownMenuState;
-
-  if(dropDownMenuState){
-    document.getElementById("electrode-nav").style.backgroundColor = "#000e23";
-    document.getElementById("mob-header-icon").setAttribute("src", "/img/mob-close.svg");
-  } else {
-    document.getElementById("electrode-nav").style.backgroundColor = "#00294b";
-    document.getElementById("mob-header-icon").setAttribute("src", "/img/mob-menu.svg");
-  }
-};
-
-var windowWidth = window.innerWidth;
-
-function changeDesktopColor() {
-  if (window.innerWidth > 767){
-    document.getElementById("electrode-nav").style.backgroundColor = "#00294b";
-  } else {
-    if (dropDownMenuState) {
-      document.getElementById("electrode-nav").style.backgroundColor = "#000e23";
-    }
-  }
-}
-
-window.addEventListener("resize", changeDesktopColor);
+  <script type="text/javascript" src="../scripts/mob-nav.js">
   </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
   integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
