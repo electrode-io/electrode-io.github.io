@@ -41,6 +41,7 @@ h1 {
     height: 100%;
   }
 }
+
 .electrode-nav-top {
   padding-bottom:20px;
   font-weight: 500;
@@ -69,6 +70,10 @@ h1 {
     }
   }
 }
+.navbar {
+  margin:0 !important;
+}
+
 .navbar {
   margin:0 !important;
 }
@@ -240,7 +245,6 @@ h1 {
 }
 
 .social-nav-links li:nth-child(2) {
-  // margin-left: .5em;
   background-color: #eb3d4e;
 }
 .social-nav-links li:nth-child(3) {
@@ -310,14 +314,12 @@ h1 {
   }
 }
 
-
-
-
 .navbar-toggle {
   padding:0 !important;
   margin-bottom:0 !important;
 }
 
+// #mob-menu-button,
 .mob-menu {
   height: 65px;
   width: auto;
@@ -326,14 +328,13 @@ h1 {
   margin-right: 0.5em;
 }
 
+#mob-menu-button,
 img.mob-menu {
   height: 60px;
   width: auto;
   border-radius: 4px;
-  //margin-top: -90px;
-  //margin: -90px -10px 0 0;
+  margin-right: 10px;
 }
-
 
 .electrode-brand-top {
   padding-top: 38px;
@@ -385,6 +386,7 @@ img.mob-menu {
       font-size: 20px;
       line-height: 30px;
       margin: 20px 15px 40px 15px;
+      text-align: center;
     }
   }
 }
@@ -392,7 +394,7 @@ img.mob-menu {
 .pillar-links {
   text-align: center;
   a {
-    border-radius: 8px;
+    border-radius: 4px;
     border: 1px solid #d62470;
     background-color: #df2375;
     font-size: 16px;
@@ -823,6 +825,7 @@ img.mob-menu {
 .row {
   margin: 0px;
 }
+
 //BEGIN TOOLS STYLES
 .electrode-tools {
   margin-top: 70px;
@@ -1185,7 +1188,6 @@ div.footer-docs {
 
   .footer-doc-links {
     color: #fff;
-    // font-weight: bold;
     font-size: 14px;
     font-family: "Gotham-Rounded";
 
@@ -1403,22 +1405,6 @@ img.footer-sub-logo {
   }
 }
 
-.mobile-footer {
-  font-family: "Gotham-Rounded";
-  font-size: 9px;
-  font-weight: 600;
-	line-height: 1.5;
-	text-align: center;
-  background-color: #00294b;
-	color: #ffffff;
-  height: 50px;
-  min-width: 320px;
-  position: absolute;
-  width: 100%;
-  padding: 0 5%;
-  margin-top: 10px;
-}
-
 .mobile-module-item {
   padding: 20px ;
   border-bottom: 1px solid #cccccc;
@@ -1442,6 +1428,25 @@ img.footer-sub-logo {
    #social-header-color-links {
     display: none;
    }
+
+  #electrode-nav {
+    padding-top: 10px;
+  }
+   .mobile-footer {
+      font-family: "Gotham-Rounded";
+      font-size: 9px;
+      font-weight: 600;
+      line-height: 1.5;
+      text-align: center;
+      background-color: #00294b;
+      color: #ffffff;
+      height: 50px;
+      min-width: 320px;
+      position: absolute;
+      width: 100%;
+      padding: 0 5%;
+      margin-top: 10px;
+     }
 
    #snippet-bubble {
      height: auto;
@@ -1506,7 +1511,13 @@ img.footer-sub-logo {
        padding-top: 75px;
      }
    }
-}
+
+  #mob-menu-button,
+    img.mob-menu {
+     margin-top: 10px;
+     margin-right: 1em;
+    }
+  }
 
 @media (min-width: 768px) {
    .pillars-section-2-mobile,
@@ -1634,15 +1645,25 @@ img.footer-sub-logo {
    }
 
    img.header-logo {
-     height: 120%;
      margin-top: 0;
+     height: 15px;
+     width: 180px;
    }
 
-   div#mobile-logo-text {
-   }
    .header-mountains {
      img {
        padding-top: 0;
+     }
+   }
+
+   .primary-nav-links {
+     li {
+       a {
+         padding: 0 0 20px 20px;
+         &:hover {
+           background-color: inherit;
+         }
+       }
      }
    }
 }
@@ -1651,10 +1672,28 @@ img.footer-sub-logo {
 
 }
 
+@media (max-width:680px) {
+
+}
+
 @media (max-width: 480px) {
 
+  .electrode-nav-top {
 
+    img.header-logo {
+      margin-top: 0;
+      height: 25px;
+      width: 200px;
+    }
+  }
 
+  #mob-menu-button,
+  img.mob-menu {
+    height: 60px;
+    width: 40px;
+    border-radius: 4px;
+    margin: 5px 10px 0 0;
+  }
 
   div#mobile-slogan {
     font-size: 21px;
@@ -1675,17 +1714,52 @@ img.footer-sub-logo {
 
 @media (max-width: 380px) {
 
-  img.header-logo {
-    height: 80%;
+  .electrode-nav-top {
+
+    img.header-logo {
+      margin: 0 10px 0 0;
+      height: 20px;
+      width: 200px;
+    }
+  }
+
+  #mob-menu-button,
+  img.mob-menu {
+    height: 50px;
+    width: auto;
   }
 
   div#mobile-slogan {
     font-size: 18px;
   }
 
+ .electrode-brand-top {
+   padding-top: 10px;
+ }
+
+ p.mobile-footer-paragraph {
+   font-size: 7px;
+ }
 }
 
+@media (max-width: 340px) {
+  div.navbar-header {
+    padding-top: 0px;
 
+    .electrode-brand-top {
+      padding-top: -10px;
+    }
+  }
+}
+
+#mob-menu-button,
+  .mob-menu {
+    height: 65px;
+    width: auto;
+    border-radius: 4px;
+    margin-top: -30px;
+    margin-right: 1em;
+}
 
 .mobile-social-links {
   height: 20px;
@@ -1740,4 +1814,23 @@ img.footer-sub-logo {
 #mobile-header-info,
 .mobile-header-items {
   font-weight: bold;
+}
+
+ol.mobile-internal-links {
+  margin-left: -10px;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.mobile-footer {
+
+  p#mobile-footer-1 {
+    margin-bottom: 0;
+  }
+}
+
+.mobile-line {
+  width: 100%;
+  height: 1px;
+  background-color: #cccccc;
 }
