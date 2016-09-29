@@ -19,6 +19,7 @@ $columnGutter: 40px;
 $twoColumnWidth: 2 * $columnWidth + $columnGutter;
 $navHeight: 50px;
 
+$light-trans-grey: rgba(203, 203, 203, 0.32);
 
 
 // basic reset
@@ -608,13 +609,6 @@ p a code {
 
 
 /* begin new header styles */
-
-$light-trans-grey: rgba(203, 203, 203, 0.32);
-$small-devices: 768px;
-$medium-devices: 992px;
-$large-devices: 1200px;
-$mobile-header-color-black: #333333;
-$mobile-pillar-b-background: #efefef;
 
 #top-header {
   border-bottom:1px solid $light-trans-grey;
