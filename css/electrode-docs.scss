@@ -663,33 +663,6 @@ $mobile-pillar-b-background: #efefef;
     }
 }
 
-#mob-menu-button,
-.mobile-header-links,
-.mobile-internal-links {
-  cursor: pointer;
-}
-
-.navbar-toggle {
-  padding:0 !important;
-  margin-bottom:0 !important;
-}
-
-.mob-menu {
-  height: 65px;
-  width: auto;
-  border-radius: 4px;
-  margin-top: -26px;
-  margin-right: 0.5em;
-}
-
-img.mob-menu {
-  height: 60px;
-  width: auto;
-  border-radius: 4px;
-  //margin-top: -90px;
-  //margin: -90px -10px 0 0;
-}
-
 .electrode-brand-top {
   padding-top: 38px;
   @media (max-width: 768px) {
@@ -815,6 +788,58 @@ img.mob-menu {
       margin-top: 10px;
     }
   }
+}
+
+/* mobile styles */
+
+#mob-menu-button,
+.mobile-header-links,
+.mobile-internal-links {
+  cursor: pointer;
+}
+
+.navbar-toggle {
+  padding:0 !important;
+  margin-bottom:0 !important;
+}
+
+.mob-menu {
+  height: 65px;
+  width: auto;
+  border-radius: 4px;
+  margin-top: -26px;
+  margin-right: 0.5em;
+}
+
+img.mob-menu {
+  height: 60px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.mobile-social-links {
+  height: 20px;
+  width: auto;
+}
+
+.mobile-git {
+  height: 30px;
+  width: auto;
+}
+
+.mobile-internal-links {
+  padding: 10px 0;
+}
+
+#mob-menu-button,
+.mobile-header-links,
+.mobile-internal-links {
+  cursor: pointer;
+}
+
+#mobile-header-info,
+.mobile-header-items {
+  font-weight: bold;
 }
 
 /* queries */
