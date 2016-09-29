@@ -54,9 +54,9 @@ toplevel: "Resources"
 
 #### CSS Modules
 
-*  [CSS Modules: Welcome to the Future](http://glenmaddern.com/articles/css-modules) - Overview of CSS modules + problems they attempt to solve.
+*  [CSS Modules: Welcome to the Future](http://glenmaddern.com/articles/css-modules) - Overview of CSS modules + the problems they attempt to solve.
 
-*  [Modular CSS with React](https://medium.com/@pioul/modular-css-with-react-61638ae9ea3e#.b5d00dcwp) - Blog about the business case and implementation of CSS modules.
+*  [Modular CSS with React](https://medium.com/@pioul/modular-css-with-react-61638ae9ea3e#.b5d00dcwp) - Blog about the business case for and implementation of CSS modules.
 
 *  [Understanding the CSS Modules Methodology](https://www.sitepoint.com/understanding-css-modules-methodology/) - Outlines the 'what' and 'why' of CSS modules and shares a few important gotchas.
 
