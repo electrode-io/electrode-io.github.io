@@ -1109,6 +1109,60 @@ img.mob-menu {
 
 //Mobile header styles
 
+@media (max-width: 767px) {
+   .pillars-section-2,
+   .electrode-core,
+   .electrode-tools,
+   .electrode-modules,
+   #desktop-nav-ul,
+   #second-nav,
+   #electrode-modules,
+   #modules-section,
+   #electrode-footer,
+   #social-header-color-links {
+    display: none;
+   }
+
+   #snippet-bubble {
+     height: auto;
+     margin-bottom: 12px;
+     text-align: center;
+     padding-left: 20px;
+     padding-right: 20px;
+     padding-bottom: 12px;
+
+     h4 {
+       padding-top: 5px;
+       font-size: 18px;
+       font-family: Gotham-Rounded-Medium;
+     }
+
+     padding-left: 20px;
+     padding-right: 20px;
+
+     h4 {
+       font-size: 18px;
+     }
+
+     .snippet-bubble-text {
+      font-size: 15px;
+      margin-top: 10px;
+      text-align: left;
+      margin-bottom: 10px;
+      padding: 0;
+     }
+   }
+
+
+
+
+   .header-button {
+     #deploy-in-five {
+       display: inline;
+     }
+   }
+}
+
 @media(max-width: 767px) {
 
   #mobile-social-link-row {
