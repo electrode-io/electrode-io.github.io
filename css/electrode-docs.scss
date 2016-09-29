@@ -627,6 +627,7 @@ $mobile-pillar-b-background: #efefef;
   font-size: 1.145em;
   letter-spacing: 1px;
   padding-left: 30px;
+
   @media (max-width: 768px) {
     padding-bottom:0;
   }
@@ -636,7 +637,7 @@ $mobile-pillar-b-background: #efefef;
     height: 40px;
   }
 
-  .header-logo {
+  #header-logo {
     @media(max-width: 1200px) {
       width:90%
     }
