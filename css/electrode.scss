@@ -1411,10 +1411,20 @@ img.footer-sub-logo {
     height: 80%;
   }
 
-  div#mobile-slogan {
+  #mobile-slogan {
     font-size: 18px;
   }
 
+  .mobile-footer-text-container {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 325px) {
+
+  .mobile-footer-text-container {
+    font-size: 7px;
+  }
 }
 
 .mobile-social-links {
