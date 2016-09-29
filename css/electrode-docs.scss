@@ -30,6 +30,7 @@ $light-trans-grey: rgba(203, 203, 203, 0.32);
   padding: 0;
 }
 
+
 html {
   background: $pageBg;
 }
@@ -369,14 +370,11 @@ section.black content {
 
 .button {
   @include background(linear-gradient($buttonGreyTop, $buttonGreyBottom));
-  // border: 1px solid $darkestColor;
   border-radius: 4px;
   padding: 8px 16px;
   font-size: 18px;
   font-weight: 400;
   margin: 0 12px;
-  // word-spacing: -2px;
-  // letter-spacing: 1px;
   display: inline-block;
   color: $lightTextColor;
   text-decoration: none;
@@ -609,9 +607,16 @@ p a code {
 
 /* begin new header styles */
 
+
+#main-container {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
 #top-header {
+  width: 100%;
   border-bottom:1px solid $light-trans-grey;
   background-color: #00294b;
+  min-width: 975px;
 }
 
 .navbar {
