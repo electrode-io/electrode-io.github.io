@@ -326,10 +326,13 @@ h1 {
   margin-right: 0.5em;
 }
 
+#mob-menu-button,
 img.mob-menu {
-  height: 60px;
+  height: 65px;
   width: auto;
   border-radius: 4px;
+  margin-right: 10px;
+
   //margin-top: -90px;
   //margin: -90px -10px 0 0;
 }
@@ -434,7 +437,7 @@ img.mob-menu {
   .electrode-core {
 
      #core-h3 {
-       padding: 0% 10% 0% 10% !important;
+        font-size: 26px;
       }
 
     #electrode-core-text {
@@ -453,10 +456,14 @@ img.mob-menu {
 
   h1 {
     font-family: "Gotham-Rounded-Medium";
+    font-size: 56px;
+    font-weight: 500;
   }
 
   #core-h3 {
-    padding: 0% 25% 0% 25%;
+    padding: 0% 10% 0% 10%;
+    font-weight: 500;
+    font-size: 26px;
   }
 
   div {
@@ -574,11 +581,12 @@ img.mob-menu {
     height: 104px;
     margin-bottom: 46px;
     width: 116px;
+    padding-right: 30px;
   }
 
   h1 {
     font-size: 56px;
-    font-weight: normal;
+    font-weight: 500;
     margin-top: 0;
   }
 
@@ -830,6 +838,7 @@ img.mob-menu {
 
   h1 {
     font-size: 56px;
+    font-weight: 500;
   }
 
   h3 {
@@ -1178,6 +1187,16 @@ div.footer-row {
 .footer-row-center {
   margin-top: 24px;
   float: right;
+
+  li {
+    &:hover {
+     a {
+       img {
+         transform: scale(1.5);
+       }
+     }
+    }
+  }
 }
 
 div.footer-docs {
@@ -1309,6 +1328,14 @@ img.footer-sub-logo {
   transform: translateY(-50%);
 }
 
+.horizontal-align-this {
+  position: relative;
+  right: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
 //START MOBILE VIEW
 
 .pillars-section-2-mobile {
@@ -1367,10 +1394,10 @@ img.footer-sub-logo {
 
 .mobile-pillar-bar {
   width: 100%;
-	height: 4px;
+  height: 4px;
   margin-top: -4px;
   margin-bottom: 10px;
-	background-color: $mobile-pillar-b-background;
+  background-color: $mobile-pillar-b-background;
   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.2);
 }
 
@@ -1407,10 +1434,10 @@ img.footer-sub-logo {
   font-family: "Gotham-Rounded";
   font-size: 9px;
   font-weight: 600;
-	line-height: 1.5;
-	text-align: center;
+  line-height: 1.5;
+  text-align: center;
   background-color: #00294b;
-	color: #ffffff;
+  color: #ffffff;
   height: 50px;
   min-width: 320px;
   position: absolute;
@@ -1435,6 +1462,7 @@ img.footer-sub-logo {
    .electrode-core,
    .electrode-tools,
    .electrode-modules,
+   #desktop-nav-ul,
    #second-nav,
    #electrode-modules,
    #modules-section,
@@ -1442,6 +1470,10 @@ img.footer-sub-logo {
    #social-header-color-links {
     display: none;
    }
+
+   #electrode-nav {
+      margin-top: -17px;
+    }
 
    #snippet-bubble {
      height: auto;
@@ -1515,7 +1547,12 @@ img.footer-sub-logo {
    .mobile-pillar-bar,
    li.mobile-header-links,
    ol.mobile-header-links,
-   #mobile-pillar-content-zone {
+   #mob-header-text-container,
+   #mob-header-text,
+   #mobile-nav-ul,
+   #mobile-pillar-content-zone,
+   #mobile-social-link-row,
+   #mobile-started-link {
      display: none;
    }
 
@@ -1653,9 +1690,6 @@ img.footer-sub-logo {
 
 @media (max-width: 480px) {
 
-
-
-
   div#mobile-slogan {
     font-size: 21px;
   }
@@ -1684,8 +1718,6 @@ img.footer-sub-logo {
   }
 
 }
-
-
 
 .mobile-social-links {
   height: 20px;
@@ -1740,4 +1772,88 @@ img.footer-sub-logo {
 #mobile-header-info,
 .mobile-header-items {
   font-weight: bold;
+}
+
+//Mobile header styles
+
+@media(max-width: 767px) {
+
+  #mobile-social-link-row {
+    padding: 40px 0 10px 0;
+
+    .mobile-social-logo:hover {
+      color: #df2375;
+
+    }
+  }
+
+  img.header-logo {
+    display: none;
+  }
+
+  .mobile-oval {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    text-align: center;
+    border: solid 1px rgba(255, 255, 255, 0.2);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  .mobile-header-line {
+    width: 90%;
+    height: 1px;
+    margin: 10px 0 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .mobile-social-logo {
+    object-fit: contain;
+    margin-bottom: -23px;
+  }
+
+  .mobile-social-header-links {
+    margin: 0 auto;
+  }
+
+  div#mob-header-text-container {
+    text-align: center;
+    margin-bottom: 30px;
+
+    a:hover {
+      cursor: pointer;
+    }
+  }
+
+  img#mobile-dropDown-logo {
+    height: 16px;
+    width: auto;
+  }
+
+  p#mobile-header-text {
+    padding-top: 10px;
+    font-size: 18px;
+  }
+
+  #mobile-nav-ul {
+
+    font-size: 18px;
+    li {
+      a {
+        font-size: 18px;
+        font-weight: 600;
+        font-family: "Gotham-Rounded";
+        margin-left: 20px;
+        line-height: 2;
+
+        &:hover {
+          color: #df2375;
+          background-color: #000e23;
+        }
+      }
+    }
+  }
 }
