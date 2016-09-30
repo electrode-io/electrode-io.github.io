@@ -38,8 +38,8 @@
       <div id="electrode-nav" class="container">
         <ul class="nav navbar-nav">
           <div class="navbar-header">
-            <button type="button" id="mob-menu-button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <img class="mob-menu" src="/img/mob-menu.svg" alt="">
+            <button type="button" id="mob-menu-button" onClick="changeMobileNav()" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <img id="mob-header-icon" class="mob-menu" src="/img/mob-menu.svg" alt="">
             </button>
             <a class="navbar-brand electrode-brand-top" href="#">
               <img class="header-logo" src="img/walmart-labs-1-white.svg"
@@ -48,6 +48,8 @@
           </div>
         </ul>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+          <!-- desktop header -->
           <ul id="social-header-color-links" class="nav navbar-nav navbar-right social-nav-links">
             <div class="vert-divider"></div>
             <li>
@@ -66,14 +68,9 @@
               </a>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right primary-nav-links">
-            <li id="home-primary"><a href="">HOME</a>
-              <ul class="mobile-internal-header-links">
-                <ol class="mobile-header-links mobile-internal-links"><a onClick="togglePillars('core')">CORE</a></ol>
-                <ol class="mobile-header-links mobile-internal-links"><a onClick="togglePillars('modules')">MODULES</a></ol>
-                <ol class="mobile-header-links mobile-internal-links"><a onClick="togglePillars('tools')">TOOLS</a></ol>
-              </ul>
-            </li>
+
+          <ul id="desktop-nav-ul" class="nav navbar-nav navbar-right primary-nav-links">
+            <li id="home-primary"><a href="">HOME</a></li>
             <li><a href="/docs/what_is_electrode.html">DOCS</a></li>
             <li><a href="https://github.com/electrode-io">CONTRIBUTE</a></li>
             <li class="mobile-header-links"><a href="https://getpocket.com/">
@@ -85,10 +82,53 @@
             <li class="mobile-header-links"><a href="https://github.com/electrode-io"><img class="mobile-git" src="img/sm-github.svg" alt="">&nbsp;
               GITHUB</a></li>
           </ul>
+
+          <!-- mobile dropdown menu -->
+          <ul id="mobile-nav-ul" class="nav navbar-nav navbar-right secondary-nav-links">
+            <li id="home-primary" class="mobile-nav-links"><a href="">Home</a></li>
+            <div class="mobile-header-line"></div>
+            <li class="mobile-nav-links"><a href="/docs/what_is_electrode.html">Docs</a></li>
+            <div class="mobile-header-line"></div>
+            <li class="mobile-nav-links"><a href="https://github.com/electrode-io">Contribute</a></li>
+            <div class="mobile-header-line"></div>
+            <li id="mobile-started-link" class="mobile-nav-links"><a href="/docs/get_started.html">Get Started</a></li>
+            <div class="mobile-header-line"></div>
+          </ul>
+
+          <div id="mobile-social-link-row" class="row">
+            <div class="col-xs-4 col-sm-4">
+              <div class="mobile-social-header-links mobile-oval">
+                <a href="https://getpocket.com/">
+                  <img class="mobile-social-logo" src="img/sm-pocket.svg"/>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-xs-4 col-sm-4">
+              <div class="mobile-social-header-links mobile-oval">
+                <a href="https://twitter.com/electrode_io">
+                  <img class="mobile-social-logo" src="img/sm-twitter.svg"/>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-xs-4 col-sm-4">
+              <div class="mobile-social-header-links mobile-oval">
+                <a href="https://github.com/electrode-io">
+                  <img class="mobile-social-logo" src="img/sm-github.svg"/>
+                </a>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div id="mob-header-text-container">
+            <p id="mob-header-text"><b>Built with ♡ by </b>
+              <a href="http://walmartlabs.com"><img id="mobile-dropDown-logo" src="/img/walmart-labs-1-white.svg" alt=""></a>
+            </p>
+          </div>
         </div>
       </div>
     </nav>
-  </div>
   </div>
 
   <div class="container-fluid night-sky">
@@ -174,8 +214,12 @@
           <div class="snippet-bubble-text col-md-10 col-md-offset-1">That's it! Next, deploy, your app to your favorite cloud service.</div>
         </div>
         <div class="row">
-          <button class="btn col-md-offset-1 col-md-3" id="details-btn">DETAILS</button>
-          <button class="btn col-md-offset-1 col-md-6" id="deploy-btn">DEPLOY</button>
+          <a href="/docs/what_is_electrode.html">
+            <button class="btn col-md-offset-1 col-md-3" id="details-btn">DETAILS</button>
+          </a>
+          <a href="/docs/more_deployments.html">
+            <button class="btn col-md-offset-1 col-md-6" id="deploy-btn">DEPLOY</button>
+          </a>
         </div>
       </div>
       <p> Electrode emphasizes convention over configuration, while focusing on performance, component reusability, and simple deployment </p>
@@ -646,8 +690,8 @@
           <div class="row footer-row-center">
             <div class="col-sm-2 github-logo">
               <a href="https://github.com/electrode-io">
-                <img class="footer-social-logo" src="img/sm-github.svg"/>
-              </a>
+                 <img class="footer-social-logo" src="img/sm-github.svg"/>
+               </a>
             </div>
             <div id="footer-twitter" class="col-sm-2 twitter-logo">
               <a href="https://twitter.com/electrode_io">
