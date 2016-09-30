@@ -1,4 +1,4 @@
-var stickAtHeight = 2130;
+var stickAtHeight = 200;
 var toggleTools = 3000;
 
 $(window).bind('scroll', function () {
