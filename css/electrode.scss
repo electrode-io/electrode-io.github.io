@@ -566,7 +566,7 @@ img.mob-menu {
 }
 
 #modules-section {
-  padding: 20px 0 80px 20px;
+  padding: 20px 40px 80px 60px;
   border-bottom: 1px solid #cccccc;
 }
 
@@ -673,13 +673,13 @@ img.mob-menu {
 
     .desktop-module-item.module-row-2 {
       .module-testbox {
-        min-height: 400px;
+        min-height: 380px;
       }
     }
 
     .desktop-module-item.module-row-3 {
       .module-testbox {
-        min-height: 303px;
+        min-height: 331px;
       }
     }
 
@@ -698,7 +698,7 @@ img.mob-menu {
   .electrode-modules {
     .desktop-module-item.module-row-1 {
       .module-testbox {
-        min-height: 263px;
+        min-height: 290px;
       }
 
       .module-column-left {
@@ -715,14 +715,14 @@ img.mob-menu {
 
       .desktop-module-logo {
         position: absolute;
-        margin-top: 94px;
+        margin-top: 108px;
         text-align: right;
       }
     }
 
     .desktop-module-item.module-row-2 {
       .module-testbox {
-        min-height: 263px;
+        min-height: 240px;
       }
 
       .module-column-left {
@@ -739,14 +739,14 @@ img.mob-menu {
 
       .desktop-module-logo {
         position: absolute;
-        margin-top: 94px;
+        margin-top: 83px;
         text-align: right;
       }
     }
 
     .desktop-module-item.module-row-3 {
       .module-testbox {
-        min-height: 188px;
+        min-height: 190px;
       }
 
       .module-column-left {
@@ -763,7 +763,7 @@ img.mob-menu {
 
       .desktop-module-logo {
         position: absolute;
-        margin-top: 57px;
+        margin-top: 58px;
         text-align: right;
       }
     }
@@ -774,7 +774,7 @@ img.mob-menu {
   .electrode-modules {
     .desktop-module-item.module-row-1 {
       .module-testbox {
-        min-height: 263px;
+        min-height: 240px;
       }
 
       .module-testbox.module-column-right {
@@ -785,41 +785,42 @@ img.mob-menu {
 
       .desktop-module-logo {
         position: absolute;
-        margin-top: 95px;
+        margin-top: 83px;
       }
     }
-  }
 
-  .desktop-module-item.module-row-2 {
-    .module-testbox {
-      min-height: 190px;
-    }
+    .desktop-module-item.module-row-2 {
+      .module-testbox {
+        min-height: 215px;
+      }
 
-    .module-column-right {
+      .module-column-right {
+        .desktop-module-logo {
+          right: 40px;
+        }
+      }
+
       .desktop-module-logo {
-        right: 40px;
+        margin-top: 70px;
+        position: absolute;
       }
     }
 
-    .desktop-module-logo {
-      margin-top: 60px;
-      position: absolute;
-    }
-  }
+    .desktop-module-item.module-row-3 {
+      .module-testbox {
+        min-height: 165px;
+      }
 
-  .desktop-module-item.module-row-3 {
-    .module-testbox {
-      min-height: 163px;
-    }
+      .module-column-right {
+        .desktop-module-logo {
+          right: 40px;
+        }
+      }
 
-    .module-column-right {
       .desktop-module-logo {
-        right: 40px;
+        position: absolute;
+        margin-top: 45px;
       }
-    }
-
-    .desktop-module-logo {
-      position: absolute;
     }
   }
 }
