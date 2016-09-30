@@ -488,7 +488,11 @@ h1 {
   }
   #mobile-modules-pillar {
     cursor: pointer;
-    width: 99%
+    width: 99%;
+
+    &.hover  ~ hr {
+      margin-left: 50%;
+    }
   }
   #mobile-tools-pillar {
     cursor: pointer;
@@ -1036,23 +1040,18 @@ img.footer-sub-logo {
         transform: rotate(45deg);
       }
     }
-
-    #mobile-core-content {
-      .mobile-content-heading {
-        font-weight: 600;
-        font-size: 15px;
-      }
-    }
   }
 }
 
 #mobile-pillar-content-zone {
-  padding: 12px 5%;
+  padding: 12px 0;
   line-height: 1.4;
   font-size: 14px;
   font-family: "Gotham-Rounded";
+  outline: none;
 
   #mobile-core-content {
+
     .mobile-content-heading {
       font-weight: 600;
     }
@@ -1072,12 +1071,13 @@ img.footer-sub-logo {
   border-bottom: 1px solid #333;
   height: 62px;
   min-width: 320px;
+  margin: 0 15px;
   margin-top: 30px;
 
   .footer-toggle-items {
     float: left;
     margin: 10px 0;
-    margin-left: 5%;
+    margin-right: 5%;
     font-size: 34px;
     cursor: pointer;
     position: relative;
@@ -1101,7 +1101,6 @@ img.footer-sub-logo {
     font-family: "Gotham-Rounded-Bold";
     background: $primary;
     border: none;
-    margin-right: 5%;
     border-radius: 3px;
     height: 34px;
     width: 42%;
@@ -1481,4 +1480,26 @@ img.footer-sub-logo {
 #mobile-header-info,
 .mobile-header-items {
   font-weight: bold;
+}
+
+// slick carousel css
+.slick-slide:focus { outline: none; }
+
+/* the slides */
+.slick-slide {
+    margin: 0 15px;
+}
+/* the parent */
+.slick-list {
+    margin: 0 -15px;
+}
+
+
+#slider-toggle{
+  height: 10px;
+  width: 24%;
+  margin: 0;
+  background: tomato;
+  border: none;
+  transition: .3s ease-in-out;
 }
