@@ -963,7 +963,7 @@ img.mob-menu {
 @media (min-width: 768px) {
   .electrode-tools {
     .carousel {
-      min-height: 600px;
+      min-height: 630px;
     }
 
     .carousel .item {
@@ -979,7 +979,7 @@ img.mob-menu {
 
     .carousel-control {
       span {
-        top: 260px;
+        top: 300px;
         width: 40px;
         height: 40px;
         background-size: contain;
@@ -999,7 +999,7 @@ img.mob-menu {
 @media (min-width: 992px) {
   .electrode-tools {
     .carousel {
-      min-height: 600px;
+      min-height: 700px;
     }
 
     .carousel .item {
@@ -1014,7 +1014,7 @@ img.mob-menu {
 
     .carousel-control {
       span {
-        top: 260px;
+        top: 320px;
         width: 40px;
         height: 40px;
         background-size: contain;
@@ -1026,7 +1026,7 @@ img.mob-menu {
 @media (min-width: 1200px) {
   .electrode-tools {
     .carousel {
-      min-height: 680px;
+      min-height: 800px;
     }
     .carousel .item {
       .mountain-overlay {
@@ -1040,19 +1040,11 @@ img.mob-menu {
 
     .carousel-control {
       span {
-        top: 360px;
+        top: 350px;
         width: 60px;
         height: 60px;
         background-size: contain;
       }
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  .electrode-tools {
-    .carousel {
-      min-height: 800px;
     }
   }
 }
