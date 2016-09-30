@@ -42,7 +42,7 @@ h1 {
     height: 98px;
   }
   #electrode-nav {
-    height: 100%;
+    height: 98px;
   }
 }
 .electrode-nav-top {
@@ -341,15 +341,15 @@ img.mob-menu {
 
 .electrode-brand-top {
   padding-top: 38px;
-  @media (max-width: 768px) {
-    padding-top:10px;
+  @media (max-width: 767px) {
+    padding-top: 10px;
   }
 }
 
 .vert-divider {
   position: absolute;
   width: 0px;
-  height: 100%;
+  height: 98px;
   border-left: 1px solid $light-trans-grey;
   margin-left: -22px;
 }
@@ -416,13 +416,13 @@ img.mob-menu {
 
 @media(min-width: 768px) {
   .pillar-content p {
-    min-height: 440px;
+    min-height: 420px;
   }
 }
 
-@media(min-width: 993px) {
+@media(min-width: 992px) {
   .pillar-content p {
-    min-height: 300px;
+    min-height: 310px;
   }
 }
 
