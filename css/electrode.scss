@@ -453,7 +453,7 @@ img.mob-menu {
   border-bottom: 1px #ECECEC solid;
   text-align: center;
   font-family: "Gotham-Rounded";
-  padding: 50px 0px 50px 0px;
+  padding: 50px 0px 50px 40px;
 
   h1 {
     font-family: "Gotham-Rounded-Medium";
@@ -555,15 +555,22 @@ img.mob-menu {
   margin: auto;
 }
 
+@media (min-width: 768px) {
+  #snippet-bubble {
+    margin-right: 25px;
+  }
+}
+
+@media (min-width: 992px) {
+  #snippet-bubble {
+    margin-right: 50px;
+  }
+}
+
 //END CORE STYLES
 
 
 //BEGIN MODULES STYLES
-.landing-logo{
-  width: 125px;
-  height: 125px;
-  margin: -10px -20px 7px -20px;
-}
 
 #modules-section {
   padding: 20px 40px 80px 60px;
