@@ -14,20 +14,18 @@ $(document).ready(function(){
 
 
 var pillarsArr = ["core", "modules", "tools"];
-var pillarsObject = {"core": "0px", "modules": "33%", "tools": "66%"};
+var pillarsObject = {"core": "2%", "modules": "36%", "tools": "69%"};
 
 function togglePillars(pillarSelection) {
 
   pillarsArr.forEach(function(p){
     if (pillarSelection === p){
       document.getElementById("slider-toggle").style.marginLeft = pillarsObject[p];
-      document.getElementById("mobile-"+ p).setAttribute("class", "mobile-header-items selected");
-      $('.slickCarousel').slick('slickGoTo', pillarsArr.indexOf(p));
+      $(".slickCarousel").slick("slickGoTo", pillarsArr.indexOf(p));
       document.getElementById("mobile-" + p + "-footer").style.color = "#ff0076";
       document.getElementById("mobile-" + p + "-footer").setAttribute("class", "elc-icon-icn-" + p + " footer-toggle-items footer-arrow-up");
       document.getElementById("mobile-" + p + "-pillar").setAttribute("src", "/img/" + p + "-full@3x.png");
     }else{
-      document.getElementById("mobile-"+ p).setAttribute("class", "mobile-header-items");
       document.getElementById("mobile-" + p + "-footer").style.color = "#333";
       document.getElementById("mobile-" + p + "-footer").setAttribute("class", "elc-icon-icn-" + p + " footer-toggle-items");
       document.getElementById("mobile-" + p + "-pillar").setAttribute("src", "/img/" + p + "-full-2@3x.png");
@@ -38,12 +36,11 @@ function togglePillars(pillarSelection) {
 function updateToggleMenu(currentSlide){
   pillarsArr.forEach(function(p, index){
     if (currentSlide === index){
-      document.getElementById("mobile-"+ p).setAttribute("class", "mobile-header-items selected");
       document.getElementById("mobile-" + p + "-footer").style.color = "#ff0076";
+      document.getElementById("slider-toggle").style.marginLeft = pillarsObject[p];
       document.getElementById("mobile-" + p + "-footer").setAttribute("class", "elc-icon-icn-" + p + " footer-toggle-items footer-arrow-up");
       document.getElementById("mobile-" + p + "-pillar").setAttribute("src", "/img/" + p + "-full@3x.png");
     }else{
-      document.getElementById("mobile-"+ p).setAttribute("class", "mobile-header-items");
       document.getElementById("mobile-" + p + "-footer").style.color = "#333";
       document.getElementById("mobile-" + p + "-footer").setAttribute("class", "elc-icon-icn-" + p + " footer-toggle-items");
       document.getElementById("mobile-" + p + "-pillar").setAttribute("src", "/img/" + p + "-full-2@3x.png");
@@ -51,6 +48,6 @@ function updateToggleMenu(currentSlide){
   });
 }
 
-$('.slickCarousel').on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+$(".slickCarousel").on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
     updateToggleMenu(currentSlide);
 });

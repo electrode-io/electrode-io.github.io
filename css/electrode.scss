@@ -1016,29 +1016,9 @@ img.footer-sub-logo {
     .mobile-header-items {
       color: $mobile-header-color-black;
       padding: 10px 0;
-      margin-left: 2%;
-      margin-right: 2%;
       cursor: pointer;
       font-size: 18px;
       font-weight: 500;
-    }
-
-    .selected{
-      padding-bottom: 6px !important;
-      border-bottom: 4px solid #38bbff;
-      position: relative;
-      &:after {
-        height: 4px;
-        width: 4px;
-        position: absolute;
-        top: 43px;
-        right: 50%;
-        content: " ";
-        background-color: #38bbff;
-        -ms-transform: rotate(45deg); /* IE 9 */
-        -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-        transform: rotate(45deg);
-      }
     }
   }
 }
@@ -1496,10 +1476,25 @@ img.footer-sub-logo {
 
 
 #slider-toggle{
-  height: 10px;
-  width: 24%;
-  margin: 0;
-  background: tomato;
+  height: 4px;
+  width: 28%;
+  margin: 0 2%;
+  background: #38bbff;
   border: none;
-  transition: .3s ease-in-out;
+  transition: .2s ease-in-out;
+  position: relative;
+
+
+  &:after {
+    height: 4px;
+    width: 4px;
+    position: absolute;
+    top: 2px;
+    right: 49%;
+    content: "";
+    background-color: #38bbff;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+  }
 }
