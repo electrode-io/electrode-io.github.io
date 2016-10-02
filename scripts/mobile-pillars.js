@@ -7,6 +7,14 @@ var pillarsState = {"core": false, "modules": false, "tools": false};
 var outerMostSlickElement;
 var mobileToolsConent;
 
+
+var my_image2 = new Image();
+my_image2.src = "/img/core-full@3x.png";
+var my_image3 = new Image();
+my_image3.src = "/img/modules-full@3x.png";
+var my_image3 = new Image();
+my_image3.src = "/img/tools-full@3x.png";
+
 // Init Slick carousel
 $(document).ready(function() {
   $(".slickCarousel").slick({
@@ -15,7 +23,7 @@ $(document).ready(function() {
     dots: false,
     prevArrow: false,
     nextArrow: false,
-    speed: 220,
+    speed: 210,
     parent: true
   });
   togglePillars("core");
@@ -51,7 +59,7 @@ function updateToggleMenu(currentSlide) {
   pillarsArr.forEach(function(p, index) {
     if (currentSlide === index && pillarsState[p] === false) {
       pillarsState[p] = true;
-      document.getElementById("mobile-" + p + "-pillar").setAttribute("src", "/img/" + p + "-full@3x.png");
+      document.getElementById("mobile-" + p + "-pillar").src = "/img/" + p + "-full@3x.png";
       document.getElementById("mobile-" + p + "-footer").style.color = "#ff0076";
       document.getElementById("slider-toggle").style.marginLeft = pillarsObject[p];
       document.getElementById("mobile-" + p + "-footer").setAttribute("class", "elc-icon-icn-" + p + " footer-toggle-items footer-arrow-up");
@@ -70,10 +78,9 @@ function scrollToDiv() {
 
 // listen for changes
 $(".slickCarousel").on('afterChange', function (event, slick, currentSlide, nextSlide) {
-  console.log(slick);
-    if(slick.options.parent){
-      updateToggleMenu(currentSlide, false);
-    }else if (!slick.options.parent){
-      outerMostSlickElement.style.height = mobileToolsContent.clientHeight+"px";
-    }
+  if(slick.options.parent){
+    updateToggleMenu(currentSlide, false);
+  }else if (!slick.options.parent){
+    outerMostSlickElement.style.height = mobileToolsContent.clientHeight+"px";
+  }
 });
