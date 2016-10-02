@@ -1240,20 +1240,29 @@ img.footer-sub-logo {
   #tools-carousel {
     margin: 0 -30px;
 
-    .tst{
-      .nested-tools-btn {
+    .tools-img-container{
+      .nested-tools-btn-exp {
         position: absolute;
         width: 23%;
         top:40%;
+        padding-left: .6%;
 
         .nested-tools-b-btn {
-          color:red;
-          font-weight: 800;
         }
         .nested-tools-f-btn {
-          color:red;
           float: right;
-          font-weight: 800;
+        }
+      }
+      .nested-tools-btn-elec {
+        position: absolute;
+        width: 23%;
+        top:40%;
+        padding-left: .6%;
+
+        .nested-tools-b-btn {
+        }
+        .nested-tools-f-btn {
+          float: right;
         }
       }
     }
@@ -1338,9 +1347,73 @@ img.footer-sub-logo {
   .header-content .header-button {
     width: 100%;
   }
+
+  #tools-carousel {
+    margin: 0 -30px;
+
+    .tools-img-container{
+      .nested-tools-btn-elec {
+        position: absolute;
+        width: 23%;
+        top:40%;
+        padding-left: .6%;
+
+        .nested-tools-b-btn {
+        }
+        .nested-tools-f-btn {
+          float: right;
+        }
+      }
+      .nested-tools-btn-exp {
+        position: absolute;
+        width: 23%;
+        top:40%;
+        padding-left: .6%;
+
+        .nested-tools-b-btn {
+        }
+        .nested-tools-f-btn {
+          float: right;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 380px) {
+
+  #mobile-tools-content {
+    #tools-carousel {
+      margin: 0 -30px;
+
+      .tools-img-container{
+        .nested-tools-btn-exp {
+          position: absolute;
+          width: 22.5%;
+          top:36%;
+          padding-left: .6%;
+
+          .nested-tools-b-btn {
+          }
+          .nested-tools-f-btn {
+            float: right;
+          }
+        }
+        .nested-tools-btn-elec {
+          position: absolute;
+          width: 22.5%;
+          top:40%;
+          padding-left: .6%;
+
+          .nested-tools-b-btn {
+          }
+          .nested-tools-f-btn {
+            float: right;
+          }
+        }
+      }
+    }
+  }
 
   img.header-logo {
     height: 80%;
