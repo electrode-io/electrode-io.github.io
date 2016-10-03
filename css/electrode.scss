@@ -13,6 +13,10 @@ $large-devices: 1200px;
 $mobile-header-color-black: #333333;
 $mobile-pillar-b-background: #efefef;
 
+.header-logo {
+  height: 94%;
+}
+
 html {
   -webkit-font-smoothing: antialiased;
 }
@@ -38,7 +42,7 @@ h1 {
     height: 98px;
   }
   #electrode-nav {
-    height: 100%;
+    height: 98px;
   }
 }
 .electrode-nav-top {
@@ -337,8 +341,8 @@ img.mob-menu {
 
 .electrode-brand-top {
   padding-top: 38px;
-  @media (max-width: 768px) {
-    padding-top:10px;
+  @media (max-width: 767px) {
+    padding-top: 10px;
   }
 }
 
@@ -412,13 +416,13 @@ img.mob-menu {
 
 @media(min-width: 768px) {
   .pillar-content p {
-    min-height: 440px;
+    min-height: 420px;
   }
 }
 
-@media(min-width: 993px) {
+@media(min-width: 992px) {
   .pillar-content p {
-    min-height: 300px;
+    min-height: 310px;
   }
 }
 
@@ -449,7 +453,7 @@ img.mob-menu {
   border-bottom: 1px #ECECEC solid;
   text-align: center;
   font-family: "Gotham-Rounded";
-  padding: 50px 0px 50px 0px;
+  padding: 50px 0px 50px 40px;
 
   h1 {
     font-family: "Gotham-Rounded-Medium";
@@ -555,18 +559,25 @@ img.mob-menu {
   margin: auto;
 }
 
+@media (min-width: 768px) {
+  #snippet-bubble {
+    margin-right: 25px;
+  }
+}
+
+@media (min-width: 992px) {
+  #snippet-bubble {
+    margin-right: 50px;
+  }
+}
+
 //END CORE STYLES
 
 
 //BEGIN MODULES STYLES
-.landing-logo{
-  width: 125px;
-  height: 125px;
-  margin: -10px -20px 7px -20px;
-}
 
 #modules-section {
-  padding: 20px 0 80px 20px;
+  padding: 20px 40px 80px 60px;
   border-bottom: 1px solid #cccccc;
 }
 
@@ -674,13 +685,13 @@ img.mob-menu {
 
     .desktop-module-item.module-row-2 {
       .module-testbox {
-        min-height: 400px;
+        min-height: 380px;
       }
     }
 
     .desktop-module-item.module-row-3 {
       .module-testbox {
-        min-height: 303px;
+        min-height: 331px;
       }
     }
 
@@ -699,7 +710,7 @@ img.mob-menu {
   .electrode-modules {
     .desktop-module-item.module-row-1 {
       .module-testbox {
-        min-height: 263px;
+        min-height: 290px;
       }
 
       .module-column-left {
@@ -716,14 +727,14 @@ img.mob-menu {
 
       .desktop-module-logo {
         position: absolute;
-        margin-top: 94px;
+        margin-top: 108px;
         text-align: right;
       }
     }
 
     .desktop-module-item.module-row-2 {
       .module-testbox {
-        min-height: 263px;
+        min-height: 240px;
       }
 
       .module-column-left {
@@ -740,14 +751,14 @@ img.mob-menu {
 
       .desktop-module-logo {
         position: absolute;
-        margin-top: 94px;
+        margin-top: 83px;
         text-align: right;
       }
     }
 
     .desktop-module-item.module-row-3 {
       .module-testbox {
-        min-height: 188px;
+        min-height: 190px;
       }
 
       .module-column-left {
@@ -764,7 +775,7 @@ img.mob-menu {
 
       .desktop-module-logo {
         position: absolute;
-        margin-top: 57px;
+        margin-top: 58px;
         text-align: right;
       }
     }
@@ -775,7 +786,7 @@ img.mob-menu {
   .electrode-modules {
     .desktop-module-item.module-row-1 {
       .module-testbox {
-        min-height: 263px;
+        min-height: 240px;
       }
 
       .module-testbox.module-column-right {
@@ -786,48 +797,46 @@ img.mob-menu {
 
       .desktop-module-logo {
         position: absolute;
-        margin-top: 95px;
+        margin-top: 83px;
       }
     }
-  }
 
-  .desktop-module-item.module-row-2 {
-    .module-testbox {
-      min-height: 190px;
-    }
+    .desktop-module-item.module-row-2 {
+      .module-testbox {
+        min-height: 215px;
+      }
 
-    .module-column-right {
+      .module-column-right {
+        .desktop-module-logo {
+          right: 40px;
+        }
+      }
+
       .desktop-module-logo {
-        right: 40px;
+        margin-top: 70px;
+        position: absolute;
       }
     }
 
-    .desktop-module-logo {
-      margin-top: 60px;
-      position: absolute;
-    }
-  }
+    .desktop-module-item.module-row-3 {
+      .module-testbox {
+        min-height: 165px;
+      }
 
-  .desktop-module-item.module-row-3 {
-    .module-testbox {
-      min-height: 163px;
-    }
+      .module-column-right {
+        .desktop-module-logo {
+          right: 40px;
+        }
+      }
 
-    .module-column-right {
       .desktop-module-logo {
-        right: 40px;
+        position: absolute;
+        margin-top: 45px;
       }
-    }
-
-    .desktop-module-logo {
-      position: absolute;
     }
   }
 }
 
-.row {
-  margin: 0px;
-}
 //BEGIN TOOLS STYLES
 .electrode-tools {
   margin-top: 70px;
@@ -967,7 +976,7 @@ img.mob-menu {
 @media (min-width: 768px) {
   .electrode-tools {
     .carousel {
-      min-height: 600px;
+      min-height: 630px;
     }
 
     .carousel .item {
@@ -983,7 +992,7 @@ img.mob-menu {
 
     .carousel-control {
       span {
-        top: 260px;
+        top: 300px;
         width: 40px;
         height: 40px;
         background-size: contain;
@@ -1003,7 +1012,7 @@ img.mob-menu {
 @media (min-width: 992px) {
   .electrode-tools {
     .carousel {
-      min-height: 600px;
+      min-height: 700px;
     }
 
     .carousel .item {
@@ -1018,7 +1027,7 @@ img.mob-menu {
 
     .carousel-control {
       span {
-        top: 260px;
+        top: 320px;
         width: 40px;
         height: 40px;
         background-size: contain;
@@ -1030,7 +1039,7 @@ img.mob-menu {
 @media (min-width: 1200px) {
   .electrode-tools {
     .carousel {
-      min-height: 680px;
+      min-height: 800px;
     }
     .carousel .item {
       .mountain-overlay {
@@ -1044,19 +1053,11 @@ img.mob-menu {
 
     .carousel-control {
       span {
-        top: 360px;
+        top: 350px;
         width: 60px;
         height: 60px;
         background-size: contain;
       }
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  .electrode-tools {
-    .carousel {
-      min-height: 800px;
     }
   }
 }
@@ -1145,7 +1146,6 @@ a.footer-text {
 
 .social-logo {
   padding-right: 20px;
-  padding-right: 20px;
 }
 
 .footer-sub-logo {
@@ -1210,7 +1210,6 @@ div.footer-docs {
   }
 }
 
-
 div.footer-vertical-line {
   margin-top: -20px;
   height: 100px;
@@ -1225,12 +1224,13 @@ img.footer-sub-logo {
 }
 
 #second-nav {
+  max-height:98px;
   background: #fff;
   border-bottom: solid 1px #cccccc;
   border-top: solid 1px #cccccc;
 
   .row {
-    margin-top: -2px;
+    margin-top: -1px;
   }
 
   .second-nav-row {
@@ -1241,8 +1241,17 @@ img.footer-sub-logo {
     border-bottom: solid 1px #cccccc;
   }
 
-  .second-nav-top-pad {
-    padding-top: 20px;
+  .navbar-sticky-left {
+    .electrode-brand-top {
+      padding-top: 10px;
+      .header-logo {
+        width: 190px;
+        height: auto;
+      }
+    }
+    .second-nav-top-pad {
+      padding: 25px 0 0 20px;
+    }
   }
 
   .second-nav-top-pad-double {
@@ -1250,23 +1259,25 @@ img.footer-sub-logo {
   }
 
   .second-nav-links {
+    margin-right: 10px;
     font-weight:bold;
     .dark-links {
       color: #333;
     }
   }
 
-  .inner-links-ul {
-    padding-right: 50px;
-  }
-
   .outer-links-ul {
-    padding-right: 20px;
+    padding-right: 10px;
+    .divider-vertical {
+      margin-top: 3px;
+      height: 96px;
+      border: 1px solid #ccc;
+    }
+
   }
 
   .second-nav-links-container {
     float:right;
-    padding-right: 3.2%;
   }
 
   #get-started {
@@ -1283,34 +1294,142 @@ img.footer-sub-logo {
   #electrode-brand-header {
     width: 50%;
     height: auto;
-    margin-top: -10px;
+    margin-top: -15px;
   }
-
-  #second-nav-social-img {
-    border-top: solid 1px white;
-    padding-left: 20px;
+  .navbar-sticky-right {
+    .sticky-github {
+      background: black;
+    }
+    .social-nav-links {
+      margin-right:25px;
+    }
+    .sticky-social-links {
+      padding-top: 10px;
+    }
+  }
+  .nav .second-nav-inner-links a:hover {
+    background-color: transparent;
   }
 
   .second-nav-inner-links {
     padding: 0px 10px 10px 0px;
-
     img {
-      width: 75%;
+      width: 57%;
       display: block;
       margin: auto;
     }
   }
 
   .active-inner-link {
-    border-top: solid 8px #333333;
+    border-top: solid 4px #333333;
     img {
-      margin-top: -7px;
+      margin-top: 0;
     }
   }
 
   .inactive-inner-link {
     border-top: solid 1px #fff;
 
+  }
+}
+  .second-nav-inner-links {
+    .second-nav-top-pad {
+      padding-top: 5px;
+      float: left;
+      color: black;
+      margin: 10px 20px;
+      font-size: 50px;
+      cursor: pointer;
+    }
+  }
+
+@media (max-width: 1300px) {
+  .second-nav-link-container {
+    padding-right:15px;
+
+    #second-nav-social-img {
+      width: 90%;
+    }
+  }
+  .second-nav-inner-links {
+    .second-nav-top-pad {
+      margin: 10px 0;
+      font-size: 30px;
+    }
+    }
+  #second-nav {
+    font-size: 10px;
+    .second-nav-inner-links {
+      float: left;
+      padding: 0;
+      img {
+        width: 50%;
+      }
+    }
+    #second-nav-social-img {
+      padding-left: 0;
+    }
+    #electrode-brand-header {
+      width: 30%;
+      height: auto;
+      margin-top: -10px;
+    }
+    .outer-links-ul {
+      padding-right: 10px;
+    }
+    .second-nav-links {
+      margin-right: 5px;
+      font-size: 12px;
+
+      }
+    }
+    .navbar-sticky-left {
+      .second-nav-top-pad {
+        .header-logo {
+          height: 75%;
+        }
+        #electrode-brand-header {
+          .header-logo {
+            height:45px;
+          }
+        }
+    }
+  }
+
+}
+@media (max-width: 1020px) {
+  .navbar-sticky-left {
+    .electrode-brand-top {
+      .header-logo {
+        height: 160px;
+      }
+      #electrode-brand-header {
+        .header-logo {
+          height:45px;
+        }
+      }
+    }
+  }
+
+  .navbar-sticky-right {
+    .outer-links-ul {
+      margin-right: 25px;
+    }
+    .social-nav-links {
+      display: none;
+    }
+  }
+}
+@media (max-width: 800px) {
+  #second-nav {
+    .navbar-sticky-left {
+      .electrode-brand-top {
+        .header-logo {
+          width: 160px;
+          height: auto;
+        }
+      }
+    }
   }
 }
 
