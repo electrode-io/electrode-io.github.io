@@ -24,8 +24,8 @@
 
   </script>
   <!-- End GA analytics code -->
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-    integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+  <script   src="http://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -42,7 +42,7 @@
               <img id="mob-header-icon" class="mob-menu" src="/img/mob-menu.svg" alt="">
             </button>
             <a class="navbar-brand electrode-brand-top" href="#">
-              <img class="header-logo" src="img/walmart-labs-1-white.svg"
+              <img id="walmart-header-logo" class="header-logo" src="img/walmart-labs-1-white.svg"
                    alt="">
             </a>
           </div>
@@ -73,14 +73,6 @@
             <li id="home-primary"><a href="">HOME</a></li>
             <li><a href="/docs/what_is_electrode.html">DOCS</a></li>
             <li><a href="https://github.com/electrode-io">CONTRIBUTE</a></li>
-            <li class="mobile-header-links"><a href="https://getpocket.com/">
-              <img class="mobile-social-links" src="img/pocket_@1x.png" alt="">
-              &nbsp;POCKET</a></li>
-            <li class="mobile-header-links"><a href="">
-              <img class="mobile-social-links" src="img/twitter_@1x.png" alt="">
-              &nbsp;TWITTER</a></li>
-            <li class="mobile-header-links"><a href="https://github.com/electrode-io"><img class="mobile-git" src="img/sm-github.svg" alt="">&nbsp;
-              GITHUB</a></li>
           </ul>
 
           <!-- mobile dropdown menu -->
@@ -123,7 +115,7 @@
           <br>
           <div id="mob-header-text-container">
             <p id="mob-header-text"><b>Built with ♡ by </b>
-              <a href="http://walmartlabs.com"><img id="mobile-dropDown-logo" src="/img/walmart-labs-1-white.svg" alt=""></a>
+              <a id="mob-walmartlabs-link" href="http://walmartlabs.com"><img id="mobile-dropDown-logo" src="/img/walmart-labs-1-white.svg" alt=""></a>
             </p>
           </div>
         </div>
@@ -727,6 +719,7 @@
 
   <!-- end footer -->
   <script src="./scripts/mobile-pillars.js"></script>
+  <script src="./scripts/mob-nav.js"></script>
   <script type="text/javascript">
     var stickAtHeight = 2130;
     var toggleTools = 3000;
