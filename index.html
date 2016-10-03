@@ -24,7 +24,7 @@
 
   </script>
   <!-- End GA analytics code -->
-  <script src="http://code.jquery.com/jquery-3.1.1.min.js"
+  <script   src="http://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
@@ -38,16 +38,18 @@
       <div id="electrode-nav" class="container">
         <ul class="nav navbar-nav">
           <div class="navbar-header">
-            <button type="button" id="mob-menu-button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <img class="mob-menu" src="/img/mob-menu.svg" alt="">
+            <button type="button" id="mob-menu-button" onClick="changeMobileNav()" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <img id="mob-header-icon" class="mob-menu" src="/img/mob-menu.svg" alt="">
             </button>
             <a class="navbar-brand electrode-brand-top" href="#">
-              <img class="header-logo" src="img/walmart-labs-1-white.svg"
+              <img id="walmart-header-logo" class="header-logo" src="img/walmart-labs-1-white.svg"
                    alt="">
             </a>
           </div>
         </ul>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+          <!-- desktop header -->
           <ul id="social-header-color-links" class="nav navbar-nav navbar-right social-nav-links">
             <div class="vert-divider"></div>
             <li>
@@ -66,29 +68,59 @@
               </a>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right primary-nav-links">
-            <li id="home-primary"><a href="">HOME</a>
-              <ul class="mobile-internal-header-links">
-                <ol class="mobile-header-links mobile-internal-links"><a onClick="togglePillars('core')">CORE</a></ol>
-                <ol class="mobile-header-links mobile-internal-links"><a onClick="togglePillars('modules')">MODULES</a></ol>
-                <ol class="mobile-header-links mobile-internal-links"><a onClick="togglePillars('tools')">TOOLS</a></ol>
-              </ul>
-            </li>
+
+          <ul id="desktop-nav-ul" class="nav navbar-nav navbar-right primary-nav-links">
+            <li id="home-primary"><a href="">HOME</a></li>
             <li><a href="/docs/what_is_electrode.html">DOCS</a></li>
             <li><a href="https://github.com/electrode-io">CONTRIBUTE</a></li>
-            <li class="mobile-header-links"><a href="https://getpocket.com/">
-              <img class="mobile-social-links" src="img/pocket_@1x.png" alt="">
-              &nbsp;POCKET</a></li>
-            <li class="mobile-header-links"><a href="">
-              <img class="mobile-social-links" src="img/twitter_@1x.png" alt="">
-              &nbsp;TWITTER</a></li>
-            <li class="mobile-header-links"><a href="https://github.com/electrode-io"><img class="mobile-git" src="img/sm-github.svg" alt="">&nbsp;
-              GITHUB</a></li>
           </ul>
+
+          <!-- mobile dropdown menu -->
+          <ul id="mobile-nav-ul" class="nav navbar-nav navbar-right secondary-nav-links">
+            <li id="home-primary" class="mobile-nav-links"><a href="">Home</a></li>
+            <div class="mobile-header-line"></div>
+            <li class="mobile-nav-links"><a href="/docs/what_is_electrode.html">Docs</a></li>
+            <div class="mobile-header-line"></div>
+            <li class="mobile-nav-links"><a href="https://github.com/electrode-io">Contribute</a></li>
+            <div class="mobile-header-line"></div>
+            <li id="mobile-started-link" class="mobile-nav-links"><a href="/docs/get_started.html">Get Started</a></li>
+            <div class="mobile-header-line"></div>
+          </ul>
+
+          <div id="mobile-social-link-row" class="row">
+            <div class="col-xs-4 col-sm-4">
+              <div class="mobile-social-header-links mobile-oval">
+                <a href="https://getpocket.com/">
+                  <img class="mobile-social-logo" src="img/sm-pocket.svg"/>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-xs-4 col-sm-4">
+              <div class="mobile-social-header-links mobile-oval">
+                <a href="https://twitter.com/electrode_io">
+                  <img class="mobile-social-logo" src="img/sm-twitter.svg"/>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-xs-4 col-sm-4">
+              <div class="mobile-social-header-links mobile-oval">
+                <a href="https://github.com/electrode-io">
+                  <img class="mobile-social-logo" src="img/sm-github.svg"/>
+                </a>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div id="mob-header-text-container">
+            <p id="mob-header-text"><b>Built with ♡ by </b>
+              <a id="mob-walmartlabs-link" href="http://walmartlabs.com"><img id="mobile-dropDown-logo" src="/img/walmart-labs-1-white.svg" alt=""></a>
+            </p>
+          </div>
         </div>
       </div>
     </nav>
-  </div>
   </div>
 
   <div class="container-fluid night-sky">
@@ -110,23 +142,23 @@
       </div>
 
       <div class="row">
-				<div class="header-links col-sm-12 col-xs-12">
-					<div class="hidden-xs col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2">
+        <div class="header-links col-sm-12 col-xs-12">
+          <div class="hidden-xs col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2">
             <a href="/docs/what_is_electrode.html">
-							<button class="header-button about-electrode">ABOUT ELECTRODE</button>
+              <button class="header-button about-electrode">ABOUT ELECTRODE</button>
             </a>
-					</div>
-					<div class="hidden-xs col-sm-4 col-lg-4">
+          </div>
+          <div class="hidden-xs col-sm-4 col-lg-4">
             <a href="/docs/get_started.html">
-							<button class="header-button get-started">GET STARTED</button>
+              <button class="header-button get-started">GET STARTED</button>
             </a>
-					</div>
-					<div class="visible-xs-block col-xs-12">
-						<a href="/docs/get_started.html">
+          </div>
+          <div class="visible-xs-block col-xs-12">
+            <a href="/docs/get_started.html">
               <button class="header-button get-started">GET STARTED - DEPLOY IN 5 MINUTES</button>
             </a>
-					</div>
-				</div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -174,8 +206,12 @@
           <div class="snippet-bubble-text col-md-10 col-md-offset-1">That's it! Next, deploy, your app to your favorite cloud service.</div>
         </div>
         <div class="row">
-          <button class="btn col-md-offset-1 col-md-3" id="details-btn">DETAILS</button>
-          <button class="btn col-md-offset-1 col-md-6" id="deploy-btn">DEPLOY</button>
+          <a href="/docs/what_is_electrode.html">
+            <button class="btn col-md-offset-1 col-md-3" id="details-btn">DETAILS</button>
+          </a>
+          <a href="/docs/more_deployments.html">
+            <button class="btn col-md-offset-1 col-md-6" id="deploy-btn">DEPLOY</button>
+          </a>
         </div>
       </div>
       <p> Electrode emphasizes convention over configuration, while focusing on performance, component reusability, and simple deployment </p>
@@ -332,51 +368,53 @@
   </div>
 
   <div class="container pillars-section-2">
-		<div class="row">
-			<div class="col-xs-4 col-sm-4 pillar-grey-border">
-					<div class="col-sm-12 pillar-icon">
-						<img src="/img/core_pillar.png" alt="">
-					</div>
-						<div class="pillar-content">
-							<h1>core</h1>
-							<p>Build a simple, flexible scaffold in minutes, with support for server-side rendering and easy deployment to
-								multiple cloud providers. Electrode lets you focus on code, not configuration.</p>
-							</div>
-				</div>
-				<div class="col-xs-4 col-sm-4 pillar-grey-border">
-						<div class="col-sm-12 pillar-icon">
-							<img src="/img/modules_pillar.png" alt="">
-						</div>
-							<div class="pillar-content">
-								<h1>modules</h1>
-								<p>Level up your app with features like above-the-fold rendering, server-side render caching, and stateless
-									CSRF validation. Modules work with your existing React/Node app--no need to migrate to Electrode Core.</p>
-								</div>
-					</div>
-					<div class="col-xs-4 col-sm-4">
-							<div class="col-sm-12 pillar-icon">
-								<img src="/img/explorer-pillar.png" alt="">
-							</div>
-								<div class="pillar-content">
-									<h1>tools</h1>
-									<p>Discover reusable components and optimize your JS bundle with standalone tools. These tools can be used
-										with any React/Node app, but work best with the structure provided by Electrode Core.</p>
-									</div>
-						</div>
-		</div>
-		<div class="row pillar-links">
-			<div class="col-sm-4 pillar-grey-border"><a href="#electrode-core-logo">LEARN MORE</a></div>
-			<div class="col-sm-4 pillar-grey-border"><a href="#modules-section">LEARN MORE</a></div>
-			<div class="col-sm-4"><a href="#electrode-tools">LEARN MORE</a></div>
-		</div>
+    <div class="row">
+      <div class="col-xs-4 col-sm-4 pillar-grey-border">
+          <div class="col-sm-12 pillar-icon">
+            <img src="/img/core_pillar.png" alt="">
+          </div>
+            <div class="pillar-content">
+              <h1>core</h1>
+              <p>Build a simple, flexible scaffold in minutes, with support for server-side rendering and easy deployment to
+                multiple cloud providers. Electrode lets you focus on code, not configuration.</p>
+              </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 pillar-grey-border">
+            <div class="col-sm-12 pillar-icon">
+              <img src="/img/modules_pillar.png" alt="">
+            </div>
+              <div class="pillar-content">
+                <h1>modules</h1>
+                <p>Level up your app with features like above-the-fold rendering, server-side render caching, and stateless
+                  CSRF validation. Modules work with your existing React/Node app--no need to migrate to Electrode Core.</p>
+                </div>
+          </div>
+          <div class="col-xs-4 col-sm-4">
+              <div class="col-sm-12 pillar-icon">
+                <img src="/img/explorer-pillar.png" alt="">
+              </div>
+                <div class="pillar-content">
+                  <h1>tools</h1>
+                  <p>Discover reusable components and optimize your JS bundle with standalone tools. These tools can be used
+                    with any React/Node app, but work best with the structure provided by Electrode Core.</p>
+                  </div>
+            </div>
+    </div>
+    <div class="row pillar-links">
+      <div class="col-sm-4 pillar-grey-border"><a href="#electrode-core-logo">LEARN MORE</a></div>
+      <div class="col-sm-4 pillar-grey-border"><a href="#modules-section">LEARN MORE</a></div>
+      <div class="col-sm-4"><a href="#electrode-tools">LEARN MORE</a></div>
+    </div>
   </div>
   <!-- end of header -->
 
   <!-- begin electrode core -->
   <div class="container electrode-core">
     <div class="row top-core-content">
-      <div class="col-md-12" id="electrode-core-logo">
-        <img class="grayscale" src="img/core_hex_icon_@1x.png">
+      <div class="col-md-12">
+        <a href="#">
+          <img src="img/badge-core-2.png" class="icon-modules scroll-up">
+        </a>
       </div>
     </div>
     <div class="row">
@@ -434,7 +472,6 @@
           <h1>electrode modules</h1>
           <h3>Supercharge your app, with or without Electrode Core</h3>
         </div>
-
         <div class="row desktop-module-item module-row-1">
           <div class="module-box">
             <div class="col-sm-6 col-md-6 col-lg-6 desktop-module-text">
@@ -720,27 +757,36 @@
 
         <div id="footer-nav-center" class="navbar footer-text col-sm-4 col-md-offset-3 col-md-3 col-lg-offset-3 col-lg-3">
           <div class="row footer-row-center">
-            <div class="col-sm-2 github-logo">
-              <a href="https://github.com/electrode-io">
-                <img class="footer-social-logo" src="img/sm-github.svg"/>
-              </a>
-            </div>
-            <div id="footer-twitter" class="col-sm-2 twitter-logo">
-              <a href="https://twitter.com/electrode_io">
-                <img class="footer-social-logo" src="img/sm-twitter.svg"/>
-              </a>
-            </div>
-            <div class="col-sm-2 github-logo">
-              <a href="https://facebook.com/electrode-io">
-                <img class="footer-social-logo" src="img/sm-fb.svg"/>
-              </a>
-            </div>
-            <div id="footer-pocket" class="col-sm-2 pocket-logo">
-              <a href="https://getpocket.com/">
-                <img class="footer-social-logo" src="img/sm-pocket.svg"/>
-              </a>
-            </div>
-          </div>
+            <ul class="nav navbar-nav">
+              <li>
+                <div class="col-sm-2 github-logo">
+                  <a href="https://github.com/electrode-io" title="github">
+                    <img class="footer-social-logo" src="img/sm-github.svg"/>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div id="footer-twitter" class="col-sm-2 twitter-logo">
+                  <a href="https://twitter.com/electrode_io" title="twitter">
+                    <img class="footer-social-logo" src="img/sm-twitter.svg"/>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="col-sm-2 github-logo">
+                  <a href="https://facebook.com/electrode-io" title="facebook">
+                    <img class="footer-social-logo" src="img/sm-fb.svg"/>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div id="footer-pocket" class="col-sm-2 pocket-logo">
+                  <a href="https://getpocket.com/" title="pocket">
+                    <img class="footer-social-logo" src="img/sm-pocket.svg"/>
+                  </a>
+                </div>
+              </li>
+            </ul>
         </div>
       </div>
     </div>
@@ -748,6 +794,7 @@
 
   <!-- end footer -->
   <script src="./scripts/mobile-pillars.js"></script>
+  <script src="./scripts/mob-nav.js"></script>
   <script type="text/javascript">
     var stickAtHeight = 200;
     var toggleTools = 3000;
