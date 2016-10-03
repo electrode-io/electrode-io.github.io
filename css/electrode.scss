@@ -434,7 +434,7 @@ img.mob-menu {
   .electrode-core {
 
      #core-h3 {
-       padding: 0% 10% 0% 10% !important;
+        font-size: 26px;
       }
 
     #electrode-core-text {
@@ -453,10 +453,14 @@ img.mob-menu {
 
   h1 {
     font-family: "Gotham-Rounded-Medium";
+    font-size: 56px;
+    font-weight: 500;
   }
 
   #core-h3 {
-    padding: 0% 25% 0% 25%;
+    padding: 0% 10% 0% 10%;
+    font-weight: 500;
+    font-size: 26px;
   }
 
   div {
@@ -574,11 +578,12 @@ img.mob-menu {
     height: 104px;
     margin-bottom: 46px;
     width: 116px;
+    padding-right: 30px;
   }
 
   h1 {
     font-size: 56px;
-    font-weight: normal;
+    font-weight: 500;
     margin-top: 0;
   }
 
@@ -830,6 +835,7 @@ img.mob-menu {
 
   h1 {
     font-size: 56px;
+    font-weight: 500;
   }
 
   h3 {
@@ -1178,6 +1184,16 @@ div.footer-row {
 .footer-row-center {
   margin-top: 24px;
   float: right;
+
+  li {
+    &:hover {
+     a {
+       img {
+         transform: scale(1.5);
+       }
+     }
+    }
+  }
 }
 
 div.footer-docs {
@@ -1374,10 +1390,10 @@ img.footer-sub-logo {
 
 .mobile-pillar-bar {
   width: 100%;
-	height: 4px;
+  height: 4px;
   margin-top: -4px;
   margin-bottom: 10px;
-	background-color: $mobile-pillar-b-background;
+  background-color: $mobile-pillar-b-background;
   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.2);
 }
 
@@ -1414,10 +1430,10 @@ img.footer-sub-logo {
   font-family: "Gotham-Rounded";
   font-size: 9px;
   font-weight: 600;
-	line-height: 1.5;
-	text-align: center;
+  line-height: 1.5;
+  text-align: center;
   background-color: #00294b;
-	color: #ffffff;
+  color: #ffffff;
   height: 50px;
   min-width: 320px;
   position: absolute;
