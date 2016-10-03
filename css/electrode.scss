@@ -13,6 +13,10 @@ $large-devices: 1200px;
 $mobile-header-color-black: #333333;
 $mobile-pillar-b-background: #efefef;
 
+.header-logo {
+  height: 94%;
+}
+
 html {
   -webkit-font-smoothing: antialiased;
 }
@@ -38,7 +42,7 @@ h1 {
     height: 98px;
   }
   #electrode-nav {
-    height: 100%;
+    height: 98px;
   }
 }
 .electrode-nav-top {
@@ -321,31 +325,31 @@ h1 {
 .mob-menu {
   height: 65px;
   width: auto;
-  border-radius: 4px;
-  margin-top: -26px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin-top: -29px;
   margin-right: 0.5em;
 }
 
+#mob-menu-button,
 img.mob-menu {
-  height: 60px;
+  height: 65px;
   width: auto;
   border-radius: 4px;
-  //margin-top: -90px;
-  //margin: -90px -10px 0 0;
+  margin-right: 10px;
 }
-
 
 .electrode-brand-top {
   padding-top: 38px;
-  @media (max-width: 768px) {
-    padding-top:10px;
+  @media (max-width: 767px) {
+    padding-top: 10px;
   }
 }
 
 .vert-divider {
   position: absolute;
   width: 0px;
-  height: 100%;
+  height: 98px;
   border-left: 1px solid $light-trans-grey;
   margin-left: -22px;
 }
@@ -412,13 +416,13 @@ img.mob-menu {
 
 @media(min-width: 768px) {
   .pillar-content p {
-    min-height: 440px;
+    min-height: 420px;
   }
 }
 
-@media(min-width: 993px) {
+@media(min-width: 992px) {
   .pillar-content p {
-    min-height: 300px;
+    min-height: 310px;
   }
 }
 
@@ -434,7 +438,7 @@ img.mob-menu {
   .electrode-core {
 
      #core-h3 {
-       padding: 0% 10% 0% 10% !important;
+        font-size: 26px;
       }
 
     #electrode-core-text {
@@ -449,14 +453,18 @@ img.mob-menu {
   border-bottom: 1px #ECECEC solid;
   text-align: center;
   font-family: "Gotham-Rounded";
-  padding: 50px 0px 50px 0px;
+  padding: 50px 0px 50px 40px;
 
   h1 {
     font-family: "Gotham-Rounded-Medium";
+    font-size: 56px;
+    font-weight: 500;
   }
 
   #core-h3 {
-    padding: 0% 25% 0% 25%;
+    padding: 0% 10% 0% 10%;
+    font-weight: 500;
+    font-size: 26px;
   }
 
   div {
@@ -551,18 +559,25 @@ img.mob-menu {
   margin: auto;
 }
 
+@media (min-width: 768px) {
+  #snippet-bubble {
+    margin-right: 25px;
+  }
+}
+
+@media (min-width: 992px) {
+  #snippet-bubble {
+    margin-right: 50px;
+  }
+}
+
 //END CORE STYLES
 
 
 //BEGIN MODULES STYLES
-.landing-logo{
-  width: 125px;
-  height: 125px;
-  margin: -10px -20px 7px -20px;
-}
 
 #modules-section {
-  padding: 20px 0 80px 20px;
+  padding: 20px 40px 80px 60px;
   border-bottom: 1px solid #cccccc;
 }
 
@@ -574,11 +589,12 @@ img.mob-menu {
     height: 104px;
     margin-bottom: 46px;
     width: 116px;
+    padding-right: 30px;
   }
 
   h1 {
     font-size: 56px;
-    font-weight: normal;
+    font-weight: 500;
     margin-top: 0;
   }
 
@@ -669,13 +685,13 @@ img.mob-menu {
 
     .desktop-module-item.module-row-2 {
       .module-testbox {
-        min-height: 400px;
+        min-height: 380px;
       }
     }
 
     .desktop-module-item.module-row-3 {
       .module-testbox {
-        min-height: 303px;
+        min-height: 331px;
       }
     }
 
@@ -694,7 +710,7 @@ img.mob-menu {
   .electrode-modules {
     .desktop-module-item.module-row-1 {
       .module-testbox {
-        min-height: 263px;
+        min-height: 290px;
       }
 
       .module-column-left {
@@ -711,14 +727,14 @@ img.mob-menu {
 
       .desktop-module-logo {
         position: absolute;
-        margin-top: 94px;
+        margin-top: 108px;
         text-align: right;
       }
     }
 
     .desktop-module-item.module-row-2 {
       .module-testbox {
-        min-height: 263px;
+        min-height: 240px;
       }
 
       .module-column-left {
@@ -735,14 +751,14 @@ img.mob-menu {
 
       .desktop-module-logo {
         position: absolute;
-        margin-top: 94px;
+        margin-top: 83px;
         text-align: right;
       }
     }
 
     .desktop-module-item.module-row-3 {
       .module-testbox {
-        min-height: 188px;
+        min-height: 190px;
       }
 
       .module-column-left {
@@ -759,7 +775,7 @@ img.mob-menu {
 
       .desktop-module-logo {
         position: absolute;
-        margin-top: 57px;
+        margin-top: 58px;
         text-align: right;
       }
     }
@@ -770,7 +786,7 @@ img.mob-menu {
   .electrode-modules {
     .desktop-module-item.module-row-1 {
       .module-testbox {
-        min-height: 263px;
+        min-height: 240px;
       }
 
       .module-testbox.module-column-right {
@@ -781,48 +797,46 @@ img.mob-menu {
 
       .desktop-module-logo {
         position: absolute;
-        margin-top: 95px;
+        margin-top: 83px;
       }
     }
-  }
 
-  .desktop-module-item.module-row-2 {
-    .module-testbox {
-      min-height: 190px;
-    }
+    .desktop-module-item.module-row-2 {
+      .module-testbox {
+        min-height: 215px;
+      }
 
-    .module-column-right {
+      .module-column-right {
+        .desktop-module-logo {
+          right: 40px;
+        }
+      }
+
       .desktop-module-logo {
-        right: 40px;
+        margin-top: 70px;
+        position: absolute;
       }
     }
 
-    .desktop-module-logo {
-      margin-top: 60px;
-      position: absolute;
-    }
-  }
+    .desktop-module-item.module-row-3 {
+      .module-testbox {
+        min-height: 165px;
+      }
 
-  .desktop-module-item.module-row-3 {
-    .module-testbox {
-      min-height: 163px;
-    }
+      .module-column-right {
+        .desktop-module-logo {
+          right: 40px;
+        }
+      }
 
-    .module-column-right {
       .desktop-module-logo {
-        right: 40px;
+        position: absolute;
+        margin-top: 45px;
       }
-    }
-
-    .desktop-module-logo {
-      position: absolute;
     }
   }
 }
 
-.row {
-  margin: 0px;
-}
 //BEGIN TOOLS STYLES
 .electrode-tools {
   margin-top: 70px;
@@ -830,6 +844,7 @@ img.mob-menu {
 
   h1 {
     font-size: 56px;
+    font-weight: 500;
   }
 
   h3 {
@@ -961,7 +976,7 @@ img.mob-menu {
 @media (min-width: 768px) {
   .electrode-tools {
     .carousel {
-      min-height: 600px;
+      min-height: 630px;
     }
 
     .carousel .item {
@@ -977,7 +992,7 @@ img.mob-menu {
 
     .carousel-control {
       span {
-        top: 260px;
+        top: 300px;
         width: 40px;
         height: 40px;
         background-size: contain;
@@ -997,7 +1012,7 @@ img.mob-menu {
 @media (min-width: 992px) {
   .electrode-tools {
     .carousel {
-      min-height: 600px;
+      min-height: 700px;
     }
 
     .carousel .item {
@@ -1012,7 +1027,7 @@ img.mob-menu {
 
     .carousel-control {
       span {
-        top: 260px;
+        top: 320px;
         width: 40px;
         height: 40px;
         background-size: contain;
@@ -1024,7 +1039,7 @@ img.mob-menu {
 @media (min-width: 1200px) {
   .electrode-tools {
     .carousel {
-      min-height: 680px;
+      min-height: 800px;
     }
     .carousel .item {
       .mountain-overlay {
@@ -1038,19 +1053,11 @@ img.mob-menu {
 
     .carousel-control {
       span {
-        top: 360px;
+        top: 350px;
         width: 60px;
         height: 60px;
         background-size: contain;
       }
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  .electrode-tools {
-    .carousel {
-      min-height: 800px;
     }
   }
 }
@@ -1139,7 +1146,6 @@ a.footer-text {
 
 .social-logo {
   padding-right: 20px;
-  padding-right: 20px;
 }
 
 .footer-sub-logo {
@@ -1178,6 +1184,16 @@ div.footer-row {
 .footer-row-center {
   margin-top: 24px;
   float: right;
+
+  li {
+    &:hover {
+     a {
+       img {
+         transform: scale(1.5);
+       }
+     }
+    }
+  }
 }
 
 div.footer-docs {
@@ -1185,7 +1201,6 @@ div.footer-docs {
 
   .footer-doc-links {
     color: #fff;
-    // font-weight: bold;
     font-size: 14px;
     font-family: "Gotham-Rounded";
 
@@ -1194,7 +1209,6 @@ div.footer-docs {
     }
   }
 }
-
 
 div.footer-vertical-line {
   margin-top: -20px;
@@ -1210,12 +1224,13 @@ img.footer-sub-logo {
 }
 
 #second-nav {
+  max-height:98px;
   background: #fff;
   border-bottom: solid 1px #cccccc;
   border-top: solid 1px #cccccc;
 
   .row {
-    margin-top: -2px;
+    margin-top: -1px;
   }
 
   .second-nav-row {
@@ -1226,8 +1241,17 @@ img.footer-sub-logo {
     border-bottom: solid 1px #cccccc;
   }
 
-  .second-nav-top-pad {
-    padding-top: 20px;
+  .navbar-sticky-left {
+    .electrode-brand-top {
+      padding-top: 10px;
+      .header-logo {
+        width: 190px;
+        height: auto;
+      }
+    }
+    .second-nav-top-pad {
+      padding: 25px 0 0 20px;
+    }
   }
 
   .second-nav-top-pad-double {
@@ -1235,23 +1259,25 @@ img.footer-sub-logo {
   }
 
   .second-nav-links {
+    margin-right: 10px;
     font-weight:bold;
     .dark-links {
       color: #333;
     }
   }
 
-  .inner-links-ul {
-    padding-right: 50px;
-  }
-
   .outer-links-ul {
-    padding-right: 20px;
+    padding-right: 10px;
+    .divider-vertical {
+      margin-top: 3px;
+      height: 96px;
+      border: 1px solid #ccc;
+    }
+
   }
 
   .second-nav-links-container {
     float:right;
-    padding-right: 3.2%;
   }
 
   #get-started {
@@ -1268,34 +1294,142 @@ img.footer-sub-logo {
   #electrode-brand-header {
     width: 50%;
     height: auto;
-    margin-top: -10px;
+    margin-top: -15px;
   }
-
-  #second-nav-social-img {
-    border-top: solid 1px white;
-    padding-left: 20px;
+  .navbar-sticky-right {
+    .sticky-github {
+      background: black;
+    }
+    .social-nav-links {
+      margin-right:25px;
+    }
+    .sticky-social-links {
+      padding-top: 10px;
+    }
+  }
+  .nav .second-nav-inner-links a:hover {
+    background-color: transparent;
   }
 
   .second-nav-inner-links {
     padding: 0px 10px 10px 0px;
-
     img {
-      width: 75%;
+      width: 57%;
       display: block;
       margin: auto;
     }
   }
 
   .active-inner-link {
-    border-top: solid 8px #333333;
+    border-top: solid 4px #333333;
     img {
-      margin-top: -7px;
+      margin-top: 0;
     }
   }
 
   .inactive-inner-link {
     border-top: solid 1px #fff;
 
+  }
+}
+  .second-nav-inner-links {
+    .second-nav-top-pad {
+      padding-top: 5px;
+      float: left;
+      color: black;
+      margin: 10px 20px;
+      font-size: 50px;
+      cursor: pointer;
+    }
+  }
+
+@media (max-width: 1300px) {
+  .second-nav-link-container {
+    padding-right:15px;
+
+    #second-nav-social-img {
+      width: 90%;
+    }
+  }
+  .second-nav-inner-links {
+    .second-nav-top-pad {
+      margin: 10px 0;
+      font-size: 30px;
+    }
+    }
+  #second-nav {
+    font-size: 10px;
+    .second-nav-inner-links {
+      float: left;
+      padding: 0;
+      img {
+        width: 50%;
+      }
+    }
+    #second-nav-social-img {
+      padding-left: 0;
+    }
+    #electrode-brand-header {
+      width: 30%;
+      height: auto;
+      margin-top: -10px;
+    }
+    .outer-links-ul {
+      padding-right: 10px;
+    }
+    .second-nav-links {
+      margin-right: 5px;
+      font-size: 12px;
+
+      }
+    }
+    .navbar-sticky-left {
+      .second-nav-top-pad {
+        .header-logo {
+          height: 75%;
+        }
+        #electrode-brand-header {
+          .header-logo {
+            height:45px;
+          }
+        }
+    }
+  }
+
+}
+@media (max-width: 1020px) {
+  .navbar-sticky-left {
+    .electrode-brand-top {
+      .header-logo {
+        height: 160px;
+      }
+      #electrode-brand-header {
+        .header-logo {
+          height:45px;
+        }
+      }
+    }
+  }
+
+  .navbar-sticky-right {
+    .outer-links-ul {
+      margin-right: 25px;
+    }
+    .social-nav-links {
+      display: none;
+    }
+  }
+}
+@media (max-width: 800px) {
+  #second-nav {
+    .navbar-sticky-left {
+      .electrode-brand-top {
+        .header-logo {
+          width: 160px;
+          height: auto;
+        }
+      }
+    }
   }
 }
 
@@ -1307,6 +1441,14 @@ img.footer-sub-logo {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.horizontal-align-this {
+  position: relative;
+  right: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 //START MOBILE VIEW
@@ -1367,10 +1509,10 @@ img.footer-sub-logo {
 
 .mobile-pillar-bar {
   width: 100%;
-	height: 4px;
+  height: 4px;
   margin-top: -4px;
   margin-bottom: 10px;
-	background-color: $mobile-pillar-b-background;
+  background-color: $mobile-pillar-b-background;
   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.2);
 }
 
@@ -1407,10 +1549,10 @@ img.footer-sub-logo {
   font-family: "Gotham-Rounded";
   font-size: 9px;
   font-weight: 600;
-	line-height: 1.5;
-	text-align: center;
+  line-height: 1.5;
+  text-align: center;
   background-color: #00294b;
-	color: #ffffff;
+  color: #ffffff;
   height: 50px;
   min-width: 320px;
   position: absolute;
@@ -1435,6 +1577,7 @@ img.footer-sub-logo {
    .electrode-core,
    .electrode-tools,
    .electrode-modules,
+   #desktop-nav-ul,
    #second-nav,
    #electrode-modules,
    #modules-section,
@@ -1442,6 +1585,10 @@ img.footer-sub-logo {
    #social-header-color-links {
     display: none;
    }
+
+   #electrode-nav {
+      margin-top: -17px;
+    }
 
    #snippet-bubble {
      height: auto;
@@ -1515,7 +1662,12 @@ img.footer-sub-logo {
    .mobile-pillar-bar,
    li.mobile-header-links,
    ol.mobile-header-links,
-   #mobile-pillar-content-zone {
+   #mob-header-text-container,
+   #mob-header-text,
+   #mobile-nav-ul,
+   #mobile-pillar-content-zone,
+   #mobile-social-link-row,
+   #mobile-started-link {
      display: none;
    }
 
@@ -1653,9 +1805,6 @@ img.footer-sub-logo {
 
 @media (max-width: 480px) {
 
-
-
-
   div#mobile-slogan {
     font-size: 21px;
   }
@@ -1679,13 +1828,21 @@ img.footer-sub-logo {
     height: 80%;
   }
 
-  div#mobile-slogan {
+  #mobile-slogan {
     font-size: 18px;
   }
 
+  .mobile-footer-text-container {
+    font-size: 8px;
+  }
 }
 
+@media (max-width: 325px) {
 
+  .mobile-footer-text-container {
+    font-size: 7px;
+  }
+}
 
 .mobile-social-links {
   height: 20px;
@@ -1740,4 +1897,90 @@ img.footer-sub-logo {
 #mobile-header-info,
 .mobile-header-items {
   font-weight: bold;
+}
+
+//Mobile header styles
+
+@media(max-width: 767px) {
+
+  #mobile-social-link-row {
+    padding: 40px 0 10px 0;
+
+    .mobile-social-logo:hover {
+      color: #df2375;
+
+    }
+  }
+
+  #walmart-header-logo {
+    margin: 20px 0 0 10px;
+    height: 90%;
+    width: auto;
+  }
+
+  .mobile-oval {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    text-align: center;
+    border: solid 1px rgba(255, 255, 255, 0.2);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  .mobile-header-line {
+    width: 90%;
+    height: 1px;
+    margin: 10px 0 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .mobile-social-logo {
+    object-fit: contain;
+    margin-bottom: -23px;
+  }
+
+  .mobile-social-header-links {
+    margin: 0 auto;
+  }
+
+  #mob-header-text-container {
+    text-align: center;
+    margin-bottom: 30px;
+
+    a:hover {
+      cursor: pointer;
+    }
+  }
+
+  #mobile-dropDown-logo {
+    height: 16px;
+    width: auto;
+  }
+
+  #mobile-header-text {
+    padding-top: 10px;
+    font-size: 18px;
+  }
+
+  #mobile-nav-ul {
+
+    font-size: 18px;
+    li {
+      a {
+        font-size: 18px;
+        font-weight: 600;
+        font-family: "Gotham-Rounded";
+        margin-left: 20px;
+        line-height: 2;
+
+        &:hover {
+          color: #df2375;
+          background-color: #000e23;
+        }
+      }
+    }
+  }
 }
