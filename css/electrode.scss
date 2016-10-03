@@ -1205,6 +1205,7 @@ img.footer-sub-logo {
    .pillars-icons-mobile,
    li.mobile-header-links,
    ol.mobile-header-links,
+   #slider-toggle,
    #mobile-pillar-content-zone {
      display: none !important;
    }
@@ -1528,7 +1529,7 @@ img.footer-sub-logo {
 #slider-toggle{
   height: 4px;
   width: 28%;
-  margin: 0 2.5%;
+  margin: 0 2.2%;
   background: #38bbff;
   border: none;
   transition: .17s ease-in-out;
