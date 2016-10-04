@@ -1,6 +1,6 @@
 // State
 var pillarsArr = ["core", "modules", "tools"];
-var pillarsObject = {"core": "2.5%", "modules": "36%", "tools": "69%"};
+var pillarsObject = {"core": "2.2%", "modules": "36%", "tools": "69%"};
 var pillarsState = {"core": false, "modules": false, "tools": false};
 
 // save refs to elements repeatedly used
