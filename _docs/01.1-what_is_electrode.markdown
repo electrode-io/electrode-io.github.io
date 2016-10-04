@@ -76,7 +76,7 @@ components](electrode_explorer.html) and another to help optimize your
 
 *  [Electrode JWT CSRF](https://github.com/electrode-io/electrode-csrf-jwt) Cross-Site Request Forgery (CSRF) protection with JWT.
 
-*  [Electrode-Redux-Router-Engine](https://github.com/electrode-io/redux-router-engine) An Electrode routing and rendering engine using react-router and redux.
+*  [Electrode-Redux-Router-Engine](https://github.com/electrode-io/electrode-redux-router-engine) An Electrode routing and rendering engine using react-router and redux.
 
 *  [Component Caching](https://github.com/electrode-io/electrode-react-ssr-caching) Optimize React SSR with profiling and component caching.
 
