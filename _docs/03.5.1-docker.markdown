@@ -68,7 +68,7 @@ Now let's build a new image by entering the following command:
 $ docker build -t docker-awesome-container .
 ```
 
-Run the command below to see a lit of the images you currently have:
+Run the command below to see a list of the images you currently have:
 
 ```bash
 $ docker images
@@ -106,7 +106,7 @@ Now you can stop the container:
 $ docker stop <container_id>
 ```
 
-Log into Docker Hub from the command line. The format is below. Enter you password when prompted:
+Log into Docker Hub from the command line. The format is below. Enter your password when prompted:
 
 ```bash
 $ docker login --username=yourhubusername --email=youremail@company.com
