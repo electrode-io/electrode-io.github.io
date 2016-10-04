@@ -409,7 +409,7 @@
   <!-- end of header -->
 
   <!-- begin electrode core -->
-  <div class="container electrode-core">
+  <div class="container electrode-core" id="electrode-core-section">
     <div class="row top-core-content">
       <div class="col-md-12">
         <a href="#">
@@ -595,8 +595,8 @@
   </div>
 
   <!-- begin electrode tools -->
-  <div class="container">
-    <div class="electrode-tools row" id="electrode-tools">
+  <div class="container" id="electrode-tools">
+    <div class="electrode-tools row">
       <a href="#"><img class="icon-modules scroll-up"
                        src="img/badge-tools-2.svg"/></a>
       <h1>electrode tools</h1>
@@ -685,7 +685,7 @@
           <div class="second-nav-links-container row">
             <ul class="nav navbar-nav inner-links-ul">
               <li class="second-nav-inner-links second-nav-top-pad inactive-inner-link" id="electrode-core-logo-li">
-                <a href="#electrode-core-logo">
+                <a href="#electrode-core-section">
                   <div class="elc-icon-icn-core second-nav-top-pad" ></div>
                 </a>
               </li>
@@ -794,33 +794,7 @@
 
   <!-- end footer -->
   <script src="./scripts/mobile-pillars.js"></script>
+  <script src="./scripts/sticky-nav.js"></script>
   <script src="./scripts/mob-nav.js"></script>
-  <script type="text/javascript">
-    var stickAtHeight = 200;
-    var toggleTools = 3000;
-
-    $(window).bind('scroll', function () {
-      if ($(window).scrollTop() > stickAtHeight) {
-        $('#electrode-core-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
-        $('#electrode-modules-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link');
-        $('#second-nav').addClass('navbar-fixed-top');
-      } else {
-        $('#electrode-tools-logo-li').removeClass('inactive-inner-link active-inner-link');
-        $('#electrode-modules-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
-        $('#electrode-core-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link')
-        $('#second-nav').removeClass('navbar-fixed-top');
-      }
-    });
-
-    $(window).bind('scroll', function () {
-      if ($(window).scrollTop() > toggleTools) {
-        $('#electrode-modules-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
-        $('#electrode-tools-logo-li').removeClass('inactive-inner-link').addClass('active-inner-link');
-      } else {
-        $('#electrode-tools-logo-li').removeClass('active-inner-link').addClass('inactive-inner-link');
-        $('#electrode-modules-logo-li').addClass('active-inner-link');
-      }
-    });
-  </script>
 </body>
 </html>
