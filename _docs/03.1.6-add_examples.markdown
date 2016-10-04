@@ -64,7 +64,7 @@ const components = [
     examples: [
       {
         type: "playground",
-        code: require("raw!./examples/house-party.example"),
+        code: require("raw!./examples/guest-list.example"),
         noRender: true
       }
     ]
