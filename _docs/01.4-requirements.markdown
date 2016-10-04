@@ -13,7 +13,7 @@ First, let's quickly check your development environment. You will need to have t
 1. Install latest (v3) of [npm] with `npm install -g npm`.
   * Note: NodeJS v6.x already comes with npm@3 by default.
   * **Electrode requires npm version >= 3**
-1. Install [Gulp] with `npm install -g npm`.
+1. Install [Gulp] with `npm install -g gulp-cli`.
 1. The text editor of your choice downloaded with CLI tools installed.
 
 > We write NodeJS code with ES6 features that NodeJS >= 4.2 supports.

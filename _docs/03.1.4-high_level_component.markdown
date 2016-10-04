@@ -87,8 +87,12 @@ YourAwesomeComponent.propTypes = {
 };
 
 YourAwesomeComponent.defaultProps = {
-  message: `<p>Let's party! Un-comment the all the commented-out lines in the
-  playground then check the boxes on the GuestList to invite our friends to the party!</p>`
+  ourFriends: [],
+  message: () => {
+    return `<p>Let's party! Un-comment the all the commented-out lines in the
+      playground then check the boxes on the GuestList to invite our friends to the party!</p>`;
+  },
+  invitees: []
 };
 ```
 Last edit! In your `<your-awesome-component>/src/index.js` add the two lines below:
