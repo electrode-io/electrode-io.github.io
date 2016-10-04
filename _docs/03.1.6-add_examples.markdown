@@ -60,16 +60,6 @@ Now Navigate to `<your-awesome-component>/demo/demo.jsx`. Modify `const componen
 ```javascript
 const components = [
   {
-    title: "HouseParty",
-    examples: [
-      {
-        type: "playground",
-        code: require("raw!./examples/house-party.example"),
-        noRender: true
-      }
-    ]
-  },
-  {
     title: "RenderFriend",
     examples: [
       {
