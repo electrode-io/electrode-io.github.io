@@ -36,7 +36,7 @@ const SomeComponent = () => {
 
 ```
 
-You can also skip server side rendering by `setting context in your app and passing a contextKey prop`:
+You can also skip server side rendering by setting `context` in your app and passing a `contextKey` prop:
 
 ```js
 
