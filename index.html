@@ -26,7 +26,7 @@
 
   </script>
   <!-- End GA analytics code -->
-  <script   src="http://code.jquery.com/jquery-3.1.1.min.js"
+  <script src="http://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
@@ -427,7 +427,7 @@
   <!-- end of header -->
 
   <!-- begin electrode core -->
-  <div class="container electrode-core">
+  <div class="container electrode-core" id="electrode-core-section">
     <div class="row top-core-content">
       <div class="col-md-12">
         <a href="#">
@@ -613,8 +613,8 @@
   </div>
 
   <!-- begin electrode tools -->
-  <div class="container">
-    <div class="electrode-tools row" id="electrode-tools">
+  <div class="container" id="electrode-tools">
+    <div class="electrode-tools row">
       <a href="#"><img class="icon-modules scroll-up"
                        src="img/badge-tools-2.svg"/></a>
       <h1>electrode tools</h1>
@@ -703,7 +703,7 @@
           <div class="second-nav-links-container row">
             <ul class="nav navbar-nav inner-links-ul">
               <li class="second-nav-inner-links second-nav-top-pad inactive-inner-link" id="electrode-core-logo-li">
-                <a href="#electrode-core-logo">
+                <a href="#electrode-core-section">
                   <div class="elc-icon-icn-core second-nav-top-pad" ></div>
                 </a>
               </li>
@@ -813,7 +813,6 @@
   <!-- end footer -->
   <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
   <script src="./scripts/slick.js"></script>
-  <script src="./scripts/mob-nav.js"></script>
   <script type="text/javascript">
     var stickAtHeight = 200;
     var toggleTools = 3000;
@@ -841,9 +840,11 @@
       }
     });
   </script>
-  <script src="./scripts/mobile-pillars.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
+  <script src="./scripts/mobile-pillars.js"></script>
+  <script src="./scripts/sticky-nav.js"></script>
+  <script src="./scripts/mob-nav.js"></script>
 </body>
 </html>

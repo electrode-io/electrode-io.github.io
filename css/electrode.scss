@@ -13,10 +13,6 @@ $large-devices: 1200px;
 $mobile-header-color-black: #333333;
 $mobile-pillar-b-background: #efefef;
 
-.header-logo {
-  height: 94%;
-}
-
 html {
   -webkit-font-smoothing: antialiased;
 }
@@ -42,7 +38,7 @@ h1 {
     height: 98px;
   }
   #electrode-nav {
-    height: 98px;
+    height: 97px;
   }
 }
 .electrode-nav-top {
@@ -349,7 +345,7 @@ img.mob-menu {
 .vert-divider {
   position: absolute;
   width: 0px;
-  height: 98px;
+  height: 97px;
   border-left: 1px solid $light-trans-grey;
   margin-left: -22px;
 }
@@ -619,6 +615,7 @@ img.mob-menu {
     margin-bottom: 46px;
     width: 116px;
     padding-right: 30px;
+    margin-top: 30px;
   }
 
   h1 {
@@ -885,6 +882,7 @@ img.mob-menu {
     height: 104px;
     width: 116px;
     margin-bottom: 46px;
+    margin-top: 30px;
   }
 
   /* Since positioning the image, we need to help out the caption */
