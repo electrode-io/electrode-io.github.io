@@ -12,7 +12,7 @@ Now we can integrate your published `<your-awesome-component>` as a node module 
 $ npm i your-awesome-published-npm-module --save
 ```
 
-Navigate to `<your-awesome-component>/client/routes.jsx`. Copy, paste and save the code below into this file. Change from the literal `YourAwesomeComponent` and `your-awesome-node-module` to your actual component name:
+Navigate to `<your-awesome-app>/client/routes.jsx`. Copy, paste and save the code below into this file. Change from the literal `YourAwesomeComponent` and `your-awesome-node-module` to your actual component name:
 
 ```javascript
 import React from "react";
