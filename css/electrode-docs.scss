@@ -679,3 +679,47 @@ p a code {
 .cm-s-default span.cm-string-2 {
   color: inherit;
 }
+
+/* Contributing section style */
+.issue-number {
+  background-color: #cccccc;
+  text-align: center;
+  color: #df2375;
+}
+
+.feature-number {
+  background-color: #1a3f5d;
+}
+
+.contributor-row {
+  padding-top: 5px;
+}
+
+.contribute-subheading {
+  padding-top: 10px;
+}
+
+.contribute-section {
+  font-family: "Gotham-Rounded";
+}
+
+.contribute-info {
+  margin: 20px 0;
+}
+
+.contribute-heading {
+  font-size: 24px;
+  color: #1a3f5d;
+}
+
+.contribute-heading-line {
+  width: 90%;
+  height: 1px;
+  background-color: #cccccc;
+}
+
+.contribute-subheading,
+.contribute-repo-link,
+.subheading {
+  color: #df2375;
+}
