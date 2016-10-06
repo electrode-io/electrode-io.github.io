@@ -1495,7 +1495,7 @@
 <p>Now let&#39;s build a new image by entering the following command:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>docker build -t docker-awesome-container .
 </code></pre></div>
-<p>Run the command below to see a lit of the images you currently have:</p>
+<p>Run the command below to see a list of the images you currently have:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>docker images
 </code></pre></div>
 <p>You&#39;ll see <code>node</code> listed. Find the corresponding <code>IMAGE ID</code> for your <code>node</code> image. We will now build a command to properly tag the image. It&#39;ll be using your <code>image id</code> + <code>account name/repo-name:latest</code></p>
@@ -1515,7 +1515,7 @@
 <p>Now you can stop the container:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>docker stop &lt;container_id&gt;
 </code></pre></div>
-<p>Log into Docker Hub from the command line. The format is below. Enter you password when prompted:</p>
+<p>Log into Docker Hub from the command line. The format is below. Enter your password when prompted:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>docker login --username<span class="o">=</span>yourhubusername --email<span class="o">=</span>youremail@company.com
 </code></pre></div>
 <p>Run the <code>push</code> command below to push your image to your new repo:</p>

@@ -1487,13 +1487,12 @@
     <span class="p">);</span>
   <span class="p">}</span>
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="k">return</span> <span class="p">(</span>
       <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;https://github.com/electrode-io&quot;</span><span class="o">&gt;</span><span class="nx">Electrode</span><span class="o">&lt;</span><span class="err">/a&gt;&lt;/h1&gt;</span>
         <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Our</span> <span class="nx">beloved</span> <span class="nx">friends</span><span class="o">&lt;</span><span class="err">/p&gt;&lt;/div&gt;</span>
         <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;images&quot;</span><span class="o">&gt;</span>
-          <span class="p">{</span><span class="nx">imageUrls</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">imageUrl</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">renderImage</span><span class="p">(</span><span class="nx">imageUrl</span><span class="p">,</span> <span class="o">++</span><span class="nx">i</span><span class="p">))}</span>
+          <span class="p">{</span><span class="nx">imageUrls</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">imageUrl</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">renderImage</span><span class="p">(</span><span class="nx">imageUrl</span><span class="p">,</span> <span class="nx">index</span><span class="p">))}</span>
         <span class="o">&lt;</span><span class="err">/div&gt;</span>
       <span class="o">&lt;</span><span class="err">/div&gt;</span>
     <span class="p">);</span>
