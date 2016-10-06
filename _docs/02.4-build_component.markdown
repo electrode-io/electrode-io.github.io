@@ -40,13 +40,12 @@ export class Home extends React.Component {
     );
   }
   render() {
-    let i = 0;
     return (
       <div>
         <h1>Hello <a href="https://github.com/electrode-io">Electrode</a></h1>
         <div> <p>Our beloved friends</p></div>
         <div className="images">
-          {imageUrls.map(imageUrl => this.renderImage(imageUrl, ++i))}
+          {imageUrls.map((imageUrl, index) => this.renderImage(imageUrl, index))}
         </div>
       </div>
     );
