@@ -681,45 +681,71 @@ p a code {
 }
 
 /* Contributing section style */
-.issue-number {
-  background-color: #cccccc;
-  text-align: center;
-  color: #df2375;
-}
 
-.feature-number {
-  background-color: #1a3f5d;
-}
+#contribute-section {
+  .feature-number {
+    background-color: #1a3f5d;
+  }
 
-.contributor-row {
-  padding-top: 5px;
-}
+  .contribute-heading {
+    font-size: 24px;
+    color: #1a3f5d;
+    border-bottom: 1px solid #cccccc;
+  }
 
-.contribute-subheading {
-  padding-top: 10px;
-}
+  .contribute-subheading,
+  .contribute-repo-link,
+  .subheading {
+    color: #df2375;
+  }
 
-.contribute-section {
-  font-family: "Gotham-Rounded";
-}
+  .left-side, .right-side {
+    display: inline-block;
+    width: 48%;
+    margin-right: 10px;
+  }
 
-.contribute-info {
-  margin: 20px 0;
-}
+  .left-side {
+    float: left;
+  }
 
-.contribute-heading {
-  font-size: 24px;
-  color: #1a3f5d;
-}
+  .right-side {
+    float: right;
+  }
 
-.contribute-heading-line {
-  width: 90%;
-  height: 1px;
-  background-color: #cccccc;
-}
+  .repo-name {
+    display: block;
+    margin-bottom: 10px;
+  }
 
-.contribute-subheading,
-.contribute-repo-link,
-.subheading {
-  color: #df2375;
+  .repo-issues-see-all {
+    margin-left: 15%;
+    margin-bottom: 10px;
+    padding-left: 10px;
+  }
+
+  .issue-list {
+    list-style: none;
+    margin: 0;
+  }
+
+  .issue-item {
+    margin: 10px 0;
+    vertical-align: top;
+  }
+
+  .issue-number {
+    background-color: #cccccc;
+    display: inline-block;
+    text-align: center;
+    color: #df2375;
+    width: 15%;
+    vertical-align: top;
+  }
+
+  .issue-title {
+    margin: 0 0 0 10px;
+    display: inline-block;
+    width: 80%;
+  }
 }
