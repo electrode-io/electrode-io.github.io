@@ -140,10 +140,10 @@ Use the command below to set a configuration so that Heroku installs Your-Awesom
 $ heroku config:set NPM_CONFIG_PRODUCTION=false
 ```
 
-Use the command below to set a configuration for [production.js](https://github.com/docs-code-examples-electrode-io/electrode-example-app-with-plugin-and-routes/blob/master/config/production.js#L11):
+Use the command below to set a configuration for [production.js](https://github.com/electrode-io/generator-electrode/blob/master/generators/app/templates/config/production.js#L11):
 
 ```bash
-$ heroku config:set STATIC_FILES=true
+$ heroku config:set STATIC_FILES_OFF=true
 ```
 
 Now deploy your code:

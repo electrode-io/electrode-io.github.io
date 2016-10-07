@@ -95,7 +95,7 @@ YourAwesomeComponent.defaultProps = {
   invitees: []
 };
 ```
-Last edit! In your `<your-awesome-component>/src/index.js` add the two lines below:
+Last edit! In your `<your-awesome-component>/src/index.js` add the three lines below:
 
 ```javascript
   export { default as YourAwesomeComponent } from "./src/components/your-awesome-component";
