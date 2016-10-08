@@ -683,6 +683,8 @@ p a code {
 /* Contributing section style */
 
 #contribute-section {
+  min-height: 600px;
+
   .feature-number {
     background-color: #1a3f5d;
   }
@@ -715,7 +717,7 @@ p a code {
 
   .repo-name {
     display: block;
-    margin-bottom: 10px;
+    margin: 20px 0 10px 0;
   }
 
   .repo-issues-see-all {

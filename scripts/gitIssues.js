@@ -1,7 +1,13 @@
 "use strict";
 
 function GitIssues() {
-  this.repos = [
+  this.repos = this.getRepos();
+  this.issueHeaderId = "fix-issues";
+  this.issueListIdPrefix = "issue-list-";
+}
+
+GitIssues.prototype.getRepos = function() {
+  return [
     {
       "id": "electrode-io",
       "name": "Electrode-io",
@@ -66,7 +72,7 @@ function GitIssues() {
       "issuesApi": "https://api.github.com/repos/electrode-io/electrode-bundle-analyzer/issues"
     }
   ];
-}
+};
 
 GitIssues.prototype.run = function() {
   var index;
@@ -86,14 +92,17 @@ GitIssues.prototype.render = function(repo) {
       return;
     }
 
-    var fixIssuesElement = document.getElementById('fix-issues');
-
-    fixIssuesElement.appendChild(self.createRepoName(repo));
-    fixIssuesElement.appendChild(self.createIssuesSeeAll(repo));
-    fixIssuesElement.appendChild(self.createIssueList(repo));
-
+    self.appendIssueHeader(repo);
     self.renderIssueList(repo, issues);
   });
+};
+
+GitIssues.prototype.appendIssueHeader = function(repo) {
+  var headerElement = document.getElementById(this.issueHeaderId);
+
+  headerElement.appendChild(this.createRepoName(repo));
+  headerElement.appendChild(this.createIssuesSeeAll(repo));
+  headerElement.appendChild(this.createIssueList(repo));
 };
 
 GitIssues.prototype.createRepoName = function(repo) {
@@ -123,7 +132,7 @@ GitIssues.prototype.renderIssueList = function(repo, issueList) {
   var index;
   var issue;
   var maxLength = (issueList.length > 3) ? 3 : issueList.length;
-  var repoIssueList = document.getElementById("issue-list-" + repo.id);
+  var repoIssueList = document.getElementById(this.issueListIdPrefix + repo.id);
 
   for (index = 0; index < maxLength; index += 1) {
     issue = issueList[index];
@@ -134,7 +143,7 @@ GitIssues.prototype.renderIssueList = function(repo, issueList) {
 
 GitIssues.prototype.createIssueList = function(repo) {
   var issueList = document.createElement("ul");
-  issueList.setAttribute("id", "issue-list-" + repo.id);
+  issueList.setAttribute("id", this.issueListIdPrefix + repo.id);
   issueList.setAttribute("class", "issue-list");
   return issueList;
 };
