@@ -17,7 +17,7 @@ config
 
 We'll need to extend our default.json to include our `friends` plugin and module `./server/plugins/friends`.
 
-Navigate to `<your-awesome-app>/config/development.json`. Copy, paste and save `friends` plugin below the `webapp` plugin:
+Navigate to `<your-awesome-app>/config/default.json`. Copy, paste and save `friends` plugin below the `webapp` plugin:
 
 ```json
 
