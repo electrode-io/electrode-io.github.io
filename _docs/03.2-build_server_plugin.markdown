@@ -124,7 +124,7 @@ $ token='your-token-here'
 Set your token for heroku deployment:
 
 ```bash
-heroku config: set token='your-token-here'
+heroku config:set token='your-token-here'
 ```
 
 A great tool for testing your server requests (its user interface for view response objects and errors is incredible) is [Postman](https://www.getpostman.com/). For now, you will have to trust as we build out Your Awesome App. Navigate to [Intermediate: Add Routes](add_routes.html), to add routing to the app and also extend our UI to display our contributor array.
