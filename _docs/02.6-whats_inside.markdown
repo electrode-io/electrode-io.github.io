@@ -38,17 +38,13 @@ Why react-router? The project is mature, well-documented, and integrates well wi
 
 [React-Resolver](http://ericclemmons.com/react-resolver/) lets you define data requirements per component and will handle the nested, asynchronous rendering on both the server and client for you. This approach matches the Electrode methodology of keeping definitions of what a component needs within the component itself and also allows us to write universal javascript applications in a non-blocking way. This solves our frequent need for pages that are rendered on the server.
 
-```javascript
-  import { createHistory } from "history";
-  import "./styles/base.css";
-```
 
-[History](https://github.com/mjackson/history) is a JavaScript library that lets you easily manage session history anywhere JavaScript runs and abstracts away the differences in various environments.
+The rest of the code in `client/app.jsx` sets up the React app to run on the when the page is loaded. The selector is based on the `<div>` in `<your-awesome-app>/server/plugins/webapp/index.html`.
 
 ```javascript
   window.webappStart = () => {
     Resolver.render(
-      () => <Router history={createHistory()}>{routes}</Router>,
+      () => <Router>{routes}</Router>,
       document.querySelector(".js-content")
     );
   };
