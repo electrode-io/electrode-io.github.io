@@ -37,7 +37,7 @@ function createReduxStore(req, match) {
     const store = configureStore();
 
     return Promise.all([
-      store.dispatch(boostrapApp())
+      store.dispatch(bootstrapApp())
       // dispatch any other asynchronous actions here
     ]).then( () => {
       return store;
@@ -78,7 +78,7 @@ function createReduxStore(req, match) {
   const store = createStore(rootReducer, initialState);
 
   return Promise.all([
-      // DO ASYNC THUNK ACTIONS HERE : store.dispatch(boostrapApp())
+      // DO ASYNC THUNK ACTIONS HERE : store.dispatch(bootstrapApp())
       Promise.resolve({})
     ]).then(() => {
       return store;
