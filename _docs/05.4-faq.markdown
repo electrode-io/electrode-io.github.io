@@ -67,3 +67,8 @@ Creating modular and reusable components has helped us to share the same code ac
 
 * Maintainability - "[Code is a liability](https://medium.com/capital-one-developers/why-everyone-is-talking-about-isomorphic-universal-javascript-and-why-it-matters-38c07c87905#.y7cy5jki3)".
 Universal javascript allows developers to use modular components that are sharable, self-contained, and easy to reason about. We mentioned that we have thousands of components shared by thousand of developers at [WalmartLabs](www.walmartlabs.com). Creating strict best practices and tools like [Electrode-Explorer](electrode_explorer) help us to strengthen the increase in maintainability that Universal JS gives us.
+
+<br>
+
+#### 7. Any plan with Graphql and React Native in the future ?
+We have plans for GraphQL, but it’s a bit further out. Regarding React Native, we are currently investing in it as we speak. Our first RN open source piece will be released in a few weeks, sometime in mid Oct :). I’m super excited about it.
