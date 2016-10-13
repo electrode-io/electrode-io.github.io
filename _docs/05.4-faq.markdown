@@ -43,3 +43,8 @@ Refer to this amazing [blog entry](https://medium.com/walmartlabs/using-electrod
 [Electrode Redux Router Engine]: https://github.com/electrode-io/electrode-redux-router-engine
 [Electrode React SSR Caching]: https://github.com/electrode-io/electrode-react-ssr-caching
 [Above The Fold Only Server Render]: https://github.com/electrode-io/above-the-fold-only-server-render
+
+#### 4. What do you mean by reusable electrode components?
+Electrode reusable components are for reusing across different apps, so they are made for being developed independently, consumed via electrode-explorer. These reusable components can take extra disk space to be able to develop & run independently in the browser, but when bundled/compiled the footprint is very small.
+
+*Note: If you just have one app, they probably shouldn't follow this model and embed the components in your app directly.*
