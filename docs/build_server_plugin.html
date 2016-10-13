@@ -285,6 +285,16 @@
   
   
 
+  
+  
+  
+  
+
+  
+  
+  
+  
+
 
         </ul>
       
@@ -364,6 +374,24 @@
 
     
     </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/what_are_archetypes.html"> &nbsp; What are Archetypes?</a>
+
+    
+    </li>
+  
+
+  
+  
+  
   
 
   
@@ -523,6 +551,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -798,6 +831,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/build_with_material_ui.html"> &nbsp; Build with material-ui</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -876,6 +922,16 @@
           <ul>
             
 
+
+  
+  
+  
+  
+
+  
+  
+  
+  
 
   
   
@@ -1377,6 +1433,16 @@
   
   
   
+
+  
+  
+  
+  
+
+  
+  
+  
+  
     <li>
     
 
@@ -1512,7 +1578,7 @@
     <span class="kr">const</span> <span class="nx">githubUrl</span> <span class="o">=</span> <span class="nx">friend</span><span class="p">.</span><span class="nx">github</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">);</span>
     <span class="kr">const</span> <span class="nx">githubInfo</span> <span class="o">=</span> <span class="p">{</span>
       <span class="nx">repo</span><span class="o">:</span> <span class="nx">githubUrl</span><span class="p">.</span><span class="nx">pop</span><span class="p">(),</span>
-      <span class="nx">user</span><span class="o">:</span> <span class="nx">githubUrl</span><span class="p">.</span><span class="nx">pop</span><span class="p">(),</span>
+      <span class="nx">owner</span><span class="o">:</span> <span class="nx">githubUrl</span><span class="p">.</span><span class="nx">pop</span><span class="p">(),</span>
       <span class="nx">anon</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
       <span class="nx">page</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="nx">per_page</span><span class="o">:</span> <span class="mi">10</span>
@@ -1557,7 +1623,7 @@ Copy and save this token in a secure place; we will use it several times. Use th
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ token</span><span class="o">=</span><span class="s1">&#39;your-token-here&#39;</span>
 </code></pre></div>
 <p>Set your token for heroku deployment:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">heroku config: <span class="nb">set </span><span class="nv">token</span><span class="o">=</span><span class="s1">&#39;your-token-here&#39;</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">heroku config:set <span class="nv">token</span><span class="o">=</span><span class="s1">&#39;your-token-here&#39;</span>
 </code></pre></div>
 <p>A great tool for testing your server requests (its user interface for view response objects and errors is incredible) is <a href="https://www.getpostman.com/">Postman</a>. For now, you will have to trust as we build out Your Awesome App. Navigate to <a href="add_routes.html">Intermediate: Add Routes</a>, to add routing to the app and also extend our UI to display our contributor array.</p>
 

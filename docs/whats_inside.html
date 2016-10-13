@@ -285,6 +285,16 @@
   
   
 
+  
+  
+  
+  
+
+  
+  
+  
+  
+
 
         </ul>
       
@@ -364,6 +374,24 @@
 
     
     </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/what_are_archetypes.html"> &nbsp; What are Archetypes?</a>
+
+    
+    </li>
+  
+
+  
+  
+  
   
 
   
@@ -523,6 +551,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -798,6 +831,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/build_with_material_ui.html"> &nbsp; Build with material-ui</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -876,6 +922,16 @@
           <ul>
             
 
+
+  
+  
+  
+  
+
+  
+  
+  
+  
 
   
   
@@ -1377,6 +1433,16 @@
   
   
   
+
+  
+  
+  
+  
+
+  
+  
+  
+  
     <li>
     
 
@@ -1488,18 +1554,16 @@
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kr">import</span> <span class="p">{</span> <span class="nx">Resolver</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react-resolver&quot;</span><span class="p">;</span>
 </code></pre></div>
 <p><a href="http://ericclemmons.com/react-resolver/">React-Resolver</a> lets you define data requirements per component and will handle the nested, asynchronous rendering on both the server and client for you. This approach matches the Electrode methodology of keeping definitions of what a component needs within the component itself and also allows us to write universal javascript applications in a non-blocking way. This solves our frequent need for pages that are rendered on the server.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kr">import</span> <span class="p">{</span> <span class="nx">createHistory</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;history&quot;</span><span class="p">;</span>
-  <span class="kr">import</span> <span class="s2">&quot;./styles/base.css&quot;</span><span class="p">;</span>
-</code></pre></div>
-<p><a href="https://github.com/mjackson/history">History</a> is a JavaScript library that lets you easily manage session history anywhere JavaScript runs and abstracts away the differences in various environments.</p>
+
+<p>The rest of the code in <code>client/app.jsx</code> sets up the React app to run when the page is loaded. The selector is based on the <code>&lt;div&gt;</code> in <code>&lt;your-awesome-app&gt;/server/plugins/webapp/index.html</code>.</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nb">window</span><span class="p">.</span><span class="nx">webappStart</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">Resolver</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
-      <span class="p">()</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">Router</span> <span class="nx">history</span><span class="o">=</span><span class="p">{</span><span class="nx">createHistory</span><span class="p">()}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">routes</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Router&gt;,</span>
+      <span class="p">()</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">Router</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">routes</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Router&gt;,</span>
       <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.js-content&quot;</span><span class="p">)</span>
     <span class="p">);</span>
   <span class="p">};</span>
 </code></pre></div>
-<p>If you have a universal application and server-side rendering, <a href="http://ericclemmons.com/react-resolver/docs/getting-started/ServerRendering.html">react-resolver</a> handles bootstrapping server-rendered markup via <code>Resolver.render</code> instead of <code>React.render</code>.</p>
+<p>If you have a universal application and server-side rendering, <a href="http://ericclemmons.com/react-resolver/docs/getting-started/ServerRendering.html">react-resolver</a> handles bootstrapping server-rendered markup via <code>Resolver.render</code> instead of <code>ReactDOM.render</code>.</p>
 
 <blockquote>
 <p><code>&lt;your-awesome-app&gt;/client/routes.jsx</code></p>
@@ -1563,7 +1627,7 @@
 <p><code>&lt;your-awesome-app&gt;/isomorphic-loader-config.json</code></p>
 </blockquote>
 
-<p>This <a href="https://github.com/jchip/isomorphic-loader">powerful tool</a> makes NodeJS <code>require</code> work with files such as images for server-side rendering. It contains three pieces: a Webpack loader, Webpack plugin, and a library for your NodeJS app.</p>
+<p>This <a href="https://github.com/electrode-io/isomorphic-loader">powerful tool</a> makes NodeJS <code>require</code> work with files such as images for server-side rendering. It contains three pieces: a Webpack loader, Webpack plugin, and a library for your NodeJS app.</p>
 
 <hr>
 
@@ -1583,6 +1647,8 @@
   
     <a class="docs-prev" href="/docs/deploy_app.html">&larr; Prev</a>
   
+  
+    <a class="docs-next" href="/docs/what_are_archetypes.html">Next &rarr;</a>
   
 </div>
 

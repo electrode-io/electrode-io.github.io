@@ -285,6 +285,16 @@
   
   
 
+  
+  
+  
+  
+
+  
+  
+  
+  
+
 
         </ul>
       
@@ -364,6 +374,24 @@
 
     
     </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/what_are_archetypes.html"> &nbsp; What are Archetypes?</a>
+
+    
+    </li>
+  
+
+  
+  
+  
   
 
   
@@ -523,6 +551,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -798,6 +831,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/build_with_material_ui.html"> &nbsp; Build with material-ui</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -876,6 +922,16 @@
           <ul>
             
 
+
+  
+  
+  
+  
+
+  
+  
+  
+  
 
   
   
@@ -1377,6 +1433,16 @@
   
   
   
+
+  
+  
+  
+  
+
+  
+  
+  
+  
     <li>
     
 
@@ -1485,7 +1551,7 @@
     <span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">configureStore</span><span class="p">();</span>
 
     <span class="k">return</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
-      <span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">boostrapApp</span><span class="p">())</span>
+      <span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">bootstrapApp</span><span class="p">())</span>
       <span class="c1">// dispatch any other asynchronous actions here</span>
     <span class="p">]).</span><span class="nx">then</span><span class="p">(</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nx">store</span><span class="p">;</span>
@@ -1519,7 +1585,7 @@
   <span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">createStore</span><span class="p">(</span><span class="nx">rootReducer</span><span class="p">,</span> <span class="nx">initialState</span><span class="p">);</span>
 
   <span class="k">return</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
-      <span class="c1">// DO ASYNC THUNK ACTIONS HERE : store.dispatch(boostrapApp())</span>
+      <span class="c1">// DO ASYNC THUNK ACTIONS HERE : store.dispatch(bootstrapApp())</span>
       <span class="nx">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">({})</span>
     <span class="p">]).</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nx">store</span><span class="p">;</span>
