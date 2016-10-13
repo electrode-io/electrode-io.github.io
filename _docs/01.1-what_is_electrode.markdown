@@ -7,9 +7,12 @@ toplevel: "Overview"
 > Electrode is a platform for building universal React/Node.js applications with a standardized structure, best practices, and modern technologies baked in. Electrode focuses on performance, component reusability, and simple deployment to multiple cloud providers—so you can focus on what makes your app unique.
 
 ### Core: Quick + Easy
-Electrode Core gets you up and running quickly by providing build scripts to streamline development and deployment and [Electrode Archetypes](what_are_archetypes.html) to standardize the structure of your app and its associated React components. Electrode's archetype system establishes common patterns across projects and components, helping teams standardize on development best practices.
 
-**It only takes a minute to get your new Electrode application running and a
+Electrode Core allows you to build a flexible universal react/nodejs application in minutes, with support for server-side rendering and easy deployment to multiple cloud providers. Get new projects started quickly with a simple, consistent structure that follows modern best practices.
+
+The heart of the platform is [Electrode Archetypes](what_are_archetypes.html), which allow for standardized configurations, workflows and structure of the app and its associated react components. By enforcing a sensible structure and consistency for components, modules and the entire app, Electrode’s Archetype system helps you build scalable applications you can trust while ensuring streamlined development and deployment.
+
+**It only takes a few minutes to get your new Electrode application running and a
 few more minutes to deploy your app to the cloud. See our [Getting Started:
 Quick Guide](get_started.html) to get started now.**
 
