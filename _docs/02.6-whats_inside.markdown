@@ -38,23 +38,19 @@ Why react-router? The project is mature, well-documented, and integrates well wi
 
 [React-Resolver](http://ericclemmons.com/react-resolver/) lets you define data requirements per component and will handle the nested, asynchronous rendering on both the server and client for you. This approach matches the Electrode methodology of keeping definitions of what a component needs within the component itself and also allows us to write universal javascript applications in a non-blocking way. This solves our frequent need for pages that are rendered on the server.
 
-```javascript
-  import { createHistory } from "history";
-  import "./styles/base.css";
-```
 
-[History](https://github.com/mjackson/history) is a JavaScript library that lets you easily manage session history anywhere JavaScript runs and abstracts away the differences in various environments.
+The rest of the code in `client/app.jsx` sets up the React app to run when the page is loaded. The selector is based on the `<div>` in `<your-awesome-app>/server/plugins/webapp/index.html`.
 
 ```javascript
   window.webappStart = () => {
     Resolver.render(
-      () => <Router history={createHistory()}>{routes}</Router>,
+      () => <Router>{routes}</Router>,
       document.querySelector(".js-content")
     );
   };
 ```
 
-If you have a universal application and server-side rendering, [react-resolver](http://ericclemmons.com/react-resolver/docs/getting-started/ServerRendering.html) handles bootstrapping server-rendered markup via `Resolver.render` instead of `React.render`.
+If you have a universal application and server-side rendering, [react-resolver](http://ericclemmons.com/react-resolver/docs/getting-started/ServerRendering.html) handles bootstrapping server-rendered markup via `Resolver.render` instead of `ReactDOM.render`.
 
 > `<your-awesome-app>/client/routes.jsx`
 
@@ -128,7 +124,7 @@ This is where we extend our `electrode-archetype-react-app` [Babel](https://babe
 
 > `<your-awesome-app>/isomorphic-loader-config.json`
 
-This [powerful tool](https://github.com/jchip/isomorphic-loader) makes NodeJS `require` work with files such as images for server-side rendering. It contains three pieces: a Webpack loader, Webpack plugin, and a library for your NodeJS app.
+This [powerful tool](https://github.com/electrode-io/isomorphic-loader) makes NodeJS `require` work with files such as images for server-side rendering. It contains three pieces: a Webpack loader, Webpack plugin, and a library for your NodeJS app.
 
 ---
 
