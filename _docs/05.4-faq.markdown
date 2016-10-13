@@ -6,7 +6,10 @@ toplevel: "Resources"
 
 ###You Ask, We Answer:
 
-#### 1. What are archetypes?
+#### 1. Is Electrode really being used to power walmart.com?
+Electrode helped tranform walmart.com stack to React/Node.js in less than a year. When you visit [walmart.com](http://walmart.com) you are running Electrode.
+
+#### 2. What are archetypes?
 
 Electrode archetypes are a way for every electrode module to share common scripts, dependencies and best practices that can be updated in real time, and have that update propagate to every module that inherits from that specific archetype.
 <br>
@@ -15,13 +18,13 @@ Please refer to [what are archetypes?](what_are_archetypes.html) for a detailed 
 
 <br>
 
-#### 2. Why is my server throwing error "cannot find module ..." on start up?
+#### 3. Why is my server throwing error "cannot find module ..." on start up?
 
 Most likely you are using npm@2. Upgrade to npm@3 by running command `npm i -g npm@3` and redo `npm i`.
 
 <br>
 
-#### 3. What is the difference between creating a new electrode app using yo electrode vs cloning/forking Electrode Boilerplate?
+#### 4. What is the difference between creating a new electrode app using yo electrode vs cloning/forking Electrode Boilerplate?
 
 [Electrode Boilerplate] was created using `yo electrode` command. `yo electrode` gives you a bare bones Electrode Isomorphic Universal React App with NodeJS backend.
 
@@ -44,7 +47,16 @@ Refer to this amazing [blog entry](https://medium.com/walmartlabs/using-electrod
 [Electrode React SSR Caching]: https://github.com/electrode-io/electrode-react-ssr-caching
 [Above The Fold Only Server Render]: https://github.com/electrode-io/above-the-fold-only-server-render
 
-#### 4. What do you mean by reusable electrode components?
+#### 5. What do you mean by reusable electrode components?
 Electrode reusable components are for reusing across different apps, so they are made for being developed independently, consumed via electrode-explorer. These reusable components can take extra disk space to be able to develop & run independently in the browser, but when bundled/compiled the footprint is very small.
 
 *Note: If you just have one app, they probably shouldn't follow this model and embed the components in your app directly.*
+
+#### 6. Why do we focus on Universal JavaScript?
+* SEO - Because [Walmart.com](www.walmart.com) is an eCommerce site, Search Engine Optimization is critical for our business model. To benefit from search indexing, SSR allows us to return an HTML string to search engines and our search analytics.
+
+* Reusability - At [Walmart.com](www.walmart.com) we handle highly complex user interaction at an unbelievable scale. [ReactJS](https://facebook.github.io/react/) is the chosen framework to deal with us because our developers can create reusable components that we then run universally: or the client and the server.
+Creating modular and reusable components has helped us to share the same code across several different pages and even different brands. The shared components all have one single source of truth and are easy to read, debug and implement, so our engineers can focus on building great features to enrich user experience.
+
+* Maintainability - "[Code is a liability](https://medium.com/capital-one-developers/why-everyone-is-talking-about-isomorphic-universal-javascript-and-why-it-matters-38c07c87905#.y7cy5jki3)".
+Universal javascript allows developers to use modular components that are sharable, self-contained, and easy to reason about. We mentioned that we have thousands of components shared by thousand of developers at [WalmartLabs](www.walmartlabs.com). Creating strict best practices and tools like [Electrode-Explorer](electrode_explorer) help us to strengthen the increase in maintainability that Universal JS gives us.
