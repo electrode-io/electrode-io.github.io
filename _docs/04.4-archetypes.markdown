@@ -1,0 +1,15 @@
+---
+title:  "Archetypes"
+permalink: docs/archetypes.html
+toplevel: "Archetypes"
+---
+
+Framework and app generator are really quite far off from what an archetype provides.
+An archetype is like an npm module template, but not one that is used to generate code files and then discarded,
+but more like a live "superclass" of a module; think inheritance but for npm modules.
+
+The basic idea is that if you have dozens or hundreds of similar modules (for, say, React components),
+with similar build + testing needs, you can use the same archetype for all of them. A generator like yeoman
+could spit out boilerplate for you, but then what if your boilerplate changes? Your packages quickly get out of
+sync with your latest best practices. Having some components on Babel 5 and some upgraded to Babel 6, for example,
+was a real pain. You have to go through your dozens of packages
