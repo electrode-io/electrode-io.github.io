@@ -13,7 +13,7 @@
   <meta property="og:description" content="{{ site.description }}">
   <meta property="fb:app_id" content="623268441017527">
 
-
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="shortcut icon" href="{{ site.baseurl }}/img/favicon-64.png">
   <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}{{ site.baseurl }}/feed.xml">
 
@@ -35,25 +35,100 @@
 </head>
 <body>
 
-  <div class="container">
+  <div class="container-fluid" id="main-container">
+    <div class="container" id="top-header">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <nav class="navbar navbar-static-top electrode-nav-top inverse-colors">
+            <div id="electrode-nav" class="container-fluid">
+              <ul class="nav navbar-nav">
+                <div class="navbar-header">
+                  <button type="button" id="mob-menu-button" onClick="changeMobileNav()" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <img id="mob-header-icon" class="mob-menu" src="../img/mob-menu.svg" alt="">
+                  </button>
+                  <a class="navbar-brand electrode-brand-top" href="#">
+                    <img class="header-logo" id="nav-electrode-logo" src="../img/electrode-logo.svg"
+                         alt="">
+                  </a>
+                </div>
+              </ul>
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-    <div class="nav-main">
-      <div class="wrap">
-        <a class="nav-home" href="{{ site.baseurl }}/index.html">
-          <img class="nav-logo" src="{{ site.baseurl }}/img/electrode-02.png" width="45" height="45" style="margin-bottom: 5px;">
-          electrode
-        </a>
+                <!-- desktop header -->
+                <ul id="social-header-color-links" class="nav navbar-nav navbar-right social-nav-links">
+                  <div class="vert-divider"></div>
+                  <li>
+                    <a href="https://getpocket.com/">
+                      <img src="https://host-logos.firebaseapp.com/dotio/pocket_@1x.png" alt="">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/electrode_io">
+                      <img src="https://host-logos.firebaseapp.com/dotio/twitter_@1x.png" alt="">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/electrode-io">
+                      <img src="https://host-logos.firebaseapp.com/dotio/github_@1x.png" alt="">
+                    </a>
+                  </li>
+                </ul>
 
-        <ul class="nav-site nav-site-internal">
-          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>docs</a></li>
-          <!--<li><a href="{{ site.baseurl }}/support.html"{% if page.id == 'support' %} class="active"{% endif %}>Support</a></li>-->
-        </ul>
-        <ul class="nav-site nav-site-external">
-          <li><a href="https://github.com/electrode-io">GitHub</a></li>
-          <li><a href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a></li>
-        </ul>
+                <ul id="desktop-nav-ul" class="nav navbar-nav navbar-right primary-nav-links">
+                  <li id="home-primary"><a href="/">HOME</a></li>
+                  <li><a href="https://github.com/electrode-io">CONTRIBUTE</a></li>
+                </ul>
+
+                <!-- mobile dropdown menu -->
+                <ul id="mobile-nav-ul" class="nav navbar-nav navbar-right secondary-nav-links">
+                  <li id="home-primary" class="mobile-nav-links"><a href="">Home</a></li>
+                  <div class="mobile-header-line"></div>
+                  <li class="mobile-nav-links"><a href="https://github.com/electrode-io">Contribute</a></li>
+                  <div class="mobile-header-line"></div>
+                  <li id="mobile-started-link" class="mobile-nav-links"><a href="/docs/get_started.html">Get Started</a></li>
+                  <div class="mobile-header-line"></div>
+                </ul>
+
+                <div id="mobile-social-link-row" class="row">
+                  <div class="col-xs-4 col-sm-4">
+                    <div class="mobile-social-header-links mobile-oval">
+                      <a href="https://getpocket.com/">
+                        <img class="mobile-social-logo" id="pocket-logo" src="../img/sm-pocket.svg"/>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-4 col-sm-4">
+                    <div class="mobile-social-header-links mobile-oval">
+                      <a href="https://twitter.com/electrode_io">
+                        <img class="mobile-social-logo" id="twitter-logo" src="../img/sm-twitter.svg"/>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-4 col-sm-4">
+                    <div class="mobile-social-header-links mobile-oval">
+                      <a href="https://github.com/electrode-io">
+                        <img class="mobile-social-logo" id="github-logo" src="../img/sm-github.svg"/>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div id="mob-header-text-container">
+                  <p id="mob-header-text"><b>Built with ♡ by </b>
+                    <a href="http://walmartlabs.com"><img id="mobile-dropDown-logo" src="../img/walmart-labs-1-white.svg" alt=""></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
       </div>
     </div>
+  </div>
+
+  <div class="container">
 
     {% if page.id == 'home' %}
     <div class="hero">
@@ -84,6 +159,15 @@
   </div>
   <div id="fb-root"></div>
 
+
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../scripts/mob-nav.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+  crossorigin="anonymous"></script>
   <!--
     TODO: analytics js, etc.
   -->
