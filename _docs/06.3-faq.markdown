@@ -67,6 +67,10 @@ Universal javascript allows developers to use modular components that are sharab
 #### 7. Any plan with Graphql and React Native in the future ?
 We have plans for GraphQL, but it’s a bit further out. Regarding React Native, we are currently investing in it as we speak. Our first RN open source piece will be released in a few weeks, sometime in mid Oct :). I’m super excited about it.
 
+#### 8. Does electrode support hot reloading?
+hot-reloading of jsx is already built in electrode.
+`gulp hot` will enable hot-reloading.
+
 [Electrode Boilerplate]: https://github.com/electrode-io/electrode-boilerplate-universal-react-node
 [Electrode Confippet]: https://github.com/electrode-io/electrode-confippet
 [Electrode Electrify]: https://github.com/electrode-io/electrify
