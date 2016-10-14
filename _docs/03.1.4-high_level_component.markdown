@@ -98,7 +98,7 @@ YourAwesomeComponent.defaultProps = {
 Last edit! In your `<your-awesome-component>/src/index.js` add the three lines below:
 
 ```javascript
-  export { default as YourAwesomeComponent } from "./src/components/your-awesome-component";
+  export { default as YourAwesomeComponent } from "./components/your-awesome-component";
   export { default as RenderFriend } from "./components/render-friend";
   export { default as GuestList } from "./components/guest-list";
 
