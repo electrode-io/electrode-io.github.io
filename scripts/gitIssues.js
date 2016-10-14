@@ -110,10 +110,10 @@ GitIssues.prototype.appendIssueHeader = function(repo, issues) {
   var headerElement = document.getElementById(this.issueHeaderId);
 
   headerElement.appendChild(this.createRepoName(repo));
+  headerElement.appendChild(this.createIssueList(repo));
   if (issues.length > minIssues) {
     headerElement.appendChild(this.createIssuesSeeAll(repo));
   }
-  headerElement.appendChild(this.createIssueList(repo));
 };
 
 GitIssues.prototype.createRepoName = function(repo) {
