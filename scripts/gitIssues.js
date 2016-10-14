@@ -86,22 +86,33 @@ GitIssues.prototype.render = function(repo) {
   var self = this;
 
   self.getData(repo).then(function(issues) {
-    var maxLength = 3;
+    issues = issues.filter(bugFilter);
 
-    if (issues.length < maxLength) {
+    if (issues.length === 0) {
       return;
     }
 
-    self.appendIssueHeader(repo);
+    self.appendIssueHeader(repo, issues);
     self.renderIssueList(repo, issues);
+
+    function bugFilter(issue) {
+      return issue.labels.find(findBug);
+    }
+
+    function findBug (label) {
+      return label.name === "bug";
+    }
   });
 };
 
-GitIssues.prototype.appendIssueHeader = function(repo) {
+GitIssues.prototype.appendIssueHeader = function(repo, issues) {
+  var minIssues = 3;
   var headerElement = document.getElementById(this.issueHeaderId);
 
   headerElement.appendChild(this.createRepoName(repo));
-  headerElement.appendChild(this.createIssuesSeeAll(repo));
+  if (issues.length > minIssues) {
+    headerElement.appendChild(this.createIssuesSeeAll(repo));
+  }
   headerElement.appendChild(this.createIssueList(repo));
 };
 
@@ -131,7 +142,8 @@ GitIssues.prototype.getData = function(request) {
 GitIssues.prototype.renderIssueList = function(repo, issueList) {
   var index;
   var issue;
-  var maxLength = (issueList.length > 3) ? 3 : issueList.length;
+  var maxIssues = 3;
+  var maxLength = (issueList.length > maxIssues) ? maxIssues : issueList.length;
   var repoIssueList = document.getElementById(this.issueListIdPrefix + repo.id);
 
   for (index = 0; index < maxLength; index += 1) {

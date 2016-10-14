@@ -13,22 +13,21 @@ GitFeatures.prototype.render = function(repo) {
   var self = this;
 
   self.getData(repo).then(function(issues) {
-    var maxLength = 3;
-    var features = issues.filter(enhancementFilter);
+    issues = issues.filter(enhancementFilter);
 
-    if (features.length < maxLength) {
+    if (issues.length === 0) {
       return;
     }
 
-    self.appendIssueHeader(repo);
-    self.renderIssueList(repo, features);
+    self.appendIssueHeader(repo, issues);
+    self.renderIssueList(repo, issues);
 
     function enhancementFilter(issue) {
       return issue.labels.find(findEnhancement);
     }
 
     function findEnhancement (label) {
-      return label.name === "enhancement";
+      return label.name === "enhancement" || label.name === "help wanted";
     }
   });
 };
