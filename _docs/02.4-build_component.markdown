@@ -10,7 +10,7 @@ After you've generated your awesome electrode app, you are ready to focus on wri
 Navigate to `<your-awesome-app>/client/components/home.jsx`:
 
 ```javascript
-import React, {PropTypes} from "react";
+import React from "react";
 import {connect} from "react-redux";
 
 export class Home extends React.Component {
@@ -28,7 +28,7 @@ export default connect()(Home);
 We'll need a place to keep all of the resources we learned in the [Get Started](get_started.html) section. Let's make a visual library for our present stack and exciting technologies! Copy the code below and paste it into `<your-awesome-app>/client/components/home.jsx`:
 
 ```javascript
-import React, {PropTypes} from "react";
+import React from "react";
 import {connect} from "react-redux";
 
 export const imageUrls = [
