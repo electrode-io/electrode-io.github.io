@@ -5,4 +5,20 @@ toplevel: "React Native: Over the Air"
 ---
 
 ### Electrode Over the Air Server
-Electrode Over the Air (OTA) is a Microsoft(tm) Code Push compatible server for allowin 
+Electrode Over the Air (OTA) is a Microsoft(tm) Code Push compatible server for allowing mobile applications to update
+with or without user intravention.
+
+
+ ![NewToken](../img/electrode-ota/NewToken.png) 
+ ![Login](../img/electrode-ota/Login.png)
+ ![GettingStarted](../img/electrode-ota/GettingStarted.png)
+ ![NewAppSuccess](../img/electrode-ota/NewAppSuccess.png)
+ ![NewDeployment](../img/electrode-ota/NewDeployment.png)
+ ![NewDeployment1](../img/electrode-ota/NewDeployment1.png)
+ ![Release](../img/electrode-ota/Releases.png)
+ ![Collaborate](../img/electrode-ota/Collaborate.png)
+ ![AddKey](../img/electrode-ota/AddKey.png)
+ ![NewKey](../img/electrode-ota/NewKey.png)
+ 
+ 
+ 
