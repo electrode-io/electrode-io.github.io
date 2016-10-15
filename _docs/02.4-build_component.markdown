@@ -11,6 +11,7 @@ Navigate to `<your-awesome-app>/client/components/home.jsx`:
 
 ```javascript
 import React from "react";
+import {connect} from "react-redux";
 
 export class Home extends React.Component {
   render() {
@@ -19,12 +20,16 @@ export class Home extends React.Component {
     );
   }
 }
+
+
+export default connect()(Home);
 ```
 
 We'll need a place to keep all of the resources we learned in the [Get Started](get_started.html) section. Let's make a visual library for our present stack and exciting technologies! Copy the code below and paste it into `<your-awesome-app>/client/components/home.jsx`:
 
 ```javascript
 import React from "react";
+import {connect} from "react-redux";
 
 export const imageUrls = [
   'http://daynin.github.io/clojurescript-presentation/img/react-logo.png',
@@ -51,6 +56,9 @@ export class Home extends React.Component {
     );
   }
 }
+
+
+export default connect()(Home);
 ```
 
 Let's finish the UI by adding styles. Navigate to `<your-awesome-app>/client/styles/base.css` and add the code below:
