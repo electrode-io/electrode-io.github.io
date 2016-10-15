@@ -295,6 +295,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -387,6 +392,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -915,6 +925,11 @@
   
   
 
+  
+  
+  
+  
+
 
           </ul>
         
@@ -1222,6 +1237,232 @@
   
   
   
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+          </ul>
+        
+      
+    </div>
+  
+    <div class="nav-docs-section">
+      <h3>Contributing</h3>
+      
+        <ul>
+          
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/contribute.html"> &nbsp; Contribute</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
     <li>
     
 
@@ -1247,8 +1488,7 @@
   
 
 
-          </ul>
-        
+        </ul>
       
     </div>
   
@@ -1258,6 +1498,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1526,18 +1771,65 @@
 <p>After you&#39;ve generated your awesome electrode app, you are ready to focus on writing your React components.</p>
 
 <p>Navigate to <code>&lt;your-awesome-app&gt;/client/components/home.jsx</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">PropTypes</span><span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">connect</span><span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react-redux&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">toggleCheck</span><span class="p">,</span> <span class="nx">incNumber</span><span class="p">,</span> <span class="nx">decNumber</span><span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;../actions&quot;</span><span class="p">;</span>
 
-<span class="kr">export</span> <span class="kr">class</span> <span class="nx">Home</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+<span class="kr">class</span> <span class="nx">Home</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">props</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="p">{</span><span class="nx">checked</span><span class="p">,</span> <span class="nx">value</span><span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;https://github.com/electrode-io&quot;</span><span class="o">&gt;</span><span class="nx">Electrode</span><span class="o">&lt;</span><span class="err">/a&gt;&lt;/h1&gt;&lt;/div&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;https://github.com/electrode-io&quot;</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="s2">&quot;Electrode&quot;</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/a&gt;&lt;/h1&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Managing</span> <span class="nx">States</span> <span class="kd">with</span> <span class="nx">Redux</span><span class="o">&lt;</span><span class="err">/h2&gt;</span>
+          <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">onChangeCheck</span><span class="p">}</span> <span class="nx">type</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;checkbox&quot;</span><span class="p">}</span> <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="nx">checked</span><span class="p">}</span><span class="o">/&gt;</span>
+            <span class="nx">Checkbox</span>
+          <span class="o">&lt;</span><span class="err">/label&gt;</span>
+          <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;button&quot;</span><span class="p">}</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">onDecrease</span><span class="p">}</span><span class="o">&gt;-&lt;</span><span class="err">/button&gt;</span>
+            <span class="o">&amp;</span><span class="nx">nbsp</span><span class="p">;{</span><span class="nx">value</span><span class="p">}</span><span class="o">&amp;</span><span class="nx">nbsp</span><span class="p">;</span>
+            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;button&quot;</span><span class="p">}</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">onIncrease</span><span class="p">}</span><span class="o">&gt;+&lt;</span><span class="err">/button&gt;</span>
+          <span class="o">&lt;</span><span class="err">/div&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
     <span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
+
+<span class="nx">Home</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">checked</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">bool</span><span class="p">,</span>
+  <span class="nx">value</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">number</span><span class="p">.</span><span class="nx">isRequired</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">mapStateToProps</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">checked</span><span class="o">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">checkBox</span><span class="p">.</span><span class="nx">checked</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">number</span><span class="p">.</span><span class="nx">value</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">mapDispatchToProps</span> <span class="o">=</span> <span class="p">(</span><span class="nx">dispatch</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">onChangeCheck</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">dispatch</span><span class="p">(</span><span class="nx">toggleCheck</span><span class="p">());</span>
+    <span class="p">},</span>
+    <span class="nx">onIncrease</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">dispatch</span><span class="p">(</span><span class="nx">incNumber</span><span class="p">());</span>
+    <span class="p">},</span>
+    <span class="nx">onDecrease</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">dispatch</span><span class="p">(</span><span class="nx">decNumber</span><span class="p">());</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">mapStateToProps</span><span class="p">,</span> <span class="nx">mapDispatchToProps</span><span class="p">)(</span><span class="nx">Home</span><span class="p">);</span>
 </code></pre></div>
 <p>We&#39;ll need a place to keep all of the resources we learned in the <a href="get_started.html">Get Started</a> section. Let&#39;s make a visual library for our present stack and exciting technologies! Copy the code below and paste it into <code>&lt;your-awesome-app&gt;/client/components/home.jsx</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">PropTypes</span><span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">connect</span><span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react-redux&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">toggleCheck</span><span class="p">,</span> <span class="nx">incNumber</span><span class="p">,</span> <span class="nx">decNumber</span><span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;../actions&quot;</span><span class="p">;</span>
 
 <span class="kr">export</span> <span class="kr">const</span> <span class="nx">imageUrls</span> <span class="o">=</span> <span class="p">[</span>
   <span class="s1">&#39;http://daynin.github.io/clojurescript-presentation/img/react-logo.png&#39;</span><span class="p">,</span>
@@ -1546,24 +1838,66 @@
   <span class="s1">&#39;https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emoji_u26a1.svg/2000px-Emoji_u26a1.svg.png&#39;</span>
 <span class="p">];</span>
 
-<span class="kr">export</span> <span class="kr">class</span> <span class="nx">Home</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+<span class="kr">class</span> <span class="nx">Home</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
   <span class="nx">renderImage</span><span class="p">(</span><span class="nx">imageUrl</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
         <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">key</span><span class="p">}</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">imageUrl</span><span class="p">}</span> <span class="nx">width</span><span class="o">=</span><span class="s2">&quot;10%&quot;</span> <span class="nx">height</span><span class="o">=</span><span class="s2">&quot;10%&quot;</span><span class="o">/&gt;</span>
     <span class="p">);</span>
   <span class="p">}</span>
+
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">props</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="p">{</span><span class="nx">checked</span><span class="p">,</span> <span class="nx">value</span><span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
     <span class="k">return</span> <span class="p">(</span>
       <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;https://github.com/electrode-io&quot;</span><span class="o">&gt;</span><span class="nx">Electrode</span><span class="o">&lt;</span><span class="err">/a&gt;&lt;/h1&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;https://github.com/electrode-io&quot;</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="s2">&quot;Electrode&quot;</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/a&gt;&lt;/h1&gt;</span>
         <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Our</span> <span class="nx">beloved</span> <span class="nx">friends</span><span class="o">&lt;</span><span class="err">/p&gt;&lt;/div&gt;</span>
         <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;images&quot;</span><span class="o">&gt;</span>
           <span class="p">{</span><span class="nx">imageUrls</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">imageUrl</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">renderImage</span><span class="p">(</span><span class="nx">imageUrl</span><span class="p">,</span> <span class="nx">index</span><span class="p">))}</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Managing</span> <span class="nx">States</span> <span class="kd">with</span> <span class="nx">Redux</span><span class="o">&lt;</span><span class="err">/h2&gt;</span>
+          <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">onChangeCheck</span><span class="p">}</span> <span class="nx">type</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;checkbox&quot;</span><span class="p">}</span> <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="nx">checked</span><span class="p">}</span><span class="o">/&gt;</span>
+            <span class="nx">Checkbox</span>
+          <span class="o">&lt;</span><span class="err">/label&gt;</span>
+          <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;button&quot;</span><span class="p">}</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">onDecrease</span><span class="p">}</span><span class="o">&gt;-&lt;</span><span class="err">/button&gt;</span>
+            <span class="o">&amp;</span><span class="nx">nbsp</span><span class="p">;{</span><span class="nx">value</span><span class="p">}</span><span class="o">&amp;</span><span class="nx">nbsp</span><span class="p">;</span>
+            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;button&quot;</span><span class="p">}</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">onIncrease</span><span class="p">}</span><span class="o">&gt;+&lt;</span><span class="err">/button&gt;</span>
+          <span class="o">&lt;</span><span class="err">/div&gt;</span>
         <span class="o">&lt;</span><span class="err">/div&gt;</span>
       <span class="o">&lt;</span><span class="err">/div&gt;</span>
     <span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
+
+<span class="nx">Home</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">checked</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">bool</span><span class="p">,</span>
+  <span class="nx">value</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">number</span><span class="p">.</span><span class="nx">isRequired</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">mapStateToProps</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">checked</span><span class="o">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">checkBox</span><span class="p">.</span><span class="nx">checked</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">number</span><span class="p">.</span><span class="nx">value</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">mapDispatchToProps</span> <span class="o">=</span> <span class="p">(</span><span class="nx">dispatch</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">onChangeCheck</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">dispatch</span><span class="p">(</span><span class="nx">toggleCheck</span><span class="p">());</span>
+    <span class="p">},</span>
+    <span class="nx">onIncrease</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">dispatch</span><span class="p">(</span><span class="nx">incNumber</span><span class="p">());</span>
+    <span class="p">},</span>
+    <span class="nx">onDecrease</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">dispatch</span><span class="p">(</span><span class="nx">decNumber</span><span class="p">());</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">mapStateToProps</span><span class="p">,</span> <span class="nx">mapDispatchToProps</span><span class="p">)(</span><span class="nx">Home</span><span class="p">);</span>
 </code></pre></div>
 <p>Let&#39;s finish the UI by adding styles. Navigate to <code>&lt;your-awesome-app&gt;/client/styles/base.css</code> and add the code below:</p>
 <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">h1</span> <span class="p">{</span>
