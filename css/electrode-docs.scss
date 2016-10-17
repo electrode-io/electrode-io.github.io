@@ -1,5 +1,6 @@
 ---
 ---
+
 @import 'bourbon';
 @import '_variables';
 @import '_typography';
@@ -18,8 +19,6 @@ $columnWidth: 280px;
 $columnGutter: 40px;
 $twoColumnWidth: 2 * $columnWidth + $columnGutter;
 $navHeight: 50px;
-
-
 
 // basic reset
 * {
@@ -40,7 +39,6 @@ html {
 .right {
   float: right;
 }
-
 
 .container {
   padding-top: $navHeight;
@@ -90,6 +88,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline;
   }
 }
+
 .hash-link {
   color: $mediumTextColor;
   display: none;
@@ -170,8 +169,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
-
 .buttons-unit {
   margin-top: 60px;
   text-align: center;
@@ -251,8 +248,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 12px 0;
 
     &:first-child {
-       padding-top: 0;
-       border-top: 0;
+      padding-top: 0;
+      border-top: 0;
     }
 
     &:last-child {
@@ -388,7 +385,7 @@ section.black content {
     font-size: inherit;
     line-height: inherit;
     color: #555;
-    background-color: rgba(0,0,0,0.04);
+    background-color: rgba(0, 0, 0, 0.04);
   }
 }
 
@@ -403,7 +400,6 @@ section.black content {
     font-size: 24px;
   }
 
-
   // H2s form documentation topic dividers. Extra space helps.
   h2 {
     margin-top: 30px;
@@ -413,10 +409,10 @@ section.black content {
 
   // Make a notice box out of blockquotes in the documentation:
   blockquote {
-      padding: 15px 30px 15px 15px;
-      margin: 20px 0;
-      background-color: rgba(204, 122, 111, 0.09999999999999998);
-      border-left: 5px solid #db2975;
+    padding: 15px 30px 15px 15px;
+    margin: 20px 0;
+    background-color: rgba(204, 122, 111, 0.09999999999999998);
+    border-left: 5px solid #db2975;
     h4 {
       margin-top: 0;
     }
@@ -477,7 +473,6 @@ section.black content {
   @include background(linear-gradient($buttonBlueTop, $buttonBlueBottom));
 }
 
-
 /* Row */
 
 .row {
@@ -498,7 +493,6 @@ section.black content {
   width: 50%;
   display: table-cell;
 }
-
 
 /* Content */
 
@@ -544,7 +538,6 @@ h1 {
   margin-top: 60px;
 }
 
-
 .hll {
   background-color: #f7ebc6;
   border-left: 5px solid #f7d87c;
@@ -569,7 +562,6 @@ h1 {
   border-radius: 0;
   overflow: auto;
 }
-
 
 .highlight pre {
   padding: 0;
@@ -653,14 +645,13 @@ h1 {
   }
 }
 
-.logo-blue{
+.logo-blue {
   color: $textLogoBlue;
 }
 
-.logo-orange{
+.logo-orange {
   color: $textLogoOrange;
 }
-
 
 small code,
 li code,
@@ -750,4 +741,15 @@ p a code {
     display: inline-block;
     width: 80%;
   }
+}
+
+img[alt ^= "OTA:"] {
+  width: 50%;
+  transition: width .3s ease-in;
+  display: block;
+}
+
+img[alt ^= "OTA:"]:hover {
+  width: 100%;
+  transition: width .3s ease-in;
 }
