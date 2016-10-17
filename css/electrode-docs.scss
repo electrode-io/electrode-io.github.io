@@ -743,13 +743,13 @@ p a code {
   }
 }
 
-img[alt = "ImageZoom"] {
+img[alt ^= "OTA:"] {
   width: 50%;
   transition: width .3s ease-in;
   display: block;
 }
 
-img[alt = "ImageZoom"]:hover {
+img[alt ^= "OTA:"]:hover {
   width: 100%;
   transition: width .3s ease-in;
 }

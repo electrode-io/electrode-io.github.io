@@ -117,7 +117,7 @@ This is loaded via electrode-confippet, you go [here](https://github.com/electro
             }
         }
     }
-}
+
 ```
 
 OTA uses [bell](http://https://github.com/hapijs/bell) for oAuth you can look there for more configuration options.
@@ -130,19 +130,19 @@ OTA uses [bell](http://https://github.com/hapijs/bell) for oAuth you can look th
 To use github as an OAuth provider you need to login to github and add an OTA Application.
 
 Step 1 - Login to github and select Settings.
-![ImageZoom]( ../img/electrode-ota/1-Profile.png)
+![OTA: Profile - Step 1]( ../img/electrode-ota/1-Profile.png)
 
 Step 2 - Go to "Developer Settings" and select "OAuth applications"
-![ImageZoom](../img/electrode-ota/2-Register OAuth.png)
+![OTA: Register OAuth - Step 2](../img/electrode-ota/2-Register OAuth.png)
 
 Step 3 - Setup your application.   Keep in mind protocols and urls are important.  Also you can set up a key for development also (localhost.yourdomain.com).
 Make sure that resolves, for your machine, try adding it to your hosts file.
-![ImageZoom](../img/electrode-ota/3-Register OAuth.png)
+![OTA: Register OAuth - Step 3](../img/electrode-ota/3-Register OAuth.png)
 
 Step 4 - Wild celebration, or double check that everthing is correct.  This is your you get your clientId and clientSecret.
 Keep your clientSecret secret (avoid checking it into public github for example).
 
-![ImageZoom](../img/electrode-ota/4-Review OAuth.png)
+![OTA: Register OAuth - Step 4](../img/electrode-ota/4-Review OAuth.png)
 
 ### Starting
 
@@ -168,7 +168,7 @@ After you have registered and you've logged out you may need to log back in.
 ```
 ### Server Token
 Your server token page should look like this.
- ![ImageZoom](../img/electrode-ota/NewToken.png) 
+ ![OTA: Server Token](../img/electrode-ota/NewToken.png) 
  
 ### For IOS
 Then add the following to `ios/<%=your_app_name%>/Info.plist`. You can open this in ```sh open ios/<%=your_app_name%>.xcodeprog```
@@ -203,16 +203,16 @@ You can use either the microsoft code-push cli or the Electrode OTA Desktop to m
 install [here](https://github.com/electrode-io/electrode-ota-desktop/releases).  It is not signed(yet) so you will need
 to ctrl-click the application and select open to run.
 
- ![ImageZoom](../img/electrode-ota/DMG.png)
- ![ImageZoom](../img/electrode-ota/Login.png)
- ![ImageZoom](../img/electrode-ota/GettingStarted.png)
- ![ImageZoom](../img/electrode-ota/NewAppSuccess.png)
- ![ImageZoom](../img/electrode-ota/NewDeployment.png)
- ![ImageZoom](../img/electrode-ota/NewDeployment1.png)
- ![ImageZoom](../img/electrode-ota/Releases.png)
- ![ImageZoom](../img/electrode-ota/Collaborate.png)
- ![ImageZoom](../img/electrode-ota/AddKey.png)
- ![ImageZoom](../img/electrode-ota/NewKey.png)
+ ![OTA: DMG](../img/electrode-ota/DMG.png)
+ ![OTA: Login](../img/electrode-ota/Login.png)
+ ![OTA: GettingStarted](../img/electrode-ota/GettingStarted.png)
+ ![OTA: New App Success](../img/electrode-ota/NewAppSuccess.png)
+ ![OTA: New Deployment](../img/electrode-ota/NewDeployment.png)
+ ![OTA: New Deployment Success](../img/electrode-ota/NewDeployment1.png)
+ ![OTA: Releases](../img/electrode-ota/Releases.png)
+ ![OTA: Collaborate](../img/electrode-ota/Collaborate.png)
+ ![OTA: Add Key](../img/electrode-ota/AddKey.png)
+ ![OTA: New Key](../img/electrode-ota/NewKey.png)
  
  
  
