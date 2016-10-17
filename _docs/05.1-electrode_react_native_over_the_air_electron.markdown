@@ -6,22 +6,213 @@ toplevel: "React Native: Over the Air"
 
 ## Electrode Over the Air Server
 Electrode Over the Air (OTA) is a Microsoft(tm) Code Push compatible server for allowing mobile applications to update
-with or without user intravention.
+with or without user intravention.  
 
+
+
+### Prerequisites
+
+* Node v6 or greater [here](https://nodejs.org/en/download/current/).
+* Apache Cassandra [here](http://cassandra.apache.org/) 
+* Github Account (if using github as auth provider) [here](http://github.com)
+
+
+### Installation
+This covers a minimal way to install and run electrode-ota-server.  For most scenarios this is 
+not complete.   Be sure to setup SSL, load balancing, and all the other requirements for your environment.
+
+```sh
+  $ mkdir your_ota
+  $ cd your_ota
+  $ npm init
+  $ npm install electrode-ota-server --save
+  $ mkdir config
+
+```
+
+In package.json add
+By default the server will start with production config.  This can be overridden with NODE_ENV.
+
+```json
+"scripts":{
+  "start":" node node_modules/.bin/electrode-ota-server"
+}
+```
+
+### Configure
+Inside the config create a config/production.json. You can configure different settings
+for production,test and development.   In production please use TLS/HTTPS for the server.
+This is loaded via electrode-confippet, you go [here](https://github.com/electrode-io/electrode-confippet)
+ to read more.  
+ 
+```js
+{
+    "app": {
+        //The URL to where your server is for downloading packages
+        // by the client
+        "downloadUrl": "http://<%=your_ota_server%>/storagev2/"
+    },
+    "plugins": {
+        
+        "electrode-ota-server-dao-cassandra": {
+            "options": {
+                "contactPoints": [
+                    //You can enter an array of cassandra "contactPoints" 
+                    // but you need at least one.
+                    // If you are running cassandra locally you can 
+                    // use localhost.
+                    "<%=cassandra.hosts%>"
+                ],
+                //Optional username and password.  If you are connceting 
+                // to a cassandra instance that
+                // requires them.
+                "username": "<%=cassandra.username%>",
+                "password": "<%=cassandra.password%>"
+                //Optional the keyspace you want to run the server with. 
+                "keyspace":"<%=cassanra.keyspace%>
+            }
+        },
+        "electrode-ota-server-auth": {
+            "options": {
+                "strategy": {
+                    //Authentication Strategy.  
+                    // The OTA uses bell for OAuth.  
+                    // You can see the vendors and options there. 
+                    // We test with github oAuth.
+                
+                    "github-oauth": {
+                        "options": {
+                            //A Cookie password.
+                            // otherwise a random one (Optional)
+                            "password":"<%= another cookie password%>",
+                             //This is true by default if not running 
+                             //https change to false.   
+                             //You should run over https though
+                            "isSecure":true,
+                            //(Optional) The callback hostname of your server.   
+                            // If you are running behind a proxy,
+                            // it may be different than what the 
+                            // server thinks it is. 
+                            "location":"<%= the address of your server %>",
+                            //Get the Oauth info from github.
+                            "clientId": "<%=github oauth clientId%>",
+                            "clientSecret": "<%=github oauth clientSecret%>"
+                        }
+                    },
+                   "session": {
+                        "options": {
+                            //(Optional) A Cookie password 
+                            // Otherwise a random one is used an written to
+                            // .random.json
+                            
+                            "password":"<%= another cookie password%>",
+                             //This is true by default if not running 
+                             // https change to false.  
+                             //You should run over https though
+                            "isSecure":true
+                        }
+                   }
+                    
+                }
+            }
+        }
+    }
+}
+```
+
+OTA uses [bell](http://https://github.com/hapijs/bell) for oAuth you can look there for more configuration options.
+
+
+
+
+
+### Setting up OAuth
+To use github as an OAuth provider you need to login to github and add an OTA Application.
+
+Step 1 - Login to github and select Settings.
+![ImageZoom]( ../img/electrode-ota/1-Profile.png)
+
+Step 2 - Go to "Developer Settings" and select "OAuth applications"
+![ImageZoom](../img/electrode-ota/2-Register OAuth.png)
+
+Step 3 - Setup your application.   Keep in mind protocols and urls are important.  Also you can set up a key for development also (localhost.yourdomain.com).
+Make sure that resolves, for your machine, try adding it to your hosts file.
+![ImageZoom](../img/electrode-ota/3-Register OAuth.png)
+
+Step 4 - Wild celebration, or double check that everthing is correct.  This is your you get your clientId and clientSecret.
+Keep your clientSecret secret (avoid checking it into public github for example).
+
+![ImageZoom](../img/electrode-ota/4-Review OAuth.png)
+
+### Starting
+
+```sh
+ $ npm start
+```
+
+## Client Modification.
+To use the server you just set up you will need to make the following modifications to your client app, along
+with setting up Apps with the OTA Server. To configure your clients to use the new code push server login with
+
+
+### Register 
+You only need/can register once per github account.  So the first time each user would need to:
+```sh
+ $ code-push register https://<%=your_ota_server%>
+```
+
+### Login
+After you have registered and you've logged out you may need to log back in.
+```sh
+ $ code-push login https://<%=your_ota_server%>
+```
 ### Server Token
- ![NewToken](../img/electrode-ota/NewToken.png) 
+Your server token page should look like this.
+ ![ImageZoom](../img/electrode-ota/NewToken.png) 
+ 
+### For IOS
+Then add the following to `ios/<%=your_app_name%>/Info.plist`. You can open this in ```sh open ios/<%=your_app_name%>.xcodeprog```
+to edit.
+
+```xml
+    <key>CodePushServerURL</key>
+    <string>http://<%=your_ota_server%></string>
+```
+
+
+### For Android
+Modify  `android/app/src/main/java/com/<%=your_app_name%>/MainApplication.java`
+
+```java
+    /**
+     * A list of packages used by the app. If the app uses additional views
+     * or modules besides the default ones, add more packages here.
+     **/
+    @Override
+    protected List<ReactPackage> getPackages() {
+        return Arrays.<ReactPackage>asList(
+                new MainReactPackage(),
+                new CodePush("<%=your_ota_deployment_key%>", this, BuildConfig.DEBUG, "<%=your_ota_server%>")
+        );
+    }
+
+```
 
 ### Electrode Over the Air Desktop
- ![DMG](../img/electrode-ota/DMG.png)
- ![Login](../img/electrode-ota/Login.png)
- ![GettingStarted](../img/electrode-ota/GettingStarted.png)
- ![NewAppSuccess](../img/electrode-ota/NewAppSuccess.png)
- ![NewDeployment](../img/electrode-ota/NewDeployment.png)
- ![NewDeployment1](../img/electrode-ota/NewDeployment1.png)
- ![Release](../img/electrode-ota/Releases.png)
- ![Collaborate](../img/electrode-ota/Collaborate.png)
- ![AddKey](../img/electrode-ota/AddKey.png)
- ![NewKey](../img/electrode-ota/NewKey.png)
+You can use either the microsoft code-push cli or the Electrode OTA Desktop to manage your deployments.   You can get the
+install [here](https://github.com/electrode-io/electrode-ota-desktop/releases).  It is not signed(yet) so you will need
+to ctrl-click the application and select open to run.
+
+ ![ImageZoom](../img/electrode-ota/DMG.png)
+ ![ImageZoom](../img/electrode-ota/Login.png)
+ ![ImageZoom](../img/electrode-ota/GettingStarted.png)
+ ![ImageZoom](../img/electrode-ota/NewAppSuccess.png)
+ ![ImageZoom](../img/electrode-ota/NewDeployment.png)
+ ![ImageZoom](../img/electrode-ota/NewDeployment1.png)
+ ![ImageZoom](../img/electrode-ota/Releases.png)
+ ![ImageZoom](../img/electrode-ota/Collaborate.png)
+ ![ImageZoom](../img/electrode-ota/AddKey.png)
+ ![ImageZoom](../img/electrode-ota/NewKey.png)
  
  
  
