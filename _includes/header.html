@@ -1,0 +1,17 @@
+<header class="header">
+  <a href="{{ site.baseurl }}/index.html">
+    <img class="electrode-logo" src="/img/electrode-logo-sm@2x.png" />
+  </a>
+  <div class="header-right-side">
+    <ul class="header-menu">
+      <li class="header-menu-item home"><a href="{{ site.baseurl }}/index.html">HOME</a></li>
+      <li class="header-menu-item docs {% if {{page.sectionid}} == 'docs' %} selected {% endif %}"><a href="{{ site.baseurl }}/docs/what_is_electrode.html">DOCS</a></li>
+      <li class="header-menu-item contribute {% if {{page.sectionid}} == 'contributing' %} selected {% endif %}"><a href="{{ site.baseurl }}/docs/contribute.html">CONTRIBUTE</a></li>
+    </ul>
+    <ul class="header-social">
+      <li><a href="#">pocket</a></li>
+      <li><a href="#">twitter</a></li>
+      <li><a href="#">github</a></li>
+    </ul>
+  </div>
+</header>
