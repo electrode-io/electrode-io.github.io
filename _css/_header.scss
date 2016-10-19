@@ -4,6 +4,7 @@
   width: 100%;
   height: 97px;
   background-color: #00294b;
+  border-bottom: 1px solid transparent;
 
   .electrode-logo {
     height: 35px;
@@ -60,9 +61,39 @@
     list-style: none;
     width: 223px;
     vertical-align: top;
+    padding-left: 22px;
 
     li {
       display: inline-block;
+      width: 48px;
+      height: 72px;
+      border-radius: 0 0 4px 4px;
+      vertical-align: top;
+      margin: 0 16px 0 0;
+
+      img {
+        width: 24px;
+        height: 20px;
+        margin: 34px 0 0 12px;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    .header-social-pocket {
+      background-color: #eb3d4e;
+    }
+
+    .header-social-twitter {
+      background-color: #1686c0;
+    }
+
+    .header-social-github {
+      background-color: #ffffff;
     }
   }
 }
