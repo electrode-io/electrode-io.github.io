@@ -1,10 +1,12 @@
 @import '_typography';
 
 .header {
+  -webkit-font-smoothing: antialiased;
   width: 100%;
   height: 97px;
   background-color: #00294b;
   border-bottom: 1px solid transparent;
+  min-width: 1080px;
 
   .electrode-logo {
     height: 35px;
@@ -23,12 +25,12 @@
 
     .header-menu-item {
       display: inline-block;
-      padding-top: 37px;
+      padding-top: 33px;
       margin: 0 75px 0 0;
       min-width: 95px;
 
       a {
-        font-family: "Gotham-Rounded";
+        font-family: "Gotham-Rounded-Bold";
         font-weight: 500;
         font-size: 16px;
         letter-spacing: 1px;
@@ -43,6 +45,14 @@
 
     .selected {
       border-top: 8px solid #FFFFFF;
+    }
+
+    .header-menu-item.home {
+      margin-right: 55px;
+    }
+
+    .header-menu-item.docs {
+      margin-right: 55px;
     }
 
     .header-menu-item.contribute  {
