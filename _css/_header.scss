@@ -2,11 +2,12 @@
 
 .header {
   -webkit-font-smoothing: antialiased;
-  width: 100%;
   height: 97px;
   background-color: #00294b;
   border-bottom: 1px solid transparent;
-  min-width: 1080px;
+  width: 100%;
+  min-width: 768px;
+
 
   .electrode-logo {
     height: 35px;
@@ -21,7 +22,6 @@
   .header-menu {
     display: inline-block;
     list-style: none;
-
 
     .header-menu-item {
       display: inline-block;
@@ -104,6 +104,90 @@
 
     .header-social-github {
       background-color: #ffffff;
+    }
+  }
+}
+
+@media (min-width: 0px) {
+  .header {
+    .header-menu {
+      .header-menu-item {
+        min-width: 40px;
+      }
+
+      .header-menu-item.home {
+        margin-right: 5px;
+      }
+
+      .header-menu-item.docs {
+        margin-right: 5px;
+      }
+
+      .header-menu-item.contribute {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    .header-menu {
+      .header-menu-item {
+        min-width: 55px;
+      }
+
+      .header-menu-item.home {
+        margin-right: 5px;
+      }
+
+      .header-menu-item.docs {
+        margin-right: 5px;
+      }
+
+      .header-menu-item.contribute {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    .header-menu {
+      .header-menu-item {
+        min-width: 95px;
+      }
+
+      .header-menu-item.home {
+        margin-right: 35px;
+      }
+
+      .header-menu-item.docs {
+        margin-right: 35px;
+      }
+
+      .header-menu-item.contribute {
+        margin-right: 45px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .header {
+    .header-menu {
+      .header-menu-item.home {
+        margin-right: 55px;
+      }
+
+      .header-menu-item.docs {
+        margin-right: 55px;
+      }
+
+      .header-menu-item.contribute {
+        margin-right: 75px;
+      }
     }
   }
 }
