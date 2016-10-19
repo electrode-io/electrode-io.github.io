@@ -38,25 +38,6 @@
   <div class="container">
     {% include header.html %}
 
-
-    <div class="nav-main">
-      <div class="wrap">
-        <a class="nav-home" href="{{ site.baseurl }}/index.html">
-          <img class="nav-logo" src="{{ site.baseurl }}/img/electrode-02.png" width="45" height="45" style="margin-bottom: 5px;">
-          electrode
-        </a>
-
-        <ul class="nav-site nav-site-internal">
-          <li><a href="{{ site.baseurl }}/docs/what_is_electrode.html"{% if page.sectionid == 'docs' or page.sectionid == 'tips' or page.sectionid == 'contributing' %} class="active"{% endif %}>docs</a></li>
-          <!--<li><a href="{{ site.baseurl }}/support.html"{% if page.id == 'support' %} class="active"{% endif %}>Support</a></li>-->
-        </ul>
-        <ul class="nav-site nav-site-external">
-          <li><a href="https://github.com/electrode-io">GitHub</a></li>
-          <li><a href="http://walmartlabs.com"><span class="logo-orange">@</span><span class="logo-blue">Walmart</span><span class="logo-orange">Labs</span></a></li>
-        </ul>
-      </div>
-    </div>
-
     {% if page.id == 'home' %}
     <div class="hero">
       <div class="wrap">
