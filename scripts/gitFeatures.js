@@ -1,7 +1,7 @@
 "use strict";
 
 function GitFeatures() {
-  this.repos = this.getRepos();
+  this.repos = new GitRepos();
   this.issueHeaderId = "help-features";
   this.issueListIdPrefix = "feature-list-";
 }
