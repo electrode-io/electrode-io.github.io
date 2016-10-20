@@ -1786,9 +1786,10 @@ Password:
 </code></pre></div>
 <p>You should see a terminal message <code>Logged in as your-example-email@your-email-provider.com</code>. Now, let&#39;s deploy!</p>
 
-<p>You&#39;ll need to specify the <a href="https://devcenter.heroku.com/articles/node-best-practices">version of node</a> you are using on your machine into our <code>package.json</code>. Add the code below to your <code>package.json</code>. Make sure to change <code>&quot;node&quot;: &quot;4.2.x&quot;</code> to your actual node version. To find out what version you have, run <code>node -v</code> in the command line</p>
+<p>You&#39;ll need to specify the <a href="https://devcenter.heroku.com/articles/node-best-practices">version of node</a> and npm you are using on your machine into our <code>package.json</code>. Add the code below to your <code>package.json</code>. Make sure to change <code>&quot;node&quot;: &quot;4.2.x&quot;</code>, and <code>&quot;npm&quot;: 3.10.x</code> to your actual node and npm version. To find out what versions you have, run <code>node -v</code> and <code>npm -v</code> in the command line</p>
 <div class="highlight"><pre><code class="language-json" data-lang="json">    <span class="s2">&quot;engines&quot;</span><span class="err">:</span> <span class="p">{</span>
-      <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;4.2.x&quot;</span>
+      <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;4.2.x&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;npm&quot;</span><span class="p">:</span> <span class="s2">&quot;3.10.x&quot;</span>
     <span class="p">}</span>
 </code></pre></div>
 <p>It should now look similar to this:</p>
