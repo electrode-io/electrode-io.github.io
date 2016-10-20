@@ -1,0 +1,193 @@
+@import '_typography';
+
+.header {
+  -webkit-font-smoothing: antialiased;
+  height: 97px;
+  background-color: #00294b;
+  border-bottom: 1px solid transparent;
+  width: 100%;
+  min-width: 768px;
+
+
+  .electrode-logo {
+    height: 35px;
+    margin: 32px 0 30px 36px;
+    width: 200px;
+  }
+
+  .header-right-side {
+    float: right;
+  }
+
+  .header-menu {
+    display: inline-block;
+    list-style: none;
+
+    .header-menu-item {
+      display: inline-block;
+      padding-top: 33px;
+      margin: 0 75px 0 0;
+      min-width: 95px;
+
+      a {
+        font-family: "Gotham-Rounded-Bold";
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: #ffffff;
+        text-align: center;
+        display: inline-block;
+        min-width: 95px;
+        text-decoration: none;
+
+      }
+    }
+
+    .selected {
+      border-top: 8px solid #FFFFFF;
+    }
+
+    .header-menu-item.home {
+      margin-right: 55px;
+    }
+
+    .header-menu-item.docs {
+      margin-right: 55px;
+    }
+
+    .header-menu-item.contribute  {
+      min-width: 145px;
+
+      a {
+        min-width: 145px;
+      }
+    }
+  }
+
+  .header-social {
+    border-left: 1px solid #1a3f5d;
+    display: inline-block;
+    height: 97px;
+    list-style: none;
+    width: 223px;
+    vertical-align: top;
+    padding-left: 22px;
+
+    li {
+      display: inline-block;
+      width: 48px;
+      height: 72px;
+      border-radius: 0 0 4px 4px;
+      vertical-align: top;
+      margin: 0 16px 0 0;
+
+      img {
+        width: 24px;
+        height: 20px;
+        margin: 34px 0 0 12px;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    .header-social-pocket {
+      background-color: #eb3d4e;
+    }
+
+    .header-social-twitter {
+      background-color: #1686c0;
+    }
+
+    .header-social-github {
+      background-color: #ffffff;
+    }
+  }
+}
+
+@media (min-width: 0px) {
+  .header {
+    .header-menu {
+      .header-menu-item {
+        min-width: 40px;
+      }
+
+      .header-menu-item.home {
+        margin-right: 5px;
+      }
+
+      .header-menu-item.docs {
+        margin-right: 5px;
+      }
+
+      .header-menu-item.contribute {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    .header-menu {
+      .header-menu-item {
+        min-width: 55px;
+      }
+
+      .header-menu-item.home {
+        margin-right: 5px;
+      }
+
+      .header-menu-item.docs {
+        margin-right: 5px;
+      }
+
+      .header-menu-item.contribute {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    .header-menu {
+      .header-menu-item {
+        min-width: 95px;
+      }
+
+      .header-menu-item.home {
+        margin-right: 35px;
+      }
+
+      .header-menu-item.docs {
+        margin-right: 35px;
+      }
+
+      .header-menu-item.contribute {
+        margin-right: 45px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .header {
+    .header-menu {
+      .header-menu-item.home {
+        margin-right: 55px;
+      }
+
+      .header-menu-item.docs {
+        margin-right: 55px;
+      }
+
+      .header-menu-item.contribute {
+        margin-right: 75px;
+      }
+    }
+  }
+}
