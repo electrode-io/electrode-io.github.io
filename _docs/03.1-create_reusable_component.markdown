@@ -52,9 +52,9 @@ Open the application up with your favorite text editor. We'll start with a fast 
 
     Test driven development is the WalmartLabs way and critical for successful growth and scaling. All testing code lives in this folder and we will focus on unit testing with Mocha + Enzyme soon.
 
-    - `client/components/.eslintrc`
+- `src/components/.eslintrc`
 
-        A configuration file that sets our custom linting rules and basic syntax validation. In this case it is extended from the `electrode-archetype-react-component`.
+    A configuration file that sets our custom linting rules and basic syntax validation. In this case it is extended from the `electrode-archetype-react-component`.
 
 - `gulpfile.js`
 
