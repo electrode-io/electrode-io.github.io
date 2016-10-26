@@ -74,7 +74,7 @@ This is loaded via electrode-confippet, you go [here](https://github.com/electro
                 //Optional - If your cassandra server does not require a password
                 "password": "<%=cassandra.password%>"
                 //Optional the keyspace you want to run the server with, by default the keyspace is "wm_ota". 
-                "keyspace":"<%=cassandra.keyspace%>
+                "keyspace":"<%=cassandra.keyspace%>"
             }
         },
         //This allows for other fileservice mechanisms to be plugged in.  Currently the files are stored
