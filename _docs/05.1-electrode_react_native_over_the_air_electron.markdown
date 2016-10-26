@@ -56,7 +56,7 @@ This is loaded via electrode-confippet, you go [here](https://github.com/electro
  to read more.  
  
 **The variables that should be configured is are in <%= variable %>.**
-**And the comments must be removed if using JSON.  
+**The comments must be removed if using JSON.**
 
 ```js
 {
