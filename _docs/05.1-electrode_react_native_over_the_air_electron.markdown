@@ -17,6 +17,16 @@ with or without user intravention.
 * Github Account (if using github as auth provider) [here](http://github.com)
 
 
+
+### Running Cassandra
+Books have been written about running and configuring cassandra, this is just the most minimal way you can run
+it.  Please read such books before running this server on a public network.
+```sh
+$ curl http://apache.mirrors.hoobly.com/cassandra/3.9/apache-cassandra-3.9-bin.tar.gz | tar -xvzf -
+$ cd apache-cassandra-3.9/
+$ ./bin/cassandra
+```
+
 ### Installation
 This covers a minimal way to install and run electrode-ota-server.  For most scenarios this is 
 not complete.   Be sure to setup SSL, load balancing, and all the other requirements for your environment.
@@ -44,27 +54,18 @@ Inside the config create a config/production.json. You can configure different s
 for production,test and development.   In production please use TLS/HTTPS for the server.
 This is loaded via electrode-confippet, you go [here](https://github.com/electrode-io/electrode-confippet)
  to read more.  
- 
-```js
-{
-    "app": {
-        //The URL to where your server is for downloading packages
-        // by the client
-        "downloadUrl": "http://<%=your_ota_server%>/storagev2/"
-    },
+
+```
     "plugins": {
         
         "electrode-ota-server-dao-cassandra": {
             "options": {
                 "contactPoints": [
-                    //You can enter an array of cassandra "contactPoints" 
-                    // but you need at least one.
-                    // If you are running cassandra locally you can 
-                    // use localhost.
+                    //You can enter an array of cassandra "contactPoints" but you need at least one.
+                    // If you are running cassandra locally you can use "localhost".
                     "<%=cassandra.hosts%>"
                 ],
-                //Optional username and password.  If you are connceting 
-                // to a cassandra instance that
+                //Optional username and password.  If you are connceting to a cassandra instance that
                 // requires them.
                 "username": "<%=cassandra.username%>",
                 "password": "<%=cassandra.password%>"
@@ -72,27 +73,29 @@ This is loaded via electrode-confippet, you go [here](https://github.com/electro
                 "keyspace":"<%=cassanra.keyspace%>
             }
         },
+        //This allows for other fileservice mechanisms to be plugged in.  Currently the files are stored
+        // in the cassandra db, but the could be stored in anything really, including the filesystem.
+        "electrode-ota-server-fileservice":{
+              "options": {
+                //this needs to be the url of your acquistion server.  It can be the same as your current
+                // management server.  This value is just an example.
+                "downloadUrl": "http://<%=your_ota_server%>/storagev2/"
+              }
+        },
         "electrode-ota-server-auth": {
             "options": {
                 "strategy": {
-                    //Authentication Strategy.  
-                    // The OTA uses bell for OAuth.  
-                    // You can see the vendors and options there. 
-                    // We test with github oAuth.
+                    //Authentication Strategy.  The OTA uses [bell](http://https://github.com/hapijs/bell) for
+                    //OAuth.  You can see the vendors and options there.  We test with github oAuth.
                 
                     "github-oauth": {
                         "options": {
-                            //A Cookie password.
-                            // otherwise a random one (Optional)
+                            //A Cookie password otherwise a raondom one (Optional)
                             "password":"<%= another cookie password%>",
-                             //This is true by default if not running 
-                             //https change to false.   
-                             //You should run over https though
+                             //This is true by default if not running https change to false.   You should run over https though
                             "isSecure":true,
-                            //(Optional) The callback hostname of your server.   
-                            // If you are running behind a proxy,
-                            // it may be different than what the 
-                            // server thinks it is. 
+                            //The callback hostname of your server.   If you are running behind a proxy,
+                            //it may be different than what the server thinks it is. (Optional)
                             "location":"<%= the address of your server %>",
                             //Get the Oauth info from github.
                             "clientId": "<%=github oauth clientId%>",
@@ -101,25 +104,20 @@ This is loaded via electrode-confippet, you go [here](https://github.com/electro
                     },
                    "session": {
                         "options": {
-                            //(Optional) A Cookie password 
-                            // Otherwise a random one is used an written to
-                            // .random.json
-                            
+                            //A Cookie password otherwise a raondom one (Optional)
                             "password":"<%= another cookie password%>",
-                             //This is true by default if not running 
-                             // https change to false.  
-                             //You should run over https though
+                             //This is true by default if not running https change to false.   You should run over https though
                             "isSecure":true
                         }
                    }
                     
                 }
             }
-        }
+        },
     }
 
-```
 
+```
 OTA uses [bell](http://https://github.com/hapijs/bell) for oAuth you can look there for more configuration options.
 
 
