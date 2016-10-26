@@ -11,9 +11,8 @@ with or without user intravention.
 
 
 ### Prerequisites
-
 * Node v6 or greater [here](https://nodejs.org/en/download/current/).
-* Apache Cassandra [here](http://cassandra.apache.org/) 
+* Apache Cassandra [here](http://cassandra.apache.org/) and getting started [here](http://cassandra.apache.org/doc/latest/getting_started/index.html)
 * Github Account (if using github as auth provider) [here](http://github.com)
 
 
