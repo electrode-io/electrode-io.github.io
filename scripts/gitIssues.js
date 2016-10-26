@@ -1,85 +1,21 @@
 "use strict";
 
 function GitIssues() {
-  this.repos = this.getRepos();
+  this.repos = new GitRepos();
   this.issueHeaderId = "fix-issues";
   this.issueListIdPrefix = "issue-list-";
 }
 
-GitIssues.prototype.getRepos = function() {
-  return [
-    {
-      "id": "electrode-io",
-      "name": "Electrode-io",
-      "url": "https://github.com/electrode-io/electrode-io.github.io",
-      "issuesUrl": "https://github.com/electrode-io/electrode-io.github.io/issues",
-      "issuesApi": "https://api.github.com/repos/electrode-io/electrode-io.github.io/issues"
-    },
-    {
-      "id": "electrode-electrify",
-      "name": "Electrode-Electrify",
-      "url": "https://github.com/electrode-io/electrode-electrify",
-      "issuesUrl": "https://github.com/electrode-io/electrode-electrify/issues",
-      "issuesApi": "https://api.github.com/repos/electrode-io/electrode-electrify/issues"
-    },
-    {
-      "id": "electrode-react-ssr-caching",
-      "name": "Electrode React-SSR-Caching",
-      "url": "https://github.com/electrode-io/electrode-react-ssr-caching",
-      "issuesUrl": "https://github.com/electrode-io/electrode-react-ssr-caching/issues",
-      "issuesApi": "https://api.github.com/repos/electrode-io/electrode-react-ssr-caching/issues"
-    },
-    {
-      "id": "electrode-explorer",
-      "name": "Electrode Explorer",
-      "url": "https://github.com/electrode-io/electrode-explorer",
-      "issuesUrl": "https://github.com/electrode-io/electrode-explorer/issues",
-      "issuesApi": "https://api.github.com/repos/electrode-io/electrode-explorer/issues"
-    },
-    {
-      "id": "electrode-redux-router-engine",
-      "name": "Electrode Redux-Router-Engine",
-      "url": "https://github.com/electrode-io/electrode-redux-router-engine",
-      "issuesUrl": "https://github.com/electrode-io/electrode-redux-router-engine/issues",
-      "issuesApi": "https://api.github.com/repos/electrode-io/electrode-redux-router-engine/issues"
-    },
-    {
-      "id": "electrode-csrf-jwt",
-      "name": "Electrode CSRF-JWT",
-      "url": "https://github.com/electrode-io/electrode-csrf-jwt",
-      "issuesUrl": "https://github.com/electrode-io/electrode-csrf-jwt/issues",
-      "issuesApi": "https://api.github.com/repos/electrode-io/electrode-csrf-jwt/issues"
-    },
-    {
-      "id": "electrode-confippet",
-      "name": "Electrode Confippet",
-      "url": "https://github.com/electrode-io/electrode-confippet",
-      "issuesUrl": "https://github.com/electrode-io/electrode-confippet/issues",
-      "issuesApi": "https://api.github.com/repos/electrode-io/electrode-confippet/issues"
-    },
-    {
-      "id": "above-the-fold-only-server-render",
-      "name": "Electrode Above-the-Fold-Only-Server-Render",
-      "url": "https://github.com/electrode-io/above-the-fold-only-server-render",
-      "issuesUrl": "https://github.com/electrode-io/above-the-fold-only-server-render/issues",
-      "issuesApi": "https://api.github.com/repos/electrode-io/above-the-fold-only-server-render/issues"
-    },
-    {
-      "id": "electrode-bundle-analyzer",
-      "name": "Electrode Bundle Analyzer",
-      "url": "https://github.com/electrode-io/electrode-bundle-analyzer",
-      "issuesUrl": "https://github.com/electrode-io/electrode-bundle-analyzer/issues",
-      "issuesApi": "https://api.github.com/repos/electrode-io/electrode-bundle-analyzer/issues"
-    }
-  ];
-};
-
 GitIssues.prototype.run = function() {
-  var index;
+  var self = this;
 
-  for(index = 0; index < this.repos.length; index += 1) {
-    this.render(this.repos[index]);
-  }
+  self.repos.getRepos().then(function(reposList) {
+    var index;
+
+    for(index = 0; index < reposList.length; index += 1) {
+      self.render(reposList[index]);
+    }
+  });
 };
 
 GitIssues.prototype.render = function(repo) {
@@ -118,7 +54,7 @@ GitIssues.prototype.appendIssueHeader = function(repo, issues) {
 
 GitIssues.prototype.createRepoName = function(repo) {
   var repoName = document.createElement("a");
-  repoName.setAttribute("href", repo.url);
+  repoName.setAttribute("href", repo.html_url);
   repoName.setAttribute("class", "repo-name");
   repoName.innerHTML = repo.name;
   return repoName;
@@ -126,15 +62,15 @@ GitIssues.prototype.createRepoName = function(repo) {
 
 GitIssues.prototype.createIssuesSeeAll = function(repo) {
   var seeAll = document.createElement("a");
-  seeAll.setAttribute("href", repo.issuesUrl);
+  seeAll.setAttribute("href", this.repos.getIssuesUrl(repo));
   seeAll.setAttribute("class", "repo-issues-see-all");
   seeAll.innerHTML = "See All";
   return seeAll;
 };
 
-GitIssues.prototype.getData = function(request) {
+GitIssues.prototype.getData = function(repo) {
   return $.ajax({
-    url: request.issuesApi,
+    url: this.repos.getIssuesApi(repo),
     method: "GET"
   });
 };
@@ -144,7 +80,7 @@ GitIssues.prototype.renderIssueList = function(repo, issueList) {
   var issue;
   var maxIssues = 3;
   var maxLength = (issueList.length > maxIssues) ? maxIssues : issueList.length;
-  var repoIssueList = document.getElementById(this.issueListIdPrefix + repo.id);
+  var repoIssueList = document.getElementById(this.issueListIdPrefix + repo.name);
 
   for (index = 0; index < maxLength; index += 1) {
     issue = issueList[index];
@@ -155,7 +91,7 @@ GitIssues.prototype.renderIssueList = function(repo, issueList) {
 
 GitIssues.prototype.createIssueList = function(repo) {
   var issueList = document.createElement("ul");
-  issueList.setAttribute("id", this.issueListIdPrefix + repo.id);
+  issueList.setAttribute("id", this.issueListIdPrefix + repo.name);
   issueList.setAttribute("class", "issue-list");
   return issueList;
 };

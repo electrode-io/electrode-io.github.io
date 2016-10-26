@@ -5,6 +5,7 @@
 @import '_variables';
 @import '_typography';
 @import '_solarized';
+@import '_header';
 
 @mixin code-typography {
   font-family: 'source-code-pro', Menlo, Consolas, 'Courier New', monospace;
@@ -41,7 +42,6 @@ html {
 }
 
 .container {
-  padding-top: $navHeight;
   min-width: $contentWidth + (2 * $contentPadding);
 }
 
@@ -431,6 +431,7 @@ section.black content {
 }
 
 .docs-prevnext {
+  clear: right;
   padding-top: 40px;
   padding-bottom: 40px;
 }
