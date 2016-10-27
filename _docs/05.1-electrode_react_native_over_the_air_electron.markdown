@@ -176,7 +176,8 @@ You only need/can register once per github account.  So the first time each user
 ```
 
 #### Login
-After you have registered and you've logged out you may need to log back in.
+After you have registered if you've logged out you may need to log back in, or your acccess-key is lost or expired you
+can log back in.
 ```sh
  $ code-push login https://<%=your_ota_server%>
 ```
@@ -220,8 +221,8 @@ to edit.
     <key>CodePushServerURL</key>
     <string>http://<%=your_ota_server%></string>
 ```
-If your OTA server is not running over https you will need to add an exception to it in the Info.plist, use
-Xcode to update.
+If your OTA server is not running over https you will need to add an exception to it in the  `ios/<%=your_app_name%>/Info.plist`,
+or use Xcode to update the file.
 ```xml
 <dict>
 	<key>NSAllowsArbitraryLoads</key>
@@ -257,22 +258,44 @@ Modify  `android/app/src/main/java/com/<%=your_app_name%>/MainApplication.java`
 ### Publishing (React)
 To update the app over the air run.  See the Microsoft&#8482; code-push docs for more information. On how to 
 add CodePush to your application.
-```
-$ cd your_client_app_dir
-$ code-push release-react <%=YourAppName%> ios --deploymentName <%=Staging|Production|Etc.%>
+```sh
+ $ cd your_client_app_dir
+ $ code-push release-react <%=YourAppName%> ios --deploymentName <%=Staging|Production|Etc.%>
 ```
 
-### Electrode Over the Air Desktop
-You can use either the microsoft code-push cli or the Electrode OTA Desktop to manage your deployments.   You can get the
+## Electrode Over the Air Desktop
+You can use either the microsoft code-push-cli or the Electrode OTA Desktop to manage your deployments.   You can get the
 install [here](https://github.com/electrode-io/electrode-ota-desktop/releases). 
+
+### Installation
+Copy of the ElectrodeOTA icon to the Applications folder
  ![OTA: DMG](../img/electrode-ota/DMG.png)
+
+###Logging in
+Use the token from the pretty screen with the trees on it here.  The host would be your ota server.
  ![OTA: Login](../img/electrode-ota/Login.png)
+
+###Creating a New App to Manage
+You will need an app to get the deployment keys.  
  ![OTA: GettingStarted](../img/electrode-ota/GettingStarted.png)
  ![OTA: New App Success](../img/electrode-ota/NewAppSuccess.png)
+
+###Creating a New Deployment
+You can use Staging and Development or create your own, for your workflow.
  ![OTA: New Deployment](../img/electrode-ota/NewDeployment.png)
  ![OTA: New Deployment Success](../img/electrode-ota/NewDeployment1.png)
+
+###Adding a New Release
+To Upload a new release select the deployment and click release.
  ![OTA: Releases](../img/electrode-ota/Releases.png)
+ 
+###Adding Collaborators
+If you need to share responsibility you can add coloborator.  However they will need to register first to be able to add
+them to your App.
  ![OTA: Collaborate](../img/electrode-ota/Collaborate.png)
+
+### New Key
+If you loose key, or want one for you CI server you can manage them here.
  ![OTA: Add Key](../img/electrode-ota/AddKey.png)
  ![OTA: New Key](../img/electrode-ota/NewKey.png)
  
