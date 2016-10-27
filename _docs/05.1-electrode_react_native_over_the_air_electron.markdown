@@ -43,7 +43,7 @@ By default the server will start with production config.  This can be overridden
 
 ```json
 "scripts":{
-  "start":" node node_modules/.bin/electrode-ota-server"
+  "start":"NODE_ENV=production node node_modules/.bin/electrode-ota-server"
 }
 ```
 
