@@ -156,9 +156,14 @@ You can run OTA many ways, the easiest is to just to run.
 
 ## Logging into your OTA Server.
 To use the server you just set up you will need to make the following modifications to your client (iOS/Android(tm)) app, along
-with setting up Apps with the OTA Server. To configure your clients to use the new code push server login with
+with setting up Apps with the OTA Server. Your server can host multiple applications from multiple developers, to manage
+these you can use Microsoft's code-push cli.
 
+### Installing the code-push-cli
+```sh
+ $ npm install code-push-cli -g
 
+```
 ### Register 
 You only need/can register once per github account.  So the first time each user would need to:
 ```sh
@@ -195,7 +200,7 @@ These are your deployment keys.  You will need them in the next step.
 
 ## Changes to Your Application.
 If your app is already using code-push you just need to do the following.   If you have not setup your app for code-push,
-please follow Microsoft&#8482;'s guide to setting up the client SDK for React&#8482; [here](https://microsoft.github.io/code-push/docs/react-native.html) and
+please follow Microsoft&#8482;'s guide to setting up the client SDK for React&#8482; [here](https://microsoft.github.io/code-push/docs/react-native.html) or
 Cordova&#8482; [here](https://microsoft.github.io/code-push/docs/cordova.html). 
 
 If you you need an Example application you can find one [here](https://github.com/Microsoft/react-native-code-push/tree/master/Examples/CodePushDemoApp).
