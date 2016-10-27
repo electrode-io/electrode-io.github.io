@@ -43,11 +43,32 @@ By default the server will start with production config.  This can be overridden
 
 ```json
 "scripts":{
-  "start":"NODE_ENV=production node node_modules/.bin/electrode-ota-server"
+  "start":"NODE_ENV=production node node_modules/.bin/electrode-ota-server",
+    "development":"NODE_ENV=development node node_modules/.bin/electrode-ota-server"
+
 }
 ```
 
-### Configure
+### Setting up OAuth
+To use github as an OAuth provider you need to login to github and add an OTA Application.
+
+Step 1 - Login to github and select Settings.
+![OTA: Profile - Step 1]( ../img/electrode-ota/1-Profile.png)
+
+Step 2 - Go to "Developer Settings" and select "OAuth applications"
+![OTA: Register OAuth - Step 2](../img/electrode-ota/2-Register OAuth.png)
+
+Step 3 - Setup your application.   Keep in mind protocols and urls are important.  Also you can set up a key for development also (localhost.yourdomain.com).
+Make sure that resolves, for your machine, try adding it to your hosts file.
+![OTA: Register OAuth - Step 3](../img/electrode-ota/3-Register OAuth.png)
+
+Step 4 - Wild celebration, or double check that everthing is correct.  This is your you get your clientId and clientSecret.
+Keep your clientSecret secret (avoid checking it into public github for example).
+
+![OTA: Register OAuth - Step 4](../img/electrode-ota/4-Review OAuth.png)
+
+
+### Configure OTA Server
 Inside the config create a config/production.json. You can configure different settings
 for production,test and development, by creating seperate json files for each environment.
 In production please use TLS/HTTPS for the server.
@@ -125,38 +146,20 @@ OTA uses [bell](http://https://github.com/hapijs/bell) for oAuth you can look th
 
 
 ### Running OTA
-You can run OTA many ways, the easiest is to just 
+You can run OTA many ways, the easiest is to just to run.    
 ```
  $ npm start
 ```
-If you want to run in development mode, with the development config.
-```
- $ NODE_ENV=development npm start
-```
-
-### Setting up OAuth
-To use github as an OAuth provider you need to login to github and add an OTA Application.
-
-Step 1 - Login to github and select Settings.
-![OTA: Profile - Step 1]( ../img/electrode-ota/1-Profile.png)
-
-Step 2 - Go to "Developer Settings" and select "OAuth applications"
-![OTA: Register OAuth - Step 2](../img/electrode-ota/2-Register OAuth.png)
-
-Step 3 - Setup your application.   Keep in mind protocols and urls are important.  Also you can set up a key for development also (localhost.yourdomain.com).
-Make sure that resolves, for your machine, try adding it to your hosts file.
-![OTA: Register OAuth - Step 3](../img/electrode-ota/3-Register OAuth.png)
-
-Step 4 - Wild celebration, or double check that everthing is correct.  This is your you get your clientId and clientSecret.
-Keep your clientSecret secret (avoid checking it into public github for example).
-
-![OTA: Register OAuth - Step 4](../img/electrode-ota/4-Review OAuth.png)
-
 
 ## Client Modification.
-To use the server you just set up you will need to make the following modifications to your client app, along
+To use the server you just set up you will need to make the following modifications to your client (iOS/Android(tm)) app, along
 with setting up Apps with the OTA Server. To configure your clients to use the new code push server login with
 
+
+Please follow Microsoft&#8482;'s guide to setting up the client SDK for React&#8482; [here](https://microsoft.github.io/code-push/docs/react-native.html) and
+Cordova&#8482; [here](https://microsoft.github.io/code-push/docs/cordova.html). 
+
+Then come back here to configure your app to use the OTA Server.
 
 ### Register 
 You only need/can register once per github account.  So the first time each user would need to:
@@ -238,7 +241,7 @@ Modify  `android/app/src/main/java/com/<%=your_app_name%>/MainApplication.java`
 ```
 
 ### Publishing (React)
-To update the app over the air run.  See the Microsoft(tm) code-push docs for more information. On how to 
+To update the app over the air run.  See the Microsoft&#8482; code-push docs for more information. On how to 
 add CodePush to your application.
 ```
 $ cd your_client_app_dir
