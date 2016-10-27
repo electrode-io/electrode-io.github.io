@@ -36,10 +36,10 @@ You should see a terminal message `Logged in as your-example-email@your-email-pr
 You'll need to specify the [version of node](https://devcenter.heroku.com/articles/node-best-practices) and npm you are using on your machine into our `package.json`. Add the code below to your `package.json`. Make sure to change `"node": "4.2.x"`, and `"npm": 3.10.x` to your actual node and npm version. To find out what versions you have, run `node -v` and `npm -v` in the command line
 
 ```json
-    "engines": {
-      "node": "4.2.x",
-      "npm": "3.10.x"
-    }
+"engines": {
+  "node": "4.2.x",
+  "npm": "3.10.x"
+}
 ```
 
 It should now look similar to this:
@@ -47,7 +47,7 @@ It should now look similar to this:
 ```json
 {
   "name": "your-awesome-app",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "your-app-description",
   "homepage": "your-awesome-app",
   "author": {
@@ -56,34 +56,39 @@ It should now look similar to this:
     "url": "your-app-url"
   },
   "engines": {
-    "node": "4.2.x"
+    "node": "^4.x.x || ^6.x.x",
+    "npm": ">= 3.x.x"
   },
   "contributors": [],
   "files": [
-    "lib"
-  ],
-  "main": "server/index.js",
-  "keywords": [
+    "server",
+    "client",
     "test"
   ],
+  "main": "server/index.js",
+  "keywords": [],
   "repository": {
     "type": "git",
     "url": "your-repo-url"
   },
   "license": "Apache-2.0",
   "scripts": {
+    "start": "if test \"$NODE_ENV\" = \"production\"; then npm run prod; else gulp dev; fi",
     "test": "gulp test",
-    "coverage": "gulp check"
+    "coverage": "gulp check",
+    "prod": "echo 'Starting standalone server in PROD mode'; node .",
+    "heroku-postbuild": "gulp build"
   },
   "dependencies": {
-    "bluebird": "^2.10.2",
-    "electrode-router-resolver-engine": "^1.0.0",
+    "bluebird": "^3.4.6",
+    "electrode-archetype-react-app": "^1.0.0",
+    "electrode-confippet": "^1.0.0",
+    "electrode-redux-router-engine": "^1.2.2",
     "electrode-server": "^1.0.0",
     "electrode-static-paths": "^1.0.0",
     "lodash": "^4.10.1"
   },
   "devDependencies": {
-    "electrode-archetype-react-app": "^1.0.0",
     "electrode-archetype-react-app-dev": "^1.0.0",
     "gulp": "^3.9.1"
   }
@@ -107,32 +112,6 @@ Alternatively, you can also create an app that will generate a your app's name (
 
 ```bash
 $ heroku create your-awesome-app
-```
-
-Navigate to your `package.json` and add this line in the `scripts` section:
-
-```json
-  "heroku-postbuild": "gulp build",
-```
-
-That section should now look like this:
-
-```json
-{
-  "scripts": {
-    "test": "gulp test",
-    "coverage": "gulp check",
-    "heroku-postbuild": "gulp build",
-    "start": "node server/index.js"
-  }
-}
-```
-
-Use the following commands to commit this change as well:
-
-```bash
-$ git add .
-$ git commit -m "Updates package.json with heroku-postbuild"
 ```
 
 Use the command below to set a configuration so that Heroku installs Your-Awesome-App's devDependencies:
