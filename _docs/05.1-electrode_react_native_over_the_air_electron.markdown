@@ -1,6 +1,6 @@
 ---
 title:  "React Native and Over the Air"
-permalink: docs/05.1-electrode_react_native_over_the_air_electron.html
+permalink: docs/electrode_react_native_over_the_air_electron.html
 toplevel: "React Native: Over the Air"
 ---
 
@@ -26,7 +26,7 @@ $ ./bin/cassandra
 ```
 
 ### Installation
-This covers a minimal way to install and run electrode-ota-server.  For most scenarios this is 
+This covers a minimal way to install and run electrode-ota-server.  For most scenarios this is
 not complete.   Be sure to setup SSL, load balancing, and all the other requirements for your environment.
 
 ```sh
@@ -70,21 +70,21 @@ Keep your clientSecret secret (avoid checking it into public github for example)
 
 
 ### Configure OTA Server
-Inside the config create a `config/production.json`. You must configure at one environment. You can create 
+Inside the config create a `config/production.json`. You must configure at one environment. You can create
 different settings for production,test and development, by creating seperate json files for each environment.
 
 In production please use TLS/HTTPS for the server.Setting TLS is outside the scope of this document.
 
 The configurations are loaded via electrode-confippet, more details [here](https://github.com/electrode-io/electrode-confippet).
-  
- 
+
+
 **The variables that should be configured is are in <%= variable %>.**
 **The comments must be removed if using JSON.**
 
 ```js
 {
     "plugins": {
-        
+
         "electrode-ota-server-dao-cassandra": {
             "options": {
                 //You can enter an array of cassandra "contactPoints" but you need at least one.
@@ -96,7 +96,7 @@ The configurations are loaded via electrode-confippet, more details [here](https
                 "username": "<%=cassandra.username%>",
                 //Optional - If your cassandra server does not require a password
                 "password": "<%=cassandra.password%>"
-                //Optional the keyspace you want to run the server with, by default the keyspace is "wm_ota". 
+                //Optional the keyspace you want to run the server with, by default the keyspace is "wm_ota".
                 "keyspace":"<%=cassandra.keyspace%>"
             }
         },
@@ -114,7 +114,7 @@ The configurations are loaded via electrode-confippet, more details [here](https
                 "strategy": {
                     //Authentication Strategy.  The OTA uses [bell](http://https://github.com/hapijs/bell) for
                     //OAuth.  You can see the vendors and options there.  We test with github oAuth.
-                
+
                     "github-oauth": {
                         "options": {
                             //A Cookie password otherwise a raondom one (Optional)
@@ -137,7 +137,7 @@ The configurations are loaded via electrode-confippet, more details [here](https
                             "isSecure":true
                         }
                    }
-                    
+
                 }
             }
         }
@@ -169,7 +169,7 @@ OTA Desktop to do the same thing.
  $ npm install code-push-cli -g
 
 ```
-#### Register 
+#### Register
 You only need/can register once per github account.  So the first time each user would need to:
 ```sh
  $ code-push register https://<%=your_ota_server%>
@@ -184,7 +184,7 @@ can log back in.
 
 #### Server Token
 Your server token page should look like this.
- ![OTA: Server Token](../img/electrode-ota/NewToken.png) 
+ ![OTA: Server Token](../img/electrode-ota/NewToken.png)
 
 #### Creating a CodePushDeploymentKey
 ```
@@ -207,10 +207,10 @@ These are your deployment keys.  You will need them in the next step.
 ## Changes to Your Application.
 If your app is already using code-push you just need to do the following.   If you have not setup your app for code-push,
 please follow Microsoft&#8482;'s guide to setting up the client SDK for React&#8482; [here](https://microsoft.github.io/code-push/docs/react-native.html) or
-Cordova&#8482; [here](https://microsoft.github.io/code-push/docs/cordova.html). 
+Cordova&#8482; [here](https://microsoft.github.io/code-push/docs/cordova.html).
 
 If you you need an Example application you can find one [here](https://github.com/Microsoft/react-native-code-push/tree/master/Examples/CodePushDemoApp).
- 
+
 ### For IOS
 Then add the following to `ios/<%=your_app_name%>/Info.plist`. You can open this in ```sh open ios/<%=your_app_name%>.xcodeprog```
 to edit.  
@@ -258,7 +258,7 @@ Modify  `android/app/src/main/java/com/<%=your_app_name%>/MainApplication.java`
 ```
 
 ### Publishing (React)
-To update the app over the air run.  See the Microsoft&#8482; code-push docs for more information. On how to 
+To update the app over the air run.  See the Microsoft&#8482; code-push docs for more information. On how to
 add CodePush to your application.
 ```sh
  $ cd your_client_app_dir
@@ -267,7 +267,7 @@ add CodePush to your application.
 
 ## Electrode Over the Air Desktop
 You can use either the microsoft code-push-cli or the Electrode OTA Desktop to manage your deployments.   You can get the
-install [here](https://github.com/electrode-io/electrode-ota-desktop/releases). 
+install [here](https://github.com/electrode-io/electrode-ota-desktop/releases).
 
 ### Installation
 Copy of the ElectrodeOTA icon to the Applications folder
@@ -290,7 +290,7 @@ You can use Staging and Development or create your own, for your workflow.
 ###Adding a New Release
 To Upload a new release select the deployment and click release.
  ![OTA: Releases](../img/electrode-ota/Releases.png)
- 
+
 ###Adding Collaborators
 If you need to share responsibility you can add collaborator.  However they will need to register [see](#user-content-register) first to be able to add
 them to your App.
@@ -300,6 +300,3 @@ them to your App.
 If you loose key, or want one for you CI server you can manage them here.
  ![OTA: Add Key](../img/electrode-ota/AddKey.png)
  ![OTA: New Key](../img/electrode-ota/NewKey.png)
- 
- 
- 
