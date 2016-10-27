@@ -292,7 +292,7 @@ To Upload a new release select the deployment and click release.
  ![OTA: Releases](../img/electrode-ota/Releases.png)
  
 ###Adding Collaborators
-If you need to share responsibility you can add collaborator.  However they will need to register [see](#Register) first to be able to add
+If you need to share responsibility you can add collaborator.  However they will need to register [see](#user-content-register) first to be able to add
 them to your App.
  ![OTA: Collaborate](../img/electrode-ota/Collaborate.png)
 
