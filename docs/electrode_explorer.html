@@ -299,6 +299,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -391,6 +396,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -929,6 +939,11 @@
   
   
 
+  
+  
+  
+  
+
 
           </ul>
         
@@ -1257,6 +1272,232 @@
   
   
 
+  
+  
+  
+  
+
+
+          </ul>
+        
+          <h5>Over the Air</h5>
+          <ul>
+            
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/05.1-electrode_react_native_over_the_air_electron.html"> &nbsp; React Native and Over the Air</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
 
           </ul>
         
@@ -1269,6 +1510,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1687,6 +1933,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1794,7 +2045,7 @@
 
 <ol>
 <li>Add GitHub hooks to send POST requests to <code>/api/update/{org}/{repoName}</code> when a new tag is created</li>
-<li>Enable <code>./server/poll</code> plugin, so the server will send the POST requests every certain interval</li>
+<li>Enable <code>./server/poll</code> plugin to set up cron job that sends the POST requests every day</li>
 </ol>
 
 <p>It&#39;s recommended to use Method #1 to see updates in near real time.</p>
@@ -1811,7 +2062,7 @@ new component through npm (<a href="https://github.com/electrode-io/electrode-ex
   <span class="s2">&quot;plugins&quot;</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">&quot;./server/poll&quot;</span><span class="o">:</span> <span class="p">{</span>
       <span class="s2">&quot;options&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;enable&quot;</span><span class="o">:</span> <span class="kc">false</span>
+        <span class="s2">&quot;enable&quot;</span><span class="o">:</span> <span class="kc">true</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">},</span>
@@ -1844,8 +2095,6 @@ new component through npm (<a href="https://github.com/electrode-io/electrode-ex
   <span class="p">],</span>
 
   <span class="s2">&quot;NPM_WAITING_TIME&quot;</span><span class="o">:</span> <span class="mi">300000</span><span class="p">,</span> <span class="c1">// wait for 5 minutes before `npm install`</span>
-
-  <span class="s2">&quot;POLL_INTERVAL&quot;</span><span class="o">:</span> <span class="mi">3600000</span><span class="p">,</span> <span class="c1">// poll for updates once an hour, applicable when you enable poll plugin</span>
 
   <span class="s2">&quot;GHACCESS_TOKEN_NAME&quot;</span><span class="o">:</span> <span class="s2">&quot;GHACCESS_TOKEN&quot;</span> <span class="c1">// github token variable name, your token would be accessible via `process.env[&quot;GHACCESS_TOKEN&quot;]`}</span>
 </code></pre></div><h2><a class="anchor" name="start-server"></a>Start server <a class="hash-link" href="#start-server">#</a></h2>

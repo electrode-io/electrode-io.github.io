@@ -299,6 +299,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -391,6 +396,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -929,6 +939,11 @@
   
   
 
+  
+  
+  
+  
+
 
           </ul>
         
@@ -1257,6 +1272,232 @@
   
   
 
+  
+  
+  
+  
+
+
+          </ul>
+        
+          <h5>Over the Air</h5>
+          <ul>
+            
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/05.1-electrode_react_native_over_the_air_electron.html"> &nbsp; React Native and Over the Air</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
 
           </ul>
         
@@ -1269,6 +1510,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1687,6 +1933,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1767,8 +2018,15 @@
     <div class="subHeader"></div>
 
     <h4><a class="anchor" name="develop-tests-for-the-above-components"></a>Develop tests for the above components <a class="hash-link" href="#develop-tests-for-the-above-components">#</a></h4>
-<p>WalmartLabs believes that testing is critical to writing great, high performance code. This includes unit testing at both the component and application level. For your component, we are using <a href="https://mochajs.org/">Mocha</a>, a Javascript testing framework that is perfect for running async tests, with <a href="http://airbnb.io/enzyme/docs/guides/mocha.html">Enzyme</a>, airbnb&#39;s awesome testing utility for React.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gulp check
+<p>WalmartLabs believes that testing is critical to writing great, high performance code. This includes unit testing at both the component and application level. For your component, we are using <a href="https://mochajs.org/">Mocha</a>, a Javascript testing framework that is perfect for running async tests, with <a href="http://airbnb.io/enzyme/docs/guides/mocha.html">Enzyme</a>, airbnb&#39;s awesome testing utility for React, and <a href="http://chaijs.com/">chai</a> for assertions.</p>
+<h4><a class="anchor" name="how-to-run-tests"></a>How to run tests <a class="hash-link" href="#how-to-run-tests">#</a></h4><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Basic testing and linting</span>
+<span class="nv">$ </span>gulp check
+
+<span class="c"># Continous Testing</span>
+<span class="c">## In one terminal</span>
+<span class="nv">$ </span>gulp <span class="nb">test</span>-frontend-dev-watch
+<span class="c">## In a different terminal</span>
+<span class="nv">$ </span>gulp server-test
 </code></pre></div>
 
     
