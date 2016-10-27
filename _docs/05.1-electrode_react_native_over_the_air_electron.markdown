@@ -152,11 +152,6 @@ Keep your clientSecret secret (avoid checking it into public github for example)
 
 ![OTA: Register OAuth - Step 4](../img/electrode-ota/4-Review OAuth.png)
 
-### Starting
-
-```sh
- $ npm start
-```
 
 ## Client Modification.
 To use the server you just set up you will need to make the following modifications to your client app, along
