@@ -274,7 +274,7 @@ Copy of the ElectrodeOTA icon to the Applications folder
  ![OTA: DMG](../img/electrode-ota/DMG.png)
 
 ###Logging in
-Use the token from the pretty screen with the trees on it here.  The host would be your ota server.
+Use the token from the pretty screen with the trees on it here.  The host would be your OTA Server.
  ![OTA: Login](../img/electrode-ota/Login.png)
 
 ###Creating a New App to Manage
@@ -292,7 +292,7 @@ To Upload a new release select the deployment and click release.
  ![OTA: Releases](../img/electrode-ota/Releases.png)
  
 ###Adding Collaborators
-If you need to share responsibility you can add coloborator.  However they will need to register first to be able to add
+If you need to share responsibility you can add collaborator.  However they will need to register [see](#Register) first to be able to add
 them to your App.
  ![OTA: Collaborate](../img/electrode-ota/Collaborate.png)
 
