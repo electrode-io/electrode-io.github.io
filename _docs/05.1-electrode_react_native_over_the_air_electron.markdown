@@ -214,7 +214,9 @@ If you you need an Example application you can find one [here](https://github.co
 ### For IOS
 Then add the following to `ios/<%=your_app_name%>/Info.plist`. You can open this in ```sh open ios/<%=your_app_name%>.xcodeprog```
 to edit.  
+ ![OTA: Edit Info.plist](../img/electrode-ota/Info-plist.png)
 
+Or using your favorite text editor.
 ```xml
     <key>CodePushDeploymentKey</key>
     <string><%=your_deployment_key%></string>
@@ -222,7 +224,7 @@ to edit.
     <string>http://<%=your_ota_server%></string>
 ```
 If your OTA server is not running over https you will need to add an exception to it in the  `ios/<%=your_app_name%>/Info.plist`,
-or use Xcode to update the file.
+or you use Xcode to update the file.
 ```xml
 <dict>
 	<key>NSAllowsArbitraryLoads</key>
