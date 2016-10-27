@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width">
   <meta property="og:title" content="React Native and Over the Air | Electrode">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://electrode-io.github.io//docs/05.1-electrode_react_native_over_the_air_electron.html">
+  <meta property="og:url" content="https://electrode-io.github.io//docs/electrode_react_native_over_the_air_electron.html">
   <meta property="og:image" content="https://electrode-io.github.io/img/logo_og.png">
   <meta property="og:description" content="Universal React and Node Applications simplified, performant, and reusable.">
   <meta property="fb:app_id" content="623268441017527">
@@ -1467,7 +1467,7 @@
     <li>
     
 
-    <a href="/docs/05.1-electrode_react_native_over_the_air_electron.html" class="active"> &nbsp; React Native and Over the Air</a>
+    <a href="/docs/electrode_react_native_over_the_air_electron.html" class="active"> &nbsp; React Native and Over the Air</a>
 
     
     </li>
@@ -2035,7 +2035,7 @@ $ cd apache-cassandra-3.9/
 $ ./bin/cassandra
 </code></p>
 <h3><a class="anchor" name="installation"></a>Installation <a class="hash-link" href="#installation">#</a></h3>
-<p>This covers a minimal way to install and run electrode-ota-server.  For most scenarios this is 
+<p>This covers a minimal way to install and run electrode-ota-server.  For most scenarios this is
 not complete.   Be sure to setup SSL, load balancing, and all the other requirements for your environment.</p>
 <div class="highlight"><pre><code class="language-sh" data-lang="sh">  <span class="nv">$ </span>mkdir your_ota
   <span class="nv">$ </span><span class="nb">cd </span>your_ota
@@ -2069,7 +2069,7 @@ Keep your clientSecret secret (avoid checking it into public github for example)
 
 <p><img src="../img/electrode-ota/4-Review%20OAuth.png" alt="OTA: Register OAuth - Step 4"></p>
 <h3><a class="anchor" name="configure-ota-server"></a>Configure OTA Server <a class="hash-link" href="#configure-ota-server">#</a></h3>
-<p>Inside the config create a <code>config/production.json</code>. You must configure at one environment. You can create 
+<p>Inside the config create a <code>config/production.json</code>. You must configure at one environment. You can create
 different settings for production,test and development, by creating seperate json files for each environment.</p>
 
 <p>In production please use TLS/HTTPS for the server.Setting TLS is outside the scope of this document.</p>
@@ -2092,7 +2092,7 @@ different settings for production,test and development, by creating seperate jso
                 <span class="s2">&quot;username&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;%=cassandra.username%&gt;&quot;</span><span class="p">,</span>
                 <span class="c1">//Optional - If your cassandra server does not require a password</span>
                 <span class="s2">&quot;password&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;%=cassandra.password%&gt;&quot;</span>
-                <span class="c1">//Optional the keyspace you want to run the server with, by default the keyspace is &quot;wm_ota&quot;. </span>
+                <span class="c1">//Optional the keyspace you want to run the server with, by default the keyspace is &quot;wm_ota&quot;.</span>
                 <span class="s2">&quot;keyspace&quot;</span><span class="o">:</span><span class="s2">&quot;&lt;%=cassandra.keyspace%&gt;&quot;</span>
             <span class="p">}</span>
         <span class="p">},</span>
@@ -2167,7 +2167,7 @@ can log back in.
 </code></p>
 <h4><a class="anchor" name="server-token"></a>Server Token <a class="hash-link" href="#server-token">#</a></h4>
 <p>Your server token page should look like this.
- <img src="../img/electrode-ota/NewToken.png" alt="OTA: Server Token"> </p>
+ <img src="../img/electrode-ota/NewToken.png" alt="OTA: Server Token"></p>
 <h4><a class="anchor" name="creating-a-codepushdeploymentkey"></a>Creating a CodePushDeploymentKey <a class="hash-link" href="#creating-a-codepushdeploymentkey">#</a></h4><div class="highlight"><pre><code class="language-text" data-lang="text">$ code-push app add &lt;%=YourAppName%&gt;
 </code></pre></div>
 <p>Should result in something like
@@ -2185,7 +2185,7 @@ These are your deployment keys.  You will need them in the next step.</p>
 <h2><a class="anchor" name="changes-to-your-application."></a>Changes to Your Application. <a class="hash-link" href="#changes-to-your-application.">#</a></h2>
 <p>If your app is already using code-push you just need to do the following.   If you have not setup your app for code-push,
 please follow Microsoft&#8482;&#39;s guide to setting up the client SDK for React&#8482; <a href="https://microsoft.github.io/code-push/docs/react-native.html">here</a> or
-Cordova&#8482; <a href="https://microsoft.github.io/code-push/docs/cordova.html">here</a>. </p>
+Cordova&#8482; <a href="https://microsoft.github.io/code-push/docs/cordova.html">here</a>.</p>
 
 <p>If you you need an Example application you can find one <a href="https://github.com/Microsoft/react-native-code-push/tree/master/Examples/CodePushDemoApp">here</a>.</p>
 <h3><a class="anchor" name="for-ios"></a>For IOS <a class="hash-link" href="#for-ios">#</a></h3>
@@ -2230,7 +2230,7 @@ or you use Xcode to update the file.
         <span class="o">);</span>
     <span class="o">}</span>
 </code></pre></div><h3><a class="anchor" name="publishing-react"></a>Publishing (React) <a class="hash-link" href="#publishing-react">#</a></h3>
-<p>To update the app over the air run.  See the Microsoft&#8482; code-push docs for more information. On how to 
+<p>To update the app over the air run.  See the Microsoft&#8482; code-push docs for more information. On how to
 add CodePush to your application.
 <code>sh
  $ cd your_client_app_dir
@@ -2238,7 +2238,7 @@ add CodePush to your application.
 </code></p>
 <h2><a class="anchor" name="electrode-over-the-air-desktop"></a>Electrode Over the Air Desktop <a class="hash-link" href="#electrode-over-the-air-desktop">#</a></h2>
 <p>You can use either the microsoft code-push-cli or the Electrode OTA Desktop to manage your deployments.   You can get the
-install <a href="https://github.com/electrode-io/electrode-ota-desktop/releases">here</a>. </p>
+install <a href="https://github.com/electrode-io/electrode-ota-desktop/releases">here</a>.</p>
 <h3><a class="anchor" name="installation"></a>Installation <a class="hash-link" href="#installation">#</a></h3>
 <p>Copy of the ElectrodeOTA icon to the Applications folder
  <img src="../img/electrode-ota/DMG.png" alt="OTA: DMG"></p>
