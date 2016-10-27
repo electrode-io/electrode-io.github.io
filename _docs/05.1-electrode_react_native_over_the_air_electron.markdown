@@ -159,28 +159,33 @@ To use the server you just set up you will need to make the following modificati
 with setting up Apps with the OTA Server. Your server can host multiple applications from multiple developers, to manage
 these you can use Microsoft's code-push cli.
 
-### Installing the code-push-cli
+
+### From the Command Line
+If want to manage your OTA Server via command line.   You can follow these directions.  Or you can use the Electrode
+OTA Desktop to do the same thing.
+
+#### Installing the code-push-cli
 ```sh
  $ npm install code-push-cli -g
 
 ```
-### Register 
+#### Register 
 You only need/can register once per github account.  So the first time each user would need to:
 ```sh
  $ code-push register https://<%=your_ota_server%>
 ```
 
-### Login
+#### Login
 After you have registered and you've logged out you may need to log back in.
 ```sh
  $ code-push login https://<%=your_ota_server%>
 ```
 
-### Server Token
+#### Server Token
 Your server token page should look like this.
  ![OTA: Server Token](../img/electrode-ota/NewToken.png) 
 
-### Creating a CodePushDeploymentKey
+#### Creating a CodePushDeploymentKey
 ```
 $ code-push app add <%=YourAppName%>
 ```
@@ -259,9 +264,7 @@ $ code-push release-react <%=YourAppName%> ios --deploymentName <%=Staging|Produ
 
 ### Electrode Over the Air Desktop
 You can use either the microsoft code-push cli or the Electrode OTA Desktop to manage your deployments.   You can get the
-install [here](https://github.com/electrode-io/electrode-ota-desktop/releases).  It is not signed(yet) so you will need
-to ctrl-click the application and select open to run.
-
+install [here](https://github.com/electrode-io/electrode-ota-desktop/releases). 
  ![OTA: DMG](../img/electrode-ota/DMG.png)
  ![OTA: Login](../img/electrode-ota/Login.png)
  ![OTA: GettingStarted](../img/electrode-ota/GettingStarted.png)
