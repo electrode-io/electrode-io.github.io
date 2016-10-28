@@ -16,7 +16,7 @@ $ gulp check
 
 # Continous Testing
 ## In one terminal
-$ gulp test-frontend-dev-watch
-## In a different terminal
 $ gulp server-test
+## In a different terminal
+$ gulp test-frontend-dev-watch
 ```
