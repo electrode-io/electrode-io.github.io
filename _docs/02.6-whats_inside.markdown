@@ -33,11 +33,12 @@ Any real world web application needs to be able to handle different routes servi
 Why react-router? The project is mature, well-documented, and integrates well within the Electrode tech stack.
 
 ```javascript
-  import { Resolver } from "react-resolver";
+import {createStore} from "redux";
+import {Provider} from "react-redux";
 ```
 
-[React-Resolver](http://ericclemmons.com/react-resolver/) lets you define data requirements per component and will handle the nested, asynchronous rendering on both the server and client for you. This approach matches the Electrode methodology of keeping definitions of what a component needs within the component itself and also allows us to write universal javascript applications in a non-blocking way. This solves our frequent need for pages that are rendered on the server.
-
+[Redux](http://redux.js.org/) is a state management library where your application data is in a store which contains a single object tree. This store is the single source of truth for your application and holds the state of your application. The store provides api's to access and update the state of your application.
+[React-Redux](https://github.com/reactjs/react-redux) is the official binding for Redux and React.
 
 The rest of the code in `client/app.jsx` sets up the React app to run when the page is loaded. The selector is based on the `<div>` in `<your-awesome-app>/server/plugins/webapp/index.html`.
 
