@@ -2038,15 +2038,15 @@ Password:
 <p>You should see a terminal message <code>Logged in as your-example-email@your-email-provider.com</code>. Now, let&#39;s deploy!</p>
 
 <p>You&#39;ll need to specify the <a href="https://devcenter.heroku.com/articles/node-best-practices">version of node</a> and npm you are using on your machine into our <code>package.json</code>. Add the code below to your <code>package.json</code>. Make sure to change <code>&quot;node&quot;: &quot;4.2.x&quot;</code>, and <code>&quot;npm&quot;: 3.10.x</code> to your actual node and npm version. To find out what versions you have, run <code>node -v</code> and <code>npm -v</code> in the command line</p>
-<div class="highlight"><pre><code class="language-json" data-lang="json">    <span class="s2">&quot;engines&quot;</span><span class="err">:</span> <span class="p">{</span>
-      <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;4.2.x&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;npm&quot;</span><span class="p">:</span> <span class="s2">&quot;3.10.x&quot;</span>
-    <span class="p">}</span>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;engines&quot;</span><span class="err">:</span> <span class="p">{</span>
+  <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;4.2.x&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;npm&quot;</span><span class="p">:</span> <span class="s2">&quot;3.10.x&quot;</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>It should now look similar to this:</p>
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;your-awesome-app&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0.1&quot;</span><span class="p">,</span>
   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;your-app-description&quot;</span><span class="p">,</span>
   <span class="nt">&quot;homepage&quot;</span><span class="p">:</span> <span class="s2">&quot;your-awesome-app&quot;</span><span class="p">,</span>
   <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -2055,34 +2055,39 @@ Password:
     <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;your-app-url&quot;</span>
   <span class="p">},</span>
   <span class="nt">&quot;engines&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;4.2.x&quot;</span>
+    <span class="nt">&quot;node&quot;</span><span class="p">:</span> <span class="s2">&quot;^4.x.x || ^6.x.x&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;npm&quot;</span><span class="p">:</span> <span class="s2">&quot;&gt;= 3.x.x&quot;</span>
   <span class="p">},</span>
   <span class="nt">&quot;contributors&quot;</span><span class="p">:</span> <span class="p">[],</span>
   <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="s2">&quot;lib&quot;</span>
-  <span class="p">],</span>
-  <span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;server/index.js&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;keywords&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;server&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;client&quot;</span><span class="p">,</span>
     <span class="s2">&quot;test&quot;</span>
   <span class="p">],</span>
+  <span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;server/index.js&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;keywords&quot;</span><span class="p">:</span> <span class="p">[],</span>
   <span class="nt">&quot;repository&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;git&quot;</span><span class="p">,</span>
     <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;your-repo-url&quot;</span>
   <span class="p">},</span>
   <span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="s2">&quot;Apache-2.0&quot;</span><span class="p">,</span>
   <span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;if test \&quot;$NODE_ENV\&quot; = \&quot;production\&quot;; then npm run prod; else gulp dev; fi&quot;</span><span class="p">,</span>
     <span class="nt">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;gulp test&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;coverage&quot;</span><span class="p">:</span> <span class="s2">&quot;gulp check&quot;</span>
+    <span class="nt">&quot;coverage&quot;</span><span class="p">:</span> <span class="s2">&quot;gulp check&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;prod&quot;</span><span class="p">:</span> <span class="s2">&quot;echo &#39;Starting standalone server in PROD mode&#39;; node .&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;heroku-postbuild&quot;</span><span class="p">:</span> <span class="s2">&quot;gulp build&quot;</span>
   <span class="p">},</span>
   <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;bluebird&quot;</span><span class="p">:</span> <span class="s2">&quot;^2.10.2&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;electrode-router-resolver-engine&quot;</span><span class="p">:</span> <span class="s2">&quot;^1.0.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;bluebird&quot;</span><span class="p">:</span> <span class="s2">&quot;^3.4.6&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;electrode-archetype-react-app&quot;</span><span class="p">:</span> <span class="s2">&quot;^1.0.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;electrode-confippet&quot;</span><span class="p">:</span> <span class="s2">&quot;^1.0.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;electrode-redux-router-engine&quot;</span><span class="p">:</span> <span class="s2">&quot;^1.2.2&quot;</span><span class="p">,</span>
     <span class="nt">&quot;electrode-server&quot;</span><span class="p">:</span> <span class="s2">&quot;^1.0.0&quot;</span><span class="p">,</span>
     <span class="nt">&quot;electrode-static-paths&quot;</span><span class="p">:</span> <span class="s2">&quot;^1.0.0&quot;</span><span class="p">,</span>
     <span class="nt">&quot;lodash&quot;</span><span class="p">:</span> <span class="s2">&quot;^4.10.1&quot;</span>
   <span class="p">},</span>
   <span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;electrode-archetype-react-app&quot;</span><span class="p">:</span> <span class="s2">&quot;^1.0.0&quot;</span><span class="p">,</span>
     <span class="nt">&quot;electrode-archetype-react-app-dev&quot;</span><span class="p">:</span> <span class="s2">&quot;^1.0.0&quot;</span><span class="p">,</span>
     <span class="nt">&quot;gulp&quot;</span><span class="p">:</span> <span class="s2">&quot;^3.9.1&quot;</span>
   <span class="p">}</span>
@@ -2097,23 +2102,6 @@ Password:
 </code></pre></div>
 <p>Alternatively, you can also create an app that will generate a your app&#39;s name (if it is available):</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku create your-awesome-app
-</code></pre></div>
-<p>Navigate to your <code>package.json</code> and add this line in the <code>scripts</code> section:</p>
-<div class="highlight"><pre><code class="language-json" data-lang="json">  <span class="s2">&quot;heroku-postbuild&quot;</span><span class="err">:</span> <span class="s2">&quot;gulp build&quot;</span><span class="err">,</span>
-</code></pre></div>
-<p>That section should now look like this:</p>
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;gulp test&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;coverage&quot;</span><span class="p">:</span> <span class="s2">&quot;gulp check&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;heroku-postbuild&quot;</span><span class="p">:</span> <span class="s2">&quot;gulp build&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;node server/index.js&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Use the following commands to commit this change as well:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git add .
-<span class="nv">$ </span>git commit -m <span class="s2">&quot;Updates package.json with heroku-postbuild&quot;</span>
 </code></pre></div>
 <p>Use the command below to set a configuration so that Heroku installs Your-Awesome-App&#39;s devDependencies:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>heroku config:set <span class="nv">NPM_CONFIG_PRODUCTION</span><span class="o">=</span><span class="nb">false</span>

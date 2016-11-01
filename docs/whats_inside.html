@@ -2046,9 +2046,11 @@
 <p>Any real world web application needs to be able to handle different routes serving different content, so how do we handle the concept of routing in the Electrode platform? The library chosen to take care of this for us is <a href="https://github.com/reactjs/react-router/tree/master/docs">react-router</a>.</p>
 
 <p>Why react-router? The project is mature, well-documented, and integrates well within the Electrode tech stack.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kr">import</span> <span class="p">{</span> <span class="nx">Resolver</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react-resolver&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="p">{</span><span class="nx">createStore</span><span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;redux&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Provider</span><span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react-redux&quot;</span><span class="p">;</span>
 </code></pre></div>
-<p><a href="http://ericclemmons.com/react-resolver/">React-Resolver</a> lets you define data requirements per component and will handle the nested, asynchronous rendering on both the server and client for you. This approach matches the Electrode methodology of keeping definitions of what a component needs within the component itself and also allows us to write universal javascript applications in a non-blocking way. This solves our frequent need for pages that are rendered on the server.</p>
+<p><a href="http://redux.js.org/">Redux</a> is a state management library where your application data is in a store which contains a single object tree. This store is the single source of truth for your application and holds the state of your application. The store provides api&#39;s to access and update the state of your application.
+<a href="https://github.com/reactjs/react-redux">React-Redux</a> is the official binding for Redux and React.</p>
 
 <p>The rest of the code in <code>client/app.jsx</code> sets up the React app to run when the page is loaded. The selector is based on the <code>&lt;div&gt;</code> in <code>&lt;your-awesome-app&gt;/server/plugins/webapp/index.html</code>.</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nb">window</span><span class="p">.</span><span class="nx">webappStart</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
