@@ -2075,6 +2075,19 @@ Universal javascript allows developers to use modular components that are sharab
 <h4><a class="anchor" name="8.-does-electrode-support-hot-reloading"></a>8. Does electrode support hot reloading? <a class="hash-link" href="#8.-does-electrode-support-hot-reloading">#</a></h4>
 <p>hot-reloading of jsx is already built in electrode.
 <code>gulp hot</code> will enable hot-reloading.</p>
+<h4><a class="anchor" name="9.-why-does-electrode-use-gulp"></a>9. Why does Electrode use Gulp? <a class="hash-link" href="#9.-why-does-electrode-use-gulp">#</a></h4>
+<p>Initial versions of Electrode archetypes were certainly using <em>npm scripts</em> but we started running into a few problems and here are some of the brief benefits using gulp, we feel will help make it easy and simple for developers:</p>
+<h3><a class="anchor" name="benefits"></a>Benefits <a class="hash-link" href="#benefits">#</a></h3>
+<ul>
+<li><strong>Maintenance</strong>: While npm scripts in package.json are simple, they are restrictive to shell commands, and can be messy to maintain since the shell commands have to go in the package.json files and separated from any extra work that requires JS code.</li>
+<li><strong>tasks integrated in JS</strong>: When we turn these scripts into JS files, we get the full benefits of writing any JS code as part of the build task.  We no longer have to write JS scripts and then invoke them from npm scripts.</li>
+<li><strong>Gulp features</strong>: By using gulp, we get to use other gulp features, particularly the streaming feature, and if we could explore use cases that can benefit.</li>
+<li><strong>Community</strong>: npm scripts are generally for simple tasks, and for more complicate build tasks, the community is more a tune to a JS task runner such as grunt and gulp.  Gulp being code centric vs grunt&#39;s config centric, has been gaining ground fast with a thriving supporting community.  So going to gulp will be more familiar to the developer community.</li>
+<li><strong>Compatibility</strong>: At the moment our build tasks being shell scripts some are only compatible for Unix.  If we go with tasks written in JS it&#39;s easier to make them compatible on other OS such as Windows.</li>
+<li><strong>Resource</strong>: With a large community behind gulp, there are a lot of plugins in the open source community for supporting various common build tasks and we can utilize them.</li>
+</ul>
+
+<p>gulp scripts can still be wrapped in <strong>npm scripts</strong> here is an example of using using npm scripts to execute JS tasks in the archetype: https://github.com/electrode-io/electrode-boilerplate-universal-react-node/blob/master/package.json#L21-L24</p>
 
 
     
