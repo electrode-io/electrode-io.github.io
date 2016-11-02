@@ -73,7 +73,7 @@ We have plans for GraphQL, but it’s a bit further out. Regarding React Native,
 hot-reloading of jsx is already built in electrode.
 `gulp hot` will enable hot-reloading.
 
-#### 9. Why Gulp?
+#### 9. Why does Electrode use Gulp?
 Initial versions of Electrode archetypes were certainly using *npm scripts* but we started running into a few problems and here are some of the brief benefits using gulp, we feel will help make it easy and simple for developers:
 ### Benefits
 
