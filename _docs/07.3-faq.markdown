@@ -73,6 +73,19 @@ We have plans for GraphQL, but it’s a bit further out. Regarding React Native,
 hot-reloading of jsx is already built in electrode.
 `gulp hot` will enable hot-reloading.
 
+#### 9. Why Gulp?
+Initial versions of Electrode archetypes were certainly using *npm scripts* but we started running into a few problems and here are some of the brief benefits using gulp, we feel will help make it easy and simple for developers:
+### Benefits
+
+- **Maintenance**: While npm scripts in package.json are simple, they are restrictive to shell commands, and can be messy to maintain since the shell commands have to go in the package.json files and separated from any extra work that requires JS code.
+- **tasks integrated in JS**: When we turn these scripts into JS files, we get the full benefits of writing any JS code as part of the build task.  We no longer have to write JS scripts and then invoke them from npm scripts.
+- **Gulp features**: By using gulp, we get to use other gulp features, particularly the streaming feature, and if we could explore use cases that can benefit.
+- **Community**: npm scripts are generally for simple tasks, and for more complicate build tasks, the community is more a tune to a JS task runner such as grunt and gulp.  Gulp being code centric vs grunt's config centric, has been gaining ground fast with a thriving supporting community.  So going to gulp will be more familiar to the developer community.
+- **Compatibility**: At the moment our build tasks being shell scripts some are only compatible for Unix.  If we go with tasks written in JS it's easier to make them compatible on other OS such as Windows.
+- **Resource**: With a large community behind gulp, there are a lot of plugins in the open source community for supporting various common build tasks and we can utilize them.
+
+gulp scripts can still be wrapped in **npm scripts** here is an example of using using npm scripts to execute JS tasks in the archetype: https://github.com/electrode-io/electrode-boilerplate-universal-react-node/blob/master/package.json#L21-L24
+
 [Electrode Boilerplate]: https://github.com/electrode-io/electrode-boilerplate-universal-react-node
 [Electrode Confippet]: https://github.com/electrode-io/electrode-confippet
 [Electrode Electrify]: https://github.com/electrode-io/electrify
