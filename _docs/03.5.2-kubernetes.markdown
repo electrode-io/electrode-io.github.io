@@ -8,7 +8,7 @@ toplevel: "Getting Started: Intermediate"
 
 [Kubernetes](http://kubernetes.io/) is "an open-source system for automating deployment, scaling, and management of containerized applications." It was developed by Google to handle the ops demand for an organization of that scale and the flexibility for running an infrastructure at any size.
 
-First off, make sure you already have a [Google Account](https://accounts.google.com/SignUp). Sign in to the [Google Cloud Platform](https://console.cloud.google.com/home/dashboard?project=gentle-waters-127300&pli=1). Remember your project ID and use it on your command line:
+First off, make sure you already have a [Google Account](https://accounts.google.com/SignUp). Sign in to the [Google Cloud Platform](https://console.cloud.google.com/home/dashboard?project=gentle-waters-127300&pli=1) and also sign up for a free trail on [Google Container Registry](https://cloud.google.com/container-registry/) and create a new project. Remember your project ID and use it on your command line:
 
 ```bash
 $ export PROJECT_ID="your-project-id"
@@ -21,7 +21,7 @@ run the following command to install [Kubernetes](http://kubernetes.io/docs/user
 $ gcloud components install kubectl
 ```
 
-We will use your [Docker image](docker.html) from the "Deploy with Docker" section, but you will need to update it to the following below:
+We will use your [Docker image](docker.html) from the "Deploy with Docker" section. Navigate to the docker `app` folder and update the Dockerfile to the following:
 
 ```bash
 FROM node:4.5
@@ -38,19 +38,19 @@ CMD node server
 Let's test out your image with Docker. Run the command below:
 
 ```bash
-$ docker run -d -p 3000:3000 --name your-awesome-app gcr.io/$PROJECT_ID/your-awesome-app:v1
+$ docker run -d -p 3000:3000 docker-awesome-container
 ```
 
 Visit your app in the browser at `http://localhost:3000`. You can stop running the container by using the command below:
 
 ```bash
-$ docker stop your-awesome-app
+$ docker stop docker-awesome-container
 ```
 
 We can now push the image to the [Google Container Registry](https://cloud.google.com/container-registry/). Your Docker images will be stored in a private repo that is accessible from every Google Cloud project as well as from outside the Google Cloud Platform.
 
 ```bash
-$ gcloud docker push gcr.io/$PROJECT_ID/your-awesome-app:v1
+$ gcloud docker push gcr.io/$PROJECT_ID/docker-awesome-container:v1
 ```
 
 You can explore other [Kubernetes capabilities](http://kubernetes.io/docs/hellonode/) and dig deeper in the the extensive [reference documentation](http://kubernetes.io/docs/reference/).
