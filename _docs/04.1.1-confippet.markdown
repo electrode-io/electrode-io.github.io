@@ -27,6 +27,8 @@ extended to meet the needs of your app
 * [Using Templates](#using-templates)
 * [Usage in Node Modules](#usage-in-node-modules)
 * [Customization](#customization)
+* [hapi.js step-by-step instructions](#hapijs-step-by-step)
+* [express.js step-by-step instructions](#express-step-by-step)
 
 ### Getting Started
 Let's say that in our application we need to access a database that is running 
@@ -241,12 +243,12 @@ It also adds a new extension handler, `json5`, to be loaded after `json`.
 To further understand the `_$` and the `compose` options, please see the
 documentation for [store], [composeConfig], and [processConfig].
 
-# hapijs step-by-step instructions
+### <a name="hapijs-step-by-step"></a>hapijs step-by-step instructions
 * The following is an example hapi.js app with [electrode-confippet] module fully integrated
 
-## Hapijs Server
+#### Hapijs Server
 
-### Install
+##### Install
 * Create a hapi app using the following commands:
 
 ```
@@ -257,7 +259,7 @@ npm install hapi --save
 npm install inert --save
 ```
 
-### Server
+##### Server
 * Create a `server.js` file using this code:
 
 ```js
@@ -310,15 +312,15 @@ server.start((error) => {
 });
 ```
 
-## Electrode Confippet
+#### Electrode Confippet
 
-### Install
+##### Install
 
 ```bash
 npm install electrode-confippet --save
 ```
 
-### Configure
+##### Configure
 * Create the config folder:
 
 ```
@@ -337,7 +339,7 @@ config
 
 * Add your configuration settings
 
-#### Default
+##### Default
 * Update the `config/default.json` to have the following settings:
 
 ```
@@ -348,7 +350,7 @@ config
 }
 ```
 
-#### Development environment
+##### Development environment
 * Update the `config/development.json` to have the following settings:
 
 ```
@@ -361,7 +363,7 @@ config
 
 * The above settings run the server in port 4000
 
-#### Production environment
+##### Production environment
 - Update the `config/production.json` to have the following settings:
 
 ```
@@ -375,14 +377,14 @@ config
 * The above settings run the server in port 8000
 * Keys that exist in the `config/default.json` that are also in the other environment configs will be replaced by the environment specific versions
 
-### Usage
+##### Usage
 * Replace the config line with the following in `server.js`:
 
 ```
 const config = require("electrode-confippet").config;
 ```
 
-### Run
+##### Run
 * Start the hapijs app in `development` environment:
 
 ```
@@ -397,10 +399,10 @@ NODE_ENV=production npm start
 
 * Running in the selected environment should load the appropriate configuration settings
 
-# express step-by-step instructions
+### <a name="express-step-by-step"></a>express step-by-step instructions
 * The following is an example express.js app with [electrode-confippet] module fully integrated
 
-## yeoman + express-generator
+#### yeoman + express-generator
 * This app was scaffolded using [yeoman] and [express-generator]
 * First, install `yeoman` and `express-generator`:
 
@@ -423,13 +425,13 @@ npm install
 NODE_ENV=development npm start
 ```
 
-## Electrode Confippet
+#### Electrode Confippet
 
 ```bash
 npm install electrode-confippet --save
 ```
 
-### Config Files
+##### Config Files
 * Create the config folder:
 
 ```bash
@@ -459,7 +461,7 @@ config
 }
 ```
 
-### Development Environment
+##### Development Environment
 * Update the `config/development.json` to have the following settings:
 
 ```
@@ -474,7 +476,7 @@ config
 
 * The above settings disable view cache, enable x-powered-by header and run the server in port 4000
 
-### Production Environment
+##### Production Environment
 * Update the `config/production.json` to have the following settings:
 
 ```
@@ -490,7 +492,7 @@ config
 * The above settings enable view cache, disable x-powered-by header and run the server in port 8000
 * Keys that exist in the `config/default.json` that are also in the other environment configs will be replaced by the environment specific versions
 
-### Confippet Require
+##### Confippet Require
 * Add the following to app.js:
 
 ```
@@ -501,7 +503,7 @@ app.set("x-powered-by", config.server.xPoweredBy);
 app.listen(config.server.port);
 ```
 
-### Running the Express app
+##### Running the Express app
 * Start the express app in `development` environment:
 
 ```
@@ -515,8 +517,6 @@ NODE_ENV=production npm start
 ```
 
 * Running in the selected environment should load the appropriate configuration settings
-
-Built with :heart: by [Team Electrode](https://github.com/orgs/electrode-io/people) @WalmartLabs.
 
 [electrode-confippet]: https://github.com/electrode-io/electrode-confippet
 [yeoman]: yeoman.io
