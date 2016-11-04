@@ -117,7 +117,7 @@ All of your content will be served as an HTML string and placed in this unassumi
 ```
 {% endraw %}
 
-This includes React components and Redux. To achieve this, the Electrode team has created another powerful module to optimize performance for an out-of-the-box Universal app: [Electrode-Router-Resolver-Engine](https://github.com/electrode-io/electrode-redux-router-engine), which takes React routes and requests and returns HTML to be rendered by `electrode-react-webapp`. We have found this to be the [best tool](https://github.com/electrode-io/electrode-redux-router-engine) for dealing with asynchronous redux actions.
+This includes React components and Redux. To achieve this, the Electrode team has created another powerful module to optimize performance for an out-of-the-box Universal app: [Electrode-Redux-Router-Engine](https://github.com/electrode-io/electrode-redux-router-engine), which takes React routes and requests and returns HTML to be rendered by `electrode-react-webapp`. We have found this to be the [best tool](https://github.com/electrode-io/electrode-redux-router-engine) for dealing with asynchronous redux actions.
 
 > `<your-awesome-app>/.babelrc`
 
