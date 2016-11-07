@@ -2026,31 +2026,14 @@
 </code></pre></div>
 <p>We&#39;ll need to extend our default.json to include our <code>friends</code> plugin and module <code>./server/plugins/friends</code>.</p>
 
-<p>Navigate to <code>&lt;your-awesome-app&gt;/config/development.json</code>. Copy, paste and save <code>friends</code> plugin below the <code>webapp</code> plugin:</p>
-<div class="highlight"><pre><code class="language-json" data-lang="json">  <span class="s2">&quot;friends&quot;</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nt">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;./server/plugins/friends&quot;</span>
-  <span class="p">}</span>
-</code></pre></div>
-<p>Make sure to add the comma <code>,</code> before <code>&quot;friends&quot;</code>. It should now look like this:</p>
-<div class="highlight"><pre><code class="language-json" data-lang="json">  <span class="p">{</span>
-    <span class="nt">&quot;plugins&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;webapp&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;./server/plugins/webapp&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
-          <span class="nt">&quot;paths&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;/{args*}&quot;</span><span class="p">:</span> <span class="p">{</span>
-              <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;./server/views/index-view&quot;</span>
-              <span class="p">}</span>
-            <span class="p">}</span>
-          <span class="p">}</span>
-        <span class="p">}</span>
-      <span class="p">},</span>
-      <span class="nt">&quot;friends&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;./server/plugins/friends&quot;</span>
-      <span class="p">}</span>
+<p>Navigate to <code>&lt;your-awesome-app&gt;/config/development.json</code>. Copy, paste and save <code>friends</code> plugin:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;plugins&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;friends&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;./server/plugins/friends&quot;</span>
     <span class="p">}</span>
   <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>You can learn more about Confippet and ways to extend your config in our Advanced Electrode App with the <a href="confippet.html">Confippet</a> stand alone module.</p>
 

@@ -2020,14 +2020,14 @@
     <h4><a class="anchor" name="deploy-with-googles-kubernetes"></a>Deploy with Google&#39;s Kubernetes <a class="hash-link" href="#deploy-with-googles-kubernetes">#</a></h4>
 <p><a href="http://kubernetes.io/">Kubernetes</a> is &quot;an open-source system for automating deployment, scaling, and management of containerized applications.&quot; It was developed by Google to handle the ops demand for an organization of that scale and the flexibility for running an infrastructure at any size.</p>
 
-<p>First off, make sure you already have a <a href="https://accounts.google.com/SignUp">Google Account</a>. Sign in to the <a href="https://console.cloud.google.com/home/dashboard?project=gentle-waters-127300&amp;pli=1">Google Cloud Platform</a>. Remember your project ID and use it on your command line:</p>
+<p>First off, make sure you already have a <a href="https://accounts.google.com/SignUp">Google Account</a>. Sign in to the <a href="https://console.cloud.google.com/home/dashboard?project=gentle-waters-127300&amp;pli=1">Google Cloud Platform</a> and also sign up for a free trail on <a href="https://cloud.google.com/container-registry/">Google Container Registry</a> and create a new project. Remember your project ID and use it on your command line:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">export </span><span class="nv">PROJECT_ID</span><span class="o">=</span><span class="s2">&quot;your-project-id&quot;</span>
 </code></pre></div>
 <p>Install <a href="https://cloud.google.com/sdk/">Google Cloud SDK</a>. After this installs,
 run the following command to install <a href="http://kubernetes.io/docs/user-guide/kubectl-overview/">Kubernetes</a>:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gcloud components install kubectl
 </code></pre></div>
-<p>We will use your <a href="docker.html">Docker image</a> from the &quot;Deploy with Docker&quot; section, but you will need to update it to the following below:</p>
+<p>We will use your <a href="docker.html">Docker image</a> from the &quot;Deploy with Docker&quot; section. Navigate to the docker <code>app</code> folder and update the Dockerfile to the following:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">FROM node:4.5
 RUN npm i -g npm@3
 EXPOSE 3000
@@ -2039,13 +2039,13 @@ RUN /usr/src/app/node_modules/.bin/gulp build
 CMD node server
 </code></pre></div>
 <p>Let&#39;s test out your image with Docker. Run the command below:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>docker run -d -p 3000:3000 --name your-awesome-app gcr.io/<span class="nv">$PROJECT_ID</span>/your-awesome-app:v1
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>docker run -d -p 3000:3000 docker-awesome-container
 </code></pre></div>
 <p>Visit your app in the browser at <code>http://localhost:3000</code>. You can stop running the container by using the command below:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>docker stop your-awesome-app
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>docker stop docker-awesome-container
 </code></pre></div>
 <p>We can now push the image to the <a href="https://cloud.google.com/container-registry/">Google Container Registry</a>. Your Docker images will be stored in a private repo that is accessible from every Google Cloud project as well as from outside the Google Cloud Platform.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gcloud docker push gcr.io/<span class="nv">$PROJECT_ID</span>/your-awesome-app:v1
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gcloud docker push gcr.io/<span class="nv">$PROJECT_ID</span>/docker-awesome-container:v1
 </code></pre></div>
 <p>You can explore other <a href="http://kubernetes.io/docs/hellonode/">Kubernetes capabilities</a> and dig deeper in the the extensive <a href="http://kubernetes.io/docs/reference/">reference documentation</a>.</p>
 
