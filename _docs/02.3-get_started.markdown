@@ -28,8 +28,8 @@ $ npm install -g yo gulp generator-electrode
 Make a new directory for your awesome app, then [generate](https://github.com/electrode-io/generator-electrode) your new project:
 
 ```bash
-$ mkdir my-electrode-app
-$ cd my-electrode-app
+$ mkdir your-awesome-app
+$ cd your-awesome-app
 $ yo electrode
 ```
 
