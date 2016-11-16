@@ -14,8 +14,8 @@ Let's begin by using `cd ..` to exit the directory for Your-Awesome-App and crea
 
 ```bash
 $ cd ..
-$ mkdir my-electrode-component
-$ cd my-electrode-component
+$ mkdir your-awesome-component
+$ cd your-awesome-component
 ```
 
 Again, we'll use [Yeoman](http://yeoman.io/) to scaffold our first stand alone component. We will globally install the Electrode [generator-electrode-component]:
