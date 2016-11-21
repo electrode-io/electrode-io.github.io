@@ -4,7 +4,7 @@ permalink: docs/stateless_csrf_validation.html
 toplevel: "Stand Alone Modules"
 ---
 
-The [electrode-csrf-jwt](https://github.com/electrode-io/electrode-csrf-jwt) plugin enables stateless CSRF protection using [JWT](https://github.com/auth0/node-jsonwebtoken) in Electrode, Express, or Hapi applications.
+The [electrode-csrf-jwt] plugin enables stateless CSRF protection using [JWT] in Electrode, Express, or Hapi applications.
 
 ### Why do we need this module?
 
@@ -31,13 +31,18 @@ The disadvantage is that this method relies on the client making all requests th
 
 {% include module_usage.md moduleId="electrode-csrf-jwt" express=true hapi=true %}
 
-#### Options
+* [Options](#options)
+* [Platforms](#platforms)
+* [hapi.js step-by-step instructions](#hapijs-step-by-step)
+* [express.js step-by-step instructions](#express-step-by-step)
+
+### Options
 
 `options`:
 
 * `secret`: **Required**. A string or buffer containing either the secret for HMAC algorithms, or the PEM encoded private key for RSA and ECDSA.
 
-Others are optional and follow the [same usage as jsonwebtoken](https://github.com/auth0/node-jsonwebtoken/blob/master/README.md#usage)
+Others are optional and follow the [same usage as jsonwebtoken]
 
 * `algorithm`
 * `expiresIn`
@@ -50,13 +55,12 @@ Others are optional and follow the [same usage as jsonwebtoken](https://github.c
 * `noTimestamp`
 * `headers`
 
-## Platforms
+### Platforms
 
 This module can be used with either [Electrode](#electrode), [Express](#express), or [Hapi](#hapi).
 
-### Electrode
-
-#### Example `config/default.json` configuration
+#### Electrode
+* Example `config/default.json` configuration
 
 ```json
 {
@@ -71,9 +75,8 @@ This module can be used with either [Electrode](#electrode), [Express](#express)
 }
 ```
 
-### Express
-
-#### Example `app.js` configuration
+#### Express
+* Example `app.js` configuration
 
 ```js
 const csrfMiddleware = require("electrode-csrf-jwt").expressMiddleware;
@@ -89,9 +92,8 @@ const options = {
 app.use(csrfMiddleware(options));
 ```
 
-### Hapi
-
-#### Example `server/index.js` configuration
+#### Hapi
+* Example `server/index.js` configuration
 
 ```js
 const csrfPlugin = require("electrode-csrf-jwt").register;
@@ -109,3 +111,428 @@ server.register({register: csrfPlugin, options}, (err) => {
   }
 });
 ```
+
+### <a name="hapijs-step-by-step"></a>hapijs step-by-step instructions
+* The following is an example hapi.js app with [electrode-csrf-jwt] module fully integrated
+
+#### Hapijs Server
+
+##### Install
+* Create a hapi app using the following commands:
+
+```
+mkdir hapiApp
+cd hapiApp
+npm init
+npm install hapi --save
+npm install inert --save
+```
+
+##### Server
+* Create a `server.js` file using this code:
+
+```js
+'use strict';
+
+const Hapi = require('hapi');
+const Path = require('path');
+const Inert = require('inert');
+const server = new Hapi.Server({
+  connections: {
+    routes: {
+      files: {
+        relativeTo: Path.join(__dirname, 'public')
+      }
+    }
+  }
+});
+const config = {
+  "connection": {
+    "port": 3000
+  }
+};
+
+server.connection(config.connection);
+server.register(Inert, () => {});
+server.route({
+  method: 'GET',
+  path: '/{param*}',
+  handler: {
+    directory: {
+      path: '.',
+      redirectToSlash: true,
+      index: true
+    }
+  }
+});
+server.route({
+  method: 'GET',
+  path: '/',
+  handler: function (request, reply) {
+    reply('Hapijs Server Running...');
+  }
+});
+
+server.start((error) => {
+  if (error) {
+    throw error;
+  }
+  console.log(`hapijs server running @ ${server.info.uri}`);
+});
+```
+
+#### Electrode CSRF JWT
+
+##### Install
+* Run the following commands:
+
+```
+cd hapiApp
+npm install electrode-csrf-jwt --save
+```
+
+##### Configure
+* Add the following to `config` constant json:
+
+```
+{
+  "csrf": {
+    "options": {
+      "secret": "add-super-secret-code-here",
+      "expiresIn": 60
+    }
+  }
+}
+```
+
+##### Usage
+* Add the following to `server.js`:
+
+```
+const server = new Hapi.Server();
+
+const csrfPlugin = require("electrode-csrf-jwt").register;
+
+server.register({
+  register: csrfPlugin,
+  options: config.csrf.options
+}, (error) => {
+  if (error) {
+    throw error;
+  }
+});
+```
+
+##### Test
+* CSRF Protection demo
+* Let's add some code to verify CSRF
+* Add the file: `public/scripts/csrf.js`:
+
+```
+"use strict";
+
+console.log("working");
+
+function doPOST(csrfHeader, shouldFail, resultId) {
+  console.log('csrfHeader: ' + csrfHeader);
+  $.ajax({
+    type: 'POST',
+    data: JSON.stringify({ message: "hello" }),
+    headers: {
+      "x-csrf-jwt": csrfHeader
+    },
+    xhrFields: {
+      withCredentials: true
+    },
+    contentType: 'application/json',
+    url: '/2',
+    success: function (data, textStatus, xhr) {
+      let msg = 'POST SUCCEEDED with status ' + xhr.status +
+        ' ' + (shouldFail ? 'but expected error' : 'as expected');
+      console.log(msg);
+      $(resultId).html('<p>' + msg + '</p>');
+    },
+    error: function (xhr, textStatus, error) {
+      let msg = 'POST FAILED with status ' + xhr.status +
+        ' ' + (shouldFail ? 'as expected' : 'but expected success');
+      console.log(msg);
+      $(resultId).html('<p>' + msg + '</p>');
+    }
+  });
+}
+
+$(function () {
+  $('#test-valid-link').click(function (e) {
+    e.preventDefault();
+    console.log('test-valid-link clicked');
+    $.ajax({
+      type: 'GET',
+      url: '/1',
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function (data, textStatus, xhr) {
+        console.log('GET: success');
+        let csrfHeader = xhr.getResponseHeader('x-csrf-jwt');
+        if (csrfHeader != '') {
+          console.log('> Got x-csrf-jwt token OK\n');
+        }
+        let csrfCookie = Cookies.get('x-csrf-jwt');
+        if (csrfCookie != '') {
+          console.log('> Got x-csrf-jwt cookie OK\n');
+        }
+
+        doPOST(csrfHeader, false, '#test-results');
+      }
+    });
+  });
+
+  $('#test-invalid-link').click(function (e) {
+    e.preventDefault();
+    console.log('test-invalid-link clicked');
+    doPOST('fake', true, '#test-results');
+  });
+});
+```
+
+* Add the file: `public/csrf.html`:
+
+```html
+<!doctype html>
+<html>
+
+<head>
+  <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.3/js.cookie.js"></script>
+  <script src="/scripts/csrf.js"></script>
+</head>
+
+<body>
+  <h1>CSRF Protection Demo</h1>
+  <p>This page demonstrates usage of the
+    <a href="https://github.com/electrode-io/electrode-csrf-jwt">electrode-csrf-jwt</a>
+    module. Two endpoints are declared in <code>app.js</code>:
+    <ul>
+      <li>a GET endpoint, <code>/1</code>, to which the module automatically adds a csrf token header</li>
+      <li>a POST endpoint, <code>/2</code>, to which the module automatically ensures the presence of a valid token in the request
+        headers</li>
+    </ul>
+  </p>
+  <p>Two simple tests via AJAX (JavaScript must be enabled) are demonstrated below:</p>
+  <ul>
+    <li><a id="test-valid-link" href="#">Test Valid POST</a> using a token retrieved from <code>/1</code> first (should succeed
+      with status 200)</li>
+    <li><a id="test-invalid-link" href="#">Test Invalid POST</a> using a forged token (should fail with status 400)</li>
+  </ul>
+  <div id="test-results"></div>
+</body>
+
+</html>
+```
+
+* Update `server.js` with the following:
+
+```
+server.route({
+    method: 'GET',
+    path: '/1',
+    handler: function (request, reply) {
+        reply('valid');
+    }
+});
+
+server.route({
+  method: 'POST',
+  path: '/2',
+  handler: function (request, reply) {
+    reply('valid');
+  }
+});
+
+server.state('x-csrf-jwt', {
+  isSecure: false
+});
+```
+
+##### Run
+- Start the hapijs app:
+
+```
+npm start
+```
+
+* Navigate to `http://localhost:3000/csrf.html` to test the CSRF features
+
+### <a name="express-step-by-step"></a>express step-by-step instructions
+* The following is an example express.js app with [electrode-csrf-jwt] module fully integrated
+
+#### yeoman + express-generator
+* This app was scaffolded using [yeoman] and [express-generator]
+* First, install `yeoman` and `express-generator`:
+
+```bash
+npm install -g yo
+npm install -g express-generator
+```
+
+* Scaffold a new app using `yeoman`:
+
+```bash
+express expressApp
+cd expressApp
+npm install
+```
+
+* At this point, you should be able to run the server locally:
+
+```bash
+NODE_ENV=development npm start
+```
+
+#### Electrode CSRF-JWT
+
+##### Install
+* Add the `electrode-csrf-jwt` component:
+
+```bash
+npm install electrode-csrf-jwt --save
+```
+
+* Next, in `expressApp/app.js`, register the component with the Express app:
+
+```javascript
+const csrfMiddleware = require("electrode-csrf-jwt").expressMiddleware;
+
+
+
+// csrf-jwt plugin configuration, should come after cookieParser() and before routes `app.use('/', index);`
+const csrfOptions = {
+  secret: "test",
+  expiresIn: 60
+};
+
+app.use(csrfMiddleware(csrfOptions));
+
+```
+
+#### Test
+* CSRF Protection demo
+* Let's add some code to verify CSRF
+* Add the file `app/public/javascripts/csrf.js`:
+
+```js
+console.log("working");
+
+function doPOST(csrfHeader, shouldFail, resultId) {
+  $.ajax({
+    type: 'POST',
+    data: JSON.stringify({message: "hello"}),
+    headers: {
+      "x-csrf-jwt": csrfHeader
+    },
+    xhrFields: {
+      withCredentials: true
+    },
+    contentType: 'application/json',
+    url: '/2',
+    success: function(data, textStatus, xhr) {
+      var msg = 'POST SUCCEEDED with status ' + xhr.status + ' ' + (shouldFail ? 'but expected error' : 'as expected');
+      console.log(msg);
+      $(resultId).html('<p>' + msg + '</p>');
+    },
+    error: function(xhr, textStatus, error) {
+      var msg = 'POST FAILED with status ' + xhr.status + ' ' + (shouldFail ? 'as expected' : 'but expected success');
+      console.log(msg);
+      $(resultId).html('<p>' + msg + '</p>');
+    }
+  });
+}
+
+
+$(function() {
+  $('#test-valid-link').click(function(e) {
+    e.preventDefault();
+    console.log('test-valid-link clicked');
+    $.ajax({
+      type: 'GET',
+      url: '/1',
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function(data, textStatus, xhr) {
+        console.log('GET: success');
+        var csrfHeader = xhr.getResponseHeader('x-csrf-jwt');
+        if (csrfHeader != '') {
+          console.log('> Got x-csrf-jwt token OK\n');
+        }
+        var csrfCookie = Cookies.get('x-csrf-jwt');
+        if (csrfCookie != '') {
+          console.log('> Got x-csrf-jwt cookie OK\n');
+        }
+
+        doPOST(csrfHeader, false, '#test-results');
+      }
+    });
+  });
+
+  $('#test-invalid-link').click(function(e) {
+    e.preventDefault();
+    console.log('test-invalid-link clicked');
+    doPOST('fake', true, '#test-results');
+  });
+
+});
+```
+
+* Add the file `app/views/csrf.jade`:
+
+```
+extends layout
+
+block content
+  script(type='text/javascript' src='http://code.jquery.com/jquery-3.1.0.min.js')
+  script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.3/js.cookie.js')
+  script(type='text/javascript' src='/javascripts/csrf.js')
+  h1= title
+  p This page demonstrates usage of the #[a(href="https://github.com/electrode-io/electrode-csrf-jwt") electrode-csrf-jwt] module. Two endpoints are declared in #[code app.js]:
+    ul
+      li a GET endpoint, #[code /1], to which the module automatically adds a csrf token header
+      li a POST endpoint, #[code /2], to which the module automatically ensures the presence of a valid token in the request headers
+  p Two simple tests via AJAX (JavaScript must be enabled) are demonstrated below:
+    ul
+      li #[a#test-valid-link(href="#") Test Valid POST] using a token retrieved from #[code /1] first (should succeed with status 200)
+      li #[a#test-invalid-link(href="#") Test Invalid POST] using a forged token (should fail with status 500)
+  #test-results
+```
+
+* Update `app/routes/index.js` with the following routes:
+
+```js
+/* GET CSRF demo page. */
+router.get('/csrf', function(req, res, next) {
+  res.render('csrf', { title: 'CSRF Protection Demo' });
+});
+
+/* GET demo endpoint which will return a CSRF cookie + header */
+router.get('/1', function(req, res, next) {
+  res.end("valid");
+});
+
+/* POST demo endpoint which will require a CSRF cookie + header */
+router.post('/2', function(req, res, next) {
+  return res.end("valid");
+});
+```
+
+#### Run
+* Start express app:
+
+```bash
+npm start
+```
+
+* Navigate to `http://localhost:3000/csrf` to test the CSRF features
+
+[electrode-csrf-jwt]: https://github.com/electrode-io/electrode-csrf-jwt
+[JWT]: https://github.com/auth0/node-jsonwebtoken
+[same usage as jsonwebtoken]: https://github.com/auth0/node-jsonwebtoken/blob/master/README.md#usage
