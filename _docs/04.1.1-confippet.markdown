@@ -222,6 +222,7 @@ To require the confippet settings, simply add the following to `app.js`:
 
 ```
 const config = require("electrode-confippet").config;
+const db = config.$("settings.db");
 
 app.set("view cache", config.server.viewCache);
 app.set("x-powered-by", config.server.xPoweredBy);
@@ -304,7 +305,10 @@ Now, while `NODE_ENV=production`:
 ##### ***Hapi Configuration*** 
 To require the confippet settings, simply add the following to `app.js`:
 
-```const config = require("electrode-confippet").config;```
+```
+const config = require("electrode-confippet").config;
+const db = config.$("settings.db");
+```
 
 ### Config Composition
 
