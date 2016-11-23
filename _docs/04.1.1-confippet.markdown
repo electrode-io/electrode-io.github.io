@@ -61,7 +61,7 @@ First, lets update the default settings for our database connection by adding th
 ```
 Then we will set up the development and production environments.
 
-##### ***Development Environment*** #####
+##### ***Development Environment***
 Update `development.json` to include the following settings:
 ```json {
   "server": {
@@ -91,7 +91,7 @@ Now, while `NODE_ENV=development` :
 - The server is being run in port 3000
 - The database is hosted from dev-db-server
 
-##### ***Production Environment*** #####
+##### ***Production Environment***
 Update `development.json` to include the following settings:
 ```json {
   "server": {
@@ -128,7 +128,7 @@ Additionally, here are some notes about the settings you just copied:
 - The connections property is specific to [electrode server](https://github.com/electrode-io/electrode-server/tree/master/lib/config)
 - Any settings that exist in the config/default.json that are *also* in the other environment configs will be replaced by the environment specific versions
 
-##### ***Electrode Configuration*** #####
+##### ***Electrode Configuration***
 Last step! Let's set up our Electrode application to use the new database settings by adding the following line to `server/index.js`:
 
 ```
@@ -171,7 +171,7 @@ Then update `default.json` to include the following settings:
 ```
 Now we can set up the development and production specific settings.
 
-##### ***Development Environment*** #####
+##### ***Development Environment***
 Update `config/development.json` to have the following settings:
 ```json {
   "server": {
@@ -193,7 +193,7 @@ Now, while `NODE_ENV=development`:
 - the server is run in port 4000
 - the databse is hosted from -dev-db-server
 
-##### ***Production Environment*** #####
+##### ***Production Environment***
 
 Update `config/production.json` to have the following settings:
 ```json
@@ -217,8 +217,7 @@ Now, while `NODE_ENV=development` :
 - the server is run in port 4800
 - the database is hosted from -dev-db-server
 
-##### ***Express Configuration*** #####
-
+##### ***Express Configuration*** 
 To require the confippet settings, simply add the following to `app.js`:
 
 ```
@@ -232,6 +231,80 @@ app.listen(config.server.port);
 
 #### ***Hapi Setup***
 
+Confippet requires a config directory to pull settings from:
+
+```
+mkdir config
+cd config
+```
+Let's add the following files to the `config` directory:
+```
+config
+|_ default.json
+|_ development.json
+|_ production.json
+```
+
+Then update `default.json` to include the following settings:
+```json {
+  "connection": {
+    "port": 3000
+  },
+  "settings": {
+    "db": {
+      "host": "localhost",
+      "port": 5432,
+      "database": "clients"
+    }
+  }
+}
+```
+Now we can set up the development and production specific settings.
+
+##### ***Development Environment***
+Update `config/development.json` to have the following settings:
+```json
+{
+  "connection": {
+    "port": 4000
+  },
+  "settings": {
+    "db": {
+      "host": "dev-db-server"
+    }
+  }
+}
+```
+Now, while `NODE_ENV=development` :
+
+- The above settings run the server in port 4000
+- The database is hosted from dev-db-server
+
+
+##### ***Production Environment***
+
+Update the config/production.json to have the following settings:
+```json {
+  "connection": {
+    "port": 8000
+  },
+  "settings": {
+    "db": {
+      "host": "prod-db-server"
+    }
+  }
+}
+```
+Now, while `NODE_ENV=production`:
+
+- The above settings run the server in port 8000
+- The database is hosted from dev-db-server
+
+
+##### ***Hapi Configuration*** 
+To require the confippet settings, simply add the following to `app.js`:
+
+```const config = require("electrode-confippet").config;```
 
 ### Config Composition
 
