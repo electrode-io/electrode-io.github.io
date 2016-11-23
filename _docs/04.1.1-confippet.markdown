@@ -46,6 +46,21 @@ config
 |_ development.json
 |_ production.json
 ```
+
+First, lets update the default settings for our database connection by adding the following setting to `default.json`: 
+
+```json {
+  "settings": {
+    "db": {
+      "host": "localhost",
+      "port": 5432,
+      "database": "clients"
+    }
+  }
+}
+```
+Then we will set up the development and production environments.
+
 ##### ***Development Environment*** #####
 Update `development.json` to include the following settings:
 ```json {
@@ -110,7 +125,7 @@ Now, while `NODE_ENV=production` :
 Additionally, here are some notes about the settings you just copied:
 
 - The server related configs are from hapi.js. More config options can be found here: http://hapijs.com/api
-- The connections property is [electrode server](https://github.com/electrode-io/electrode-server/tree/master/lib/config) specific
+- The connections property is specific to [electrode server](https://github.com/electrode-io/electrode-server/tree/master/lib/config)
 - Any settings that exist in the config/default.json that are *also* in the other environment configs will be replaced by the environment specific versions
 
 ##### ***Electrode Configuration*** #####
@@ -154,6 +169,7 @@ Then update `default.json` to include the following settings:
   }
 }
 ```
+Now we can set up the development and production specific settings.
 
 ##### ***Development Environment*** #####
 Update `config/development.json` to have the following settings:
@@ -170,7 +186,7 @@ Update `config/development.json` to have the following settings:
   }
 }
 ```
-Now, while `NODE_ENV=development` :
+Now, while `NODE_ENV=development`:
 
 - the view cache is *disabled*
 - the x-powered-by header is *enabled*
@@ -215,6 +231,7 @@ app.listen(config.server.port);
 
 
 #### ***Hapi Setup***
+
 
 ### Config Composition
 
