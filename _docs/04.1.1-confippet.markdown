@@ -72,7 +72,7 @@ Update `development.json` to include the following settings:
 ```
 Now, while `NODE_ENV=development` :
 
-- Server log errors that may be beneficial for debugging will now be shown with content encoding disabled
+- Server log errors that may be beneficial for debugging will now be shown with content encoding *disabled*
 - The server is being run in port 3000
 - The database is hosted from dev-db-server
 
@@ -103,7 +103,7 @@ Update `development.json` to include the following settings:
 
 Now, while `NODE_ENV=production` :
 
-- Server log errors are disabled and content encoding is enabled
+- Server log errors are *disabled* and content encoding is *enabled*
 - Server is run in port 8000
 - The database will be hosted from prod-db-server
 
@@ -122,11 +122,99 @@ const db = config.$("settings.db");
 
 
 
-#### Express Setup
-TODO
+#### ***Express Setup***
 
-#### Hapi Setup
-TODO
+Confippet requires a config directory to pull settings from:
+
+```
+mkdir config
+cd config
+```
+Let's add the following files to the `config` directory:
+```
+config
+|_ default.json
+|_ development.json
+|_ production.json
+```
+
+Then update `default.json` to include the following settings:
+```json {
+  "server": {
+    "viewCache": false,
+    "xPoweredBy": true,
+    "port": 4000
+  },
+  "settings": {
+    "db": {
+      "host": "localhost",
+      "port": 5432,
+      "database": "clients"
+    }
+  }
+}
+```
+
+##### ***Development Environment*** #####
+Update `config/development.json` to have the following settings:
+```json {
+  "server": {
+    "viewCache": false,
+    "xPoweredBy": true,
+    "port": 4000
+  },
+  "settings": {
+    "db": {
+    "host": "dev-db-server"
+    }
+  }
+}
+```
+Now, while `NODE_ENV=development` :
+
+- the view cache is *disabled*
+- the x-powered-by header is *enabled*
+- the server is run in port 4000
+- the databse is hosted from -dev-db-server
+
+##### ***Production Environment*** #####
+
+Update `config/production.json` to have the following settings:
+```json
+{
+  "server": {
+    "viewCache": true,
+    "xPoweredBy": false,
+    "port": 8000
+  },
+  "settings": {
+    "db": {
+    "host": "prod-db-server"
+    }
+  }
+}
+```
+Now, while `NODE_ENV=development` :
+
+- the view cache is *enabled*
+- the x-powered-by header is *disabled*
+- the server is run in port 4800
+- the database is hosted from -dev-db-server
+
+##### ***Express Configuration*** #####
+
+To require the confippet settings, simply add the following to `app.js`:
+
+```
+const config = require("electrode-confippet").config;
+
+app.set("view cache", config.server.viewCache);
+app.set("x-powered-by", config.server.xPoweredBy);
+app.listen(config.server.port);
+```
+
+
+#### ***Hapi Setup***
 
 ### Config Composition
 
