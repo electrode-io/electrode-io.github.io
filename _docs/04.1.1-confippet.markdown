@@ -29,62 +29,104 @@ extended to meet the needs of your app
 * [Customization](#customization)
 
 ### Getting Started
-Let's say that in our application we need to access a database that is running 
-locally in our development environment but is running on a specific hostname 
-while running in our production environment. We would like to be able to get 
-the correct hostname in our code, without too much effort, based on the current environment.
 
-Confippet can help us with this. All we have to do is to create a few config files like the following: 
+Confippet can be integrated seamlessly into any existing [Express](#express-setup), [Hapi](#hapi-setup) or [Electrode](#electrode-setup) application.
 
-`config/default.json`
+For example, let's say that in our application we need to access a database that is running locally in our development environment but is running on a specific hostname in our production environment. We would like to be able to get  the correct hostname in our code, without too much effort, based on the current environment. Confippet can help us with this. Follow the setup instructions for this example depending on your app's framework:
 
-```json
-{
-  "settings": {
-    "db": {
-      "host": "localhost",
-      "port": 5432,
-      "database": "clients"
+* [Electrode](#electrode-setup)
+* [Express](#express-setup)
+* [Hapi](#hapi-setup)
+
+#### ***Electrode Setup***
+Electrode applications that were generated using `yo electrode` have already been bootstrapped with the necessary config files to set up [Confippet]. Let's take a look at the following files:
+```
+config
+|_ default.json
+|_ development.json
+|_ production.json
+```
+##### ***Development Environment*** #####
+Update `development.json` to include the following settings:
+```json {
+  "server": {
+    "connections": {
+      "compression": false
+    },
+    "debug": {
+      "log": ["error"],
+      "request": ["error"]
     }
-  }
+  },
+  "connections": {
+    "default": {
+      "port": 3000
+    }
+  },
+  "settings": {
+   "db": {
+     "host": "dev-db-server"
+   }
+ }
+}
+```
+Now, while `NODE_ENV=development` :
+
+- Server log errors that may be beneficial for debugging will now be shown with content encoding disabled
+- The server is being run in port 3000
+- The database is hosted from dev-db-server
+
+##### ***Production Environment*** #####
+Update `development.json` to include the following settings:
+```json {
+  "server": {
+    "connections": {
+      "compression": true
+    },
+    "debug": {
+      "log": false,
+      "request": false
+    }
+  },
+  "connections": {
+    "default": {
+      "port": 8000
+    }
+  },
+  "settings": {
+   "db": {
+     "host": "prod-db-server"
+   }
+ }
 }
 ```
 
-`config/development.json`
+Now, while `NODE_ENV=production` :
 
-```json
-{
-  "settings": {
-    "db": {
-      "host": "dev-db-server"
-    }
-  }
-}
+- Server log errors are disabled and content encoding is enabled
+- Server is run in port 8000
+- The database will be hosted from prod-db-server
+
+Additionally, here are some notes about the settings you just copied:
+
+- The server related configs are from hapi.js. More config options can be found here: http://hapijs.com/api
+- The connections property is [electrode server](https://github.com/electrode-io/electrode-server/tree/master/lib/config) specific
+- Any settings that exist in the config/default.json that are *also* in the other environment configs will be replaced by the environment specific versions
+
+##### ***Electrode Configuration*** #####
+Last step! Let's set up our Electrode application to use the new database settings by adding the following line to `server/index.js`:
+
 ```
-
-`config/production.json`
-
-```json
-{
-  "settings": {
-    "db": {
-      "host": "prod-db-server"
-    }
-  }
-}
-```
-
-The above configs can be used in the app using the following: 
-
-```javascript
-const config = require("electrode-confippet").config;
 const db = config.$("settings.db");
 ```
 
-In this example, `default.json` will be loaded in all environments, whereas
-`production.json` will be loaded only when the `NODE_ENV` environment variable
-is set to `production`. In that case, the value of `host` in the `db` object
-will be overwritten by the value in `production.json`.
+
+
+#### Express Setup
+TODO
+
+#### Hapi Setup
+TODO
 
 ### Config Composition
 
