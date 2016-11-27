@@ -1,6 +1,6 @@
 ---
 title:  "Bundle Analyzer"
-permalink: docs/bundle-analyzer.html
+permalink: docs/bundle_analyzer.html
 toplevel: "Stand Alone Modules"
 ---
 
