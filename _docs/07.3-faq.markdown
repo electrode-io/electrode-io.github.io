@@ -56,7 +56,7 @@ Electrode reusable components are for reusing across different apps, so they are
 #### 6. Why do we focus on Universal JavaScript?
 * SEO - Because [Walmart.com](www.walmart.com) is an eCommerce site, Search Engine Optimization is critical for our business model. To benefit from search indexing, SSR allows us to return an HTML string to search engines and our search analytics.
 
-* Reusability - At [Walmart.com](www.walmart.com) we handle highly complex user interaction at an unbelievable scale. [ReactJS](https://facebook.github.io/react/) is the chosen framework to deal with us because our developers can create reusable components that we then run universally: or the client and the server.
+* Reusability - At [Walmart.com](www.walmart.com) we handle highly complex user interactions at an unbelievable scale. [ReactJS](https://facebook.github.io/react/) is the chosen framework to deal with this so our developers can create reusable components that we can then run universally: on the client and the server.
 Creating modular and reusable components has helped us to share the same code across several different pages and even different brands. The shared components all have one single source of truth and are easy to read, debug and implement, so our engineers can focus on building great features to enrich user experience.
 
 * Maintainability - "[Code is a liability](https://medium.com/capital-one-developers/why-everyone-is-talking-about-isomorphic-universal-javascript-and-why-it-matters-38c07c87905#.y7cy5jki3)".
