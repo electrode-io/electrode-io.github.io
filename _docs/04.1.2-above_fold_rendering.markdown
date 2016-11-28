@@ -14,7 +14,11 @@ The table below outlines a clear performance increase in the example app by skip
 
 Performance Improvement Numbers below:
 
-![above-the-fold-table](/img/above-the-fold-table.png)
+| Tables        | HTML Size           | renderToString Time  |
+| ------------- |:-------------:| -----:|
+| before      | 452 kB | 249ms |
+| after      | 315 kB      |   177ms|
+| diff | -137 kB (-30%)      |    -72ms (-29%) |
 
 {% include module_usage.md moduleId="above-the-fold-only-server-render" express_react_redux=true hapi_react_redux=true %}
 
