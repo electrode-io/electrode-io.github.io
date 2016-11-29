@@ -108,4 +108,65 @@ server.register({register: csrfPlugin, options}, (err) => {
 });
 ```
 
-With just a simple configuration, your app is now ready to use Stateless CSRF JWT Validation. At this point, server endpoints do not require any additional configuration for protection to be enabled. Your `GET` endpoints will automatically return a CSRF cookie *and* header and your `POST` endpoints will require the same. 
+### Usage Example
+With the configuration shown above, your app is now ready to use Stateless CSRF JWT Validation. At this point, server endpoints do not require any additional configuration for protection to be enabled. Your `GET` endpoints will automatically return a CSRF cookie *and* header and your `POST` endpoints will require the same. 
+
+Let's see a simple [example](https://github.com/electrode-io/electrode-boilerplate-universal-react-node#electrode-csrf-jwt) to show how the CSRF tokens are automatically configured:
+
+**Server Endpoint Setup**
+```js
+server.route({
+  method: "GET",
+  path: "/1",
+  handler: (req, reply) => reply("valid")
+});
+ 
+server.route({
+  method: "POST",
+  path: "/2",
+  handler: (req, reply) => reply("valid")
+});
+```
+Here we set up two simple endpoints:
+
+ - a `GET` endpoint, `/1`, to which the module automatically adds a csrf token header
+ - a `POST` endpoint, `/2`, to which the module ensures the presence of a valid token in the request headers
+
+Let's see how to access them from the client:
+
+**Client AJAX Setup**
+
+```js
+//A simple post Fn that now requires a csrf token to be passed in the header
+
+function doPost(csrfToken) {
+  fetch("/2", {
+    credentials: "same-origin",
+    method: "POST",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "x-csrf-jwt": csrfToken
+    },
+    body: JSON.stringify({message: "hello"})
+  })
+  .then((resp) => console.log(resp)
+}
+
+doGet() {
+  fetch("/1", {credentials: "same-origin"})
+  .then((resp) => {
+    if (resp.status === "200") {
+      const token = resp.headers.get("x-csrf-jwt");
+      if (token !== "") {
+        console.log("Got CSRF token OK");
+        doPost(token, false);
+      }
+    } 
+  })
+}
+```
+
+In this example a `POST` request to `/2` is made using the token retrieved from the `/1` endpoint.
+
+You can checkout our [Electrode Boilerplate React Application](https://github.com/electrode-io/electrode-boilerplate-universal-react-node#electrode-csrf-jwt) for a more detailed example
