@@ -12,31 +12,28 @@ The [above-the-fold-only-server-render] is a React component for optionally skip
 
 The table below outlines a clear performance increase in the example app by skipping server rendering of the `Footer` component and several other below the fold zones on [Walmart.com](http://www.walmart.com):
 
-Performance Improvement Numbers below:
-
-![above-the-fold-table](/img/above-the-fold-table.png)
+| Tables        | HTML Size           | renderToString Time  |
+| ------------- |:-------------:| -----:|
+| before      | 452 kB | 249ms |
+| after      | 315 kB      |   177ms|
+| diff | -137 kB (-30%)      |    -72ms (-29%) |
 
 {% include module_usage.md moduleId="above-the-fold-only-server-render" express_react_redux=true hapi_react_redux=true %}
 
-You can tell your electrode-react components to skip server side rendering and save on CPU render time, either by passing a `skip={true}` prop or by setting up `aboveTheFoldOnlyServerRender` in your app context and passing the component a `contextKey` prop.
-
-By default, the [above-the-fold-only-server-render] component is an exercise in simplicity; at a high-level it returns the child component.
-
-You can selectively choose to not server side render a component by passing a `skip prop`:
+The Above-the-fold component is used as a wrapper. After wrapping your react components in the AboveTheFoldOnlyServerRender wrapper, you can skip server side rendering on those components and save on CPU render time by passing a `skip={true}` prop to the wrapper component:
 
 ```js
 
 const SomeComponent = () => {
   return (
     <AboveTheFoldOnlyServerRender skip={true}>
-      <div>This will not be server side rendered.</div>
+      <div>This will skip server side rendering.</div>
     </AboveTheFoldOnlyServerRender>
   );
 };
 
 ```
-
-You can also skip server side rendering by setting `context` in your app and passing a `contextKey` prop:
+Alternatively, you can set up `aboveTheFoldOnlyServerRender` in your app context and pass the AboveTheFoldOnlyServerRender wrapper a `contextKey` prop:
 
 ```js
 
@@ -71,6 +68,9 @@ SomeApp.childContextTypes = {
 };
 
 ```
+
+By default, the [above-the-fold-only-server-render] component is an exercise in simplicity; at a high-level it returns the child component that it wraps around.
+
 
 ## Supported Platforms
 
