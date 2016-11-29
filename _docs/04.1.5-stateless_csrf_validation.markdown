@@ -8,7 +8,7 @@ The [electrode-csrf-jwt](https://github.com/electrode-io/electrode-csrf-jwt) plu
 
 ### Why do we need this module?
 
-Protection against [CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) is a very important security feature. Traditional anti-CSRF techniques use tokens issued by the server that the client has to post back. The server validates the request by comparing the token with it's own, stored copy. But what if your application does not rely on server-side session persistence? Protecting users against CSRF attacks when your application does not use back-end sessions can be tricky. The Stateless CSRF JWT Validation module addresses this need.
+Protection against [CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) is a very important security feature. Traditional anti-CSRF techniques use tokens issued by the server that the client has to post back. The server validates the request by comparing the token with its own, stored copy. But what if your application does not rely on server-side session persistence? Protecting users against CSRF attacks when your application does not use back-end sessions can be tricky. The Stateless CSRF JWT Validation module addresses this need.
 
 This module is a stand-alone module and can be configured to work in any [Electrode](#electrode), [Express](#express), or [Hapi](#hapi) application.
 
@@ -109,7 +109,7 @@ server.register({register: csrfPlugin, options}, (err) => {
 ```
 
 ### Usage Example
-With the configuration shown above, your app is now ready to use Stateless CSRF JWT Validation. At this point, server endpoints do not require any additional configuration for protection to be enabled. Your `GET` endpoints will automatically return a CSRF cookie *and* header and your `POST` endpoints will require the same. 
+With the configuration shown above, your app is now ready to use Stateless CSRF JWT Validation. At this point, server endpoints do not require any additional configuration for protection to be enabled. Your `GET` endpoints will automatically return a CSRF cookie *and* header, and your `POST` endpoints will require the same. 
 
 Let's see a simple [example](https://github.com/electrode-io/electrode-boilerplate-universal-react-node#electrode-csrf-jwt) to show how the CSRF tokens are automatically configured:
 
@@ -153,20 +153,20 @@ function doPost(csrfToken) {
   .then((resp) => console.log(resp)
 }
 
-doGet() {
+function doGet() {
   fetch("/1", {credentials: "same-origin"})
   .then((resp) => {
     if (resp.status === "200") {
       const token = resp.headers.get("x-csrf-jwt");
       if (token !== "") {
         console.log("Got CSRF token OK");
-        doPost(token, false);
+        doPost(token);
       }
     } 
   })
 }
 ```
 
-In this example a `POST` request to `/2` is made using the token retrieved from the `/1` endpoint.
+In this example a `POST` request to `/2` can be made using the token retrieved from the `/1` endpoint.
 
 You can checkout our [Electrode Boilerplate React Application](https://github.com/electrode-io/electrode-boilerplate-universal-react-node#electrode-csrf-jwt) for a more detailed example
