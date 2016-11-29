@@ -8,36 +8,39 @@ The [electrode-csrf-jwt](https://github.com/electrode-io/electrode-csrf-jwt) plu
 
 ### Why do we need this module?
 
-CSRF protection is an important security feature, but in systems which don't have backend session persistence, doing CSRF token validation is tricky. Stateless CSRF support addresses this need.
+Protection against [CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) is a very important security feature. Traditional anti-CSRF techniques use tokens issued by the server that the client has to post back. The server validates the request by comparing the token with it's own, stored copy. But what if your application does not rely on server-side session persistence? Protecting users against CSRF attacks when your application does not use back-end sessions can be tricky. The Stateless CSRF JWT Validation module addresses this need.
 
-### How do we validate requests?
+This module is a stand-alone module and can be configured to work in any [Electrode](#electrode), [Express](#express), or [Hapi](#hapi) application.
+
+#### How do we validate requests?
 
 ***Double JWT CSRF tokens***
 
-We rely on the fact that cross-site requests can't set headers.
+This Stateless CSRF Validation module is able to validate the authenticity of the client's request by relying on the fact that cross-site requests cannot set headers. Using two JWT CSRF tokens takes advantage of this.
 
-Two JWT CSRF tokens are generated on the server side with the same payload but different types (see below), one for the HTTP header, one for the cookie.
+Both tokens are generated on the server side with the same payload but different types: one for the HTTP header, one for the cookie. Note that when a client makes a request, the JWT token must be sent in the headers.
 
 ```js
 headerPayload = { type: "header", UUID: "12345" };
 cookiePayload = { type: "cookie", UUID: "12345" };
 ```
 
-When a client makes a request, the JWT token must be sent in the headers.
-
-On the server side, both tokens are received, decoded, and validated to make sure the payloads match.
+Once *both* tokens are received by the server, they are decoded and validated to make sure the payloads match.
 
 The disadvantage is that this method relies on the client making all requests through AJAX.
 
 {% include module_usage.md moduleId="electrode-csrf-jwt" express=true hapi=true %}
 
-#### Options
+### Configuration
 
-`options`:
+This module can be configured to work in any [Electrode](#electrode), [Express](#express), or [Hapi](#hapi) application.
 
-* `secret`: **Required**. A string or buffer containing either the secret for HMAC algorithms, or the PEM encoded private key for RSA and ECDSA.
+Whichever platform you are using, an `options` property with a secret key is required:
 
-Others are optional and follow the [same usage as jsonwebtoken](https://github.com/auth0/node-jsonwebtoken/blob/master/README.md#usage)
+>**options**
+>* `secret`: **Required**. A string or buffer containing either the secret for HMAC algorithms, or the PEM encoded private key for RSA and ECDSA.
+
+Other config properties are optional and follow the [same usage as jsonwebtoken](https://github.com/auth0/node-jsonwebtoken/blob/master/README.md#usage)
 
 * `algorithm`
 * `expiresIn`
@@ -50,13 +53,8 @@ Others are optional and follow the [same usage as jsonwebtoken](https://github.c
 * `noTimestamp`
 * `headers`
 
-## Platforms
-
-This module can be used with either [Electrode](#electrode), [Express](#express), or [Hapi](#hapi).
-
 ### Electrode
-
-#### Example `config/default.json` configuration
+All server configurations in [Electrode apps](http://www.electrode.io/docs/what_is_electrode.html) are handled by the versatile [confippet](http://www.electrode.io/docs/confippet.html) module. The Stateless CSRF JWT Validation module can be easily configured by adding the following property to `config/default.json`:
 
 ```json
 {
@@ -109,3 +107,5 @@ server.register({register: csrfPlugin, options}, (err) => {
   }
 });
 ```
+
+With just a simple configuration, your app is now ready to use Stateless CSRF JWT Validation. At this point, server endpoints do not require any additional configuration for protection to be enabled. Your `GET` endpoints will automatically return a CSRF cookie *and* header and your `POST` endpoints will require the same. 
