@@ -46,7 +46,7 @@ export default function configureStore(initialState) {
 ```
 
 
-Now lets create the redux store using the configure function we just wrote. This pattern creates the store in a *server-side component* and initializes it with a promise library (the example below uses [bluebird](https://github.com/petkaantonov/bluebird/)):
+Now let's create the redux store using the configure function from above. This pattern creates the store in a *server-side component* and initializes it with a promise library (the example below uses [bluebird](https://github.com/petkaantonov/bluebird/)):
 
 ```javascript
 import configureStore from "./configureStore";
@@ -89,7 +89,7 @@ module.exports = (req) => {
 
 **Hapi / Express **
 
-To configure the Redux Rout0er Engine in an Express or Hapi application, first initialize the engine and then use it within a route handler to return the HTML. An example usage follows:
+To configure the Redux Router Engine in an Express or Hapi application, first initialize the engine and then use it within a route handler to return the HTML. An example usage follows:
 
 ```javascript
 const routes = require("./routes");
@@ -104,7 +104,7 @@ function handler(req, res) {
 }
 ```
 
-Note the route handler configuration above is a stub in this case. In a Hapi or Express app, the route handler would be more complex. Please check out our [express](https://github.com/docs-code-examples-electrode-io/express-react-redux-webpack/blob/8e6023af5d4c7f4ec8780cfeeb214efc04892b2c/src/server.js#L90-L94) and [Hapi](https://github.com/docs-code-examples-electrode-io/hapi-react-redux/blob/685456d738997cfca5beda2ff3d9b655ad37e0e0/hapiApp/src/server.js#L123-L146) example applications for a more specific use case of the `engine.render` function.
+Note the route handler configuration above is a stub in this case. In a real Hapi or Express application, the route handler would be more complex. You can refer to our [express](https://github.com/docs-code-examples-electrode-io/express-react-redux-webpack/blob/8e6023af5d4c7f4ec8780cfeeb214efc04892b2c/src/server.js#L90-L94) and [Hapi](https://github.com/docs-code-examples-electrode-io/hapi-react-redux/blob/685456d738997cfca5beda2ff3d9b655ad37e0e0/hapiApp/src/server.js#L123-L146) example applications for a more specific use case of the `engine.render` function.
 
 
 ## API
