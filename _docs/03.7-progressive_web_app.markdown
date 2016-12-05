@@ -43,15 +43,15 @@ Generating a service worker in an electrode app is as simple as adding a config 
 
 ```javascript
 module.exports = {
-  cacheId: "electrode",
   cache: {
+    cacheId: "electrode",
+    staticFileGlobs: ['dist/**/*']
     runtimeCaching: [{
       handler: "fastest",
       urlPattern: /\/$/
     }],
-    staticFileGlobs: ['dist/**/*']
+    stripPrefix: "dist/js/"
   },
-  stripPrefix: "dist/js/",
   manifest: {
     background: "#FFFFFF",
     logo: "./images/logo-192x192.png",
@@ -60,6 +60,18 @@ module.exports = {
     theme_color: "#FFFFFF"
   }
 };
+```
+
+This will generate a `sw.js` in the `dist` folder. To access it, add it as a routes in `server/plugins/webapps/index.js`, under `registerRoutes`:
+
+```javascript
+server.route({
+  method: "GET",
+  path: "/sw.js",
+  handler: {
+    file: "dist/sw.js"
+  }
+});
 ```
 
 We achieved couple of things here:
@@ -124,7 +136,7 @@ module.exports = {
 }
 ```
 
-Our service worker with `push` event is ready to be registered on the browser. To register, create a new file `register-service-worker` inside the `client` directory:
+Our service worker with `push` event is ready to be registered on the browser. To register, create a new file `register-service-worker.js` inside the `client` directory:
 
 ```javascript
 /* eslint-env browser */
@@ -183,6 +195,12 @@ module.exports = () => {
       });
   }
 };
+```
+And import this file in `client/app.jsx`
+```javascript
+require.ensure(["./register-service-worker"], (require) => {
+  require("./register-service-worker")();
+}, "register-service-worker");
 ```
 
 Now we have a registered service worker installed, activated and ready to accept `push` from the server.  
@@ -393,15 +411,16 @@ We also need to update `sw-config.js` with the `sender_id`, so the final `sw-con
 
 ```javascript
 module.exports = {
-  cacheId: "electrode",
   cache: {
+    cacheId: "electrode",
+    staticFileGlobs: ['dist/**/*'],
     runtimeCaching: [{
       handler: "fastest",
       urlPattern: /\/$/
     }],
-    staticFileGlobs: ['dist/**/*']
+    importScripts: ['./sw.js'],
+    stripPrefix: "dist/js/"
   },
-  stripPrefix: "dist/js/",
   manifest: {
     background: "#FFFFFF",
     logo: "./images/logo-192x192.png",
