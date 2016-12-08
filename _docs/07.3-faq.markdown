@@ -84,9 +84,9 @@ Initial versions of Electrode archetypes were certainly using *npm scripts* but 
 - **Compatibility**: At the moment our build tasks being shell scripts some are only compatible for Unix.  If we go with tasks written in JS it's easier to make them compatible on other OS such as Windows.
 - **Resource**: With a large community behind gulp, there are a lot of plugins in the open source community for supporting various common build tasks and we can utilize them.
 
-gulp scripts can still be wrapped in **npm scripts** here is an example of using using npm scripts to execute JS tasks in the archetype: https://github.com/electrode-io/electrode-boilerplate-universal-react-node/blob/master/package.json#L21-L24
+gulp scripts can still be wrapped in **npm scripts** here is an example of using using npm scripts to execute JS tasks in the archetype: https://github.com/electrode-io/electrode/blob/d4142ee0c938cbf973a429ee8467052aa4e1c9be/samples/universal-react-node/package.json#L22-L29
 
-[Electrode Boilerplate]: https://github.com/electrode-io/electrode-boilerplate-universal-react-node
+[Electrode Boilerplate]: https://github.com/electrode-io/electrode#boilerplate-universal-react-node
 [Electrode Confippet]: https://github.com/electrode-io/electrode-confippet
 [Electrode Electrify]: https://github.com/electrode-io/electrify
 [Electrode CSRF JWT]: https://github.com/electrode-io/electrode-csrf-jwt

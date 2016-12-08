@@ -6,7 +6,7 @@ toplevel: "Electrode Boilerplate"
 
 ###Maximum Performance Out of the Box
 
-In our [Getting Started](get_started.html) section, we introduced you to our Yeoman Electrode [Generator](https://github.com/electrode-io/generator-electrode) and we constructed an impressive application with the built in technologies that the simple `yo electrode` command gave us (read our Getting Started: [What's Inside](whats_inside.html) to learn more):
+In our [Getting Started](get_started.html) section, we introduced you to our Yeoman Electrode [Generator](https://github.com/electrode-io/electrode#yeoman-generator) and we constructed an impressive application with the built in technologies that the simple `yo electrode` command gave us (read our Getting Started: [What's Inside](whats_inside.html) to learn more):
 
 *  [React](https://facebook.github.io/react/index.html)
 
@@ -42,7 +42,7 @@ In our [Getting Started](get_started.html) section, we introduced you to our Yeo
 
 *  [Electrode-Docgen](https://github.com/electrode-io/electrode-docgen)
 
-This is the beginning foundation of the Electrode  [Boilerplate](https://github.com/electrode-io/electrode-boilerplate-universal-react-node). You have learned in the Stand Alone [Modules](stand_alone_modules.html) section that each of the Electrode modules are agnostic and can be used individually to enhance one specific area of your application. However, integrated together, you have a supercharged application; one that is capable of handling the complex problems we face at [WalmartLabs](www.walmartlabs.com) and reach maximum efficiency and performance.
+This is the beginning foundation of the [Electrode Boilerplate]. You have learned in the Stand Alone [Modules](stand_alone_modules.html) section that each of the Electrode modules are agnostic and can be used individually to enhance one specific area of your application. However, integrated together, you have a supercharged application; one that is capable of handling the complex problems we face at [WalmartLabs](www.walmartlabs.com) and reach maximum efficiency and performance.
 
 This boilerplate includes the [Electrode Generator](whats_inside.html) and it also has the following stand alone modules and tools built in for peak optimization out-of-the-box:
 
@@ -53,4 +53,6 @@ This boilerplate includes the [Electrode Generator](whats_inside.html) and it al
 *  [Electrode Bundle Analyzer](bundle_analyzer.html)
 *  [Electrify](electrify.html)
 
->Start creating a more complex application today with the [Electrode Boilerplate](https://github.com/electrode-io/electrode-boilerplate-universal-react-node). We can't wait to see what you build!
+>Start creating a more complex application today with the [Electrode Boilerplate]. We can't wait to see what you build!
+
+[Electrode Boilerplate]: https://github.com/electrode-io/electrode#boilerplate-universal-react-node
