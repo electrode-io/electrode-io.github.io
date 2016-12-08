@@ -36,7 +36,7 @@ Click on the setting icons and open `Project settings`.
 Navigate to the `CLOUD MESSAGING` tab and note down your `Server key` and the `Sender ID`.  
 
 2. Add the following icons inside the `client/images` directory  
-[logo 192x192](https://github.com/electrode-io/electrode-boilerplate-universal-react-node/blob/master/client/images/logo-192x192.png) and [logo 72x72](https://github.com/electrode-io/electrode-boilerplate-universal-react-node/blob/master/client/images/logo-72x72.png).
+[logo 192x192](https://github.com/electrode-io/electrode/blob/d4142ee0c938cbf973a429ee8467052aa4e1c9be/samples/universal-react-node/client/images/logo-192x192.png) and [logo 72x72](https://github.com/electrode-io/electrode/blob/d4142ee0c938cbf973a429ee8467052aa4e1c9be/samples/universal-react-node/client/images/logo-72x72.png).
   We will be using these logos for `Add to Homescreen` banner and `Push Notifications`.
 
 ### Adding a Service Worker

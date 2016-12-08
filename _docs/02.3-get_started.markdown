@@ -17,7 +17,7 @@ Are you ready to build your first Electrode App?
 
 Please make sure to have all the [environment requirements](http://www.electrode.io/docs/requirements.html) ready & setup before proceeding to the next step.
 
-First, install [Yeoman](http://yeoman.io/) and the [Electrode Generator](https://github.com/electrode-io/generator-electrode):
+First, install [Yeoman](http://yeoman.io/) and the [Electrode Generator]
 
 ```bash
 $ npm install -g yo gulp generator-electrode
@@ -25,7 +25,7 @@ $ npm install -g yo gulp generator-electrode
 ** NOTE: You may need sudo depending on your machine permissions. **
 ```
 
-Make a new directory for your awesome app, then [generate](https://github.com/electrode-io/generator-electrode) your new project:
+Make a new directory for your awesome app, then generate your new project:
 
 ```bash
 $ mkdir your-awesome-app
@@ -114,3 +114,6 @@ Let's take a quick high level overview of our file structure and what `generator
 ---
 
 Let's continue to build by modifying our component and deploying in [Quick Start: Build Component](build_component.html).
+
+[Electrode Generator]: https://github.com/electrode-io/electrode#yeoman-generator
+

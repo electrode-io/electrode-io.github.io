@@ -63,7 +63,7 @@ const githubGetContributors = Promise.promisify(github.repos.getContributors);
 exports.register = (server, options, next) => {
 
   const friendsArr = [ /*eslint-disable max-len */
-    {name: "Electrode", img: "//goo.gl/I9utJF", size: 8, github: "https://github.com/electrode-io/electrode-boilerplate-universal-react-node"},
+    {name: "Electrode", img: "//goo.gl/I9utJF", size: 8, github: "https://github.com/electrode-io/electrode"},
     {name: "React", img: "//goo.gl/xwbqlB", size: 8, github: "https://github.com/facebook/react"},
     {name: "Redux", img: "//goo.gl/MGQ3lp", size: 8, github: "https://github.com/reactjs/redux"},
     {name: "node", img: "//goo.gl/hxmCEE", size: 8, github: "https://github.com/nodejs/node"}
