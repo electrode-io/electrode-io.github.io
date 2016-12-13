@@ -41,7 +41,7 @@ components](electrode_explorer.html) and another to help optimize your
 **Start using these tools in your existing applications [Electrode Explorer](electrode_explorer.html) and [Electrify](electrify.html).**
 
 ##Features
-[Electrode Boilerplate](https://github.com/electrode-io/electrode-boilerplate-universal-react-node) comes fully loaded with the best technologies available:
+[Electrode Boilerplate](https://github.com/electrode-io/electrode#boilerplate-universal-react-node) comes fully loaded with the best technologies available:
 
 *  <a href="https://facebook.github.io/react/index.html" target="_blank">React</a> is an awesome JavaScript library for building user interfaces, created by Facebook.
 

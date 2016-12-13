@@ -45,7 +45,7 @@ server
 Navigate to `<your-awesome-app>/server/plugins/friends/index.js`. This is where we will make an external API call to Github and request the last ten contributors of our selected Open Source 'friend' using a URL `https://api.github.com/ + /repos/:user/:repo/contributors`. Our GitHub wrapper [library](https://github.com/mikedeboer/node-github) will allow us to use a built in method, `github.repos.getContributors({})`, to streamline this process and return an array of Open Source contributors. We will also use [Bluebird](http://bluebirdjs.com/docs/getting-started.html), a Promise library that makes working with our async API calls much more manageable. Copy, paste and save the code below:
 
 ```javascript
-'use strict';
+"use strict";
 
 //a very simple plugin
 
@@ -63,7 +63,7 @@ const githubGetContributors = Promise.promisify(github.repos.getContributors);
 exports.register = (server, options, next) => {
 
   const friendsArr = [ /*eslint-disable max-len */
-    {name: "Electrode", img: "//goo.gl/I9utJF", size: 8, github: "https://github.com/electrode-io/electrode-boilerplate-universal-react-node"},
+    {name: "Electrode", img: "//goo.gl/I9utJF", size: 8, github: "https://github.com/electrode-io/electrode"},
     {name: "React", img: "//goo.gl/xwbqlB", size: 8, github: "https://github.com/facebook/react"},
     {name: "Redux", img: "//goo.gl/MGQ3lp", size: 8, github: "https://github.com/reactjs/redux"},
     {name: "node", img: "//goo.gl/hxmCEE", size: 8, github: "https://github.com/nodejs/node"}
