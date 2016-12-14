@@ -198,6 +198,6 @@ Time: 6607ms
                 ../isomorphic-assets.json  239 bytes          [emitted]
 ```
 
-[electrode-archetype-react-app]: https://github.com/electrode-io/electrode-archetype-react-app
+[electrode-archetype-react-app]: https://github.com/electrode-io/electrode#app-archetype
 [electrode-archetype-react-component]: https://github.com/electrode-io/electrode-archetype-react-component
 [electrode-archetype-njs-module-dev]: https://github.com/electrode-io/electrode-archetype-njs-module-dev

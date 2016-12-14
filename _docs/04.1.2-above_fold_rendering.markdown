@@ -74,6 +74,6 @@ By default, the [above-the-fold-only-server-render] component is an exercise in 
 
 ## Supported Platforms
 
-This module is web-server Platform agnostic can be used with your favorite node.js server framework [Electrode](https://github.com/electrode-io/electrode-boilerplate-universal-react-node), [Express.js](https://github.com/docs-code-examples-electrode-io/express-example-with-standalone-electrode-modules), or [Hapi.js](https://github.com/docs-code-examples-electrode-io/hapijs-example-with-standalone-electrode-modules).
+This module is web-server Platform agnostic can be used with your favorite node.js server framework [Electrode](https://github.com/electrode-io/electrode), [Express.js](https://github.com/electrode-samples/express-example-with-standalone-electrode-modules), or [Hapi.js](https://github.com/electrode-samples/hapijs-example-with-standalone-electrode-modules).
 
 [above-the-fold-only-server-render]: https://github.com/electrode-io/above-the-fold-only-server-render

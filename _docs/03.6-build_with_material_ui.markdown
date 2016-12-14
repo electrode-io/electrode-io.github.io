@@ -27,8 +27,8 @@ Make sure you have installed NodeJS >= 4.x and npm >= 3.x, and [gulp].
 To try out this ready made sample app, use git to clone the repo:
 
 ```sh
-$ git clone https://github.com/electrode-io/electrode-react-sample-material-ui.git
-$ cd electrode-react-sample-material-ui
+$ git clone https://github.com/electrode-io/electrode.git
+$ cd electrode/samples/universal-material-ui
 $ npm install
 $ gulp dev
 ```
@@ -48,8 +48,8 @@ First part of the process is to generate an Electrode Universal App using the [y
 
   ```bash
   $ npm install -g yo generator-electrode
-  $ mkdir electrode-react-sample-material-ui
-  $ cd electrode-react-sample-material-ui
+  $ mkdir react-sample-material-ui
+  $ cd react-sample-material-ui
   $ yo electrode
   # ... answer questions and wait for app to be generated and npm install completed ...
   ```
@@ -160,12 +160,6 @@ Electrode core comes with isomorphic images support built in using [isomorphic-l
 > Note that you will see the message `Warning: Unknown prop onTouchTap on <button> tag.` show up on the server side rendering because of the tapping event plugin, which we don't need on server anyways.
 
 
-[npm-image]: https://badge.fury.io/js/electrode-react-sample-material-ui.svg
-[npm-url]: https://npmjs.org/package/electrode-react-sample-material-ui
-[travis-image]: https://travis-ci.org/jchip/electrode-react-sample-material-ui.svg?branch=master
-[travis-url]: https://travis-ci.org/jchip/electrode-react-sample-material-ui
-[daviddm-image]: https://david-dm.org/jchip/electrode-react-sample-material-ui.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/jchip/electrode-react-sample-material-ui
 [material-ui]: http://www.material-ui.com/
 [RaisedButton]: http://www.material-ui.com/#/components/raised-button
 [webpack-dev-server]: https://webpack.github.io/docs/webpack-dev-server.html
