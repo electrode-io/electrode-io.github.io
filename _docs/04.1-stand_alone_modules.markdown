@@ -10,11 +10,11 @@ Our flexible modules are dedicated to optimizing performance in specific areas b
 
 *  [Confippet](confippet.html) is a versatile and flexible utility for managing configurations of Node.js applications.
 
-*  [Above the Fold Rendering](above_fold_rendering.html) is a React component wrapper for optionally skipping Server Side Rendering.
+*  [Above the Fold Rendering](above_fold_rendering.html) is a React component wrapper that allows expesive components to skip Server Side Rendering.
 
-*  [Server Side Render Cache + Profiling](server_side_render_cache.html) supports profiling React Server Side Rendering performance and component caching to help you speed up SSR.
+*  [Server Side Render Cache + Profiling](server_side_render_cache.html) is a module used to profile React Server Side Rendering performance and then cache expensive components to help you speed up SSR.
 
-*  [Stateless CSRF Validation](stateless_csrf_validation.html) is a Hapi plugin or Express middleware that enables stateless CSRF protection using in Electrode, Express or Hapi applications.
+*  [Stateless CSRF Validation](stateless_csrf_validation.html) is a Hapi plugin or Express middleware that enables stateless CSRF protection in case your app does not depend on server side persistence.
 
 *  [Electrode Redux Router Engine](redux_router_engine.html) is a Hapi plugin or Express middleware that handles async data for React Server Side Rendering using [react-router](https://github.com/ReactTraining/react-router), Redux and the [Redux Server Rendering](http://redux.js.org/docs/recipes/ServerRendering.html) pattern.
 
