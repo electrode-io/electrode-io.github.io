@@ -45,6 +45,7 @@ $ gulp dev
 
 Now open [localhost:3000](http://localhost:3000) in your browser to access the app. Hello Electrode!
 
+![Hello Electrode-screenshot](http://awesomescreenshot.com/06d66b5aec)
 ---
 
 ##### Project Structure
