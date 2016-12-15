@@ -4,23 +4,21 @@ permalink: docs/what_is_electrode.html
 toplevel: "Overview"
 ---
 
-> Electrode is a platform for building universal React/Node.js applications with a standardized structure, best practices, and modern technologies baked in. Electrode focuses on performance, component reusability, and simple deployment to multiple cloud providers—so you can focus on what makes your app unique.
+> Electrode is a platform for building universal React/Node.js applications with a standardized structure that follows best practices and has modern technologies baked in. Electrode focuses on performance, component reusability and simple deployment to multiple cloud providers—so you can focus on what makes your app unique.
 
 ### Core: Quick + Easy
 
-Electrode Core allows you to build a flexible universal react/nodejs application in minutes, with support for server-side rendering and easy deployment to multiple cloud providers. Get new projects started quickly with a simple, consistent structure that follows modern best practices.
+Electrode Core allows you to build a flexible and universal React/Node.js application in minutes, with support for server-side rendering and easy deployment. Use Electrode to start new projects quickly with a simple, consistent structure that follows modern best practices.
 
-The heart of the platform is [Electrode Archetypes](what_are_archetypes.html), which allow for standardized configurations, workflows and structure of the app and its associated react components. By enforcing a sensible structure and consistency for components, modules and the entire app, Electrode’s Archetype system helps you build scalable applications you can trust while ensuring streamlined development and deployment.
+The heart of the Electrode platform is managed by the [Electrode Archetype System](what_are_archetypes.html), which allows for a standardized configuration, structure and workflow throughout the entire applicaiton. By enforcing a sensible structure and consistency for components, modules and the entire app, Electrode’s Archetype system helps you build scalable applications you can trust while ensuring streamlined development and deployment.
 
-**It only takes a few minutes to get your new Electrode application running and a
-few more minutes to deploy your app to the cloud. See our [Getting Started:
-Quick Guide](get_started.html) to get started now.**
+**It only takes a few minutes to get your new Electrode application running and deployed to the cloud. See our [Getting Started:Quick Guide](get_started.html) to get started now.**
 
 <hr>
 
 ### Stand Alone Modules: Optimize Where You Want
-As part of the Electrode Platform, we have a number of modules to help with a
-variety of common tasks and features, from [server-side render
+The Electrode platform uses several modules to help with a
+variety of common tasks from [server-side render
 caching](server_side_render_cache.html) to [flexible configuration
 management](confippet.html). These modules can be used independently of
 Electrode Core, which means you can [integrate them into your existing
@@ -32,59 +30,61 @@ apps](stand_alone_modules.html).
 
 ### Tools: Power Up Your Existing Applications
 The Electrode Platform also has tools that can be consumed by existing
-applications using other platforms (though with
+applications built with other platforms (though with
 Electrode core, these tools are either bundled directly or require far less configuration). There are currently
-two powerful tools: one which enables [discovery of reusable
-components](electrode_explorer.html) and another to help optimize your
-[JavaScript bundles](electrify.html)
+two powerful tools: 
 
-**Start using these tools in your existing applications [Electrode Explorer](electrode_explorer.html) and [Electrify](electrify.html).**
+* one which enables [discovery of reusable components](electrode_explorer.html)
+
+* another to help optimize your [JavaScript bundles](electrify.html)
+
+**Start using [Electrode Explorer](electrode_explorer.html) and [Electrify](electrify.html) in your existing applications.**
 
 ##Features
 [Electrode Boilerplate](https://github.com/electrode-io/electrode#boilerplate-universal-react-node) comes fully loaded with the best technologies available:
 
-*  <a href="https://facebook.github.io/react/index.html" target="_blank">React</a> is an awesome JavaScript library for building user interfaces, created by Facebook.
+*  <a href="https://facebook.github.io/react/index.html" target="_blank">React</a> - an awesome JavaScript library for building user interfaces, created by Facebook.
 
-*  <a href="http://redux.js.org/docs/basics/UsageWithReact.html" target="_blank">Redux</a> a predictable state container for JavaScript apps. #game-changer.
+*  <a href="http://redux.js.org/docs/basics/UsageWithReact.html" target="_blank">Redux</a> - a predictable state container for JavaScript apps.
 
-*  <a href="https://github.com/ReactTraining/react-router/tree/master/docs" target="_blank">React Router</a> is a powerful routing library built on top of React.
+*  <a href="https://github.com/ReactTraining/react-router/tree/master/docs" target="_blank">React Router</a> - a powerful routing library built on top of React.
 
-* <a href="https://github.com/css-modules/css-modules" target="_blank">CSS Modules</a> a CSS file in which all class names and animation names are scoped locally by default. Fixes the problem of the global scope in CSS. #winning
+* <a href="https://github.com/css-modules/css-modules" target="_blank">CSS Modules</a> - a CSS file in which all class names and animation names are scoped locally by default. Fixes the problem of the global scope in CSS.
 
-*  <a href="https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.xjxr5yj5z" target="_blank">Universal rendering</a> built in.
+*  <a href="https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.xjxr5yj5z" target="_blank">Universal rendering</a>
 
-*  <a href="https://webpack.github.io/docs/motivation.html" target="_blank">Webpack</a> a powerful module bundler.
+*  <a href="https://webpack.github.io/docs/motivation.html" target="_blank">Webpack</a> - a powerful module bundler.
 
-*  <a href="https://github.com/jchip/isomorphic-loader" target="_blank">Webpack Isomorphic Loader</a> a powerful tool that makes NodeJS `require` understand files such as images for SSR.
+*  <a href="https://github.com/jchip/isomorphic-loader" target="_blank">Webpack Isomorphic Loader</a> - a powerful tool that makes NodeJS `require` understand files such as images for SSR.
 
-*  <a href="https://babeljs.io/" target="_blank">Babel</a> transpiles ES6 + 7.
+*  <a href="https://babeljs.io/" target="_blank">Babel</a> - a utility to transpile ES6 + 7.
 
-*  <a href="http://eslint.org/" target="_blank">ESLint</a> a pluggable linting utility for Javascript.
+*  <a href="http://eslint.org/" target="_blank">ESLint</a> - a pluggable linting utility for Javascript.
 
-*  <a href="https://mochajs.org/" target="_blank">Mocha</a> a feature-rich Javascript testing framework.
+*  <a href="https://mochajs.org/" target="_blank">Mocha</a> - a feature-rich Javascript testing framework.
 
-*  <a href="https://github.com/airbnb/enzyme" target="_blank">Enzyme</a> a Javascript testing utility for React, created by airbnb.
+*  <a href="https://github.com/airbnb/enzyme" target="_blank">Enzyme</a> - a Javascript testing utility for React, created by airbnb.
 
-*  <a href="https://travis-ci.org/" target="_blank">TravisCI</a> a continuous integration service to build and test software projects.
+*  <a href="https://travis-ci.org/" target="_blank">TravisCI</a> - a continuous integration service to build and test software projects.
 
-*  <a href="http://gulpjs.com/" target="_blank">Gulp</a> a Javascript build tool that lets us automate tasks.
+*  <a href="http://gulpjs.com/" target="_blank">Gulp</a> - a Javascript build tool that lets us automate tasks.
 
-*  <a href="http://yeoman.io/" target="_blank">Yeoman</a> a Scaffolding tool for modern webapps.
+*  <a href="http://yeoman.io/" target="_blank">Yeoman</a> - a Scaffolding tool for modern webapps.
 
-*  <a href="https://www.npmjs.com/package/history" target="_blank">History</a> a Javascript library for managing session history.
+*  <a href="https://www.npmjs.com/package/history" target="_blank">History</a> - a Javascript library for managing session history.
 
-*  <a href="http://bluebirdjs.com/docs/why-promises.html" target="_blank">Bluebird</a> a great Javascript promise library.
+*  <a href="http://bluebirdjs.com/docs/why-promises.html" target="_blank">Bluebird</a> - a great Javascript promise library.
 
-*  [Electrode Confippet](https://github.com/electrode-io/electrode-confippet) Confippet is a versatile and flexible utility for managing configurations of Node.js applications.
+*  [Electrode Confippet](https://github.com/electrode-io/electrode-confippet) - a versatile and flexible utility for managing configurations of Node.js applications.
 
-*  [Electrode JWT CSRF](https://github.com/electrode-io/electrode-csrf-jwt) Cross-Site Request Forgery (CSRF) protection with JWT.
+*  [Electrode JWT CSRF](https://github.com/electrode-io/electrode-csrf-jwt) - a module to enable stateless Cross-Site Request Forgery (CSRF) protection with JWT.
 
-*  [Electrode-Redux-Router-Engine](https://github.com/electrode-io/electrode-redux-router-engine) An Electrode routing and rendering engine using react-router and redux.
+*  [Electrode-Redux-Router-Engine](https://github.com/electrode-io/electrode-redux-router-engine) - an Electrode routing and rendering engine using react-router and redux.
 
-*  [Component Caching](https://github.com/electrode-io/electrode-react-ssr-caching) Optimize React SSR with profiling and component caching.
+*  [Component Caching](https://github.com/electrode-io/electrode-react-ssr-caching) - an optimizer to improve React Server Side Rendering speed
 
-*  [Electrode-Server](https://github.com/electrode-io/electrode-server) A configurable web server using Hapi.js on top of Node.js.
+*  [Electrode-Server](https://github.com/electrode-io/electrode-server) - a configurable web server using Hapi.js on top of Node.js.
 
-*  [Electrify](https://github.com/electrode-io/electrify) Tool for analyzing the module tree of webpack projects.
+*  [Electrify](https://github.com/electrode-io/electrify) - a tool for analyzing the module tree of webpack projects.
 
-*  [Electrode-Docgen](https://github.com/electrode-io/electrode-docgen) A custom metadata extractor for the Electrode framework, automates component documentation.
+*  [Electrode-Docgen](https://github.com/electrode-io/electrode-docgen) - a custom metadata extractor for the Electrode framework, automates component documentation.
