@@ -1,0 +1,2511 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Build a Progressive Web App | Electrode</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:title" content="Build a Progressive Web App | Electrode">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://electrode-io.github.io//docs/service_workers.html">
+  <meta property="og:image" content="https://electrode-io.github.io/img/logo_og.png">
+  <meta property="og:description" content="Universal React and Node Applications simplified, performant, and reusable.">
+  <meta property="fb:app_id" content="623268441017527">
+
+
+  <link rel="shortcut icon" href="/img/favicon-64.png">
+  <link rel="alternate" type="application/rss+xml" title="Electrode" href="https://electrode-io.github.io/feed.xml">
+
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/electrode-docs.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css">
+
+  <script src="//use.typekit.net/vqa1hcx.js"></script>
+
+  <!-- Add GA for all github pages -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84301828-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <!--[if lte IE 8]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/es5-shim.min.js"></script>
+  <script src="/js/es5-sham.min.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+  <div class="container">
+    <header class="header">
+  <a href="/index.html">
+    <img class="electrode-logo" src="/img/electrode-logo-sm@2x.png" />
+  </a>
+  <div class="header-right-side">
+    <ul class="header-menu">
+      <li class="header-menu-item home"><a href="/index.html">HOME</a></li>
+      <li class="header-menu-item docs  selected "><a href="/docs/what_is_electrode.html">DOCS</a></li>
+      <li class="header-menu-item contribute "><a href="/docs/contribute.html">CONTRIBUTE</a></li>
+    </ul>
+    <ul class="header-social">
+      <li class="header-social-pocket"><a href="https://getpocket.com/"><img src="/img/pocket_@1x.png" /></a></li>
+      <li class="header-social-twitter"><a href="https://twitter.com/electrode_io"><img src="/img/twitter_@1x.png" /></a></li>
+      <li class="header-social-github"><a href="https://github.com/electrode-io"><img src="/img/github_@1x.png" /></a></li>
+    </ul>
+  </div>
+</header>
+
+    
+
+    <section class="content wrap documentationContent">
+  <div class="nav-docs">
+  
+    <div class="nav-docs-section">
+      <h3>Overview</h3>
+      
+        <ul>
+          
+
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/what_is_electrode.html"> &nbsp; What is Electrode?</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/why_use_electrode.html"> &nbsp; Why Use Electrode?</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/requirements.html"> &nbsp; Requirements</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+        </ul>
+      
+    </div>
+  
+    <div class="nav-docs-section">
+      <h3>Getting Started</h3>
+      
+        
+          <h5>Quick Start</h5>
+          <ul>
+            
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/get_started.html"> &nbsp; Get Started</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/build_component.html"> &nbsp; Build Component</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/deploy_app.html"> &nbsp; Deploy Your App</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/whats_inside.html"> &nbsp; What's Inside</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/what_are_archetypes.html"> &nbsp; What are Archetypes?</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+          </ul>
+        
+          <h5>Intermediate</h5>
+          <ul>
+            
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/create_reusable_component.html"> &nbsp; Create a Reusable Component</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/low_level_components.html"> &nbsp; Low-Level Components</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/component_helpers.html"> &nbsp; Component Helpers</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/develop_styles.html"> &nbsp; Develop Styles</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/high_level_component.html"> &nbsp; Develop Main Component</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/test_components.html"> &nbsp; Test Components</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/add_examples.html"> &nbsp; Add Examples</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/build_and_demo.html"> &nbsp; Build and Demo</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/generate_docs.html"> &nbsp; Generate Docs</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/build_server_plugin.html"> &nbsp; Build a Server Plugin</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/add_routes.html"> &nbsp; Add Routes</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/server_config.html"> &nbsp; Server Config</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/more_deployments.html"> &nbsp; More Deployments</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/docker.html"> &nbsp; Docker</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/kubernetes.html"> &nbsp; Kubernetes</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/build_with_material_ui.html"> &nbsp; Build with material-ui</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/service_workers.html" class="active"> &nbsp; Build a Progressive Web App</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+          </ul>
+        
+          <h5>Advanced</h5>
+          <ul>
+            
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/stand_alone_modules.html"> &nbsp; Stand Alone Modules</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/confippet.html"> &nbsp; Confippet</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/above_fold_rendering.html"> &nbsp; Above The Fold Rendering</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/server_side_render_cache.html"> &nbsp; Server Side Render Caching + Profiling</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/stateless_csrf_validation.html"> &nbsp; Stateless CSRF Validation</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/redux_router_engine.html"> &nbsp; Redux Router Engine</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/electrode_tools.html"> &nbsp; Powerful Electrode Tools</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/electrify.html"> &nbsp; Electrify</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/electrode_explorer.html"> &nbsp; Electrode Explorer</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+      <ul><li>
+    
+
+    <a href="/docs/bundle_analyzer.html"> &nbsp; Bundle Analyzer</a>
+
+    
+      </li></ul>
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/electrode_boilerplate.html"> &nbsp; Electrode Boilerplate</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+          </ul>
+        
+          <h5>Over the Air</h5>
+          <ul>
+            
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/electrode_react_native_over_the_air_electron.html"> &nbsp; React Native and Over the Air</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+          </ul>
+        
+      
+    </div>
+  
+    <div class="nav-docs-section">
+      <h3>Contributing</h3>
+      
+        <ul>
+          
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/contribute.html"> &nbsp; Contribute</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/community.html"> &nbsp; Community</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+
+        </ul>
+      
+    </div>
+  
+    <div class="nav-docs-section">
+      <h3>Resources</h3>
+      
+        <ul>
+          
+
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/further_reading.html"> &nbsp; Further Reading</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/glossary.html"> &nbsp; Glossary</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
+    <li>
+    
+
+    <a href="/docs/faq.html"> &nbsp; FAQs</a>
+
+    
+    </li>
+  
+
+
+        </ul>
+      
+    </div>
+  
+
+
+  <!-- Tips Nav -->
+  <!-- 
+    <div class="nav-docs-section">
+      <h3>Tips</h3>
+      <ul>
+        
+          <li>
+            <a href="/tips/introduction.html">Introduction</a>
+          </li>
+        
+      </ul>
+    </div>
+   -->
+
+  <!-- Contributing Nav -->
+  <!-- 
+    <div class="nav-docs-section">
+      <h3>Contributing</h3>
+      <ul>
+        
+          <li>
+            <a href="/contributing/design-principles.html">Design Principles</a>
+          </li>
+        
+      </ul>
+    </div>
+   -->
+</div>
+
+
+  <div class="inner-content">
+    <a class="edit-page-link" href="https://github.com/electrode-io/electrode-io.github.io/tree/develop/_docs/03.7-progressive_web_app.markdown" target="_blank">Edit on GitHub</a>
+    <h1>
+      Build a Progressive Web App
+    </h1>
+    <div class="subHeader"></div>
+
+    <p>“A Progressive Web App(PWA) uses modern web capabilities to deliver an app-like user experience.” – <a href="https://developers.google.com/web/progressive-web-apps/">Progressive Web Apps</a></p>
+
+<p>PWA are incredibly powerful and provide functionalities like Offline first, Push notifications, Background sync and Add to home screen.</p>
+
+<p>PWA are purely based on <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers">Service Workers</a> and their ability to work independently in the background without interfering your web app&#39;s life cycle.</p>
+<h2><a class="anchor" name="benefits-of-using-electrode-pwa"></a>Benefits of using Electrode PWA <a class="hash-link" href="#benefits-of-using-electrode-pwa">#</a></h2><h3><a class="anchor" name="low-friction-of-distribution"></a>Low friction of distribution <a class="hash-link" href="#low-friction-of-distribution">#</a></h3>
+<p>If your progressive web app is online, it’s already accessible for Chrome on Android (and other mobile). Your customers won&#39;t have to download an &quot;app&quot; from the app store. 65.5% of US smartphone users don’t download any new apps each month. PWAs eliminate the need to go to the app store, search for the app, click Install, wait for the download, then open the app. Each of these steps loses 20% of the potential users.</p>
+
+<p>From a developer&#39;s point of view, you don&#39;t need to visit the play store to publish your app! Push new changes to your web app and the service worker will take care of updating the app shell.</p>
+<h3><a class="anchor" name="frictionless-shopping-experience"></a>Frictionless shopping experience <a class="hash-link" href="#frictionless-shopping-experience">#</a></h3>
+<p>For example:- for an e-commerce business, PWA offers our customers a more frictionless shopping experience that allows shoppers to search, buy, and checkout quickly without downloading the native-app.<br>
+Further it also allows you to bring app-like experiences to mobile websites, including personalization and targeted offers.</p>
+<h3><a class="anchor" name="faster-mobile-experience"></a>Faster mobile experience <a class="hash-link" href="#faster-mobile-experience">#</a></h3>
+<p>Web Apps built with Electrode + PWA will be significantly faster. Also, these websites enable an offline mode, that allows customers to continue browsing in poor wireless reception areas (for example, while they are on public transit). Given the fact that, faster websites have higher conversion rates, websites built with PWA could result in increased revenue.</p>
+<h3><a class="anchor" name="personalized-push-notifications"></a>Personalized push notifications <a class="hash-link" href="#personalized-push-notifications">#</a></h3>
+<p>Electrode Push notifications can be used to interact effectively with our mobile customers, as these notifications are native to the mobile device and can be personal and timely. Similar notification can be sent to desktop websites too.</p>
+<h2><a class="anchor" name="getting-started"></a>Getting Started <a class="hash-link" href="#getting-started">#</a></h2>
+<p>In the first section, we are going to make your previously build electrode app into a PWA with content caching, push notifications and an option for the user to save your web app to their home screen.</p>
+
+<p><em>If you are starting out with a new PWA, just answer &quot;Y&quot; to the following question</em></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>yo electrode
+<span class="c"># ... answer questions ...</span>
+<span class="c"># Would you like to make a Progressive Web App? (Y/n)</span>
+<span class="c"># ... answer rest of the questions and wait for app to be generated ...</span>
+</code></pre></div>
+<p><em>follow Prerequisites and skip to <a href="service_workers.html#push-notifications">Push Notifications</a></em></p>
+<h3><a class="anchor" name="prerequisites"></a>Prerequisites <a class="hash-link" href="#prerequisites">#</a></h3>
+<ol>
+<li><p>We need certain API keys for push notifications.
+To generate these values, visit <a href="https://console.firebase.google.com">Firebase</a> and create a new project.<br>
+Click on the setting icons and open <code>Project settings</code>.<br>
+Navigate to the <code>CLOUD MESSAGING</code> tab and note down your <code>Server key</code> and the <code>Sender ID</code>.  </p></li>
+<li><p>Add the following icons inside the <code>client/images</code> directory<br>
+<a href="https://github.com/electrode-io/electrode/blob/d4142ee0c938cbf973a429ee8467052aa4e1c9be/samples/universal-react-node/client/images/logo-192x192.png">logo 192x192</a> and <a href="https://github.com/electrode-io/electrode/blob/d4142ee0c938cbf973a429ee8467052aa4e1c9be/samples/universal-react-node/client/images/logo-72x72.png">logo 72x72</a>.<br>
+We will be using these logos for <code>Add to Homescreen</code> banner and <code>Push Notifications</code>.</p></li>
+</ol>
+<h3><a class="anchor" name="generating-a-service-worker"></a>Generating a Service Worker <a class="hash-link" href="#generating-a-service-worker">#</a></h3>
+<p>Generating a service worker in an electrode app is as simple as adding a config file. Navigate to <code>&lt;your-awesome-app&gt;/config</code> and create a new <code>sw-config.js</code>:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">cache</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">cacheId</span><span class="o">:</span> <span class="s2">&quot;&lt;your-awesome-app&gt;&quot;</span><span class="p">,</span>
+    <span class="nx">runtimeCaching</span><span class="o">:</span> <span class="p">[{</span>
+      <span class="nx">handler</span><span class="o">:</span> <span class="s2">&quot;fastest&quot;</span><span class="p">,</span>
+      <span class="nx">urlPattern</span><span class="o">:</span> <span class="sr">/\/$/</span>
+    <span class="p">}],</span>
+    <span class="nx">staticFileGlobs</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;dist/**/*&#39;</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nx">manifest</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;&lt;your-awesome-app&gt;&quot;</span><span class="p">,</span>
+    <span class="nx">logo</span><span class="o">:</span> <span class="s2">&quot;./images/logo-192x192.png&quot;</span><span class="p">,</span>
+    <span class="nx">short_name</span><span class="o">:</span> <span class="s2">&quot;EPA&quot;</span><span class="p">,</span>
+    <span class="nx">background</span><span class="o">:</span> <span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span>
+    <span class="nx">theme_color</span><span class="o">:</span> <span class="s2">&quot;#FFFFFF&quot;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>This will generate a <code>sw.js</code> in the <code>dist</code> folder when you build the app.</p>
+<h3><a class="anchor" name="registering-the-service-worker"></a>Registering the Service Worker <a class="hash-link" href="#registering-the-service-worker">#</a></h3>
+<p>We need to create a server plugin to access the <code>dist/sw.js</code>.
+Create the following file <code>server/plugins/pwa/index.js</code></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
+<span class="nx">exports</span><span class="p">.</span><span class="nx">register</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">server</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">server</span><span class="p">.</span><span class="nx">route</span><span class="p">({</span>
+    <span class="nx">method</span><span class="o">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;/sw.js&quot;</span><span class="p">,</span>
+    <span class="nx">handler</span><span class="o">:</span> <span class="p">{</span> <span class="nx">file</span><span class="o">:</span> <span class="s2">&quot;dist/sw.js&quot;</span> <span class="p">}</span>
+  <span class="p">});</span>
+  <span class="nx">next</span><span class="p">();</span>
+<span class="p">};</span>
+<span class="nx">exports</span><span class="p">.</span><span class="nx">register</span><span class="p">.</span><span class="nx">attributes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;pwa&quot;</span><span class="p">,</span>
+  <span class="nx">version</span><span class="o">:</span> <span class="s2">&quot;0.0.1&quot;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>And add the following to <code>plugins</code> inside <code>config/default.json</code></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s2">&quot;pwa&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;module&quot;</span><span class="o">:</span> <span class="s2">&quot;./server/plugins/pwa&quot;</span> <span class="p">}</span>
+</code></pre></div>
+<p>To register the service worker on the browser, create a new file <code>sw-registration.js</code> inside the <code>client</code> directory:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Exit early if the navigator isn&#39;t available</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">navigator</span> <span class="o">===</span> <span class="s2">&quot;undefined&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="c1">// Feature check if service workers are supported.</span>
+  <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;serviceWorker&quot;</span> <span class="k">in</span> <span class="nx">navigator</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">navigator</span><span class="p">.</span><span class="nx">serviceWorker</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s2">&quot;sw.js&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">scope</span><span class="o">:</span> <span class="s2">&quot;./&quot;</span> <span class="p">})</span>
+      <span class="c1">// Service worker registration was successful</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">registration</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="c1">// The updatefound event is dispatched when the installing</span>
+        <span class="c1">// worker changes. This new worker will potentially become</span>
+        <span class="c1">// the active worker if the install process completes.</span>
+        <span class="nx">registration</span><span class="p">.</span><span class="nx">onupdatefound</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+          <span class="kr">const</span> <span class="nx">installingWorker</span> <span class="o">=</span> <span class="nx">registration</span><span class="p">.</span><span class="nx">installing</span><span class="p">;</span>
+          <span class="c1">// Listen for state changes on the installing worker so</span>
+          <span class="c1">// we know when it has completed.</span>
+          <span class="nx">installingWorker</span><span class="p">.</span><span class="nx">onstatechange</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">switch</span> <span class="p">(</span><span class="nx">installingWorker</span><span class="p">.</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="s2">&quot;installing&quot;</span><span class="o">:</span>
+              <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Installing a new service worker...&quot;</span><span class="p">);</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="s2">&quot;installed&quot;</span><span class="o">:</span>
+              <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">serviceWorker</span><span class="p">.</span><span class="nx">controller</span><span class="p">);</span>
+              <span class="c1">// We check the active controller which tells us if</span>
+              <span class="c1">// new content is available, or the current service worker</span>
+              <span class="c1">// is up to date (?)</span>
+              <span class="c1">// TODO: Figure out why this is the case</span>
+              <span class="k">if</span> <span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">serviceWorker</span><span class="p">.</span><span class="nx">controller</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;New or updated content is available, refresh!&quot;</span><span class="p">);</span>
+              <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Content is now available offline!&quot;</span><span class="p">);</span>
+              <span class="p">}</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="s2">&quot;activating&quot;</span><span class="o">:</span>
+              <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Activating a service worker...&quot;</span><span class="p">);</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="s2">&quot;activated&quot;</span><span class="o">:</span>
+              <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Successfully activated service worker.&quot;</span><span class="p">);</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="s2">&quot;redundant&quot;</span><span class="o">:</span>
+              <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Service worker has become redundant&quot;</span><span class="p">);</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+          <span class="p">};</span>
+        <span class="p">};</span>
+      <span class="p">})</span>
+      <span class="c1">// Service worker registration failed</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Service worker registration failed: &quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+      <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>And import it in <code>client/app.jsx</code></p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">require</span><span class="p">.</span><span class="nx">ensure</span><span class="p">([</span><span class="s2">&quot;./sw-registration&quot;</span><span class="p">],</span> <span class="p">(</span><span class="nx">require</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./sw-registration&quot;</span><span class="p">)();</span>
+<span class="p">},</span> <span class="s2">&quot;sw-registration&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>We achieved couple of things here:</p>
+
+<p>1 - <code>Offline First</code> with the cache property</p>
+
+<p>Precache your static assets generated by webpack using the staticFileGlobs property. Or use the runtimeCaching property to cache specific react routes in from your routes.jsx</p>
+
+<p>2 - <code>Add to Home</code> with the manifest property</p>
+
+<p>After visiting your website, users will get a prompt (if the user has visited your site at least twice, with at least five minutes between visits.) to add your application to their homescreen. <code>manifest</code> gives you control over how your web app is installed on user&#39;s home screen with <code>short_name</code>, <code>title</code> and <code>logo</code> properties.</p>
+
+<p>Build your app and start the server with</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gulp pwa
+</code></pre></div><h5><a class="anchor" name="note-service-worker-currently-does-not-work-with-webpack-dev-server.-you-need-to-build-first-and-then-run-the-server."></a>Note: Service worker currently does not work with webpack dev server. You need to build first and then run the server. <a class="hash-link" href="#note-service-worker-currently-does-not-work-with-webpack-dev-server.-you-need-to-build-first-and-then-run-the-server.">#</a></h5>
+<p>Navigate to <code>http://localhost:3000</code>, open <code>Developer tools</code> and click on the <code>Application</code> tab. You should see your <code>Service Worker</code> activated and running!</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/4782871/20909807/b322e462-bb12-11e6-97af-797c808e11d9.png" alt="screenshot"></p>
+
+<p>Go ahead and click on the <code>Offline</code> checkbox in the Developer tools. Terminate your server. Refresh your web page.</p>
+<h4><a class="anchor" name="note-add-to-homescreen-banner-will-pop-up-only-on-android-devices-with-chrome-42.-to-simulate-the-banner-on-your-desktop-chrome-navigate-to-developer-tools--gt-applications--gt-manifest-and-click-on-add-to-homescreen."></a>NOTE: <code>Add to Homescreen</code> banner will pop up only on Android devices with Chrome 42+. To simulate the banner on your desktop Chrome, navigate to <code>Developer tools</code> -&gt; <code>Applications</code> -&gt; <code>Manifest</code> and click on <code>Add to homescreen</code>. <a class="hash-link" href="#note-add-to-homescreen-banner-will-pop-up-only-on-android-devices-with-chrome-42.-to-simulate-the-banner-on-your-desktop-chrome-navigate-to-developer-tools--gt-applications--gt-manifest-and-click-on-add-to-homescreen.">#</a></h4><h3><a class="anchor" name="push-notifications"></a>Push notifications <a class="hash-link" href="#push-notifications">#</a></h3>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API">Push API</a> requires a registered service worker so it can send notifications in the background when the web application isn&#39;t running.<br>
+We already have our Service Worker generated with the help of <code>sw-config.js</code>. We only need to add a <code>Push</code> event to it.<br>
+Create a new file <code>sw-events.js</code> inside the <code>client</code> directory and add the following to it:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/* eslint-env serviceworker */</span>
+
+<span class="kr">import</span> <span class="nx">icon</span> <span class="nx">from</span> <span class="s2">&quot;./images/logo-192x192.png&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">badge</span> <span class="nx">from</span> <span class="s2">&quot;./images/logo-72x72.png&quot;</span><span class="p">;</span>
+
+<span class="nx">self</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;push&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">title</span> <span class="o">=</span> <span class="s2">&quot;It worked!&quot;</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">body</span><span class="o">:</span> <span class="s2">&quot;Great job sending that push notification!&quot;</span><span class="p">,</span>
+    <span class="nx">tag</span><span class="o">:</span> <span class="s2">&quot;electrode-push-notification-test&quot;</span><span class="p">,</span>
+    <span class="nx">icon</span><span class="p">,</span>
+    <span class="nx">badge</span>
+  <span class="p">};</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">waitUntil</span><span class="p">(</span>
+    <span class="nx">self</span><span class="p">.</span><span class="nx">registration</span><span class="p">.</span><span class="nx">showNotification</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span>
+  <span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Check out the <a href="https://developers.google.com/web/fundamentals/getting-started/codelabs/push-notifications/">Adding Push Notifications to a Web App</a> Codelab provided by Google for an in-depth guide on how push notifications and service workers work together.</p>
+
+<p>Now we need to add this file to our webpack bundle by referencing it in the <code>cache property</code> of <code>sw-config.js</code>:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">cache</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">importScripts</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./sw-events.js&#39;</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Now we have a registered service worker installed, activated and ready to accept <code>push</code> from the server.<br>
+But before we can <code>push</code> we need to <code>request permissions</code> from the user and <code>subscribe</code> them to the notifications.</p>
+
+<p>Navigate to <code>client/components/home.jsx</code> and replace it with:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/* eslint-disable react/no-did-mount-set-state */</span>
+<span class="cm">/* global navigator */</span>
+
+<span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">PropTypes</span><span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">connect</span><span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react-redux&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">toggleCheck</span><span class="p">,</span> <span class="nx">incNumber</span><span class="p">,</span> <span class="nx">decNumber</span><span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;../actions&quot;</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">Home</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kr">super</span><span class="p">();</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c1">// Whether ServiceWorkers are supported</span>
+        <span class="nx">supported</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="c1">// Did something fail?</span>
+        <span class="nx">error</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="c1">// Waiting on the service worker to be ready</span>
+        <span class="nx">loading</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="c1">// Whether we&quot;ve got a push notification subscription</span>
+        <span class="nx">subscribed</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="c1">// The actual subscription itself</span>
+        <span class="nx">subscription</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nx">body</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+      <span class="p">};</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">sendNotification</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sendNotification</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">handleInputChange</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleInputChange</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">subscribe</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;serviceWorker&quot;</span> <span class="k">in</span> <span class="nx">navigator</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">navigator</span><span class="p">.</span><span class="nx">serviceWorker</span><span class="p">.</span><span class="nx">ready</span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">registration</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="c1">// Check for any existing subscriptions</span>
+          <span class="nx">registration</span><span class="p">.</span><span class="nx">pushManager</span><span class="p">.</span><span class="nx">getSubscription</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">subscription</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="c1">// No current subscription, let the user subscribe</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">subscription</span><span class="p">)</span> <span class="p">{</span>
+              <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+                <span class="nx">loading</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nx">subscribed</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nx">supported</span><span class="o">:</span> <span class="kc">true</span>
+              <span class="p">});</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+              <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+                <span class="nx">subscription</span><span class="p">,</span>
+                <span class="nx">subscribed</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nx">loading</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nx">supported</span><span class="o">:</span> <span class="kc">true</span>
+              <span class="p">});</span>
+            <span class="p">}</span>
+          <span class="p">})</span>
+          <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">loading</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">error</span><span class="p">});</span>
+          <span class="p">});</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">loading</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">error</span><span class="p">});</span>
+        <span class="p">});</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// ServiceWorkers are not supported, let the user know.</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">loading</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">supported</span><span class="o">:</span> <span class="kc">false</span><span class="p">});</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nx">subscribe</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">navigator</span><span class="p">.</span><span class="nx">serviceWorker</span><span class="p">.</span><span class="nx">ready</span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">registration</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">registration</span><span class="p">.</span><span class="nx">pushManager</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span> <span class="nx">userVisibleOnly</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
+          <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">subscription</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">subscription</span><span class="p">,</span> <span class="nx">subscribed</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
+          <span class="p">})</span>
+          <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">error</span><span class="p">});</span>
+          <span class="p">});</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+    <span class="nx">handleInputChange</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+        <span class="p">[</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">name</span><span class="p">]</span><span class="o">:</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+    <span class="nx">sendNotification</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="p">{</span><span class="nx">title</span><span class="p">,</span> <span class="nx">body</span><span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">;</span>
+      <span class="c1">// you can add badge, icon images in the options.</span>
+      <span class="kr">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span><span class="nx">body</span><span class="p">};</span>
+      <span class="nx">navigator</span><span class="p">.</span><span class="nx">serviceWorker</span><span class="p">.</span><span class="nx">ready</span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">registration</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">registration</span><span class="p">.</span><span class="nx">showNotification</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">props</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="p">{</span><span class="nx">checked</span><span class="p">,</span> <span class="nx">value</span><span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="p">{</span>
+      <span class="nx">error</span><span class="p">,</span>
+      <span class="nx">loading</span><span class="p">,</span>
+      <span class="nx">supported</span><span class="p">,</span>
+      <span class="nx">subscribed</span><span class="p">,</span>
+      <span class="nx">subscription</span>
+    <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">loading</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">supported</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Sorry</span><span class="p">,</span> <span class="nx">service</span> <span class="nx">workers</span> <span class="nx">are</span> <span class="nx">not</span> <span class="nx">supported</span> <span class="k">in</span> <span class="k">this</span> <span class="nx">browser</span><span class="p">.</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+      <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Woops</span><span class="o">!</span> <span class="nx">Looks</span> <span class="nx">like</span> <span class="nx">there</span> <span class="nx">was</span> <span class="nx">an</span> <span class="nx">error</span><span class="o">:</span>
+          <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">style</span><span class="o">=&gt;</span>
+            <span class="p">{</span><span class="nx">error</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">:</span> <span class="p">{</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span>
+          <span class="o">&lt;</span><span class="err">/span&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+      <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">loading</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Checking</span> <span class="nx">push</span> <span class="nx">notification</span> <span class="nx">subscription</span> <span class="nx">status</span><span class="p">...</span><span class="o">&lt;</span><span class="err">/div&gt;);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">subscribed</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Click</span> <span class="nx">below</span> <span class="nx">to</span> <span class="nx">subscribe</span> <span class="nx">to</span> <span class="nx">push</span> <span class="nx">notifications</span>
+          <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Subscribe</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+      <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kr">const</span> <span class="nx">API_KEY</span> <span class="o">=</span> <span class="s2">&quot;AIzaSyDAL_a1Hswn8QRRICDlh5PIIbEbFN7Aih0&quot;</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">GCM_ENDPOINT</span> <span class="o">=</span> <span class="s2">&quot;https://android.googleapis.com/gcm/send&quot;</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">endpointSections</span> <span class="o">=</span> <span class="nx">subscription</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">);</span>
+    <span class="kr">const</span> <span class="nx">subscriptionId</span> <span class="o">=</span> <span class="nx">endpointSections</span><span class="p">[</span><span class="nx">endpointSections</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+    <span class="kr">const</span> <span class="nx">curlCommand</span> <span class="o">=</span> <span class="err">`</span><span class="nx">curl</span> <span class="o">--</span><span class="nx">header</span> <span class="s2">&quot;Authorization: key=${API_KEY}&quot;</span>
+    <span class="o">--</span><span class="nx">header</span> <span class="nx">Content</span><span class="o">-</span><span class="nx">Type</span><span class="o">:</span><span class="s2">&quot;application/json&quot;</span> <span class="nx">$</span><span class="p">{</span><span class="nx">GCM_ENDPOINT</span><span class="p">}</span> <span class="o">-</span><span class="nx">d</span>
+    <span class="s2">&quot;{\\&quot;</span><span class="nx">registration_ids</span><span class="err">\\</span><span class="s2">&quot;:[\\&quot;</span><span class="nx">$</span><span class="p">{</span><span class="nx">subscriptionId</span><span class="p">}</span><span class="err">\\</span><span class="s2">&quot;]}&quot;</span><span class="err">`</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;https://github.com/electrode-io&quot;</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="s2">&quot;Electrode&quot;</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/a&gt;&lt;/h1&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Managing</span> <span class="nx">States</span> <span class="kd">with</span> <span class="nx">Redux</span><span class="o">&lt;</span><span class="err">/h2&gt;</span>
+          <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">onChangeCheck</span><span class="p">}</span> <span class="nx">type</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;checkbox&quot;</span><span class="p">}</span> <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="nx">checked</span><span class="p">}</span><span class="o">/&gt;</span>
+            <span class="nx">Checkbox</span>
+          <span class="o">&lt;</span><span class="err">/label&gt;</span>
+          <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;button&quot;</span><span class="p">}</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">onDecrease</span><span class="p">}</span><span class="o">&gt;-&lt;</span><span class="err">/button&gt;</span>
+            <span class="o">&amp;</span><span class="nx">nbsp</span><span class="p">;{</span><span class="nx">value</span><span class="p">}</span><span class="o">&amp;</span><span class="nx">nbsp</span><span class="p">;</span>
+            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;button&quot;</span><span class="p">}</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">onIncrease</span><span class="p">}</span><span class="o">&gt;+&lt;</span><span class="err">/button&gt;</span>
+          <span class="o">&lt;</span><span class="err">/div&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+        <span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Push</span> <span class="nx">Notifications</span> <span class="kd">with</span> <span class="nx">Service</span> <span class="nx">Workers</span><span class="o">&lt;</span><span class="err">/h2&gt;</span>
+        <span class="nx">Fill</span> <span class="nx">the</span> <span class="nx">form</span> <span class="nx">below</span> <span class="nx">and</span> <span class="nx">click</span> <span class="nx">on</span> <span class="nx">send</span> <span class="k">for</span> <span class="nx">a</span> <span class="nx">push</span> <span class="nx">notification</span><span class="p">.</span>
+        <span class="o">&lt;</span><span class="nx">label</span> <span class="nx">htmlFor</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="o">&gt;</span><span class="nx">Title</span><span class="o">&lt;</span><span class="err">/label&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleInputChange</span><span class="p">}</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">label</span> <span class="nx">htmlFor</span><span class="o">=</span><span class="s2">&quot;body&quot;</span><span class="o">&gt;</span><span class="nx">Body</span><span class="o">&lt;</span><span class="err">/label&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleInputChange</span><span class="p">}</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;body&quot;</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">sendNotification</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Send</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Subscription</span> <span class="nx">Endpoint</span><span class="o">&lt;</span><span class="err">/h3&gt;</span>
+        <span class="o">&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">subscription</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/code&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Curl</span> <span class="nx">Command</span><span class="o">&lt;</span><span class="err">/h3&gt;</span>
+        <span class="o">&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">curlCommand</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/code&gt;</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">Home</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">checked</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">bool</span><span class="p">,</span>
+  <span class="nx">value</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">number</span><span class="p">.</span><span class="nx">isRequired</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">mapStateToProps</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">checked</span><span class="o">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">checkBox</span><span class="p">.</span><span class="nx">checked</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">number</span><span class="p">.</span><span class="nx">value</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">mapDispatchToProps</span> <span class="o">=</span> <span class="p">(</span><span class="nx">dispatch</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">onChangeCheck</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">dispatch</span><span class="p">(</span><span class="nx">toggleCheck</span><span class="p">());</span>
+    <span class="p">},</span>
+    <span class="nx">onIncrease</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">dispatch</span><span class="p">(</span><span class="nx">incNumber</span><span class="p">());</span>
+    <span class="p">},</span>
+    <span class="nx">onDecrease</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">dispatch</span><span class="p">(</span><span class="nx">decNumber</span><span class="p">());</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">mapStateToProps</span><span class="p">,</span> <span class="nx">mapDispatchToProps</span><span class="p">)(</span><span class="nx">Home</span><span class="p">);</span>
+</code></pre></div>
+<p>Make sure you update the <code>API_KEY</code> with the one you previously generated in <a href="#prerequisites">Prerequisites</a>.</p>
+
+<p><code>navigator.serviceWorker.ready</code> is a Promise that will resolve once a service worker is registered, and it returns a reference to the active <a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration">ServiceWorkerRegistration</a>. The showNotification() method of the ServiceWorkerRegistration interface creates a notification and returns a Promise that resolves to a <a href="https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent">NotificationEvent</a>.</p>
+
+<p>We also need to update <code>sw-config.js</code> with the <code>sender_id</code>, so the final <code>sw-config.js</code> should look like:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">cache</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">cacheId</span><span class="o">:</span> <span class="s2">&quot;electrode&quot;</span><span class="p">,</span>
+    <span class="nx">runtimeCaching</span><span class="o">:</span> <span class="p">[{</span>
+      <span class="nx">handler</span><span class="o">:</span> <span class="s2">&quot;fastest&quot;</span><span class="p">,</span>
+      <span class="nx">urlPattern</span><span class="o">:</span> <span class="s2">&quot;\/$&quot;</span>
+    <span class="p">}],</span>
+    <span class="nx">staticFileGlobs</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;dist/**/*&#39;</span><span class="p">],</span>
+    <span class="nx">importScripts</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./sw-events.js&#39;</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nx">manifest</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Electrode Progressive App&quot;</span><span class="p">,</span>
+    <span class="nx">short_name</span><span class="o">:</span> <span class="s2">&quot;EPA&quot;</span><span class="p">,</span>
+    <span class="nx">background</span><span class="o">:</span> <span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span>
+    <span class="nx">theme_color</span><span class="o">:</span> <span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span>
+    <span class="nx">gcm_sender_id</span><span class="o">:</span> <span class="s2">&quot;YOUR SENDER ID&quot;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Rebuild your app and run the server with</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gulp pwa
+</code></pre></div>
+<p>With all the code in place, we are ready to see push notifications in action.</p>
+
+<p>Navigate to <code>http://localhost:3000</code>. Accept the permission for subscribing and you will see a curl command rendered on the page. You can either run the curl command from terminal to see the push notification or fill out the form and click on the <code>Send</code> button to trigger it!</p>
+
+
+    
+
+
+
+
+
+
+
+
+<div class="docs-prevnext">
+  
+    <a class="docs-prev" href="/docs/build_with_material_ui.html">&larr; Prev</a>
+  
+  
+</div>
+
+
+  </div>
+</section>
+
+
+    <footer class="wrap">
+      <div class="left">
+        <a href="https://github.com/orgs/electrode-io/people" target="_blank">Acknowledgements</a>
+      </div>
+      <div class="right">
+        &copy; 2016 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
+        Apache-2.0 license.
+      </div>
+    </footer>
+  </div>
+  <div id="fb-root"></div>
+
+  <!--
+    TODO: analytics js, etc.
+  -->
+</body>
+</html>

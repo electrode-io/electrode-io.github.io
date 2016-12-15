@@ -304,6 +304,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -396,6 +401,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -863,6 +873,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/service_workers.html"> &nbsp; Build a Progressive Web App</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -951,6 +974,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -1226,7 +1254,7 @@
       <ul><li>
     
 
-    <a href="/docs/bundle-analyzer.html"> &nbsp; Bundle Analyzer</a>
+    <a href="/docs/bundle_analyzer.html"> &nbsp; Bundle Analyzer</a>
 
     
       </li></ul>
@@ -1464,6 +1492,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1510,6 +1543,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1938,6 +1976,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -2017,7 +2060,7 @@
     </h1>
     <div class="subHeader"></div>
 
-    <p>Electrode Redux Router Engine handles async data for React Server Side Rendering using <a href="https://github.com/reactjs/react-router">react-router</a>, Redux, and the <a href="http://redux.js.org/docs/recipes/ServerRendering.html">Redux Server Rendering</a> pattern.</p>
+    <p>Electrode Redux Router Engine is a tool that handles async data for React Server Side Rendering using <a href="https://github.com/reactjs/react-router">react-router</a>, Redux, and the <a href="http://redux.js.org/docs/recipes/ServerRendering.html">Redux Server Rendering</a> pattern.</p>
 <h2><a class="anchor" name="module-electrode-redux-router-engine"></a>Module: <a href="https://github.com/electrode-io/electrode-redux-router-engine">electrode-redux-router-engine</a> <a class="hash-link" href="#module-electrode-redux-router-engine">#</a></h2><h3><a class="anchor" name="install-via-npm"></a>Install via <code>npm</code> <a class="hash-link" href="#install-via-npm">#</a></h3><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install --save electrode-redux-router-engine
 </code></pre></div><h3><a class="anchor" name="example-applications"></a>Example Applications <a class="hash-link" href="#example-applications">#</a></h3>
 <ul>
@@ -2025,10 +2068,10 @@
 <li><p><a href="https://github.com/docs-code-examples-electrode-io/express-react-redux-webpack#electrode-redux-router-engine">Express React Redux Webpack Example</a></p></li>
 <li><p><a href="https://github.com/docs-code-examples-electrode-io/hapi-react-redux#electrode-redux-router-engine">Hapi React Redux Example</a></p></li>
 </ul>
-<h2><a class="anchor" name="usage"></a>Usage <a class="hash-link" href="#usage">#</a></h2><h3><a class="anchor" name="react-router"></a>react-router <a class="hash-link" href="#react-router">#</a></h3>
-<p>To use the redux-router engine, you first need to specify your routes according to <a href="https://github.com/reactjs/react-router">react-router</a>&#39;s specs.</p>
-
-<p>For example, a typical <code>routes.jsx</code> file might look like this:</p>
+<h2><a class="anchor" name="usage"></a>Usage <a class="hash-link" href="#usage">#</a></h2><h2><a class="anchor" name="configuration"></a>Configuration <a class="hash-link" href="#configuration">#</a></h2>
+<p>The <a href="#redux-router-engine">redux-router engine</a> is initialized by passing a set of <a href="#API">options</a> including both the <a href="#react-router">react-router</a> routes and the initial <a href="#redux-store">Redux Store</a>.</p>
+<h4><a class="anchor" name="react-router"></a>React-Router <a class="hash-link" href="#react-router">#</a></h4>
+<p>Therefore, to configure the engine, you will first need specify your app&#39;s routes according to <a href="https://github.com/reactjs/react-router">react-router</a>&#39;s specs. For example, a typical <code>routes.jsx</code> file might look like this:</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Route</span><span class="p">,</span> <span class="nx">IndexRoute</span><span class="p">,</span> <span class="nx">Redirect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react-router&quot;</span><span class="p">;</span>
 
 <span class="kr">export</span> <span class="k">default</span> <span class="p">(</span>
@@ -2037,23 +2080,62 @@
     <span class="o">&lt;</span><span class="nx">Redirect</span> <span class="nx">from</span><span class="o">=</span><span class="s2">&quot;source&quot;</span> <span class="nx">to</span><span class="o">=</span><span class="s2">&quot;target&quot;</span> <span class="o">/&gt;</span>
   <span class="o">&lt;</span><span class="err">/Route&gt;</span>
 <span class="p">);</span>
-</code></pre></div><h3><a class="anchor" name="redux-router"></a>redux-router <a class="hash-link" href="#redux-router">#</a></h3>
-<p>A corresponding redux-router configuration (using the <a href="http://redux.js.org/docs/advanced/AsyncActions.html">Redux Async Actions</a> pattern) in a server-side component would create the redux store and connect it with a promise library (the example below uses <a href="https://github.com/petkaantonov/bluebird/">bluebird</a>) to create an initializer. The <code>ReduxRouterEngine</code> is created using this initializer and the <code>routes.jsx</code> component. The engine can then be used within a route handler to return the HTML. An example usage follows:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">ReduxRouterEngine</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;electrode-redux-router-engine&quot;</span><span class="p">);</span>
+</code></pre></div><h4><a class="anchor" name="redux-store"></a>Redux Store <a class="hash-link" href="#redux-store">#</a></h4>
+<p>Next, you&#39;ll want to configure the redux store using the <a href="http://redux.js.org/docs/advanced/AsyncActions.html">Redux Async Actions</a> pattern. The first step in this pattern is to handle any middleware you might be using in addition to the required <a href="https://github.com/gaearon/redux-thunk#redux-thunk">redux thunk</a> middleware which <a href="http://redux.js.org/docs/advanced/AsyncActions.html#async-action-creators">allows actions to return functions instead of objects</a>, an important step that lets synchronous action creators work with networks requests. We&#39;re also using <a href="https://github.com/evgenyrodionov/redux-logger#logger-for-redux">redux logger</a> in this example to show how other middlewares can be integrated:</p>
 
-<span class="kd">function</span> <span class="nx">createReduxStore</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">match</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// this refs to engine</span>
-    <span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">configureStore</span><span class="p">();</span>
+<p><code>configureStore.js</code></p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createStore</span><span class="p">,</span> <span class="nx">applyMiddleware</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">rootReducer</span> <span class="nx">from</span> <span class="s1">&#39;./reducers&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">thunkMiddleware</span> <span class="nx">from</span> <span class="s1">&#39;redux-thunk&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">createLogger</span> <span class="nx">from</span> <span class="s1">&#39;redux-logger&#39;</span><span class="p">;</span>
 
-    <span class="k">return</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
-      <span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">bootstrapApp</span><span class="p">())</span>
-      <span class="c1">// dispatch any other asynchronous actions here</span>
-    <span class="p">]).</span><span class="nx">then</span><span class="p">(</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">store</span><span class="p">;</span>
-    <span class="p">});</span>
+<span class="kr">const</span> <span class="nx">loggerMiddleware</span> <span class="o">=</span> <span class="nx">createLogger</span><span class="p">();</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">configureStore</span><span class="p">(</span><span class="nx">initialState</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">createStore</span><span class="p">(</span><span class="nx">rootReducer</span><span class="p">,</span> <span class="nx">initialState</span><span class="p">,</span> <span class="nx">applyMiddleware</span><span class="p">(</span>
+      <span class="nx">thunkMiddleware</span><span class="p">,</span>
+      <span class="nx">loggerMiddleware</span>
+    <span class="p">));</span>
+<span class="p">}</span> 
+</code></pre></div>
+<p>Now let&#39;s create the redux store using the configure function from above. This pattern creates the store in a <em>server-side component</em> and initializes it with a promise library (the example below uses <a href="https://github.com/petkaantonov/bluebird/">bluebird</a>):</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">configureStore</span> <span class="nx">from</span> <span class="s2">&quot;./configureStore&quot;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">Promise</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;bluebird&quot;</span><span class="p">);</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">createReduxStore</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">configureStore</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
+    <span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">yourAction</span><span class="p">())</span>
+    <span class="c1">// dispatch any other asynchronous actions here</span>
+  <span class="p">])</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">store</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre></div>
+<p>For more information about the pattern used here, you can read about <a href="http://redux.js.org/docs/advanced/AsyncActions.html">using Async Actions in Redux</a>.</p>
+<h4><a class="anchor" name="redux-router-engine"></a>Redux Router Engine <a class="hash-link" href="#redux-router-engine">#</a></h4>
+<p>The <code>ReduxRouterEngine</code> is created using both the <code>Redux Store</code> and the <code>routes.jsx</code> component, each passed as key/value pairs to an options object. The module is stand-alone and can be used in <strong>any</strong> Redux application that runs on Express, Hapi or <a href="http://www.electrode.io">WalmartLab&#39;s Electrode framework</a>. Here&#39;s how to configure the engine depending on your framework:</p>
 
-<span class="kr">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./routes&quot;</span><span class="p">);</span>
+<p><strong>Electrode</strong></p>
+
+<p>In an Electrode app, the engine configuration is straightforward: the route handling logic simply returns the output of the engine&#39;s <code>render</code> function in the <code>module.exports</code> clause:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">ReduxRouterEngine</span> <span class="nx">from</span> <span class="s2">&quot;electrode-redux-router-engine&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">routes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;../../client/routes&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">CreateReduxStore</span> <span class="nx">from</span> <span class="s2">&quot;./createReduxStore&quot;</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">app</span><span class="p">.</span><span class="nx">routesEngine</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">app</span><span class="p">.</span><span class="nx">routesEngine</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ReduxRouterEngine</span><span class="p">({</span> <span class="nx">routes</span><span class="p">,</span> <span class="nx">createReduxStore</span> <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">req</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">app</span><span class="p">.</span><span class="nx">routesEngine</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>*<em>Hapi / Express *</em></p>
+
+<p>To configure the Redux Router Engine in an Express or Hapi application, first initialize the engine and then use it within a route handler to return the HTML. An example usage follows:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./routes&quot;</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">engine</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ReduxRouterEngine</span><span class="p">({</span><span class="nx">routes</span><span class="p">,</span> <span class="nx">createReduxStore</span><span class="p">});</span>
 
 <span class="c1">// express or Hapi route handler:</span>
@@ -2064,38 +2146,8 @@
     <span class="p">});</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Note the route handler configuration above is a stub in this case. In an Electrode app, this handler could be as simple as returning the result of <code>engine.render(req)</code>; in a Hapi or Express app, the route handler would be more complex.</p>
-<h3><a class="anchor" name="electrode"></a>Electrode <a class="hash-link" href="#electrode">#</a></h3>
-<p>In an Electrode app, configuration is straightforward: the store is initialized and wired in a similar fashion as the above example, but the route handling logic simply returns the output of the engine&#39;s <code>render</code> function in the <code>module.exports</code> clause:</p>
-<h4><a class="anchor" name="example-serverviewsindex-view.jsx-configuration"></a>Example <code>server/views/index-view.jsx</code> configuration <a class="hash-link" href="#example-serverviewsindex-view.jsx-configuration">#</a></h4><div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">ReduxRouterEngine</span> <span class="nx">from</span> <span class="s1">&#39;electrode-redux-router-engine&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">routes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;../../client/routes&quot;</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">Promise</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;bluebird&quot;</span><span class="p">);</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">createStore</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;redux&quot;</span><span class="p">;</span>
-
-<span class="kd">let</span> <span class="nx">rootReducer</span> <span class="o">=</span> <span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">s</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">createReduxStore</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">match</span><span class="p">)</span> <span class="p">{</span>
-
-  <span class="kd">let</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="p">{};</span>
-  <span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">createStore</span><span class="p">(</span><span class="nx">rootReducer</span><span class="p">,</span> <span class="nx">initialState</span><span class="p">);</span>
-
-  <span class="k">return</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
-      <span class="c1">// DO ASYNC THUNK ACTIONS HERE : store.dispatch(bootstrapApp())</span>
-      <span class="nx">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">({})</span>
-    <span class="p">]).</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">store</span><span class="p">;</span>
-  <span class="p">});</span>
-<span class="p">}</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">req</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">app</span><span class="p">.</span><span class="nx">routesEngine</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">req</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">app</span><span class="p">.</span><span class="nx">routesEngine</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ReduxRouterEngine</span><span class="p">({</span> <span class="nx">routes</span><span class="p">,</span> <span class="nx">createReduxStore</span> <span class="p">});</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="nx">req</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">app</span><span class="p">.</span><span class="nx">routesEngine</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div><h2><a class="anchor" name="api"></a>API <a class="hash-link" href="#api">#</a></h2><h3><a class="anchor" name="constructoroptions"></a><a href="">constructor(options)</a> <a class="hash-link" href="#constructoroptions">#</a></h3>
+<p>Note the route handler configuration above is a stub in this case. In a real Hapi or Express application, the route handler would be more complex. You can refer to our <a href="https://github.com/electrode-samples/express-react-redux-webpack/blob/8e6023af5d4c7f4ec8780cfeeb214efc04892b2c/src/server.js#L90-L94">express</a> and <a href="https://github.com/electrode-samples/hapi-react-redux/blob/685456d738997cfca5beda2ff3d9b655ad37e0e0/hapiApp/src/server.js#L123-L146">Hapi</a> example applications for a more specific use case of the <code>engine.render</code> function.</p>
+<h2><a class="anchor" name="api"></a>API <a class="hash-link" href="#api">#</a></h2><h3><a class="anchor" name="constructoroptions"></a><a href="">constructor(options)</a> <a class="hash-link" href="#constructoroptions">#</a></h3>
 <p>Where options could contain the following fields:</p>
 
 <ul>

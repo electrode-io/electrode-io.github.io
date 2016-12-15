@@ -304,6 +304,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -396,6 +401,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -863,6 +873,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/service_workers.html"> &nbsp; Build a Progressive Web App</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -951,6 +974,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -1226,7 +1254,7 @@
       <ul><li>
     
 
-    <a href="/docs/bundle-analyzer.html"> &nbsp; Bundle Analyzer</a>
+    <a href="/docs/bundle_analyzer.html"> &nbsp; Bundle Analyzer</a>
 
     
       </li></ul>
@@ -1464,6 +1492,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1510,6 +1543,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1938,6 +1976,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -2019,19 +2062,19 @@
 
     <p>The <a href="https://github.com/electrode-io/electrode-csrf-jwt">electrode-csrf-jwt</a> plugin enables stateless CSRF protection using <a href="https://github.com/auth0/node-jsonwebtoken">JWT</a> in Electrode, Express, or Hapi applications.</p>
 <h3><a class="anchor" name="why-do-we-need-this-module"></a>Why do we need this module? <a class="hash-link" href="#why-do-we-need-this-module">#</a></h3>
-<p>CSRF protection is an important security feature, but in systems which don&#39;t have backend session persistence, doing CSRF token validation is tricky. Stateless CSRF support addresses this need.</p>
-<h3><a class="anchor" name="how-do-we-validate-requests"></a>How do we validate requests? <a class="hash-link" href="#how-do-we-validate-requests">#</a></h3>
+<p>Protection against <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)">CSRF</a> is a very important security feature. Traditional anti-CSRF techniques use tokens issued by the server that the client has to post back. The server validates the request by comparing the token with its own, stored copy. But what if your application does not rely on server-side session persistence? Protecting users against CSRF attacks when your application does not use back-end sessions can be tricky. The Stateless CSRF JWT Validation module addresses this need.</p>
+
+<p>This module is a stand-alone module and can be configured to work in any <a href="#electrode">Electrode</a>, <a href="#express">Express</a>, or <a href="#hapi">Hapi</a> application.</p>
+<h4><a class="anchor" name="how-do-we-validate-requests"></a>How do we validate requests? <a class="hash-link" href="#how-do-we-validate-requests">#</a></h4>
 <p><strong><em>Double JWT CSRF tokens</em></strong></p>
 
-<p>We rely on the fact that cross-site requests can&#39;t set headers.</p>
+<p>This Stateless CSRF Validation module is able to validate the authenticity of the client&#39;s request by relying on the fact that cross-site requests cannot set headers. Using two JWT CSRF tokens takes advantage of this.</p>
 
-<p>Two JWT CSRF tokens are generated on the server side with the same payload but different types (see below), one for the HTTP header, one for the cookie.</p>
+<p>Both tokens are generated on the server side with the same payload but different types: one for the HTTP header, one for the cookie. Note that when a client makes a request, the JWT token must be sent in the headers.</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">headerPayload</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="nx">UUID</span><span class="o">:</span> <span class="s2">&quot;12345&quot;</span> <span class="p">};</span>
 <span class="nx">cookiePayload</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;cookie&quot;</span><span class="p">,</span> <span class="nx">UUID</span><span class="o">:</span> <span class="s2">&quot;12345&quot;</span> <span class="p">};</span>
 </code></pre></div>
-<p>When a client makes a request, the JWT token must be sent in the headers.</p>
-
-<p>On the server side, both tokens are received, decoded, and validated to make sure the payloads match.</p>
+<p>Once <em>both</em> tokens are received by the server, they are decoded and validated to make sure the payloads match.</p>
 
 <p>The disadvantage is that this method relies on the client making all requests through AJAX.</p>
 <h2><a class="anchor" name="module-electrode-csrf-jwt"></a>Module: <a href="https://github.com/electrode-io/electrode-csrf-jwt">electrode-csrf-jwt</a> <a class="hash-link" href="#module-electrode-csrf-jwt">#</a></h2><h3><a class="anchor" name="install-via-npm"></a>Install via <code>npm</code> <a class="hash-link" href="#install-via-npm">#</a></h3><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install --save electrode-csrf-jwt
@@ -2041,14 +2084,17 @@
 <li><p><a href="https://github.com/docs-code-examples-electrode-io/express-example-with-standalone-electrode-modules#electrode-csrf-jwt">Express Example with Standalone Modules</a></p></li>
 <li><p><a href="https://github.com/docs-code-examples-electrode-io/hapijs-example-with-standalone-electrode-modules#electrode-csrf-jwt">Hapi Example with Standalone Modules</a></p></li>
 </ul>
-<h2><a class="anchor" name="usage"></a>Usage <a class="hash-link" href="#usage">#</a></h2><h4><a class="anchor" name="options"></a>Options <a class="hash-link" href="#options">#</a></h4>
-<p><code>options</code>:</p>
+<h2><a class="anchor" name="usage"></a>Usage <a class="hash-link" href="#usage">#</a></h2><h3><a class="anchor" name="configuration"></a>Configuration <a class="hash-link" href="#configuration">#</a></h3>
+<p>This module can be configured to work in any <a href="#electrode">Electrode</a>, <a href="#express">Express</a>, or <a href="#hapi">Hapi</a> application.</p>
 
-<ul>
-<li><code>secret</code>: <strong>Required</strong>. A string or buffer containing either the secret for HMAC algorithms, or the PEM encoded private key for RSA and ECDSA.</li>
-</ul>
+<p>Whichever platform you are using, an <code>options</code> property with a secret key is required:</p>
 
-<p>Others are optional and follow the <a href="https://github.com/auth0/node-jsonwebtoken/blob/master/README.md#usage">same usage as jsonwebtoken</a></p>
+<blockquote>
+<p><strong>options</strong>
+* <code>secret</code>: <strong>Required</strong>. A string or buffer containing either the secret for HMAC algorithms, or the PEM encoded private key for RSA and ECDSA.</p>
+</blockquote>
+
+<p>Other config properties are optional and follow the <a href="https://github.com/auth0/node-jsonwebtoken/blob/master/README.md#usage">same usage as jsonwebtoken</a></p>
 
 <ul>
 <li><code>algorithm</code></li>
@@ -2062,9 +2108,9 @@
 <li><code>noTimestamp</code></li>
 <li><code>headers</code></li>
 </ul>
-<h2><a class="anchor" name="platforms"></a>Platforms <a class="hash-link" href="#platforms">#</a></h2>
-<p>This module can be used with either <a href="#electrode">Electrode</a>, <a href="#express">Express</a>, or <a href="#hapi">Hapi</a>.</p>
-<h3><a class="anchor" name="electrode"></a>Electrode <a class="hash-link" href="#electrode">#</a></h3><h4><a class="anchor" name="example-configdefault.json-configuration"></a>Example <code>config/default.json</code> configuration <a class="hash-link" href="#example-configdefault.json-configuration">#</a></h4><div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+<h3><a class="anchor" name="electrode"></a>Electrode <a class="hash-link" href="#electrode">#</a></h3>
+<p>All server configurations in <a href="http://www.electrode.io/docs/what_is_electrode.html">Electrode apps</a> are handled by the versatile <a href="http://www.electrode.io/docs/confippet.html">confippet</a> module. The Stateless CSRF JWT Validation module can be easily configured by adding the following property to <code>config/default.json</code>:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;plugins&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;electrode-csrf-jwt&quot;</span><span class="p">:</span> <span class="p">{</span>
       <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -2099,7 +2145,67 @@
     <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">});</span>
+</code></pre></div><h3><a class="anchor" name="usage-example"></a>Usage Example <a class="hash-link" href="#usage-example">#</a></h3>
+<p>With the configuration shown above, your app is now ready to use Stateless CSRF JWT Validation. At this point, server endpoints do not require any additional configuration for protection to be enabled. Your <code>GET</code> endpoints will automatically return a CSRF cookie <em>and</em> header, and your <code>POST</code> endpoints will require the same. </p>
+
+<p>Let&#39;s see a simple <a href="https://github.com/electrode-io/electrode/blob/d4142ee0c938cbf973a429ee8467052aa4e1c9be/samples/universal-react-node/README.md#electrode-csrf-jwt">example</a> to show how the CSRF tokens are automatically configured:</p>
+
+<p><strong>Server Endpoint Setup</strong></p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">server</span><span class="p">.</span><span class="nx">route</span><span class="p">({</span>
+  <span class="nx">method</span><span class="o">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;/1&quot;</span><span class="p">,</span>
+  <span class="nx">handler</span><span class="o">:</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">reply</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">reply</span><span class="p">(</span><span class="s2">&quot;valid&quot;</span><span class="p">)</span>
+<span class="p">});</span>
+
+<span class="nx">server</span><span class="p">.</span><span class="nx">route</span><span class="p">({</span>
+  <span class="nx">method</span><span class="o">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+  <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;/2&quot;</span><span class="p">,</span>
+  <span class="nx">handler</span><span class="o">:</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">reply</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">reply</span><span class="p">(</span><span class="s2">&quot;valid&quot;</span><span class="p">)</span>
+<span class="p">});</span>
 </code></pre></div>
+<p>Here we set up two simple endpoints:</p>
+
+<ul>
+<li>a <code>GET</code> endpoint, <code>/1</code>, to which the module automatically adds a csrf token header</li>
+<li>a <code>POST</code> endpoint, <code>/2</code>, to which the module ensures the presence of a valid token in the request headers</li>
+</ul>
+
+<p>Let&#39;s see how to access them from the client:</p>
+
+<p><strong>Client AJAX Setup</strong></p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">//A simple post Fn that now requires a csrf token to be passed in the header</span>
+
+<span class="kd">function</span> <span class="nx">doPost</span><span class="p">(</span><span class="nx">csrfToken</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;/2&quot;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">credentials</span><span class="o">:</span> <span class="s2">&quot;same-origin&quot;</span><span class="p">,</span>
+    <span class="nx">method</span><span class="o">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+    <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;Accept&quot;</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;x-csrf-jwt&quot;</span><span class="o">:</span> <span class="nx">csrfToken</span>
+    <span class="p">},</span>
+    <span class="nx">body</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;hello&quot;</span><span class="p">})</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">resp</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resp</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">doGet</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;/1&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">credentials</span><span class="o">:</span> <span class="s2">&quot;same-origin&quot;</span><span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">resp</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="s2">&quot;200&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;x-csrf-jwt&quot;</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">token</span> <span class="o">!==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Got CSRF token OK&quot;</span><span class="p">);</span>
+        <span class="nx">doPost</span><span class="p">(</span><span class="nx">token</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span> 
+  <span class="p">})</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>In this example a <code>POST</code> request to <code>/2</code> can be made using the token retrieved from the <code>/1</code> endpoint.</p>
+
+<p>You can checkout our <a href="https://github.com/electrode-io/electrode#boilerplate-universal-react-node">Electrode Boilerplate React Application</a> for a more detailed example</p>
+
 
     
 

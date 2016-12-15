@@ -304,6 +304,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -396,6 +401,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -863,6 +873,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/service_workers.html"> &nbsp; Build a Progressive Web App</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -951,6 +974,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -1226,7 +1254,7 @@
       <ul><li>
     
 
-    <a href="/docs/bundle-analyzer.html"> &nbsp; Bundle Analyzer</a>
+    <a href="/docs/bundle_analyzer.html"> &nbsp; Bundle Analyzer</a>
 
     
       </li></ul>
@@ -1464,6 +1492,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1510,6 +1543,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1938,6 +1976,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -2017,19 +2060,17 @@
     </h1>
     <div class="subHeader"></div>
 
-    <p><a href="https://github.com/electrode-io/electrode-confippet">Confippet</a> is a versatile, flexible utility for managing configurations of
-Node.js applications. It&#39;s simple to get started, and can be customized and
-extended to meet the needs of your app</p>
+    <!-- define reference links -->
+
+<p><a href="https://github.com/electrode-io/electrode-confippet">Confippet</a> is a versatile, flexible utility for managing configurations of Node.js applications. It&#39;s simple to get started and can be customized and extended to meet the needs of your app.</p>
 
 <p><a href="https://github.com/electrode-io/electrode-confippet">Confippet</a> can be used as a standalone module in your favorite Node.js web server framework or application.</p>
 <h3><a class="anchor" name="features"></a>Features <a class="hash-link" href="#features">#</a></h3>
 <ul>
-<li><strong>Simple</strong> - Confippet&#39;s <code>presetConfig</code> automatically composes a single config
-object from multiple files. For most applications, no further customization is
-necessary.</li>
+<li><strong>Simple</strong> - Confippet&#39;s <code>presetConfig</code> automatically composes a single config object from multiple files. For most applications, no further customization isnecessary.</li>
 <li><strong>Flexible</strong> - Supports JSON, YAML, and JavaScript config files.</li>
 <li><strong>Powerful</strong> - Handles complex multi-instance enterprise deployments.</li>
-<li><strong>Platform Agnostic</strong> - This module is platform agnostic and can be plugged-in Electrode, Express.js and Hapi.js applications or any Node.js application.</li>
+<li><strong>Platform Agnostic</strong> - This module is platform agnostic and can be plugged into any Node.js application, including those run on Electrode, Express.js and Hapi.js </li>
 </ul>
 <h2><a class="anchor" name="module-electrode-confippet"></a>Module: <a href="https://github.com/electrode-io/electrode-confippet">electrode-confippet</a> <a class="hash-link" href="#module-electrode-confippet">#</a></h2><h3><a class="anchor" name="install-via-npm"></a>Install via <code>npm</code> <a class="hash-link" href="#install-via-npm">#</a></h3><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install --save electrode-confippet
 </code></pre></div><h3><a class="anchor" name="example-applications"></a>Example Applications <a class="hash-link" href="#example-applications">#</a></h3>
@@ -2048,51 +2089,260 @@ necessary.</li>
 <li><a href="#customization">Customization</a></li>
 </ul>
 <h3><a class="anchor" name="getting-started"></a>Getting Started <a class="hash-link" href="#getting-started">#</a></h3>
-<p>Let&#39;s say that in our application we need to access a database that is running 
-locally in our development environment but is running on a specific hostname 
-while running in our production environment. We would like to be able to get 
-the correct hostname in our code, without too much effort, based on the current environment.</p>
+<p>Confippet can be integrated seamlessly into any existing <a href="#express-setup">Express</a>, <a href="#hapi-setup">Hapi</a> or <a href="#electrode-setup">Electrode</a> application.</p>
 
-<p>Confippet can help us with this. All we have to do is to create a few config files like the following: </p>
+<p>For example, let&#39;s say that in our application we need to access a database that is running locally in our development environment but is running on a specific hostname in our production environment. We would like to be able to get  the correct hostname in our code based on the current environment. Confippet can help us with this. Follow the setup instructions for this example depending on your app&#39;s framework:</p>
 
-<p><code>config/default.json</code></p>
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;db&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">5432</span><span class="p">,</span>
-      <span class="nt">&quot;database&quot;</span><span class="p">:</span> <span class="s2">&quot;clients&quot;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<ul>
+<li><a href="#electrode-setup">Electrode</a></li>
+<li><a href="#express-setup">Express</a></li>
+<li><a href="#hapi-setup">Hapi</a></li>
+</ul>
+<h4><a class="anchor" name="electrode-setup"></a><strong><em>Electrode Setup</em></strong> <a class="hash-link" href="#electrode-setup">#</a></h4>
+<p>Electrode applications that were generated using <code>yo electrode</code> have already been bootstrapped with the necessary config files to set up <a href="https://github.com/electrode-io/electrode-confippet">Confippet</a>. Let&#39;s take a look at the following files:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">config
+|_ default.json
+|_ development.json
+|_ production.json
 </code></pre></div>
-<p><code>config/development.json</code></p>
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;db&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;dev-db-server&quot;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<p>First, let&#39;s update the default settings for our database connection by adding the following setting to <code>default.json</code>: </p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">json {
+  &quot;settings&quot;: {
+    &quot;db&quot;: {
+      &quot;host&quot;: &quot;localhost&quot;,
+      &quot;port&quot;: 5432,
+      &quot;database&quot;: &quot;clients&quot;
+    }
+  }
+}
 </code></pre></div>
-<p><code>config/production.json</code></p>
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;db&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;prod-db-server&quot;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<p>Then we will set up the development and production environments.</p>
+<h5><a class="anchor" name="development-environment"></a><strong><em>Development Environment</em></strong> <a class="hash-link" href="#development-environment">#</a></h5>
+<p>We want our database to be served from different hostnames depending on the environment. So let&#39;s update <code>development.json</code> to include the following settings:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">json {
+  &quot;server&quot;: {
+    &quot;connections&quot;: {
+      &quot;compression&quot;: false
+    },
+    &quot;debug&quot;: {
+      &quot;log&quot;: [&quot;error&quot;],
+      &quot;request&quot;: [&quot;error&quot;]
+    }
+  },
+  &quot;connections&quot;: {
+    &quot;default&quot;: {
+      &quot;port&quot;: 3000
+    }
+  },
+  &quot;settings&quot;: {
+   &quot;db&quot;: {
+     &quot;host&quot;: &quot;dev-db-server&quot;
+   }
+ }
+}
 </code></pre></div>
-<p>The above configs can be used in the app using the following: </p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;electrode-confippet&quot;</span><span class="p">).</span><span class="nx">config</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;settings.db&quot;</span><span class="p">);</span>
+<p>Now, while <code>NODE_ENV=development</code> :</p>
+
+<ul>
+<li>Server log errors that may be beneficial for debugging will now be shown with content encoding <em>disabled</em></li>
+<li>The server is being run in port 3000</li>
+<li>The database is hosted from dev-db-server</li>
+</ul>
+<h5><a class="anchor" name="production-environment"></a><strong><em>Production Environment</em></strong> <a class="hash-link" href="#production-environment">#</a></h5>
+<p>Similarly, update <code>development.json</code> to include the following settings:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">json {
+  &quot;server&quot;: {
+    &quot;connections&quot;: {
+      &quot;compression&quot;: true
+    },
+    &quot;debug&quot;: {
+      &quot;log&quot;: false,
+      &quot;request&quot;: false
+    }
+  },
+  &quot;connections&quot;: {
+    &quot;default&quot;: {
+      &quot;port&quot;: 8000
+    }
+  },
+  &quot;settings&quot;: {
+   &quot;db&quot;: {
+     &quot;host&quot;: &quot;prod-db-server&quot;
+   }
+ }
+}
 </code></pre></div>
-<p>In this example, <code>default.json</code> will be loaded in all environments, whereas
-<code>production.json</code> will be loaded only when the <code>NODE_ENV</code> environment variable
-is set to <code>production</code>. In that case, the value of <code>host</code> in the <code>db</code> object
-will be overwritten by the value in <code>production.json</code>.</p>
-<h3><a class="anchor" name="config-composition"></a>Config Composition <a class="hash-link" href="#config-composition">#</a></h3>
+<p>Now, while <code>NODE_ENV=production</code> :</p>
+
+<ul>
+<li>Server log errors are <em>disabled</em> and content encoding is <em>enabled</em></li>
+<li>Server is run in port 8000</li>
+<li>The database will be hosted from prod-db-server</li>
+</ul>
+
+<p>Additionally, here are some notes about the settings you just copied:</p>
+
+<ul>
+<li>The server related configs are from hapi.js. More config options can be found here: http://hapijs.com/api</li>
+<li>The connections property is specific to <a href="https://github.com/electrode-io/electrode-server/tree/master/lib/config">electrode server</a></li>
+<li>Any settings that exist in the config/default.json that are <em>also</em> in the other environment configs will be replaced by the environment specific versions</li>
+</ul>
+<h5><a class="anchor" name="electrode-configuration"></a><strong><em>Electrode Configuration</em></strong> <a class="hash-link" href="#electrode-configuration">#</a></h5>
+<p>Last step! Let&#39;s set up our Electrode application to use the new database settings by adding the following line to <code>server/index.js</code>:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">const db = config.$(&quot;settings.db&quot;);
+</code></pre></div><h4><a class="anchor" name="express-setup"></a><strong><em>Express Setup</em></strong> <a class="hash-link" href="#express-setup">#</a></h4>
+<p>Confippet requires a config directory to pull settings from:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">mkdir config
+cd config
+</code></pre></div>
+<p>Let&#39;s add the following files to the <code>config</code> directory:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">config
+|_ default.json
+|_ development.json
+|_ production.json
+</code></pre></div>
+<p>Then update <code>default.json</code> to include the following settings:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">json {
+  &quot;server&quot;: {
+    &quot;viewCache&quot;: false,
+    &quot;xPoweredBy&quot;: true,
+    &quot;port&quot;: 4000
+  },
+  &quot;settings&quot;: {
+    &quot;db&quot;: {
+      &quot;host&quot;: &quot;localhost&quot;,
+      &quot;port&quot;: 5432,
+      &quot;database&quot;: &quot;clients&quot;
+    }
+  }
+}
+</code></pre></div>
+<p>Now we can set up the development and production specific settings.</p>
+<h5><a class="anchor" name="development-environment"></a><strong><em>Development Environment</em></strong> <a class="hash-link" href="#development-environment">#</a></h5>
+<p>Update <code>config/development.json</code> to have the following settings:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">json {
+  &quot;server&quot;: {
+    &quot;viewCache&quot;: false,
+    &quot;xPoweredBy&quot;: true,
+    &quot;port&quot;: 4000
+  },
+  &quot;settings&quot;: {
+    &quot;db&quot;: {
+    &quot;host&quot;: &quot;dev-db-server&quot;
+    }
+  }
+}
+</code></pre></div>
+<p>Now, while <code>NODE_ENV=development</code>:</p>
+
+<ul>
+<li>the view cache is <em>disabled</em></li>
+<li>the x-powered-by header is <em>enabled</em></li>
+<li>the server is run in port 4000</li>
+<li>the databse is hosted from -dev-db-server</li>
+</ul>
+<h5><a class="anchor" name="production-environment"></a><strong><em>Production Environment</em></strong> <a class="hash-link" href="#production-environment">#</a></h5>
+<p>Update <code>config/production.json</code> to have the following settings:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">\json
+{
+  &quot;server&quot;: {
+    &quot;viewCache&quot;: true,
+    &quot;xPoweredBy&quot;: false,
+    &quot;port&quot;: 8000
+  },
+  &quot;settings&quot;: {
+    &quot;db&quot;: {
+    &quot;host&quot;: &quot;prod-db-server&quot;
+    }
+  }
+}
+</code></pre></div>
+<p>Now, while <code>NODE_ENV=development</code> :</p>
+
+<ul>
+<li>the view cache is <em>enabled</em></li>
+<li>the x-powered-by header is <em>disabled</em></li>
+<li>the server is run in port 4800</li>
+<li>the database is hosted from -dev-db-server</li>
+</ul>
+<h5><a class="anchor" name="express-configuration"></a><strong><em>Express Configuration</em></strong> <a class="hash-link" href="#express-configuration">#</a></h5>
+<p>To require the confippet settings, simply add the following to <code>app.js</code>:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">const config = require(&quot;electrode-confippet&quot;).config;
+const db = config.$(&quot;settings.db&quot;);
+
+app.set(&quot;view cache&quot;, config.server.viewCache);
+app.set(&quot;x-powered-by&quot;, config.server.xPoweredBy);
+app.listen(config.server.port);
+</code></pre></div><h4><a class="anchor" name="hapi-setup"></a><strong><em>Hapi Setup</em></strong> <a class="hash-link" href="#hapi-setup">#</a></h4>
+<p>Confippet requires a config directory to pull settings from:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">mkdir config
+cd config
+</code></pre></div>
+<p>Let&#39;s add the following files to the <code>config</code> directory:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">config
+|_ default.json
+|_ development.json
+|_ production.json
+</code></pre></div>
+<p>Then update <code>default.json</code> to include the following settings:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">json {
+  &quot;connection&quot;: {
+    &quot;port&quot;: 3000
+  },
+  &quot;settings&quot;: {
+    &quot;db&quot;: {
+      &quot;host&quot;: &quot;localhost&quot;,
+      &quot;port&quot;: 5432,
+      &quot;database&quot;: &quot;clients&quot;
+    }
+  }
+}
+</code></pre></div>
+<p>Now we can set up the development and production specific settings.</p>
+<h5><a class="anchor" name="development-environment"></a><strong><em>Development Environment</em></strong> <a class="hash-link" href="#development-environment">#</a></h5>
+<p>Update <code>config/development.json</code> to have the following settings:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">json
+{
+  &quot;connection&quot;: {
+    &quot;port&quot;: 4000
+  },
+  &quot;settings&quot;: {
+    &quot;db&quot;: {
+      &quot;host&quot;: &quot;dev-db-server&quot;
+    }
+  }
+}
+</code></pre></div>
+<p>Now, while <code>NODE_ENV=development</code> :</p>
+
+<ul>
+<li>The above settings run the server in port 4000</li>
+<li>The database is hosted from dev-db-server</li>
+</ul>
+<h5><a class="anchor" name="production-environment"></a><strong><em>Production Environment</em></strong> <a class="hash-link" href="#production-environment">#</a></h5>
+<p>Update the config/production.json to have the following settings:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">json {
+  &quot;connection&quot;: {
+    &quot;port&quot;: 8000
+  },
+  &quot;settings&quot;: {
+    &quot;db&quot;: {
+      &quot;host&quot;: &quot;prod-db-server&quot;
+    }
+  }
+}
+</code></pre></div>
+<p>Now, while <code>NODE_ENV=production</code>:</p>
+
+<ul>
+<li>The above settings run the server in port 8000</li>
+<li>The database is hosted from dev-db-server</li>
+</ul>
+<h5><a class="anchor" name="hapi-configuration"></a><strong><em>Hapi Configuration</em></strong> <a class="hash-link" href="#hapi-configuration">#</a></h5>
+<p>To require the confippet settings, simply add the following to <code>app.js</code>:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">const config = require(&quot;electrode-confippet&quot;).config;
+const db = config.$(&quot;settings.db&quot;);
+</code></pre></div><h3><a class="anchor" name="config-composition"></a>Config Composition <a class="hash-link" href="#config-composition">#</a></h3>
 <p>Confippet&#39;s <code>presetConfig</code> composes together files in the <code>config/</code> directory,
 in the following order:</p>
 
@@ -2237,7 +2487,7 @@ sources are loaded (controlled by <code>order</code>).</p>
 <p>It also adds a new extension handler, <code>json5</code>, to be loaded after <code>json</code>.</p>
 
 <p>To further understand the <code>_$</code> and the <code>compose</code> options, please see the
-documentation for <a href="https://github.com/electrode-io/electrode-confippet/blob/master/store.md">store</a>, <a href="https://github.com/electrode-io/electrode-confippet/blob/master/compose.md">composeConfig</a>, and <a href="https://github.com/electrode-io/electrode-confippet/blob/master/templates.md">processConfig</a>.</p>
+documentation for <a href="https://github.com/electrode-io/electrode-confippet/blob/master/store.md">store</a>, <a href="https://github.com/electrode-io/electrode-confippet/blob/master/compose.md">composeConfig</a>, and <a href="https://github.com/electrode-io/electrode-confippet/blob/master/templates.md">processConfig</a></p>
 
 
     
