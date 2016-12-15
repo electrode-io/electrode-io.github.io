@@ -114,6 +114,7 @@ With the configuration shown above, your app is now ready to use Stateless CSRF 
 Let's see a simple [example](https://github.com/electrode-io/electrode/blob/d4142ee0c938cbf973a429ee8467052aa4e1c9be/samples/universal-react-node/README.md#electrode-csrf-jwt) to show how the CSRF tokens are automatically configured:
 
 **Server Endpoint Setup**
+
 ```js
 server.route({
   method: "GET",

@@ -4,20 +4,26 @@ permalink: docs/confippet.html
 toplevel: "Stand Alone Modules"
 ---
 
-[Confippet] is a versatile, flexible utility for managing configurations of
-Node.js applications. It's simple to get started, and can be customized and
-extended to meet the needs of your app
+<!-- define reference links -->
+
+[confippet]: https://github.com/electrode-io/electrode-confippet
+[node-config npm module]: https://github.com/lorenwest/node-config
+[node-config files]: https://github.com/lorenwest/node-config/wiki/Configuration-Files
+[store]: https://github.com/electrode-io/electrode-confippet/blob/master/store.md
+[composeConfig]: https://github.com/electrode-io/electrode-confippet/blob/master/compose.md
+[processConfig]: https://github.com/electrode-io/electrode-confippet/blob/master/templates.md
+[default compose options]: https://github.com/electrode-io/electrode-confippet/blob/master/lib/default-compose-opts.js
+
+[Confippet] is a versatile, flexible utility for managing configurations of Node.js applications. It's simple to get started and can be customized and extended to meet the needs of your app.
 
 [Confippet] can be used as a standalone module in your favorite Node.js web server framework or application.
 
 ### Features
 
-* **Simple** - Confippet's `presetConfig` automatically composes a single config
-  object from multiple files. For most applications, no further customization is
-  necessary.
+* **Simple** - Confippet's `presetConfig` automatically composes a single config object from multiple files. For most applications, no further customization isnecessary.
 * **Flexible** - Supports JSON, YAML, and JavaScript config files.
 * **Powerful** - Handles complex multi-instance enterprise deployments.
-* **Platform Agnostic** - This module is platform agnostic and can be plugged-in Electrode, Express.js and Hapi.js applications or any Node.js application.
+* **Platform Agnostic** - This module is platform agnostic and can be plugged into any Node.js application, including those run on Electrode, Express.js and Hapi.js 
 
 {% include module_usage.md moduleId="electrode-confippet" express=true hapi=true %}
 
@@ -32,7 +38,7 @@ extended to meet the needs of your app
 
 Confippet can be integrated seamlessly into any existing [Express](#express-setup), [Hapi](#hapi-setup) or [Electrode](#electrode-setup) application.
 
-For example, let's say that in our application we need to access a database that is running locally in our development environment but is running on a specific hostname in our production environment. We would like to be able to get  the correct hostname in our code, without too much effort, based on the current environment. Confippet can help us with this. Follow the setup instructions for this example depending on your app's framework:
+For example, let's say that in our application we need to access a database that is running locally in our development environment but is running on a specific hostname in our production environment. We would like to be able to get  the correct hostname in our code based on the current environment. Confippet can help us with this. Follow the setup instructions for this example depending on your app's framework:
 
 * [Electrode](#electrode-setup)
 * [Express](#express-setup)
@@ -40,6 +46,7 @@ For example, let's say that in our application we need to access a database that
 
 #### ***Electrode Setup***
 Electrode applications that were generated using `yo electrode` have already been bootstrapped with the necessary config files to set up [Confippet]. Let's take a look at the following files:
+
 ```
 config
 |_ default.json
@@ -47,9 +54,10 @@ config
 |_ production.json
 ```
 
-First, lets update the default settings for our database connection by adding the following setting to `default.json`: 
+First, let's update the default settings for our database connection by adding the following setting to `default.json`: 
 
-```json {
+```
+json {
   "settings": {
     "db": {
       "host": "localhost",
@@ -62,8 +70,10 @@ First, lets update the default settings for our database connection by adding th
 Then we will set up the development and production environments.
 
 ##### ***Development Environment***
-Update `development.json` to include the following settings:
-```json {
+We want our database to be served from different hostnames depending on the environment. So let's update `development.json` to include the following settings:
+
+```
+json {
   "server": {
     "connections": {
       "compression": false
@@ -92,8 +102,10 @@ Now, while `NODE_ENV=development` :
 - The database is hosted from dev-db-server
 
 ##### ***Production Environment***
-Update `development.json` to include the following settings:
-```json {
+Similarly, update `development.json` to include the following settings:
+
+```
+json {
   "server": {
     "connections": {
       "compression": true
@@ -135,8 +147,6 @@ Last step! Let's set up our Electrode application to use the new database settin
 const db = config.$("settings.db");
 ```
 
-
-
 #### ***Express Setup***
 
 Confippet requires a config directory to pull settings from:
@@ -146,6 +156,7 @@ mkdir config
 cd config
 ```
 Let's add the following files to the `config` directory:
+
 ```
 config
 |_ default.json
@@ -154,7 +165,9 @@ config
 ```
 
 Then update `default.json` to include the following settings:
-```json {
+
+```
+json {
   "server": {
     "viewCache": false,
     "xPoweredBy": true,
@@ -173,7 +186,9 @@ Now we can set up the development and production specific settings.
 
 ##### ***Development Environment***
 Update `config/development.json` to have the following settings:
-```json {
+
+```
+json {
   "server": {
     "viewCache": false,
     "xPoweredBy": true,
@@ -186,6 +201,7 @@ Update `config/development.json` to have the following settings:
   }
 }
 ```
+
 Now, while `NODE_ENV=development`:
 
 - the view cache is *disabled*
@@ -196,7 +212,9 @@ Now, while `NODE_ENV=development`:
 ##### ***Production Environment***
 
 Update `config/production.json` to have the following settings:
-```json
+
+```
+\json
 {
   "server": {
     "viewCache": true,
@@ -210,6 +228,7 @@ Update `config/production.json` to have the following settings:
   }
 }
 ```
+
 Now, while `NODE_ENV=development` :
 
 - the view cache is *enabled*
@@ -229,7 +248,6 @@ app.set("x-powered-by", config.server.xPoweredBy);
 app.listen(config.server.port);
 ```
 
-
 #### ***Hapi Setup***
 
 Confippet requires a config directory to pull settings from:
@@ -238,7 +256,9 @@ Confippet requires a config directory to pull settings from:
 mkdir config
 cd config
 ```
+
 Let's add the following files to the `config` directory:
+
 ```
 config
 |_ default.json
@@ -247,7 +267,9 @@ config
 ```
 
 Then update `default.json` to include the following settings:
-```json {
+
+```
+json {
   "connection": {
     "port": 3000
   },
@@ -260,11 +282,14 @@ Then update `default.json` to include the following settings:
   }
 }
 ```
+
 Now we can set up the development and production specific settings.
 
 ##### ***Development Environment***
 Update `config/development.json` to have the following settings:
-```json
+
+```
+json
 {
   "connection": {
     "port": 4000
@@ -276,6 +301,7 @@ Update `config/development.json` to have the following settings:
   }
 }
 ```
+
 Now, while `NODE_ENV=development` :
 
 - The above settings run the server in port 4000
@@ -285,7 +311,9 @@ Now, while `NODE_ENV=development` :
 ##### ***Production Environment***
 
 Update the config/production.json to have the following settings:
-```json {
+
+```
+json {
   "connection": {
     "port": 8000
   },
@@ -296,6 +324,7 @@ Update the config/production.json to have the following settings:
   }
 }
 ```
+
 Now, while `NODE_ENV=production`:
 
 - The above settings run the server in port 8000
@@ -463,12 +492,4 @@ sources are loaded (controlled by `order`).
 It also adds a new extension handler, `json5`, to be loaded after `json`.
 
 To further understand the `_$` and the `compose` options, please see the
-documentation for [store], [composeConfig], and [processConfig].
-
-[Confippet]: https://github.com/electrode-io/electrode-confippet
-[node-config npm module]: https://github.com/lorenwest/node-config
-[node-config files]: https://github.com/lorenwest/node-config/wiki/Configuration-Files
-[store]: https://github.com/electrode-io/electrode-confippet/blob/master/store.md
-[composeConfig]: https://github.com/electrode-io/electrode-confippet/blob/master/compose.md
-[processConfig]: https://github.com/electrode-io/electrode-confippet/blob/master/templates.md
-[default compose options]: https://github.com/electrode-io/electrode-confippet/blob/master/lib/default-compose-opts.js
+documentation for [store], [composeConfig], and [processConfig]

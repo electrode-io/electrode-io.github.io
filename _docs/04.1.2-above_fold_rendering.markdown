@@ -12,11 +12,7 @@ The [above-the-fold-only-server-render] is a React component for optionally skip
 
 The table below outlines a clear performance increase in the example app by skipping server rendering of the `Footer` component and several other below the fold zones on [Walmart.com](http://www.walmart.com):
 
-| Tables        | HTML Size           | renderToString Time  |
-| ------------- |:-------------:| -----:|
-| before      | 452 kB | 249ms |
-| after      | 315 kB      |   177ms|
-| diff | -137 kB (-30%)      |    -72ms (-29%) |
+![above-the-fold-table](/img/above-the-fold-table.png)
 
 {% include module_usage.md moduleId="above-the-fold-only-server-render" express_react_redux=true hapi_react_redux=true %}
 
@@ -77,3 +73,4 @@ By default, the [above-the-fold-only-server-render] component is an exercise in 
 This module is web-server Platform agnostic can be used with your favorite node.js server framework [Electrode](https://github.com/electrode-io/electrode), [Express.js](https://github.com/electrode-samples/express-example-with-standalone-electrode-modules), or [Hapi.js](https://github.com/electrode-samples/hapijs-example-with-standalone-electrode-modules).
 
 [above-the-fold-only-server-render]: https://github.com/electrode-io/above-the-fold-only-server-render
+

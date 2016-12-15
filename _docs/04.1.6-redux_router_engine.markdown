@@ -29,6 +29,7 @@ export default (
 Next, you'll want to configure the redux store using the [Redux Async Actions] pattern. The first step in this pattern is to handle any middleware you might be using in addition to the required [redux thunk](https://github.com/gaearon/redux-thunk#redux-thunk) middleware which [allows actions to return functions instead of objects](http://redux.js.org/docs/advanced/AsyncActions.html#async-action-creators), an important step that lets synchronous action creators work with networks requests. We're also using [redux logger](https://github.com/evgenyrodionov/redux-logger#logger-for-redux) in this example to show how other middlewares can be integrated:
 
 `configureStore.js`
+
 ```js
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
