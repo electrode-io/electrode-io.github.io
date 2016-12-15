@@ -459,7 +459,7 @@ module.exports = {
 Rebuild your app and run the server with
 
 ```bash
-$ gulp build && gulp server
+$ gulp pwa
 ```
 
 With all the code in place, we are ready to see push notifications in action.
