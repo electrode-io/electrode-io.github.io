@@ -2062,9 +2062,8 @@
 
     <h4><a class="anchor" name="develop-helpers-for-the-components"></a>Develop helpers for the components <a class="hash-link" href="#develop-helpers-for-the-components">#</a></h4>
 <p>Sometimes it make sense to do the heavy lifting of your application in one or more separate modules that are imported. For example, let&#39;s make a helper module to handle different types of graphs. Remember that this helper was imported into the app in the last section via:</p>
-
-<p><code>import style from &quot;../helpers/graph-styles&quot;;</code></p>
-
+<div class="highlight"><pre><code class="language-text" data-lang="text">import style from &quot;../helpers/graph-styles&quot;;
+</code></pre></div>
 <p>In <code>src</code>, create a folder named <code>helpers</code> with a file named <code>graph-styles.js</code> inside (<code>&lt;your-awesome-component&gt;/src/helpers/graph-styles.js</code>). Copy the code from below into this file:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">PARENT</span> <span class="o">=</span> <span class="p">{</span><span class="nx">divisor</span><span class="o">:</span> <span class="mi">2</span><span class="p">};</span>
 <span class="kr">const</span> <span class="nx">CHILD</span> <span class="o">=</span> <span class="p">{</span><span class="nx">divisor</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">rotateBack</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">};</span>
