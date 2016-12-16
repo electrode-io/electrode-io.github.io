@@ -6,7 +6,7 @@ toplevel: "Getting Started: Intermediate"
 
 “A Progressive Web App(PWA) uses modern web capabilities to deliver an app-like user experience.” – [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/)
 
-PWA are incredibly powerful and provide functionalities like Offline first, Push notifications, Background sync and Add to home screen.
+PWA are incredibly powerful and provide functionalities like Offline first, Push notifications, Background sync, GPU Rendering, 60fps scrolls and Add to home screen for a native app like experience.
 
 PWA are purely based on [Service Workers](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) and their ability to work independently in the background without interfering your web app's life cycle.
 
@@ -465,5 +465,7 @@ $ gulp pwa
 With all the code in place, we are ready to see push notifications in action.
 
 Navigate to `http://localhost:3000`. Accept the permission for subscribing and you will see a curl command rendered on the page. You can either run the curl command from terminal to see the push notification or fill out the form and click on the `Send` button to trigger it!
+
+For more Electrode PWA code examples checkout [electrode-pwa-examples](https://github.com/electrode-samples/electrode-pwa-examples/tree/master/examples) repo.
 
 [screenshot]: https://cloud.githubusercontent.com/assets/4782871/20909807/b322e462-bb12-11e6-97af-797c808e11d9.png
