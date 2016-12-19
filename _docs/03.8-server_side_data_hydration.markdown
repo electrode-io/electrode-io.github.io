@@ -1,0 +1,23 @@
+---
+title:  "Server Side Data Hydration"
+permalink: docs/ss_data_hydration.html
+toplevel: "Getting Started: Intermediate"
+---
+Server side data hydration refers to instantiating the redux store on the server side. This data is then passed down to the client as a part of the initial call. Thus, all data pertaining to the initial state of the app is available to the without making any additional API calls to the server.
+The server side rendering in Electrode consists of two tasks, the actual rendering of content to html and the initial state loading into the redux store(server side data hydration).
+
+### Server Side Rendering modes
+Although Electrode provides server side rendering by default, it provides modes where it can be turned off by passing an argument as a part of the URI.
+####1. No Server Side Rendering(noss):
+This mode completely disables any rendering of html and server side data hydration. A typical use of this mode would be when the server load is high.
+
+```
+https://localhost:3000?__mode=noss
+```
+
+####2. Server Side Data Only (datass):
+This mode provides server side data hydration only but does not provide any server rendered content. The benefit here would be that we are able to cut down on using server resources but are also able to provide data to the client.
+
+```
+https://localhost:3000?__mode=datass
+```
