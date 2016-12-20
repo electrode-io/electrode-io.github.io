@@ -62,3 +62,5 @@ Once the expiry time is reached, we check to see if we are no longer getting lon
 ####server-load.js
 We are simply measuring the event loop delay here compare it against the threshold ```DEFAULT_EVENTLOOP_DELAY_MS = 40```. If found to be higher we disable server side rendering.
 <a target="_blank" href="http://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html">Here</a> is a good talk on learning about event loops.
+
+** NOTE: While generating an Electrode app using the Electrode generator via the ```yo electrode``` command, you will need to answer "Yes" to ```Disable server side rendering based on high load?``` in order to enable the above functionality. ** 
