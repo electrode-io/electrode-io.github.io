@@ -26,7 +26,7 @@ To verify that the mode is working correctly and server side rendering is turned
 If you used the ```datass``` mode, then you should still be able to see the initialized redux store.
 
 ### Auto Server Side Data Hydration
-As much as electrode believes in the benefits of server side rendering, it is also aware of its side effects. Electrode is constantly monitoring the performance of your app and will turn of server side rendering if app performance is degrading.
+As much as Electrode believes in the benefits of server side rendering, it is also aware of its side effects. Electrode is constantly monitoring the performance of your app and will turn of server side rendering if app performance is degrading.
 The following files in your server are responsible for this optimization and can be customized based on the needs of your application:
 
 {% raw  %}
