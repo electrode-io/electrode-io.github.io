@@ -3,8 +3,8 @@ title:  "Server Side Data Hydration"
 permalink: docs/ss_data_hydration.html
 toplevel: "Getting Started: Intermediate"
 ---
-The server side rendering in Electrode consists of two tasks, the actual rendering of content to html and the initial state loading into the redux store(server side data hydration).
-Server side data hydration refers to instantiating the redux store on the server side. This data is then passed down to the client as a part of the initial call. Thus, all data pertaining to the initial state of the app is available to the without making any additional API calls to the server.
+Server side rendering consists of two steps: creating the initial redux store data and calling `ReactDOM.renderToString` with that data.
+Server side data hydration refers the redux initial store data that was used for `ReactDom.renderToString` being passed to the browser so react can use the same data to bootstrap rendering on the client side. This helps the client side avoid making additional calls to the server to retrieve data for rendering.
 
 ### Server Side Rendering modes
 Although Electrode provides server side rendering by default, it provides modes where it can be turned off by passing an argument as a part of the URI.
