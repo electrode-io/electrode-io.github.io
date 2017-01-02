@@ -10,7 +10,7 @@ Our flexible modules are dedicated to optimizing performance in specific areas b
 
 *  [Confippet](confippet.html) is a versatile and flexible utility for managing configurations of Node.js applications.
 
-*  [Above the Fold Rendering](above_fold_rendering.html) is a React component wrapper that allows expesive components to skip Server Side Rendering.
+*  [Above the Fold Rendering](above_fold_rendering.html) is a React component wrapper that allows expensive components to skip Server Side Rendering.
 
 *  [Server Side Render Cache + Profiling](server_side_render_cache.html) is a module used to profile React Server Side Rendering performance and then cache expensive components to help you speed up SSR.
 
