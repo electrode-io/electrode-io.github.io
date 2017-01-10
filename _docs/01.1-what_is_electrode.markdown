@@ -5,32 +5,32 @@ toplevel: "Overview"
 ---
 
 > Electrode is a platform for building universal React/Node.js applications with
-> a standardized structure, best practices, and modern technologies baked in.
-> Electrode focuses on performance, component reusability, and simple deployment
-> to multiple cloud providers—so you can focus on what makes your app unique.
+> a standardized structure that follows best practices and has modern
+> technologies baked in. Electrode focuses on performance, component reusability,
+> and simple deployment to multiple cloud providers—so you can focus on what
+> makes your app unique.
 
 ### Core: Quick + Easy
 
-Electrode Core allows you to build a flexible universal React/Node.js
+Electrode Core allows you to build a flexible and universal React/Node.js
 application in minutes, with support for server-side rendering and easy
-deployment to multiple cloud providers. Get new projects started quickly with a
-simple, consistent structure that follows modern best practices.
+deployment. Use Electrode to start new projects quickly with a simple,
+consistent structure that follows modern best practices.
 
-The heart of the platform is [Electrode Archetypes], which allow for
-standardized configurations, workflows and structure of the app and its
-associated React components. By enforcing a sensible structure and consistency
-for components, modules and the entire app, Electrode’s Archetype system helps
-you build scalable applications you can trust while ensuring streamlined
-development and deployment.
+The heart of the platform is the [Electrode Archetype System], which allows for
+a standardized configuration, structure and workflow throughout the entire
+application. By enforcing a sensible structure and consistency for components,
+modules and the entire app, Electrode’s Archetype system helps you build
+scalable applications you can trust while ensuring streamlined development and
+deployment.
 
-It only takes a few minutes to get your new Electrode application running and a
-few more minutes to deploy your app to the cloud. See our [Quick Guide] to get
-started now.
+It only takes a few minutes to get your new Electrode application running and
+deployed to the cloud. See our [Quick Guide] to get started now.
 
 ### Standalone Modules: Optimize Where You Want
 
-As part of the Electrode Platform, we have a number of modules to help with a
-variety of common tasks and features, from [server-side render caching] to
+As part of the Electrode Platform, we have a number of modules to help with
+common tasks and features, from [server-side render caching] to
 [flexible configuration management]. These modules can be used independently of
 Electrode Core, which means you can [integrate them into your existing apps].
 
@@ -86,7 +86,7 @@ components, and [Electrify], which helps optimize your JavaScript bundles.
 *   [Electrode-Docgen], a custom metadata extractor for the Electrode framework
     that automates component documentation.
 
-[Electrode Archetypes]: what_is_electrode.html
+[Electrode Archetype System]: what_is_electrode.html
 [Quick Guide]: get_started.html
 [server-side render caching]: server_side_render_cache.html
 [Electrode Confippet]: confippet.html
