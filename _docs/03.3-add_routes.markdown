@@ -4,15 +4,24 @@ permalink: docs/add_routes.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-Now that we have our Open Source friends, the ability to have a resource-list house party and a working demo from before, we can continue to quickly build out our components to both handle user interaction on our application and send requests to Hapi Plugin for more friends to our party. We will use [React-Router](https://github.com/ReactTraining/react-router) to create different routes and serve different content to our views.
+Now that we have our open source friends, the ability to have a resource-list
+house party and a working demo from before, we can continue to quickly build out
+our components to both handle user interaction on our application and send
+requests to Hapi Plugin for more friends to our party. We will use
+[React-Router] to create different routes and serve different content to our
+views.
 
-Now we can integrate your published `<your-awesome-component>` as a node module and build out the app. Make sure you are inside of **Your Awesome App** and follow the steps below:
+Now we can integrate your published `<your-awesome-component>` as a node module
+and build out the app. Make sure you are inside of **Your Awesome App** and
+follow the steps below:
 
 ```bash
 $ npm i your-awesome-published-npm-module --save
 ```
 
-Navigate to `<your-awesome-app>/client/routes.jsx`. Copy, paste and save the code below into this file. Change from the literal `YourAwesomeComponent` and `your-awesome-node-module` to your actual component name:
+Navigate to `<your-awesome-app>/client/routes.jsx`. Copy, paste and save the
+code below into this file. Change from the literal `YourAwesomeComponent` and
+`your-awesome-node-module` to your actual component name:
 
 ```javascript
 import React from "react";
@@ -28,7 +37,8 @@ export const routes = (
 );
 ```
 
-Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the existing code by copying, pasting and saving the code below:
+Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the
+existing code by copying, pasting and saving the code below:
 
 ```javascript
 import React, { Component, PropTypes } from "react";
@@ -104,4 +114,9 @@ Home.propTypes = {
 };
 ```
 
-Navigate to [Intermediate: Server Config](server_config.html), to learn about [Confippet](confippet.html) and add our Hapi plugin to our server config.
+Navigate to [Intermediate: Server Config] to learn about [Confippet] and add
+our Hapi plugin to our server config.
+
+[Intermediate: Server Config]: server_config.html
+[Confippet]: confippet.html
+[React-Router]: https://github.com/ReactTraining/react-router

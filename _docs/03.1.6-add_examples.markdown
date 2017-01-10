@@ -6,7 +6,9 @@ toplevel: "Getting Started: Intermediate"
 
 #### Add Examples to Your Demo
 
-Create a file named: `<your-awesome-component>/demo/examples/render-friend.example`. Copy, paste and save the code below into this file:
+Create a file named
+`<your-awesome-component>/demo/examples/render-friend.example`. Copy, paste and
+save the code below into this file:
 
 ```javascript
   <RenderFriend
@@ -15,7 +17,9 @@ Create a file named: `<your-awesome-component>/demo/examples/render-friend.examp
     } />
 ```
 
-Create a file named: `<your-awesome-component>/demo/examples/guest-list.example`. Copy, paste and save the code below into this file:
+Create a file named
+`<your-awesome-component>/demo/examples/guest-list.example`. Copy, paste and
+save the code below into this file:
 
 ```javascript
 <GuestList
@@ -28,7 +32,10 @@ Create a file named: `<your-awesome-component>/demo/examples/guest-list.example`
   />
 ```
 
-Navigate to `<your-awesome-component>/demo/examples/your-awesome-component.example`. Add the code below. Don't forget to change the references from the literal `YourAwesomeComponent` to your actual component name:
+Navigate to
+`<your-awesome-component>/demo/examples/your-awesome-component.example`. Add the
+code below. Don't forget to change the references from the literal
+`YourAwesomeComponent` to your actual component name:
 
 ```javascript
 <YourAwesomeComponent
@@ -55,7 +62,8 @@ Navigate to `<your-awesome-component>/demo/examples/your-awesome-component.examp
 />
 ```
 
-Now Navigate to `<your-awesome-component>/demo/demo.jsx`. Modify `const components` to include your demo examples:
+Now Navigate to `<your-awesome-component>/demo/demo.jsx`. Modify `const
+components` to include your demo examples:
 
 ```javascript
 const components = [
