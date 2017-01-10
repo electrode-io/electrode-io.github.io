@@ -3,9 +3,10 @@ title:  "Build Component"
 permalink: docs/build_component.html
 toplevel: "Getting Started: Quick Guide"
 ---
-#### Here at WalmartLabs we love to build!
+#### Here at @WalmartLabs, we love to build!
 
-After you've generated your awesome electrode app, you are ready to focus on writing your React components.
+After you've generated your awesome electrode app, you're ready to focus on
+writing your React components.
 
 Navigate to `<your-awesome-app>/client/components/home.jsx`:
 
@@ -66,7 +67,10 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 ```
 
-We'll need a place to keep all of the resources we learned in the [Get Started](get_started.html) section. Let's make a visual library for our present stack and exciting technologies! Copy the code below and paste it into `<your-awesome-app>/client/components/home.jsx`:
+We'll need a place to keep all of the resources we learned about in the [Get
+Started] section. Let's make a visual library for all these exciting
+technologies! Copy the code below and paste it into
+`<your-awesome-app>/client/components/home.jsx`:
 
 ```javascript
 import React, {PropTypes} from "react";
@@ -143,7 +147,8 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 ```
 
-Let's finish the UI by adding styles. Navigate to `<your-awesome-app>/client/styles/base.css` and add the code below:
+Let's finish the UI by adding styles. Navigate to
+`<your-awesome-app>/client/styles/base.css` and add the code below:
 
 ```css
 h1 {
@@ -181,12 +186,19 @@ Run our new favorite command to see your tech list:
 gulp dev
 ```
 
-Navigate to [https://localhost:3000](https://localhost:3000]).
+Navigate to [https://localhost:3000].
 
-> If you are already running your app in dev mode, then your changes should've been updated automatically and you can just refresh your browser to see the changes.
+> If you are already running your app in dev mode, then your changes should've
+> been updated automatically and you can just refresh your browser to see the
+> changes.
 
-**The page should resemble the following screenshot:**
+The page should resemble the following screenshot:
 
 ![Pastel](http://i.imgur.com/nwEl64l.png)
 
-Now let's jump to our next step, where we will deploy Your Awesome App to [Heroku](deploy_app.html).
+Now let's jump to our next step, where we will deploy Your Awesome App to
+[Heroku].
+
+[Get Started]: get_started.html
+[https://localhost:3000]: https://localhost:3000
+[Heroku]: deploy_app.html

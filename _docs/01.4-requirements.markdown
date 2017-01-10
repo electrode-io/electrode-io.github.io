@@ -4,33 +4,36 @@ permalink: docs/requirements.html
 toplevel: "Getting Started: Quick Guide"
 ---
 
-First, let's quickly check your development environment. You will need to have the following set up to generate and deploy your awesome Electrode app in under five minutes:
+First, let's quickly check your development environment. You will need to have
+the following set up to generate and deploy your awesome Electrode app in under
+five minutes:
 
-## For Development On Your Local machine
+### For Development On Your Local machine
 
-1. Install the latest [NodeJS LTS binary] in your machine.  (at least v4.2 required).
-  * Recommend a tool like [nvm] for managing NodeJS installations.
-1. Install latest (v3) of [npm] with `npm install -g npm`.
-  * Note: NodeJS v6.x already comes with npm@3 by default.
-  * **Electrode requires npm version >= 3**
-1. Install [Gulp] with `npm install -g gulp-cli`.
-1. The text editor of your choice downloaded with CLI tools installed.
+*   Install the latest [NodeJS LTS binary] in your machine.  (at least v4.2
+    required).
+    -   We recommend using a tool like [nvm] for managing NodeJS installations.
+*   Install latest (v3) of [npm] with `npm install -g npm`.
+    -   Note: NodeJS v6.x comes with npm@3 by default.
+    -   **Electrode requires npm version >= 3**
+*   [Gulp], a JavaScript task automator, which can be installed with npm: `npm
+    install -g gulp-cli`.
+*   The text editor of your choice, with CLI tools installed.
 
-> We write NodeJS code with ES6 features that NodeJS >= 4.2 supports.
+> We write NodeJS code with ES6 features, which are supported in NodeJS >= 4.2.
 
-> Gulp is a Javascript build tool that lets us automate tasks.
+### For Online Deployments
+
+*   A [Heroku] account and [CLI tools].
+*   A [Github] account.
+
+Ready? Let's [build].
 
 [NodeJS LTS binary]: https://nodejs.org
 [nvm]: https://github.com/creationix/nvm#install-script
 [npm]: https://www.npmjs.com/
-[gulp]: https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
-
-## For Online Deployments
-
-*  A [Heroku](https://signup.heroku.com/dc) account + [CLI tools](https://devcenter.heroku.com/articles/heroku-command-line).
-*  A [Github](https://github.com/) account.
-
-
-Ready? Let's [build](build_component.html).
-
-
+[Gulp]: https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
+[Heroku]: https://signup.heroku.com/dc
+[CLI tools]: https://devcenter.heroku.com/articles/heroku-command-line
+[Github]: https://github.com/
+[build]: build_component.html
