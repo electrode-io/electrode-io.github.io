@@ -5,7 +5,9 @@ toplevel: "Getting Started: Intermediate"
 ---
 
 #### Develop a couple of low-level components
-Create a file titled: `<your-awesome-component>/src/components/guest-list.jsx`. Copy the code from below into this file:
+
+Create a file called `<your-awesome-component>/src/components/guest-list.jsx`.
+Copy the code from below into this file:
 
 ```javascript
 import React from "react";
@@ -46,7 +48,10 @@ GuestList.propTypes = {
 export default GuestList;
 ```
 
-Create a file titled: `<your-awesome-component>/src/components/render-friend.jsx`. Copy the code from below into this file. Don't worry - we'll cover the helper and css modules in the next section.
+Create another file called
+`<your-awesome-component>/src/components/render-friend.jsx`. Copy the code from
+below into this file. Don't worry—we'll cover the helper and css modules in
+the next section.
 
 ```javascript
 import React from "react";

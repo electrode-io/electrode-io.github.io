@@ -4,35 +4,61 @@ permalink: docs/service_workers.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-“A Progressive Web App(PWA) uses modern web capabilities to deliver an app-like user experience.” – [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/)
+"A Progressive Web App (PWA) uses modern web capabilities to deliver an app-like
+user experience." – [Progressive Web Apps]
 
-PWA are incredibly powerful and provide functionalities like Offline first, Push notifications, Background sync, GPU Rendering, 60fps scrolls and Add to home screen for a native app like experience.
+PWAs are incredibly powerful and provide functionalities like offline first,
+push notifications, background sync, GPU rendering, 60FPS scrolling and add
+to home screen for a native-like app experience.
 
-PWA are purely based on [Service Workers](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) and their ability to work independently in the background without interfering your web app's life cycle.
+PWAs are based on [Service Workers], which work independently in the background
+without interfering with your web app's life cycle.
 
-## Benefits of using Electrode PWA  
+## Benefits of using Electrode PWA
 
-### Low friction of distribution  
-If your progressive web app is online, it’s already accessible for Chrome on Android (and other mobile). Your customers won't have to download an "app" from the app store. 65.5% of US smartphone users don’t download any new apps each month. PWAs eliminate the need to go to the app store, search for the app, click Install, wait for the download, then open the app. Each of these steps loses 20% of the potential users.
+### Low friction of distribution
 
-From a developer's point of view, you don't need to visit the play store to publish your app! Push new changes to your web app and the service worker will take care of updating the app shell.
+If your progressive web app is online, it's already accessible for Chrome on
+Android (and other mobile). Your customers won't have to download an "app" from
+the App Store. 65.5% of US smartphone users don't download any new apps each
+month. PWAs eliminate the need to go to the app store, search for the app, click
+Install, wait for the download, then open the app. Each of these steps loses 20%
+of potential users.
 
-### Frictionless shopping experience  
-For example:- for an e-commerce business, PWA offers our customers a more frictionless shopping experience that allows shoppers to search, buy, and checkout quickly without downloading the native-app.  
-Further it also allows you to bring app-like experiences to mobile websites, including personalization and targeted offers.
+From a developer's point of view, you don't need to rely on the Play Store to
+publish your app! Push new changes to your web app, and the service worker will
+take care of updating the app shell.
 
-### Faster mobile experience  
-Web Apps built with Electrode + PWA will be significantly faster. Also, these websites enable an offline mode, that allows customers to continue browsing in poor wireless reception areas (for example, while they are on public transit). Given the fact that, faster websites have higher conversion rates, websites built with PWA could result in increased revenue.
+### Frictionless shopping experience
 
-### Personalized push notifications  
-Electrode Push notifications can be used to interact effectively with our mobile customers, as these notifications are native to the mobile device and can be personal and timely. Similar notification can be sent to desktop websites too.
+For example: for an e-commerce business, PWA offers our customers a more
+frictionless shopping experience that allows shoppers to search, buy, and
+checkout quickly without downloading the native app. Furthermore, it allows you
+to bring app-like experiences to mobile websites, including personalization and
+targeted offers.
 
+### Faster mobile experience
+
+Web Apps built with Electrode + PWA will be significantly faster. Also, these
+websites enable an offline mode, allowing customers to continue browsing in
+areas with poor wireless reception (for example, on public transit). Given the
+fact that faster websites have higher conversion rates, websites built with PWA
+could result in increased revenue.
+
+### Personalized push notifications
+
+Electrode Push notifications can be used to interact effectively with mobile
+customers, as these notifications are native to the mobile device and can be
+personal and timely. Similar notifications can be sent to desktop websites too.
 
 ## Getting Started
 
-In the first section, we are going to make your previously build electrode app into a PWA with content caching, push notifications and an option for the user to save your web app to their home screen.
+In the first section, we are going to make your previously built Electrode app
+into a PWA with content caching, push notifications, and an option for the user
+to save your web app to their home screen.
 
-*If you are starting out with a new PWA, just answer "Y" to the following question*
+*If you are starting out with a new PWA, just answer "Y" to the following
+question*
 
 ```bash
 $ yo electrode
@@ -40,22 +66,23 @@ $ yo electrode
 # Would you like to make a Progressive Web App? (Y/n)
 # ... answer rest of the questions and wait for app to be generated ...
 ```
-*follow Prerequisites and skip to [Push Notifications](service_workers.html#push-notifications)*
+
+*Follow Prerequisites and skip to [Push Notifications]*
 
 ### Prerequisites
-1. We need certain API keys for push notifications.
-To generate these values, visit [Firebase](https://console.firebase.google.com) and create a new project.  
-Click on the setting icons and open `Project settings`.  
-Navigate to the `CLOUD MESSAGING` tab and note down your `Server key` and the `Sender ID`.  
 
-2. Add the following icons inside the `client/images` directory  
-[logo 192x192](https://github.com/electrode-io/electrode/blob/d4142ee0c938cbf973a429ee8467052aa4e1c9be/samples/universal-react-node/client/images/logo-192x192.png) and [logo 72x72](https://github.com/electrode-io/electrode/blob/d4142ee0c938cbf973a429ee8467052aa4e1c9be/samples/universal-react-node/client/images/logo-72x72.png).  
-We will be using these logos for `Add to Homescreen` banner and `Push Notifications`.
-
+1.  We need certain API keys for push notifications. To generate these values,
+    visit [Firebase] and create a new project. Click on the settings icon and
+    open `Project settings`. Navigate to the `CLOUD MESSAGING` tab and note down
+    your `Server key` and the `Sender ID`.
+2.  In the `client/images` directory, add the [logo 192x192] and [logo 72x72]
+    icon images. We'll use these logos for the `Add to Homescreen` banner and
+    push notifications.
 
 ### Generating a Service Worker
 
-Generating a service worker in an electrode app is as simple as adding a config file. Navigate to `<your-awesome-app>/config` and create a new `sw-config.js`:
+Generating a service worker in an electrode app is as simple as adding a config
+file. Navigate to `<your-awesome-app>/config` and create a new `sw-config.js`:
 
 ```javascript
 module.exports = {
@@ -81,8 +108,8 @@ This will generate a `sw.js` in the `dist` folder when you build the app.
 
 ### Registering the Service Worker
 
-We need to create a server plugin to access the `dist/sw.js`.
-Create the following file `server/plugins/pwa/index.js`
+We need to create a server plugin to access `dist/sw.js`. Create a file called
+`server/plugins/pwa/index.js`, and add the following code:
 
 ```javascript
 "use strict";
@@ -100,13 +127,14 @@ exports.register.attributes = {
 };
 ```
 
-And add the following to `plugins` inside `config/default.json`
+Also, add the following to `plugins` inside `config/default.json`:
 
 ```javascript
 "pwa": { "module": "./server/plugins/pwa" }
 ```
 
-To register the service worker on the browser, create a new file `sw-registration.js` inside the `client` directory:
+To register the service worker on the browser, create a file called
+`sw-registration.js` inside the `client` directory and add the following code:
 
 ```javascript
 module.exports = () => {
@@ -164,7 +192,7 @@ module.exports = () => {
 };
 ```
 
-And import it in `client/app.jsx`
+Import it in `client/app.jsx`:
 
 ```javascript
 require.ensure(["./sw-registration"], (require) => {
@@ -172,35 +200,50 @@ require.ensure(["./sw-registration"], (require) => {
 }, "sw-registration");
 ```
 
-We achieved couple of things here:
+We achieved a couple of things here:
 
-1 - `Offline First` with the cache property
+1.  "Offline First" with the cache property.
 
-Precache your static assets generated by webpack using the staticFileGlobs property. Or use the runtimeCaching property to cache specific react routes in from your routes.jsx
+    Precache your static assets generated by webpack using the staticFileGlobs
+    property. Or, use the runtimeCaching property to cache specific react routes
+    in `routes.jsx`.
+2.  "Add to Home" with the manifest property.
 
-2 - `Add to Home` with the manifest property
-
-After visiting your website, users will get a prompt (if the user has visited your site at least twice, with at least five minutes between visits.) to add your application to their homescreen. `manifest` gives you control over how your web app is installed on user's home screen with `short_name`, `title` and `logo` properties.
+    After visiting your website, users will get a prompt (if the user has
+    visited your site at least twice, with at least five minutes between
+    visits) to add your application to their homescreen. `manifest` gives you
+    control over how your web app is installed on user's home screen with
+    `short_name`, `title` and `logo` properties.
 
 Build your app and start the server with
 
 ```bash
 $ gulp pwa
 ```
-##### Note: Service worker currently does not work with webpack dev server. You need to build first and then run the server.
 
-Navigate to `http://localhost:3000`, open `Developer tools` and click on the `Application` tab. You should see your `Service Worker` activated and running!
+**Note: Service worker currently does not work with webpack-dev-server. You
+need to build first and then run the server.**
+
+Navigate to `http://localhost:3000`, open `Developer tools`, and click on the
+`Application` tab. You should see your `Service Worker` activated and running!
 
 ![screenshot][screenshot]
 
-Go ahead and click on the `Offline` checkbox in the Developer tools. Terminate your server. Refresh your web page.
+Go ahead and click on the `Offline` checkbox in the Developer tools. Terminate
+your server. Refresh your web page.
 
-#### NOTE: `Add to Homescreen` banner will pop up only on Android devices with Chrome 42+. To simulate the banner on your desktop Chrome, navigate to `Developer tools` -> `Applications` -> `Manifest` and click on `Add to homescreen`.
+**NOTE: The `Add to Homescreen` banner will pop up only on Android devices with
+Chrome 42+. To simulate the banner on your desktop Chrome, navigate to
+`Developer tools` -> `Applications` -> `Manifest` and click on `Add to
+homescreen`.**
 
 ### Push notifications
-The [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) requires a registered service worker so it can send notifications in the background when the web application isn't running.  
-We already have our Service Worker generated with the help of `sw-config.js`. We only need to add a `Push` event to it.  
-Create a new file `sw-events.js` inside the `client` directory and add the following to it:
+
+The [Push API] requires a registered service worker so it can send notifications
+in the background when the web application isn't running. We already have our
+Service Worker generated with the help of `sw-config.js`. We only need to add a
+`Push` event to it. Create a new file `sw-events.js` inside the `client`
+directory and add the following to it:
 
 ```javascript
 /* eslint-env serviceworker */
@@ -221,10 +264,13 @@ self.addEventListener("push", (event) => {
   );
 });
 ```
-Check out the [Adding Push Notifications to a Web App](https://developers.google.com/web/fundamentals/getting-started/codelabs/push-notifications/) Codelab provided by Google for an in-depth guide on how push notifications and service workers work together.
 
+Check out the [Adding Push Notifications to a Web App] Codelab provided by
+Google for an in-depth guide on how push notifications and service workers work
+together.
 
-Now we need to add this file to our webpack bundle by referencing it in the `cache property` of `sw-config.js`:
+Now we need to add this file to our Webpack bundle by referencing it in the
+`cache property` of `sw-config.js`:
 
 ```javascript
 module.exports = {
@@ -234,8 +280,9 @@ module.exports = {
 }
 ```
 
-Now we have a registered service worker installed, activated and ready to accept `push` from the server.  
-But before we can `push` we need to `request permissions` from the user and `subscribe` them to the notifications.
+Now we have a registered service worker installed, activated and ready to accept
+`push` from the server. But before we can `push` we need to `request
+permissions` from the user and `subscribe` them to the notifications.
 
 Navigate to `client/components/home.jsx` and replace it with:
 
@@ -429,11 +476,18 @@ const mapDispatchToProps = (dispatch) => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 ```
-Make sure you update the `API_KEY` with the one you previously generated in [Prerequisites](#prerequisites).
 
-`navigator.serviceWorker.ready` is a Promise that will resolve once a service worker is registered, and it returns a reference to the active [ServiceWorkerRegistration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration). The showNotification() method of the ServiceWorkerRegistration interface creates a notification and returns a Promise that resolves to a [NotificationEvent](https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent).
+Make sure you update the `API_KEY` with the one you previously generated in
+[Prerequisites].
 
-We also need to update `sw-config.js` with the `sender_id`, so the final `sw-config.js` should look like:
+`navigator.serviceWorker.ready` is a promise that will resolve once a service
+worker is registered, and it returns a reference to the active
+[ServiceWorkerRegistration]. The showNotification() method of the
+ServiceWorkerRegistration interface creates a notification and returns a Promise
+that resolves to a [NotificationEvent].
+
+We also need to update `sw-config.js` with the `sender_id`, so the final
+`sw-config.js` should look like:
 
 ```javascript
 module.exports = {
@@ -464,8 +518,22 @@ $ gulp pwa
 
 With all the code in place, we are ready to see push notifications in action.
 
-Navigate to `http://localhost:3000`. Accept the permission for subscribing and you will see a curl command rendered on the page. You can either run the curl command from terminal to see the push notification or fill out the form and click on the `Send` button to trigger it!
+Navigate to `http://localhost:3000`. Accept the permission for subscribing and
+you will see a curl command rendered on the page. You can either run the curl
+command from terminal to see the push notification or fill out the form and
+click on the `Send` button to trigger it!
 
 For more Electrode PWA code examples checkout [electrode-pwa-examples](https://github.com/electrode-samples/electrode-pwa-examples/tree/master/examples) repo.
 
 [screenshot]: https://cloud.githubusercontent.com/assets/4782871/20909807/b322e462-bb12-11e6-97af-797c808e11d9.png
+[Progressive Web Apps]: https://developers.google.com/web/progressive-web-apps/
+[Service Workers]: https://developers.google.com/web/fundamentals/getting-started/primers/service-workers
+[Push Notifications]: service_workers.html#push-notifications
+[Firebase]: https://console.firebase.google.com
+[logo 192x192]: https://github.com/electrode-io/electrode/blob/d4142ee0c938cbf973a429ee8467052aa4e1c9be/samples/universal-react-node/client/images/logo-192x192.png
+[logo 72x72]: https://github.com/electrode-io/electrode/blob/d4142ee0c938cbf973a429ee8467052aa4e1c9be/samples/universal-react-node/client/images/logo-72x72.png
+[Push API]: https://developer.mozilla.org/en-US/docs/Web/API/Push_API
+[Adding Push Notifications to a Web App]: https://developers.google.com/web/fundamentals/getting-started/codelabs/push-notifications/
+[Prerequisites]: #prerequisites
+[ServiceWorkerRegistration]: https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration
+[NotificationEvent]: https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent
