@@ -6,9 +6,17 @@ toplevel: "Getting Started: Intermediate"
 
 #### Develop styles using CSS modules
 
+##### Location
+
+CSS files can be placed anywhere in the `client` directory. Ex
+>`<your-awesome-app>/client/styles/<your-awesome-component>.css`
+>`<your-awesome-app>/client/components/<your-awesome-component>/index.css`
+
+The build process globs any file with the `.css` (or `.styl`) extension within the `client` directory.
+
 Let's also add some style elements using [CSS modules] to create a dynamic
-application. Override the below code into your
-`<your-awesome-component>/src/styles/your-awesome-component.css`:
+application. Override the code below into your
+`<your-awesome-app>/client/styles/<your-awesome-component>.css`:
 
 ```css
 body {
@@ -119,7 +127,7 @@ a, a:hover, a:active, a:visited {
 }
 ```
 
-Create a file named: `<your-awesome-component>/src/styles/guest-list.css`. Copy
+Create a file named: `<your-awesome-app>/client/styles/guest-list.css`. Copy
 the code from below into this file:
 
 ```css
@@ -160,7 +168,7 @@ input[type=checkbox]:checked + label:before { letter-spacing: 5px; }
 }
 ```
 
-Create a file named: `<your-awesome-component>/src/styles/render-friend.css`.
+Create a file named: `<your-awesome-app>/client/styles/render-friend.css`.
 Copy the code from below into this file:
 
 ```css
