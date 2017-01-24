@@ -45,6 +45,19 @@ $ gulp dev
 
 Now open [localhost:3000](http://localhost:3000) in your browser to access the app. Hello Electrode!
 
+To view all the gulp tasks available type `gulp`.
+To build your app's client bundle for production use
+
+```bash
+gulp build
+```
+
+followed by
+
+```bash
+npm run prod
+```
+
 ---
 
 ##### Project Structure
@@ -116,4 +129,3 @@ Let's take a quick high level overview of our file structure and what `generator
 Let's continue to build by modifying our component and deploying in [Quick Start: Build Component](build_component.html).
 
 [Electrode Generator]: https://github.com/electrode-io/electrode#yeoman-generator
-
