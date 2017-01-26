@@ -83,20 +83,27 @@ We use this to keep environment-specific configurations manageable. Once you hav
 
 {% raw  %}
 ```
-server
-    ├── index.js
-    ├── plugins
-    │   └── webapp
-    │       ├── index.html
-    │       └── index.js
-    └── views
-        └── index-view.jsx
+server/
+├── conditions
+│   ├── machine-info.js
+│   ├── machine-load.js
+│   ├── response-time.js
+│   └── server-load.js
+├── index.js
+├── plugins
+│   ├── autossr.js
+│   ├── csrf.js
+│   ├── pwa.js
+│   └── updateStorage.js
+├── storage.json
+└── views
+    └── index-view.jsx
 ```
 {% endraw %}
 
 You are now using [Electrode-Server](https://github.com/electrode-io/electrode-server), a NodeJS module that allows you to start up a Hapi server with a single function call, but gives you a lot of flexibility through configurations. This is the baseline functionality of a [Hapi](http://hapijs.com/) web server that you can extend via configuration.
 
-Before we move on, we should inspect a critical file, `<your-awesome-app>/server/plugins/webapp/index.html`. This is where the server-side rendering magic happens, implemented automatically via `generate-electrode`:
+Before we move on, we should inspect a critical file, `electrode-react-webapp/lib/index.html` located within your `node_modules`. This is where the server-side rendering magic happens, implemented automatically via `generate-electrode`:
 
 {% raw  %}
 ```html
