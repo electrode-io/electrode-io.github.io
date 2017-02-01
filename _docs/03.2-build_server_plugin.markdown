@@ -128,7 +128,7 @@ exports.register.attributes = {
 ```
 
 If you plan on building out Your Awesome App even further, you'll need to
-[generate a GitHup Api oAuth token] to remove the preset limit for API requests.
+[generate a GitHub Api oAuth token] to remove the preset limit for API requests.
 We have already added the code to accept and use the token in our Hapi server
 plugin above `const AUTH_TOKEN = process.env.token`.
 
