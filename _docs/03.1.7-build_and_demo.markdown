@@ -4,7 +4,7 @@ permalink: docs/build_and_demo.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-#### Build and Demo the component
+### Build and Demo the component
 
 Now run it and explore the live demo!
 
@@ -13,15 +13,18 @@ $ cd your-awesome-component
 $ gulp build && gulp demo
 ```
 
-Open `http://localhost:4000` in your browser to see your live demo. You will first see a Guest List header with a checkbox listing all of our resources, now referred to as Friends:
+Open `http://localhost:4000` in your browser to see your live demo. You will
+first see a Guest List header with a checkbox listing all of our resources, now
+referred to as Friends:
 
 ![party-false](/img/component-party-false.png)
 
-<br>
-Have fun! Change key `invited` to true in `invitees` array. This live demo is completely interactive:
+Have fun! Change the `invited` key to `true` in the `invitees` array. This live
+demo is completely interactive:
 
 ![component](/img/component-demo.png)
 
-<br>
-The Electrode stack is now like an awesome party, where all of our favorite technologies get invited:
+The Electrode stack is now like an awesome party, where all of our favorite
+technologies get invited:
+
 ![party-true](/img/component-party-true.png)

@@ -6,7 +6,9 @@ toplevel: "Getting Started: Intermediate"
 
 #### Develop styles using CSS modules
 
-Let's also add some style elements using [CSS modules](https://github.com/css-modules/css-modules) to create a dynamic application. Override the below code into your `<your-awesome-component>/src/styles/your-awesome-component.css`:
+Let's also add some style elements using [CSS modules] to create a dynamic
+application. Override the below code into your
+`<your-awesome-component>/src/styles/your-awesome-component.css`:
 
 ```css
 body {
@@ -117,7 +119,8 @@ a, a:hover, a:active, a:visited {
 }
 ```
 
-Create a file named: `<your-awesome-component>/src/styles/guest-list.css`. Copy the code from below into this file:
+Create a file named: `<your-awesome-component>/src/styles/guest-list.css`. Copy
+the code from below into this file:
 
 ```css
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
@@ -157,7 +160,8 @@ input[type=checkbox]:checked + label:before { letter-spacing: 5px; }
 }
 ```
 
-Create a file named: `<your-awesome-component>/src/styles/render-friend.css`. Copy the code from below into this file:
+Create a file named: `<your-awesome-component>/src/styles/render-friend.css`.
+Copy the code from below into this file:
 
 ```css
 @keyframes shake {
@@ -193,3 +197,4 @@ Create a file named: `<your-awesome-component>/src/styles/render-friend.css`. Co
   float: right;
 }
 ```
+[CSS modules]: https://github.com/css-modules/css-modules

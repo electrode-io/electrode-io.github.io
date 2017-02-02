@@ -4,13 +4,21 @@ permalink: docs/create_reusable_component.html
 toplevel: "Getting Started: Intermediate"
 ---
 
-First things first. Let's make our thing...a Thing!
+First things first: let's make our thing…a Thing!
 
-In this guide, we’ll take some of the basics we explored in our [Quick Start](get_started.html) and go further. We will make our resource list a dynamic list that is styled, tested, published and capable of being deployed with other deployment software like Docker and Kubernetes.
+In this guide, we’ll take some of the basics we explored in our [Quick Start]
+and go further. We will make our resource list a dynamic list that is styled,
+tested, published and capable of being deployed with other deployment software
+like Docker and Kubernetes.
 
-Building this application with React components will allow for greater modularity, which will enable reuse of code in later iterations. This greatly increases workflow efficiency by allowing developers to easily divide and conquer tasks during the production process. Furthermore, better separation of concerns allows for much easier debugging in general.
+Building this application with React components will allow for greater
+modularity, which will enable reuse of code in later iterations. This greatly
+increases workflow efficiency by allowing developers to easily divide and
+conquer tasks during the production process. Furthermore, better separation of
+concerns allows for much easier debugging in general.
 
-Let's begin by using `cd ..` to exit the directory for Your-Awesome-App and create a new, separate directory for your reusable component:
+Let's begin by using `cd ..` to exit the directory for Your-Awesome-App and
+create a new, separate directory for your reusable component:
 
 ```bash
 $ cd ..
@@ -18,7 +26,8 @@ $ mkdir your-awesome-component
 $ cd your-awesome-component
 ```
 
-Again, we'll use [Yeoman](http://yeoman.io/) to scaffold our first stand alone component. We will globally install the Electrode [generator-electrode-component]:
+Again, we'll use [Yeoman] to scaffold our first stand alone component. We will
+globally install the Electrode [generator-electrode-component]:
 
 ```bash
 $ npm install -g generator-electrode-component
@@ -30,48 +39,73 @@ Then generate your new component:
 $ yo electrode-component
 ```
 
-Fill out the Electrode [generator-electrode-component] with your information:
+Fill out the Electrode [Electrode component generator] with your information:
 
 ![component-form](/img/component-form.png)
 
-Open the application up with your favorite text editor. We'll start with a fast high level view of the most important files in your component:
+Open the application up with your favorite text editor. We'll start with a fast
+high level view of the most important files in your component:
 
 - `demo/`
 
-    A live demo of your component. You can play with its integration in real time. This folder contains the .example files which you can customize to demonstrate the default state of your components when mounted in the playground.
+    A live demo of your component. You can play with its integration in real
+    time. This folder contains the .example files which you can customize to
+    demonstrate the default state of your components when mounted in the
+    playground.
 
 - `node_modules/`
 
-    Other Javascript files contained in modules that we will use in this application, including Electrode modules that create your out-of-the-box Universal app.
+    Other Javascript files contained in modules that we will use in this
+    application, including Electrode modules that create your out-of-the-box
+    Universal app.
 
 - `src/`
 
-    Where all our component's source code lives. Non-universal apps might normally call this the `client` folder, but since our app code will run both on the client and server, via server-side rendering, we call this folder `src`.
+    Where all our component's source code lives. Non-universal apps might
+    normally call this the `client` folder, but since our app code will run both
+    on the client and server, via server-side rendering, we call this folder
+    `src`.
 
 - `test/`
 
-    Test driven development is the WalmartLabs way and critical for successful growth and scaling. All testing code lives in this folder and we will focus on unit testing with Mocha + Enzyme soon.
+    Test driven development is the @WalmartLabs way, and it's critical for
+    successful growth and scaling. All testing code lives in this folder, and
+    we'll focus on unit testing with Mocha and Enzyme soon.
 
 - `src/components/.eslintrc`
 
-    A configuration file that sets our custom linting rules and basic syntax validation. In this case it is extended from the `electrode-archetype-react-component`.
+    A configuration file that sets our custom linting rules and basic syntax
+    validation. In this case, it's extended from the React component archetype.
 
 - `gulpfile.js`
 
-    Gulp is a Javascript build tool that lets us automate tasks and `gulpfile.js` is where we define those tasks. We like its simple syntax and the increased productivity from using an intuitive task runner.
+    Gulp is a Javascript build tool that lets us automate tasks and
+    `gulpfile.js` is where we define those tasks. We like its simple syntax and
+    the increased productivity from using an intuitive task runner.
 
 
-Now that we understand the basic structure of the component, let's build out the component's functionality by following the below steps:
+Now that we understand the basic structure of the component, let's build out the
+component's functionality by following the below steps:
 
-1. [Develop a couple of low-level components](low_level_components.html)
-2. [Develop helpers for the components](component_helpers.html)
-3. [Develop styles using CSS modules](develop_styles.html)
-4. [Develop main high-level component](high_level_component.html)
-5. [Develop tests for the above components](test_components.html)
-6. [Add Examples to the Demo](add_examples.html)
-7. [Build and Demo the component](build_and_demo.html)
-8. [Generating documentation](generate_docs.html)
+1.  [Develop a couple of low-level components]
+2.  [Develop helpers for the components]
+3.  [Develop styles using CSS modules]
+4.  [Develop main high-level component]
+5.  [Develop tests for the above components]
+6.  [Add Examples to the Demo]
+7.  [Build and Demo the component]
+8.  [Generating documentation]
 
 Trust us, it will be worth it.
 
-[generator-electrode-component]: https://github.com/electrode-io/generator-electrode-component
+[Electrode component generator]: https://github.com/electrode-io/generator-electrode-component
+[Develop a couple of low-level components]: low_level_components.html
+[Develop helpers for the components]: component_helpers.html
+[Develop styles using CSS modules]: develop_styles.html
+[Develop main high-level component]: high_level_component.html
+[Develop tests for the above components]: test_components.html
+[Add Examples to the Demo]: add_examples.html
+[Build and Demo the component]: build_and_demo.html
+[Generating documentation]: generate_docs.html
+[Quick Start]: get_started.html
+[Yeoman]: http://yeoman.io/

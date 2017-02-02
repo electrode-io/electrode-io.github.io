@@ -6,7 +6,11 @@ toplevel: "Getting Started: Intermediate"
 
 #### Generating documentation
 
-One of the final steps to Creating a Reusable Component is writing the correct documentation, in the form of `component.json` and `component.md`. The Electrode team has automated this step for you, using [Electrode-Docgen](https://github.com/electrode-io/electrode-docgen). This is a custom metadata extractor for the Electrode framework. The commands have been built into the tasks of `<your-awesome-component>/gulpfile.js`:
+One of the final steps to creating a reusable component is writing the correct
+documentation, in the form of `component.json` and `component.md`. The Electrode
+team has automated this step for you, using [Electrode-Docgen]. This is a custom
+metadata extractor for the Electrode framework. The commands have been built
+into the tasks of `<your-awesome-component>/gulpfile.js`:
 
 ```javascript
 const tasks = {
@@ -40,7 +44,15 @@ Or, to run both simultaneously, you can just run:
 $ gulp generate
 ```
 
-Now that we've run our tests and they've passed, let's publish our component so we can use it again in Your-Awesome-App on [NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages). You will need to [sign up](https://www.npmjs.com/signup) for an account if you do not have one and follow the steps in the [NPM documentation](https://docs.npmjs.com/getting-started/creating-node-modules).
+Now that we've run our tests and they've passed, let's publish our component on
+npm so we can use it again. You will need to [sign up] for an account if you
+don't have one, and follow the steps in the [npm documentation].
 
+Let's continue to build more by creating our own [Hapi server plugin],
+incorporating routes and adding some awesome CSS modules.
 
-Let's continue to build more by creating our own [Hapi server plugin](build_server_plugin.html), incorporating routes and adding some awesome CSS modules.
+[Electrode-Docgen]: https://github.com/electrode-io/electrode-docgen
+[npm]: https://docs.npmjs.com/getting-started/publishing-npm-packages
+[sign up]: https://www.npmjs.com/signup
+[npm documentation]: https://docs.npmjs.com/getting-started/creating-node-modules
+[Hapi server plugin]: build_server_plugin.html
