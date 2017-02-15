@@ -64,7 +64,7 @@ npm run prod
 
 Let's take a quick high level overview of our file structure and what `generator-electrode` gives you out the box. Read through our [What's Inside section](whats_inside.html) for a more detailed description.
 
-- `client/`
+- `src/client/`
 
     Contains your client side code and our favs, React, Redux + CSS modules.
 
@@ -84,6 +84,10 @@ Let's take a quick high level overview of our file structure and what `generator
 
         This is the folder for your CSS files. We will use CSS Modules: a CSS file in which all class names and animation names are scoped locally by default.
 
+-  `src/server/`
+
+    Contains your server-side code. Electrode-Server gives you a powerful plugin capable of SSR out the box. Learn more in the [What's Inside section](whats_inside.html).
+
 - `config/`
 
     Your environment specific configuration files go here and are managed by the versatile [electrode-confippet](confippet.html) module, including a preset config that you can customize and extend.
@@ -91,10 +95,6 @@ Let's take a quick high level overview of our file structure and what `generator
 - `node_modules/`
 
     Other Javascript files contained in modules that we will use in this application, including Electrode modules that create your out-the-box Universal app. This folder is managed directy by `npm`.
-
--  `server/`
-
-    Contains your server-side code. Electrode-Server gives you a powerful plugin capable of SSR out the box. Learn more in the [What's Inside section](whats_inside.html).
 
 - `.babelrc`
 
