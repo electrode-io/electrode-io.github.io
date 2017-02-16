@@ -7,11 +7,14 @@ toplevel: "Getting Started: Quick Guide"
 
 After you've generated your awesome electrode app, you are ready to focus on writing your React components.
 
-Navigate to `<your-awesome-app>/client/components/home.jsx`:
+Navigate to `<your-awesome-app>/src/client/components/home.jsx`:
 
 ```javascript
 import React, {PropTypes} from "react";
 import {connect} from "react-redux";
+/**/
+import Notifications from "react-notify-toast";
+/**/
 import {toggleCheck, incNumber, decNumber} from "../actions";
 
 class Home extends React.Component {
@@ -20,6 +23,9 @@ class Home extends React.Component {
     const {checked, value} = props;
     return (
       <div>
+        {/**/}
+        <Notifications />
+        {/**/}
         <h1>Hello <a href={"https://github.com/electrode-io"}>{"Electrode"}</a></h1>
         <div>
           <h2>Managing States with Redux</h2>
@@ -66,7 +72,7 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 ```
 
-We'll need a place to keep all of the resources we learned in the [Get Started](get_started.html) section. Let's make a visual library for our present stack and exciting technologies! Copy the code below and paste it into `<your-awesome-app>/client/components/home.jsx`:
+We'll need a place to keep all of the resources we learned in the [Get Started](get_started.html) section. Let's make a visual library for our present stack and exciting technologies! Copy the code below and paste it into `<your-awesome-app>/src/client/components/home.jsx`:
 
 ```javascript
 import React, {PropTypes} from "react";
@@ -143,7 +149,7 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 ```
 
-Let's finish the UI by adding styles. Navigate to `<your-awesome-app>/client/styles/base.css` and add the code below:
+Let's finish the UI by adding styles. Navigate to `<your-awesome-app>/src/client/styles/base.css` and add the code below:
 
 ```css
 h1 {
