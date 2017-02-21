@@ -6,7 +6,7 @@ toplevel: "Getting Started: Quick Guide"
 
 #### Explore More
 
-What does `generate-electrode` give you? Let's go through the most important files to understand the structure of your new app.
+What does `generator-electrode` give you? Let's go through the most important files to understand the structure of your new app.
 
 > `<your-awesome-app>/src/client/components/home.jsx`
 
