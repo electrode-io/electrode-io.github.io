@@ -155,10 +155,10 @@ Set your token for heroku deployment:
 heroku config:set token='your-token-here'
 ```
 
-A great tool for testing your server requests (its user interface for view
-response objects and errors is incredible) is [Postman]. For now, you will have
-to trust as we build out Your Awesome App. Navigate to [Intermediate: Add
-Routes], to add routing to the app and also extend our UI to display our
+A great tool for testing your server requests is [Postman]. Its user interface for viewing
+response objects and errors is incredible. For now, you will have
+to trust us as we build out Your Awesome App. Navigate to [Intermediate: Add
+Routes], to add routing to the app and extend our UI to display our
 contributor array.
 
 
