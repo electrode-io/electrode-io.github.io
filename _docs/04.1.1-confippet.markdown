@@ -23,7 +23,7 @@ toplevel: "Stand Alone Modules"
 * **Simple** - Confippet's `presetConfig` automatically composes a single config object from multiple files. For most applications, no further customization isnecessary.
 * **Flexible** - Supports JSON, YAML, and JavaScript config files.
 * **Powerful** - Handles complex multi-instance enterprise deployments.
-* **Platform Agnostic** - This module is platform agnostic and can be plugged into any Node.js application, including those run on Electrode, Express.js and Hapi.js 
+* **Platform Agnostic** - This module is platform agnostic and can be plugged into any Node.js application, including those run on Electrode, Express.js and Hapi.js
 
 {% include module_usage.md moduleId="electrode-confippet" express=true hapi=true %}
 
@@ -54,10 +54,10 @@ config
 |_ production.json
 ```
 
-First, let's update the default settings for our database connection by adding the following setting to `default.json`: 
+First, let's update the default settings for our database connection by adding the following setting to `default.json`:
 
-```
-json {
+```json
+{
   "settings": {
     "db": {
       "host": "localhost",
@@ -72,8 +72,8 @@ Then we will set up the development and production environments.
 ##### ***Development Environment***
 We want our database to be served from different hostnames depending on the environment. So let's update `development.json` to include the following settings:
 
-```
-json {
+```json
+{
   "server": {
     "connections": {
       "compression": false
@@ -102,10 +102,10 @@ Now, while `NODE_ENV=development` :
 - The database is hosted from dev-db-server
 
 ##### ***Production Environment***
-Similarly, update `development.json` to include the following settings:
+Similarly, update `production.json` to include the following settings:
 
-```
-json {
+```json
+{
   "server": {
     "connections": {
       "compression": true
@@ -138,7 +138,7 @@ Additionally, here are some notes about the settings you just copied:
 
 - The server related configs are from hapi.js. More config options can be found here: http://hapijs.com/api
 - The connections property is specific to [electrode server](https://github.com/electrode-io/electrode-server/tree/master/lib/config)
-- Any settings that exist in the config/default.json that are *also* in the other environment configs will be replaced by the environment specific versions
+- Any settings that exist in the `config/default.json` that are *also* in the other environment configs will be replaced by the environment specific versions
 
 ##### ***Electrode Configuration***
 Last step! Let's set up our Electrode application to use the new database settings by adding the following line to `server/index.js`:
@@ -166,8 +166,8 @@ config
 
 Then update `default.json` to include the following settings:
 
-```
-json {
+```json
+{
   "server": {
     "viewCache": false,
     "xPoweredBy": true,
@@ -187,8 +187,8 @@ Now we can set up the development and production specific settings.
 ##### ***Development Environment***
 Update `config/development.json` to have the following settings:
 
-```
-json {
+```json
+{
   "server": {
     "viewCache": false,
     "xPoweredBy": true,
@@ -207,14 +207,13 @@ Now, while `NODE_ENV=development`:
 - the view cache is *disabled*
 - the x-powered-by header is *enabled*
 - the server is run in port 4000
-- the databse is hosted from -dev-db-server
+- the databse is hosted from dev-db-server
 
 ##### ***Production Environment***
 
 Update `config/production.json` to have the following settings:
 
-```
-\json
+```json
 {
   "server": {
     "viewCache": true,
@@ -229,18 +228,18 @@ Update `config/production.json` to have the following settings:
 }
 ```
 
-Now, while `NODE_ENV=development` :
+Now, while `NODE_ENV=production` :
 
 - the view cache is *enabled*
 - the x-powered-by header is *disabled*
-- the server is run in port 4800
-- the database is hosted from -dev-db-server
+- the server is run in port 8000
+- the database is hosted from prod-db-server
 
-##### ***Express Configuration*** 
+##### ***Express Configuration***
 To require the confippet settings, simply add the following to `app.js`:
 
 ```
-const config = require("electrode-confippet").config;
+const {config} = require("electrode-confippet");
 const db = config.$("settings.db");
 
 app.set("view cache", config.server.viewCache);
@@ -268,8 +267,8 @@ config
 
 Then update `default.json` to include the following settings:
 
-```
-json {
+```json
+{
   "connection": {
     "port": 3000
   },
@@ -288,8 +287,7 @@ Now we can set up the development and production specific settings.
 ##### ***Development Environment***
 Update `config/development.json` to have the following settings:
 
-```
-json
+```json
 {
   "connection": {
     "port": 4000
@@ -310,10 +308,10 @@ Now, while `NODE_ENV=development` :
 
 ##### ***Production Environment***
 
-Update the config/production.json to have the following settings:
+Update the `config/production.json` to have the following settings:
 
-```
-json {
+```json
+{
   "connection": {
     "port": 8000
   },
@@ -328,14 +326,14 @@ json {
 Now, while `NODE_ENV=production`:
 
 - The above settings run the server in port 8000
-- The database is hosted from dev-db-server
+- The database is hosted from prod-db-server
 
 
-##### ***Hapi Configuration*** 
+##### ***Hapi Configuration***
 To require the confippet settings, simply add the following to `app.js`:
 
 ```
-const config = require("electrode-confippet").config;
+const {config} = require("electrode-confippet");
 const db = config.$("settings.db");
 ```
 

@@ -43,7 +43,7 @@ export default function configureStore(initialState) {
       thunkMiddleware,
       loggerMiddleware
     ));
-} 
+}
 ```
 
 
@@ -55,7 +55,7 @@ const Promise = require("bluebird");
 
 export default function createReduxStore(req) {
   const store = configureStore();
-    
+
   return Promise.all([
     store.dispatch(yourAction())
     // dispatch any other asynchronous actions here
@@ -88,7 +88,7 @@ module.exports = (req) => {
 };
 ```
 
-**Hapi / Express **
+**Hapi / Express**
 
 To configure the Redux Router Engine in an Express or Hapi application, first initialize the engine and then use it within a route handler to return the HTML. An example usage follows:
 

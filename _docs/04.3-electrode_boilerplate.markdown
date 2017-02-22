@@ -42,7 +42,7 @@ In our [Getting Started](get_started.html) section, we introduced you to our Yeo
 
 *  [Electrode-Docgen](https://github.com/electrode-io/electrode-docgen)
 
-This is the beginning foundation of the [Electrode Boilerplate]. You have learned in the Stand Alone [Modules](stand_alone_modules.html) section that each of the Electrode modules are agnostic and can be used individually to enhance one specific area of your application. However, integrated together, you have a supercharged application; one that is capable of handling the complex problems we face at [WalmartLabs](www.walmartlabs.com) and reach maximum efficiency and performance.
+This is the beginning foundation of the [Electrode Boilerplate]. You have learned in the [Stand Alone Modules](stand_alone_modules.html) section that each of the Electrode modules are agnostic and can be used individually to enhance one specific area of your application. However, integrated together, you have a supercharged application; one that is capable of handling the complex problems we face at [WalmartLabs](www.walmartlabs.com) and reach maximum efficiency and performance.
 
 This boilerplate includes the [Electrode Generator](whats_inside.html) and it also has the following stand alone modules and tools built in for peak optimization out-of-the-box:
 

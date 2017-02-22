@@ -9,8 +9,8 @@ toplevel: "Stand Alone Modules"
 
 An Electrode Javascript bundle viewer aptly named [Electrify](https://github.com/electrode-io/electrify), this is a stunning visual tool for analyzing the module tree of
 [electrode-io + webpack](https://github.com/webpack/docs/wiki/node.js-api#stats) project bundles. It's especially handy
-for catching large and/or duplicate modules which might be either bloating up
-your bundle or slowing down the build process.
+for catching large and/or duplicate modules which might be either bloating your
+bundle or slowing down the build process.
 
 ![screencast](https://cloud.githubusercontent.com/assets/360041/18318796/ea0ddae4-74d7-11e6-89cb-08e02e4b1683.gif)
 
@@ -72,7 +72,7 @@ dependencies.
 ![File Types](http://i.imgur.com/oY5euGAm.png)
 
 Highlights each file type (e.g. `.js`, `.css`, etc.) a different color. Helpful
-for tracking down code generated from a transform that's bloating up your bundle
+for tracking down code generated from a transform that's bloating your bundle
 more than expected.
 
 ### Original/Pastel ###
