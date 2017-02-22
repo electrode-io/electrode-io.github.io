@@ -28,7 +28,7 @@ Navigate to `<your-awesome-app>/config/development.json`. Copy, paste and save
 {
   "plugins": {
     "friends": {
-      "module": "./server/plugins/friends"
+      "module": "./src/server/plugins/friends"
     }
   }
 }

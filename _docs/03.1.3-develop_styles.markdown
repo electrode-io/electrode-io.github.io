@@ -7,8 +7,8 @@ toplevel: "Getting Started: Intermediate"
 #### Develop styles using CSS modules
 
 Let's also add some style elements using [CSS modules] to create a dynamic
-application. Replace the code in `<your-awesome-component>/src/styles/your-awesome-component.css`
-with the code below:
+application. Use the code below to replace what is in 
+`<your-awesome-component>/src/styles/your-awesome-component.css`:
 
 ```css
 body {
