@@ -19,7 +19,7 @@ follow the steps below:
 $ npm i your-awesome-published-npm-module --save
 ```
 
-Navigate to `<your-awesome-app>/client/routes.jsx`. Copy, paste and save the
+Navigate to `<your-awesome-app>/src/client/routes.jsx`. Copy, paste and save the
 code below into this file. Change from the literal `YourAwesomeComponent` and
 `your-awesome-node-module` to your actual component name:
 
@@ -37,7 +37,7 @@ export const routes = (
 );
 ```
 
-Navigate to `<your-awesome-app>/client/components/home.jsx`. Override the
+Navigate to `<your-awesome-app>/src/client/components/home.jsx`. Override the
 existing code by copying, pasting and saving the code below:
 
 ```javascript
