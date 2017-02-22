@@ -29,7 +29,7 @@ At their core, plugins are a simple `register object` that has the signature
 `function (server, options, next)`. Read more about building plugins from
 scratch in the [Hapi documentation].
 
-Navigate to the `<your-awesome-app>/server/plugins` folder. Make a folder called
+Navigate to the `<your-awesome-app>/src/server/plugins` folder. Make a folder called
 `friends`, `cd` into your new `friends` folder, and create an empty `index.js`
 file:
 
@@ -53,7 +53,7 @@ server
 ```
 {% endraw %}
 
-Navigate to `<your-awesome-app>/server/plugins/friends/index.js`. This is where
+Navigate to `<your-awesome-app>/src/server/plugins/friends/index.js`. This is where
 we will make an external API call to Github and request the last ten
 contributors of our selected Open Source 'friend' using a URL
 `https://api.github.com/ + /repos/:user/:repo/contributors`. Our GitHub wrapper
