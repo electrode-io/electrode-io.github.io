@@ -29,9 +29,9 @@ At their core, plugins are a simple `register object` that has the signature
 `function (server, options, next)`. Read more about building plugins from
 scratch in the [Hapi documentation].
 
-Navigate to the `<your-awesome-app>/server/plugins` folder. Make a folder called
-`friends`, `cd` into your new `friends` folder, and create an empty `index.js`
-file:
+Navigate to the `<your-awesome-app>/src/server/plugins` folder. Make a folder
+called `friends`, `cd` into your new `friends` folder, and create an empty
+`index.js` file:
 
 ```bash
 $ touch index.js
@@ -53,7 +53,7 @@ server
 ```
 {% endraw %}
 
-Navigate to `<your-awesome-app>/server/plugins/friends/index.js`. This is where
+Navigate to `<your-awesome-app>/src/server/plugins/friends/index.js`. This is where
 we will make an external API call to Github and request the last ten
 contributors of our selected Open Source 'friend' using a URL
 `https://api.github.com/ + /repos/:user/:repo/contributors`. Our GitHub wrapper
@@ -99,7 +99,7 @@ exports.register = (server, options, next) => {
     };
     return githubGetContributors(githubInfo)
       .then((response) => {
-        friend.friends = response.map(({ login, avatar_url, html_url }) => (
+        friend.friends = response.data.map(({ login, avatar_url, html_url }) => (
           {name: login, img: avatar_url, profile: html_url}
         ));
         return friend;
@@ -155,10 +155,10 @@ Set your token for heroku deployment:
 heroku config:set token='your-token-here'
 ```
 
-A great tool for testing your server requests (its user interface for view
-response objects and errors is incredible) is [Postman]. For now, you will have
-to trust as we build out Your Awesome App. Navigate to [Intermediate: Add
-Routes], to add routing to the app and also extend our UI to display our
+A great tool for testing your server requests is [Postman]. Its user interface
+for viewing response objects and errors is incredible. For now, you will have
+to trust us as we build out Your Awesome App. Navigate to [Intermediate: Add
+Routes], to add routing to the app and extend our UI to display our
 contributor array.
 
 

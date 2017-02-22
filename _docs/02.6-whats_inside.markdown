@@ -6,7 +6,7 @@ toplevel: "Getting Started: Quick Guide"
 
 #### Explore More
 
-What does `generate-electrode` give you? Let's go through the most important files to understand the structure of your new app.
+What does `generator-electrode` give you? Let's go through the most important files to understand the structure of your new app.
 
 > `<your-awesome-app>/src/client/components/home.jsx`
 
@@ -137,7 +137,7 @@ This includes React components and Redux. To achieve this, the Electrode team ha
 
 This is where we extend our `electrode-archetype-react-app` [Babel](https://babeljs.io/docs/usage/babelrc/) configuration to use [the ES6 presets](https://babeljs.io/docs/plugins/preset-es2015/), as well as specifying any plugins or projects that need additional Babel settings.
 
-> `<your-awesome-app>/isomorphic-loader-config.json`
+> `<your-awesome-app>/.isomorphic-loader-config.json`
 
 This [powerful tool](https://github.com/electrode-io/isomorphic-loader) makes NodeJS `require` work with files such as images for server-side rendering. It contains three pieces: a Webpack loader, Webpack plugin, and a library for your NodeJS app.
 
