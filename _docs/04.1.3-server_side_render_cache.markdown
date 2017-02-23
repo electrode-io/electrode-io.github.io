@@ -8,7 +8,7 @@ Optimize React SSR with profiling and component caching. The
 [electrode-react-ssr-caching] module supports profiling React Server Side Rendering time
 to enable component caching to help you speed up Server Side Rendering of your components.
 
-[electrode-react-ssr-caching] module can be used a *standalone* module and is *agnostic* of
+[electrode-react-ssr-caching] module can be used as a *standalone* module and is *agnostic* to
 your web-server framework. In this tutorial we will demonstrate how to use this module in Electrode, Express.js and Hapi.js applications.
 
 {% include module_usage.md moduleId="electrode-react-ssr-caching" express_react_redux=true hapi_react_redux=true %}
@@ -48,7 +48,7 @@ SSRCaching.enableCaching();
 SSRCaching.setCachingConfig(cacheConfig);
 ```
 
-Where `cacheConfig` contains information on what component to apply caching.  See below for details.
+Where `cacheConfig` contains information on what component to apply caching to.  See below for details.
 
 ##### cacheConfig
 
@@ -58,7 +58,7 @@ His demo requires each component to provide a function for generating the cache 
 
 Here we implemented two cache key generation strategies: `simple` and `template`.
 
-You are required to pass in the `cacheConfig` to tell this module what component to apply caching.
+You are required to pass in the `cacheConfig` to tell this module what component to apply caching to.
 
 For example:
 
@@ -99,13 +99,13 @@ const cacheConfig = {
 };
 ```
 
-This strategy is not very flexible.  You need a cache entry for each different props.  However it requires very little processing time.
+This strategy is not very flexible.  You need a cache entry for each component instance with different props.  However it requires very little processing time.
 
 ##### template
 
 The `template` caching strategy is more complex but flexible.  
 
-The idea is akin to generating logic-less handlebars templates from your React components and then use string Replace to process the template with different props.
+The idea is akin to generating logic-less handlebars templates from your React components and then use string replace to process the template with different props.
 
 If you have this component:
 
@@ -168,7 +168,7 @@ const cacheConfig = {
 ```
 
    - `preserveKeys` - List of keys that should not be tokenized.
-   - `preserveEmptyKeys` - List of keys that should not be tokenized if they are empty string `""`
+   - `preserveEmptyKeys` - List of keys that should not be tokenized if they are the empty string `""`
    - `ignoreKeys` - List of keys that should be completely ignored as part of the template cache key.
    - `whiteListNonStringKeys` - List of non-string keys that should be tokenized.
 
