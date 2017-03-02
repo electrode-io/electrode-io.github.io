@@ -78,25 +78,42 @@ module.exports = _.flow(
 
 ```js
 var baseConfig = {
-  __wmlMultiBundle: multiBundle,
   cache: true,
   context: context,
-  debug: false,
-  entry: entry,
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        debug: false
+      }
+    })
+  ],
+  entry: appEntry(),
   output: {
-    path: Path.resolve("dist/js"),
+    path: Path.resolve("dist", "js"),
     pathinfo: inspectpack, // Enable path information for inspectpack
-    filename: multiBundle
-      ? "[name].bundle.[hash].js"
-      : "bundle.[hash].js"
+    publicPath: "/js/",
+    chunkFilename: "[hash].[name].js",
+    filename: "[name].bundle.[hash].js"
   },
   resolve: {
-    root: [archetypeNodeModules, archetypeDevNodeModules, process.cwd()],
-    modulesDirectories: ["client", "node_modules"].concat(archetype.webpack.modulesDirectories),
-    extensions: ["", ".js", ".jsx"]
+    modules: [
+      archetypeNodeModules,
+      archetypeDevNodeModules,
+      AppMode.isSrc && Path.resolve(AppMode.src.dir) || null
+    ]
+      .concat(archetype.webpack.modulesDirectories)
+      .concat([process.cwd(), "node_modules"])
+      .filter(_.identity),
+    extensions: [".js", ".jsx", ".json"]
   },
   resolveLoader: {
-    root: [archetypeNodeModules, archetypeDevNodeModules, process.cwd()]
+    modules: [
+      archetypeNodeModules,
+      archetypeDevNodeModules,
+      Path.resolve("lib"),
+      process.cwd(),
+      "node_modules"
+    ].filter(_.identity)
   }
 };
 ```
@@ -167,7 +184,7 @@ The production webpack config is merged together with the base config and the fo
 
    - [optimize.js](https://github.com/electrode-io/electrode-archetype-react-app/blob/master/config/webpack/partial/optimize.js): Apply webpack's dedupe plugin to deduplicate similar or equal files from the output bundle in addition to Uglifying the output using the UglifyJS plugin
 
-   - [locals.js](https://github.com/electrode-io/electrode-archetype-react-app/blob/master/config/webpack/partial/locales.js): Handle possible dynamic requires within moment.js, so webpack does not include all of the language files
+   - [locales.js](https://github.com/electrode-io/electrode-archetype-react-app/blob/master/config/webpack/partial/locales.js): Handle possible dynamic requires within moment.js, so webpack does not include all of the language files
 
    - [define.js](https://github.com/electrode-io/electrode-archetype-react-app/blob/master/config/webpack/partial/define.js): Define a production environment for webpack so it can remove non production code.
 
