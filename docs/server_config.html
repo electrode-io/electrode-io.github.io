@@ -309,6 +309,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -401,6 +406,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -886,6 +896,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/ss_data_hydration.html"> &nbsp; Server Side Data Hydration</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -974,6 +997,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -1497,6 +1525,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1543,6 +1576,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1981,6 +2019,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -2060,27 +2103,35 @@
     </h1>
     <div class="subHeader"></div>
 
-    <h4><a class="anchor" name="server-config--confippet"></a>Server Config + Confippet <a class="hash-link" href="#server-config--confippet">#</a></h4>
-<p>Out of the box we&#39;re given <a href="https://github.com/electrode-io/electrode-confippet">Confippet</a>, a versatile utility for managing your NodeJS application configuration. Its goal is customization and extensibility, but it offers a preset config out of the box inside <strong>Your Awesome (Electrode) App</strong>:</p>
+    <h3><a class="anchor" name="server-config-and-confippet"></a>Server Config and Confippet <a class="hash-link" href="#server-config-and-confippet">#</a></h3>
+<p>Out of the box we&#39;re given <a href="https://github.com/electrode-io/electrode-confippet">Confippet</a>, a versatile utility for managing your
+NodeJS application configuration. Its goal is customization and extensibility,
+but it offers a preset config out of the box inside <strong>Your Awesome (Electrode)
+App</strong>:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">config
     ├── default.json
     ├── development.json
     └── production.json
 </code></pre></div>
-<p>We&#39;ll need to extend our default.json to include our <code>friends</code> plugin and module <code>./server/plugins/friends</code>.</p>
+<p>We&#39;ll need to extend our default.json to include our <code>friends</code> plugin and module
+<code>./src/server/plugins/friends</code>.</p>
 
-<p>Navigate to <code>&lt;your-awesome-app&gt;/config/development.json</code>. Copy, paste and save <code>friends</code> plugin:</p>
+<p>Navigate to <code>&lt;your-awesome-app&gt;/config/development.json</code>. Copy, paste and save
+<code>friends</code> plugin:</p>
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;plugins&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;friends&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;./server/plugins/friends&quot;</span>
+      <span class="nt">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;./src/server/plugins/friends&quot;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>You can learn more about Confippet and ways to extend your config in our Advanced Electrode App with the <a href="confippet.html">Confippet</a> stand alone module.</p>
+<p>You can learn more about Confippet and ways to extend your config in our
+Advanced Electrode App with the <a href="https://github.com/electrode-io/electrode-confippet">Confippet</a> stand alone module.</p>
 
-<p>We should update our app test to reflect the changes we have made. Navigate to <code>&lt;your-awesome-app&gt;/test/client/components/home.spec.js</code>. Override the existing code by copying and pasting the code below:</p>
+<p>We should update our app test to reflect the changes we have made. Navigate to
+<code>&lt;your-awesome-app&gt;/test/client/components/home.spec.jsx</code>. Override the existing
+code by copying and pasting the code below:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;isomorphic-fetch&quot;</span><span class="p">);</span>
 
 <span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
@@ -2090,7 +2141,7 @@
 <span class="kr">class</span> <span class="nx">ChildComponent</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="o">/&gt;</span>
     <span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -2115,30 +2166,39 @@
   <span class="p">});</span>
 <span class="p">});</span>
 </code></pre></div>
-<p>Let&#39;s check it out! We&#39;ll run through our steps to test, run the app and view it in the browser. We will need your GitHubApi token as well:</p>
+<p>Let&#39;s check it out! We&#39;ll run through our steps to test, run the app and view it
+in the browser. We&#39;ll need your GitHub API token as well:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gulp check
 <span class="nv">$ token</span><span class="o">=</span><span class="s1">&#39;your-token-here&#39;</span> gulp hot
 </code></pre></div>
-<p>Navigate to <code>localhost:3000</code>. Check it out! This is the <code>Index route</code> which renders our <code>Home component</code> using Server Side Rendering:</p>
+<p>Navigate to <code>localhost:3000</code>. Check it out! This is the <code>Index route</code> which
+renders our <code>Home component</code> using Server Side Rendering:</p>
 
 <p><img src="/img/app-home-view.png" alt="app-home-view"></p>
 
-<p>By tapping on the <code>Click Here to Make it a Party</code> link Your Awesome App routes to the <code>/invite route</code>, which renders the <code>guest list component</code>:</p>
+<p>When you click the <code>Click Here to Make it a Party</code> link, Your Awesome App routes
+to the <code>/invite</code> route, which renders the guest list component.</p>
 
 <p><img src="/img/app-guest-list-view.png" alt="app-guest-list"></p>
 
-<p>By checking the guest list, you are setting that selected <code>invitee object&#39;s</code> key to {invited: true}, which tells <code>renderFriends</code> to render.</p>
+<p>By checking the guest list, you are setting the invitee object&#39;s key
+to <code>{invited: true}</code>, which tells <code>renderFriends</code> to render.</p>
 
-<p>When all of our guests are invited to the House Party our CSS modules kick in and launch an Electrode House Party!</p>
+<p>When all of our guests are invited to the House Party, our CSS modules kick in
+and launch an Electrode House Party!</p>
 
 <p><img src="/img/party-collabos.png" alt="app-party-view"></p>
 
-<p>Feel free to add your own personal touch and build out your Resource List House Party. <a href="https://electrode-example-app.herokuapp.com/">Click here</a> to view our Heroku deployed example app.</p>
+<p>Feel free to add your own personal touch and build out your Resource List House
+Party. You can compare your work to our <a href="https://electrode-example-app.herokuapp.com/">Heroku deployed example app</a>.</p>
 
-<p>When you&#39;re ready, you can deploy Your Awesome App to <a href="https://devcenter.heroku.com/categories/deployment">Heroku</a> by following the previous steps in our <a href="build_component.html">Getting Started: Build More</a> section. If you choose this step, make sure you set all of the Heroku configurations, including the one for our <a href="build_server_plugin">GitHub Api</a>.</p>
+<p>When you&#39;re ready, you can deploy Your Awesome App to <a href="https://devcenter.heroku.com/categories/deployment">Heroku</a> by following the
+previous steps in our <a href="build_component.html">Getting Started: Build More</a> section. If you choose this
+step, make sure you set all of the Heroku configurations, including the one for
+our <a href="build_server_plugin.">GitHub Api</a>.</p>
 
-<p>You can also navigate to <a href="more_deployments.html">Intermediate: More Deployments</a> to learn how to deploy with
-<a href="docker.html">Docker</a> and <a href="kubernetes.html">Kubernetes</a>.</p>
+<p>You can also navigate to <a href="more_deployments.html">Intermediate: More Deployments</a> to learn how to deploy
+with <a href="docker.html">Docker</a> and <a href="kubernetes.html">Kubernetes</a>.</p>
 
 
     
@@ -2169,7 +2229,7 @@
         <a href="https://github.com/orgs/electrode-io/people" target="_blank">Acknowledgements</a>
       </div>
       <div class="right">
-        &copy; 2016 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
+        &copy; 2017 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
         Apache-2.0 license.
       </div>
     </footer>

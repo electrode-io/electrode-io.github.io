@@ -309,6 +309,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -401,6 +406,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -886,6 +896,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/ss_data_hydration.html"> &nbsp; Server Side Data Hydration</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -974,6 +997,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -1497,6 +1525,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1543,6 +1576,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1981,6 +2019,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -2135,25 +2178,42 @@
 </code></pre></div>
 <p><em>Webpack Base Config</em></p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">baseConfig</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">__wmlMultiBundle</span><span class="o">:</span> <span class="nx">multiBundle</span><span class="p">,</span>
   <span class="nx">cache</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="nx">context</span><span class="o">:</span> <span class="nx">context</span><span class="p">,</span>
-  <span class="nx">debug</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="nx">entry</span><span class="o">:</span> <span class="nx">entry</span><span class="p">,</span>
+  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+    <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">LoaderOptionsPlugin</span><span class="p">({</span>
+      <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">debug</span><span class="o">:</span> <span class="kc">false</span>
+      <span class="p">}</span>
+    <span class="p">})</span>
+  <span class="p">],</span>
+  <span class="nx">entry</span><span class="o">:</span> <span class="nx">appEntry</span><span class="p">(),</span>
   <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">path</span><span class="o">:</span> <span class="nx">Path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s2">&quot;dist/js&quot;</span><span class="p">),</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="nx">Path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s2">&quot;dist&quot;</span><span class="p">,</span> <span class="s2">&quot;js&quot;</span><span class="p">),</span>
     <span class="nx">pathinfo</span><span class="o">:</span> <span class="nx">inspectpack</span><span class="p">,</span> <span class="c1">// Enable path information for inspectpack</span>
-    <span class="nx">filename</span><span class="o">:</span> <span class="nx">multiBundle</span>
-      <span class="o">?</span> <span class="s2">&quot;[name].bundle.[hash].js&quot;</span>
-      <span class="o">:</span> <span class="s2">&quot;bundle.[hash].js&quot;</span>
+    <span class="nx">publicPath</span><span class="o">:</span> <span class="s2">&quot;/js/&quot;</span><span class="p">,</span>
+    <span class="nx">chunkFilename</span><span class="o">:</span> <span class="s2">&quot;[hash].[name].js&quot;</span><span class="p">,</span>
+    <span class="nx">filename</span><span class="o">:</span> <span class="s2">&quot;[name].bundle.[hash].js&quot;</span>
   <span class="p">},</span>
   <span class="nx">resolve</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">root</span><span class="o">:</span> <span class="p">[</span><span class="nx">archetypeNodeModules</span><span class="p">,</span> <span class="nx">archetypeDevNodeModules</span><span class="p">,</span> <span class="nx">process</span><span class="p">.</span><span class="nx">cwd</span><span class="p">()],</span>
-    <span class="nx">modulesDirectories</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;client&quot;</span><span class="p">,</span> <span class="s2">&quot;node_modules&quot;</span><span class="p">].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">archetype</span><span class="p">.</span><span class="nx">webpack</span><span class="p">.</span><span class="nx">modulesDirectories</span><span class="p">),</span>
-    <span class="nx">extensions</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;.js&quot;</span><span class="p">,</span> <span class="s2">&quot;.jsx&quot;</span><span class="p">]</span>
+    <span class="nx">modules</span><span class="o">:</span> <span class="p">[</span>
+      <span class="nx">archetypeNodeModules</span><span class="p">,</span>
+      <span class="nx">archetypeDevNodeModules</span><span class="p">,</span>
+      <span class="nx">AppMode</span><span class="p">.</span><span class="nx">isSrc</span> <span class="o">&amp;&amp;</span> <span class="nx">Path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">AppMode</span><span class="p">.</span><span class="nx">src</span><span class="p">.</span><span class="nx">dir</span><span class="p">)</span> <span class="o">||</span> <span class="kc">null</span>
+    <span class="p">]</span>
+      <span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">archetype</span><span class="p">.</span><span class="nx">webpack</span><span class="p">.</span><span class="nx">modulesDirectories</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="nx">process</span><span class="p">.</span><span class="nx">cwd</span><span class="p">(),</span> <span class="s2">&quot;node_modules&quot;</span><span class="p">])</span>
+      <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">identity</span><span class="p">),</span>
+    <span class="nx">extensions</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;.js&quot;</span><span class="p">,</span> <span class="s2">&quot;.jsx&quot;</span><span class="p">,</span> <span class="s2">&quot;.json&quot;</span><span class="p">]</span>
   <span class="p">},</span>
   <span class="nx">resolveLoader</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">root</span><span class="o">:</span> <span class="p">[</span><span class="nx">archetypeNodeModules</span><span class="p">,</span> <span class="nx">archetypeDevNodeModules</span><span class="p">,</span> <span class="nx">process</span><span class="p">.</span><span class="nx">cwd</span><span class="p">()]</span>
+    <span class="nx">modules</span><span class="o">:</span> <span class="p">[</span>
+      <span class="nx">archetypeNodeModules</span><span class="p">,</span>
+      <span class="nx">archetypeDevNodeModules</span><span class="p">,</span>
+      <span class="nx">Path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s2">&quot;lib&quot;</span><span class="p">),</span>
+      <span class="nx">process</span><span class="p">.</span><span class="nx">cwd</span><span class="p">(),</span>
+      <span class="s2">&quot;node_modules&quot;</span>
+    <span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">identity</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
@@ -2215,7 +2275,7 @@ together with the base config allowing for a modular configuration file.</p></li
 
 <ul>
 <li><p><a href="https://github.com/electrode-io/electrode-archetype-react-app/blob/master/config/webpack/partial/optimize.js">optimize.js</a>: Apply webpack&#39;s dedupe plugin to deduplicate similar or equal files from the output bundle in addition to Uglifying the output using the UglifyJS plugin</p></li>
-<li><p><a href="https://github.com/electrode-io/electrode-archetype-react-app/blob/master/config/webpack/partial/locales.js">locals.js</a>: Handle possible dynamic requires within moment.js, so webpack does not include all of the language files</p></li>
+<li><p><a href="https://github.com/electrode-io/electrode-archetype-react-app/blob/master/config/webpack/partial/locales.js">locales.js</a>: Handle possible dynamic requires within moment.js, so webpack does not include all of the language files</p></li>
 <li><p><a href="https://github.com/electrode-io/electrode-archetype-react-app/blob/master/config/webpack/partial/define.js">define.js</a>: Define a production environment for webpack so it can remove non production code.</p></li>
 <li><p><a href="https://github.com/electrode-io/electrode-archetype-react-app/blob/master/config/webpack/partial/sourcemaps-remote.js">sourcemaps-remote.js</a>: Create sourcemaps.</p>
 
@@ -2268,7 +2328,7 @@ Time: 6607ms
         <a href="https://github.com/orgs/electrode-io/people" target="_blank">Acknowledgements</a>
       </div>
       <div class="right">
-        &copy; 2016 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
+        &copy; 2017 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
         Apache-2.0 license.
       </div>
     </footer>

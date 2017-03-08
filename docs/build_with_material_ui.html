@@ -309,6 +309,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -401,6 +406,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -886,6 +896,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/ss_data_hydration.html"> &nbsp; Server Side Data Hydration</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -974,6 +997,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -1497,6 +1525,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1543,6 +1576,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1981,6 +2019,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -2060,16 +2103,20 @@
     </h1>
     <div class="subHeader"></div>
 
-    <p><a href="http://www.material-ui.com/">material-ui</a> is a set of React components that implement Google&#39;s material design.  It&#39;s a great choice to help you quickly develop your web app with a sophisticated look and feel UI that is designed to be responsive.  It&#39;s very simple to add <a href="http://www.material-ui.com/">material-ui</a> components to an Electrode app.  We&#39;ve built a sample with step by step instructions to show you how.</p>
+    <p><a href="http://www.material-ui.com/">material-ui</a> is a set of React components that implement Google&#39;s material
+design. It&#39;s a great choice to help you quickly develop your web app with a
+sophisticated look and feel UI that is designed to be responsive. It&#39;s very
+simple to add material-ui components to an Electrode app. We&#39;ve built a sample
+with step-by-step instructions to show you how.</p>
 
 <p><img src="https://cloud.githubusercontent.com/assets/5876741/19024379/377359ec-88b7-11e6-863b-a41133cc42ef.png" alt="screenshot"></p>
 <h2><a class="anchor" name="installation"></a>Installation <a class="hash-link" href="#installation">#</a></h2><h3><a class="anchor" name="prerequisites"></a>Prerequisites <a class="hash-link" href="#prerequisites">#</a></h3>
 <p>Make sure you have installed NodeJS &gt;= 4.x and npm &gt;= 3.x, and <a href="http://gulpjs.com/">gulp</a>.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nv">$ </span>node -v
-  v6.6.0
-  <span class="nv">$ </span>npm -v
-  3.10.3
-  <span class="nv">$ </span>npm install -g gulp
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>node -v
+v6.6.0
+<span class="nv">$ </span>npm -v
+3.10.3
+<span class="nv">$ </span>npm install -g gulp
 </code></pre></div><h3><a class="anchor" name="check-it-out"></a>Check it out <a class="hash-link" href="#check-it-out">#</a></h3>
 <p>To try out this ready made sample app, use git to clone the repo:</p>
 <div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nv">$ </span>git clone https://github.com/electrode-io/electrode.git
@@ -2077,14 +2124,16 @@
 <span class="nv">$ </span>npm install
 <span class="nv">$ </span>gulp dev
 </code></pre></div>
-<p>Now navigate your browser to <code>http://localhost:3000</code> to see the sample app with <a href="http://www.material-ui.com/">material-ui</a> components.</p>
+<p>Now navigate your browser to <code>http://localhost:3000</code> to see the sample app with
+material-ui components.</p>
 <h2><a class="anchor" name="about"></a>About <a class="hash-link" href="#about">#</a></h2>
 <p>This app was created with the following steps.</p>
-<h3><a class="anchor" name="generate-electrode-app"></a>Generate Electrode App <a class="hash-link" href="#generate-electrode-app">#</a></h3>
-<p>First part of the process is to generate an Electrode Universal App using the <a href="http://yeoman.io/">yeoman</a> generator.  Follow the steps below:</p>
+<h3><a class="anchor" name="generate-an-electrode-app"></a>Generate an Electrode App <a class="hash-link" href="#generate-an-electrode-app">#</a></h3>
+<p>The first part of the process is to generate an Electrode Universal App using
+the <a href="http://yeoman.io/">Yeoman</a> generator. Follow the steps below:</p>
 
 <ol>
-<li>First generate the Electrode Universal App with the following commands:</li>
+<li>First, generate the Electrode Universal App with the following commands:</li>
 </ol>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nv">$ </span>npm install -g yo generator-electrode
   <span class="nv">$ </span>mkdir react-sample-material-ui
@@ -2094,29 +2143,33 @@
 </code></pre></div>
 <ol>
 <li>Run <code>gulp dev</code> in the newly generated app</li>
-<li>Navigate to <code>http://localhost:3000</code> to make sure app is working.</li>
+<li>Navigate to <code>http://localhost:3000</code> to make sure the app is working.</li>
 </ol>
-<h3><a class="anchor" name="add-material-ui"></a>Add <a href="http://www.material-ui.com/">material-ui</a> <a class="hash-link" href="#add-material-ui">#</a></h3>
-<p>Second part of the process is to add <a href="http://www.material-ui.com/">material-ui</a> dependencies.  Follow the steps below:</p>
+<h3><a class="anchor" name="add-material-ui"></a>Add material-ui <a class="hash-link" href="#add-material-ui">#</a></h3>
+<p>The second part of the process is to add material-ui dependencies. Follow the
+steps below:</p>
 
 <ol>
-<li>Stop the app and install <a href="http://www.material-ui.com/">material-ui</a> dependencies</li>
+<li><p>Stop the app and install material-ui dependencies</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install material-ui react-tap-event-plugin --save
+</code></pre></div></li>
+<li><p>Restart <code>gulp dev</code> and reload browser to make sure things are still working.</p></li>
+<li><p>Add material-ui&#39;s required font, <em>Roboto</em>, to
+<code>server/plugins/webapp/index.html</code></p></li>
+<li><p>Update <code>client/styles/base.css</code> with styles for material-ui.</p></li>
+<li><p>Test your material-ui component by adding a <a href="http://www.material-ui.com/#/components/raised-button">RaisedButton</a> to
+<code>client/components/home.jsx</code></p></li>
+<li><p>Watch <a href="https://webpack.github.io/docs/webpack-dev-server.html">webpack-dev-server</a> update your bundle and refresh your browser to
+see the changes.</p></li>
+<li><p>Add <code>global.navigator.userAgent</code> to <code>server/index.js</code>, as required by
+material-ui for <a href="http://www.material-ui.com/#/get-started/server-rendering">Server Rendering</a>.</p></li>
+<li><p>Watch <a href="https://webpack.github.io/docs/webpack-dev-server.html">webpack-dev-server</a> update your bundle and refresh your browser to
+see the changes.</p></li>
 </ol>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nv">$ </span>npm install material-ui react-tap-event-plugin --save
-</code></pre></div>
-<ol>
-<li>Restart <code>gulp dev</code> and reload browser to make sure things are still working.</li>
-<li>Add <a href="http://www.material-ui.com/">material-ui</a>&#39;s required font <em>Roboto</em> to <code>server/plugins/webapp/index.html</code></li>
-<li>Update <code>client/styles/base.css</code> with styles for <a href="http://www.material-ui.com/">material-ui</a>.</li>
-<li>Test <a href="http://www.material-ui.com/">material-ui</a> component by adding a <a href="http://www.material-ui.com/#/components/raised-button">RaisedButton</a> to <code>client/components/home.jsx</code></li>
-<li>Watch <a href="https://webpack.github.io/docs/webpack-dev-server.html">webpack-dev-server</a> update your bundle and refresh browser to see changes.</li>
-<li>Add <code>global.navigator.userAgent</code> to <code>server/index.js</code> as required by <a href="http://www.material-ui.com/">material-ui</a> for <a href="http://www.material-ui.com/#/get-started/server-rendering">Server Rendering</a>.</li>
-<li>Watch <a href="https://webpack.github.io/docs/webpack-dev-server.html">webpack-dev-server</a> update your bundle and refresh browser to see changes.</li>
-</ol>
-<h3><a class="anchor" name="add-material-ui-examples"></a>Add <a href="http://www.material-ui.com/">material-ui</a> Examples <a class="hash-link" href="#add-material-ui-examples">#</a></h3>
+<h3><a class="anchor" name="add-material-ui-examples"></a>Add material-ui Examples <a class="hash-link" href="#add-material-ui-examples">#</a></h3>
 <p>Now we are ready to add some of the <a href="http://www.material-ui.com/#/components/app-bar">material-ui examples</a> to the app.</p>
 <h4><a class="anchor" name="enable-tapping"></a>Enable tapping <a class="hash-link" href="#enable-tapping">#</a></h4>
-<p>First we have to add the resolution for this issue https://github.com/callemall/material-ui/issues/4670.</p>
+<p>First we have to add the resolution for an <a href="https://github.com/callemall/material-ui/issues/4670">issue in material-ui</a>.</p>
 
 <p>Add the following code to <code>client/app.jsx</code></p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">injectTapEventPlugin</span> <span class="nx">from</span> <span class="s2">&quot;react-tap-event-plugin&quot;</span><span class="p">;</span>
@@ -2125,74 +2178,92 @@
   <span class="nx">injectTapEventPlugin</span><span class="p">();</span> <span class="c1">// https://github.com/callemall/material-ui/issues/4670</span>
 
 <span class="p">};</span>
-</code></pre></div><h4><a class="anchor" name="iconmenu-appbar-example"></a>IconMenu <a href="http://www.material-ui.com/#/components/app-bar">AppBar example</a> <a class="hash-link" href="#iconmenu-appbar-example">#</a></h4>
+</code></pre></div><h4><a class="anchor" name="iconmenu-appbar-example"></a>IconMenu AppBar example <a class="hash-link" href="#iconmenu-appbar-example">#</a></h4>
 <p>First add the IconMenu <a href="http://www.material-ui.com/#/components/app-bar">AppBar example</a> by following the steps below.</p>
 
 <ol>
-<li>Copy the source from the example into a file <code>client/components/AppBarExampleIconMenu.jsx</code></li>
-<li>Replace the <code>Hello Electrode</code> and the RaisedButton content in <code>client/components/home.jsx</code> with <code>&lt;AppBarExampleIconMenu /&gt;</code>;</li>
-<li>Watch <a href="https://webpack.github.io/docs/webpack-dev-server.html">webpack-dev-server</a> update your bundle and refresh browser to see changes.</li>
-<li>If the AppBar shows up, click on the right menu button, you should see a menu pops up.</li>
+<li> Copy the source from the example into
+<code>client/components/AppBarExampleIconMenu.jsx</code></li>
+<li> Replace the <code>Hello Electrode</code> and the RaisedButton content in
+<code>client/components/home.jsx</code> with <code>&lt;AppBarExampleIconMenu /&gt;</code>;</li>
+<li> Watch <a href="https://webpack.github.io/docs/webpack-dev-server.html">webpack-dev-server</a> update your bundle and refresh your browser to
+see the changes.</li>
+<li> If the AppBar shows up, click on the right menu button. You should see a
+menu pop up.</li>
 </ol>
-<h4><a class="anchor" name="bottomnavigation-example"></a><a href="http://www.material-ui.com/#/components/bottom-navigation">BottomNavigation example</a> <a class="hash-link" href="#bottomnavigation-example">#</a></h4>
-<p>Next add the <a href="http://www.material-ui.com/#/components/bottom-navigation">BottomNavigation example</a></p>
+<h4><a class="anchor" name="bottomnavigation-example"></a>BottomNavigation example <a class="hash-link" href="#bottomnavigation-example">#</a></h4>
+<p>Next, add the <a href="http://www.material-ui.com/#/components/bottom-navigation">BottomNavigation example</a>:</p>
 
 <ol>
-<li>Copy the source from the example into a file <code>client/components/BottomNavigationExampleSimple.jsx</code></li>
-<li>Import the component in <code>client/components/home.jsx</code> and add it to <code>render</code> after the <code>AppBarExampleIconMenu</code> component.</li>
-<li>Watch <a href="https://webpack.github.io/docs/webpack-dev-server.html">webpack-dev-server</a> update your bundle and refresh browser to see changes.</li>
-<li>You should see AppBar and BottomNavigation show up.  You should be able to interact with the buttons on the BottomNavigation component.</li>
+<li> Copy the source from the example into
+<code>client/components/BottomNavigationExampleSimple.jsx</code></li>
+<li> Import the component in <code>client/components/home.jsx</code> and add it to <code>render</code>
+after the <code>AppBarExampleIconMenu</code> component.</li>
+<li> Watch <a href="https://webpack.github.io/docs/webpack-dev-server.html">webpack-dev-server</a> update your bundle and refresh your browser to
+see the changes.</li>
+<li> You should see AppBar and BottomNavigation show up. You should be able to
+interact with the buttons on the BottomNavigation component.</li>
 </ol>
-<h4><a class="anchor" name="card-example"></a><a href="http://www.material-ui.com/#/components/card">Card example</a> <a class="hash-link" href="#card-example">#</a></h4>
+<h4><a class="anchor" name="card-example"></a>Card example <a class="hash-link" href="#card-example">#</a></h4>
 <p>In this section we add the <a href="http://www.material-ui.com/#/components/card">Card example</a>.</p>
 
 <ol>
-<li>Copy the source from the <a href="http://www.material-ui.com/#/components/card">Card example</a> into a file <code>client/components/CardExampleWithAvatar.jsx</code></li>
-<li>Import the component in <code>client/components/home.jsx</code> and add it to <code>render</code> after the <code>AppBarExampleIconMenu</code> component.</li>
-<li>Watch <a href="https://webpack.github.io/docs/webpack-dev-server.html">webpack-dev-server</a> update your bundle and refresh browser to see changes.</li>
-<li>You should see Card show up but with broken images</li>
+<li> Copy the source from the Card example into
+<code>client/components/CardExampleWithAvatar.jsx</code></li>
+<li> Import the component in <code>client/components/home.jsx</code> and add it to <code>render</code>
+after the <code>AppBarExampleIconMenu</code> component.</li>
+<li> Watch <a href="https://webpack.github.io/docs/webpack-dev-server.html">webpack-dev-server</a> update your bundle and refresh your browser to
+see the changes.</li>
+<li> You should see Card show up, but with broken images.</li>
 </ol>
 
 <blockquote>
-<p>You can replace the image URLs with the full URLs to the images by adding <code>http://www.material-ui.com/</code> to them to fix the broken images, but we will explore isomorphic images next.</p>
+<p>You can replace the image URLs with full URLs by adding
+<code>http://www.material-ui.com/</code> to them to fix the broken images, but we will
+explore isomorphic images next.</p>
 </blockquote>
 <h4><a class="anchor" name="isomorphic-images"></a>Isomorphic Images <a class="hash-link" href="#isomorphic-images">#</a></h4>
-<p>Electrode core comes with isomorphic images support built in using <a href="https://github.com/electrode-io/isomorphic-loader">isomorphic-loader</a>.  In this section we explore using that feature to load the images for the <a href="http://www.material-ui.com/#/components/card">Card example</a>.</p>
+<p>Electrode core comes with isomorphic images support built in using
+<a href="https://github.com/electrode-io/isomorphic-loader">isomorphic-loader</a>. In this section we explore using that feature to load the
+images for the <a href="http://www.material-ui.com/#/components/card">Card example</a>.</p>
 
 <ol>
-<li>Create a directory <code>client/images</code> and copy the following images there
+<li> Create a directory called <code>client/images</code> and copy the following images
+there:
 
 <ul>
-<li>http://www.material-ui.com/images/nature-600-337.jpg</li>
-<li>http://www.material-ui.com/images/jsa-128.jpg (Or your own favorite 128x128 Avatar image)</li>
-<li>Note that in my sample I use <code>jchip-128.jpg</code> as my avatar.</li>
+<li><code>http://www.material-ui.com/images/nature-600-337.jpg</code></li>
+<li><code>http://www.material-ui.com/images/jsa-128.jpg</code> (Or your own favorite
+128x128 Avatar image)
+
+<ul>
+<li>In my sample, I use <code>jchip-128.jpg</code> as my avatar.</li>
 </ul></li>
-<li>In <code>client/components/CardExampleWithAvatar.jsx</code>, import the images:</li>
-</ol>
-<div class="highlight"><pre><code class="language-js" data-lang="js">  <span class="kr">import</span> <span class="nx">natureJpg</span> <span class="nx">from</span> <span class="s2">&quot;../images/nature-600-337.jpg&quot;</span><span class="p">;</span>
-  <span class="kr">import</span> <span class="nx">avatarJpg</span> <span class="nx">from</span> <span class="s2">&quot;../images/jsa-128.jpg&quot;</span><span class="p">;</span>
-</code></pre></div>
-<ol>
-<li>Replace the URLs for <code>avatar</code> and <code>CarMedia</code> img <code>src</code>, as follows:</li>
-</ol>
-<div class="highlight"><pre><code class="language-text" data-lang="text">  ...
-    avatar={avatarJpg}
-  ...
-    src={natureJpg}
-</code></pre></div>
-<ol>
-<li>In <code>server/index.js</code>, activate <a href="https://github.com/electrode-io/isomorphic-loader">isomorphic-loader</a>&#39;s <code>extend-require</code> by changing the last line to:</li>
-</ol>
-<div class="highlight"><pre><code class="language-js" data-lang="js">    <span class="nx">supports</span><span class="p">.</span><span class="nx">isomorphicExtendRequire</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;electrode-server&quot;</span><span class="p">)(</span><span class="nx">config</span><span class="p">,</span> <span class="p">[</span><span class="nx">staticPathsDecor</span><span class="p">()]);</span>
-    <span class="p">});</span>
-</code></pre></div>
-<ol>
-<li>Watch <a href="https://webpack.github.io/docs/webpack-dev-server.html">webpack-dev-server</a> update your bundle and refresh browser to see changes.</li>
+</ul></li>
+<li><p>In <code>client/components/CardExampleWithAvatar.jsx</code>, import the images:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">natureJpg</span> <span class="nx">from</span> <span class="s2">&quot;../images/nature-600-337.jpg&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">avatarJpg</span> <span class="nx">from</span> <span class="s2">&quot;../images/jsa-128.jpg&quot;</span><span class="p">;</span>
+</code></pre></div></li>
+<li><p>Replace the URLs for <code>avatar</code> and <code>CarMedia</code> as follows:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">...
+  avatar={avatarJpg}
+...
+  src={natureJpg}
+</code></pre></div></li>
+<li><p>In <code>server/index.js</code>, activate <a href="https://github.com/electrode-io/isomorphic-loader">isomorphic-loader</a>&#39;s <code>extend-require</code> by
+changing the last line to:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nx">supports</span><span class="p">.</span><span class="nx">isomorphicExtendRequire</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;electrode-server&quot;</span><span class="p">)(</span><span class="nx">config</span><span class="p">,</span> <span class="p">[</span><span class="nx">staticPathsDecor</span><span class="p">()]);</span>
+  <span class="p">});</span>
+</code></pre></div></li>
+<li><p>Watch <a href="https://webpack.github.io/docs/webpack-dev-server.html">webpack-dev-server</a> update your bundle and refresh your browser to
+see the changes.</p></li>
 </ol>
 
 <blockquote>
-<p>Note that you will see the message <code>Warning: Unknown prop onTouchTap on &lt;button&gt; tag.</code> show up on the server side rendering because of the tapping event plugin, which we don&#39;t need on server anyways.</p>
+<p>Note that you will see the message <code>Warning: Unknown prop onTouchTap on
+&lt;button&gt; tag.</code> show up on the server side rendering because of the tapping
+event plugin, which we don&#39;t need on the server.</p>
 </blockquote>
 
 
@@ -2224,7 +2295,7 @@
         <a href="https://github.com/orgs/electrode-io/people" target="_blank">Acknowledgements</a>
       </div>
       <div class="right">
-        &copy; 2016 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
+        &copy; 2017 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
         Apache-2.0 license.
       </div>
     </footer>

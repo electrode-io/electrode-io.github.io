@@ -309,6 +309,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -401,6 +406,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -886,6 +896,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/ss_data_hydration.html"> &nbsp; Server Side Data Hydration</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -974,6 +997,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -1497,6 +1525,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1543,6 +1576,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1981,6 +2019,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -2079,12 +2122,12 @@
 
 <ul>
 <li>demos of all the components under the organizations you specified</li>
-<li>documentations of your components</li>
+<li>documentation of your components</li>
 <li>dependencies your components have (dependencies)</li>
 <li>other components/applications that depend on your components (usages)</li>
 </ul>
 
-<p>There are 2 ways the components can update dynamically:</p>
+<p>There are two ways the components can update dynamically:</p>
 
 <ol>
 <li>Add GitHub hooks to send POST requests to <code>/api/update/{org}/{repoName}</code> when a new tag is created</li>
@@ -2093,7 +2136,7 @@
 
 <p>It&#39;s recommended to use Method #1 to see updates in near real time.</p>
 
-<p>After the server receives the POST request, it will fetch the <code>package.json</code> file under <code>yourGithubUrl/org/repoName</code>,
+<p>After the server receives the POST request, it will fetch the <code>package.json</code> file under <code>{yourGithubUrl}/{org}/{repoName}</code>,
 update <a href="https://github.com/electrode-io/electrode-explorer/blob/master/data/orgs.json">data/orgs.json</a> and <code>data/{org}/{repoName}.json</code> files. If there is a newer version, it will try to download the
 new component through npm (<a href="https://github.com/electrode-io/electrode-explorer/blob/master/scripts/install-module.sh">scripts/install-module.sh</a>) after a waiting period, babel transpile, and webpack the demo module (<a href="https://github.com/electrode-io/electrode-explorer/blob/master/scripts/post-install-module.sh">scripts/post-install-module.sh</a>).</p>
 
@@ -2197,7 +2240,7 @@ new component through npm (<a href="https://github.com/electrode-io/electrode-ex
         <a href="https://github.com/orgs/electrode-io/people" target="_blank">Acknowledgements</a>
       </div>
       <div class="right">
-        &copy; 2016 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
+        &copy; 2017 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
         Apache-2.0 license.
       </div>
     </footer>

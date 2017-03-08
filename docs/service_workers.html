@@ -309,6 +309,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -401,6 +406,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -886,6 +896,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/ss_data_hydration.html"> &nbsp; Server Side Data Hydration</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -974,6 +997,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -1497,6 +1525,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1543,6 +1576,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1981,6 +2019,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -2060,44 +2103,68 @@
     </h1>
     <div class="subHeader"></div>
 
-    <p>“A Progressive Web App(PWA) uses modern web capabilities to deliver an app-like user experience.” – <a href="https://developers.google.com/web/progressive-web-apps/">Progressive Web Apps</a></p>
+    <p>&quot;A Progressive Web App (PWA) uses modern web capabilities to deliver an app-like
+user experience.&quot; – <a href="https://developers.google.com/web/progressive-web-apps/">Progressive Web Apps</a></p>
 
-<p>PWA are incredibly powerful and provide functionalities like Offline first, Push notifications, Background sync, GPU Rendering, 60fps scrolls and Add to home screen for a native app like experience.</p>
+<p>PWAs are incredibly powerful and provide functionalities like offline first,
+push notifications, background sync, GPU rendering, 60FPS scrolling and add
+to home screen for a native-like app experience.</p>
 
-<p>PWA are purely based on <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers">Service Workers</a> and their ability to work independently in the background without interfering your web app&#39;s life cycle.</p>
+<p>PWAs are based on <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers">Service Workers</a>, which work independently in the background
+without interfering with your web app&#39;s life cycle.</p>
 <h2><a class="anchor" name="benefits-of-using-electrode-pwa"></a>Benefits of using Electrode PWA <a class="hash-link" href="#benefits-of-using-electrode-pwa">#</a></h2><h3><a class="anchor" name="low-friction-of-distribution"></a>Low friction of distribution <a class="hash-link" href="#low-friction-of-distribution">#</a></h3>
-<p>If your progressive web app is online, it’s already accessible for Chrome on Android (and other mobile). Your customers won&#39;t have to download an &quot;app&quot; from the app store. 65.5% of US smartphone users don’t download any new apps each month. PWAs eliminate the need to go to the app store, search for the app, click Install, wait for the download, then open the app. Each of these steps loses 20% of the potential users.</p>
+<p>If your progressive web app is online, it&#39;s already accessible for Chrome on
+Android (and other mobile). Your customers won&#39;t have to download an &quot;app&quot; from
+the App Store. 65.5% of US smartphone users don&#39;t download any new apps each
+month. PWAs eliminate the need to go to the app store, search for the app, click
+Install, wait for the download, then open the app. Each of these steps loses 20%
+of potential users.</p>
 
-<p>From a developer&#39;s point of view, you don&#39;t need to visit the play store to publish your app! Push new changes to your web app and the service worker will take care of updating the app shell.</p>
+<p>From a developer&#39;s point of view, you don&#39;t need to rely on the Play Store to
+publish your app! Push new changes to your web app, and the service worker will
+take care of updating the app shell.</p>
 <h3><a class="anchor" name="frictionless-shopping-experience"></a>Frictionless shopping experience <a class="hash-link" href="#frictionless-shopping-experience">#</a></h3>
-<p>For example:- for an e-commerce business, PWA offers our customers a more frictionless shopping experience that allows shoppers to search, buy, and checkout quickly without downloading the native-app.<br>
-Further it also allows you to bring app-like experiences to mobile websites, including personalization and targeted offers.</p>
+<p>For example: for an e-commerce business, PWA offers our customers a more
+frictionless shopping experience that allows shoppers to search, buy, and
+checkout quickly without downloading the native app. Furthermore, it allows you
+to bring app-like experiences to mobile websites, including personalization and
+targeted offers.</p>
 <h3><a class="anchor" name="faster-mobile-experience"></a>Faster mobile experience <a class="hash-link" href="#faster-mobile-experience">#</a></h3>
-<p>Web Apps built with Electrode + PWA will be significantly faster. Also, these websites enable an offline mode, that allows customers to continue browsing in poor wireless reception areas (for example, while they are on public transit). Given the fact that, faster websites have higher conversion rates, websites built with PWA could result in increased revenue.</p>
+<p>Web Apps built with Electrode + PWA will be significantly faster. Also, these
+websites enable an offline mode, allowing customers to continue browsing in
+areas with poor wireless reception (for example, on public transit). Given the
+fact that faster websites have higher conversion rates, websites built with PWA
+could result in increased revenue.</p>
 <h3><a class="anchor" name="personalized-push-notifications"></a>Personalized push notifications <a class="hash-link" href="#personalized-push-notifications">#</a></h3>
-<p>Electrode Push notifications can be used to interact effectively with our mobile customers, as these notifications are native to the mobile device and can be personal and timely. Similar notification can be sent to desktop websites too.</p>
+<p>Electrode Push notifications can be used to interact effectively with mobile
+customers, as these notifications are native to the mobile device and can be
+personal and timely. Similar notifications can be sent to desktop websites too.</p>
 <h2><a class="anchor" name="getting-started"></a>Getting Started <a class="hash-link" href="#getting-started">#</a></h2>
-<p>In the first section, we are going to make your previously build electrode app into a PWA with content caching, push notifications and an option for the user to save your web app to their home screen.</p>
+<p>In the first section, we are going to make your previously built Electrode app
+into a PWA with content caching, push notifications, and an option for the user
+to save your web app to their home screen.</p>
 
-<p><em>If you are starting out with a new PWA, just answer &quot;Y&quot; to the following question</em></p>
+<p><em>If you are starting out with a new PWA, just answer &quot;Y&quot; to the following
+question</em></p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>yo electrode
 <span class="c"># ... answer questions ...</span>
 <span class="c"># Would you like to make a Progressive Web App? (Y/n)</span>
 <span class="c"># ... answer rest of the questions and wait for app to be generated ...</span>
 </code></pre></div>
-<p><em>follow Prerequisites and skip to <a href="service_workers.html#push-notifications">Push Notifications</a></em></p>
+<p><em>Follow Prerequisites and skip to <a href="service_workers.html#push-notifications">Push Notifications</a></em></p>
 <h3><a class="anchor" name="prerequisites"></a>Prerequisites <a class="hash-link" href="#prerequisites">#</a></h3>
 <ol>
-<li><p>We need certain API keys for push notifications.
-To generate these values, visit <a href="https://console.firebase.google.com">Firebase</a> and create a new project.<br>
-Click on the setting icons and open <code>Project settings</code>.<br>
-Navigate to the <code>CLOUD MESSAGING</code> tab and note down your <code>Server key</code> and the <code>Sender ID</code>.  </p></li>
-<li><p>Add the following icons inside the <code>client/images</code> directory<br>
-<a href="https://github.com/electrode-io/electrode/blob/d4142ee0c938cbf973a429ee8467052aa4e1c9be/samples/universal-react-node/client/images/logo-192x192.png">logo 192x192</a> and <a href="https://github.com/electrode-io/electrode/blob/d4142ee0c938cbf973a429ee8467052aa4e1c9be/samples/universal-react-node/client/images/logo-72x72.png">logo 72x72</a>.<br>
-We will be using these logos for <code>Add to Homescreen</code> banner and <code>Push Notifications</code>.</p></li>
+<li> We need certain API keys for push notifications. To generate these values,
+visit <a href="https://console.firebase.google.com">Firebase</a> and create a new project. Click on the settings icon and
+open <code>Project settings</code>. Navigate to the <code>CLOUD MESSAGING</code> tab and note down
+your <code>Server key</code> and the <code>Sender ID</code>.</li>
+<li> In the <code>client/images</code> directory, add the <a href="https://github.com/electrode-io/electrode/blob/d4142ee0c938cbf973a429ee8467052aa4e1c9be/samples/universal-react-node/client/images/logo-192x192.png">logo 192x192</a> and <a href="https://github.com/electrode-io/electrode/blob/d4142ee0c938cbf973a429ee8467052aa4e1c9be/samples/universal-react-node/client/images/logo-72x72.png">logo 72x72</a>
+icon images. We&#39;ll use these logos for the <code>Add to Homescreen</code> banner and
+push notifications.</li>
 </ol>
 <h3><a class="anchor" name="generating-a-service-worker"></a>Generating a Service Worker <a class="hash-link" href="#generating-a-service-worker">#</a></h3>
-<p>Generating a service worker in an electrode app is as simple as adding a config file. Navigate to <code>&lt;your-awesome-app&gt;/config</code> and create a new <code>sw-config.js</code>:</p>
+<p>Generating a service worker in an electrode app is as simple as adding a config
+file. Navigate to <code>&lt;your-awesome-app&gt;/config</code> and create a new <code>sw-config.js</code>:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">cache</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">cacheId</span><span class="o">:</span> <span class="s2">&quot;&lt;your-awesome-app&gt;&quot;</span><span class="p">,</span>
@@ -2118,8 +2185,8 @@ We will be using these logos for <code>Add to Homescreen</code> banner and <code
 </code></pre></div>
 <p>This will generate a <code>sw.js</code> in the <code>dist</code> folder when you build the app.</p>
 <h3><a class="anchor" name="registering-the-service-worker"></a>Registering the Service Worker <a class="hash-link" href="#registering-the-service-worker">#</a></h3>
-<p>We need to create a server plugin to access the <code>dist/sw.js</code>.
-Create the following file <code>server/plugins/pwa/index.js</code></p>
+<p>We need to create a server plugin to access <code>dist/sw.js</code>. Create a file called
+<code>server/plugins/pwa/index.js</code>, and add the following code:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
 <span class="nx">exports</span><span class="p">.</span><span class="nx">register</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">server</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">server</span><span class="p">.</span><span class="nx">route</span><span class="p">({</span>
@@ -2134,10 +2201,11 @@ Create the following file <code>server/plugins/pwa/index.js</code></p>
   <span class="nx">version</span><span class="o">:</span> <span class="s2">&quot;0.0.1&quot;</span>
 <span class="p">};</span>
 </code></pre></div>
-<p>And add the following to <code>plugins</code> inside <code>config/default.json</code></p>
+<p>Also, add the following to <code>plugins</code> inside <code>config/default.json</code>:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s2">&quot;pwa&quot;</span><span class="o">:</span> <span class="p">{</span> <span class="s2">&quot;module&quot;</span><span class="o">:</span> <span class="s2">&quot;./server/plugins/pwa&quot;</span> <span class="p">}</span>
 </code></pre></div>
-<p>To register the service worker on the browser, create a new file <code>sw-registration.js</code> inside the <code>client</code> directory:</p>
+<p>To register the service worker on the browser, create a file called
+<code>sw-registration.js</code> inside the <code>client</code> directory and add the following code:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="c1">// Exit early if the navigator isn&#39;t available</span>
   <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">navigator</span> <span class="o">===</span> <span class="s2">&quot;undefined&quot;</span><span class="p">)</span> <span class="p">{</span>
@@ -2192,33 +2260,52 @@ Create the following file <code>server/plugins/pwa/index.js</code></p>
   <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
-<p>And import it in <code>client/app.jsx</code></p>
+<p>Import it in <code>client/app.jsx</code>:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">require</span><span class="p">.</span><span class="nx">ensure</span><span class="p">([</span><span class="s2">&quot;./sw-registration&quot;</span><span class="p">],</span> <span class="p">(</span><span class="nx">require</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./sw-registration&quot;</span><span class="p">)();</span>
 <span class="p">},</span> <span class="s2">&quot;sw-registration&quot;</span><span class="p">);</span>
 </code></pre></div>
-<p>We achieved couple of things here:</p>
+<p>We achieved a couple of things here:</p>
 
-<p>1 - <code>Offline First</code> with the cache property</p>
+<ol>
+<li><p>&quot;Offline First&quot; with the cache property.</p>
 
-<p>Precache your static assets generated by webpack using the staticFileGlobs property. Or use the runtimeCaching property to cache specific react routes in from your routes.jsx</p>
+<p>Precache your static assets generated by webpack using the staticFileGlobs
+property. Or, use the runtimeCaching property to cache specific react routes
+in <code>routes.jsx</code>.</p></li>
+<li><p>&quot;Add to Home&quot; with the manifest property.</p>
 
-<p>2 - <code>Add to Home</code> with the manifest property</p>
-
-<p>After visiting your website, users will get a prompt (if the user has visited your site at least twice, with at least five minutes between visits.) to add your application to their homescreen. <code>manifest</code> gives you control over how your web app is installed on user&#39;s home screen with <code>short_name</code>, <code>title</code> and <code>logo</code> properties.</p>
+<p>After visiting your website, users will get a prompt (if the user has
+visited your site at least twice, with at least five minutes between
+visits) to add your application to their homescreen. <code>manifest</code> gives you
+control over how your web app is installed on user&#39;s home screen with
+<code>short_name</code>, <code>title</code> and <code>logo</code> properties.</p></li>
+</ol>
 
 <p>Build your app and start the server with</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gulp pwa
-</code></pre></div><h5><a class="anchor" name="note-service-worker-currently-does-not-work-with-webpack-dev-server.-you-need-to-build-first-and-then-run-the-server."></a>Note: Service worker currently does not work with webpack dev server. You need to build first and then run the server. <a class="hash-link" href="#note-service-worker-currently-does-not-work-with-webpack-dev-server.-you-need-to-build-first-and-then-run-the-server.">#</a></h5>
-<p>Navigate to <code>http://localhost:3000</code>, open <code>Developer tools</code> and click on the <code>Application</code> tab. You should see your <code>Service Worker</code> activated and running!</p>
+</code></pre></div>
+<p><strong>Note: Service worker currently does not work with webpack-dev-server. You
+need to build first and then run the server.</strong></p>
+
+<p>Navigate to <code>http://localhost:3000</code>, open <code>Developer tools</code>, and click on the
+<code>Application</code> tab. You should see your <code>Service Worker</code> activated and running!</p>
 
 <p><img src="https://cloud.githubusercontent.com/assets/4782871/20909807/b322e462-bb12-11e6-97af-797c808e11d9.png" alt="screenshot"></p>
 
-<p>Go ahead and click on the <code>Offline</code> checkbox in the Developer tools. Terminate your server. Refresh your web page.</p>
-<h4><a class="anchor" name="note-add-to-homescreen-banner-will-pop-up-only-on-android-devices-with-chrome-42.-to-simulate-the-banner-on-your-desktop-chrome-navigate-to-developer-tools--gt-applications--gt-manifest-and-click-on-add-to-homescreen."></a>NOTE: <code>Add to Homescreen</code> banner will pop up only on Android devices with Chrome 42+. To simulate the banner on your desktop Chrome, navigate to <code>Developer tools</code> -&gt; <code>Applications</code> -&gt; <code>Manifest</code> and click on <code>Add to homescreen</code>. <a class="hash-link" href="#note-add-to-homescreen-banner-will-pop-up-only-on-android-devices-with-chrome-42.-to-simulate-the-banner-on-your-desktop-chrome-navigate-to-developer-tools--gt-applications--gt-manifest-and-click-on-add-to-homescreen.">#</a></h4><h3><a class="anchor" name="push-notifications"></a>Push notifications <a class="hash-link" href="#push-notifications">#</a></h3>
-<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API">Push API</a> requires a registered service worker so it can send notifications in the background when the web application isn&#39;t running.<br>
-We already have our Service Worker generated with the help of <code>sw-config.js</code>. We only need to add a <code>Push</code> event to it.<br>
-Create a new file <code>sw-events.js</code> inside the <code>client</code> directory and add the following to it:</p>
+<p>Go ahead and click on the <code>Offline</code> checkbox in the Developer tools. Terminate
+your server. Refresh your web page.</p>
+
+<p><strong>NOTE: The <code>Add to Homescreen</code> banner will pop up only on Android devices with
+Chrome 42+. To simulate the banner on your desktop Chrome, navigate to
+<code>Developer tools</code> -&gt; <code>Applications</code> -&gt; <code>Manifest</code> and click on <code>Add to
+homescreen</code>.</strong></p>
+<h3><a class="anchor" name="push-notifications"></a>Push notifications <a class="hash-link" href="#push-notifications">#</a></h3>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API">Push API</a> requires a registered service worker so it can send notifications
+in the background when the web application isn&#39;t running. We already have our
+Service Worker generated with the help of <code>sw-config.js</code>. We only need to add a
+<code>Push</code> event to it. Create a new file <code>sw-events.js</code> inside the <code>client</code>
+directory and add the following to it:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/* eslint-env serviceworker */</span>
 
 <span class="kr">import</span> <span class="nx">icon</span> <span class="nx">from</span> <span class="s2">&quot;./images/logo-192x192.png&quot;</span><span class="p">;</span>
@@ -2237,17 +2324,21 @@ Create a new file <code>sw-events.js</code> inside the <code>client</code> direc
   <span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div>
-<p>Check out the <a href="https://developers.google.com/web/fundamentals/getting-started/codelabs/push-notifications/">Adding Push Notifications to a Web App</a> Codelab provided by Google for an in-depth guide on how push notifications and service workers work together.</p>
+<p>Check out the <a href="https://developers.google.com/web/fundamentals/getting-started/codelabs/push-notifications/">Adding Push Notifications to a Web App</a> Codelab provided by
+Google for an in-depth guide on how push notifications and service workers work
+together.</p>
 
-<p>Now we need to add this file to our webpack bundle by referencing it in the <code>cache property</code> of <code>sw-config.js</code>:</p>
+<p>Now we need to add this file to our Webpack bundle by referencing it in the
+<code>cache property</code> of <code>sw-config.js</code>:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">cache</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">importScripts</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;./sw-events.js&#39;</span><span class="p">]</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Now we have a registered service worker installed, activated and ready to accept <code>push</code> from the server.<br>
-But before we can <code>push</code> we need to <code>request permissions</code> from the user and <code>subscribe</code> them to the notifications.</p>
+<p>Now we have a registered service worker installed, activated and ready to accept
+<code>push</code> from the server. But before we can <code>push</code> we need to <code>request
+permissions</code> from the user and <code>subscribe</code> them to the notifications.</p>
 
 <p>Navigate to <code>client/components/home.jsx</code> and replace it with:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/* eslint-disable react/no-did-mount-set-state */</span>
@@ -2439,11 +2530,17 @@ But before we can <code>push</code> we need to <code>request permissions</code> 
 
 <span class="kr">export</span> <span class="k">default</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">mapStateToProps</span><span class="p">,</span> <span class="nx">mapDispatchToProps</span><span class="p">)(</span><span class="nx">Home</span><span class="p">);</span>
 </code></pre></div>
-<p>Make sure you update the <code>API_KEY</code> with the one you previously generated in <a href="#prerequisites">Prerequisites</a>.</p>
+<p>Make sure you update the <code>API_KEY</code> with the one you previously generated in
+<a href="#prerequisites">Prerequisites</a>.</p>
 
-<p><code>navigator.serviceWorker.ready</code> is a Promise that will resolve once a service worker is registered, and it returns a reference to the active <a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration">ServiceWorkerRegistration</a>. The showNotification() method of the ServiceWorkerRegistration interface creates a notification and returns a Promise that resolves to a <a href="https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent">NotificationEvent</a>.</p>
+<p><code>navigator.serviceWorker.ready</code> is a promise that will resolve once a service
+worker is registered, and it returns a reference to the active
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration">ServiceWorkerRegistration</a>. The showNotification() method of the
+ServiceWorkerRegistration interface creates a notification and returns a Promise
+that resolves to a <a href="https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent">NotificationEvent</a>.</p>
 
-<p>We also need to update <code>sw-config.js</code> with the <code>sender_id</code>, so the final <code>sw-config.js</code> should look like:</p>
+<p>We also need to update <code>sw-config.js</code> with the <code>sender_id</code>, so the final
+<code>sw-config.js</code> should look like:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">cache</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">cacheId</span><span class="o">:</span> <span class="s2">&quot;electrode&quot;</span><span class="p">,</span>
@@ -2468,7 +2565,10 @@ But before we can <code>push</code> we need to <code>request permissions</code> 
 </code></pre></div>
 <p>With all the code in place, we are ready to see push notifications in action.</p>
 
-<p>Navigate to <code>http://localhost:3000</code>. Accept the permission for subscribing and you will see a curl command rendered on the page. You can either run the curl command from terminal to see the push notification or fill out the form and click on the <code>Send</code> button to trigger it!</p>
+<p>Navigate to <code>http://localhost:3000</code>. Accept the permission for subscribing and
+you will see a curl command rendered on the page. You can either run the curl
+command from terminal to see the push notification or fill out the form and
+click on the <code>Send</code> button to trigger it!</p>
 
 <p>For more Electrode PWA code examples checkout <a href="https://github.com/electrode-samples/electrode-pwa-examples/tree/master/examples">electrode-pwa-examples</a> repo.</p>
 
@@ -2487,6 +2587,8 @@ But before we can <code>push</code> we need to <code>request permissions</code> 
     <a class="docs-prev" href="/docs/build_with_material_ui.html">&larr; Prev</a>
   
   
+    <a class="docs-next" href="/docs/ss_data_hydration.html">Next &rarr;</a>
+  
 </div>
 
 
@@ -2499,7 +2601,7 @@ But before we can <code>push</code> we need to <code>request permissions</code> 
         <a href="https://github.com/orgs/electrode-io/people" target="_blank">Acknowledgements</a>
       </div>
       <div class="right">
-        &copy; 2016 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
+        &copy; 2017 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
         Apache-2.0 license.
       </div>
     </footer>

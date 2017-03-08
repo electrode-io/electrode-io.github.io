@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Component Helpers | Electrode</title>
+  <title>Server Side Data Hydration | Electrode</title>
   <meta name="viewport" content="width=device-width">
-  <meta property="og:title" content="Component Helpers | Electrode">
+  <meta property="og:title" content="Server Side Data Hydration | Electrode">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://electrode-io.github.io//docs/component_helpers.html">
+  <meta property="og:url" content="https://electrode-io.github.io//docs/ss_data_hydration.html">
   <meta property="og:image" content="https://electrode-io.github.io/img/logo_og.png">
   <meta property="og:description" content="Universal React and Node Applications simplified, performant, and reusable.">
   <meta property="fb:app_id" content="623268441017527">
@@ -670,7 +670,7 @@
       <ul><li>
     
 
-    <a href="/docs/component_helpers.html" class="active"> &nbsp; Component Helpers</a>
+    <a href="/docs/component_helpers.html"> &nbsp; Component Helpers</a>
 
     
       </li></ul>
@@ -899,7 +899,7 @@
     <li>
     
 
-    <a href="/docs/ss_data_hydration.html"> &nbsp; Server Side Data Hydration</a>
+    <a href="/docs/ss_data_hydration.html" class="active"> &nbsp; Server Side Data Hydration</a>
 
     
     </li>
@@ -2097,80 +2097,56 @@
 
 
   <div class="inner-content">
-    <a class="edit-page-link" href="https://github.com/electrode-io/electrode-io.github.io/tree/develop/_docs/03.1.2-component_helpers.markdown" target="_blank">Edit on GitHub</a>
+    <a class="edit-page-link" href="https://github.com/electrode-io/electrode-io.github.io/tree/develop/_docs/03.8-server_side_data_hydration.markdown" target="_blank">Edit on GitHub</a>
     <h1>
-      Component Helpers
+      Server Side Data Hydration
     </h1>
     <div class="subHeader"></div>
 
-    <h4><a class="anchor" name="develop-helpers-for-the-components"></a>Develop helpers for the components <a class="hash-link" href="#develop-helpers-for-the-components">#</a></h4>
-<p>Sometimes it makes sense to do the heavy lifting of your application in one or
-more separate modules that are imported. For example, let&#39;s make a helper module
-to handle different types of graphs. Remember that this helper was imported into
-the app in the last section via:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">style</span> <span class="nx">from</span> <span class="s2">&quot;../helpers/graph-styles&quot;</span><span class="p">;</span>
+    <p>Server side rendering consists of two steps: creating the initial redux store data and calling <code>ReactDOM.renderToString</code> with that data.
+Server side data hydration refers the redux initial store data that was used for <code>ReactDom.renderToString</code> being passed to the browser so react can use the same data to bootstrap rendering on the client side. This helps the client side avoid making additional calls to the server to retrieve data for rendering.</p>
+<h3><a class="anchor" name="server-side-rendering-modes"></a>Server Side Rendering modes <a class="hash-link" href="#server-side-rendering-modes">#</a></h3>
+<p>Although Electrode provides server side rendering by default, it provides modes where it can be turned off by passing an argument as a part of the URI.</p>
+<h4><a class="anchor" name="1.-no-server-side-renderingnoss"></a>1. No Server Side Rendering(noss): <a class="hash-link" href="#1.-no-server-side-renderingnoss">#</a></h4>
+<p>This mode completely disables any rendering of html and server side data hydration. A typical use of this mode would be when the server load is high.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">https://localhost:3000?__mode=noss
+</code></pre></div><h4><a class="anchor" name="2.-server-side-data-only-datass"></a>2. Server Side Data Only (datass): <a class="hash-link" href="#2.-server-side-data-only-datass">#</a></h4>
+<p>This mode provides server side data hydration only but does not provide any server rendered content. The benefit here would be that we are able to cut down on using server resources but are also able to provide data to the client.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">https://localhost:3000?__mode=datass
+</code></pre></div><h3><a class="anchor" name="testing"></a>Testing <a class="hash-link" href="#testing">#</a></h3>
+<p>To verify that the mode is working correctly and server side rendering is turned off, once you open the app in your browser, view page source and check if the div <code>(.js-content)</code> is empty.
+If you used the <code>datass</code> mode, then you should still be able to see the initialized redux store.</p>
+<h3><a class="anchor" name="auto-server-side-data-hydration"></a>Auto Server Side Data Hydration <a class="hash-link" href="#auto-server-side-data-hydration">#</a></h3>
+<p>As much as Electrode believes in the benefits of server side rendering, it is also aware of its side effects. Electrode is constantly monitoring the performance of your app and will turn of server side rendering if app performance is degrading.
+The following files in your server are responsible for this optimization and can be customized based on the needs of your application:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">server/conditions/
+├── machine-info.js
+├── machine-load.js
+├── response-time.js
+└── server-load.js
 </code></pre></div>
-<p>In <code>src</code>, create a folder named <code>helpers</code> with a file named <code>graph-styles.js</code>
-inside (<code>&lt;your-awesome-component&gt;/src/helpers/graph-styles.js</code>). Copy the code
-from below into this file:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">PARENT</span> <span class="o">=</span> <span class="p">{</span><span class="nx">divisor</span><span class="o">:</span> <span class="mi">2</span><span class="p">};</span>
-<span class="kr">const</span> <span class="nx">CHILD</span> <span class="o">=</span> <span class="p">{</span><span class="nx">divisor</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">rotateBack</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">};</span>
-<span class="kr">const</span> <span class="nx">SINGLE</span> <span class="o">=</span> <span class="p">{</span><span class="nx">marginDivisor</span><span class="o">:</span> <span class="mi">8</span><span class="p">};</span>
-<span class="kr">const</span> <span class="nx">CONTAINER</span> <span class="o">=</span> <span class="p">{</span><span class="nx">paddingDivisor</span><span class="o">:</span> <span class="p">.</span><span class="mi">13</span><span class="p">,</span> <span class="nx">marginDivisor</span><span class="o">:</span> <span class="p">.</span><span class="mi">13</span><span class="p">};</span>
-
-<span class="kr">export</span> <span class="k">default</span> <span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">rotateVal</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-
-  <span class="kr">const</span> <span class="nx">nodeSize</span> <span class="o">=</span> <span class="nx">type</span> <span class="o">===</span> <span class="s2">&quot;child&quot;</span> <span class="o">?</span> <span class="p">(</span><span class="nx">size</span> <span class="o">/</span> <span class="nx">CHILD</span><span class="p">.</span><span class="nx">divisor</span><span class="p">)</span> <span class="o">:</span> <span class="p">(</span><span class="nx">size</span> <span class="o">/</span> <span class="nx">PARENT</span><span class="p">.</span><span class="nx">divisor</span><span class="p">);</span>
-
-  <span class="kr">const</span> <span class="nx">parentOrSingle</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">width</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">nodeSize</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
-    <span class="nx">height</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">nodeSize</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
-    <span class="nx">margin</span><span class="o">:</span> <span class="err">`</span><span class="o">-</span><span class="nx">$</span><span class="p">{</span><span class="nx">nodeSize</span> <span class="o">/</span> <span class="nx">PARENT</span><span class="p">.</span><span class="nx">divisor</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
-    <span class="nx">display</span><span class="o">:</span> <span class="err">`</span><span class="nx">block</span><span class="err">`</span><span class="p">,</span>
-    <span class="nx">position</span><span class="o">:</span> <span class="err">`</span><span class="nx">absolute</span><span class="err">`</span><span class="p">,</span>
-    <span class="nx">top</span><span class="o">:</span> <span class="err">`</span><span class="mi">50</span><span class="o">%</span><span class="err">`</span><span class="p">,</span>
-    <span class="nx">left</span><span class="o">:</span> <span class="err">`</span><span class="mi">50</span><span class="o">%</span><span class="err">`</span><span class="p">,</span>
-    <span class="nx">transform</span><span class="o">:</span> <span class="err">`</span><span class="nx">translate</span><span class="p">(</span><span class="mi">0</span><span class="nx">em</span><span class="p">)</span><span class="err">`</span>
-  <span class="p">};</span>
-
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
-
-  <span class="k">case</span> <span class="s2">&quot;single&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">singleNode</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">display</span><span class="o">:</span> <span class="err">`</span><span class="nx">inline</span><span class="o">-</span><span class="nx">block</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">position</span><span class="o">:</span> <span class="err">`</span><span class="nx">relative</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">margin</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">nodeSize</span> <span class="o">/</span> <span class="nx">SINGLE</span><span class="p">.</span><span class="nx">marginDivisor</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span>
-    <span class="p">};</span>
-    <span class="p">[</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="s2">&quot;height&quot;</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">prop</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">singleNode</span><span class="p">[</span><span class="nx">prop</span><span class="p">]</span> <span class="o">=</span> <span class="nx">parentOrSingle</span><span class="p">[</span><span class="nx">prop</span><span class="p">]);</span>
-    <span class="k">return</span> <span class="nx">singleNode</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="k">case</span> <span class="s2">&quot;child&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">childNode</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">transform</span><span class="o">:</span> <span class="err">`</span><span class="nx">rotate</span><span class="p">(</span><span class="nx">$</span><span class="p">{</span><span class="nx">rotateVal</span> <span class="o">*</span> <span class="mi">1</span><span class="p">}</span><span class="nx">deg</span><span class="p">)</span> <span class="nx">translate</span><span class="p">(</span><span class="nx">$</span><span class="p">{</span><span class="nx">nodeSize</span> <span class="o">*</span> <span class="nx">PARENT</span><span class="p">.</span><span class="nx">divisor</span><span class="p">}</span><span class="nx">em</span><span class="p">)</span> <span class="nx">rotate</span><span class="p">(</span><span class="nx">$</span><span class="p">{</span><span class="nx">rotateVal</span> <span class="o">*</span> <span class="nx">CHILD</span><span class="p">.</span><span class="nx">rotateBack</span><span class="p">}</span><span class="nx">deg</span><span class="p">)</span><span class="err">`</span><span class="p">,</span> <span class="c1">// eslint-disable-line max-len</span>
-      <span class="nx">backgroundSize</span><span class="o">:</span> <span class="err">`</span><span class="mi">100</span><span class="o">%</span><span class="err">`</span>
-    <span class="p">};</span>
-    <span class="k">return</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">parentOrSingle</span><span class="p">,</span> <span class="nx">childNode</span><span class="p">);</span>
-  <span class="p">}</span>
-
-  <span class="k">case</span> <span class="s2">&quot;container&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="nx">position</span><span class="o">:</span> <span class="err">`</span><span class="nx">relative</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">width</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">size</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">height</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">size</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">padding</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">size</span> <span class="o">*</span> <span class="nx">CONTAINER</span><span class="p">.</span><span class="nx">paddingDivisor</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">borderRadius</span><span class="o">:</span> <span class="err">`</span><span class="mi">50</span><span class="o">%</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">display</span><span class="o">:</span> <span class="err">`</span><span class="nx">inline</span><span class="o">-</span><span class="nx">block</span><span class="err">`</span><span class="p">,</span>
-      <span class="nx">margin</span><span class="o">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">size</span> <span class="o">*</span> <span class="nx">CONTAINER</span><span class="p">.</span><span class="nx">marginDivisor</span><span class="p">}</span><span class="nx">em</span><span class="err">`</span>
-    <span class="p">};</span>
-  <span class="p">}</span>
-
-  <span class="k">default</span><span class="o">:</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">parentOrSingle</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">};</span>
+<p>As indicated by the file names, we are monitoring the machine load, the server load and the response times of the app. In each file, we define default thresholds that we feel indicate a high load or long enough response time to make a decision that the server is overworked and server side rendering should now be disabled.</p>
+<h4><a class="anchor" name="machine-load.js"></a>machine-load.js <a class="hash-link" href="#machine-load.js">#</a></h4>
+<p>We define two thresholds: <code>DEFAULT_LOAD_THRESHOLD = 4</code> and the <code>DEFAULT_MEM_THRESHOLD = 0.8</code>.
+Electrode looks at the load averages for the last one minute and five minutes, the memory usage of the server and disables server side rendering if they are higher than the threshold. These default thresholds can be modified as per your needs or can be overridden if passed in the requests.
+More information on load averages and how a threshold can be calculated can be found <a target="_blank" href ="http://blog.scoutapp.com/articles/2009/07/31/understanding-load-averages">here</a>.</p>
+<h4><a class="anchor" name="response-time.js"></a>response-time.js <a class="hash-link" href="#response-time.js">#</a></h4>
+<p>The important default thresholds for measuring response time are:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">DEFAULT_LONG_RESPONSE_THRESHOLD_MS = 5000;
+DEFAULT_LONG_RESPONSE_AMOUNT = 6;
+DEFAULT_DISABLE_EXPIRY_MINS = 2;
 </code></pre></div>
+<p>The response time is monitored per request. A response that takes over 5seconds is considered a long response. The app then notes this and checks to see if we have hit the <code>DEFAULT_LONG_RESPONSE_AMOUNT</code>.
+If we have, then server side rendering is disabled for <code>DEFAULT_DISABLE_EXPIRY_MINS</code> minutes.
+Once the expiry time is reached, we check to see if we are no longer getting long responses and then enable server side rendering again.</p>
+<h4><a class="anchor" name="server-load.js"></a>server-load.js <a class="hash-link" href="#server-load.js">#</a></h4>
+<p>We are simply measuring the event loop delay here compare it against the threshold <code>DEFAULT_EVENTLOOP_DELAY_MS = 40</code>. If found to be higher we disable server side rendering.
+<a href="http://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html">Here</a> is a good talk on learning about event loops.</p>
+
+<blockquote>
+<p>NOTE: While generating an Electrode app using the Electrode generator via the <code>yo electrode</code> command, you will need to answer &quot;Yes&quot; to <code>Disable server side rendering based on high load?</code> in order to enable the above functionality.</p>
+</blockquote>
+
 
     
 
@@ -2183,10 +2159,8 @@ from below into this file:</p>
 
 <div class="docs-prevnext">
   
-    <a class="docs-prev" href="/docs/low_level_components.html">&larr; Prev</a>
+    <a class="docs-prev" href="/docs/service_workers.html">&larr; Prev</a>
   
-  
-    <a class="docs-next" href="/docs/develop_styles.html">Next &rarr;</a>
   
 </div>
 

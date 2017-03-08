@@ -309,6 +309,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -401,6 +406,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -886,6 +896,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/ss_data_hydration.html"> &nbsp; Server Side Data Hydration</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -974,6 +997,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -1497,6 +1525,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1543,6 +1576,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1981,6 +2019,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -2061,18 +2104,29 @@
     <div class="subHeader"></div>
 
     <h4><a class="anchor" name="be-hapi-and-build-a-server-plugin"></a>Be Hapi and Build a server plugin <a class="hash-link" href="#be-hapi-and-build-a-server-plugin">#</a></h4>
-<p>At WalmartLabs, we use <a href="http://hapijs.com/">Hapi</a> because of its flexible and robust plugin system. It allows us to modularize our application into isolated pieces of business logic and reusable utilities.</p>
+<p>At WalmartLabs, we use <a href="http://hapijs.com/">Hapi</a> because of its flexible and robust plugin system.
+It allows us to modularize our application into isolated pieces of business
+logic and reusable utilities.</p>
 
-<p>Let&#39;s make a deal! Actually, scratch that, let&#39;s make a plugin! Plugins are way to extend our server&#39;s functionality. Building upon our open source theme, let&#39;s make a plugin that retrieves our Tech Friends for our &quot;resource party.&quot; <strong>Let&#39;s head back to Your Awesome App.</strong></p>
+<p>Let&#39;s make a plugin! Plugins are way to extend our server&#39;s functionality.
+Building upon our open source theme, let&#39;s make a plugin that retrieves our tech
+friends for our &quot;resource party.&quot; First, head back to Your Awesome App.</p>
 
-<p>We are going to use the <a href="https://developer.github.com/v3/">GitHub Api</a> to grab the latest 10 contributors of our Open Source friends and display them in Your Awesome App.</p>
+<p>We&#39;ll use the <a href="https://developer.github.com/v3/">GitHub API</a> to grab the latest 10 contributors of our open source
+friends, and display them in Your Awesome App.</p>
 
-<p>The GitHub <a href="https://developer.github.com/v3/">site</a> has great documentation and awesome libraries to help jumpstart our plugin. Let&#39;s begin there by installing a Node.js wrapper for the GitHub Api called <a href="https://github.com/mikedeboer/node-github">node-github</a> in Your Awesome App:</p>
+<p>GitHub has <a href="https://developer.github.com/v3/">great documentation</a> and awesome libraries to help jumpstart our
+plugin. Let&#39;s begin there by installing a Node.js wrapper for the GitHub Api
+called <a href="https://github.com/mikedeboer/node-github">node-github</a> in Your Awesome App:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install github
 </code></pre></div>
-<p>At their core, plugins are a simple <code>register object</code> that has the signature <code>function (server, options, next)</code>. Read more about building plugins from scratch in the <a href="http://hapijs.com/tutorials/plugins">Hapi documentation</a>.</p>
+<p>At their core, plugins are a simple <code>register object</code> that has the signature
+<code>function (server, options, next)</code>. Read more about building plugins from
+scratch in the <a href="http://hapijs.com/tutorials/plugins">Hapi documentation</a>.</p>
 
-<p>Navigate to the <code>&lt;your-awesome-app&gt;/server/plugins</code> folder. Make a folder called <code>friends</code>, <code>cd</code> into your new <code>friends</code> folder, and create an empty <code>index.js</code> file:</p>
+<p>Navigate to the <code>&lt;your-awesome-app&gt;/src/server/plugins</code> folder. Make a folder
+called <code>friends</code>, <code>cd</code> into your new <code>friends</code> folder, and create an empty
+<code>index.js</code> file:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>touch index.js
 </code></pre></div>
 <p>Your Server file pattern should now look like this:</p>
@@ -2087,7 +2141,15 @@
     └── views
         └── index-view.jsx
 </code></pre></div>
-<p>Navigate to <code>&lt;your-awesome-app&gt;/server/plugins/friends/index.js</code>. This is where we will make an external API call to Github and request the last ten contributors of our selected Open Source &#39;friend&#39; using a URL <code>https://api.github.com/ + /repos/:user/:repo/contributors</code>. Our GitHub wrapper <a href="https://github.com/mikedeboer/node-github">library</a> will allow us to use a built in method, <code>github.repos.getContributors({})</code>, to streamline this process and return an array of Open Source contributors. We will also use <a href="http://bluebirdjs.com/docs/getting-started.html">Bluebird</a>, a Promise library that makes working with our async API calls much more manageable. Copy, paste and save the code below:</p>
+<p>Navigate to <code>&lt;your-awesome-app&gt;/src/server/plugins/friends/index.js</code>. This is where
+we will make an external API call to Github and request the last ten
+contributors of our selected Open Source &#39;friend&#39; using a URL
+<code>https://api.github.com/ + /repos/:user/:repo/contributors</code>. Our GitHub wrapper
+<a href="https://github.com/mikedeboer/node-github">library</a> will allow us to use a built in method,
+<code>github.repos.getContributors({})</code>, to streamline this process and return an
+array of Open Source contributors. We will also use <a href="http://bluebirdjs.com/docs/getting-started.html">Bluebird</a>, a Promise
+library that makes working with our async API calls much more manageable. Copy,
+paste and save the code below:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
 
 <span class="c1">//a very simple plugin</span>
@@ -2123,7 +2185,7 @@
     <span class="p">};</span>
     <span class="k">return</span> <span class="nx">githubGetContributors</span><span class="p">(</span><span class="nx">githubInfo</span><span class="p">)</span>
       <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">friend</span><span class="p">.</span><span class="nx">friends</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">map</span><span class="p">(({</span> <span class="nx">login</span><span class="p">,</span> <span class="nx">avatar_url</span><span class="p">,</span> <span class="nx">html_url</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+        <span class="nx">friend</span><span class="p">.</span><span class="nx">friends</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(({</span> <span class="nx">login</span><span class="p">,</span> <span class="nx">avatar_url</span><span class="p">,</span> <span class="nx">html_url</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
           <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="nx">login</span><span class="p">,</span> <span class="nx">img</span><span class="o">:</span> <span class="nx">avatar_url</span><span class="p">,</span> <span class="nx">profile</span><span class="o">:</span> <span class="nx">html_url</span><span class="p">}</span>
         <span class="p">));</span>
         <span class="k">return</span> <span class="nx">friend</span><span class="p">;</span>
@@ -2150,12 +2212,20 @@
   <span class="nx">version</span><span class="o">:</span> <span class="s2">&quot;1.0.0&quot;</span>
 <span class="p">};</span>
 </code></pre></div>
-<p>If you are like us, and you plan on building out Your Awesome App even further, you will need to <a href="https://github.com/settings/tokens/new">generate a GitHup Api oAuth token</a> to remove the preset limit for API requests. We have already added the code to accept and use the token in our Hapi server plugin above <code>const AUTH_TOKEN = process.env.token</code>.</p>
+<p>If you plan on building out Your Awesome App even further, you&#39;ll need to
+[generate a GitHub Api oAuth token] to remove the preset limit for API requests.
+We have already added the code to accept and use the token in our Hapi server
+plugin above <code>const AUTH_TOKEN = process.env.token</code>.</p>
 
-<p>Click <a href="https://github.com/settings/tokens/new">here</a> to set a new personal access token (you may be prompted to login to your GitHub account if you have not already). Create your own <code>token description</code> in the form given and for <code>Select scopes</code> simply check: <code>public repo</code>. Then hit the green <code>Generate token</code> button.</p>
+<p>Set a new <a href="you%20may%20be%20prompted%20to%20login%20to%20your%20GitHub%0Aaccount%20if%20you%20haven&#x27;t%20already">personal access token</a>, create your <code>token description</code> in the form
+given, and for <code>Select scopes</code> simply check <code>public repo</code>. Then hit the green
+<code>Generate token</code> button.</p>
 
-<p>You will be redirected to the next page where your new token is. Keep your token private and secure; do not copy and paste it directly into your app. Instead, we will set your token as a Node <a href="https://nodejs.org/api/process.html#process_process_env">environment variable</a>.
-Copy and save this token in a secure place; we will use it several times. Use this token in your command line as follows:</p>
+<p>You will be redirected to the next page to retrieve your token. Keep your token
+private and secure; do not copy and paste it directly into your app. Instead, we
+will set your token as a Node <a href="https://nodejs.org/api/process.html#process_process_env">environment variable</a>. Copy and save this token
+in a secure place; we will use it several times. Use this token in your command
+line as follows:</p>
 
 <p>Set the token locally:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ token</span><span class="o">=</span><span class="s1">&#39;your-token-here&#39;</span>
@@ -2163,7 +2233,11 @@ Copy and save this token in a secure place; we will use it several times. Use th
 <p>Set your token for heroku deployment:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">heroku config:set <span class="nv">token</span><span class="o">=</span><span class="s1">&#39;your-token-here&#39;</span>
 </code></pre></div>
-<p>A great tool for testing your server requests (its user interface for view response objects and errors is incredible) is <a href="https://www.getpostman.com/">Postman</a>. For now, you will have to trust as we build out Your Awesome App. Navigate to <a href="add_routes.html">Intermediate: Add Routes</a>, to add routing to the app and also extend our UI to display our contributor array.</p>
+<p>A great tool for testing your server requests is <a href="https://www.getpostman.com/">Postman</a>. Its user interface
+for viewing response objects and errors is incredible. For now, you will have
+to trust us as we build out Your Awesome App. Navigate to <a href="add_routes.html">Intermediate: Add
+Routes</a>, to add routing to the app and extend our UI to display our
+contributor array.</p>
 
 
     
@@ -2194,7 +2268,7 @@ Copy and save this token in a secure place; we will use it several times. Use th
         <a href="https://github.com/orgs/electrode-io/people" target="_blank">Acknowledgements</a>
       </div>
       <div class="right">
-        &copy; 2016 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
+        &copy; 2017 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
         Apache-2.0 license.
       </div>
     </footer>

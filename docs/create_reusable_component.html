@@ -309,6 +309,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -401,6 +406,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -886,6 +896,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/ss_data_hydration.html"> &nbsp; Server Side Data Hydration</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -974,6 +997,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -1497,6 +1525,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1543,6 +1576,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1981,6 +2019,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -2060,61 +2103,85 @@
     </h1>
     <div class="subHeader"></div>
 
-    <p>First things first. Let&#39;s make our thing...a Thing!</p>
+    <p>First things first: let&#39;s make our thing…a Thing!</p>
 
-<p>In this guide, we’ll take some of the basics we explored in our <a href="get_started.html">Quick Start</a> and go further. We will make our resource list a dynamic list that is styled, tested, published and capable of being deployed with other deployment software like Docker and Kubernetes.</p>
+<p>In this guide, we’ll take some of the basics we explored in our <a href="get_started.html">Quick Start</a>
+and go further. We will make our resource list a dynamic list that is styled,
+tested, published and capable of being deployed with other deployment software
+like Docker and Kubernetes.</p>
 
-<p>Building this application with React components will allow for greater modularity, which will enable reuse of code in later iterations. This greatly increases workflow efficiency by allowing developers to easily divide and conquer tasks during the production process. Furthermore, better separation of concerns allows for much easier debugging in general.</p>
+<p>Building this application with React components will allow for greater
+modularity, which will enable reuse of code in later iterations. This greatly
+increases workflow efficiency by allowing developers to easily divide and
+conquer tasks during the production process. Furthermore, better separation of
+concerns allows for much easier debugging in general.</p>
 
-<p>Let&#39;s begin by using <code>cd ..</code> to exit the directory for Your-Awesome-App and create a new, separate directory for your reusable component:</p>
+<p>Let&#39;s begin by using <code>cd ..</code> to exit the directory for Your-Awesome-App and
+create a new, separate directory for your reusable component:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> ..
 <span class="nv">$ </span>mkdir your-awesome-component
 <span class="nv">$ </span><span class="nb">cd </span>your-awesome-component
 </code></pre></div>
-<p>Again, we&#39;ll use <a href="http://yeoman.io/">Yeoman</a> to scaffold our first stand alone component. We will globally install the Electrode <a href="https://github.com/electrode-io/generator-electrode-component">generator-electrode-component</a>:</p>
+<p>Again, we&#39;ll use <a href="http://yeoman.io/">Yeoman</a> to scaffold our first stand alone component. We will
+globally install the Electrode [generator-electrode-component]:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install -g generator-electrode-component
 </code></pre></div>
 <p>Then generate your new component:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>yo electrode-component
 </code></pre></div>
-<p>Fill out the Electrode <a href="https://github.com/electrode-io/generator-electrode-component">generator-electrode-component</a> with your information:</p>
+<p>Fill out the Electrode <a href="https://github.com/electrode-io/generator-electrode-component">Electrode component generator</a> with your information:</p>
 
 <p><img src="/img/component-form.png" alt="component-form"></p>
 
-<p>Open the application up with your favorite text editor. We&#39;ll start with a fast high level view of the most important files in your component:</p>
+<p>Open the application up with your favorite text editor. We&#39;ll start with a fast
+high level view of the most important files in your component:</p>
 
 <ul>
 <li><p><code>demo/</code></p>
 
-<p>A live demo of your component. You can play with its integration in real time. This folder contains the .example files which you can customize to demonstrate the default state of your components when mounted in the playground.</p></li>
+<p>A live demo of your component. You can play with its integration in real
+time. This folder contains the .example files which you can customize to
+demonstrate the default state of your components when mounted in the
+playground.</p></li>
 <li><p><code>node_modules/</code></p>
 
-<p>Other Javascript files contained in modules that we will use in this application, including Electrode modules that create your out-of-the-box Universal app.</p></li>
+<p>Other Javascript files contained in modules that we will use in this
+application, including Electrode modules that create your out-of-the-box
+Universal app.</p></li>
 <li><p><code>src/</code></p>
 
-<p>Where all our component&#39;s source code lives. Non-universal apps might normally call this the <code>client</code> folder, but since our app code will run both on the client and server, via server-side rendering, we call this folder <code>src</code>.</p></li>
+<p>Where all our component&#39;s source code lives. Non-universal apps might
+normally call this the <code>client</code> folder, but since our app code will run both
+on the client and server, via server-side rendering, we call this folder
+<code>src</code>.</p></li>
 <li><p><code>test/</code></p>
 
-<p>Test driven development is the WalmartLabs way and critical for successful growth and scaling. All testing code lives in this folder and we will focus on unit testing with Mocha + Enzyme soon.</p></li>
+<p>Test driven development is the @WalmartLabs way, and it&#39;s critical for
+successful growth and scaling. All testing code lives in this folder, and
+we&#39;ll focus on unit testing with Mocha and Enzyme soon.</p></li>
 <li><p><code>src/components/.eslintrc</code></p>
 
-<p>A configuration file that sets our custom linting rules and basic syntax validation. In this case it is extended from the <code>electrode-archetype-react-component</code>.</p></li>
+<p>A configuration file that sets our custom linting rules and basic syntax
+validation. In this case, it&#39;s extended from the React component archetype.</p></li>
 <li><p><code>gulpfile.js</code></p>
 
-<p>Gulp is a Javascript build tool that lets us automate tasks and <code>gulpfile.js</code> is where we define those tasks. We like its simple syntax and the increased productivity from using an intuitive task runner.</p></li>
+<p>Gulp is a Javascript build tool that lets us automate tasks and
+<code>gulpfile.js</code> is where we define those tasks. We like its simple syntax and
+the increased productivity from using an intuitive task runner.</p></li>
 </ul>
 
-<p>Now that we understand the basic structure of the component, let&#39;s build out the component&#39;s functionality by following the below steps:</p>
+<p>Now that we understand the basic structure of the component, let&#39;s build out the
+component&#39;s functionality by following the below steps:</p>
 
 <ol>
-<li><a href="low_level_components.html">Develop a couple of low-level components</a></li>
-<li><a href="component_helpers.html">Develop helpers for the components</a></li>
-<li><a href="develop_styles.html">Develop styles using CSS modules</a></li>
-<li><a href="high_level_component.html">Develop main high-level component</a></li>
-<li><a href="test_components.html">Develop tests for the above components</a></li>
-<li><a href="add_examples.html">Add Examples to the Demo</a></li>
-<li><a href="build_and_demo.html">Build and Demo the component</a></li>
-<li><a href="generate_docs.html">Generating documentation</a></li>
+<li> <a href="low_level_components.html">Develop a couple of low-level components</a></li>
+<li> <a href="component_helpers.html">Develop helpers for the components</a></li>
+<li> <a href="develop_styles.html">Develop styles using CSS modules</a></li>
+<li> <a href="high_level_component.html">Develop main high-level component</a></li>
+<li> <a href="test_components.html">Develop tests for the above components</a></li>
+<li> <a href="add_examples.html">Add Examples to the Demo</a></li>
+<li> <a href="build_and_demo.html">Build and Demo the component</a></li>
+<li> <a href="generate_docs.html">Generating documentation</a></li>
 </ol>
 
 <p>Trust us, it will be worth it.</p>
@@ -2146,7 +2213,7 @@
         <a href="https://github.com/orgs/electrode-io/people" target="_blank">Acknowledgements</a>
       </div>
       <div class="right">
-        &copy; 2016 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
+        &copy; 2017 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
         Apache-2.0 license.
       </div>
     </footer>

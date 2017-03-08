@@ -309,6 +309,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -401,6 +406,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -886,6 +896,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/ss_data_hydration.html"> &nbsp; Server Side Data Hydration</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -974,6 +997,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -1497,6 +1525,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1543,6 +1576,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1981,6 +2019,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -2070,7 +2113,7 @@
 <li><strong>Simple</strong> - Confippet&#39;s <code>presetConfig</code> automatically composes a single config object from multiple files. For most applications, no further customization isnecessary.</li>
 <li><strong>Flexible</strong> - Supports JSON, YAML, and JavaScript config files.</li>
 <li><strong>Powerful</strong> - Handles complex multi-instance enterprise deployments.</li>
-<li><strong>Platform Agnostic</strong> - This module is platform agnostic and can be plugged into any Node.js application, including those run on Electrode, Express.js and Hapi.js </li>
+<li><strong>Platform Agnostic</strong> - This module is platform agnostic and can be plugged into any Node.js application, including those run on Electrode, Express.js and Hapi.js</li>
 </ul>
 <h2><a class="anchor" name="module-electrode-confippet"></a>Module: <a href="https://github.com/electrode-io/electrode-confippet">electrode-confippet</a> <a class="hash-link" href="#module-electrode-confippet">#</a></h2><h3><a class="anchor" name="install-via-npm"></a>Install via <code>npm</code> <a class="hash-link" href="#install-via-npm">#</a></h3><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install --save electrode-confippet
 </code></pre></div><h3><a class="anchor" name="example-applications"></a>Example Applications <a class="hash-link" href="#example-applications">#</a></h3>
@@ -2105,41 +2148,41 @@
 |_ development.json
 |_ production.json
 </code></pre></div>
-<p>First, let&#39;s update the default settings for our database connection by adding the following setting to <code>default.json</code>: </p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">json {
-  &quot;settings&quot;: {
-    &quot;db&quot;: {
-      &quot;host&quot;: &quot;localhost&quot;,
-      &quot;port&quot;: 5432,
-      &quot;database&quot;: &quot;clients&quot;
-    }
-  }
-}
+<p>First, let&#39;s update the default settings for our database connection by adding the following setting to <code>default.json</code>:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;db&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">5432</span><span class="p">,</span>
+      <span class="nt">&quot;database&quot;</span><span class="p">:</span> <span class="s2">&quot;clients&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Then we will set up the development and production environments.</p>
 <h5><a class="anchor" name="development-environment"></a><strong><em>Development Environment</em></strong> <a class="hash-link" href="#development-environment">#</a></h5>
 <p>We want our database to be served from different hostnames depending on the environment. So let&#39;s update <code>development.json</code> to include the following settings:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">json {
-  &quot;server&quot;: {
-    &quot;connections&quot;: {
-      &quot;compression&quot;: false
-    },
-    &quot;debug&quot;: {
-      &quot;log&quot;: [&quot;error&quot;],
-      &quot;request&quot;: [&quot;error&quot;]
-    }
-  },
-  &quot;connections&quot;: {
-    &quot;default&quot;: {
-      &quot;port&quot;: 3000
-    }
-  },
-  &quot;settings&quot;: {
-   &quot;db&quot;: {
-     &quot;host&quot;: &quot;dev-db-server&quot;
-   }
- }
-}
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;server&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;connections&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;compression&quot;</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;debug&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;log&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;error&quot;</span><span class="p">],</span>
+      <span class="nt">&quot;request&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;error&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;connections&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">3000</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="nt">&quot;db&quot;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;dev-db-server&quot;</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Now, while <code>NODE_ENV=development</code> :</p>
 
@@ -2149,28 +2192,28 @@
 <li>The database is hosted from dev-db-server</li>
 </ul>
 <h5><a class="anchor" name="production-environment"></a><strong><em>Production Environment</em></strong> <a class="hash-link" href="#production-environment">#</a></h5>
-<p>Similarly, update <code>development.json</code> to include the following settings:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">json {
-  &quot;server&quot;: {
-    &quot;connections&quot;: {
-      &quot;compression&quot;: true
-    },
-    &quot;debug&quot;: {
-      &quot;log&quot;: false,
-      &quot;request&quot;: false
-    }
-  },
-  &quot;connections&quot;: {
-    &quot;default&quot;: {
-      &quot;port&quot;: 8000
-    }
-  },
-  &quot;settings&quot;: {
-   &quot;db&quot;: {
-     &quot;host&quot;: &quot;prod-db-server&quot;
-   }
- }
-}
+<p>Similarly, update <code>production.json</code> to include the following settings:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;server&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;connections&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;compression&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;debug&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;log&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;request&quot;</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;connections&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;default&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">8000</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="nt">&quot;db&quot;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;prod-db-server&quot;</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Now, while <code>NODE_ENV=production</code> :</p>
 
@@ -2185,7 +2228,7 @@
 <ul>
 <li>The server related configs are from hapi.js. More config options can be found here: http://hapijs.com/api</li>
 <li>The connections property is specific to <a href="https://github.com/electrode-io/electrode-server/tree/master/lib/config">electrode server</a></li>
-<li>Any settings that exist in the config/default.json that are <em>also</em> in the other environment configs will be replaced by the environment specific versions</li>
+<li>Any settings that exist in the <code>config/default.json</code> that are <em>also</em> in the other environment configs will be replaced by the environment specific versions</li>
 </ul>
 <h5><a class="anchor" name="electrode-configuration"></a><strong><em>Electrode Configuration</em></strong> <a class="hash-link" href="#electrode-configuration">#</a></h5>
 <p>Last step! Let&#39;s set up our Electrode application to use the new database settings by adding the following line to <code>server/index.js</code>:</p>
@@ -2202,36 +2245,36 @@ cd config
 |_ production.json
 </code></pre></div>
 <p>Then update <code>default.json</code> to include the following settings:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">json {
-  &quot;server&quot;: {
-    &quot;viewCache&quot;: false,
-    &quot;xPoweredBy&quot;: true,
-    &quot;port&quot;: 4000
-  },
-  &quot;settings&quot;: {
-    &quot;db&quot;: {
-      &quot;host&quot;: &quot;localhost&quot;,
-      &quot;port&quot;: 5432,
-      &quot;database&quot;: &quot;clients&quot;
-    }
-  }
-}
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;server&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;viewCache&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;xPoweredBy&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">4000</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;db&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">5432</span><span class="p">,</span>
+      <span class="nt">&quot;database&quot;</span><span class="p">:</span> <span class="s2">&quot;clients&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Now we can set up the development and production specific settings.</p>
 <h5><a class="anchor" name="development-environment"></a><strong><em>Development Environment</em></strong> <a class="hash-link" href="#development-environment">#</a></h5>
 <p>Update <code>config/development.json</code> to have the following settings:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">json {
-  &quot;server&quot;: {
-    &quot;viewCache&quot;: false,
-    &quot;xPoweredBy&quot;: true,
-    &quot;port&quot;: 4000
-  },
-  &quot;settings&quot;: {
-    &quot;db&quot;: {
-    &quot;host&quot;: &quot;dev-db-server&quot;
-    }
-  }
-}
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;server&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;viewCache&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;xPoweredBy&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">4000</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;db&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;dev-db-server&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Now, while <code>NODE_ENV=development</code>:</p>
 
@@ -2239,35 +2282,34 @@ cd config
 <li>the view cache is <em>disabled</em></li>
 <li>the x-powered-by header is <em>enabled</em></li>
 <li>the server is run in port 4000</li>
-<li>the databse is hosted from -dev-db-server</li>
+<li>the databse is hosted from dev-db-server</li>
 </ul>
 <h5><a class="anchor" name="production-environment"></a><strong><em>Production Environment</em></strong> <a class="hash-link" href="#production-environment">#</a></h5>
 <p>Update <code>config/production.json</code> to have the following settings:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">\json
-{
-  &quot;server&quot;: {
-    &quot;viewCache&quot;: true,
-    &quot;xPoweredBy&quot;: false,
-    &quot;port&quot;: 8000
-  },
-  &quot;settings&quot;: {
-    &quot;db&quot;: {
-    &quot;host&quot;: &quot;prod-db-server&quot;
-    }
-  }
-}
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;server&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;viewCache&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;xPoweredBy&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">8000</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;db&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;prod-db-server&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
-<p>Now, while <code>NODE_ENV=development</code> :</p>
+<p>Now, while <code>NODE_ENV=production</code> :</p>
 
 <ul>
 <li>the view cache is <em>enabled</em></li>
 <li>the x-powered-by header is <em>disabled</em></li>
-<li>the server is run in port 4800</li>
-<li>the database is hosted from -dev-db-server</li>
+<li>the server is run in port 8000</li>
+<li>the database is hosted from prod-db-server</li>
 </ul>
 <h5><a class="anchor" name="express-configuration"></a><strong><em>Express Configuration</em></strong> <a class="hash-link" href="#express-configuration">#</a></h5>
 <p>To require the confippet settings, simply add the following to <code>app.js</code>:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">const config = require(&quot;electrode-confippet&quot;).config;
+<div class="highlight"><pre><code class="language-text" data-lang="text">const {config} = require(&quot;electrode-confippet&quot;);
 const db = config.$(&quot;settings.db&quot;);
 
 app.set(&quot;view cache&quot;, config.server.viewCache);
@@ -2285,33 +2327,32 @@ cd config
 |_ production.json
 </code></pre></div>
 <p>Then update <code>default.json</code> to include the following settings:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">json {
-  &quot;connection&quot;: {
-    &quot;port&quot;: 3000
-  },
-  &quot;settings&quot;: {
-    &quot;db&quot;: {
-      &quot;host&quot;: &quot;localhost&quot;,
-      &quot;port&quot;: 5432,
-      &quot;database&quot;: &quot;clients&quot;
-    }
-  }
-}
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;connection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">3000</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;db&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">5432</span><span class="p">,</span>
+      <span class="nt">&quot;database&quot;</span><span class="p">:</span> <span class="s2">&quot;clients&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Now we can set up the development and production specific settings.</p>
 <h5><a class="anchor" name="development-environment"></a><strong><em>Development Environment</em></strong> <a class="hash-link" href="#development-environment">#</a></h5>
 <p>Update <code>config/development.json</code> to have the following settings:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">json
-{
-  &quot;connection&quot;: {
-    &quot;port&quot;: 4000
-  },
-  &quot;settings&quot;: {
-    &quot;db&quot;: {
-      &quot;host&quot;: &quot;dev-db-server&quot;
-    }
-  }
-}
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;connection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">4000</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;db&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;dev-db-server&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Now, while <code>NODE_ENV=development</code> :</p>
 
@@ -2320,27 +2361,27 @@ cd config
 <li>The database is hosted from dev-db-server</li>
 </ul>
 <h5><a class="anchor" name="production-environment"></a><strong><em>Production Environment</em></strong> <a class="hash-link" href="#production-environment">#</a></h5>
-<p>Update the config/production.json to have the following settings:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">json {
-  &quot;connection&quot;: {
-    &quot;port&quot;: 8000
-  },
-  &quot;settings&quot;: {
-    &quot;db&quot;: {
-      &quot;host&quot;: &quot;prod-db-server&quot;
-    }
-  }
-}
+<p>Update the <code>config/production.json</code> to have the following settings:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;connection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">8000</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;db&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;prod-db-server&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Now, while <code>NODE_ENV=production</code>:</p>
 
 <ul>
 <li>The above settings run the server in port 8000</li>
-<li>The database is hosted from dev-db-server</li>
+<li>The database is hosted from prod-db-server</li>
 </ul>
 <h5><a class="anchor" name="hapi-configuration"></a><strong><em>Hapi Configuration</em></strong> <a class="hash-link" href="#hapi-configuration">#</a></h5>
 <p>To require the confippet settings, simply add the following to <code>app.js</code>:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">const config = require(&quot;electrode-confippet&quot;).config;
+<div class="highlight"><pre><code class="language-text" data-lang="text">const {config} = require(&quot;electrode-confippet&quot;);
 const db = config.$(&quot;settings.db&quot;);
 </code></pre></div><h3><a class="anchor" name="config-composition"></a>Config Composition <a class="hash-link" href="#config-composition">#</a></h3>
 <p>Confippet&#39;s <code>presetConfig</code> composes together files in the <code>config/</code> directory,
@@ -2518,7 +2559,7 @@ documentation for <a href="https://github.com/electrode-io/electrode-confippet/b
         <a href="https://github.com/orgs/electrode-io/people" target="_blank">Acknowledgements</a>
       </div>
       <div class="right">
-        &copy; 2016 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
+        &copy; 2017 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
         Apache-2.0 license.
       </div>
     </footer>

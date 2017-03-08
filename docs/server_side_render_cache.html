@@ -309,6 +309,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -401,6 +406,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -886,6 +896,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/ss_data_hydration.html"> &nbsp; Server Side Data Hydration</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -974,6 +997,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -1497,6 +1525,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1543,6 +1576,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1981,6 +2019,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -2064,7 +2107,7 @@
 <a href="https://github.com/electrode-io/electrode-react-ssr-caching">electrode-react-ssr-caching</a> module supports profiling React Server Side Rendering time
 to enable component caching to help you speed up Server Side Rendering of your components.</p>
 
-<p><a href="https://github.com/electrode-io/electrode-react-ssr-caching">electrode-react-ssr-caching</a> module can be used a <em>standalone</em> module and is <em>agnostic</em> of
+<p><a href="https://github.com/electrode-io/electrode-react-ssr-caching">electrode-react-ssr-caching</a> module can be used as a <em>standalone</em> module and is <em>agnostic</em> to
 your web-server framework. In this tutorial we will demonstrate how to use this module in Electrode, Express.js and Hapi.js applications.</p>
 <h2><a class="anchor" name="module-electrode-react-ssr-caching"></a>Module: <a href="https://github.com/electrode-io/electrode-react-ssr-caching">electrode-react-ssr-caching</a> <a class="hash-link" href="#module-electrode-react-ssr-caching">#</a></h2><h3><a class="anchor" name="install-via-npm"></a>Install via <code>npm</code> <a class="hash-link" href="#install-via-npm">#</a></h3><div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install --save electrode-react-ssr-caching
 </code></pre></div><h3><a class="anchor" name="example-applications"></a>Example Applications <a class="hash-link" href="#example-applications">#</a></h3>
@@ -2099,7 +2142,7 @@ your web-server framework. In this tutorial we will demonstrate how to use this 
 <span class="nx">SSRCaching</span><span class="p">.</span><span class="nx">enableCaching</span><span class="p">();</span>
 <span class="nx">SSRCaching</span><span class="p">.</span><span class="nx">setCachingConfig</span><span class="p">(</span><span class="nx">cacheConfig</span><span class="p">);</span>
 </code></pre></div>
-<p>Where <code>cacheConfig</code> contains information on what component to apply caching.  See below for details.</p>
+<p>Where <code>cacheConfig</code> contains information on what component to apply caching to.  See below for details.</p>
 <h5><a class="anchor" name="cacheconfig"></a>cacheConfig <a class="hash-link" href="#cacheconfig">#</a></h5>
 <p>SSR component caching was first demonstrated in <a href="https://www.youtube.com/watch?v=PnpfGy7q96U">Sasha Aickin&#39;s talk</a>.</p>
 
@@ -2107,7 +2150,7 @@ your web-server framework. In this tutorial we will demonstrate how to use this 
 
 <p>Here we implemented two cache key generation strategies: <code>simple</code> and <code>template</code>.</p>
 
-<p>You are required to pass in the <code>cacheConfig</code> to tell this module what component to apply caching.</p>
+<p>You are required to pass in the <code>cacheConfig</code> to tell this module what component to apply caching to.</p>
 
 <p>For example:</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">cacheConfig</span> <span class="o">=</span> <span class="p">{</span>
@@ -2138,11 +2181,11 @@ your web-server framework. In this tutorial we will demonstrate how to use this 
   <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
-<p>This strategy is not very flexible.  You need a cache entry for each different props.  However it requires very little processing time.</p>
+<p>This strategy is not very flexible.  You need a cache entry for each component instance with different props.  However it requires very little processing time.</p>
 <h5><a class="anchor" name="template"></a>template <a class="hash-link" href="#template">#</a></h5>
 <p>The <code>template</code> caching strategy is more complex but flexible.  </p>
 
-<p>The idea is akin to generating logic-less handlebars templates from your React components and then use string Replace to process the template with different props.</p>
+<p>The idea is akin to generating logic-less handlebars templates from your React components and then use string replace to process the template with different props.</p>
 
 <p>If you have this component:</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">Hello</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
@@ -2184,7 +2227,7 @@ your web-server framework. In this tutorial we will demonstrate how to use this 
 </code></pre></div>
 <ul>
 <li><code>preserveKeys</code> - List of keys that should not be tokenized.</li>
-<li><code>preserveEmptyKeys</code> - List of keys that should not be tokenized if they are empty string <code>&quot;&quot;</code></li>
+<li><code>preserveEmptyKeys</code> - List of keys that should not be tokenized if they are the empty string <code>&quot;&quot;</code></li>
 <li><code>ignoreKeys</code> - List of keys that should be completely ignored as part of the template cache key.</li>
 <li><code>whiteListNonStringKeys</code> - List of non-string keys that should be tokenized.</li>
 </ul>
@@ -2286,7 +2329,7 @@ your web-server framework. In this tutorial we will demonstrate how to use this 
         <a href="https://github.com/orgs/electrode-io/people" target="_blank">Acknowledgements</a>
       </div>
       <div class="right">
-        &copy; 2016 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
+        &copy; 2017 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
         Apache-2.0 license.
       </div>
     </footer>

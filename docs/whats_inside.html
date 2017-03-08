@@ -309,6 +309,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -401,6 +406,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -886,6 +896,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/ss_data_hydration.html"> &nbsp; Server Side Data Hydration</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -974,6 +997,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -1497,6 +1525,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1543,6 +1576,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1981,6 +2019,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -2061,10 +2104,10 @@
     <div class="subHeader"></div>
 
     <h4><a class="anchor" name="explore-more"></a>Explore More <a class="hash-link" href="#explore-more">#</a></h4>
-<p>What does <code>generate-electrode</code> give you? Let&#39;s go through the most important files to understand the structure of your new app.</p>
+<p>What does <code>generator-electrode</code> give you? Let&#39;s go through the most important files to understand the structure of your new app.</p>
 
 <blockquote>
-<p><code>&lt;your-awesome-app&gt;/client/components/home.jsx</code></p>
+<p><code>&lt;your-awesome-app&gt;/src/client/components/home.jsx</code></p>
 </blockquote>
 
 <p>This is the home React component for your app. <a href="https://facebook.github.io/react/index.html">React</a> is a JavaScript library for building user interfaces. A simplified way to look at React is that it can be used as the <em>View</em> in a <em>Model-View-Controller</em> application. It was created by Facebook and is being actively developed.</p>
@@ -2072,16 +2115,16 @@
 <p>Building with React lets developers create a modular and reusable component architecture. We can then reuse the business logic in existing <em>models</em> and <em>controllers</em> because React components encapsulate only the <em>view</em> layer. The components you write are self-contained, which aids developers in quickly determining what a component does directly by reading the source. Finally, it is ideally suited to Universal JavaScript (previously called Isomorphic JavaScript), the practice of sharing code between the server and the client.</p>
 
 <blockquote>
-<p><code>&lt;your-awesome-app&gt;/client/styles/base.css</code></p>
+<p><code>&lt;your-awesome-app&gt;/src/client/styles/base.css</code></p>
 </blockquote>
 
 <p>We will use <a href="https://github.com/css-modules/css-modules">CSS Modules</a>: a CSS file in which all class names and animation names are scoped locally by default. At WalmartLabs, this helps us tackle large-scale styling requirements by mitigating the issues inherent in the global scope in CSS.</p>
 
 <blockquote>
-<p><code>&lt;your-awesome-app&gt;/client/app.jsx</code></p>
+<p><code>&lt;your-awesome-app&gt;/src/client/app.jsx</code></p>
 </blockquote>
 
-<p>To help you understand what <code>client/app.jsx</code> is doing, including the relationship between client and server, we&#39;ve broken down each part of this file with a brief explanation below, including links to sources where you can learn even more:</p>
+<p>To help you understand what <code>src/client/app.jsx</code> is doing, including the relationship between client and server, we&#39;ve broken down each part of this file with a brief explanation below, including links to sources where you can learn even more:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
   <span class="kr">import</span> <span class="p">{</span> <span class="nx">routes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;./routes&quot;</span><span class="p">;</span>
   <span class="kr">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react-router&quot;</span><span class="p">;</span>
@@ -2095,21 +2138,28 @@
 <p><a href="http://redux.js.org/">Redux</a> is a state management library where your application data is in a store which contains a single object tree. This store is the single source of truth for your application and holds the state of your application. The store provides api&#39;s to access and update the state of your application.
 <a href="https://github.com/reactjs/react-redux">React-Redux</a> is the official binding for Redux and React.</p>
 
-<p>The rest of the code in <code>client/app.jsx</code> sets up the React app to run when the page is loaded. The selector is based on the <code>&lt;div&gt;</code> in <code>&lt;your-awesome-app&gt;/server/plugins/webapp/index.html</code>.</p>
+<p>The rest of the code in <code>src/client/app.jsx</code> sets up the React app to run when the page is loaded. The selector is based on the <code>&lt;div&gt;</code> in <code>electrode-react-webapp/lib/index.html</code> within your <code>node_modules</code>.</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="nb">window</span><span class="p">.</span><span class="nx">webappStart</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">Resolver</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
-      <span class="p">()</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">Router</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">routes</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Router&gt;,</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.js-content&quot;</span><span class="p">)</span>
-    <span class="p">);</span>
-  <span class="p">};</span>
+  <span class="kr">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">__PRELOADED_STATE__</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">createStore</span><span class="p">(</span><span class="nx">rootReducer</span><span class="p">,</span> <span class="nx">initialState</span><span class="p">,</span> <span class="nx">enhancer</span><span class="p">);</span>
+  <span class="nx">render</span><span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">Provider</span> <span class="nx">store</span><span class="o">=</span><span class="p">{</span><span class="nx">store</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">Router</span> <span class="nx">history</span><span class="o">=</span><span class="p">{</span><span class="nx">browserHistory</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">routes</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Router&gt;</span>
+          <span class="o">&lt;</span><span class="nx">DevTools</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+      <span class="o">&lt;</span><span class="err">/Provider&gt;,</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.js-content&quot;</span><span class="p">)</span>
+  <span class="p">);</span>
+<span class="p">};</span>
 </code></pre></div>
-<p>If you have a universal application and server-side rendering, <a href="http://ericclemmons.com/react-resolver/docs/getting-started/ServerRendering.html">react-resolver</a> handles bootstrapping server-rendered markup via <code>Resolver.render</code> instead of <code>ReactDOM.render</code>.</p>
+<p>If you have a universal application and server-side rendering, <a href="https://github.com/electrode-io/electrode/tree/master/packages/electrode-redux-router-engine">electrode-redux-router-engine</a> handles async data for React Server Side Rendering using react-router, Redux, and the Redux Server Rendering pattern.</p>
 
 <blockquote>
-<p><code>&lt;your-awesome-app&gt;/client/routes.jsx</code></p>
+<p><code>&lt;your-awesome-app&gt;/src/client/routes.jsx</code></p>
 </blockquote>
 
-<p>We will be sharing our routes between server and client, so obviously we only want to define them in one place. The <code>client/routes.jsx</code> encapsulates the routing logic accordingly.</p>
+<p>We will be sharing our routes between server and client, so obviously we only want to define them in one place. The <code>src/client/routes.jsx</code> encapsulates the routing logic accordingly.</p>
 
 <blockquote>
 <p><code>&lt;your-awesome-app&gt;/config</code></p>
@@ -2124,20 +2174,27 @@
 <p>We use this to keep environment-specific configurations manageable. Once you have your configuration files setup accordingly, you can simply pass the config object to electrode server.</p>
 
 <blockquote>
-<p><code>&lt;your-awesome-app&gt;/server</code></p>
+<p><code>&lt;your-awesome-app&gt;/src/server</code></p>
 </blockquote>
-<div class="highlight"><pre><code class="language-text" data-lang="text">server
-    ├── index.js
-    ├── plugins
-    │   └── webapp
-    │       ├── index.html
-    │       └── index.js
-    └── views
-        └── index-view.jsx
+<div class="highlight"><pre><code class="language-text" data-lang="text">server/
+├── conditions
+│   ├── machine-info.js
+│   ├── machine-load.js
+│   ├── response-time.js
+│   └── server-load.js
+├── index.js
+├── plugins
+│   ├── autossr.js
+│   ├── csrf.js
+│   ├── pwa.js
+│   └── updateStorage.js
+├── storage.json
+└── views
+    └── index-view.jsx
 </code></pre></div>
 <p>You are now using <a href="https://github.com/electrode-io/electrode-server">Electrode-Server</a>, a NodeJS module that allows you to start up a Hapi server with a single function call, but gives you a lot of flexibility through configurations. This is the baseline functionality of a <a href="http://hapijs.com/">Hapi</a> web server that you can extend via configuration.</p>
 
-<p>Before we move on, we should inspect a critical file, <code>&lt;your-awesome-app&gt;/server/plugins/webapp/index.html</code>. This is where the server-side rendering magic happens, implemented automatically via <code>generate-electrode</code>:</p>
+<p>Before we move on, we should inspect a critical file, <code>electrode-react-webapp/lib/index.html</code> located within your <code>node_modules</code>. This is where the server-side rendering magic happens, implemented automatically via <code>generator-electrode</code>:</p>
 <div class="highlight"><pre><code class="language-html" data-lang="html">  <span class="cp">&lt;!DOCTYPE html&gt;</span>
   <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;head&gt;</span>
@@ -2158,13 +2215,13 @@
 <p>This includes React components and Redux. To achieve this, the Electrode team has created another powerful module to optimize performance for an out-of-the-box Universal app: <a href="https://github.com/electrode-io/electrode-redux-router-engine">Electrode-Redux-Router-Engine</a>, which takes React routes and requests and returns HTML to be rendered by <code>electrode-react-webapp</code>. We have found this to be the <a href="https://github.com/electrode-io/electrode-redux-router-engine">best tool</a> for dealing with asynchronous redux actions.</p>
 
 <blockquote>
-<p><code>&lt;your-awesome-app&gt;/.babelrc</code></p>
+<p><code>&lt;your-awesome-app&gt;/src/client/.babelrc</code></p>
 </blockquote>
 
 <p>This is where we extend our <code>electrode-archetype-react-app</code> <a href="https://babeljs.io/docs/usage/babelrc/">Babel</a> configuration to use <a href="https://babeljs.io/docs/plugins/preset-es2015/">the ES6 presets</a>, as well as specifying any plugins or projects that need additional Babel settings.</p>
 
 <blockquote>
-<p><code>&lt;your-awesome-app&gt;/isomorphic-loader-config.json</code></p>
+<p><code>&lt;your-awesome-app&gt;/.isomorphic-loader-config.json</code></p>
 </blockquote>
 
 <p>This <a href="https://github.com/electrode-io/isomorphic-loader">powerful tool</a> makes NodeJS <code>require</code> work with files such as images for server-side rendering. It contains three pieces: a Webpack loader, Webpack plugin, and a library for your NodeJS app.</p>
@@ -2202,7 +2259,7 @@
         <a href="https://github.com/orgs/electrode-io/people" target="_blank">Acknowledgements</a>
       </div>
       <div class="right">
-        &copy; 2016 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
+        &copy; 2017 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
         Apache-2.0 license.
       </div>
     </footer>

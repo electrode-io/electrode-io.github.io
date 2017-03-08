@@ -309,6 +309,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -401,6 +406,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -886,6 +896,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/ss_data_hydration.html"> &nbsp; Server Side Data Hydration</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -974,6 +997,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -1497,6 +1525,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1543,6 +1576,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1981,6 +2019,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -2092,12 +2135,19 @@
 </code></pre></div>
 <p>Now open <a href="http://localhost:3000">localhost:3000</a> in your browser to access the app. Hello Electrode!</p>
 
+<p>To view all the gulp tasks available type <code>gulp</code>.
+To build your app&#39;s client bundle for production use</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">gulp build
+</code></pre></div>
+<p>followed by</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm run prod
+</code></pre></div>
 <hr>
 <h5><a class="anchor" name="project-structure"></a>Project Structure <a class="hash-link" href="#project-structure">#</a></h5>
 <p>Let&#39;s take a quick high level overview of our file structure and what <code>generator-electrode</code> gives you out the box. Read through our <a href="whats_inside.html">What&#39;s Inside section</a> for a more detailed description.</p>
 
 <ul>
-<li><p><code>client/</code></p>
+<li><p><code>src/client/</code></p>
 
 <p>Contains your client side code and our favs, React, Redux + CSS modules.</p>
 
@@ -2115,15 +2165,15 @@
 
 <p>This is the folder for your CSS files. We will use CSS Modules: a CSS file in which all class names and animation names are scoped locally by default.</p></li>
 </ul></li>
+<li><p><code>src/server/</code></p>
+
+<p>Contains your server-side code. Electrode-Server gives you a powerful plugin capable of SSR out the box. Learn more in the <a href="whats_inside.html">What&#39;s Inside section</a>.</p></li>
 <li><p><code>config/</code></p>
 
 <p>Your environment specific configuration files go here and are managed by the versatile <a href="confippet.html">electrode-confippet</a> module, including a preset config that you can customize and extend.</p></li>
 <li><p><code>node_modules/</code></p>
 
 <p>Other Javascript files contained in modules that we will use in this application, including Electrode modules that create your out-the-box Universal app. This folder is managed directy by <code>npm</code>.</p></li>
-<li><p><code>server/</code></p>
-
-<p>Contains your server-side code. Electrode-Server gives you a powerful plugin capable of SSR out the box. Learn more in the <a href="whats_inside.html">What&#39;s Inside section</a>.</p></li>
 <li><p><code>.babelrc</code></p>
 
 <p>Where we extend our app babel configuration to allow us to use the presets and any additional babel settings.</p></li>
@@ -2178,7 +2228,7 @@
         <a href="https://github.com/orgs/electrode-io/people" target="_blank">Acknowledgements</a>
       </div>
       <div class="right">
-        &copy; 2016 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
+        &copy; 2017 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
         Apache-2.0 license.
       </div>
     </footer>

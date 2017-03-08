@@ -309,6 +309,11 @@
   
   
 
+  
+  
+  
+  
+
 
         </ul>
       
@@ -401,6 +406,11 @@
 
     
     </li>
+  
+
+  
+  
+  
   
 
   
@@ -886,6 +896,19 @@
   
   
   
+    <li>
+    
+
+    <a href="/docs/ss_data_hydration.html"> &nbsp; Server Side Data Hydration</a>
+
+    
+    </li>
+  
+
+  
+  
+  
+  
 
   
   
@@ -974,6 +997,11 @@
           <ul>
             
 
+
+  
+  
+  
+  
 
   
   
@@ -1497,6 +1525,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -1543,6 +1576,11 @@
         <ul>
           
 
+
+  
+  
+  
+  
 
   
   
@@ -1981,6 +2019,11 @@
   
   
   
+
+  
+  
+  
+  
     <li>
     
 
@@ -2060,12 +2103,20 @@
     </h1>
     <div class="subHeader"></div>
 
-    <p>Now that we have our Open Source friends, the ability to have a resource-list house party and a working demo from before, we can continue to quickly build out our components to both handle user interaction on our application and send requests to Hapi Plugin for more friends to our party. We will use <a href="https://github.com/ReactTraining/react-router">React-Router</a> to create different routes and serve different content to our views.</p>
+    <p>From previous steps we have our open source friends, the ability to have a
+resource-list house party, and a working demo. It&#39;s time to build out our
+components to handle user interaction and send requests to our Hapi Plugin (for
+getting more friends to our party). We will use <a href="https://github.com/ReactTraining/react-router">React-Router</a> and create
+separate routes to serve different content to our views.</p>
 
-<p>Now we can integrate your published <code>&lt;your-awesome-component&gt;</code> as a node module and build out the app. Make sure you are inside of <strong>Your Awesome App</strong> and follow the steps below:</p>
+<p>Now we can integrate your published <code>&lt;your-awesome-component&gt;</code> as a node module
+and build out the app. Make sure you are inside of <strong>Your Awesome App</strong> and
+follow the steps below:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm i your-awesome-published-npm-module --save
 </code></pre></div>
-<p>Navigate to <code>&lt;your-awesome-app&gt;/client/routes.jsx</code>. Copy, paste and save the code below into this file. Change from the literal <code>YourAwesomeComponent</code> and <code>your-awesome-node-module</code> to your actual component name:</p>
+<p>Navigate to <code>&lt;your-awesome-app&gt;/src/client/routes.jsx</code>. Copy, paste and save the
+code below into this file. Change from the literal <code>YourAwesomeComponent</code> and
+<code>your-awesome-node-module</code> to your actual component name:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">Route</span><span class="p">,</span> <span class="nx">IndexRoute</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react-router&quot;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">Home</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;./components/home&quot;</span><span class="p">;</span>
@@ -2078,7 +2129,8 @@
   <span class="o">&lt;</span><span class="err">/Route&gt;</span>
 <span class="p">);</span>
 </code></pre></div>
-<p>Navigate to <code>&lt;your-awesome-app&gt;/client/components/home.jsx</code>. Override the existing code by copying, pasting and saving the code below:</p>
+<p>Navigate to <code>&lt;your-awesome-app&gt;/src/client/components/home.jsx</code>. Override the
+existing code by copying, pasting and saving the code below:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">PropTypes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">Link</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;react-router&quot;</span><span class="p">;</span>
 
@@ -2151,7 +2203,8 @@
   <span class="nx">children</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">node</span>
 <span class="p">};</span>
 </code></pre></div>
-<p>Navigate to <a href="server_config.html">Intermediate: Server Config</a>, to learn about <a href="confippet.html">Confippet</a> and add our Hapi plugin to our server config.</p>
+<p>Navigate to <a href="server_config.html">Intermediate: Server Config</a> to learn about <a href="confippet.html">Confippet</a> and add
+our Hapi plugin to our server config.</p>
 
 
     
@@ -2182,7 +2235,7 @@
         <a href="https://github.com/orgs/electrode-io/people" target="_blank">Acknowledgements</a>
       </div>
       <div class="right">
-        &copy; 2016 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
+        &copy; 2017 <a href="http://walmartlabs.com" target="_blank">WalmartLabs</a><br>
         Apache-2.0 license.
       </div>
     </footer>
