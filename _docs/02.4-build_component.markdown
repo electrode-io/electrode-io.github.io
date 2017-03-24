@@ -1,5 +1,5 @@
 ---
-title:  "Build Component"
+title:  "Build a Component"
 permalink: docs/build_component.html
 toplevel: "Getting Started: Quick Guide"
 ---
