@@ -82,7 +82,7 @@ $ yo electrode
 ### Generating a Service Worker
 
 Generating a service worker in an electrode app is as simple as adding a config
-file. Navigate to `<your-awesome-app>/config` and create a new `sw-config.js`:
+file. Navigate to `./config` and create a new `sw-config.js`:
 
 ```javascript
 module.exports = {
