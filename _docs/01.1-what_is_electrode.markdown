@@ -47,7 +47,7 @@ two powerful tools:
 
 *  <a href="http://redux.js.org/docs/basics/UsageWithReact.html" target="_blank">Redux</a> - a predictable state container for JavaScript apps.
 
-*  <a href="https://github.com/ReactTraining/react-router/tree/master/docs" target="_blank">React Router</a> - a powerful routing library built on top of React.
+*  <a href="https://reacttraining.com/react-router/" target="_blank">React Router</a> - a powerful routing library built on top of React.
 
 * <a href="https://github.com/css-modules/css-modules" target="_blank">CSS Modules</a> - a CSS file in which all class names and animation names are scoped locally by default. Fixes the problem of the global scope in CSS.
 
