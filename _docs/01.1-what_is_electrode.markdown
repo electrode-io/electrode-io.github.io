@@ -88,4 +88,3 @@ two powerful tools:
 *  [Electrify](https://github.com/electrode-io/electrify) - a tool for analyzing the module tree of webpack projects.
 
 *  [Electrode-Docgen](https://github.com/electrode-io/electrode-docgen) - a custom metadata extractor for the Electrode framework, automates component documentation.
-mentation.
