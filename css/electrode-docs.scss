@@ -31,6 +31,7 @@ $navHeight: 50px;
 
 html {
   background: $pageBg;
+  overflow: hidden;
 }
 
 .left {
@@ -427,6 +428,14 @@ section.black content {
       margin-top: 0;
       text-rendering: optimizelegibility;
     }
+  }
+
+  iframe {
+    width: 100%;
+    height: calc(100% - 97px);
+    position: absolute;
+    top: 97px;
+    bottom: 0;
   }
 }
 
