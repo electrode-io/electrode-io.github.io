@@ -3,19 +3,6 @@ layout: default
 sectionid: docs
 ---
 
-<section class="content wrap documentationContent">
-  {% include nav_docs.html %}
-
-  <div class="inner-content">
-    <a class="edit-page-link" href="https://github.com/electrode-io/electrode-io.github.io/tree/develop/{{ page.path }}" target="_blank">Edit on GitHub</a>
-    <h1>
-      {{ page.title }}
-    </h1>
-    <div class="subHeader">{{ page.description }}</div>
-
-    {{ content }}
-
-    {% include nav_prev_next.html %}
-
-  </div>
+<section class="content documentationContent">
+  <iframe src="https://electrode.gitbooks.io/electrode/content" />
 </section>
