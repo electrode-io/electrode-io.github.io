@@ -57,7 +57,7 @@ the next section.
 import React from "react";
 
 import styles from "../../src/styles/render-friend.css";
-import style from "../helpers/graph-styles";
+import style from "./helpers/graph-styles";
 
 const DEFAULT_SIZE = 15;
 const DEGREES_OF_COOL = 360;
