@@ -12,6 +12,9 @@ Navigate to `<your-awesome-app>/src/client/components/home.jsx`:
 ```javascript
 import React, {PropTypes} from "react";
 import {connect} from "react-redux";
+/**/
+import Notifications from "react-notify-toast";
+/**/
 import {toggleCheck, incNumber, decNumber} from "../actions";
 
 class Home extends React.Component {
@@ -20,6 +23,9 @@ class Home extends React.Component {
     const {checked, value} = props;
     return (
       <div>
+        {/**/}
+        <Notifications />
+        {/**/}
         <h1>Hello <a href={"https://github.com/electrode-io"}>{"Electrode"}</a></h1>
         <div>
           <h2>Managing States with Redux</h2>
