@@ -431,7 +431,7 @@ section.black content {
   }
 
   iframe {
-    width: 100%;
+    width: $contentWidth + (2 * $contentPadding);
     height: calc(100% - 97px);
     position: absolute;
     top: 97px;
