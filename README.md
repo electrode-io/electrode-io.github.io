@@ -43,10 +43,11 @@ First, make sure the `jgd` gem is installed by running `bundle install`.
 Next, generate and deploy to `master` with the following command:
 
 ```bash
-$ jgd
+$ git clone git@github.com:electrode-io/electrode-io.github.io.git
+$ cd electrode-io.github.io
+$ bundle install
+$ jgd --branch=master --branch-from=develop
 ```
-
-jgd will commit an update after the publish to the branch `gh-pages`.
 
 Explore the [Electrode.io](http://www.electrode.io/) Website.
 
