@@ -18,10 +18,9 @@ $ gem install jekyll bundler
 ```
 ### Setup & Run
 
-First, clone the repository and install the project dependencies using bundler:
+First, fork and clone the repository and install the project dependencies using bundler:
 
 ```bash
-$ git clone https://github.com/electrode-io/electrode-io.github.io.git  
 $ cd electrode-io.github.io  
 $ bundle install  
 ```
@@ -44,8 +43,10 @@ First, make sure the `jgd` gem is installed by running `bundle install`.
 Next, generate and deploy to `master` with the following command:
 
 ```bash
-$ jgd --branch=master
+$ jgd
 ```
+
+jgd will commit an update after the publish to the branch `gh-pages`.
 
 Explore the [Electrode.io](http://www.electrode.io/) Website.
 
