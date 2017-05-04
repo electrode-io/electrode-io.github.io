@@ -16,19 +16,20 @@ Requires **jekyll** and **bundler**. You can install them with **gem**:
 ```bash
 $ gem install jekyll bundler
 ```
+
 ### Setup & Run
 
 First, fork and clone the repository and install the project dependencies using bundler:
 
 ```bash
 $ cd electrode-io.github.io  
-$ bundle install  
+$ npm run bootstrap
 ```
 
 Run the server locally:
 
 ```bash
-$ bundle exec jekyll serve
+$ npm start
 ```
 
 You should be able to access the site at: http://127.0.0.1:4000/
@@ -45,8 +46,8 @@ Next, generate and deploy to `master` with the following command:
 ```bash
 $ git clone git@github.com:electrode-io/electrode-io.github.io.git
 $ cd electrode-io.github.io
-$ bundle install
-$ jgd --branch=master --branch-from=develop
+$ npm run bootstrap
+$ npm run publish
 ```
 
 Explore the [Electrode.io](http://www.electrode.io/) Website.
