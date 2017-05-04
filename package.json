@@ -4,6 +4,8 @@
   "description": "Repo for the electrode.io site",
   "main": "index.js",
   "scripts": {
+    "bootstrap": "bundle install",
+    "start": "bundle exec jekyll serve",
     "publish": "jgd --branch=master --branch-from=develop"
   },
   "repository": {
