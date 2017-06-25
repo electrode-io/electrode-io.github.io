@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Electrode | Universal React and Node.js Application Platform @WalmartLabs Powered</title>
-  <meta name="description" content="Open source React/Node.js application platform from Walmart Labs. Scaffold an app and deploy to the cloud in minutes with Electrode." />
-  <meta name="keywords" content="Electrode, React, Reactjs, Node, Node.js, React components, React server-side rendering, Server-side component rendering, React enterprise, React scalable, Node enterprise, Node scalable, Above-the-fold Rendering, Stateless-CSRF-Validation, Reusable components, React performance, Node.js performance, Electrode-Web-Core, Confippet, Electrode-Explorer, Electrode-Bundle-Viewer, Stand Alone Modules, Walmart React, Walmart Node" />
+  <meta name="description" content="Open source React/Node.js application platform from Walmart Labs. Scaffold an app and deploy to the cloud in minutes with Electrode."
+  />
+  <meta name="keywords" content="Electrode, React, Reactjs, Node, Node.js, React components, React server-side rendering, Server-side component rendering, React enterprise, React scalable, Node enterprise, Node scalable, Above-the-fold Rendering, Stateless-CSRF-Validation, Reusable components, React performance, Node.js performance, Electrode-Web-Core, Confippet, Electrode-Explorer, Electrode-Bundle-Viewer, Stand Alone Modules, Walmart React, Walmart Node"
+  />
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="css/electrode.css">
   <link rel="stylesheet" href="css/electrode-icons.css">
   <link rel="shortcut icon" href="img/favicon-64.png">
 
   <!-- Start GA analytics code -->
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-84301828-1', 'auto');
     ga('send', 'pageview');
-
   </script>
   <!-- End GA analytics code -->
 </head>
+
 <body>
   <!-- beginning of header -->
   <div class="containter-fluid" id="top-header">
@@ -32,7 +37,8 @@
       <div id="electrode-nav" class="container">
         <ul class="nav navbar-nav">
           <div class="navbar-header">
-            <button type="button" id="mob-menu-button" onClick="changeMobileNav()" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <button type="button" id="mob-menu-button" onClick="changeMobileNav()" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
               <img id="mob-header-icon" class="mob-menu" src="/img/mob-menu.svg" alt="">
             </button>
             <a class="navbar-brand electrode-brand-top" href="#">
@@ -128,31 +134,30 @@
         <div id="mobile-slogan" class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 slogan">UNIVERSAL REACT/NODE APPLICATION PLATFORM</div>
       </div>
       <div class="row">
-        <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 header-info">Electrode is a platform for building universal React/Node.js
-          applications with standardized structure, best practices, and modern technologies baked in. Electrode focuses on
-          performance, component reusability, and simple deployment to multiple cloud providers—so you can focus on what
-          makes your app unique.
+        <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 header-info">Electrode is a platform for building universal React/Node.js applications with standardized structure, best practices,
+          and modern technologies baked in. Electrode focuses on performance, component reusability, and simple deployment
+          to multiple cloud providers—so you can focus on what makes your app unique.
         </div>
       </div>
 
       <div class="row">
-				<div class="header-links col-sm-12 col-xs-12">
-					<div class="hidden-xs col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2">
+        <div class="header-links col-sm-12 col-xs-12">
+          <div class="hidden-xs col-sm-4 col-sm-offset-2 col-lg-4 col-lg-offset-2">
             <a href="/docs/what_is_electrode.html">
 							<button class="header-button about-electrode">ABOUT ELECTRODE</button>
             </a>
-					</div>
-					<div class="hidden-xs col-sm-4 col-lg-4">
+          </div>
+          <div class="hidden-xs col-sm-4 col-lg-4">
             <a href="/docs/get_started.html">
 							<button class="header-button get-started">GET STARTED</button>
             </a>
-					</div>
-					<div class="visible-xs-block col-xs-12">
-						<a href="/docs/get_started.html">
+          </div>
+          <div class="visible-xs-block col-xs-12">
+            <a href="/docs/get_started.html">
               <button class="header-button get-started">GET STARTED - DEPLOY IN 5 MINUTES</button>
             </a>
-					</div>
-				</div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -169,9 +174,15 @@
   <!-- togglePillars() loops over child divs under div == pillars-mobile-container -->
   <div class="pillars-section-2-mobile container-fluid">
     <div id="pillars-mobile-container" class="row">
-      <div class="col-xs-4 add-padding-right" onClick="togglePillars('core')"><div id="mobile-core" class="mobile-header-items">core</div></div>
-      <div class="col-xs-4" onClick="togglePillars('modules')"><div id="mobile-modules" class="mobile-header-items">modules</div></div>
-      <div class="col-xs-4 add-padding-left" onClick="togglePillars('tools')"><div id="mobile-tools" class="mobile-header-items">tools</div></div>
+      <div class="col-xs-4 add-padding-right" onClick="togglePillars('core')">
+        <div id="mobile-core" class="mobile-header-items">core</div>
+      </div>
+      <div class="col-xs-4" onClick="togglePillars('modules')">
+        <div id="mobile-modules" class="mobile-header-items">modules</div>
+      </div>
+      <div class="col-xs-4 add-padding-left" onClick="togglePillars('tools')">
+        <div id="mobile-tools" class="mobile-header-items">tools</div>
+      </div>
     </div>
   </div>
 
@@ -181,7 +192,8 @@
 
     <div id="mobile-core-content">
       <div class="mobile-content-heading">
-        <p id="mobile-header-info"> Electrode is a platform for building universal React/Node.js applications with standardized structure, best practices, and modern technologies baked in. </p>
+        <p id="mobile-header-info"> Electrode is a platform for building universal React/Node.js applications with standardized structure, best practices,
+          and modern technologies baked in. </p>
       </div>
       <div id="snippet-bubble">
         <div class="row">
@@ -189,11 +201,11 @@
         </div>
         <div class="row" id="code-snippet">
           <div>
-            <p>$ sudo npm install -g yo gulp generator-electrode</p>
+            <p>$ npm install -g yo xclap-cli generator-electrode</p>
             <p>$ mkdir my-electrode-app</p>
             <p>$ cd my-electrode-app</p>
             <p>$ yo electrode</p>
-            <p>$ gulp dev</p>
+            <p>$ clap dev</p>
           </div>
         </div>
         <div class="row">
@@ -208,9 +220,15 @@
           </a>
         </div>
       </div>
-      <p> Electrode emphasizes convention over configuration, while focusing on performance, component reusability, and simple deployment </p>
-      <p> Get new projects started quickly with a simple, consistent structure that follows modern best practices. Electrode Core allows you to build a flexible scaffold in minutes, with support for server-side rendering and easy deployment to multiple cloud providers. </p>
-      <p> The heart of the platform is Electrode Archetypes, which allow for standardized configurations and structure of the app and its associated react components. By enforcing a sensible structure and consistency for components, modules and the entire app, Electrode’s Archetype system helps you build scalable applications you can trust while ensuring streamlined </p>
+      <p> Electrode emphasizes convention over configuration, while focusing on performance, component reusability, and simple
+        deployment </p>
+      <p> Get new projects started quickly with a simple, consistent structure that follows modern best practices. Electrode
+        Core allows you to build a flexible scaffold in minutes, with support for server-side rendering and easy deployment
+        to multiple cloud providers. </p>
+      <p> The heart of the platform is Electrode Archetypes, which allow for standardized configurations and structure of the
+        app and its associated react components. By enforcing a sensible structure and consistency for components, modules
+        and the entire app, Electrode’s Archetype system helps you build scalable applications you can trust while ensuring
+        streamlined </p>
     </div>
 
     <div id="mobile-modules-content">
@@ -218,8 +236,9 @@
 
         <tr class="mobile-module-item">
           <td class="mobile-module-item-text">
-              <b>SSR Profiling & Caching</b>
-              <br>This module can help you improve your React server-side rendering performance by up to 70% by caching your components' render</br>
+            <b>SSR Profiling & Caching</b>
+            <br>This module can help you improve your React server-side rendering performance by up to 70% by caching your
+            components' render</br>
           </td>
           <td>
             <a href="/docs/server_side_render_cache.html">
@@ -231,7 +250,8 @@
         <tr class="mobile-module-item">
           <td class="mobile-module-item-text">
             <b>Above-the-Fold Rendering</b>
-            <br>Instead of side rendering the whole page on the server, this react component enables rendering of *only* the components your users see on the screen without scrolling, for improved performance.</br>
+            <br>Instead of side rendering the whole page on the server, this react component enables rendering of *only*
+            the components your users see on the screen without scrolling, for improved performance.</br>
           </td>
           <td>
             <a href="/docs/above_fold_rendering.html">
@@ -243,7 +263,8 @@
         <tr class="mobile-module-item">
           <td class="mobile-module-item-text">
             <b>Redux Router Engine</b>
-            <br>Do you need data from a service to render your component server-side? This module fetches the data asynchronously and passes it to React to render your components. Requires Redux.</br>
+            <br>Do you need data from a service to render your component server-side? This module fetches the data asynchronously
+            and passes it to React to render your components. Requires Redux.</br>
           </td>
           <td>
             <a href="/docs/redux_router_engine.html">
@@ -255,7 +276,8 @@
         <tr class="mobile-module-item">
           <td class="mobile-module-item-text">
             <b>Confippet</b>
-            <br>Lets you define, extend, and merge configurations for different environments (such as QA, prod, and staging) that get initialized during start up or at runtime.</br>
+            <br>Lets you define, extend, and merge configurations for different environments (such as QA, prod, and staging)
+            that get initialized during start up or at runtime.</br>
           </td>
           <td>
             <a href="/docs/confippet.html">
@@ -292,60 +314,62 @@
     </div>
 
     <div id="mobile-tools-content">
-        <b>
+      <b>
           Discover reusable components and optimize your JS bundle with standalone tools. These tools can be used with any React/Node app, but work best with the structure provided by Electrode Core.
         </b>
-        <div id="tools-carousel" class="carousel slide row" data-ride="carousel">
-          <div class="carousel-inner" role="listbox">
-            <div class="item active">
-              <div class="tool-title">
-                <a href="https://github.com/electrode-io">
+      <div id="tools-carousel" class="carousel slide row" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <div class="tool-title">
+              <a href="https://github.com/electrode-io">
                   <img class="github-logo" src="/img/github-mobile.svg"/>
                 </a>
-                <h3>Electrode Explorer</h3>
-                <p>Standalone web application that lets you interact with your components.</p>
-              </div>
-              <img class="image" src="/img/tools-explorer-screen-mobile@2x.png" alt="">
-              <br>
-              <div class="inside-car-title"><h4>Electrode Explorer Features:</h4></div>
-              <ul>
-                <li>allows you to view a Live Demo of all of your components and play with their integration in real time</li>
-                <li>shows the component Documentation and Props</li>
-                <li>shows all of your component dependencies</li>
-                <li>shows consumers of the component shows component NPM versions, so you can see how they evolved</li>
-                <li>and more</li>
-              </ul>
+              <h3>Electrode Explorer</h3>
+              <p>Standalone web application that lets you interact with your components.</p>
             </div>
-            <div class="item">
-              <div class="tool-title">
-                <a href="https://github.com/electrode-io">
-                  <img class="github-logo" src="/img/github-mobile.svg"/>
-                </a>
-                <h3>Electrify</h3>
-                <p>Electrify is a tool for analyzing the module tree of electrode-io/webpack
-                  project bundles. It's especially handy for
-                  catching large and/or duplicate modules which might be either bloating up your bundle or slowing down
-                  the build process.</p>
-              </div>
-              <img class="image" src="/img/electrode-electrify-screen-mobile@2x.png" alt="">
-              <br>
-              <p> The Electrode Bundle Viewer tool is called Electrify, and it's especially handy for catching large and/or duplicate modules which might be either bloating up your bundle or slowing down the build process.</p>
+            <img class="image" src="/img/tools-explorer-screen-mobile@2x.png" alt="">
+            <br>
+            <div class="inside-car-title">
+              <h4>Electrode Explorer Features:</h4>
             </div>
+            <ul>
+              <li>allows you to view a Live Demo of all of your components and play with their integration in real time</li>
+              <li>shows the component Documentation and Props</li>
+              <li>shows all of your component dependencies</li>
+              <li>shows consumers of the component shows component NPM versions, so you can see how they evolved</li>
+              <li>and more</li>
+            </ul>
           </div>
-          <a class="left carousel-control" href="#tools-carousel" role="button" data-slide="prev">
+          <div class="item">
+            <div class="tool-title">
+              <a href="https://github.com/electrode-io">
+                  <img class="github-logo" src="/img/github-mobile.svg"/>
+                </a>
+              <h3>Electrify</h3>
+              <p>Electrify is a tool for analyzing the module tree of electrode-io/webpack project bundles. It's especially
+                handy for catching large and/or duplicate modules which might be either bloating up your bundle or slowing
+                down the build process.</p>
+            </div>
+            <img class="image" src="/img/electrode-electrify-screen-mobile@2x.png" alt="">
+            <br>
+            <p> The Electrode Bundle Viewer tool is called Electrify, and it's especially handy for catching large and/or duplicate
+              modules which might be either bloating up your bundle or slowing down the build process.</p>
+          </div>
+        </div>
+        <a class="left carousel-control" href="#tools-carousel" role="button" data-slide="prev">
             <span class="button-previous" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
-          <a class="right carousel-control" href="#tools-carousel" role="button" data-slide="next">
+        <a class="right carousel-control" href="#tools-carousel" role="button" data-slide="next">
             <span class="button-next" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
-        </div>
       </div>
+    </div>
   </div>
 
   <div class="mobile-footer-toggle">
-    <div id="mobile-core-footer" class="elc-icon-icn-core footer-toggle-items" onClick="togglePillars('core')" ></div>
+    <div id="mobile-core-footer" class="elc-icon-icn-core footer-toggle-items" onClick="togglePillars('core')"></div>
     <div id="mobile-modules-footer" class="elc-icon-icn-modules footer-toggle-items" onClick="togglePillars('modules')"></div>
     <div id="mobile-tools-footer" class="elc-icon-icn-tools footer-toggle-items" onClick="togglePillars('tools')"></div>
     <a href="/docs/get_started.html">
@@ -355,50 +379,48 @@
 
   <div class="mobile-footer">
     <div class="mobile-footer-text-container vertical-align-this">
-      Built with ♡ by @WalmartLabs,
-      Electrode is maintained by the <a href="https://github.com/orgs/electrode-io/people">core team</a> with help of our contributors.
-      Open Sourced Under Apache-2.0 license.
+      Built with ♡ by @WalmartLabs, Electrode is maintained by the <a href="https://github.com/orgs/electrode-io/people">core team</a>      with help of our contributors. Open Sourced Under Apache-2.0 license.
     </div>
   </div>
 
   <div class="container pillars-section-2">
-		<div class="row">
-			<div class="col-xs-4 pillar-grey-border">
-					<div class="col-sm-12 pillar-icon">
-						<img src="/img/core_pillar.svg" alt="">
-					</div>
-						<div class="pillar-content">
-							<h1>core</h1>
-							<p>Build a simple, flexible scaffold in minutes, with support for server-side rendering and easy deployment to
-								multiple cloud providers. Electrode lets you focus on code, not configuration.</p>
-							</div>
-				</div>
-				<div class="col-xs-4 pillar-grey-border">
-						<div class="col-sm-12 pillar-icon">
-							<img src="/img/modules_pillar.svg" alt="">
-						</div>
-							<div class="pillar-content">
-								<h1>modules</h1>
-								<p>Level up your app with features like above-the-fold rendering, server-side render caching, and stateless
-									CSRF validation. Modules work with your existing React/Node app--no need to migrate to Electrode Core.</p>
-								</div>
-					</div>
-					<div class="col-xs-4">
-							<div class="col-sm-12 pillar-icon">
-								<img src="/img/explorer-pillar.svg" alt="">
-							</div>
-								<div class="pillar-content">
-									<h1>tools</h1>
-									<p>Discover reusable components and optimize your JS bundle with standalone tools. These tools can be used
-										with any React/Node app, but work best with the structure provided by Electrode Core.</p>
-									</div>
-						</div>
-		</div>
-		<div class="row pillar-links">
-			<div class="col-sm-4 pillar-grey-border"><a href="#electrode-core-logo">LEARN MORE</a></div>
-			<div class="col-sm-4 pillar-grey-border"><a href="#modules-section">LEARN MORE</a></div>
-			<div class="col-sm-4"><a href="#electrode-tools">LEARN MORE</a></div>
-		</div>
+    <div class="row">
+      <div class="col-xs-4 pillar-grey-border">
+        <div class="col-sm-12 pillar-icon">
+          <img src="/img/core_pillar.svg" alt="">
+        </div>
+        <div class="pillar-content">
+          <h1>core</h1>
+          <p>Build a simple, flexible scaffold in minutes, with support for server-side rendering and easy deployment to multiple
+            cloud providers. Electrode lets you focus on code, not configuration.</p>
+        </div>
+      </div>
+      <div class="col-xs-4 pillar-grey-border">
+        <div class="col-sm-12 pillar-icon">
+          <img src="/img/modules_pillar.svg" alt="">
+        </div>
+        <div class="pillar-content">
+          <h1>modules</h1>
+          <p>Level up your app with features like above-the-fold rendering, server-side render caching, and stateless CSRF validation.
+            Modules work with your existing React/Node app--no need to migrate to Electrode Core.</p>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="col-sm-12 pillar-icon">
+          <img src="/img/explorer-pillar.svg" alt="">
+        </div>
+        <div class="pillar-content">
+          <h1>tools</h1>
+          <p>Discover reusable components and optimize your JS bundle with standalone tools. These tools can be used with any
+            React/Node app, but work best with the structure provided by Electrode Core.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row pillar-links">
+      <div class="col-sm-4 pillar-grey-border"><a href="#electrode-core-logo">LEARN MORE</a></div>
+      <div class="col-sm-4 pillar-grey-border"><a href="#modules-section">LEARN MORE</a></div>
+      <div class="col-sm-4"><a href="#electrode-tools">LEARN MORE</a></div>
+    </div>
   </div>
   <!-- end of header -->
 
@@ -412,17 +434,23 @@
     <div class="row">
       <div class="col-md-12">
         <h1>electrode core</h1>
-        <h3 id="core-h3">Electrode emphasizes convention over configuration, following industry best practices for performance, consistency, and reusability.</h3>
+        <h3 id="core-h3">Electrode emphasizes convention over configuration, following industry best practices for performance, consistency,
+          and reusability.</h3>
       </div>
     </div>
     <div class="row">
       <div class="container">
         <div class="col-md-6" id="electrode-core-text">
           <div>
-            Get new projects started quickly with a simple, consistent structure that follows modern best practices. Electrode Core allows you to build a flexible scaffold in minutes, with support for server-side rendering and easy deployment to multiple cloud providers.
+            Get new projects started quickly with a simple, consistent structure that follows modern best practices. Electrode Core allows
+            you to build a flexible scaffold in minutes, with support for server-side rendering and easy deployment to multiple
+            cloud providers.
           </div>
           <div>
-            The heart of the platform is Electrode Archetypes, which allow for standardized configurations and structure of the app and its associated react components. By enforcing a sensible structure and consistency for components, modules and the entire app, Electrode’s Archetype system helps you build scalable applications you can trust while ensuring streamlined development and deployment.
+            The heart of the platform is Electrode Archetypes, which allow for standardized configurations and structure of the app and
+            its associated react components. By enforcing a sensible structure and consistency for components, modules and
+            the entire app, Electrode’s Archetype system helps you build scalable applications you can trust while ensuring
+            streamlined development and deployment.
           </div>
         </div>
         <div class="col-md-6">
@@ -433,13 +461,13 @@
             <div class="row">
               <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10" id="code-snippet">
                 <div>
-                  <p>$ sudo npm install -g yo gulp generator-electrode</p>
+                  <p>$ npm install -g yo xclap-cli generator-electrode</p>
                   <p>$ mkdir my-electrode-app</p>
                   <p>$ cd my-electrode-app</p>
                   <p>$ yo electrode</p>
-                  <p>$ gulp dev</p>
+                  <p>$ clap dev</p>
                 </div>
-               </div>
+              </div>
             </div>
             <div class="row">
               <div class="snippet-bubble-text col-sm-offset-1 col-md-offset-1 col-md-10">That's it! Next, deploy, your app to your favorite cloud service.</div>
@@ -455,131 +483,135 @@
   </div>
   <!-- end electrode core -->
 
-	<!-- begin electrode newest version modules -->
+  <!-- begin electrode newest version modules -->
 
-    <div id="modules-section" class="container">
-      <div class="container-fluid">
-        <div id="desktop-modules-content">
-          <div id="desktop-modules-header" class="row">
-            <a href="#"><img class="icon-modules scroll-up" src="img/badge-modules-2.svg" /></a>
-            <h1>electrode modules</h1>
-            <h3>Supercharge your app, with or without Electrode Core</h3>
-          </div>
+  <div id="modules-section" class="container">
+    <div class="container-fluid">
+      <div id="desktop-modules-content">
+        <div id="desktop-modules-header" class="row">
+          <a href="#"><img class="icon-modules scroll-up" src="img/badge-modules-2.svg" /></a>
+          <h1>electrode modules</h1>
+          <h3>Supercharge your app, with or without Electrode Core</h3>
+        </div>
 
-          <div class="row desktop-module-item">
-            <div class="module-box">
-              <div class="col-sm-6 col-md-6 desktop-module-text">
-                <div class="row module-testbox">
-                  <div class="col-sm-12 col-md-12 module-subheader">
-                    <b>Above-the-Fold Rendering</b>
-                  </div>
-                  <div class="col-sm-10 col-md-10 module-textbox">
-                    <br>Instead of side rendering the whole page on the server, this react component enables rendering of *only* the components your users see on the screen without scrolling, for improved performance.</br>
-                  </div>
-                  <div class="col-sm-2 col-md-2 desktop-module-logo">
-                    <a href="/docs/above_fold_rendering.html">
+        <div class="row desktop-module-item">
+          <div class="module-box">
+            <div class="col-sm-6 col-md-6 desktop-module-text">
+              <div class="row module-testbox">
+                <div class="col-sm-12 col-md-12 module-subheader">
+                  <b>Above-the-Fold Rendering</b>
+                </div>
+                <div class="col-sm-10 col-md-10 module-textbox">
+                  <br>Instead of side rendering the whole page on the server, this react component enables rendering of *only*
+                  the components your users see on the screen without scrolling, for improved performance.</br>
+                </div>
+                <div class="col-sm-2 col-md-2 desktop-module-logo">
+                  <a href="/docs/above_fold_rendering.html">
                       <img src="/img/icn-atf.svg" alt="">
                     </a>
-                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="module-box">
-              <div class="col-sm-6 col-md-6 desktop-module-text">
-                <div class="row module-testbox">
-                  <div class="col-sm-12 col-md-12 module-subheader">
-                    <b>Redux Router Engine</b>
-                  </div>
-                  <div class="col-sm-10 col-md-10 module-textbox">
-                    <br>Do you need data from a service to render your component server-side? This module fetches the data asynchronously and passes it to React to render your components. Requires Redux.</br>
-                  </div>
-                  <div class="col-sm-2 col-md-2 desktop-module-logo">
-                    <a href="/docs/redux_router_engine.html">
-                      <img src="/img/icn-redux.svg" alt="">
-                    </a>
-                  </div>
-                  </div>
               </div>
             </div>
           </div>
 
-          <div class="row desktop-module-item">
-            <div class="module-box">
-              <div class="col-sm-6 col-md-6 desktop-module-text">
-                <div class="row module-testbox">
-                  <div class="col-sm-12 col-md-12 module-subheader">
-                    <b>Confippet</b>
-                  </div>
-                  <div class="col-sm-10 col-md-10 module-textbox">
-                    <br>Lets you define, extend, and merge configurations for different environments (such as QA, prod, and staging) that get initialized during start up or at runtime.</br>
-                  </div>
-                  <div class="col-sm-2 col-md-2 desktop-module-logo">
-                    <a href="/docs/confippet.html">
-                      <img src="/img/icn-confippet.svg" alt="">
+          <div class="module-box">
+            <div class="col-sm-6 col-md-6 desktop-module-text">
+              <div class="row module-testbox">
+                <div class="col-sm-12 col-md-12 module-subheader">
+                  <b>Redux Router Engine</b>
+                </div>
+                <div class="col-sm-10 col-md-10 module-textbox">
+                  <br>Do you need data from a service to render your component server-side? This module fetches the data
+                  asynchronously and passes it to React to render your components. Requires Redux.</br>
+                </div>
+                <div class="col-sm-2 col-md-2 desktop-module-logo">
+                  <a href="/docs/redux_router_engine.html">
+                      <img src="/img/icn-redux.svg" alt="">
                     </a>
-                  </div>
                 </div>
               </div>
-
-            </div>
-
-            <div class="module-box">
-              <div class="col-sm-6 col-md-6 desktop-module-text">
-                <div class="row module-testbox">
-                  <div class="col-sm-12 col-md-12 module-subheader">
-                    <b>SSR Profiling & Caching</b>
-                  </div>
-                  <div class="col-sm-10 col-md-10 module-textbox">
-                    <br>This module can help you improve your React server-side rendering performance by up to 70% by caching your components' render</br>
-                  </div>
-                  <div class="col-sm-2 col-md-2 desktop-module-logo">
-                    <a href="/docs/server_side_render_cache.html">
-                      <img src="/img/icn-ssr.svg" alt="">
-                    </a>
-                  </div>
-                </div>
             </div>
           </div>
         </div>
 
-          <div class="row desktop-module-item">
-            <div class="module-box">
-              <div class="col-sm-6 col-md-6 desktop-module-text">
-                <div class="row module-testbox">
-                  <div class="col-sm-12 col-md-12 module-subheader">
-                    <b>Stateless CSRF Validation</b>
-                  </div>
-                  <div class="col-sm-10 col-md-10 module-textbox">
-                    <br>Validate HTTP requests without a session--for Express and Hapi.</br>
-                  </div>
-                  <div class="col-sm-2 col-md-2 desktop-module-logo">
-                    <a href="/docs/stateless_csrf_validation.html">
-                      <img src="/img/icn-csrf.svg" alt="">
+        <div class="row desktop-module-item">
+          <div class="module-box">
+            <div class="col-sm-6 col-md-6 desktop-module-text">
+              <div class="row module-testbox">
+                <div class="col-sm-12 col-md-12 module-subheader">
+                  <b>Confippet</b>
+                </div>
+                <div class="col-sm-10 col-md-10 module-textbox">
+                  <br>Lets you define, extend, and merge configurations for different environments (such as QA, prod, and
+                  staging) that get initialized during start up or at runtime.</br>
+                </div>
+                <div class="col-sm-2 col-md-2 desktop-module-logo">
+                  <a href="/docs/confippet.html">
+                      <img src="/img/icn-confippet.svg" alt="">
                     </a>
-                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="module-box">
-              <div class="col-sm-6 col-md-6 desktop-module-text">
-                <div class="row module-testbox">
-                  <div class="col-sm-12 col-md-12 module-subheader">
-                    <b>More Modules Coming Soon!</b>
-                  </div>
-                  <div class="col-sm-10 col-md-10 module-textbox">
-                    <br>New module release announcements will be Tweeted on <a href="https://twitter.com/electrode_io">@electrode_io</a></br>
-                  </div>
-                  <div class="col-sm-2 col-md-2 desktop-module-logo">
-                    <a href="/docs/stand_alone_modules.html">
-                      <img src="/img/icn-more.svg" alt="">
+          </div>
+
+          <div class="module-box">
+            <div class="col-sm-6 col-md-6 desktop-module-text">
+              <div class="row module-testbox">
+                <div class="col-sm-12 col-md-12 module-subheader">
+                  <b>SSR Profiling & Caching</b>
+                </div>
+                <div class="col-sm-10 col-md-10 module-textbox">
+                  <br>This module can help you improve your React server-side rendering performance by up to 70% by caching
+                  your components' render</br>
+                </div>
+                <div class="col-sm-2 col-md-2 desktop-module-logo">
+                  <a href="/docs/server_side_render_cache.html">
+                      <img src="/img/icn-ssr.svg" alt="">
                     </a>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="row desktop-module-item">
+          <div class="module-box">
+            <div class="col-sm-6 col-md-6 desktop-module-text">
+              <div class="row module-testbox">
+                <div class="col-sm-12 col-md-12 module-subheader">
+                  <b>Stateless CSRF Validation</b>
+                </div>
+                <div class="col-sm-10 col-md-10 module-textbox">
+                  <br>Validate HTTP requests without a session--for Express and Hapi.</br>
+                </div>
+                <div class="col-sm-2 col-md-2 desktop-module-logo">
+                  <a href="/docs/stateless_csrf_validation.html">
+                      <img src="/img/icn-csrf.svg" alt="">
+                    </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="module-box">
+            <div class="col-sm-6 col-md-6 desktop-module-text">
+              <div class="row module-testbox">
+                <div class="col-sm-12 col-md-12 module-subheader">
+                  <b>More Modules Coming Soon!</b>
+                </div>
+                <div class="col-sm-10 col-md-10 module-textbox">
+                  <br>New module release announcements will be Tweeted on <a href="https://twitter.com/electrode_io">@electrode_io</a></br>
+                </div>
+                <div class="col-sm-2 col-md-2 desktop-module-logo">
+                  <a href="/docs/stand_alone_modules.html">
+                      <img src="/img/icn-more.svg" alt="">
+                    </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -613,10 +645,9 @@
                 </a>
               </div>
               <h3 class="col-md-11 col-lg-11">Electrify</h3>
-              <p class="col-md-11 col-lg-11">Electrify is a tool for analyzing the module tree of electrode-io/webpack
-                project bundles. It's especially handy for
-                catching large and/or duplicate modules which might be either bloating up your bundle or slowing down
-                the build process.</p>
+              <p class="col-md-11 col-lg-11">Electrify is a tool for analyzing the module tree of electrode-io/webpack project bundles. It's especially
+                handy for catching large and/or duplicate modules which might be either bloating up your bundle or slowing
+                down the build process.</p>
             </div>
             <div class="image image-electrode-electrify"></div>
           </div>
@@ -652,7 +683,8 @@
             </div>
             <div>
               <p class="footer-text bottom">
-                Electrode is maintained by the <a href="https://github.com/orgs/electrode-io/people">core team</a> with help of our contributors.
+                Electrode is maintained by the <a href="https://github.com/orgs/electrode-io/people">core team</a> with help
+                of our contributors.
               </p>
             </div>
           </div>
@@ -717,12 +749,11 @@
       }
     });
   </script>
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-    integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
     crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
 
 </body>
+
 </html>
