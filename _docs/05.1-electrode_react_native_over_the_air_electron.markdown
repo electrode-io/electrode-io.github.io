@@ -84,7 +84,13 @@ The configurations are loaded via electrode-confippet, more details [here](https
 ```js
 {
     "plugins": {
-
+	"electrode-ota-server-routes-apps" : {
+            options : {
+                payload : {
+                    maxBytes : 94371840 // Set this to be bigger than your biggest upload.
+                }                
+            }
+        }
         "electrode-ota-server-dao-cassandra": {
             "options": {
                 //You can enter an array of cassandra "contactPoints" but you need at least one.
