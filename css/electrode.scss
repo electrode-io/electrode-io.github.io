@@ -42,8 +42,7 @@ h1 {
     padding-bottom:0;
   }
   .header-logo {
-    height: 29px;
-    width:100%;
+    height: 50px;
     @media(max-width: 1200px) {
       width:90%
     }
@@ -51,7 +50,8 @@ h1 {
       width:80%
     }
     @media(max-width: 1000px) {
-      width:70%
+      width: 190px;
+      height: auto;
     }
     @media(max-width: 767px) {
       width:100%
@@ -350,7 +350,13 @@ img.mob-menu {
 }
 
 .electrode-brand-top {
-  padding-top: 38px;
+  padding-top: 30px;
+  @media (max-width: 1200px) {
+    padding-top: 29px;
+  }
+  @media (max-width: 1000px) {
+    padding-top: 34px;
+  }
   @media (max-width: 768px) {
     padding-top:10px;
   }
@@ -1513,8 +1519,11 @@ img.footer-sub-logo {
 
   #walmart-header-logo {
     margin: 20px 0 0 10px;
-    height: 90%;
+    height: 160%;
     width: auto;
+    @media (max-width: 320px) {
+      height: 150%;
+    }
   }
 
   .mobile-oval {
@@ -1936,6 +1945,10 @@ img.footer-sub-logo {
       background-color: #555; 
       margin: -77px 50px 0px 0px; 
       opacity: .8;
+      outline: none;
+      &:focus {
+        outline: 0;
+      }
     }
     #highlight-code-btn {
       font-size: 14px;
@@ -1954,7 +1967,7 @@ img.footer-sub-logo {
     background-color: rgb(204, 204, 204);;
   }
   &__section-cli {
-    padding: 2.5em;
+    padding: 45px;
     border: 1px solid #c1c1c1;
     border-radius: 4px;
     @media (max-width: 767px) {
@@ -1984,7 +1997,7 @@ img.footer-sub-logo {
     p {
       font-size: 1.2em;
       display: inline-block;
-      line-height: 1;
+      line-height: 0;
       @media (max-width: 1150px) {
         font-size: 16px;
       }
@@ -1993,21 +2006,49 @@ img.footer-sub-logo {
       }
       @media (max-width: 460px) {
         font-size: 11px;
+        line-height: 1;
       }
     }
   }
   &__module {
-    margin-top: 2em;
-    padding: 2em;
+    margin-top: 30px;
+    padding: 30px;
     border: 1px solid #c1c1c1;
     border-radius: 4px;
-    min-height: 303px;
+    min-height: 287px;
+    @media (max-width: 1547px) {
+      min-height: 314px;
+    }
+    @media (max-width: 1473px) {
+      min-height: 341px;
+    }
+    @media (max-width: 1282px) {
+      min-height: 368px;
+    }
+    @media (max-width: 1219px) {
+      min-height: 395px;
+    }
+    @media (max-width: 1169px) {
+      min-height: 422px;
+    }
+    @media (max-width: 1219px) {
+      min-height: 449px;
+    }
+    @media (max-width: 1094px) {
+      min-height: 476px;
+    }
+    @media (max-width: 1059px) {
+      min-height: 503px;
+    }
+    @media (max-width: 992px) {
+      min-height: 0;
+    }
     @media (max-width: 767px) {
       margin-top: 0;
       padding: 0;
       border: none;
       min-height: 0;
-    } 
+    }
     h4 {
       @media (max-width: 767px) {
         font-size: 16px;
@@ -2032,7 +2073,11 @@ img.footer-sub-logo {
     img {
       float: right;
       height: 84px;
-      width: 75px;
+      width: auto;
+      @media (max-width: 992px) {
+        height: 75px;
+        width: auto;
+      }
     }
   }
 }
@@ -2058,7 +2103,7 @@ img.footer-sub-logo {
     text-align: center;
   }
   &__section {
-    padding: 0 5% 5%;
+    padding: 0 18px 5%;
   }
   &__dropdown {
     text-align: center;
@@ -2073,6 +2118,9 @@ img.footer-sub-logo {
     overflow: hidden;
   }
 }
+#dropdown-arrow-1, #dropdown-arrow-2, #dropdown-arrow-3 {
+
+}
 .no-padding {
   @media (max-width: 767px) {
     padding: 0 !important;
@@ -2083,6 +2131,21 @@ img.footer-sub-logo {
   @media (max-width: 767px) {
     margin-top: 15px;
   }
+}
+.mobile-docs-nav {
+  li {
+    margin-top: 0;
+    margin-left: 0;
+    a:hover {
+      color: white !important;
+    }
+  }
+}
+
+// documentation header 
+.header {
+  background: url("/../img/mobile-page/ern_bkgd_nav.png") no-repeat center;
+  background-size: cover;
 }
 
 // js code highlighting
