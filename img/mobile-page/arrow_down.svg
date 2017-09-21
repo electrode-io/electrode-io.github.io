@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="14px" viewBox="0 0 24 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Electrode" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="320:-ERN-home" transform="translate(-279.000000, -347.000000)" fill="#E11B74">
+            <g id="arrow" transform="translate(291.000000, 354.000000) rotate(-270.000000) translate(-291.000000, -354.000000) translate(284.000000, 342.000000)">
+                <path d="M13.9521536,12 C13.9656449,11.4724458 13.7700417,10.9416145 13.3674334,10.5390063 L3.4609937,0.632566575 C2.68143217,-0.146994959 1.41708755,-0.145009614 0.636038969,0.636038969 C-0.150454941,1.42253288 -0.146564258,2.68186287 0.632566575,3.4609937 L9.17157288,12 L0.632566575,20.5390063 C-0.146564258,21.3181371 -0.150454941,22.5774671 0.636038969,23.363961 C1.41708755,24.1450096 2.68143217,24.146995 3.4609937,23.3674334 L13.3674334,13.4609937 C13.7700417,13.0583855 13.9656449,12.5275542 13.9521536,12 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
