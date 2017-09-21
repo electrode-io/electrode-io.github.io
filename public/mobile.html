@@ -37,7 +37,7 @@
               <img id="mob-header-icon" class="mob-menu" src="/../img/mob-menu.svg" alt="">
             </button>
             <a class="navbar-brand electrode-brand-top" href="#">
-              <img id="walmart-header-logo" class="header-logo" src="/../img/walmart-labs-1-white.svg" alt="">
+              <img id="walmart-header-logo" class="header-logo" src="/../img/walmartlabs_logo.svg" alt="">
             </a>
           </div>
       </ul>
@@ -64,16 +64,16 @@
           </ul>
 
           <ul id="desktop-nav-ul" class="nav navbar-nav navbar-right primary-nav-links">
-            <li id="home-primary"><a href="">HOME</a></li>
-            <li><a href="/docs/what_is_electrode.html">DOCS</a></li>
+            <li id="home-primary"><a href="/">HOME</a></li>
+            <li><a href="/public/electrode_native_docs.html">DOCS</a></li>
             <li><a href="/docs/contribute.html">CONTRIBUTE</a></li>
           </ul>
 
           <!-- mobile dropdown menu -->
           <ul id="mobile-nav-ul" class="nav navbar-nav navbar-right secondary-nav-links">
-            <li id="home-primary" class="mobile-nav-links"><a href="">Home</a></li>
+            <li id="home-primary" class="mobile-nav-links"><a href="/">Home</a></li>
             <div class="mobile-header-line"></div>
-            <li class="mobile-nav-links"><a href="/docs/what_is_electrode.html">Docs</a></li>
+            <li class="mobile-nav-links"><a href="/public/electrode_native_docs.html">Docs</a></li>
             <div class="mobile-header-line"></div>
             <li class="mobile-nav-links"><a href="/docs/contribute.html">Contribute</a></li>
             <div class="mobile-header-line"></div>
@@ -118,7 +118,7 @@
     <div class="header-mobile-content inverse-colors">
       <div class="row">
         <div id="mobile-logo-text" class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 logo-text">
-          <img src="/../img/mobile-page/ern_logo.svg" alt="">
+          <img src="/../img/mobile-page/ern_alt2.svg" alt="">
         </div>
       </div>
       <div class="row">
@@ -157,76 +157,82 @@
   <!-- Begin Mobile Content -->
   <div class="container-fluid">
       <div class="ern-mobile">
-        <h3>Supercharge Your Native Application</h3>
-        <div id ="mob-section-1" class="ern-mobile__dropdown">
-          <div class="row">
-            <div class="ern-mobile__section">
-            <div class="col-sm-12 no-padding">
-              <div class="ern-mobile__text">
-                <p class="ern-bottom-margin">
-                  With Electrode React Native, developers can work on cross-platform components written in JavaScript using React Native that can then be added to any iOS or Andriod mobile application.
-                </p>
-                <p>
-                  Just pick the features/components you wan to add to your mobile application, ERN will package things nicely for you, in a single library that contains just what you need, making it easy to integreate in your mobile application without altering its code structure.
-                </p>
-              </div>
-            </div>
-            <div class="col-sm-12 no-padding">
-              <div class="ern-home__image">
-                <p>Super cool spaceman image will go here</p>
-              </div>
-            </div>
-            </div>
-          </div>
-        </div>
-        <div class="ern-mobile__align-center">
-          <a onClick="changeMobileDropdown(1)"><img src="/img/mobile-page/arrow.svg" alt="" /></a>
-        </div>
-        <div class="mob-border"></div>
-        <h3>Supercharge Your Native Application</h3>
-        <div id ="mob-section-2" class="ern-mobile__dropdown">
-          <div class="row">
-            <div class="ern-mobile__section">
+        <div id="mob-section-container" onClick="changeMobileDropdown(1)">
+          <h3>Supercharge Your Native Application</h3>
+          <div id ="mob-section-1" class="ern-mobile__dropdown">
+            <div class="row">
+              <div class="ern-mobile__section">
               <div class="col-sm-12 no-padding">
                 <div class="ern-mobile__text">
                   <p class="ern-bottom-margin">
-                    Electrode React Native ships with nice code generators, to let you focus on what matters. Just describe interactions using a swagger shcema, and ERN will generate the boring code and just leave the JaveScript or native implementation to you.
+                    With Electrode React Native, developers can work on cross-platform components written in JavaScript using React Native that can then be added to any iOS or Andriod mobile application.
                   </p>
                   <p>
-                    Generated code is also type safe, so native developers will feel right at home and can leverage compile time checks. Also, if you're already using some native modules, no need to throw away, ERN offers suppost to reuse them.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="ern-mobile__align-center">
-          <a onClick="changeMobileDropdown(2)"><img src="/img/mobile-page/arrow.svg" alt="" /></a>
-        </div>
-        <div class="mob-border"></div>
-        <h3>Native Dependencies Version Control</h3>
-        <div id="mob-section-3" class="ern-mobile__dropdown">
-          <div class="row">
-            <div class="ern-mobile__section">
-              <div class="col-sm-12 no-padding">
-                <div class="ern-mobile__text">
-                  <p class="ern-bottom-margin">
-                    Relax knowing that all of the native dependencies versions used by the react native components part of your mobile application will be compatible.
-                  </p>
-                  <p>
-                    ERN offter a built-in dependency version control system, allowing you to control the version of native dependencies that your react native components should be aligned on, while guranteing that no react native component using a non-compatible native dependency makes it in your mobile appilcation.
+                    Just pick the features/components you wan to add to your mobile application, ERN will package things nicely for you, in a single library that contains just what you need, making it easy to integreate in your mobile application without altering its code structure.
                   </p>
                 </div>
               </div>
               <div class="col-sm-12 no-padding">
                 <div class="ern-home__image">
+                  <p>Super cool spaceman image will go here</p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="ern-mobile__align-center">
+            <a><img id="dropdown-arrow-1" src="/img/mobile-page/arrow_down.svg" alt="" /></a>
+          </div>
+        </div>
+        <div class="mob-border"></div>
+        <div id="mob-section-container" onClick="changeMobileDropdown(2)">
+          <h3>Supercharge Your Native Application</h3>
+          <div id ="mob-section-2" class="ern-mobile__dropdown">
+            <div class="row">
+              <div class="ern-mobile__section">
+                <div class="col-sm-12 no-padding">
+                  <div class="ern-mobile__text">
+                    <p class="ern-bottom-margin">
+                      Electrode React Native ships with nice code generators, to let you focus on what matters. Just describe interactions using a swagger shcema, and ERN will generate the boring code and just leave the JaveScript or native implementation to you.
+                    </p>
+                    <p>
+                      Generated code is also type safe, so native developers will feel right at home and can leverage compile time checks. Also, if you're already using some native modules, no need to throw away, ERN offers suppost to reuse them.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="ern-mobile__align-center">
+            <a><img id="dropdown-arrow-2" src="/img/mobile-page/arrow_down.svg" alt="" /></a>
+          </div>
         </div>
-        <div class="ern-mobile__align-center">
-          <a onClick="changeMobileDropdown(3)"><img src="/img/mobile-page/arrow.svg" alt="" /></a>
+        <div class="mob-border"></div>
+        <div id="mob-section-container" onClick="changeMobileDropdown(3)">
+          <h3>Native Dependencies Version Control</h3>
+          <div id="mob-section-3" class="ern-mobile__dropdown">
+            <div class="row">
+              <div class="ern-mobile__section">
+                <div class="col-sm-12 no-padding">
+                  <div class="ern-mobile__text">
+                    <p class="ern-bottom-margin">
+                      Relax knowing that all of the native dependencies versions used by the react native components part of your mobile application will be compatible.
+                    </p>
+                    <p>
+                      ERN offter a built-in dependency version control system, allowing you to control the version of native dependencies that your react native components should be aligned on, while guranteing that no react native component using a non-compatible native dependency makes it in your mobile appilcation.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-sm-12 no-padding">
+                  <div class="ern-home__image">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ern-mobile__align-center">
+            <a><img id="dropdown-arrow-3" src="/img/mobile-page/arrow_down.svg" alt="" /></a>
+          </div>
         </div>
         <div class="mob-border"></div>
 
@@ -426,14 +432,14 @@ export default ({requests});
     </div>
     <div class="ern-border no-border"></div>
     <div class="row">
-      <div class="col-sm-6 no-padding">
+      <div class="col-md-6 col-sm-12 no-padding">
           <div class="row ern-home__module">
             <div class="col-sm-12 no-padding">
               <h4>API Generation</h4>
             </div>
             <div class="col-sm-10 col-xs-10 ern-home__module-text">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non rhoncus lectus. Nullam ipsum augue, sagittis nec iaculis sit amet, tristique nec mauris. Nunc accumsan mauris ut aliquet porttitor. Duis ultrices neque sit amet gravida venenatis.
+                Using a Swagger schema, define interactions between JavaScript and Native as requests and/or events. Electrode React Native will take care of generating all the native and JavaScript boilerplate code for you.
               </p>
             </div>
             <div class="col-sm-2 col-xs-2 ern-home__icon-container">
@@ -444,7 +450,7 @@ export default ({requests});
           </div>
       </div>
       <div class="ern-border no-border"></div>
-      <div class="col-sm-6 ern-home__col no-padding">
+      <div class="col-md-6 col-sm-12 ern-home__col no-padding">
         <div class="ern-home__module">
           <div class="row">
             <div class="col-sm-12 no-padding">
@@ -452,7 +458,7 @@ export default ({requests});
             </div>
             <div class="col-sm-10 col-xs-10 ern-home__module-text">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non rhoncus lectus. Nullam ipsum augue, sagittis nec iaculis sit amet, tristique nec mauris. Nunc accumsan mauris ut aliquet porttitor.
+                Package multiple React Native applications together, in a single Container along with their native dependencies and assets. The Container is library, that you can add to an iOS or Android mobile application to access the React Native applications stored within.
               </p>
             </div>
             <div class="col-sm-2 col-xs-2 ern-home__icon-container">
@@ -466,14 +472,14 @@ export default ({requests});
     </div>
     <div class="ern-border no-border"></div>
     <div class="row">
-      <div class="col-sm-6 no-padding">
+      <div class="col-md-6 col-sm-12 no-padding">
           <div class="row ern-home__module">
             <div class="col-sm-12 no-padding">
               <h4>Cauldron</h4>
             </div>
             <div class="col-sm-10 col-xs-10 ern-home__module-text">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non rhoncus lectus. Nullam ipsum augue, sagittis nec iaculis sit amet, tristique nec mauris. Nunc accumsan mauris ut aliquet porttitor.
+                The gatekeeper to your mobile application. Tracks the versions of your mobile applications, keeps history and  in charge of running final compatibility checks before a React Native application make its way in your mobile apps.
               </p>
             </div>
             <div class="col-sm-2 col-xs-2 ern-home__icon-container">
@@ -484,7 +490,7 @@ export default ({requests});
           </div>
       </div>
       <div class="ern-border no-border"></div>
-      <div class="col-sm-6 ern-home__col no-padding">
+      <div class="col-md-6 col-sm-12 ern-home__col no-padding">
         <div class="ern-home__module">
           <div class="row">
             <div class="col-sm-12 no-padding">
@@ -492,7 +498,7 @@ export default ({requests});
             </div>
             <div class="col-sm-10 col-xs-10 ern-home__module-text">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non rhoncus lectus. Nullam ipsum augue, sagittis nec iaculis sit amet, tristique nec mauris. Nunc accumsan mauris ut aliquet porttitor. Duis ultrices neque sit amet gravida venenatis.
+                Launch your React Native application on its own or along with other ones in an Android/iOS emulator or a device. Useful during development of your React Native application to see the changes, debug and test, before shipping it.
               </p>
             </div>
             <div class="col-sm-2 col-xs-2 ern-home__icon-container">
