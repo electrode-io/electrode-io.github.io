@@ -223,7 +223,7 @@ h1 {
     text-align: center;
     border-radius: 3px;
     width: 100%;
-    @media(max-width: 845px) {
+    @media(max-width: 847px) {
       font-size: 1.3em;
     }
   }
@@ -1809,9 +1809,9 @@ img.footer-sub-logo {
       padding-bottom: 1.1em;
     }
   }
-  .header-links {
-    margin-bottom: 2em;
-  }
+  // .header-links {
+  //   margin-bottom: 2em;
+  // }
   .header-info {
     font-size: 1.2em;
     font-weight: 600;
@@ -1833,7 +1833,7 @@ img.footer-sub-logo {
     text-align: center;
     border-radius: 3px;
     width: 100%;
-    @media(max-width: 845px) {
+    @media(max-width: 847px) {
       font-size: 1.3em;
     }
     @media(max-width: 480px) {
