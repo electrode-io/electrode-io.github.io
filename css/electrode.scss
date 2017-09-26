@@ -160,7 +160,6 @@ h1 {
     padding-bottom: 38px;
     img {
       width: 100%;
-      max-height: 156px;
     }
     @media(max-width: 768px) {
       padding-bottom:37px;
@@ -1959,12 +1958,23 @@ img.footer-sub-logo {
     margin-right: 1em;
     &--right {
       margin-left: 1em;
+      @media (max-width: 991px) {
+        margin-top: 1.5em;
+      }
     }
   }
   &__image {
-    width: 100%;
-    height: 250px;
-    background-color: rgb(204, 204, 204);;
+    display: flex;
+    justify-content: center;
+    img {
+      width: 100%;
+      height: 100%;
+      max-width: 600px;
+      @media (max-width: 767px) {
+        width: 80%;
+        height: 80%;
+      }
+    }
   }
   &__section-cli {
     padding: 45px;
