@@ -31,8 +31,9 @@ var windowWidth = window.innerWidth;
 function changeDesktopColor() {
   if (window.innerWidth > 767) {
     if (electrodeNav) {
-      document.getElementById("electrode-nav").style.backgroundColor = "#00294b"; 
+      document.getElementById("electrode-nav").style.backgroundColor = "#00294b";
     } else {
+      document.getElementById("electrode-mobile-nav").style.backgroundColor = "transparent";
       document.getElementById("ern-header").style.backgroundImage = "url('/img/mobile-page/ern_bkgd_nav.png')";
     }
     document.getElementById("walmart-header-logo").style.display = "block";
@@ -41,7 +42,8 @@ function changeDesktopColor() {
       if (electrodeNav) {
         document.getElementById("electrode-nav").style.backgroundColor = "#000e23";
       } else {
-        document.getElementById("ern-header").style.backgroundImage = "url('/img/mobile-page/ern_bkgd_nav.png')"; 
+        document.getElementById("ern-header").style.backgroundImage = "url('/img/mobile-page/ern_bkgd_nav.png')";
+        document.getElementById("electrode-mobile-nav").style.backgroundColor = "#000e23"; 
       }
       document.getElementById("walmart-header-logo").style.display = "none";
     }
