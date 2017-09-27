@@ -824,7 +824,7 @@ img.mob-menu {
 }
 
 #footer-walmart-logo {
-  width: 48%;
+  width: 70%;
   height: auto;
 }
 
@@ -1563,7 +1563,7 @@ img.footer-sub-logo {
   }
 
   #mobile-dropDown-logo {
-    height: 16px;
+    height: 25px;
     width: auto;
   }
 
@@ -1918,6 +1918,9 @@ img.footer-sub-logo {
       margin-bottom: 28px;
     }
   }
+  .no-api-border {
+    display: none;
+  }
   .no-border {
     @media (min-width: 768px) {
       display: none;
@@ -1974,6 +1977,11 @@ img.footer-sub-logo {
         width: 80%;
         height: 80%;
       }
+    }
+  }
+  &__image--sm {
+    img {
+      max-width: 500px;
     }
   }
   &__section-cli {
@@ -2108,6 +2116,9 @@ img.footer-sub-logo {
     padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid #c1c1c1;
+  }
+  .mob-border-bottom {
+    margin-bottom: 28px;
   }
   &__align-center {
     text-align: center;
