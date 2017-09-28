@@ -1832,12 +1832,18 @@ img.footer-sub-logo {
     text-align: center;
     border-radius: 3px;
     width: 100%;
-    @media(max-width: 847px) {
+    @media(max-width: 1119px) {
       font-size: 1.3em;
+    }
+    @media (max-width: 995px) {
+      font-size: 14px;
+    }
+    @media (max-width: 820px) {
+      font-size: 12px;
     }
     @media(max-width: 480px) {
       font-size:14px;
-    font-weight:bold;
+      font-weight:bold;
     }
   }
   .header-button-info {
@@ -1955,6 +1961,9 @@ img.footer-sub-logo {
     #highlight-code-btn {
       font-size: 14px;
 
+    }
+    &--btm-margin {
+      margin-bottom: 2em;
     }
   }
   &__section-text {
