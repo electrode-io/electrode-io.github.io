@@ -1135,7 +1135,7 @@ img.footer-sub-logo {
 
 .mobile-footer {
   font-family: "Gotham-Rounded";
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 600;
 	line-height: 1.5;
 	text-align: center;
@@ -1841,6 +1841,9 @@ img.footer-sub-logo {
     @media (max-width: 820px) {
       font-size: 12px;
     }
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
     @media(max-width: 480px) {
       font-size:14px;
       font-weight:bold;
@@ -1900,7 +1903,7 @@ img.footer-sub-logo {
     }
   }
   h4 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
   }
   h1, h3, h4, li {
@@ -1910,8 +1913,8 @@ img.footer-sub-logo {
     line-height: 1.5;
     font-weight: 500;
     @media (max-width: 767px) {
-      font-size: 14px;
-      line-height: 20px;
+      font-size: 16px;
+      line-height: 25px;
     }
   }
   .ern-border {
@@ -1951,7 +1954,7 @@ img.footer-sub-logo {
       font-weight: 600; 
       color: white; 
       background-color: #555; 
-      margin: -77px 50px 0px 0px; 
+      margin: -57px 33px 0px 0px; 
       opacity: .8;
       outline: none;
       &:focus {
@@ -2076,16 +2079,12 @@ img.footer-sub-logo {
       border: none;
       min-height: 0;
     }
-    h4 {
-      @media (max-width: 767px) {
-        font-size: 16px;
-      }
-    }
   }
   &__module-text {
   padding-right: 60px;
   @media (max-width: 767px) {
     padding-left: 0 !important;
+    padding-right: 40px;
   }
 }
   &__row {
@@ -2109,22 +2108,32 @@ img.footer-sub-logo {
   }
 }
 
+// mobile styles
 .ern-mobile {
   margin-top: 10px;
   h3 {
-    font-size: 20px;
+    font-size: 22px;
     font-family: "Gotham-Rounded-Medium";
     text-align: center;
     padding-left: 18px;
     padding-right: 18px; 
+    line-height: 30px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 25px;
   }
   @media (min-width: 768px) {
     display: none;
   }
   .mob-border {
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
     border-bottom: 1px solid #c1c1c1;
+    @media (max-width: 480px) {
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
   }
   .mob-border-bottom {
     margin-bottom: 28px;
