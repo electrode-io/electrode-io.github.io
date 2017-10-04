@@ -1965,7 +1965,6 @@ img.footer-sub-logo {
     }
     #highlight-code-btn {
       font-size: 14px;
-
     }
     &--btm-margin {
       margin-bottom: 2em;
@@ -2082,6 +2081,12 @@ img.footer-sub-logo {
       min-height: 0;
     }
   }
+  &__header-link {
+    color: #333;
+    &:hover {
+      text-decoration: none;
+    }
+  }
   &__module-text {
   padding-right: 60px;
   @media (max-width: 767px) {
@@ -2095,7 +2100,6 @@ img.footer-sub-logo {
   &__col {
     height: 100%;
   }
-
   &__icon-container {
     position: relative;
     img {
