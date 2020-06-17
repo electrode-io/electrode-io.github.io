@@ -391,7 +391,7 @@ class Home extends React.Component {
     if (error) {
       return (
         <div>Woops! Looks like there was an error:
-          <span style={{ fontFamily: "monospace", color: "red" }}>
+          <span style={{ "color:red" }}>
             {error.name}: {error.message}
           </span>
         </div>

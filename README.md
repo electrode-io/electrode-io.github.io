@@ -1,4 +1,5 @@
 # electrode-io.github.io
+
 This repository contains the source for the Electrode documentation site, which is generated using [Jekyll](http://jekyllrb.com/).
 
 ## Contributing
@@ -6,15 +7,14 @@ This repository contains the source for the Electrode documentation site, which 
 * Commit contributions to the `develop` branch.
 * Always use [markdown](https://daringfireball.net/projects/markdown/) when authoring new documentation.
 
-
 ## Installation
 
-### Pre-requisites
+### Prerequisites
 
 Requires **jekyll** and **bundler**. You can install them with **gem**:
 
 ```bash
-$ gem install jekyll bundler
+gem install jekyll bundler
 ```
 
 ### Setup & Run
@@ -22,14 +22,14 @@ $ gem install jekyll bundler
 First, fork and clone the repository and install the project dependencies using bundler:
 
 ```bash
-$ cd electrode-io.github.io  
-$ npm run bootstrap
+cd electrode-io.github.io  
+npm run bootstrap
 ```
 
 Run the server locally:
 
 ```bash
-$ npm start
+npm start
 ```
 
 You should be able to access the site at: http://127.0.0.1:4000/
@@ -44,12 +44,13 @@ First, make sure the `jgd` gem is installed by running `bundle install`.
 Next, generate and deploy to `master` with the following command:
 
 ```bash
-$ git clone git@github.com:electrode-io/electrode-io.github.io.git
-$ cd electrode-io.github.io
-$ npm run bootstrap
-$ npm run publish
+git clone git@github.com:electrode-io/electrode-io.github.io.git
+cd electrode-io.github.io
+npm run bootstrap
+npm run publish
 ```
 
 Explore the [Electrode.io](http://www.electrode.io/) Website.
 
-Built with :heart: by [Team Electrode](https://github.com/orgs/electrode-io/people) @WalmartLabs.
+Developed by [Team Electrode](https://github.com/orgs/electrode-io/people) at Walmart Labs.
+Copyright 2020 Walmart | Licensed under the Apache License, Version 2.0
