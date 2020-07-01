@@ -6,7 +6,7 @@
   "scripts": {
     "bootstrap": "bundle install",
     "start": "bundle exec jekyll serve",
-    "publish": "jgd --branch=master --branch-from=develop"
+    "publish": "bundle exec jgd --branch=master --branch-from=develop"
   },
   "repository": {
     "type": "git",
