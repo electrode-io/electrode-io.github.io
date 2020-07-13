@@ -50,6 +50,7 @@ $ npm run bootstrap
 $ npm run publish
 ```
 
-Explore the [Electrode.io](http://www.electrode.io/) Website.
+View the documentation [Electrode.io](http://www.electrode.io/electrode)
 
-Built with :heart: by [Team Electrode](https://github.com/orgs/electrode-io/people) @WalmartLabs.
+Developed by Walmart | Licensed under the Apache License, Version 2.0
+Electrode is maintained by the [core team] <"https://github.com/orgs/electrode-io/people">with help from contributors.
