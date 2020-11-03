@@ -1,3 +1,6 @@
+---
+---
+
 @import 'bourbon';
 @import '_variables';
 @import '_typography';
@@ -20,7 +23,7 @@ $navHeight: 50px;
 
 // basic reset
 * {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   border: none;
   margin: 0;
   padding: 0;
@@ -229,7 +232,7 @@ h1, h2, h3, h4, h5, h6 {
         width: 10px;
         height: 10px;
         padding-left: 5px;
-        @include retina-image('../img/external', 10px 10px);
+        background-image: url("/img/external_2x.png");
         background-position: 100% 0;
         background-repeat: no-repeat;
         font-size: 10px;
@@ -313,12 +316,12 @@ h1, h2, h3, h4, h5, h6 {
     }
     input {
       border: 1px solid #ccc;
-      font: 14px proxima-nova, $helvetica;
+      font: 14px proxima-nova, $font-stack-system;
       padding: 3px;
       width: 150px;
     }
     button {
-      font: 14px proxima-nova, $helvetica;
+      font: 14px proxima-nova, $font-stack-system;
       margin-left: 5px;
       padding: 4px 10px;
     }
@@ -327,7 +330,7 @@ h1, h2, h3, h4, h5, h6 {
   #markdownExample {
     textarea {
       border: 1px solid #ccc;
-      font: 14px proxima-nova, $helvetica;
+      font: 14px proxima-nova, $font-stack-system;
       margin-bottom: 10px;
       padding: 5px;
     }
@@ -444,7 +447,7 @@ section.black content {
 /* Button */
 
 .button {
-  @include background(linear-gradient($buttonGreyTop, $buttonGreyBottom));
+  background: linear-gradient($buttonGreyTop, $buttonGreyBottom);
   // border: 1px solid $darkestColor;
   border-radius: 4px;
   padding: 8px 16px;
@@ -476,7 +479,7 @@ section.black content {
 }
 
 .button.blue {
-  @include background(linear-gradient($buttonBlueTop, $buttonBlueBottom));
+  background: linear-gradient($buttonBlueTop, $buttonBlueBottom);
 }
 
 /* Row */
