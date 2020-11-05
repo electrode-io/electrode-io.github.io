@@ -5,7 +5,7 @@ is generated using [Jekyll](http://jekyllrb.com/).
 
 ## Contributing
 
-* Commit contributions to the `develop` branch
+* Commit contributions to the `master` branch
 * Use [Markdown](https://daringfireball.net/projects/markdown/) when authoring
   new documentation
 
@@ -41,7 +41,7 @@ The site must be generated locally and deployed using
 > sure you're _**not**_ working in a fork.
 
 First, make sure the `jgd` gem is installed by running `npm run bootstrap`.
-Next, generate and deploy to `master` with the following command:
+Next, generate and deploy to `gh-pages` with the following command:
 
 ```sh
 npm run publish
