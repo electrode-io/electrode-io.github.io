@@ -1,11 +1,6 @@
-_site
-.idea
-.sass-cache
-.jekyll-metadata
 .DS_Store
-
-node_modules
-
-Gemfile.lock
-
-Gemfile.lock
+.idea/
+.jekyll-metadata/
+.sass-cache/
+_site/
+node_modules/
