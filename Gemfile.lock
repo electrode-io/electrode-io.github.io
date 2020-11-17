@@ -6,6 +6,7 @@ GEM
     bourbon (7.0.0)
       thor (~> 1.0)
     colorator (1.1.0)
+    crass (1.0.6)
     ffi (1.13.1)
     forwardable-extended (2.6.0)
     jekyll (3.4.3)
@@ -42,6 +43,8 @@ GEM
     multi_json (1.15.0)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
+    nokogumbo (2.0.2)
+      nokogiri (~> 1.8, >= 1.8.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
@@ -53,8 +56,10 @@ GEM
     redcarpet (3.5.0)
     rouge (1.11.1)
     safe_yaml (1.0.5)
-    sanitize (2.1.1)
-      nokogiri (>= 1.4.4)
+    sanitize (5.2.1)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.8.0)
+      nokogumbo (~> 2.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -77,7 +82,7 @@ DEPENDENCIES
   pygments.rb
   rb-fsevent
   redcarpet
-  sanitize (~> 2.0)
+  sanitize (~> 5.2)
 
 RUBY VERSION
    ruby 2.7.1p83

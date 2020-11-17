@@ -28,7 +28,7 @@ gem 'json'
 gem 'rb-fsevent'
 
 # For markdown header cleanup
-gem 'sanitize', '~>2.0'
+gem 'sanitize', '~>5.2'
 
 # Markdown
 gem 'redcarpet'
