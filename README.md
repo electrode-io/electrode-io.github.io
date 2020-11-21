@@ -1,5 +1,7 @@
 # electrode-io.github.io
 
+[![ci][1]][2]
+
 This repository contains the source for the Electrode documentation site, which
 is generated using [Jekyll](http://jekyllrb.com/).
 
@@ -51,3 +53,6 @@ Explore the [Electrode.io](http://www.electrode.io/) Website.
 
 Built with :heart: by [Team Electrode](https://github.com/orgs/electrode-io/people)
 @WalmartLabs.
+
+[1]: https://github.com/electrode-io/electrode-io.github.io/workflows/ci/badge.svg
+[2]: https://github.com/electrode-io/electrode-io.github.io/actions

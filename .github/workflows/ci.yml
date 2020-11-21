@@ -1,0 +1,13 @@
+name: ci
+on:
+  push:
+    branches: '*'
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-ruby@v1
+      - run: bundle install
+      - run: bundle exec jekyll build
