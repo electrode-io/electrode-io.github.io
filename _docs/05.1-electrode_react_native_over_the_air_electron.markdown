@@ -56,17 +56,17 @@ Step 1 - Login to github and select Settings.
 ![OTA: Profile - Step 1]( ../img/electrode-ota/1-Profile.png)
 
 Step 2 - Go to "Developer Settings" and select "OAuth applications"
-![OTA: Register OAuth - Step 2](../img/electrode-ota/2-Register OAuth.png)
+![OTA: Register OAuth - Step 2](../img/electrode-ota/2-Register-OAuth.png)
 
 Step 3 - Setup your application.   Keep in mind protocols and urls are important.  Also you can set up a key for development also (localhost.yourdomain.com).
 Make sure that resolves, for your machine, try adding it to your hosts file.  If you do not have a public server running
 you can add a use http://localhost:9001/ for homepage and authorization callback url., for development only.
-![OTA: Register OAuth - Step 3](../img/electrode-ota/3-Register OAuth.png)
+![OTA: Register OAuth - Step 3](../img/electrode-ota/3-Register-OAuth.png)
 
 Step 4 - Wild celebration, or double check that everthing is correct.  This is your you get your clientId and clientSecret.
 Keep your clientSecret secret (avoid checking it into public github for example).
 
-![OTA: Register OAuth - Step 4](../img/electrode-ota/4-Review OAuth.png)
+![OTA: Register OAuth - Step 4](../img/electrode-ota/4-Review-OAuth.png)
 
 
 ### Configure OTA Server
