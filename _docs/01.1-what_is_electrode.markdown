@@ -32,7 +32,7 @@ apps](stand_alone_modules.html).
 The Electrode Platform also has tools that can be consumed by existing
 applications built with other platforms (though with
 Electrode core, these tools are either bundled directly or require far less configuration). There are currently
-two powerful tools: 
+two powerful tools:
 
 * one which enables [discovery of reusable components](electrode_explorer.html)
 

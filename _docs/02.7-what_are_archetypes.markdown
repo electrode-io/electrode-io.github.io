@@ -166,7 +166,7 @@ The following tasks will be run in order:
 // the production webpack config
 // _.flow is used to compose functions
 module.exports = _.flow(
-  // use webpack-partial binding it to a the baseConfig  
+  // use webpack-partial binding it to a the baseConfig
   mergeWebpackConfig.bind(null, {}, baseConfig),
   // optimize.js
   optimizeConfig(),

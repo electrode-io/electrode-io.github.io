@@ -17,4 +17,3 @@ class Redcarpet::Render::HTML
     return "<h#{level}><a class=\"anchor\" name=\"#{clean_title}\"></a>#{title} <a class=\"hash-link\" href=\"##{clean_title}\">#</a></h#{level}>"
   end
 end
-
