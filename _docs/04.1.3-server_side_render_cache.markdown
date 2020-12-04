@@ -103,7 +103,7 @@ This strategy is not very flexible.  You need a cache entry for each component i
 
 ##### template
 
-The `template` caching strategy is more complex but flexible.  
+The `template` caching strategy is more complex but flexible.
 
 The idea is akin to generating logic-less handlebars templates from your React components and then use string replace to process the template with different props.
 

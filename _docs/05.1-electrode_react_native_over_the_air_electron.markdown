@@ -56,17 +56,17 @@ Step 1 - Login to github and select Settings.
 ![OTA: Profile - Step 1]( ../img/electrode-ota/1-Profile.png)
 
 Step 2 - Go to "Developer Settings" and select "OAuth applications"
-![OTA: Register OAuth - Step 2](../img/electrode-ota/2-Register OAuth.png)
+![OTA: Register OAuth - Step 2](../img/electrode-ota/2-Register-OAuth.png)
 
 Step 3 - Setup your application.   Keep in mind protocols and urls are important.  Also you can set up a key for development also (localhost.yourdomain.com).
 Make sure that resolves, for your machine, try adding it to your hosts file.  If you do not have a public server running
 you can add a use http://localhost:9001/ for homepage and authorization callback url., for development only.
-![OTA: Register OAuth - Step 3](../img/electrode-ota/3-Register OAuth.png)
+![OTA: Register OAuth - Step 3](../img/electrode-ota/3-Register-OAuth.png)
 
 Step 4 - Wild celebration, or double check that everthing is correct.  This is your you get your clientId and clientSecret.
 Keep your clientSecret secret (avoid checking it into public github for example).
 
-![OTA: Register OAuth - Step 4](../img/electrode-ota/4-Review OAuth.png)
+![OTA: Register OAuth - Step 4](../img/electrode-ota/4-Review-OAuth.png)
 
 
 ### Configure OTA Server
@@ -105,7 +105,7 @@ The configurations are loaded via electrode-confippet, more details [here](https
         "electrode-ota-server-fileservice":{
               "options": {
                 //this needs to be the url of your acquistion server.  It can be the same as your current
-                // management server.  
+                // management server.
                 "downloadUrl": "http://<%=your_ota_server%>/storagev2/"
               }
         },
@@ -149,7 +149,7 @@ OTA uses [bell](http://https://github.com/hapijs/bell) for oAuth you can look th
 
 
 ### Running OTA
-You can run OTA many ways, the easiest is to just to run.    
+You can run OTA many ways, the easiest is to just to run.
 ```
  $ npm start
 ```
@@ -213,7 +213,7 @@ If you you need an Example application you can find one [here](https://github.co
 
 ### For IOS
 Then add the following to `ios/<%=your_app_name%>/Info.plist`. You can open this in ```sh open ios/<%=your_app_name%>.xcodeprog```
-to edit.  
+to edit.
  ![OTA: Edit Info.plist](../img/electrode-ota/Info-plist.png)
 
 Or using your favorite text editor.
@@ -278,7 +278,7 @@ Use the token from the pretty screen with the trees on it here.  The host would 
  ![OTA: Login](../img/electrode-ota/Login.png)
 
 ###Creating a New App to Manage
-You will need an app to get the deployment keys.  
+You will need an app to get the deployment keys.
  ![OTA: GettingStarted](../img/electrode-ota/GettingStarted.png)
  ![OTA: New App Success](../img/electrode-ota/NewAppSuccess.png)
 

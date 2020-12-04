@@ -32,5 +32,3 @@ First, let's quickly check your development environment. You will need to have t
 
 
 Ready? Let's [build](build_component.html).
-
-

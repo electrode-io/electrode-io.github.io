@@ -11,7 +11,7 @@
 	.st5{fill:url(#SVGID_4_);}
 </style>
 <g id="Layer_2" class="st0">
-	
+
 		<image style="display:inline;overflow:visible;enable-background:new    ;" width="2880" height="1822" xlink:href="ern_bkgd.png"  transform="matrix(0.4979 0 0 0.4979 158.8784 -656.4073)">
 	</image>
 </g>
@@ -39,7 +39,7 @@
 <g class="st4">
 	<g>
 		<g>
-			
+
 				<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="831.5063" y1="6678.7373" x2="831.5063" y2="6366.9771" gradientTransform="matrix(1 0 0 1 0 -6440)">
 				<stop  offset="0" style="stop-color:#FFFFFF"/>
 				<stop  offset="1" style="stop-color:#006C96"/>

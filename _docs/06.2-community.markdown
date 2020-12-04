@@ -3,7 +3,7 @@ title:  "Community"
 permalink: docs/community.html
 toplevel: "Contributing"
 ---
-### Connecting with Electrode 
+### Connecting with Electrode
 We look forward to the open source community engaging with us:
 
 Please use the following forums to report any questions, feature requests and issues about electrode:
