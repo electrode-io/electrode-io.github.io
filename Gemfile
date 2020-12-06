@@ -14,9 +14,6 @@ gem "jekyll", "3.4.3"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima"
 
-# Supports deployment to GitHub pages with custom Jekyll plugins
-gem 'jgd'
-
 # Jekyll extensions
 gem 'jekyll-redirect-from'
 gem 'jekyll-paginate'

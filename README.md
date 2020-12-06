@@ -36,18 +36,8 @@ You should be able to access the site at: [127.0.0.1:4000](http://127.0.0.1:4000
 
 ## Deploying to GitHub Pages
 
-The site must be generated locally and deployed using
-[jgd](http://www.yegor256.com/2014/06/24/jekyll-github-deploy.html).
-
-> NOTE: this should be done from a local clone of the **original repo**; make
-> sure you're _**not**_ working in a fork.
-
-First, make sure the `jgd` gem is installed by running `npm run bootstrap`.
-Next, generate and deploy to `gh-pages` with the following command:
-
-```sh
-npm run publish
-```
+Every push to `master` (i.e. every pull request merged) will automatically
+build and deploy the website to `gh-pages`.
 
 Explore the [Electrode.io](http://www.electrode.io/) Website.
 
