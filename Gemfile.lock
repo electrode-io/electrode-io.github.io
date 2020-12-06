@@ -8,16 +8,16 @@ GEM
     colorator (1.1.0)
     ffi (1.13.1)
     forwardable-extended (2.6.0)
-    jekyll (3.4.3)
+    jekyll (3.6.3)
       addressable (~> 2.4)
       colorator (~> 1.0)
       jekyll-sass-converter (~> 1.0)
       jekyll-watch (~> 1.1)
-      kramdown (~> 1.3)
-      liquid (~> 3.0)
+      kramdown (~> 1.14)
+      liquid (~> 4.0)
       mercenary (~> 0.3.3)
       pathutil (~> 0.9)
-      rouge (~> 1.7)
+      rouge (>= 1.7, < 3)
       safe_yaml (~> 1.0)
     jekyll-paginate (1.1.0)
     jekyll-redirect-from (0.16.0)
@@ -28,8 +28,8 @@ GEM
       listen (~> 3.0)
     json (2.3.1)
     kramdown (1.17.0)
-    liquid (3.0.6)
-    listen (3.2.1)
+    liquid (4.0.3)
+    listen (3.3.3)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.3.6)
@@ -48,7 +48,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     redcarpet (3.5.0)
-    rouge (1.11.1)
+    rouge (2.2.1)
     safe_yaml (1.0.5)
     sanitize (2.1.1)
       nokogiri (>= 1.4.4)
@@ -64,7 +64,7 @@ PLATFORMS
 
 DEPENDENCIES
   bourbon
-  jekyll (= 3.4.3)
+  jekyll (= 3.6.3)
   jekyll-paginate
   jekyll-redirect-from
   json
