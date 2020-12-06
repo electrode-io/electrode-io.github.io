@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "bootstrap": "bundle install",
-    "start": "bundle exec jekyll serve",
-    "publish": "bundle exec jgd"
+    "start": "bundle exec jekyll serve"
   },
   "repository": {
     "type": "git",
