@@ -10,8 +10,14 @@ jobs:
       - uses: actions/setup-ruby@v1
       - run: bundle install
       - run: bundle exec jekyll build
+      - id: cname
+        run: |
+          if [ ${{ github.event.repository.fork }} = 'false' ]; then
+            echo "::set-output name=cname::www.electrode.io"
+          fi
       - uses: peaceiris/actions-gh-pages@v3
         with:
+          cname: ${{ steps.cname.outputs.cname }}
           commit_message: Deploy
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
