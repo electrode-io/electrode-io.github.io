@@ -1,14 +1,14 @@
 ---
 ---
 
-@import 'bourbon';
-@import '_variables';
-@import '_typography';
-@import '_solarized';
-@import '_header';
+// @import 'bourbon';
+@import "_variables";
+@import "_typography";
+@import "_solarized";
+@import "_header";
 
 @mixin code-typography {
-  font-family: 'source-code-pro', Menlo, Consolas, 'Courier New', monospace;
+  font-family: "source-code-pro", Menlo, Consolas, "Courier New", monospace;
   font-size: 13px;
   line-height: 1.5;
 }
@@ -78,7 +78,12 @@ li + li {
 
 // Make header navigation linkable and on the screen. Used in documentation and
 // blog posts.
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   .anchor {
     margin-top: -$navHeight;
     position: absolute;
@@ -97,13 +102,13 @@ h1, h2, h3, h4, h5, h6 {
 // Main Nav
 
 .nav-main {
-  @include clearfix;
+  // @include clearfix;
   background: linear-gradient($darkerColor, $darkestColor);
   color: $lightTextColor;
   position: fixed;
   top: 0;
   height: $navHeight;
-  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   width: 100%;
   z-index: 100;
 
@@ -257,7 +262,6 @@ h1, h2, h3, h4, h5, h6 {
       border-bottom: 0;
     }
   }
-
 }
 
 .nav-blog {
@@ -279,7 +283,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .skinny-row {
-  @include clearfix;
+  // @include clearfix;
 }
 
 .skinny-col {
@@ -291,7 +295,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-#examples h3, .home-presentation h3 {
+#examples h3,
+.home-presentation h3 {
   color: $darkColor;
   font-size: 24px;
   font-weight: normal;
@@ -316,12 +321,12 @@ h1, h2, h3, h4, h5, h6 {
     }
     input {
       border: 1px solid #ccc;
-      font: 14px proxima-nova, $font-stack-system;
+      font: 14px proxima-nova;
       padding: 3px;
       width: 150px;
     }
     button {
-      font: 14px proxima-nova, $font-stack-system;
+      font: 14px proxima-nova;
       margin-left: 5px;
       padding: 4px 10px;
     }
@@ -330,7 +335,7 @@ h1, h2, h3, h4, h5, h6 {
   #markdownExample {
     textarea {
       border: 1px solid #ccc;
-      font: 14px proxima-nova, $font-stack-system;
+      font: 14px proxima-nova;
       margin-bottom: 10px;
       padding: 5px;
     }
@@ -342,7 +347,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .docs-nextprev {
-  @include clearfix;
+  // @include clearfix;
 }
 
 .docs-prev {
@@ -370,7 +375,7 @@ section.black content {
  */
 
 .blogContent {
-  @include clearfix;
+  // @include clearfix;
 
   padding-top: 20px;
 
@@ -394,7 +399,7 @@ section.black content {
  */
 
 .documentationContent {
-  @include clearfix;
+  // @include clearfix;
 
   .subHeader {
     font-size: 24px;
@@ -459,8 +464,8 @@ section.black content {
   display: inline-block;
   color: $lightTextColor;
   text-decoration: none;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, .3);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   text-decoration: none;
 
   &:hover {
@@ -474,7 +479,7 @@ section.black content {
 
 .hero {
   .button {
-    box-shadow: 1px 3px 3px rgba(0, 0, 0, .3);
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -530,7 +535,7 @@ figure {
 
 h1 {
   // Contains .edit-page-link
-  @include clearfix;
+  // @include clearfix;
 }
 
 .edit-page-link {
@@ -666,7 +671,7 @@ small code,
 li code,
 p code {
   color: #555;
-  background-color: rgba(0, 0, 0, .04);
+  background-color: rgba(0, 0, 0, 0.04);
   padding: 1px 3px;
 }
 
@@ -701,7 +706,8 @@ p a code {
     color: #df2375;
   }
 
-  .left-side, .right-side {
+  .left-side,
+  .right-side {
     display: inline-block;
     width: 48%;
     margin-right: 10px;
@@ -752,13 +758,13 @@ p a code {
   }
 }
 
-img[alt ^= "OTA:"] {
+img[alt^="OTA:"] {
   width: 50%;
-  transition: width .3s ease-in;
+  transition: width 0.3s ease-in;
   display: block;
 }
 
-img[alt ^= "OTA:"]:hover {
+img[alt^="OTA:"]:hover {
   width: 100%;
-  transition: width .3s ease-in;
+  transition: width 0.3s ease-in;
 }
