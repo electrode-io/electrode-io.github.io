@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title></title>
-    <description>Universal React and Node Applications simplified, performant, and reusable.</description>
-    <link>https://electrode-io.github.io/</link>
-    <atom:link href="https://electrode-io.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 01 May 2021 19:35:48 -0700</pubDate>
-    <lastBuildDate>Sat, 01 May 2021 19:35:48 -0700</lastBuildDate>
-    <generator>Jekyll v3.4.3</generator>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://electrode-io.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://electrode-io.github.io/" rel="alternate" type="text/html" /><updated>2021-05-03T19:12:37+00:00</updated><id>https://electrode-io.github.io/feed.xml</id><title type="html">Electrode</title><subtitle>Universal React and Node Applications simplified, performant, and reusable.</subtitle></feed>
