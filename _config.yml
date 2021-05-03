@@ -2,39 +2,60 @@
 #
 # This config file is meant for settings that affect your whole blog, values
 # which you are expected to set up once and rarely edit after that. If you find
-# yourself editing these this file very often, consider using Jekyll's data files
+# yourself editing this file very often, consider using Jekyll's data files
 # feature for the data you need to update frequently.
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
----
-name: Electrode
-description: Universal React and Node Applications simplified, performant, and reusable.
-url: https://electrode-io.github.io
+
+title: Electrode
+description: >-
+  Universal React and Node Applications simplified, performant, and reusable.
 baseurl: ""
-permalink: "/blog/:year/:month/:day/:title.html"
-paginate_path: "/blog/page:num/"
-paginate: 5
-timezone: America/Los_Angeles
-highlighter: pygments
+url: https://electrode-io.github.io
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
 defaults:
 - scope:
     path: ''
-    type: posts
+    type: docs
   values:
-    layout: post
-    sectionid: blog
-- scope:
-    path: blog
-    type: pages
-  values:
-    sectionid: blog
+    layout: docs
+    sectionid: docs
 - scope:
     path: docs
     type: pages
@@ -46,41 +67,13 @@ defaults:
     type: pages
   values:
     sectionid: docs
-- scope:
-    path: contributing
-    type: pages
-  values:
-    sectionid: docs
-- scope:
-    path: ""
-    type: docs
-  values:
-    layout: docs
-    sectionid: docs
-exclude:
-- Gemfile
-- Gemfile.lock
-- README.md
-- Rakefile
-- vendor/bundle
-markdown: redcarpet
-redcarpet:
-  extensions:
-  - fenced_code_blocks
-  - footnotes
+
 sass:
-  style: :compressed
   sass_dir: _css
-gems:
-- jekyll-redirect-from
-- jekyll-paginate
-- bourbon
+  style: compressed
 
 collections:
   docs:
     output: true
-
-# display future blog posts
-future: true
 
 google_analytics: UA-84301828-1

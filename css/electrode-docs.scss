@@ -1,7 +1,7 @@
 ---
 ---
 
-// @import 'bourbon';
+@import 'bourbon';
 @import "_variables";
 @import "_typography";
 @import "_solarized";
@@ -321,12 +321,12 @@ h6 {
     }
     input {
       border: 1px solid #ccc;
-      font: 14px proxima-nova;
+      font: 14px proxima-nova, $helvetica;
       padding: 3px;
       width: 150px;
     }
     button {
-      font: 14px proxima-nova;
+      font: 14px proxima-nova, $helvetica;
       margin-left: 5px;
       padding: 4px 10px;
     }
@@ -335,7 +335,7 @@ h6 {
   #markdownExample {
     textarea {
       border: 1px solid #ccc;
-      font: 14px proxima-nova;
+      font: 14px proxima-nova, $helvetica;
       margin-bottom: 10px;
       padding: 5px;
     }
@@ -607,7 +607,7 @@ h1 {
 
 /* Echo out a label for the example */
 
-.highlight:after {
+div.highlight:after {
   position: absolute;
   top: 0;
   right: 0;
