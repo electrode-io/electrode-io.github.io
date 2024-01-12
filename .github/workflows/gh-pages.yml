@@ -15,7 +15,7 @@ jobs:
       - id: cname
         run: |
           if [ ${{ github.event.repository.fork }} = 'false' ]; then
-            echo "::set-output name=cname::www.electrode.io"
+            echo "cname=www.electrode.io" >> $GITHUB_OUTPUT
           fi
       - uses: peaceiris/actions-gh-pages@v3
         with:
